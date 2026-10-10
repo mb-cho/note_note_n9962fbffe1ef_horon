@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：貨幣の信用理論（Credit Theory of Money）― シュンペーターの動態経済学</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 50%, #065f46 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(16, 185, 129, 0.3);
+      color: #a7f3d0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .concept-desc ul {
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      border: 1px solid #a7f3d0;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: #065f46;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #064e3b;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #065f46;
+      margin-top: 0.5rem;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Interactive Schumpeter Engine Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #93c5fd;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mode-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      background: #e2e8f0;
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+      gap: 0.25rem;
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-diagram {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .flow-node {
+      background: #ffffff;
+      border: 2px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.1rem;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .flow-node-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .flow-node-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .flow-node-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .sim-status-box {
+      padding: 1.15rem;
+      background: #ffffff;
+      border-left: 4px solid var(--emerald);
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* 5 Types of Innovation Cards */
+    .inno-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--emerald);
+      border-radius: 0.65rem;
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .inno-num {
+      display: inline-block;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .inno-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .inno-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・貨幣理論ノート）</span>
+      </div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link active">④ 貨幣の信用理論</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 動態経済学・貨幣理論ノート</span>
+        <span class="badge badge-sub">シュンペーター『経済発展の理論』(1912)</span>
+      </div>
+      <h1>貨幣の信用理論（Credit Theory of Money）</h1>
+      <p class="lead">
+        <a href="https://www.google.com/search?q=%E3%83%A8%E3%83%BC%E3%82%BC%E3%83%95%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%BF%E3%83%BC&kgmid=/m/04116" target="_blank" rel="noopener noreferrer" style="color: #a7f3d0; text-decoration: underline;">ヨーゼフ・シュンペーター</a>は、1912年の主著『<strong>経済発展の理論</strong>』において、貨幣を単なる交換の道具（ベール）とみなす従来の古典派経済学を根本から批判し、銀行の「<strong>信用創造（しんようそうぞう）</strong>」機能こそが資本主義の動的な発展を駆動するとする「<strong>貨幣の信用理論</strong>」を展開しました。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 1. 主要な4つのポイント -->
+    <section id="core-points">
+      <h2>💡 1. 「貨幣の信用理論」の主要な4つの柱</h2>
+
+      <div class="grid-2">
+        <!-- ポイント1: 貨幣観 -->
+        <div class="concept-card" style="border-left-color: var(--primary-light);">
+          <div class="concept-title">
+            <span>🎫 ① 貨幣観（信用貨幣論）</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>貨幣は金や銀などの実物商品（金属）そのものではなく、経済活動の決済や社会的生産物に対する請求権・購買力を裏付けるための「<strong>指図証券（クレジット）</strong>」や購買手段であると捉えました。</li>
+              <li>過去に蓄積された既存の蓄え（貯蓄）がなくても、金融システムを通じて<strong>新しい購買力が無から生み出される</strong>と考えました。<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ポイント2: 銀行家と信用創造 -->
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🏦 ② 銀行家（バンカー）と信用創造</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>銀行家は、単に既存の預金や余剰資金を右から左へ仲介するだけの受動的な存在ではありません。</li>
+              <li>銀行家は「<strong>無から</strong>」新しい購買力（信用）を創造し、企業者に与える「購買力の生産者」であり、社会の生産手段を誰に委ねるかを決定する<strong>「交換経済の監督者（Ephor）」</strong>としての役割を担います。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-6" class="cite-badge">[6]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ポイント3: イノベーションとの結びつき -->
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>🚀 ③ イノベーション（新結合）との結びつき</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>新しい製品や生産方法といった「<strong>新結合（イノベーション）</strong>」を起こそうとする企業者（起業家 / Entrepreneur）は、初期段階で手元に資金や生産手段を持っていません。</li>
+              <li>企業者は、銀行家による信用創造（融資）を借りることで、既存の定常的循環から労働力や資源などの生産手段を新しい用途へ力ずくで引き寄せ、<strong>経済発展（創造的破壊）</strong>をスタートさせます。<a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-7" class="cite-badge">[7]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ポイント4: 貨幣のベール観との対比 -->
+        <div class="concept-card" style="border-left-color: var(--purple);">
+          <div class="concept-title">
+            <span>🎭 ④ クラシックな「貨幣のベール観」との対比</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>従来の古典派経済学は「貨幣は実体経済の表面を包む単なるベール（覆い）に過ぎず、実物の生産構造には影響を与えない（貨幣の中立性）」と考えました。</li>
+              <li>これに対しシュンペーターは、<strong>信用を通じた貨幣供給こそが実体経済の構造そのものを内側から非連続的に変革する</strong>と主張しました。<a href="#ref-1" class="cite-badge">[1]</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 引用ボックス -->
+      <div class="quote-box">
+        <div class="quote-title">SCHUMPETER ON THE BANKER AND CREDIT (1912)</div>
+        <div class="quote-text">
+          「銀行家は単なる購買力の仲介商人ではなく、購買力の生産者である。新結合の遂行に資金を供給するのは過去の貯蓄ではなく、銀行家が『無から（out of nothing）』創造する信用なのである。」
+        </div>
+        <div class="quote-author">― ヨーゼフ・A・シュンペーター『経済発展の理論』</div>
+      </div>
+    </section>
+
+    <!-- 2. 古典派（商品貨幣論）との比較表 -->
+    <section id="comparison">
+      <h2>⚖️ 2. 「貨幣ヴェール観（古典派）」vs「貨幣の信用理論（シュンペーター）」</h2>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 24%;">比較項目</th>
+              <th style="width: 38%;">古典派・新古典派（商品貨幣論・ベール観）</th>
+              <th style="width: 38%;">シュンペーター（貨幣の信用理論）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>貨幣の本質</strong></td>
+              <td>交換を円滑にする実物商品（金・銀）、実体経済を覆う中立的な「ベール」</td>
+              <td>社会的生産手段を動かす<strong>「指図証券（クレジット）」</strong>・能動的購買力</td>
+            </tr>
+            <tr>
+              <td><strong>投資資金の源泉</strong></td>
+              <td>過去の労働と節欲によって蓄えられた「既存の貯蓄」</td>
+              <td>銀行家が将来価値を見越して創出する<strong>「無からの信用創造」</strong></td>
+            </tr>
+            <tr>
+              <td><strong>銀行の役割</strong></td>
+              <td>貯蓄者と借手を結ぶ控えめな「仲介業者」</td>
+              <td>新結合の遂行を選別・承認する<strong>「交換経済の監督者（エフォール）」</strong></td>
+            </tr>
+            <tr>
+              <td><strong>経済の状態</strong></td>
+              <td>同じ軌道を繰り返す「定常的循環（静態的均衡）」</td>
+              <td>既存の均衡を内部から打ち破る<strong>「経済発展（動態的・創造的破壊）」</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. インタラクティブ・シミュレーター：定常循環 vs 新結合 vs 第二次波動 -->
+    <section id="simulator">
+      <h2>🔄 3. 【動態シミュレーター】信用創造が駆動する経済発展と景気循環</h2>
+      <p style="margin-bottom: 1rem;">
+        シュンペーターの理論では、銀行信用がどのように使われるかによって経済は「<strong>① 定常的循環</strong>」「<strong>② 経済発展（第一の波）</strong>」「<strong>③ 第二次波動（投機バブルと恐慌）</strong>」の3つの異なるフェーズを辿ります。ボタンを切り替えて構造の変化を確認してください。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>⚙️ 経済フェーズの切り替え</span>
+          </div>
+          <div class="mode-tabs">
+            <button class="mode-btn" id="btnFlow" onclick="setPhase('flow')">① 定常的循環（静態）</button>
+            <button class="mode-btn active" id="btnInno" onclick="setPhase('inno')">② 新結合・第一の波（発展）</button>
+            <button class="mode-btn" id="btnBubble" onclick="setPhase('bubble')">③ 第二次波動（投機・空回り）</button>
+          </div>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+          <!-- JSで動的描画 -->
+        </div>
+
+        <div class="sim-status-box" id="phaseExplanation">
+          <!-- JSで動的解説 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 新結合の5つの類型 -->
+    <section id="five-types">
+      <h2>🌟 4. シュンペーターが定義した「新結合（イノベーション）の5類型」</h2>
+      <p style="margin-bottom: 1.25rem;">
+        銀行から「無からの信用」を供与された企業者が、既存の生産要素を組み替え（新結合し）、経済発展を引き起こす具体的なパターンは以下の5つに分類されます：<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-7" class="cite-badge">[7]</a>
+      </p>
+
+      <div class="grid-3">
+        <div class="inno-card">
+          <span class="inno-num">類型 01</span>
+          <div class="inno-title">新しい財貨の創出</div>
+          <div class="inno-desc">
+            消費者の間にまだ知られていない新しい製品、あるいは新しい品質の財貨を生産すること（プロダクト・イノベーション）。
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">類型 02</span>
+          <div class="inno-title">新しい生産方法の導入</div>
+          <div class="inno-desc">
+            当該産業部門でまだ知られていない生産技術や商業的取扱方法を導入すること（プロセス・イノベーション）。
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">類型 03</span>
+          <div class="inno-title">新しい販路の開拓</div>
+          <div class="inno-desc">
+            その国のその産業部門がこれまで参入していなかった新しい市場（マーケット）を開拓すること。
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">類型 04</span>
+          <div class="inno-title">原料・半製品の新供給源</div>
+          <div class="inno-desc">
+            既存の供給源に依存せず、原材料や半製品の新しい獲得源・サプライチェーンを確立すること。
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">類型 05</span>
+          <div class="inno-title">新しい組織の実現</div>
+          <div class="inno-desc">
+            トラストの形成のような独占的地位の創出、あるいは逆に既存の独占を打破する新しい産業組織を構築すること。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%82%BC%E3%83%95%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%BF%E3%83%BC" target="_blank" rel="noopener noreferrer">
+            Wikipedia「ヨーゼフ・シュンペーター」（経済発展の理論・新結合・信用創造と企業者）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%82%BC%E3%83%95%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%BF%E3%83%BC" target="_blank" rel="noopener noreferrer">
+            Wikipedia「ヨーゼフ・シュンペーター」（古典派の貨幣ベール観批判と動態経済学）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://api.lib.kyushu-u.ac.jp/opac_download_md/4362564/2806_p021.pdf" target="_blank" rel="noopener noreferrer">
+            九州大学学術情報リポジトリ（シュンペーターの貨幣・信用理論と指図証券としての貨幣観）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://www.jstage.jst.go.jp/article/peq/48/4/48_KJ00009361488/_pdf/-char/ja" target="_blank" rel="noopener noreferrer">
+            J-STAGE『季刊経済理論』（信用創造と内生的貨幣供給におけるシュンペーターの理論的位置）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://aty800.com/highest-goal/books/schumpeter-importantworks.html" target="_blank" rel="noopener noreferrer">
+            シュンペーター主要著作解説（『経済発展の理論』『景気循環論』『資本主義・社会主義・民主主義』）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://dot.asahi.com/articles/-/251127?page=1" target="_blank" rel="noopener noreferrer">
+            AERA dot.（銀行家が「無から」購買力を創り出す信用創造のメカニズム解説）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://www.keiomcc.com/magazine/post_373/" target="_blank" rel="noopener noreferrer">
+            慶應丸の内シティキャンパス / 夕学五十講コラム（シュンペーターの新結合と企業者精神・銀行信用の役割）
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Schumpeter's Credit Theory of Money Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Phase Switcher Script -->
+  <script>
+    function setPhase(phase) {
+      document.getElementById('btnFlow').classList.remove('active');
+      document.getElementById('btnInno').classList.remove('active');
+      document.getElementById('btnBubble').classList.remove('active');
+
+      const diagram = document.getElementById('flowDiagram');
+      const expl = document.getElementById('phaseExplanation');
+
+      if (phase === 'flow') {
+        document.getElementById('btnFlow').classList.add('active');
+        diagram.innerHTML = `
+          <div class="flow-node">
+            <div class="flow-node-icon">🌾</div>
+            <div class="flow-node-title">1. 既存の生産者</div>
+            <div class="flow-node-desc">毎年同じ製法で同じ量の財を反復生産</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-node-icon">🪙</div>
+            <div class="flow-node-title">2. 貨幣（単なるベール）</div>
+            <div class="flow-node-desc">既存の財の交換を媒介するだけの中立的手段</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-node-icon">🔄</div>
+            <div class="flow-node-title">3. 定常的均衡</div>
+            <div class="flow-node-desc">超過利潤ゼロ・利子ゼロ・質的発展なし</div>
+          </div>
+        `;
+        expl.style.borderLeftColor = '#64748b';
+        expl.innerHTML = `
+          <strong style="color: #334155;">【① 定常的循環（Circular Flow）の段階】</strong><br>
+          古典派経済学が前提とした静態的な世界です。すべての生産資源は既存の用途に完全に割り当てられており、過去の売上がそのまま次の生産費に充てられます。ここには「新結合（イノベーション）」も「信用創造」も存在せず、経済は同じ軌道を永久に回り続けるだけで、真の発展は起きません。
+        `;
+      } else if (phase === 'inno') {
+        document.getElementById('btnInno').classList.add('active');
+        diagram.innerHTML = `
+          <div class="flow-node" style="border-color: #3b82f6; background: #eff6ff;">
+            <div class="flow-node-icon">🏦</div>
+            <div class="flow-node-title">1. 銀行家（監督者）</div>
+            <div class="flow-node-desc">「無から」新しい購買力（指図証券）を創造</div>
+          </div>
+          <div class="flow-node" style="border-color: #10b981; background: #ecfdf5;">
+            <div class="flow-node-icon">🚀</div>
+            <div class="flow-node-title">2. 企業者（新結合）</div>
+            <div class="flow-node-desc">信用で既存の循環から生産手段を引き抜き革新的生産</div>
+          </div>
+          <div class="flow-node" style="border-color: #f59e0b; background: #fffbeb;">
+            <div class="flow-node-icon">✨</div>
+            <div class="flow-node-title">3. 創造的破壊と発展</div>
+            <div class="flow-node-desc">新しい実物富が市場に溢れ、借入が完済され社会が豊かに</div>
+          </div>
+        `;
+        expl.style.borderLeftColor = '#059669';
+        expl.innerHTML = `
+          <strong style="color: #065f46;">【② 新結合・第一の波（シュンペーター的経済発展）】</strong><br>
+          手元に資金を持たない企業者に対し、銀行家が将来性を目利きして<strong>「無からの信用創造」</strong>によって購買力を供与します。企業者はその購買力で労働力や資源を既存の古い産業から引き抜き、新結合（イノベーション）を実行します。やがて新製品が市場に供給されると、増大した通貨に見合う実物価値が生まれ、企業者は創出した利潤から銀行へ元利を返済して好循環が完結します。
+        `;
+      } else {
+        document.getElementById('btnBubble').classList.add('active');
+        diagram.innerHTML = `
+          <div class="flow-node" style="border-color: #e11d48; background: #fff1f2;">
+            <div class="flow-node-icon">💸</div>
+            <div class="flow-node-title">1. 無秩序な信用膨張</div>
+            <div class="flow-node-desc">好況に便乗した模倣者・投機家への過剰融資</div>
+          </div>
+          <div class="flow-node" style="border-color: #e11d48; background: #fff1f2;">
+            <div class="flow-node-icon">📈</div>
+            <div class="flow-node-title">2. 第二次波動（バブル）</div>
+            <div class="flow-node-desc">実物革新なき不動産・株式の買占めと資産インフレ</div>
+          </div>
+          <div class="flow-node" style="border-color: #9f1239; background: #ffe4e6;">
+            <div class="flow-node-icon">💥</div>
+            <div class="flow-node-title">3. 空回りする経済と恐慌</div>
+            <div class="flow-node-desc">過剰債務ピラミッドの崩壊・不良債権化と金融危機</div>
+          </div>
+        `;
+        expl.style.borderLeftColor = '#e11d48';
+        expl.innerHTML = `
+          <strong style="color: #be123c;">【③ 第二次波動（Secondary Wave）と金融寡占の暴走】</strong><br>
+          シュンペーターが『景気循環論』で警告した病理です。第一の波（本物のイノベーション）が好況を生むと、銀行は目利きを失い、単なる模倣者や資産投機家に対して無制限に信用を拡大します。創造されたマネーは新結合ではなく既存資産のマネーゲーム（金融的流通）へと向かい、実体経済から乖離したバブルと過剰債務のピラミッドを形成し、最終的に破局的な恐慌を引き起こします。
+        `;
+      }
+    }
+
+    // Initialize in Innovation phase
+    setPhase('inno');
+  </script>
+</body>
+</html>
