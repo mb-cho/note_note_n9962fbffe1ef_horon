@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：流動性選好理論（Liquidity Preference Theory）と流動性の罠</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(124, 58, 237, 0.3);
+      color: #ddd6fe;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 820px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Motive Cards */
+    .motive-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .motive-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .motive-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .motive-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .motive-formula {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-top: 0.25rem;
+      font-family: monospace;
+    }
+
+    .motive-body {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .motive-factor {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #c7d2fe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .slider-container {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .slider-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .slider-val-badge {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--rose);
+      background: #fff1f2;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecdd3;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .sim-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* Visual Curve Canvas */
+    .curve-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.25rem;
+    }
+
+    .sim-explanation-box {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #ffffff;
+      border-left: 4px solid var(--rose);
+      border-radius: 0.35rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Trap Alert Box */
+    .trap-box {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-left: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .trap-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #9f1239;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trap-desc {
+      font-size: 0.95rem;
+      color: #881337;
+      line-height: 1.7;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・ケインズ貨幣理論）</span>
+      </div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link active">③ 流動性選好理論</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 貨幣理論・金融経済学ノート</span>
+        <span class="badge badge-sub">ケインズ『一般理論』(1936)</span>
+      </div>
+      <h1>流動性選好理論（Liquidity Preference Theory）と流動性の罠</h1>
+      <p class="lead">
+        <a href="https://www.google.com/search?q=%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%B3%E3%82%BA&kgmid=/m/09gnn" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: underline;">ジョン・メイナード・ケインズ</a>が1936年の著書『<strong>雇用・利子および貨幣の一般理論</strong>』で提唱した<strong>流動性選好理論（流動性選好説）</strong>とは、利子率が「貯蓄と投資のバランス」ではなく、「<strong>貨幣の需要と供給</strong>」によって決まるとする画期的な理論です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+      </p>
+    </header>
+
+    <!-- 1. 流動性と利子の本質 -->
+    <section id="liquidity-concept">
+      <h2>💧 1. 流動性（リクイディティ）と利子の本質</h2>
+      
+      <div class="grid-2">
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>🌊 流動性（Liquidity）とは</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>いつでも、どんなもの（商品やサービスなど）とも即座かつスムーズに交換できる性質のことです。</li>
+              <li>資産の中で「<strong>現金（貨幣）</strong>」が最も流動性が高い究極の状態です。</li>
+              <li>「<strong>流動性選好</strong>」とは、人々が利子を生まない現金であっても、手元に持っていたがる（流動性の高いものを好む）心理や性質を指します。<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🪙 利子とは何か？（ケインズの再定義）</span>
+          </div>
+          <div class="concept-desc">
+            古典派経済学は利子を「現在の消費を我慢して貯蓄したことへの報酬」と見なしました。<br><br>
+            しかしケインズはこれを真っ向から否定し、利子を「<strong>流動性の高い現金を手放して、流動性の低い資産（債券など）を一定期間保有することに対する対価・報酬（不便さへの補償）</strong>」であると定義しました。<a href="#ref-4" class="cite-badge">[4]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 核心命題引用 -->
+      <div class="quote-box">
+        <div class="quote-title">KEY INSIGHT FROM THE GENERAL THEORY (1936)</div>
+        <div class="quote-text">
+          「利子率とは、貨幣の退蔵を断念することに対する報酬である。それは貯蓄そのものへの対価ではなく、一定期間にわたって流動性を手放すことの対価に他ならない。」
+        </div>
+        <div class="quote-author">― ジョン・メイナード・ケインズ『雇用・利子および貨幣の一般理論』</div>
+      </div>
+    </section>
+
+    <!-- 2. 3つの貨幣保有動機 -->
+    <section id="motives">
+      <h2>🎯 2. 3つの貨幣保有動機（貨幣需要）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        人々がなぜ利子を生まない現金を手元に置いておきたがるのか（貨幣需要 $M^d$）、ケインズは主に<strong>3つの動機</strong>に分類しました：<a href="#ref-6" class="cite-badge">[6]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 取引動機 -->
+        <div class="motive-card" style="border-top: 4px solid var(--primary-light);">
+          <div>
+            <div class="motive-header">
+              <div class="motive-icon" style="background: #eff6ff; color: var(--primary);">🛒</div>
+              <div>
+                <div class="motive-title">1. 取引動機</div>
+                <span class="motive-formula" style="background: #dbeafe; color: var(--primary);">L₁(Y) : 所得の増加関数</span>
+              </div>
+            </div>
+            <div class="motive-body">
+              <strong>日常の買い物のため</strong><br>
+              食費、光熱費、資材調達など、日々の経済活動や商取引の決済を行うために現金を保有する動機。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-7" class="cite-badge">[7]</a>
+            </div>
+          </div>
+          <div class="motive-factor" style="color: var(--primary);">
+            📈 決定要因：国民所得（$Y$）<br>
+            <small style="color: var(--text-muted);">景気が良く収入が多いほど需要が増大</small>
+          </div>
+        </div>
+
+        <!-- 予備的動機 -->
+        <div class="motive-card" style="border-top: 4px solid var(--emerald);">
+          <div>
+            <div class="motive-header">
+              <div class="motive-icon" style="background: var(--emerald-light); color: var(--emerald);">🛡️</div>
+              <div>
+                <div class="motive-title">2. 予備的動機</div>
+                <span class="motive-formula" style="background: var(--emerald-light); color: var(--emerald);">L₁(Y) : 所得の増加関数</span>
+              </div>
+            </div>
+            <div class="motive-body">
+              <strong>万が一の備えのため</strong><br>
+              病気、事故、突然の減収、災害など、予期せぬ突発的な出費に備えて手元に現金を安全弁として残す動機。<a href="#ref-7" class="cite-badge">[7]</a>
+            </div>
+          </div>
+          <div class="motive-factor" style="color: var(--emerald);">
+            📈 決定要因：国民所得（$Y$）<br>
+            <small style="color: var(--text-muted);">所得水準および将来の不確実性に比例</small>
+          </div>
+        </div>
+
+        <!-- 投機的動機 -->
+        <div class="motive-card" style="border-top: 4px solid var(--rose);">
+          <div>
+            <div class="motive-header">
+              <div class="motive-icon" style="background: var(--rose-light); color: var(--rose);">📊</div>
+              <div>
+                <div class="motive-title">3. 投機的動機</div>
+                <span class="motive-formula" style="background: var(--rose-light); color: var(--rose);">L₂(r) : 利子率の減少関数</span>
+              </div>
+            </div>
+            <div class="motive-body">
+              <strong>利子率・債券価格の変化に備えるため</strong><br>
+              利子率が将来上がると予測（＝債券価格が下落すると予測）すれば、損失を避けるため債券を売って現金を持ちたくなります。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-5" class="cite-badge">[5]</a>
+            </div>
+          </div>
+          <div class="motive-factor" style="color: var(--rose);">
+            📉 決定要因：利子率（$r$）<br>
+            <small style="color: var(--text-muted);">利子率が低いほど貨幣需要は急増</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. インタラクティブ図解 & シミュレーター -->
+    <section id="interactive-simulator">
+      <h2>📉 3. 利子率と投機的貨幣需要の動態シミュレーター</h2>
+      <p style="margin-bottom: 1rem;">
+        債券価格と利子率は<strong>逆相関</strong>の関係にあります（$\text{債券価格} \approx \frac{\text{表面利息}}{\text{市場利子率}}$）。利子率が低下するほど債券価格は高騰し、「これ以上の値上がりはない、次は暴落する」という恐怖から現金の需要（投機的動機）が爆発します。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>⚙️ 市場利子率のコントロール</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">スライダーを動かして流動性の罠の挙動を確認</span>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-row">
+            <span class="slider-label">市場利子率（$r$）：</span>
+            <span class="slider-val-badge" id="rateDisplay">1.0 %</span>
+          </div>
+          <input type="range" id="rateSlider" min="0.2" max="8.0" step="0.1" value="1.0">
+        </div>
+
+        <div class="sim-metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">債券価格の評価水準</div>
+            <div class="metric-val" id="bondPriceDisplay" style="color: var(--primary);">割高（高値圏）</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">将来の債券価格予測</div>
+            <div class="metric-val" id="forecastDisplay" style="color: var(--rose);">下落リスク大</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">投機的貨幣需要 $L_2(r)$</div>
+            <div class="metric-val" id="demandDisplay" style="color: var(--accent-dark);">極めて大</div>
+          </div>
+        </div>
+
+        <!-- Canvas Drawing -->
+        <div class="curve-wrapper">
+          <canvas id="curveCanvas" width="760" height="320"></canvas>
+        </div>
+
+        <div class="sim-explanation-box" id="dynamicExplanation">
+          <!-- JSで動的に解説更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 流動性の罠 -->
+    <section id="liquidity-trap">
+      <h2>⚠️ 4. 流動性の罠（リクイディティ・トラップ）</h2>
+      
+      <div class="trap-box">
+        <div class="trap-title">
+          <span>🚨 金融緩和が無効化する「絶対的流動性選好」の領域</span>
+        </div>
+        <div class="trap-desc">
+          市場の利子率が極限まで低くなってしまうと、「<strong>これ以上利子率は下がらない（＝債券価格はこれ以上上がらない）、今後は利子率が上昇して債券価格が暴落するに違いない</strong>」と市場参加者全員が確信するようになります。<a href="#ref-2" class="cite-badge">[2]</a><br><br>
+          その結果、人々は債券を一切保有しようとせず、供給されたすべての貨幣を喜んでそのまま現金預金として退蔵（死蔵）してしまいます。<br>
+          中央銀行がマネーをいくら市場に供給しても、利子率はそれ以上低下せず、設備投資や消費を刺激できなくなる状態――これこそがケインズの警告した「<strong>流動性の罠（Liquidity Trap）</strong>」です。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.75rem;">
+          💡 「紐で引くことはできても、押すことはできない（Pushing on a string）」
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          流動性の罠に陥った経済では、金融政策による金利引き下げの余地が消滅します。中央銀行が銀行にいくら流動性を注入しても、銀行から企業への貸出は伸びず、マネーは金融機関の当座預金口座に滞留するだけとなります。<br>
+          ケインズは、このような極限状態から脱出するためには、金融緩和だけに頼るのではなく、**政府が自ら借金をして有効需要を直接創出する「積極的財政出動（公共投資）」**が不可欠であると論証しました。
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. 発展的トピックと古典派との比較 -->
+    <section id="comparison-classical">
+      <h2>🏛️ 5. 古典派との比較とマクロ経済学への応用</h2>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">比較項目</th>
+              <th style="width: 37%;">古典派経済学（新古典派）</th>
+              <th style="width: 38%;">ケインズ経済学（流動性選好説）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>利子率の決定要因</strong></td>
+              <td>実物要因（貯蓄と投資の需給一致）</td>
+              <td><strong>貨幣要因</strong>（貨幣の供給と流動性選好の需給一致）</td>
+            </tr>
+            <tr>
+              <td><strong>利子の本質</strong></td>
+              <td>現在の消費を断念（忍耐）したことへの対価</td>
+              <td><strong>流動性を手放したことへの補償（不便の対価）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>貨幣の役割</strong></td>
+              <td>交換の媒介にすぎない（貨幣ヴェール観）</td>
+              <td>価値の保蔵手段であり、<strong>不確実性への防壁</strong></td>
+            </tr>
+            <tr>
+              <td><strong>不況時の金融政策</strong></td>
+              <td>金利が下がり自律的に投資が回復する</td>
+              <td><strong>流動性の罠により無力化</strong>する危険がある</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="margin-top: 1.5rem;">
+        <div class="concept-card" style="border-left-color: var(--purple);">
+          <div class="concept-title">
+            <span>📐 IS-LM分析への接続</span>
+          </div>
+          <div class="concept-desc">
+            ジョン・ヒックスが定式化したIS-LM分析において、流動性選好説は「<strong>LM曲線（貨幣市場の均衡）</strong>」の理論的土台となります。流動性の罠の領域では、LM曲線は水平（金利弾力性が無限大）となり、金融政策が完全に無効化することが幾何学的に証明されます。
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>🇯🇵 現代日本と世界経済の現実</span>
+          </div>
+          <div class="concept-desc">
+            1990年代以降の日本経済（「失われた30年」）や、2008年リーマンショック後の主要先進国が直面したゼロ金利・マイナス金利政策下での停滞は、まさにケインズの流動性選好理論と流動性の罠が生々しい現実であることを世界に知らしめました。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://go2senkyo.com/seijika/185873/posts/1325001" target="_blank" rel="noopener noreferrer">
+            選挙ドットコム コラム（ケインズの流動性選好理論と現代経済の基礎解説）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E6%B5%81%E5%8B%95%E6%80%A7%E9%81%B8%E5%A5%BD%E8%AA%AC" target="_blank" rel="noopener noreferrer">
+            Wikipedia「流動性選好説」（貨幣需要の3動機と流動性の罠の定義）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://kotobank.jp/word/%E6%B5%81%E5%8B%95%E6%80%A7%E9%81%B8%E5%A5%BD%E8%AA%AC-149754" target="_blank" rel="noopener noreferrer">
+            コトバンク「流動性選好説」（ブリタニカ国際大百科事典・日本大百科全書解説）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="http://kisoken.org/webjiten/ryudouseisenkou.html" target="_blank" rel="noopener noreferrer">
+            基礎経済学研究所 Web経済辞典「流動性選好と利子の定義」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=BY7XJwevvno&t=303" target="_blank" rel="noopener noreferrer">
+            YouTube解説動画（ケインズ経済学：投機的動機と利子率・債券価格の反比例メカニズム）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://b2broker.com/ja/news/what-is-liquidity-preference-theory/" target="_blank" rel="noopener noreferrer">
+            B2Broker 金融ナレッジ「流動性選好理論とは何か：3つの貨幣需要動機の詳細」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11289378576" target="_blank" rel="noopener noreferrer">
+            経済学 Q&amp;A（取引動機・予備的動機が国民所得の増加関数となる理由の解説）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-tag">[8]</span>
+          <a class="ref-link" href="https://money-bu-jpx.com/news/article047395/" target="_blank" rel="noopener noreferrer">
+            東証マネ部！（日本取引所グループ：ケインズ経済学と流動性選好説・貨幣保有の動機）
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Liquidity Preference Theory Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Chart & Simulator Script -->
+  <script>
+    const slider = document.getElementById('rateSlider');
+    const rateDisplay = document.getElementById('rateDisplay');
+    const bondPriceDisplay = document.getElementById('bondPriceDisplay');
+    const forecastDisplay = document.getElementById('forecastDisplay');
+    const demandDisplay = document.getElementById('demandDisplay');
+    const explanationBox = document.getElementById('dynamicExplanation');
+    const canvas = document.getElementById('curveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawChart(currentRate) {
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      // Axes coordinates
+      const originX = 70;
+      const originY = h - 50;
+      const maxX = w - 40;
+      const maxY = 30;
+
+      // Draw Grid / Axes
+      ctx.strokeStyle = '#e2e8f0';
+      ctx.lineWidth = 1;
+
+      // Axis lines
+      ctx.beginPath();
+      ctx.moveTo(originX, maxY);
+      ctx.lineTo(originX, originY);
+      ctx.lineTo(maxX, originY);
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Axis Labels
+      ctx.font = '12px system-ui, sans-serif';
+      ctx.fillStyle = '#475569';
+      ctx.fillText('利子率 (r)', originX - 50, maxY + 10);
+      ctx.fillText('貨幣需要 (M)', maxX - 60, originY + 30);
+
+      // Draw Liquidity Trap Flat Zone highlight
+      ctx.fillStyle = 'rgba(254, 226, 226, 0.45)';
+      ctx.fillRect(originX, originY - 45, maxX - originX, 45);
+
+      ctx.fillStyle = '#e11d48';
+      ctx.font = 'bold 11px system-ui, sans-serif';
+      ctx.fillText('← 流動性の罠の領域（極小金利・完全水平）', originX + 220, originY - 15);
+
+      // Draw Liquidity Preference Curve L(r)
+      ctx.beginPath();
+      ctx.strokeStyle = '#1e3a8a';
+      ctx.lineWidth = 3;
+
+      const points = [];
+      for (let r = 0.4; r <= 8.0; r += 0.1) {
+        // formula: M = 20 / (r - 0.3)^0.8 + 15
+        const m = 28 / Math.pow(r - 0.25, 0.85);
+        const plotX = originX + (m / 80) * (maxX - originX);
+        const plotY = originY - (r / 8.0) * (originY - maxY);
+        points.push({ x: Math.min(plotX, maxX), y: plotY, r: r });
+      }
+
+      for (let i = 0; i < points.length; i++) {
+        if (i === 0) ctx.moveTo(points[i].x, points[i].y);
+        else ctx.lineTo(points[i].x, points[i].y);
+      }
+      ctx.stroke();
+
+      // Curve Label
+      ctx.fillStyle = '#1e3a8a';
+      ctx.font = 'bold 13px system-ui, sans-serif';
+      ctx.fillText('投機的貨幣需要曲線 L₂(r)', maxX - 160, maxY + 35);
+
+      // Current Point on Curve
+      const currR = Math.max(currentRate, 0.35);
+      const currM = 28 / Math.pow(currR - 0.25, 0.85);
+      const currX = Math.min(originX + (currM / 80) * (maxX - originX), maxX - 15);
+      const currY = originY - (currR / 8.0) * (originY - maxY);
+
+      // Dashed guideline lines
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = '#f43f5e';
+      ctx.lineWidth = 1.5;
+
+      ctx.beginPath();
+      ctx.moveTo(originX, currY);
+      ctx.lineTo(currX, currY);
+      ctx.lineTo(currX, originY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Point marker
+      ctx.beginPath();
+      ctx.arc(currX, currY, 7, 0, Math.PI * 2);
+      ctx.fillStyle = '#e11d48';
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Text at point
+      ctx.fillStyle = '#0f172a';
+      ctx.font = 'bold 12px system-ui, sans-serif';
+      ctx.fillText(`現在値 (r = ${currentRate.toFixed(1)}%)`, currX + 10, currY - 10);
+    }
+
+    function updateSimulation() {
+      const r = parseFloat(slider.value);
+      rateDisplay.innerText = r.toFixed(1) + ' %';
+
+      if (r <= 1.0) {
+        bondPriceDisplay.innerText = '極限の超高値';
+        bondPriceDisplay.style.color = '#e11d48';
+        forecastDisplay.innerText = '暴落確実（上昇余地ゼロ）';
+        forecastDisplay.style.color = '#e11d48';
+        demandDisplay.innerText = '無限大（流動性の罠）';
+        demandDisplay.style.color = '#e11d48';
+
+        explanationBox.innerHTML = `
+          <strong style="color: #be123c;">【🚨 現在の状態：流動性の罠（Liquidity Trap）】</strong><br>
+          利子率が ${r.toFixed(1)}% という極限の低水準にあるため、人々は「債券価格は天井に達しており、これ以上上がる余地はない。今後は金利上昇に伴い債券価格が暴落するだけだ」と確信しています。誰も債券を買いたがらず、供給されたマネーはすべて現金として退蔵されます。この状態では中央銀行がいくら量的緩和を行っても利子率はこれ以上下がらず、金融政策は完全に麻痺します。
+        `;
+      } else if (r <= 3.0) {
+        bondPriceDisplay.innerText = '割高（高値圏）';
+        bondPriceDisplay.style.color = '#d97706';
+        forecastDisplay.innerText = '下落リスク警戒';
+        forecastDisplay.style.color = '#d97706';
+        demandDisplay.innerText = 'かなり大きい';
+        demandDisplay.style.color = '#d97706';
+
+        explanationBox.innerHTML = `
+          <strong style="color: #b45309;">【⚠️ 現在の状態：低金利・流動性選好の高まり】</strong><br>
+          市場利子率は ${r.toFixed(1)}% と低めで、債券価格は高値圏にあります。債券を保有して得られる利子収入が少ない割に、将来の金利上昇による元本割れリスクが意識されるため、人々は債券の購入を控えて現金を多めに手元に残そうとする傾向が強まっています。
+        `;
+      } else {
+        bondPriceDisplay.innerText = '割安（手頃な水準）';
+        bondPriceDisplay.style.color = '#059669';
+        forecastDisplay.innerText = '安定または値上がり期待';
+        forecastDisplay.style.color = '#059669';
+        demandDisplay.innerText = '抑制的（小）';
+        demandDisplay.style.color = '#059669';
+
+        explanationBox.innerHTML = `
+          <strong style="color: #047857;">【✅ 現在の状態：標準〜高金利環境】</strong><br>
+          利子率が ${r.toFixed(1)}% と十分に高いため、債券を保有することで魅力的な利子インカムが得られます。また債券価格も過度に高騰していないため暴落リスクが低く、人々は現金を退蔵するよりも喜んで債券や金融資産に投資します。投機的貨幣需要は抑えられ、資金が活発に循環します。
+        `;
+      }
+
+      drawChart(r);
+    }
+
+    slider.addEventListener('input', updateSimulation);
+
+    // Initial load
+    updateSimulation();
+  </script>
+</body>
+</html>
