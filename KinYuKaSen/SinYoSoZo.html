@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：信用創造の仕組みとリスク</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 800px;
+    }
+
+    /* Section Styles */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Cards Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Timeline / Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      position: relative;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(30, 58, 138, 0.3);
+    }
+
+    .step-num.result-num {
+      background: var(--accent);
+      box-shadow: 0 2px 4px rgba(217, 119, 6, 0.3);
+    }
+
+    .step-content {
+      flex-grow: 1;
+    }
+
+    .step-header {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Calculation Formula Box */
+    .formula-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .formula-title {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .formula-math {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 0.5rem;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .formula-explanation {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive Simulator */
+    .simulator {
+      background: #ffffff;
+      border: 2px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .control-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .control-input {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      background: #f8fafc;
+    }
+
+    .sim-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sim-stat-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .sim-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .sim-stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      max-height: 240px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: right;
+    }
+
+    th, td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--text-main);
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    /* Risk Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .risk-card {
+      background: #fff5f5;
+      border: 1px solid #fecaca;
+      border-left: 4px solid var(--danger);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .risk-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #991b1b;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .risk-desc {
+      font-size: 0.95rem;
+      color: #7f1d1d;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .formula-math { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <span class="badge">補論 / 地政学・金融経済学ノート</span>
+      <h1>信用創造の仕組みとリスク</h1>
+      <p class="lead">
+        信用創造とは、銀行が預金の貸し出しを繰り返すことで、社会全体として最初の預金額の何倍もの預金通貨（お金）を作り出す仕組みです。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 基本概念 -->
+    <section id="concepts">
+      <h2>💡 信用創造の基本概念</h2>
+      <div class="grid-3">
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>💳 預金通貨</span>
+          </div>
+          <div class="concept-desc">
+            通帳の数字として存在し、振込や電子決済などの決済に直接使えるお金。<a href="#ref-1" class="cite-badge">[1]</a>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>🛡️ 準備預金率</span>
+          </div>
+          <div class="concept-desc">
+            預金の払い戻しに備えて、銀行が中央銀行などに手元準備金として残さなければならない割合。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>💰 本源的預金</span>
+          </div>
+          <div class="concept-desc">
+            銀行システムに最初に預け入れられた原資となる現金。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-6" class="cite-badge">[6]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 具体例・仕組み -->
+    <section id="mechanism">
+      <h2>📊 仕組みの具体例（準備預金率10%の場合）</h2>
+      
+      <div class="steps-container">
+        <!-- 第1段階 -->
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-header">第1段階：本源的預金の受入</div>
+            <div class="step-text">A銀行に現金100万円が預金される。<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- 第2段階 -->
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-header">第2段階：最初の信用貸出</div>
+            <div class="step-text">A銀行は10万円（準備預金率10%）を手元に残し、残りの90万円をXさんに貸し出す。<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- 第3段階 -->
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-header">第3段階：決済を通じた再預金</div>
+            <div class="step-text">Xさんが商取引や支払いに使った90万円が、支払いを受け取ったYさんを通じてB銀行に全額預金される。<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- 第4段階 -->
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-header">第4段階：2次貸出の連鎖</div>
+            <div class="step-text">B銀行が9万円（10%）を残し、81万円を別の1人（Zさん）に貸し出す。<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- 結果 -->
+        <div class="step-card" style="border-left: 4px solid var(--accent); background: #fffbeb;">
+          <div class="step-num result-num">★</div>
+          <div class="step-content">
+            <div class="step-header" style="color: var(--accent);">最終結果：預金通貨の無限連鎖増殖</div>
+            <div class="step-text">
+              銀行全体で「預金→貸出→預金」の連鎖が繰り返され、最終的に理論上<strong>約1,000万円</strong>の預金が社会全体に生まれる。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 数式解説ボックス -->
+      <div class="formula-box">
+        <div class="formula-title">信用創造の理論計算式（信用乗数）</div>
+        <div class="formula-math">
+          総預金額 ＝ 本源的預金 ÷ 準備預金率
+        </div>
+        <p class="formula-explanation">
+          準備預金率10%の場合：100万円 ÷ 0.10 ＝ <strong>1,000万円</strong><br>
+          （新たに創出された派生預金通貨：1,000万円 − 100万円 ＝ <strong>900万円</strong>）
+        </p>
+      </div>
+
+      <!-- インタラクティブ・シミュレーター -->
+      <div class="simulator">
+        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🧮 リアルタイム信用創造シミュレーター</span>
+        </h3>
+        
+        <div class="sim-controls">
+          <div class="control-group">
+            <label class="control-label" for="initialDeposit">本源的預金（万円）：</label>
+            <input type="number" id="initialDeposit" class="control-input" value="100" min="1" step="10">
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="reserveRatio">準備預金率（%）：</label>
+            <input type="number" id="reserveRatio" class="control-input" value="10" min="1" max="50" step="1">
+          </div>
+        </div>
+
+        <div class="sim-results-grid">
+          <div class="sim-stat-card">
+            <div class="sim-stat-label">理論上の最終総預金額</div>
+            <div class="sim-stat-value" id="statTotal">1,000 万円</div>
+          </div>
+          <div class="sim-stat-card">
+            <div class="sim-stat-label">創出された新規預金（派生）</div>
+            <div class="sim-stat-value" id="statCreated" style="color: var(--accent);">900 万円</div>
+          </div>
+          <div class="sim-stat-card">
+            <div class="sim-stat-label">信用乗数（倍率）</div>
+            <div class="sim-stat-value" id="statMultiplier" style="color: var(--success);">10.0 倍</div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>サイクル段階</th>
+                <th>預金額</th>
+                <th>手元準備金</th>
+                <th>新規貸出額</th>
+                <th>累計預金額</th>
+              </tr>
+            </thead>
+            <tbody id="simTableBody">
+              <!-- JSで動的に生成 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- リスクと注意点 -->
+    <section id="risks">
+      <h2>⚠️ リスクと注意点</h2>
+      <div class="grid-2">
+        <div class="risk-card">
+          <div class="risk-title">
+            <span>🏃💨 取り付け騒ぎ（バンクラン）</span>
+          </div>
+          <div class="risk-desc">
+            金融機関への信用不安が生じ、預金者が一斉に預金の現金払い戻しを求めて窓口に殺到する現象。手元準備金は預金総額の一部（例: 10%）しかないため、即座に資金ショートを起こし、健全な銀行であっても連鎖破綻・システム崩壊に至る危険性があります。<a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-title">
+            <span>💥 返済不能（貸倒れ / デフォルト）</span>
+          </div>
+          <div class="risk-desc">
+            不況や投機の失敗などにより借り手が借金を返済できなくなると、銀行の資産に不良債権の穴が空きます。貸出回収の停滞により新たな信用供与ができなくなり、信用創造の連鎖が停止し、激しい信用収縮（マネーサプライの急減・デフレスパイラル）を引き起こします。<a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://kou.benesse.co.jp/nigate/social/a13s0403.html" target="_blank" rel="noopener noreferrer">
+            ベネッセ 教育情報サイト（高校生向け社会科解説：信用創造とは）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=hTou-bw7dIM&t=215" target="_blank" rel="noopener noreferrer">
+            YouTube解説動画（銀行が社会全体でお金を生み出すメカニズム）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://manabow.com/hayawakari/hayawakari6_2.html" target="_blank" rel="noopener noreferrer">
+            manabow（金融経済教育サイト・早わかり経済：信用創造のリスクと取り付け騒ぎ）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://www.fidelity.co.jp/page/strategist/vol208-flip-side-of-stablecoin-2" target="_blank" rel="noopener noreferrer">
+            フィデリティ投信（ストラテジストの視点：ステーブルコインの裏側と本源的預金・信用創造）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=yJhxdTNN6yc" target="_blank" rel="noopener noreferrer">
+            YouTube解説動画（現代マネーと銀行信用の本質）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://www.financialdo.co.jp/news/2020/03/09/%E4%BF%A1%E7%94%A8%E5%89%B5%E9%80%A0%E3%80%80-%EF%BD%9E%E9%87%91%E8%9E%8D%E6%A9%9F%E9%96%A2%E3%81%AE%E5%AD%98%E5%9C%A8%E6%84%8F%E7%BE%A9%E3%81%A8%E3%80%8C%E8%85%95%E3%81%AE%E8%A6%8B%E3%81%9B%E6%89%80/" target="_blank" rel="noopener noreferrer">
+            Financial Do ニュース（信用創造 ～金融機関の存在意義と「腕の見せ所」～）
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Credit Creation System Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Simulation Script -->
+  <script>
+    function updateSimulation() {
+      const initialDeposit = parseFloat(document.getElementById('initialDeposit').value) || 0;
+      const reserveRatioPercent = parseFloat(document.getElementById('reserveRatio').value) || 1;
+      const r = Math.min(Math.max(reserveRatioPercent / 100, 0.001), 1.0);
+
+      const totalTheoretical = initialDeposit / r;
+      const createdDeposit = totalTheoretical - initialDeposit;
+      const multiplier = 1 / r;
+
+      document.getElementById('statTotal').innerText = totalTheoretical.toLocaleString(undefined, { maximumFractionDigits: 1 }) + ' 万円';
+      document.getElementById('statCreated').innerText = createdDeposit.toLocaleString(undefined, { maximumFractionDigits: 1 }) + ' 万円';
+      document.getElementById('statMultiplier').innerText = multiplier.toFixed(2) + ' 倍';
+
+      // Table generation (up to 12 cycles)
+      const tbody = document.getElementById('simTableBody');
+      tbody.innerHTML = '';
+
+      let currentDeposit = initialDeposit;
+      let cumDeposit = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const reserve = currentDeposit * r;
+        const loan = currentDeposit * (1 - r);
+        cumDeposit += currentDeposit;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>第 ${i} 段階</td>
+          <td>${currentDeposit.toLocaleString(undefined, { maximumFractionDigits: 2 })} 万円</td>
+          <td>${reserve.toLocaleString(undefined, { maximumFractionDigits: 2 })} 万円</td>
+          <td>${loan.toLocaleString(undefined, { maximumFractionDigits: 2 })} 万円</td>
+          <td><strong>${cumDeposit.toLocaleString(undefined, { maximumFractionDigits: 2 })} 万円</strong></td>
+        `;
+        tbody.appendChild(tr);
+
+        currentDeposit = loan;
+        if (currentDeposit < 0.001) break;
+      }
+
+      // Final theoretical limit row
+      const trFinal = document.createElement('tr');
+      trFinal.style.background = '#fef3c7';
+      trFinal.style.fontWeight = 'bold';
+      trFinal.innerHTML = `
+        <td>理論的極限（∞）</td>
+        <td>-</td>
+        <td>${initialDeposit.toLocaleString(undefined, { maximumFractionDigits: 1 })} 万円 (全準備金)</td>
+        <td>-</td>
+        <td style="color: #b45309;">${totalTheoretical.toLocaleString(undefined, { maximumFractionDigits: 1 })} 万円</td>
+      `;
+      tbody.appendChild(trFinal);
+    }
+
+    document.getElementById('initialDeposit').addEventListener('input', updateSimulation);
+    document.getElementById('reserveRatio').addEventListener('input', updateSimulation);
+
+    // Initial run
+    updateSimulation();
+  </script>
+</body>
+</html>
