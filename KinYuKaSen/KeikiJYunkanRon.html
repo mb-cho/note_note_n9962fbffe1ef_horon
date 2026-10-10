@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：シュンペーターの景気循環論 ― 創造的破壊と3つの波動の重なり</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #b45309 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(245, 158, 11, 0.35);
+      color: #fef3c7;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    .lead a {
+      color: #fde68a;
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Cycle Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    .step-badge {
+      flex-shrink: 0;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .step-content {
+      flex-grow: 1;
+    }
+
+    .step-header {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* 3 Wave Cards */
+    .wave-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wave-period {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+      width: fit-content;
+    }
+
+    .wave-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .wave-cause {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .wave-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive 3-Wave Superposition Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .wave-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      background: #ffffff;
+      padding: 0.85rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .canvas-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .sim-caption {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #ffffff;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--primary);
+      border-radius: 0.35rem;
+    }
+
+    /* Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・貨幣理論ノート）</span>
+      </div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link active">⑤ 景気循環論</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 動態経済学・景気変動論ノート</span>
+        <span class="badge badge-sub">シュンペーター『景気循環論』(1939)</span>
+      </div>
+      <h1>シュンペーターの景気循環論</h1>
+      <p class="lead">
+        シュンペーターの景気循環論は、企業家による「<strong>イノベーション（新結合）</strong>」の群生的発生が、経済の波を引き起こすとする動態的経済発展論です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+        <br><br>
+        経済学者のヨーゼフ・シュンペーター（Joseph Alois Schumpeter）は、著書『<a href="https://www.amazon.co.jp/dp/4003414721" target="_blank" rel="noopener noreferrer">経済発展の理論</a>』や『<a href="https://www.amazon.co.jp/dp/4641901074" target="_blank" rel="noopener noreferrer">景気循環論</a>』の中で、資本主義の本質を「<strong>創造的破壊</strong>」と景気変動のプロセスとして体系化しました。<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a>
+      </p>
+    </header>
+
+    <!-- 1. 基本概念 -->
+    <section id="basic-concepts">
+      <h2>💡 1. 基本概念（動態発展の3要素）</h2>
+      <div class="grid-3">
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>⚡ イノベーション（新結合）</span>
+          </div>
+          <div class="concept-desc">
+            新しい財や生産方法の導入、新しい市場の開拓、新しい原料供給源の獲得、新しい産業組織の実現という5つの革新行為。<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a>
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🧭 企業者（アントレプレナー）</span>
+          </div>
+          <div class="concept-desc">
+            既存の慣行や定常的軌道を打破し、不確実性に挑んでイノベーション（新結合）を実行する革新者。
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--primary-light);">
+          <div class="concept-title">
+            <span>🏦 信用創造</span>
+          </div>
+          <div class="concept-desc">
+            銀行が「無から」新たな購買力を創出して資金を供給し、企業者が既存の部門から生産手段を引き抜いてイノベーションを遂行するのを後押しする仕組み。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 景気循環のメカニズム -->
+    <section id="mechanism">
+      <h2>🔄 2. 景気循環のメカニズム（なぜ波が起きるのか）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        イノベーションは時間を通じて均等に少しずつ起きるのではなく、特定の時期に<strong>「群生的に（群れをなして）出現する」</strong>性質を持つため、資本主義の発展は必然的に波状の景気循環を描きます。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-5" class="cite-badge">[5]</a>
+      </p>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-badge" style="background: var(--emerald);">📈</div>
+          <div class="step-content">
+            <div class="step-header">第1局面：好況期（Prosperity）― 模倣者の群生と投資ブーム</div>
+            <div class="step-text">
+              先駆的なひとりの企業者が困難を突破してイノベーションに成功すると、道が切り拓かれ、その高利潤を見て多数の企業者が一斉に追随（群生的発生）します。銀行の信用創造を伴って設備投資や生産が爆発的に活発化し、物価と雇用が上昇します。
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge" style="background: var(--rose);">📉</div>
+          <div class="step-content">
+            <div class="step-header">第2局面：後退・不況期（Recession / Depression）― 創造的破壊と淘汰</div>
+            <div class="step-text">
+              新しい技術や製品が市場に大量に出回り始めると価格が下落し、企業者は利潤から銀行借入を返済（信用の自動収縮）します。古い技術や非効率な旧産業が淘汰される過程（<strong>創造的破壊</strong>）で過剰生産や倒産、一時的な混乱が生じます（さらに好況期に便乗した投機の「第二次波動」が崩壊すると深刻な不況となります）。
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge" style="background: var(--primary);">⚖️</div>
+          <div class="step-content">
+            <div class="step-header">第3局面：再均衡（Recovery / New Equilibrium）― 次の革新への準備</div>
+            <div class="step-text">
+              新旧産業の交代と価格体系の再編成（適応過程）が進むと混乱が鎮まり、経済は以前よりも一段高い生産力と実質所得を持つ新たな「<strong>均衡の近傍</strong>」に落ち着き、次のイノベーションの波を待ちます。<a href="#ref-5" class="cite-badge">[5]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 3つの循環（波動）の重なり -->
+    <section id="three-waves">
+      <h2>🌊 3. 3つの循環（波動）の重なり（三循環図式）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        シュンペーターは1939年の大著『景気循環論』において、規模と期間の異なる<strong>3つの循環</strong>が同時に存在し、それらが重なり合う（合成される）ことで現実の複雑な景気変動が起きると定式化しました。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- Kitchin -->
+        <div class="wave-card" style="border-top: 4px solid var(--accent);">
+          <div>
+            <span class="wave-period" style="background: var(--accent-light); color: var(--accent-dark);">短波：約40ヶ月（3〜4年）</span>
+            <div class="wave-title">キチン循環 (Kitchin)</div>
+            <div class="wave-cause" style="color: var(--accent-dark);">📦 主因：企業の在庫調整</div>
+            <div class="wave-desc">
+              ジョセフ・キチンが発見。景気拡大に伴う在庫の積み増しと、需要鈍化に伴う在庫削減のサイクルによって生じる短期的な小循環。
+            </div>
+          </div>
+        </div>
+
+        <!-- Juglar -->
+        <div class="wave-card" style="border-top: 4px solid var(--emerald);">
+          <div>
+            <span class="wave-period" style="background: var(--emerald-light); color: var(--emerald);">中波：約10年（7〜11年）</span>
+            <div class="wave-title">ジュグラー循環 (Juglar)</div>
+            <div class="wave-cause" style="color: var(--emerald);">🏭 主因：機械・設備投資の更新</div>
+            <div class="wave-desc">
+              クレマン・ジュグラーが発見。工場機械や生産設備の耐用年数・更新投資サイクルと信用拡大・収縮が連動して生じる中期的な主循環。
+            </div>
+          </div>
+        </div>
+
+        <!-- Kondratiev -->
+        <div class="wave-card" style="border-top: 4px solid var(--primary);">
+          <div>
+            <span class="wave-period" style="background: #dbeafe; color: var(--primary);">長波：約50年（45〜60年）</span>
+            <div class="wave-title">コンドラチェフ循環 (Kondratiev)</div>
+            <div class="wave-cause" style="color: var(--primary);">🚀 主因：根本的技術革新・社会変革</div>
+            <div class="wave-desc">
+              ニコライ・コンドラチェフが発見。蒸気機関、鉄道、電力・自動車、ITなど、文明の基盤を塗り替える巨大イノベーションが駆動する長期波動。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- インタラクティブ波形合成シミュレーター -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">📊 【インタラクティブ波形合成】シュンペーターの三循環図式</div>
+          <span style="font-size: 0.82rem; color: var(--text-muted);">1つの長波 ≒ 6つの中波 ≒ 18個の短波</span>
+        </div>
+
+        <div class="wave-toggles">
+          <label class="toggle-label" style="color: #1e3a8a;">
+            <input type="checkbox" id="chkKond" checked onchange="drawWaves()">
+            <span>🔵 コンドラチェフ波（50年）</span>
+          </label>
+          <label class="toggle-label" style="color: #059669;">
+            <input type="checkbox" id="chkJug" checked onchange="drawWaves()">
+            <span>🟢 ジュグラー波（10年）</span>
+          </label>
+          <label class="toggle-label" style="color: #d97706;">
+            <input type="checkbox" id="chkKit" checked onchange="drawWaves()">
+            <span>🟠 キチン波（40ヶ月）</span>
+          </label>
+          <label class="toggle-label" style="color: #e11d48; font-weight: 800;">
+            <input type="checkbox" id="chkSum" checked onchange="drawWaves()">
+            <span>🔴 合成波（現実の複合景気変動）</span>
+          </label>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="waveCanvas" width="840" height="300"></canvas>
+        </div>
+
+        <div class="sim-caption">
+          <strong>【波形の見方と1929年世界恐慌の解明】</strong><br>
+          赤い太線（合成波）が実際の経済が経験する景気変動です。コンドラチェフ長波の上昇期には好況が力強く長く続き、逆に<strong>3つの波の「谷（下降局面）」が同時に重なった時点（グラフ右端付近）</strong>では、1929年の世界大恐慌のような歴史的な大不況が発生するとシュンペーターは説明しました。
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. コンドラチェフ長期波動の歴史的5波とケインズとの対比 -->
+    <section id="history-and-comparison">
+      <h2>🏛️ 4. コンドラチェフ長波の歴史的展開とケインズ理論との対比</h2>
+
+      <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.5rem;">
+        ① 技術革新とコンドラチェフ長波の歴史的5段階<a href="#ref-2" class="cite-badge">[2]</a>
+      </h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>長期波動</th>
+              <th>時期（概算）</th>
+              <th>中核となった新結合（イノベーション）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>第1波</strong></td>
+              <td>1780年代 〜 1840年代</td>
+              <td><strong>産業革命</strong>（水力・蒸気機関、紡績機、綿織物工業、製鉄）</td>
+            </tr>
+            <tr>
+              <td><strong>第2波</strong></td>
+              <td>1840年代 〜 1890年代</td>
+              <td><strong>蒸気と鋼鉄の時代</strong>（鉄道網の敷設、蒸気船、鋼鉄生産の革新）</td>
+            </tr>
+            <tr>
+              <td><strong>第3波</strong></td>
+              <td>1890年代 〜 1940年代</td>
+              <td><strong>電気・化学・内燃機関の時代</strong>（電力網、重化学工業、自動車の誕生）</td>
+            </tr>
+            <tr>
+              <td><strong>第4波</strong></td>
+              <td>1940年代 〜 1990年代</td>
+              <td><strong>石油化学・大量生産・電子の時代</strong>（家電、航空機、コンピュータ初期、高速道路）</td>
+            </tr>
+            <tr>
+              <td><strong>第5波</strong></td>
+              <td>1990年代 〜 現在</td>
+              <td><strong>情報通信（IT・デジタル・AI）の時代</strong>（インターネット、モバイル、AI、バイオ）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin: 1.75rem 0 0.5rem;">
+        ② 20世紀の二大巨人：シュンペーター vs ケインズ
+      </h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 24%;">比較の視座</th>
+              <th style="width: 38%;">シュンペーター（供給・動態・長期）</th>
+              <th style="width: 38%;">ケインズ（需要・短期・マクロ管理）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>分析の時間軸</strong></td>
+              <td><strong>長期・動態的</strong>（数十年単位の構造変革）</td>
+              <td><strong>短期・静態的</strong>（「長期には我々は皆死んでいる」）</td>
+            </tr>
+            <tr>
+              <td><strong>景気変動の主因</strong></td>
+              <td>企業家による<strong>イノベーション（新結合）と創造的破壊</strong></td>
+              <td>投資の限界効率の変動と<strong>有効需要の不足・流動性選好</strong></td>
+            </tr>
+            <tr>
+              <td><strong>不況の捉え方</strong></td>
+              <td>旧産業が淘汰され新産業へ資源が移る<strong>必然的な適応過程</strong></td>
+              <td>非自発的失業を生み出す<strong>市場の機能不全（浪費）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>政策への態度</strong></td>
+              <td>安易な救済やインフレ政策は新陳代謝を阻害すると警戒</td>
+              <td><strong>積極的な財政出動と金融緩和</strong>による総需要の底上げ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="http://ritsumeikeizai.koj.jp/koj_pdfs/14403.pdf" target="_blank" rel="noopener noreferrer">
+            立命館経済学（シュンペーターの景気循環論と動態的経済発展のメカニズム）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://www.mlit.go.jp/hakusyo/mlit/h28/hakusho/h29/html/n1113c01.html" target="_blank" rel="noopener noreferrer">
+            国土交通省『平成29年版 国土交通白書』（コンドラチェフの波とイノベーションの歴史的変遷）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://aty800.com/highest-goal/books/schumpeter-importantworks.html" target="_blank" rel="noopener noreferrer">
+            シュンペーター主要著作ガイド（『経済発展の理論』『景気循環論』における三循環図式）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://mba.globis.ac.jp/about_mba/glossary/detail-11823.html" target="_blank" rel="noopener noreferrer">
+            グロービス経営大学院 MBA用語集「創造的破壊（Creative Destruction）とイノベーション」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="http://www.eonet.ne.jp/~bookman/kikouhonn/schumpcycles.html" target="_blank" rel="noopener noreferrer">
+            シュンペーター『景気循環論 ― 資本主義過程の理論的・歴史的・統計的分析』解説
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Schumpeter's Business Cycles Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive 3-Wave Superposition Script -->
+  <script>
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawWaves() {
+      const showKond = document.getElementById('chkKond').checked;
+      const showJug = document.getElementById('chkJug').checked;
+      const showKit = document.getElementById('chkKit').checked;
+      const showSum = document.getElementById('chkSum').checked;
+
+      const w = canvas.width;
+      const h = canvas.height;
+      const midY = h / 2;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Draw Equilibrium Center Line
+      ctx.beginPath();
+      ctx.setLineDash([5, 5]);
+      ctx.moveTo(40, midY);
+      ctx.lineTo(w - 20, midY);
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = '#64748b';
+      ctx.font = '11px system-ui, sans-serif';
+      ctx.fillText('均衡水準 (Equilibrium)', 45, midY - 6);
+      ctx.fillText('時間 (約60年間 = コンドラチェフ1周期) ➔', w - 230, h - 12);
+
+      const startX = 40;
+      const endX = w - 20;
+      const plotW = endX - startX;
+
+      // Wave functions over t in [0, 1] (1 Kondratiev = 6 Juglars = 18 Kitchins)
+      function getKond(t) {
+        return Math.sin(t * 2 * Math.PI) * 58;
+      }
+      function getJug(t) {
+        return Math.sin(t * 6 * 2 * Math.PI) * 28;
+      }
+      function getKit(t) {
+        return Math.sin(t * 18 * 2 * Math.PI) * 12;
+      }
+
+      // 1. Kondratiev Wave
+      if (showKond) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(30, 58, 138, 0.55)';
+        ctx.lineWidth = 2.5;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          const y = midY - getKond(t);
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // 2. Juglar Wave
+      if (showJug) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(5, 150, 105, 0.55)';
+        ctx.lineWidth = 2;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          const y = midY - getJug(t);
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // 3. Kitchin Wave
+      if (showKit) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(217, 119, 6, 0.5)';
+        ctx.lineWidth = 1.5;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          const y = midY - getKit(t);
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // 4. Composite Wave (Sum of selected waves)
+      if (showSum) {
+        ctx.beginPath();
+        ctx.strokeStyle = '#e11d48';
+        ctx.lineWidth = 3.2;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          let val = 0;
+          if (showKond) val += getKond(t);
+          if (showJug) val += getJug(t);
+          if (showKit) val += getKit(t);
+          const y = midY - val;
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Highlight deep trough where all 3 align around t = 0.75
+        if (showKond && showJug && showKit) {
+          const troughT = 0.74;
+          const tx = startX + troughT * plotW;
+          const ty = midY - (getKond(troughT) + getJug(troughT) + getKit(troughT));
+
+          ctx.beginPath();
+          ctx.arc(tx, ty, 6, 0, Math.PI * 2);
+          ctx.fillStyle = '#be123c';
+          ctx.fill();
+          ctx.strokeStyle = '#ffffff';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          ctx.fillStyle = '#be123c';
+          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.fillText('⚠️ 3つの波の谷が重なる大恐慌点', tx - 85, ty + 20);
+        }
+      }
+    }
+
+    // Initial render
+    drawWaves();
+  </script>
+</body>
+</html>
