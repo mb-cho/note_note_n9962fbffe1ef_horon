@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：能動的預金（Actively Created Deposit）のメカニズム</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, var(--primary-dark) 50%, var(--primary) 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 820px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Cards Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tag-active {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .tag-passive {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    /* Interactive Comparison Model */
+    .sim-container {
+      background: #f8fafc;
+      border: 2px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-group {
+      display: flex;
+      background: #e2e8f0;
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Balance Sheet (T-Account) */
+    .t-account {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-top: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .t-header {
+      background: var(--primary-dark);
+      color: #ffffff;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.5rem;
+    }
+
+    .t-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      divide-x: 1px solid var(--border);
+    }
+
+    .t-side {
+      padding: 1rem;
+    }
+
+    .t-side-header {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .t-entry {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .t-entry.highlight {
+      background: #fef3c7;
+      border-radius: 0.25rem;
+      padding: 0.4rem 0.5rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .sim-explanation {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #ffffff;
+      border-left: 4px solid var(--accent);
+      border-radius: 0.35rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%);
+      border: 1px solid #c7d2fe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: #4338ca;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #1e1b4b;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4338ca;
+      margin-top: 0.5rem;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Navigation Pill */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .t-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Navigation Bar between Supplements -->
+    <div class="nav-box">
+      <span style="font-size: 0.9rem; color: var(--text-muted);">📚 金融寡占制の歴史と崩壊・補論シリーズ</span>
+      <a href="SinYoSoZo.html" class="nav-link">
+        <span>信用創造の仕組みとリスク（SinYoSoZo.html）へ ➔</span>
+      </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 貨幣理論・金融経済学ノート</span>
+        <span class="badge badge-sub">ケインズ『貨幣論』(1930)</span>
+      </div>
+      <h1>能動的預金（Actively Created Deposit）</h1>
+      <p class="lead">
+        ジョン・メイナード・ケインズ（John Maynard Keynes）の『貨幣論』（<em>A Treatise on Money</em>, 1930年）において、銀行による信用創造（預金創造）のメカニズムを説明する際に提示された概念が「<strong>能動的預金（Actively Created Deposit）</strong>」です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a>
+        <br><br>
+        ケインズは、銀行が創り出す預金には性質の異なる「<strong>能動的預金</strong>」と「<strong>受動的預金</strong>」の2つがあると定義しました。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-4" class="cite-badge">[4]</a>
+      </p>
+    </header>
+
+    <!-- 1. 能動的預金とは -->
+    <section id="definition">
+      <h2>💡 1. 能動的預金とは</h2>
+      <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
+        銀行が自らの意思（能動的）で貸出（ローン）を行ったり、有価証券を購入したりすることによって創り出す預金のことです。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-4" class="cite-badge">[4]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>🖋️ メカニズム：キーストロークによる創造</span>
+          </div>
+          <div class="concept-desc">
+            銀行が企業に融資を行う際、銀行は手元にある現金を金庫から持ち出して貸し出すのではありません。<strong>借り手の口座に数字を書き込む（記帳・入力する）だけ</strong>で、新たな預金通貨を生み出します。<a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🚀 意味合い：「貸出が預金を創る」</span>
+          </div>
+          <div class="concept-desc">
+            「<strong>貸出が預金を創る</strong>」という内生的貨幣供給（信用創造）の本質を表しており、景気循環において銀行組織が受動的な仲介者ではなく、主導的な役割を果たす原動力となります。<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-6" class="cite-badge">[6]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 核心命題のハイライト引用 -->
+      <div class="quote-box">
+        <div class="quote-title">KEY PRINCIPLE OF CREDIT CREATION</div>
+        <div class="quote-text">
+          「銀行は集めた預金を貸し出しているのではない。銀行の貸出行為そのものが、同額の新しい預金通貨を無から生み出しているのである。」
+        </div>
+        <div class="quote-author">― 内生的貨幣供給理論（Endogenous Money Theory）</div>
+      </div>
+    </section>
+
+    <!-- 2. 受動的預金との違い -->
+    <section id="comparison">
+      <h2>⚖️ 2. 受動的預金との違い</h2>
+      <p style="margin-bottom: 1rem;">
+        対になる概念が「<strong>受動的預金（Passively Created Deposit）</strong>」です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-4" class="cite-badge">[4]</a>
+      </p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">預金の分類</th>
+              <th style="width: 25%;">創造の主導権</th>
+              <th style="width: 55%;">具体的なプロセス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="tag-active">能動的預金</span><br>
+                <small style="color: var(--text-muted);">Actively Created</small>
+              </td>
+              <td><strong>銀行側</strong></td>
+              <td>
+                銀行が自発的に貸出や資産購入を行うことで、新たに預金を通貨として創り出す。銀行システム全体がマネーストックを能動的に拡張する。
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="tag-passive">受動的預金</span><br>
+                <small style="color: var(--text-muted);">Passively Created</small>
+              </td>
+              <td><strong>顧客（公衆）側</strong></td>
+              <td>
+                顧客が現金（中央銀行紙幣など）を銀行の窓口に持ち込んで預け入れる。銀行側はこれを受動的に受け入れ、口座の数値を更新する。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- インタラクティブ・バランスシート比較 -->
+      <div class="sim-container">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>📊 バランスシート動態比較シミュレーター</span>
+          </div>
+          <div class="tab-group">
+            <button class="tab-btn active" id="btnActive" onclick="switchModel('active')">能動的預金（ケインズ説）</button>
+            <button class="tab-btn" id="btnPassive" onclick="switchModel('passive')">又貸し説（伝統的通念）</button>
+          </div>
+        </div>
+
+        <div class="t-account" id="tAccountBox">
+          <div class="t-header" id="modelHeader">能動的預金モデル：貸出実行時の銀行バランスシート</div>
+          <div class="t-grid">
+            <div class="t-side" style="border-right: 1px solid var(--border);">
+              <div class="t-side-header">
+                <span>【資産の部（Assets）】</span>
+                <span>借方</span>
+              </div>
+              <div id="assetEntries">
+                <!-- JSで動的に切り替え -->
+              </div>
+            </div>
+            <div class="t-side">
+              <div class="t-side-header">
+                <span>【負債の部（Liabilities）】</span>
+                <span>貸方</span>
+              </div>
+              <div id="liabEntries">
+                <!-- JSで動的に切り替え -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-explanation" id="modelExplanation">
+          <!-- JSで動的解説 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. なぜこの概念が重要なのか -->
+    <section id="significance">
+      <h2>🏛️ 3. なぜこの概念が重要なのか</h2>
+      
+      <p style="margin-bottom: 1.25rem;">
+        伝統的な経済学の「<strong>又貸し説</strong>（顧客が預けたお金を原資にして他の人に貸し出す）」に対して、ケインズは『貨幣論』において「<strong>銀行全体としては、能動的な行動（貸出・投資）によって自ら預金（マネー）の総量を決定・拡大できる</strong>」という近代的な信用創造のメカニズムを浮き彫りにしました。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="concept-card" style="border-left-color: var(--purple);">
+          <div class="concept-title">
+            <span>📈 内生的貨幣供給理論の確立</span>
+          </div>
+          <div class="concept-desc">
+            この考え方は、のちの現代マクロ経済学や、現代の「<a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%82%B9%E3%83%88%E3%82%B1%E3%82%A4%E3%83%B3%E3%82%BA%E6%B4%BE%E7%B5%8C%E6%B8%88%E5%AD%A6" target="_blank" rel="noopener noreferrer" style="color: var(--primary-light); font-weight: 600;">ポスト・ケインズ派</a>」が主張する<strong>内生的貨幣供給理論</strong>（マネーは中央銀行の外生的供給ではなく、実体経済の資金需要と民間銀行の能動的貸出によって事後的に生み出されるという説）に決定的な影響を与えました。<a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-6" class="cite-badge">[6]</a>
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>🏦 中央銀行（BOE等）による公式認定</span>
+          </div>
+          <div class="concept-desc">
+            2014年、イングランド銀行（Bank of England）は季刊報告書『<em>Money creation in the modern economy</em>』において、「銀行は単に貯蓄を貸し出す仲介者であるという通念は誤りであり、貸出を通じて能動的に預金を創出している」と公式に表明しました。ケインズの直観は現代中央銀行の共通理解となっています。<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-7" class="cite-badge">[7]</a><a href="#ref-8" class="cite-badge">[8]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 発展的視点 -->
+    <section id="advanced">
+      <h2>🔍 4. 発展的視点：『一般理論』流動性選好説への展開</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+        ケインズは1930年の『貨幣論』で能動的預金を提示した後、1936年の主著『雇用・利子および貨幣の一般理論』において、貨幣を保有しようとする人々の心理的動機を解明する「<strong>流動性選好説（Liquidity Preference Theory）</strong>」へと理論を発展させました。<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-7" class="cite-badge">[7]</a><a href="#ref-8" class="cite-badge">[8]</a>
+        <br><br>
+        銀行が能動的に預金（購買力）を創出できるとしても、企業や投資家が将来の不確実性から実物投資を避け、貨幣を滞留（退蔵）させれば有効需要は不足します。ケインズの貨幣理論は、銀行の信用創造能力の巨大さと、金融市場における投機・流動性退蔵の危険性を表裏一体のものとして捉えた点に真骨頂があります。
+      </p>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://www.yu-cho-f.jp/wp-content/uploads/201308.takigawa.pdf" target="_blank" rel="noopener noreferrer">
+            ゆうちょ財団 / 郵政研究所（瀧川好央「ケインズ『貨幣論』における銀行組織と信用創造」）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://1000ya.isis.ne.jp/1372.html" target="_blank" rel="noopener noreferrer">
+            松岡正剛の千夜千冊 1372夜『貨幣論』ジョン・メイナード・ケインズ
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E4%BF%A1%E7%94%A8%E5%89%B5%E9%80%A0" target="_blank" rel="noopener noreferrer">
+            Wikipedia「信用創造」（内生的貨幣供給と中央銀行の見解）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="http://ritsumeikeizai.koj.jp/koj_pdfs/37604.pdf" target="_blank" rel="noopener noreferrer">
+            立命館経済学（ケインズ貨幣論における能動的預金と受動的預金の分析）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E4%BF%A1%E7%94%A8%E5%89%B5%E9%80%A0" target="_blank" rel="noopener noreferrer">
+            Wikipedia「信用創造」（銀行による記帳と預金通貨の創出）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://meiji.repo.nii.ac.jp/record/2057/files/shogakuronso_70_2_73.pdf" target="_blank" rel="noopener noreferrer">
+            明治大学 商学論叢（内生的貨幣供給理論の展開とポスト・ケインズ派）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://money-bu-jpx.com/news/article047395/" target="_blank" rel="noopener noreferrer">
+            東証マネ部！（ケインズ経済学と流動性選好説・貨幣の3つの動機）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-tag">[8]</span>
+          <a class="ref-link" href="https://diamond.jp/articles/-/325327" target="_blank" rel="noopener noreferrer">
+            ダイヤモンド・オンライン（現代マクロ経済学が問い直す貨幣と信用の実態）
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Actively Created Deposit Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Model Switching Script -->
+  <script>
+    function switchModel(type) {
+      const btnActive = document.getElementById('btnActive');
+      const btnPassive = document.getElementById('btnPassive');
+      const header = document.getElementById('modelHeader');
+      const assetDiv = document.getElementById('assetEntries');
+      const liabDiv = document.getElementById('liabEntries');
+      const explDiv = document.getElementById('modelExplanation');
+
+      if (type === 'active') {
+        btnActive.classList.add('active');
+        btnPassive.classList.remove('active');
+        header.innerText = '能動的預金モデル（ケインズ・現代信用創造）：貸出実行時';
+
+        assetDiv.innerHTML = `
+          <div class="t-entry highlight">
+            <span>貸出金債権（借入証書）</span>
+            <span>+1,000 万円</span>
+          </div>
+          <div class="t-entry" style="color: var(--text-muted);">
+            <span>手元現金（準備金）</span>
+            <span>±0 円（不変）</span>
+          </div>
+        `;
+
+        liabDiv.innerHTML = `
+          <div class="t-entry highlight">
+            <span>当座預金（顧客口座へ記帳）</span>
+            <span>+1,000 万円</span>
+          </div>
+          <div class="t-entry" style="color: var(--text-muted);">
+            <span>既存の預金残高</span>
+            <span>±0 円（他口座は不変）</span>
+          </div>
+        `;
+
+        explDiv.innerHTML = `
+          <strong>【能動的預金のポイント】</strong><br>
+          銀行は他者から預かった現金を右から左へ移すのではなく、資産に「貸出金 +1,000万円」、負債に「預金 +1,000万円」を<strong>同時に両建てで記帳</strong>します。この瞬間、社会全体のマネーストックが1,000万円純増します。これがケインズの言う「銀行の能動的行動による預金創造」です。
+        `;
+      } else {
+        btnPassive.classList.add('active');
+        btnActive.classList.remove('active');
+        header.innerText = '伝統的「又貸し説」モデル（誤解されがちな通念）：預金受入と貸出時';
+
+        assetDiv.innerHTML = `
+          <div class="t-entry">
+            <span>受入現金（金庫内）</span>
+            <span>+1,000 万円</span>
+          </div>
+          <div class="t-entry" style="color: #b91c1c;">
+            <span>貸出による現金の引き渡し</span>
+            <span>-900 万円</span>
+          </div>
+          <div class="t-entry" style="font-weight: 600;">
+            <span>残存準備金</span>
+            <span>100 万円</span>
+          </div>
+        `;
+
+        liabDiv.innerHTML = `
+          <div class="t-entry">
+            <span>受動的預金（持込者の口座）</span>
+            <span>+1,000 万円</span>
+          </div>
+          <div class="t-entry" style="color: var(--text-muted);">
+            <span>新規の預金創出</span>
+            <span>なし（現金移転のみ）</span>
+          </div>
+        `;
+
+        explDiv.innerHTML = `
+          <strong>【又貸し説（通念）の限界】</strong><br>
+          このモデルでは「顧客が現金を預けない限り、銀行は1円も貸し出せない」と考えます（銀行＝単なる資金の仲介業者）。しかしケインズや現代マクロ経済学が暴いた現実は正反対で、銀行は事前の現金を待つことなく、貸出を決定することで自ら能動的に預金を生み出しています。
+        `;
+      }
+    }
+
+    // Initialize with active deposit
+    switchModel('active');
+  </script>
+</body>
+</html>
