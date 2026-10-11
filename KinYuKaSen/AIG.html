@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：AIG（アメリカン・インターナショナル・グループ）危機とウォール街の「裏口救済」</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Bailout Conduit Visual Box */
+    .conduit-box {
+      background: linear-gradient(180deg, #fffbeb 0%, #fff1f2 100%);
+      border: 2px solid #fda4af;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .conduit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      align-items: stretch;
+      margin-top: 1rem;
+    }
+
+    .conduit-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+      <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+      <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+      <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+      <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+      <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+      <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+      <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+      <a href="Borucar.html" class="nav-link">⑯ ボルカー・ショック</a>
+      <a href="SAP.html" class="nav-link">⑰ 構造調整プログラム</a>
+      <a href="AIG.html" class="nav-link active">⑱ AIG危機と救済</a>
+    </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">2008年世界金融危機・デリバティブ補論</span>
+        <span class="badge badge-sub">CDS（信用デフォルトスワップ）と総額1,800億ドル超の公的救済</span>
+      </div>
+      <h1>AIG（American International Group）危機：<br>なぜ巨大保険会社がリーマン・ショックの「本丸」となり税金で救済されたのか？</h1>
+      <p class="lead">
+        この文脈における<strong>AIG（アメリカン・インターナショナル・グループ / American International Group）</strong>とは、当時<strong>世界最大の資産規模と最上級の信用力を誇っていたアメリカの超巨大保険・金融複合企業（コングロマリット）</strong>です。<br>
+        本来は生命保険や損害保険といった手堅い保険事業を世界規模で展開する企業でしたが、2008年の世界金融危機（リーマン・ショック）では、<strong>わずか数十人のスタッフで構成された金融子会社の無謀なデリバティブ取引</strong>が引き金となり、全米・世界経済を巻き込む壊滅的な危機を引き起こしました。
+      </p>
+    </header>
+
+    <!-- Section 1: Why an Insurance Company Became the Epicenter -->
+    <section>
+      <h2>1. なぜ「保険会社」が危機の本丸になったのか</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        AIGの破綻危機の元凶となったのは、ロンドンに拠点を置いていた特命子会社<strong>「AIGフィナンシャル・プロダクツ（AIGFP）」</strong>でした。
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① 「最上級の信用格付け（AAA）」の切り売り</span>
+          </div>
+          <p class="factor-desc">
+            当時のAIG本社は、世界最強クラスの信用力である<strong>「AAA格付け」</strong>を保持していました。AIGFPはこの本社の信用力を看板にし、ウォール街の投資銀行（<strong>ゴールドマン・サックス、メリルリンチ、ドイツ銀行など</strong>）に対し、天文学的な規模の<strong>CDS（信用デフォルトスワップ）</strong>を販売しました。
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>② CDSによる疑似保険ビジネス</span>
+          </div>
+          <p class="factor-desc">
+            <strong>CDS（Credit Default Swap）</strong>とは、投資銀行が保有する住宅ローン担保証券（<strong>MBS</strong>）や債務担保証券（<strong>CDO</strong>）が焦げ付いた際、その損失を肩代わりして補償する金融派生商品（デリバティブ）です。
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ 「濡れ手に粟」の過信</span>
+          </div>
+          <p class="factor-desc">
+            AIGFPは「全米規模で住宅価格が同時に下落することなどあり得ない」という数理モデルを過信し、<strong>損失発生に備える担保（積立金）をろくに積まないまま</strong>、手数料（保証料）をノーリスクの利益として貪り食い、巨額のボーナスを山分けしていました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Mechanism of Near-Collapse & Interactive Simulator -->
+    <section>
+      <h2>2. 破綻寸前に追い込まれたメカニズム（4段階の逆回転）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        2007年以降、米国のサブプライム住宅ローンバブルが崩壊すると、構造は一気に逆回転を始めました。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 1：裏付け資産の暴落</span>
+          <div class="flow-title">CDO価格の暴落</div>
+          <p class="flow-desc">
+            住宅ローンの焦げ付きが急増し、AIGがCDSで保証していた<strong>債務担保証券（CDO）の価値がゼロ同然に激落</strong>しました。
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 2：信用の喪失</span>
+          <div class="flow-title">AIG自体の信用格下げ</div>
+          <p class="flow-desc">
+            巨額の含み損を抱えたことで、格付け会社がAIGの命綱であった<strong>「AAA格付け」を引き下げ</strong>ました。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 3：担保請求の殺到</span>
+          <div class="flow-title">追加担保（コラテラル）請求</div>
+          <p class="flow-desc">
+            格付けが下がると、CDS契約に基づき取引先（メガバンク各行）へ<strong>即座に莫大な現金の担保を差し入れる義務</strong>が発生しました。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 4：デッドロック</span>
+          <div class="flow-title">資金枯渇（流動性パニック）</div>
+          <p class="flow-desc">
+            ウォール街中から<strong>数兆円単位の現金差し入れを一斉に要求</strong>され、数日のうちに手元流動性が完全にショートしました。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 AIGフィナンシャル・プロダクツ（AIGFP）の暴走から破綻・公的資金裏口救済シミュレーター</div>
+            <div class="sim-subtitle">フェーズを切り替えて、AIGの格付け・追加担保請求（コラテラル・コール）・1,800億ドル超の救済資金の流れを確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜〜2006年（バブル期）</span>
+            AAA格付け切り売りとCDS乱発
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜2007〜2008年夏</span>
+            サブプライムCDO暴落と含み損急増
+          </button>
+          <button class="phase-btn active" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜2008年9月15〜16日</span>
+            格下げと追加担保請求で資金ショート
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜2008年9月16日〜</span>
+            1,800億ドル超の国有化と裏口救済
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">AIG本社の信用格付け・手元流動性</div>
+            <div class="metric-value" id="m-rating">AAA剥奪 ➔ 数日で現金完全枯渇</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-rating" style="width: 8%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">メガバンクからの追加担保（コラテラル）請求</div>
+            <div class="metric-value" id="m-collateral">極限（数兆円規模の即時現金要求）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-collateral" style="width: 100%; background-color: #e11d48;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">公的資金（国民の税金）の投入・メガバンク移転</div>
+            <div class="metric-value" id="m-bailout">破綻直前（翌日に1,800億ドル超投入へ）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-bailout" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 3：2008年9月15〜16日 ― リーマン破綻翌日の「格下げ」と追加担保請求による流動性パニック】</strong><br>
+          2008年9月15日にリーマン・ブラザーズが破綻した直後、格付け会社3社がAIGの格付けを一斉に引き下げました。AIGFPのCDS契約には「AIG本体がAAA格付けを維持している限り担保を積まなくてよいが、<strong>格下げされた瞬間に巨額の現金を追加担保（コラテラル）として差し入れなければならない</strong>」という条項（トリガー）が入っていたため、ゴールドマン・サックスなど取引先銀行から数兆円規模の現金請求が殺到し、AIGは一夜にして破綻の淵に立たされました。
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Too Big to Fail & Wall Street Backdoor Bailout -->
+    <section>
+      <h2>3. 「大きすぎて潰せない（Too Big to Fail）」とウォール街の裏口救済</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        リーマン・ブラザーズが破綻した翌日の<strong>2008年9月16日</strong>、AIGは完全に債務超過・破綻の淵に立たされました。
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🏛️ 総額1,800億ドル超（約19兆円）の実質国有化</span>
+          </div>
+          <p class="factor-desc">
+            リーマンを見捨てた米連邦準備制度理事会（FRB）と米財務省は、AIGに対しては<strong>即座に方針を転換し、最終的に総額1,800億ドル超（当時の日本円で約19兆円）という史上最大規模の公的資金（国民の税金）を投入して実質国有化</strong>しました。<br><br>
+            もし世界中に保険とCDSを網の目のように張り巡らせていたAIGを倒産させれば、AIGからCDSを買っていたウォール街や欧州の巨大銀行が一斉に巨額損失を抱えて連鎖破綻し、<strong>西側金融システムそのものが完全に機能停止（メルトダウン）する</strong>と判断されたためです。
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>💸 ゴールドマン・サックス等への「100%全額裏口救済」</span>
+          </div>
+          <p class="factor-desc">
+            結果として、国民の税金でAIGを救済した資金は、AIGの取引相手であった<strong>ゴールドマン・サックスなどに100%全額（1ドルの減額＝ヘアカットもなしに）支払われました</strong>。<br><br>
+            このため実態としては<strong>「AIGという受け皿を通じて、無謀な投機を行っていたウォール街の巨大メガバンクを税金で裏口救済した」</strong>として、当時の米国民から猛烈な怒りと批判を浴びることになりました。
+          </p>
+        </div>
+      </div>
+
+      <!-- Visual Conduit Diagram -->
+      <div class="conduit-box">
+        <div style="font-weight: 800; color: var(--crimson); font-size: 1.08rem;">
+          🔄 「AIG救済」の真実：公的資金がAIGを素通りしてメガバンクへ流れた「バックドア・ベイルアウト（裏口救済）」
+        </div>
+        <div class="conduit-grid">
+          <div class="conduit-card">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--primary); margin-bottom: 0.3rem;">① 資金の出し手（公的負担）</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.4rem;">FRB（NY連銀）＆米財務省</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              米国の納税者・中央銀行が<strong>総額1,823億ドル（約19兆円）</strong>の救済枠をAIGへ投入。
+            </p>
+          </div>
+          <div class="conduit-card" style="border-color: #fbbf24; background: #fffbeb;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 0.3rem;">② トンネル（通過点）</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.4rem;">AIG ＆ 子会社AIGFP</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              投入された公的資金のうち数百億ドルが、CDS契約の決済・担保金としてそのまま取引先銀行へ送金された。
+            </p>
+          </div>
+          <div class="conduit-card" style="border-color: #fda4af; background: #fff1f2;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--rose); margin-bottom: 0.3rem;">③ 真の受益者（100%額面回収）</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.4rem;">ウォール街・欧州の巨大銀行</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              <strong>ゴールドマン・サックス（約129億ドル）</strong>、ソシエテ・ジェネラル、ドイツ銀行、メリルリンチ等が損失負担ゼロ（100%額面）で回収。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table: Traditional Insurance vs CDS Casino -->
+      <h3>📊 深掘り比較：「本来の伝統的保険事業」と「AIGFPのCDS（疑似保険）ビジネス」の違い</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">比較項目</th>
+              <th style="width: 39%;">伝統的な保険事業（生命保険・損害保険）</th>
+              <th style="width: 39%;">AIGFPが行ったCDS（信用デフォルトスワップ）取引</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>法的な位置づけと規制</strong></td>
+              <td>各州の厳格な<strong>保険法・監督当局の規制対象</strong>。</td>
+              <td>「保険ではなく店頭デリバティブ契約」とみなされ、<strong>保険規制や監督から除外</strong>されていた。</td>
+            </tr>
+            <tr>
+              <td><strong>支払準備金（積立金）の義務</strong></td>
+              <td>将来の保険金支払いに備え、厳格な<strong>責任準備金（リザーブ）の積み立てが義務付け</strong>られている。</td>
+              <td>本社の「AAA格付け」を盾に、<strong>損失発生に備える担保・積立金をほとんど積まずに保証を乱発</strong>できた。</td>
+            </tr>
+            <tr>
+              <td><strong>リスクの性質（大数の法則）</strong></td>
+              <td>自動車事故や火災・死亡など、<strong>互いに独立した事象</strong>（同時に全員が被災しない）を対象とする。</td>
+              <td>住宅バブル崩壊という<strong>システミック・リスク（全米・全世界で一斉に同時発生する連鎖暴落）</strong>を対象としていた。</td>
+            </tr>
+            <tr>
+              <td><strong>破綻時の負担構造</strong></td>
+              <td>契約者保護機構と厳格な資産保全により契約者が保護される。</td>
+              <td><strong>「利益は社員の巨額ボーナスとして私有化され、巨額損失は『大きすぎて潰せない』として国民の税金に社会化」</strong>された。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑱ ｜ AIG危機とCDS（信用デフォルトスワップ）・ウォール街の「裏口救済」</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        ratingText: "最上級 AAA格付け（盤石の信認）",
+        ratingWidth: "100%",
+        ratingColor: "#10b981",
+        collateralText: "ゼロ（AAA維持のため担保差し入れ免除）",
+        collateralWidth: "5%",
+        collateralColor: "#10b981",
+        bailoutText: "なし（巨額ボーナスを社員で山分け）",
+        bailoutWidth: "10%",
+        bailoutColor: "#38bdf8",
+        desc: "<strong>【Phase 1：1998〜2006年 ― 「AAA格付け」の切り売りと濡れ手に粟のCDS販売】</strong><br>ロンドンに拠点を置く従業員約400人の特命子会社「AIGフィナンシャル・プロダクツ（AIGFP）」は、AIG本社の<strong>AAA格付け</strong>を看板にして、投資銀行が組成したCDO（債務担保証券）に対するCDS（保証）を約5,000億ドル規模まで販売しました。「住宅価格が全米で同時に暴落する確率はゼロに近い」という数理モデルを過信し、積立金も積まずに保証料収入を丸ごと利益計上して巨額ボーナスを謳歌していました。"
+      },
+      {
+        ratingText: "AAA維持に黄信号（巨額含み損の発覚）",
+        ratingWidth: "45%",
+        ratingColor: "#f59e0b",
+        collateralText: "急増（ゴールドマン等から担保要求開始）",
+        collateralWidth: "65%",
+        collateralColor: "#f59e0b",
+        bailoutText: "自力資金調達の限界接近",
+        bailoutWidth: "40%",
+        bailoutColor: "#f59e0b",
+        desc: "<strong>【Phase 2：2007年〜2008年夏 ― サブプライム住宅ローンバブル崩壊とCDO暴落】</strong><br>2007年以降、サブプライム住宅ローンの焦げ付きが急増すると、AIGFPが保証していたマルチセクターCDOの市場価値が暴落しました。ゴールドマン・サックスなどの投資銀行はいち早くCDOの価値下落を見抜いてAIGに対して追加担保（コラテラル）の差し入れを要求し始め、AIGは四半期ごとに数千億円規模の巨額評価損を計上する事態に陥りました。"
+      },
+      {
+        ratingText: "AAA剥奪 ➔ 数日で現金完全枯渇",
+        ratingWidth: "8%",
+        ratingColor: "#f43f5e",
+        collateralText: "極限（数兆円規模の即時現金要求）",
+        collateralWidth: "100%",
+        collateralColor: "#e11d48",
+        bailoutText: "破綻直前（翌日に1,800億ドル超投入へ）",
+        bailoutWidth: "90%",
+        bailoutColor: "#f59e0b",
+        desc: "<strong>【Phase 3：2008年9月15〜16日 ― リーマン破綻翌日の「格下げ」と追加担保請求による流動性パニック】</strong><br>2008年9月15日にリーマン・ブラザーズが破綻した直後、格付け会社3社がAIGの格付けを一斉に引き下げました。AIGFPのCDS契約には「AIG本体がAAA格付けを維持している限り担保を積まなくてよいが、<strong>格下げされた瞬間に巨額の現金を追加担保（コラテラル）として差し入れなければならない</strong>」という条項（トリガー）が入っていたため、ゴールドマン・サックスなど取引先銀行から数兆円規模の現金請求が殺到し、AIGは一夜にして破綻の淵に立たされました。"
+      },
+      {
+        ratingText: "実質国有化（政府が株式の約80%取得）",
+        ratingWidth: "25%",
+        ratingColor: "#a855f7",
+        collateralText: "公的資金からメガバンクへ100%額面支払い",
+        collateralWidth: "100%",
+        collateralColor: "#e11d48",
+        bailoutText: "総額 1,800億ドル超（約19兆円）投入",
+        bailoutWidth: "100%",
+        bailoutColor: "#e11d48",
+        desc: "<strong>【Phase 4：2008年9月16日〜 ― 史上最大1,800億ドル超の公的救済とウォール街への「裏口救済」】</strong><br>AIGが倒産すればCDSを購入していた欧米のメガバンクが連鎖破綻し西側金融システムがメルトダウンするため、FRBと米財務省は<strong>総額1,800億ドル超の公的資金を投入してAIGを実質国有化</strong>しました。しかし、その救済資金はゴールドマン・サックスなどの取引先銀行に対して1ドルの減額（ヘアカット）も求めることなく<strong>100%額面通り全額支払われた</strong>ため、「AIGを経由したウォール街メガバンクの裏口救済」として激しい国民的批判を呼びました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-rating').textContent = p.ratingText;
+      const bRating = document.getElementById('b-rating');
+      bRating.style.width = p.ratingWidth;
+      bRating.style.backgroundColor = p.ratingColor;
+
+      document.getElementById('m-collateral').textContent = p.collateralText;
+      const bCol = document.getElementById('b-collateral');
+      bCol.style.width = p.collateralWidth;
+      bCol.style.backgroundColor = p.collateralColor;
+
+      document.getElementById('m-bailout').textContent = p.bailoutText;
+      const bBail = document.getElementById('b-bailout');
+      bBail.style.width = p.bailoutWidth;
+      bBail.style.backgroundColor = p.bailoutColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
