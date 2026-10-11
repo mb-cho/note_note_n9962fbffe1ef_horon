@@ -442,11 +442,96 @@
       section { padding: 1.25rem; }
       .formula-math { font-size: 1.1rem; }
     }
+  
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
   </style>
 </head>
 <body>
 
   <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・ケインズ貨幣理論）</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link active">① 信用創造の仕組み</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+      <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+      <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+      <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+      <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+      <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+      <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+      <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+      <a href="Borucar.html" class="nav-link">⑯ ボルカー・ショック</a>
+      <a href="SAP.html" class="nav-link">⑰ 構造調整プログラム</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG危機と救済</a>
+      <a href="BankCoup.html" class="nav-link">⑲ 銀行寡頭制のクーデター</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ デリバティブ決済網</a>
+    </div>
+      -->
+    </div>
 
     <!-- Header -->
     <header>
