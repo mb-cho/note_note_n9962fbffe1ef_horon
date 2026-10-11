@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：構造調整プログラム（SAP：Structural Adjustment Programs）の目的・条件と問題点</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 48%, #4c1d95 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    .lead a {
+      color: #fde047;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 700;
+    }
+
+    .lead a:hover {
+      color: #ffffff;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #7c3aed;
+      color: #ffffff;
+      border-color: #c4b5fd;
+      box-shadow: 0 0 12px rgba(124, 58, 237, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+        <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+        <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+        <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+        <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+        <a href="Borucar.html" class="nav-link">⑯ ボルカー・ショック</a>
+        <a href="SAP.html" class="nav-link active">⑰ 構造調整プログラム</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">IMF・世界銀行・開発経済学補論</span>
+        <span class="badge badge-sub">融資条件（コンディショナリティ）とワシントン・コンセンサス</span>
+      </div>
+      <h1>構造調整プログラム（SAP：Structural Adjustment Programs）：<br>IMF・世界銀行による融資条件の仕組みと途上国への影響</h1>
+      <p class="lead">
+        <strong>構造調整プログラム（SAP：Structural Adjustment Programs）</strong>とは、発展途上国が債務危機や経済破綻に陥った際、国際通貨基金（IMF）や<a href="https://liberal-arts-guide.com/structural-adjustment-program/" target="_blank" rel="noopener noreferrer">世界銀行</a>から金融支援を受ける見返りとして求められる<strong>マクロ経済の構造改革・自由化政策</strong>のことです。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Main Purpose & Conditions -->
+    <section>
+      <h2>🎯 主な目的と改革の条件（主な内容）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1980年代の中南米債務危機やアフリカの経済危機を契機に本格導入された構造調整プログラムは、「小さな政府」と「市場原理主義（新自由主義／ワシントン・コンセンサス）」を柱とする厳格な<strong>コンディショナリティ（融資条件）</strong>を債務国に課しました。
+      </p>
+
+      <h3>📌 主な目的（2つの柱）</h3>
+      <div class="grid-2" style="margin-bottom: 1.75rem;">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>① 財政不均衡の縮小と対外債務問題の解決</span>
+          </div>
+          <p class="factor-desc">
+            途上国の政府財政赤字や国際収支の赤字を圧縮し、外貨を獲得させて<strong>対外債務の返済（利払い）を継続できる状態</strong>に戻すこと。
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>② 市場メカニズム導入による中長期的成長</span>
+          </div>
+          <p class="factor-desc">
+            国家による経済介入や保護主義を撤廃し、<strong>市場メカニズムの導入による中長期的な経済成長の実現</strong>を図ること。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <h3>📋 主な内容（改革の条件：3大パッケージ）</h3>
+      <div class="grid-3">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>1. 自由化と規制緩和</span>
+          </div>
+          <p class="factor-desc">
+            <strong>為替レート、金利、貿易などの自由化、価格規制の撤廃</strong>。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">※関税引き下げ・輸入制限撤廃・外資規制緩和・自国通貨の切り下げなどを含みます。</span>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>2. 民営化（Privatization）</span>
+          </div>
+          <p class="factor-desc">
+            <strong>国営企業の民営化</strong>。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">※水道・電力・通信・鉄道・鉱山・石油公社などの公的資産を民間（多くの場合、先進国の多国籍企業・外資）へ売却させます。</span>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>3. 財政改革・支出削減</span>
+          </div>
+          <p class="factor-desc">
+            <strong>政府支出（医療や教育などの社会保障関連費や補助金）の削減、税制改革</strong>。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">※公務員削減・食料や燃料への補助金打ち切り・付加価値税（消費税）の導入などが課されます。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Main Problems, Criticisms & Interactive Simulator -->
+    <section>
+      <h2>⚠️ 主な問題点・批判と地域別影響シミュレーター</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        画一的な緊縮財政と急激な市場開放を強制した結果、多くの発展途上国で貧困層の生活破壊や公衆衛生の悪化、国内産業の崩壊を引き起こしたとして激しい国際的批判を浴びました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① 社会保障の低下</span>
+          </div>
+          <p class="factor-desc">
+            <strong>医療費や教育費の無料化廃止（受益者負担の導入）、補助金削減</strong>により、貧困層の生活がさらに悪化しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>② 健康・衛生への悪化</span>
+          </div>
+          <p class="factor-desc">
+            公衆衛生予算の削減や病院の有料化、安全な水へのアクセス低下により、<strong>乳幼児死亡率の上昇や感染症の蔓延</strong>を招いた地域があります。<a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ 経済的混乱</span>
+          </div>
+          <p class="factor-desc">
+            <strong>急激な自由化が国内の小規模産業や農業を圧迫</strong>し、通貨切り下げに伴うインフレや暴動・社会不安を引き起こしたケースが指摘されています。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 構造調整プログラム（SAP）の仕組みと対象地域別インパクト検証</div>
+            <div class="sim-subtitle">タブを切り替えて、IMF・世界銀行の役割分担とアフリカ・中南米・アジアでの具体的な影響を比較できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" onclick="setPhase(0)">
+            <span class="phase-year">Mechanism｜IMFと世界銀行</span>
+            融資条件（コンディショナリティ）の連携
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Case 1｜サブサハラ・アフリカ</span>
+            医療・教育削減と乳幼児死亡率の悪化
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Case 2｜中南米（メキシコ・ボリビア等）</span>
+            国営企業・水道民営化と社会不安
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Case 3｜1997年アジア通貨危機</span>
+            高金利・緊縮強制と外資による企業買収
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">対外債務の利払い・外資参入の優先度</div>
+            <div class="metric-value" id="m-debt">最優先（クロス・コンディショナリティ）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-debt" style="width: 95%; background-color: #a855f7;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">医療・教育・社会保障水準への打撃</div>
+            <div class="metric-value" id="m-social">高（公的支出の強制削減・有料化）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-social" style="width: 85%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国内小規模産業・経済主権への影響</div>
+            <div class="metric-value" id="m-ind">関税撤廃と国営資産の民営化</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-ind" style="width: 80%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【IMFと世界銀行の役割分担と「クロス・コンディショナリティ」】</strong><br>
+          本来、<strong>IMF（国際通貨基金）</strong>は短期的な国際収支の安定化（為替切り下げ・金融引き締め・財政赤字削減）を担い、<strong>世界銀行（World Bank）</strong>は中長期的な開発・構造改革（国営企業の民営化・貿易自由化・規制緩和）を担う機関です。しかし1980年代以降、両機関は協調して<strong>「IMFの緊縮合意を受け入れなければ世銀や民間銀行団も融資しない」</strong>という一体的な構造調整プログラム（SAP）を途上国に課し、債権国・国際金融資本の債権回収を制度的に保証する装置として機能しました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[2]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[4]</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive Comparison Table -->
+    <section>
+      <h2>🔍 深掘り比較：構造調整プログラムの「建前（理論）」と「実態（批判）」</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        IMF・世界銀行が掲げた新古典派経済学（ワシントン・コンセンサス）の理念と、実際に途上国社会で起きた結果を3大条件ごとに比較します。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">改革の条件（SAP）</th>
+              <th style="width: 39%;">IMF・世界銀行が主張した「建前・理論的狙い」</th>
+              <th style="width: 39%;">途上国で実際に起きた「問題点・批判」</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 自由化と規制緩和<br>（貿易・為替・金利・価格）</strong></td>
+              <td>比較優位に基づく輸出促進と外資導入により、非効率な保護主義を打破して経済を効率化させる。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+              <td>先進国の安価な工業製品や補助金付き農産物が流入して<strong>国内の小規模産業や自給農業が崩壊</strong>。通貨切り下げと価格統制撤廃で生活必需品が暴騰（インフレ）。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+            </tr>
+            <tr>
+              <td><strong>② 国営企業の民営化<br>（水道・電力・通信・資源）</strong></td>
+              <td>赤字国営企業への補助金をなくして財政を健全化し、民間経営によってサービス効率を高める。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td>危機下で買い叩かれた<strong>優良な公共インフラや天然資源利権が外国資本や一部オリガルヒに独占</strong>され、水道料金や電気料金の急騰を招いた。<a href="#ref-3" class="cite-tag">[3]</a></td>
+            </tr>
+            <tr>
+              <td><strong>③ 財政改革・支出削減<br>（医療・教育・補助金削減）</strong></td>
+              <td>財政赤字を削減してインフレを抑制し、対外債務の返済原資を確保してマクロ経済を安定させる。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td><strong>医療費・教育費の無料化廃止（有料化）</strong>により就学率が低下し、<strong>乳幼児死亡率の上昇やマラリア・コレラ・HIV等の感染症蔓延</strong>など深刻な人道危機を招いた。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">🏛️ 金融寡占史における位置づけ：19世紀の「砲艦と債務管理局」から現代の「SAP」へ</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          19世紀末にオスマン帝国やエジプトが外債デフォルトに陥った際、英仏列強は軍艦を派遣して「オスマン債務管理局（OPDA）」等を設置し、直接税関や専売収入を差し押さえました（補論⑧参照）。20世紀後半の<strong>構造調整プログラム（SAP）</strong>は、軍事占領の代わりにIMF・世界銀行という国際機関を通じて<strong>「債務国自身の政府に医療・教育を削らせ、国営資源やインフラを多国籍企業へ切り売りさせてドル債務を回収する」</strong>制度的メカニズムとして機能した点に特徴があります。なお、1990年代末にはあまりに激しい国際批判を受け、名称は「貧困削減戦略文書（PRSP）」等へと改められましたが、緊縮と構造改革を求める基本構造はその後も欧州債務危機（ギリシャ等）や新興国支援に引き継がれています。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している国際協力用語集・学術論文・解説サイトの出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://volunteer-platform.org/words/development-cooperation/structural-adjustment-program/" target="_blank" rel="noopener noreferrer" class="ref-link">https://volunteer-platform.org (国際協力用語集：構造調整プログラム SAP)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://liberal-arts-guide.com/structural-adjustment-program/" target="_blank" rel="noopener noreferrer" class="ref-link">https://liberal-arts-guide.com (リベラルアーツガイド：構造調整プログラムとは？世界銀行・IMFとの関係)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.youtube.com/watch?v=CqmL8FsjoGI&t=1" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.youtube.com (解説動画：構造調整プログラムの目的と途上国への影響)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://navymule9.sakura.ne.jp/Structural_adjustment.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://navymule9.sakura.ne.jp (開発経済学解説：構造調整政策の変遷とワシントン・コンセンサス)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="http://www.world-economic-review.jp/impact/article3751.html" target="_blank" rel="noopener noreferrer" class="ref-link">http://www.world-economic-review.jp (世界経済評論：IMF構造調整と自由化政策の検証)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.soc.hit-u.ac.jp/research/archives/doctor/?choice=summary&thesisID=152" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.soc.hit-u.ac.jp (一橋大学社会学研究科博士論文要旨：構造調整と保健医療・乳幼児死亡率への影響)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑰ ｜ 構造調整プログラム（SAP：Structural Adjustment Programs）の仕組みと批判的検証</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        debtText: "最優先（クロス・コンディショナリティ）",
+        debtWidth: "95%",
+        debtColor: "#a855f7",
+        socialText: "高（公的支出の強制削減・有料化）",
+        socialWidth: "85%",
+        socialColor: "#f43f5e",
+        indText: "関税撤廃と国営資産の民営化",
+        indWidth: "80%",
+        indColor: "#f59e0b",
+        desc: "<strong>【IMFと世界銀行の役割分担と「クロス・コンディショナリティ」】</strong><br>本来、<strong>IMF（国際通貨基金）</strong>は短期的な国際収支の安定化（為替切り下げ・金融引き締め・財政赤字削減）を担い、<strong>世界銀行（World Bank）</strong>は中長期的な開発・構造改革（国営企業の民営化・貿易自由化・規制緩和）を担う機関です。しかし1980年代以降、両機関は協調して<strong>「IMFの緊縮合意を受け入れなければ世銀や民間銀行団も融資しない」</strong>という一体的な構造調整プログラム（SAP）を途上国に課し、債権国・国際金融資本の債権回収を制度的に保証する装置として機能しました。"
+      },
+      {
+        debtText: "一次産品輸出の強制（モノカルチャー化）",
+        debtWidth: "90%",
+        debtColor: "#f59e0b",
+        socialText: "極大（乳幼児死亡率上昇・感染症蔓延）",
+        socialWidth: "100%",
+        socialColor: "#e11d48",
+        indText: "食料自給の低下と医療・教育の崩壊",
+        indWidth: "95%",
+        indColor: "#e11d48",
+        desc: "<strong>【Case 1：サブサハラ・アフリカ諸国 ― 医療・教育の有料化と公衆衛生の悪化】</strong><br>1980〜90年代にガーナ、ザンビア、タンザニア、ケニアなど多くのアフリカ諸国でSAPが実施されました。政府支出削減の条件として<strong>医療費や初等教育費の無料化が廃止（ユーザー・フィー導入）</strong>された結果、貧困層が病院や学校から締め出され、<strong>乳幼児死亡率の上昇や栄養失調、マラリア・結核・HIV/AIDSなどの感染症蔓延</strong>を招く深刻な人道危機を引き起こしました（ユニセフ『人間の顔をした調整』報告書などでも厳しく批判されました）。"
+      },
+      {
+        debtText: "ドル債務利払いと外資への資源開放",
+        debtWidth: "95%",
+        debtColor: "#f43f5e",
+        socialText: "高（食料・燃料補助金撤廃と実質賃金低下）",
+        socialWidth: "90%",
+        socialColor: "#f43f5e",
+        indText: "極大（石油・通信・水道公社の外資売却）",
+        indWidth: "95%",
+        indColor: "#f59e0b",
+        desc: "<strong>【Case 2：中南米諸国（メキシコ・アルゼンチン・ボリビア等） ― 民営化と社会不安】</strong><br>1982年の債務危機以降、中南米諸国はSAPの条件に従って国営の通信・鉄道・電力・鉱山・銀行を次々と民営化（外資へ売却）し、食料や公共交通への補助金を撤廃しました。1989年のベネズエラ「カラカソ（公共料金値上げに対する暴動）」や、2000年のボリビア「コチャバンバ水紛争（世銀の条件で外資に民営化された水道料金が急騰し住民が蜂起）」など、激しい社会不安と格差拡大を引き起こしました。"
+      },
+      {
+        debtText: "欧米銀行団の短期債権100%回収",
+        debtWidth: "100%",
+        debtColor: "#a855f7",
+        socialText: "高（大量失業と緊縮によるデフレ不況）",
+        socialWidth: "80%",
+        socialColor: "#f43f5e",
+        indText: "極大（財閥解体・優良銀行と企業の外資買収）",
+        indWidth: "100%",
+        indColor: "#e11d48",
+        desc: "<strong>【Case 3：1997年アジア通貨危機（韓国・タイ・インドネシア） ― 緊縮強制とハゲタカ買収】</strong><br>1997年のアジア通貨危機では、本来は政府の財政赤字ではなく民間部門の短期ドル借入が原因であったにもかかわらず、IMFは定型通りのSAP（超高金利・緊縮財政・外資規制の全面撤廃）を強制しました。その結果、黒字倒産が相次いで深刻なデフレ不況に陥り、暴落した韓国や東南アジアの優良企業・銀行の株式が欧米の投資銀行やファンドによって安値で買収されました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-debt').textContent = p.debtText;
+      const bDebt = document.getElementById('b-debt');
+      bDebt.style.width = p.debtWidth;
+      bDebt.style.backgroundColor = p.debtColor;
+
+      document.getElementById('m-social').textContent = p.socialText;
+      const bSocial = document.getElementById('b-social');
+      bSocial.style.width = p.socialWidth;
+      bSocial.style.backgroundColor = p.socialColor;
+
+      document.getElementById('m-ind').textContent = p.indText;
+      const bInd = document.getElementById('b-ind');
+      bInd.style.width = p.indWidth;
+      bInd.style.backgroundColor = p.indColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
