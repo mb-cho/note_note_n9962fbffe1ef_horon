@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：軍事ケインズ主義（Military Keynesianism）のメカニズムと経済的帰結</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #334155 50%, #7f1d1d 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(248, 113, 113, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Tradeoff Slider Panel */
+    .calc-panel {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slider-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      min-width: 180px;
+      accent-color: #f43f5e;
+      cursor: pointer;
+    }
+
+    .calc-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .calc-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+        <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+        <a href="MilitaryKeynesianism.html" class="nav-link active">⑬ 軍事ケインズ主義</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">マクロ経済政策・軍産複合体補論</span>
+        <span class="badge badge-sub">軍需による有効需要創出と経済の歪み</span>
+      </div>
+      <h1>軍事ケインズ主義（Military Keynesianism）：<br>防衛支出による景気浮揚のメカニズムと構造的矛盾</h1>
+      <p class="lead">
+        <strong>軍事ケインズ主義（Military Keynesianism）</strong>とは、巨額の軍事費（防衛費）を国家財政から投じることで、有効需要を生み出し、景気回復や経済成長を下支えする経済政策およびその思想のことです。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        経済学者ジョン・メイナード・ケインズの理論（不況時に政府が財政出動を行って需要を創出する）を、軍需や軍備拡張の分野に応用したものを指します。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Main Features & Mechanism -->
+    <section>
+      <h2>⚙️ 主な特徴とメカニズム</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        軍事ケインズ主義は、国家による国防・安全保障支出を巨大産業への継続的な注文書として機能させ、民間部門の投資不足や過剰生産危機を吸収する仕組みを持っています。
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>① 需要の創出</span>
+          </div>
+          <p class="factor-desc">
+            武器、弾薬、軍需品の調達や基地建設などを通じて民間企業に大規模な発注を行い、産業界や雇用を刺激します。
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>② 景気浮揚効果</span>
+          </div>
+          <p class="factor-desc">
+            巨額の財政支出が<strong>乗数効果</strong>を生み、受注企業から下請け企業・労働者の消費へと波及して経済全体を活性化させると主張されます。
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>③ 政治・安全保障との一体化</span>
+          </div>
+          <p class="factor-desc">
+            純粋な公共事業（道路や橋など）とは異なり、<strong>国家防衛や地政学的緊張の緩和・抑止力強化という名目</strong>を伴うのが特徴です。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 4-Step Flow Diagram -->
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 1：政治的合意</span>
+          <div class="flow-title">安全保障名目での予算化</div>
+          <p class="flow-desc">
+            福祉や公共事業には「財政規律」や「民間企業との競合」を理由に反対する保守層も、国防・抑止力名目の巨額支出には賛成しやすい。
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">STEP 2：国家発注</span>
+          <div class="flow-title">軍需・重化学・航空宇宙</div>
+          <p class="flow-desc">
+            政府が赤字国債や税収を通じて軍需コングロマリットに兵器・弾薬・基地建設・研究開発（R&amp;D）を発注し、確実な利潤を保証する。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 3：短期乗数効果</span>
+          <div class="flow-title">雇用創出と景気下支え</div>
+          <p class="flow-desc">
+            関連工場や基地周辺の雇用が増加し、不況期のデフレ・ギャップを埋める有効需要として短期的なGDP押し上げ効果を発揮する。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 4：構造的依存</span>
+          <div class="flow-title">軍産複合体と経済の歪み</div>
+          <p class="flow-desc">
+            戦車やミサイルは新たな生産手段を生まないため長期的生産性が停滞し、好況維持のために「恒常的な国際緊張・軍拡」が必要になる。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 軍事ケインズ主義の歴史的展開＆「大砲かバターか」財政配分シミュレーター</div>
+            <div class="sim-subtitle">歴史フェーズの切り替えと、国家予算における軍事支出比率のスライダーで経済効果と歪みを検証できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1939〜1945年</span>
+            第二次世界大戦と大恐慌の克服
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1950年代（冷戦・朝鮮戦争）</span>
+            恒常的「軍産複合体」の確立
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1960〜1980年代</span>
+            ベトナム戦費インフレとレーガン軍拡
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜21世紀〜現在</span>
+            地政学緊張の再燃と防衛費膨張
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">短期的な軍需・重工業の稼働刺激度</div>
+            <div class="metric-value" id="m-stim">高（冷戦・朝鮮特需による需要創出）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-stim" style="width: 85%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">社会保障・生活インフラ・教育への圧迫度</div>
+            <div class="metric-value" id="m-crowd">中〜高（国防優先の予算配分）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-crowd" style="width: 65%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">財政赤字・インフレ・軍拡依存の歪み</div>
+            <div class="metric-value" id="m-distort">高（アイゼンハワー「軍産複合体」警告）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-distort" style="width: 80%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 2：1950年代 ― NSC-68（国家安全保障会議文書68号）と朝鮮戦争による軍事ケインズ主義の定着】</strong><br>
+          第二次大戦終結直後、アメリカは戦時需要の消滅による大恐慌の再来を恐れていました。1950年の<strong>NSC-68</strong>と<strong>朝鮮戦争</strong>を契機に、米国の国防費は対GDP比で約10〜14%の水準へと恒久的に引き上げられ、平時においても巨額の軍事支出で景気を下支えする「恒常的戦時経済（軍事ケインズ主義）」が確立しました。1961年にはアイゼンハワー大統領が退任演説で<strong>「軍産複合体（Military-Industrial Complex）」</strong>の不当な影響力増大に歴史的な警告を発しました。
+        </div>
+
+        <!-- Guns vs Butter Interactive Slider -->
+        <div class="calc-panel">
+          <div style="font-weight: 700; color: #fde047; font-size: 0.95rem;">
+            ⚖️ 「大砲かバターか」財政支出シフト検証（政府裁量予算に占める軍事費シェア：<span id="mil-share-val">50</span>%）
+          </div>
+          <div class="slider-row">
+            <span style="font-size: 0.82rem; color: #86efac;">民生・福祉重視（15%）</span>
+            <input type="range" id="mil-slider" min="15" max="75" step="5" value="50" oninput="updateBudget(this.value)">
+            <span style="font-size: 0.82rem; color: #fda4af;">軍事偏重（75%）</span>
+          </div>
+          <div class="calc-compare">
+            <div class="calc-box">
+              <div style="font-size: 0.8rem; color: #93c5fd; font-weight: 700;">🏥 教育・医療・生活インフラ予算枠</div>
+              <div style="font-size: 1.35rem; font-weight: 800; margin: 0.3rem 0;" id="civil-share">残り 50%</div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;" id="civil-note">将来の生産性を高める人的資本・社会インフラ投資が圧迫され始めます</div>
+            </div>
+            <div class="calc-box" style="background: rgba(225, 29, 72, 0.16); border-color: rgba(251, 113, 133, 0.4);">
+              <div style="font-size: 0.8rem; color: #fda4af; font-weight: 700;">🚀 長期的な経済成長の質・インフレリスク</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fecdd3; margin: 0.3rem 0;" id="macro-effect">非生産的消費の増大</div>
+              <div style="font-size: 0.8rem; color: #fecdd3;" id="macro-note">兵器・弾薬は民間市場の供給力を増やさないため、インフレと財政赤字が蓄積します</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Criticisms and Concerns -->
+    <section>
+      <h2>⚠️ 批判や懸念点（構造的な限界と副作用）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        軍事ケインズ主義は短期的な需要創出として機能する一方、財政・実物経済・国際秩序に対して深刻な副作用をもたらすことが多くの経済学者やジャーナリズムから批判されています。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① 社会保障や生活インフラの圧迫</span>
+          </div>
+          <p class="factor-desc">
+            軍事費に巨額の財源が割かれる結果、<strong>教育、医療、環境対策、福祉などの予算が後回しにされる</strong>傾向があります。<br>
+            <span style="font-size: 0.86rem; color: var(--crimson); display: block; margin-top: 0.5rem;">※経済学では「大砲かバターか（Guns versus butter model）」のトレードオフとして知られ、軍事費の膨張が国民生活の安全網や老朽化した公共インフラの更新を犠牲にする構造を指します。</span>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>② 持続性の欠如と経済の歪み</span>
+          </div>
+          <p class="factor-desc">
+            <strong>生産的な資本蓄積（将来の生産性を高める投資）に繋がりにくく</strong>、財政赤字の拡大やインフレを引き起こすリスクが指摘されています。また、<strong>戦争や軍拡に依存した経済構造は、平和的な国際環境への移行を難しくする要因</strong>になります。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-title">🔍 なぜ「兵器生産」は持続的な経済発展に繋がりにくいのか？（再生産構造からの離脱）</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          道路・港湾・鉄道・発電所・工作機械への投資や、教育・医療への支出は、次期の経済活動において<strong>「生産コストを引き下げ、労働者の生産能力を高める資産（再生産可能な資本）」</strong>として機能し続けます。しかし、爆弾・ミサイル・弾薬・戦闘機は、爆発して消滅するか格納庫で陳腐化するだけであり、<strong>民間の財やサービスを新たに生み出す生産力にはなりません</strong>。需要（賃金と通貨）だけを市中にばら撒きながら民間の供給能力を増やさないため、構造的な<strong>スタグフレーション（インフレと民間製造業の空洞化）</strong>を引き起こしやすいという致命的な欠陥を抱えています。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparison Table (Civilian Keynesianism vs Military Keynesianism) -->
+    <section>
+      <h2>📊 比較総括：「民生ケインズ主義（公共事業・福祉）」vs「軍事ケインズ主義（軍拡）」</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        同じケインズ主義的な財政出動であっても、支出先が「民生・社会インフラ」か「軍事・兵器調達」かによって、経済波及効果と政治的力学は大きく異なります。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">比較項目</th>
+              <th style="width: 39%;">民生ケインズ主義（道路・教育・医療・環境投資）</th>
+              <th style="width: 39%;">軍事ケインズ主義（兵器・弾薬調達・基地建設）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>主な支出対象</strong></td>
+              <td>交通網・上下水道・エネルギー網、公教育、医療・介護、基礎科学、グリーン投資。</td>
+              <td>戦闘機・艦艇・ミサイル・弾薬の調達、軍事基地建設、軍事技術開発。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>将来の生産性・資本蓄積効果</strong></td>
+              <td><strong>高い</strong>。物流コスト低減や人的資本の向上を通じて、経済全体の長期的な供給力と生活水準を引き上げる。</td>
+              <td><strong>低い（非生産的消費）</strong>。一部の技術スピンオフ（インターネットやGPS等）を除き、兵器自体は再生産に寄与しない。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>同額支出あたりの雇用創出効果</strong></td>
+              <td><strong>大きい</strong>。教育・医療・介護や地域インフラ整備は労働集約的であり、広範な中間層・地域雇用を生む。</td>
+              <td><strong>相対的に小さい</strong>。現代の先端兵器産業は資本・特定技術集約的であり、巨額予算が少数の巨大軍需企業に集中しやすい。<a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>政治的合意の得やすさ</strong></td>
+              <td>「大きな政府への批判」や「民間ビジネスとの競合」を警戒する既得権益層からの抵抗に遭いやすい。</td>
+              <td>「国家安全保障・抑止力」という名目により議会や世論の反対を抑えやすく、独占資本にとっても民間市場を侵食しない好都合な受注先となる。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>国際秩序への影響</strong></td>
+              <td>国内の内需拡大と生活安定を通じた平和的・持続的な経済成長を志向する。</td>
+              <td>安全保障のジレンマ（軍拡競争）を誘発し、景気維持のために国際緊張や紛争を必要とする構造を生み出す。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している解説動画・事典・報道記事の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.youtube.com/watch?v=RLwfCAy_hkg&t=429" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.youtube.com (解説動画：軍事ケインズ主義と戦後経済構造)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E8%BB%8D%E4%BA%8B%E3%82%B1%E3%82%A4%E3%83%B3%E3%82%BA%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：軍事ケインズ主義)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.asahi.com/articles/ASV5D312VV5DUTFK004M.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.asahi.com (朝日新聞デジタル：防衛費増額と軍事ケインズ主義への批判的論点)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://toyokeizai.net/articles/-/870404?display=b" target="_blank" rel="noopener noreferrer" class="ref-link">https://toyokeizai.net (東洋経済オンライン：軍事費拡大の経済効果と持続性・歪みの検証)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑬ ｜ 軍事ケインズ主義（Military Keynesianism）のメカニズムと批判的検証</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        stimText: "極大（戦時総動員で失業率1%台へ）",
+        stimWidth: "100%",
+        stimColor: "#10b981",
+        crowdText: "戦時統制（民需品の配給制・生産制限）",
+        crowdWidth: "85%",
+        crowdColor: "#f59e0b",
+        distortText: "戦時国債の急増（終戦後の反動懸念）",
+        distortWidth: "60%",
+        distortColor: "#f59e0b",
+        desc: "<strong>【Phase 1：1939〜1945年 ― 第二次世界大戦による大恐慌の克服】</strong><br>1930年代のニューディール政策（民生公共事業）だけでは完全には解消しなかった大恐慌の失業問題は、第二次世界大戦の勃発と巨大な戦時軍需動員によって一挙に吸収されました。この経験が「政府が巨額の軍事支出を行えば不況を確実に吹き飛ばせる」という軍事ケインズ主義の原体験となりました。"
+      },
+      {
+        stimText: "高（冷戦・朝鮮特需による需要創出）",
+        stimWidth: "85%",
+        stimColor: "#38bdf8",
+        crowdText: "中〜高（国防優先の予算配分）",
+        crowdWidth: "65%",
+        crowdColor: "#f59e0b",
+        distortText: "高（アイゼンハワー「軍産複合体」警告）",
+        distortWidth: "80%",
+        distortColor: "#f43f5e",
+        desc: "<strong>【Phase 2：1950年代 ― NSC-68（国家安全保障会議文書68号）と朝鮮戦争による軍事ケインズ主義の定着】</strong><br>第二次大戦終結直後、アメリカは戦時需要の消滅による大恐慌の再来を恐れていました。1950年の<strong>NSC-68</strong>と<strong>朝鮮戦争</strong>を契機に、米国の国防費は対GDP比で約10〜14%の水準へと恒久的に引き上げられ、平時においても巨額の軍事支出で景気を下支えする「恒常的戦時経済（軍事ケインズ主義）」が確立しました。1961年にはアイゼンハワー大統領が退任演説で<strong>「軍産複合体（Military-Industrial Complex）」</strong>の不当な影響力増大に歴史的な警告を発しました。"
+      },
+      {
+        stimText: "中（重工業空洞化とハイテク軍需への偏り）",
+        stimWidth: "55%",
+        stimColor: "#f59e0b",
+        crowdText: "高（福祉予算削減と軍事費増額）",
+        crowdWidth: "85%",
+        crowdColor: "#f43f5e",
+        distortText: "極大（インフレ・双子の赤字・ドル危機）",
+        distortWidth: "95%",
+        distortColor: "#e11d48",
+        desc: "<strong>【Phase 3：1960〜1980年代 ― ベトナム戦争のインフレ・ドル危機とレーガン軍拡】</strong><br>1960年代後半のベトナム戦争では、巨額の戦費支出が激しいインフレと金流出を招き、1971年のブレトンウッズ体制崩壊（ニクソン・ショック）の主因となりました。さらに1980年代のレーガン政権は社会福祉予算を大幅に削減する一方で、「スター・ウォーズ計画（SDI）」などの大軍拡を推進し、短期的な景気回復と引き換えに巨額の「双子の赤字（財政赤字・貿易赤字）」を抱え込みました。"
+      },
+      {
+        stimText: "限定的（資本集約化により雇用波及は縮小）",
+        stimWidth: "45%",
+        stimColor: "#f59e0b",
+        crowdText: "極大（教育・医療・環境対策の財源圧迫）",
+        crowdWidth: "95%",
+        crowdColor: "#e11d48",
+        distortText: "極大（債務膨張と平和的移行の困難化）",
+        distortWidth: "100%",
+        distortColor: "#e11d48",
+        desc: "<strong>【Phase 4：21世紀〜現在 ― 対テロ戦争・地政学危機と「防衛費増額＝成長戦略」論への批判】</strong><br>2001年以降の対テロ戦争や近年のウクライナ・中東危機を受け、欧米や日本でも防衛費の大幅増額と防衛産業育成を「経済成長の起爆剤」と位置づける動きが再燃しています。しかし現代の経済分析では、軍事費の膨張は<strong>社会保障や生活インフラ・教育予算を圧迫</strong>し、生産的な資本蓄積に繋がらず財政赤字とインフレを悪化させるリスクが強く警告されています。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-stim').textContent = p.stimText;
+      const bStim = document.getElementById('b-stim');
+      bStim.style.width = p.stimWidth;
+      bStim.style.backgroundColor = p.stimColor;
+
+      document.getElementById('m-crowd').textContent = p.crowdText;
+      const bCrowd = document.getElementById('b-crowd');
+      bCrowd.style.width = p.crowdWidth;
+      bCrowd.style.backgroundColor = p.crowdColor;
+
+      document.getElementById('m-distort').textContent = p.distortText;
+      const bDistort = document.getElementById('b-distort');
+      bDistort.style.width = p.distortWidth;
+      bDistort.style.backgroundColor = p.distortColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    function updateBudget(val) {
+      const mil = parseInt(val, 10);
+      const civil = 100 - mil;
+      document.getElementById('mil-share-val').textContent = mil;
+      document.getElementById('civil-share').textContent = "残り " + civil + "%";
+
+      const civilNote = document.getElementById('civil-note');
+      const macroEffect = document.getElementById('macro-effect');
+      const macroNote = document.getElementById('macro-note');
+
+      if (mil <= 25) {
+        civilNote.textContent = "教育・医療・環境・基礎インフラに十分な財源が配分され、長期的な生産性が向上します";
+        macroEffect.textContent = "持続的・平和的な成長構造";
+        macroNote.textContent = "労働集約的な民生投資により広範な雇用が創出され、インフレ圧力も抑制されます";
+      } else if (mil <= 50) {
+        civilNote.textContent = "将来の生産性を高める人的資本・社会インフラ投資が徐々に圧迫され始めます";
+        macroEffect.textContent = "非生産的消費の増大";
+        macroNote.textContent = "軍需産業は潤う一方、兵器・弾薬は民間の供給力を増やさないため財政赤字が蓄積します";
+      } else {
+        civilNote.textContent = "教育・医療・福祉予算が深刻に切り詰められ、国民生活と社会基盤の老朽化が進行します";
+        macroEffect.textContent = "軍拡依存・スタグフレーション危機";
+        macroNote.textContent = "経済が戦争・地政学緊張なしには立ち行かなくなり、慢性的インフレと通貨信認低下を招きます";
+      }
+    }
+  </script>
+</body>
+</html>
