@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：1920年代アメリカの「フォーディズム（Fordism）」と大衆消費社会の光と影</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #0284c7 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.24) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(245, 158, 11, 0.35);
+      color: #fef3c7;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .ext-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ext-link:hover {
+      color: var(--rose);
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    .factor-list {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .factor-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #93c5fd;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.75rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+        <a href="fordism.html" class="nav-link active">⑫ フォーディズム</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">産業資本主義・大衆消費社会補論</span>
+        <span class="badge badge-sub">1920年代アメリカ「狂騒の20年代」の光と影</span>
+      </div>
+      <h1>1920年代アメリカの「フォーディズム（Fordism）」：<br>大量生産・大量消費の確立と1929年世界恐慌への伏線</h1>
+      <p class="lead">
+        1920年代のアメリカにおける<strong>フォーディズム（Fordism）</strong>とは、ヘンリー・フォードが確立した<strong>大量生産・大量消費の仕組み</strong>が社会全体に広がり、<strong>「狂騒の20年代（Roaring Twenties）」</strong>と呼ばれる空前の好景気と大衆消費社会を支えた経済・社会モデルのことです。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: 4 Main Features of Fordism -->
+    <section>
+      <h2>🏭 フォーディズムの主な特徴（4大メカニズム）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        フォーディズムは単なる工場内の技術革新にとどまらず、労働者の賃金体系・製品価格・ライフスタイルまでを一体として変革し、資本主義史上初の「大衆消費社会」を生み出しました。
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>① 徹底した大量生産（製造革新）</span>
+          </div>
+          <ul class="factor-list">
+            <li><strong>1913年にベルトコンベアによる流れ作業を導入。</strong></li>
+            <li>部品の規格化と細分化された分業により、T型フォードなどの製品を安くスピーディーに大量製造した。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a></li>
+          </ul>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>② 高賃金と労働者の購買力向上</span>
+          </div>
+          <ul class="factor-list">
+            <li><strong>1914年に日給5ドルという高賃金と、1日8時間労働制を導入。</strong></li>
+            <li>労働者自身が「自分たちの作った車や家電を買える消費者」となる好循環を生み出した。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a></li>
+          </ul>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>③ 価格の低下と大衆化</span>
+          </div>
+          <ul class="factor-list">
+            <li>生産効率が上がったことで製品価格が下がり（<strong>1925年にはT型フォードが285ドルまで低下</strong>）、自動車やラジオ、電気掃除機といった耐久消費財が一般庶民の手に届くようになった。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a></li>
+          </ul>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>④ 大衆消費社会の誕生</span>
+          </div>
+          <ul class="factor-list">
+            <li><strong>モーター化（自動車の普及）</strong>が進み、郊外の発展、映画やジャズ、プロスポーツといった大衆文化の繁栄へとつながった。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-6" class="cite-tag">[6]</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 T型フォード革新と「狂騒の20年代」好循環・過剰生産シミュレーター</div>
+            <div class="sim-subtitle">時代フェーズを切り替えて、価格低下・購買力向上の好循環から1929年恐慌前夜の供給過剰への変化を確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1908〜1913年</span>
+            ベルトコンベア導入（1913年）
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1914年</span>
+            「日給5ドル・8時間労働」革命
+          </button>
+          <button class="phase-btn active" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1925年（絶頂期）</span>
+            T型フォード285ドルと大衆消費社会
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜1927〜1929年</span>
+            供給過剰・格差・世界恐慌へ
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">T型フォードの新車価格（初期850ドル基準）</div>
+            <div class="metric-value" id="m-price">285 ドル（約3分の1に低下）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-price" style="width: 33%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">大量生産能力・耐久消費財の普及度</div>
+            <div class="metric-value" id="m-prod">極大（年産約200万台・家電普及）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-prod" style="width: 92%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">供給過剰・所得格差・信用バブルのひずみ</div>
+            <div class="metric-value" id="m-risk">中〜高（割賦販売・ローン依存拡大）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-risk" style="width: 65%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 3：1925年 ― 「狂騒の20年代」絶頂期と285ドルのT型フォード】</strong><br>
+          流れ作業と規格化の徹底により、発売当初850ドルだったT型フォードは<strong>1925年には285ドル</strong>まで値下がりし、日給5ドルの労働者なら約2ヶ月分の賃金で購入できるようになりました。自動車の普及（モータリゼーション）は道路建設・石油・鉄鋼・郊外住宅ブームを牽引し、ラジオや電気掃除機などの耐久消費財、映画やジャズといった大衆文化が一斉に開花しました。
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Shadow Side & Connection to 1929 Great Depression -->
+    <section>
+      <h2>📉 影の部分（その後の影響）：供給過剰・所得格差と1929年世界恐慌</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        このシステムは<strong>供給過剰や所得格差のひずみ</strong>も内包しており、<strong>1929年の世界恐慌（大恐慌）を引き起こす要因の一つ</strong>になったとも指摘されています。<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a><br>
+        フォーディズムの歴史的意義や、<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A9%E3%83%BC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0" target="_blank" rel="noopener noreferrer" class="ext-link">Wikipedia（フォーディズム）</a>の詳しい解説などでさらに仕組みを確認できます。<a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">ひずみ ①：労働疎外と組合抑圧</span>
+          <div class="flow-title">単調労働と生産性・賃金乖離</div>
+          <p class="flow-desc">
+            徹底的な分業は労働者を機械の歯車に変え（チャップリン『モダン・タイムス』の風刺）、1920年代全体では<strong>生産性の急上昇に対して実質賃金の伸びが立ち遅れ</strong>、資本家への富の偏在が進んだ。
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">ひずみ ②：耐久財の市場飽和</span>
+          <div class="flow-title">一巡後の需要減退</div>
+          <p class="flow-desc">
+            単一規格（黒一色のT型フォード）の大量生産は、世帯への普及が一巡すると急激な<strong>市場飽和（供給過剰）</strong>に直面し、モデルチェンジ戦略をとるGMに追い抜かれる要因となった。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">ひずみ ③：割賦販売（ローン）</span>
+          <div class="flow-title">消費者信用による需要の先食い</div>
+          <p class="flow-desc">
+            実質賃金の不足を補うため、自動車や家電の過半が<strong>「月賦（クレジット・割賦販売）」</strong>で売られ、大衆が借金で将来の購買力を先食いする脆弱な消費構造となった。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">ひずみ ④：金融投機への暴走</span>
+          <div class="flow-title">1929年ウォール街大暴落</div>
+          <p class="flow-desc">
+            実体経済の供給過剰で行き場を失った企業の余剰利潤と銀行信用が<strong>株式・不動産投機</strong>へと流入し、1929年10月のバブル崩壊と大恐慌を招いた。<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-title">🔍 経済学的視点：ミクロの「高賃金（日給5ドル）」とマクロの「所得格差拡大」のパラドックス</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          ヘンリー・フォードが1914年に導入した「日給5ドル」は当時としては画期的でしたが、これは激しい離職率を抑えるための労務管理策でもあり、労働組合の結成は厳しく禁じられていました。1920年代のアメリカ経済全体で見ると、製造業の生産性が40%以上向上したにもかかわらず、労働者の実質賃金上昇率は10%前後に抑え込まれ、<strong>上位1%の富裕層が国民所得の約24%を独占する極端な格差社会</strong>となっていました。その結果、大量生産された商品を買い支える国内有効需要が枯渇し、消費者ローンと株式投機バブルに頼る構造が限界に達して1929年大恐慌へと至りました。<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Evolution to Post-Fordism -->
+    <section>
+      <h2>🔄 深掘り比較：1920年代フォーディズムから「ポストフォーディズム（トヨタ生産方式など）」への移行</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        レギュラシオン理論（フランスの経済学派）などの枠組みに基づき、1920年代の初期フォーディズム、第二次大戦後の黄金期フォーディズム、そして1970年代以降の<strong>「ポストフォーディズム（トヨタ生産方式・多品種少量生産）」</strong>への歴史的転換を比較整理します。<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">比較軸</th>
+              <th style="width: 26%;">① 1920年代 初期フォーディズム<br><span style="font-size: 0.78rem; font-weight: 500;">（狂騒の20年代・大恐慌前）</span></th>
+              <th style="width: 27%;">② 1945〜1970年代 戦後フォーディズム<br><span style="font-size: 0.78rem; font-weight: 500;">（ニューディール・資本主義の黄金時代）</span></th>
+              <th style="width: 27%;">③ 1970年代以降 ポストフォーディズム<br><span style="font-size: 0.78rem; font-weight: 500;">（トヨタ生産方式・柔軟な専門化）</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>生産方式の特徴</strong></td>
+              <td><strong>少品種大量生産</strong>（T型フォードに象徴される単一規格品・ベルトコンベア流れ作業・細分化された単純反復労働）。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+              <td>大量生産体制の成熟と全国規模への普及。大型耐久消費財（自動車・白物家電・郊外住宅）の標準化。</td>
+              <td><strong>多品種少量生産・ジャストインタイム（カンバン方式）</strong>。多能工化・現場のカイゼン・在庫極小化と柔軟な生産ライン。<a href="#ref-9" class="cite-tag">[9]</a></td>
+            </tr>
+            <tr>
+              <td><strong>賃金・労使関係</strong></td>
+              <td>個別企業の温情的高賃金（日給5ドル）はあるが、社会全体では労働組合が弱く、<strong>生産性向上に賃金が追いつかない</strong>。</td>
+              <td>労働組合の法認（ワグナー法以降）と団体交渉により、<strong>「生産性上昇に合わせた実質賃金の定期的引き上げ」</strong>が制度化。</td>
+              <td>グローバル競争と新自由主義の下で労働市場が柔軟化（非正規化・成果主義化）。サプライチェーンの国際分散。</td>
+            </tr>
+            <tr>
+              <td><strong>需要と国家の役割</strong></td>
+              <td>自由放任主義（レッセフェール）。社会保障が未整備で、需要不足を<strong>割賦販売（民間ローン）と株式投機</strong>で補填。</td>
+              <td><strong>ケインズ主義的福祉国家</strong>。累進課税・社会保障・公共投資によって大衆の購買力（有効需要）を国家が下支え。</td>
+              <td>消費の多様化・個性化・サービス経済化・IT化。需要維持のために再び<strong>家計債務（金融化）</strong>への依存が強まる。</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的帰結・限界</strong></td>
+              <td>供給過剰と格差拡大、投機バブル崩壊により<strong>1929年世界恐慌</strong>へ突入。<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a></td>
+              <td>1970年代のオイルショック、市場成熟、途上国の追い上げにより利潤率が低下（スタグフレーション）。</td>
+              <td>製造業の効率が極限まで高まる一方、実物投資から金融資産へ資本が逃避する「ハイパー金融化」が進行。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している学術論文・事典・歴史解説サイトの出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://sustabi.com/blog/8966/" target="_blank" rel="noopener noreferrer" class="ref-link">https://sustabi.com (フォーディズムとは？大量生産・大量消費の仕組み)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%A1%86%E6%B6%88%E8%B2%BB%E7%A4%BE%E4%BC%9A" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：大衆消費社会)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.gentosha-book.com/method/trivia/roaring-twenties/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.gentosha-book.com (狂騒の20年代：アメリカ大衆消費社会の誕生)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-142.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：フォード／T型フォードと大量生産)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="http://www.kisoken.org/webjiten/fordism.html" target="_blank" rel="noopener noreferrer" class="ref-link">http://www.kisoken.org (経済社会総合辞典：フォーディズム)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-143.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：大量生産・大量消費／1920年代アメリカ)</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://econ-review.ier.hit-u.ac.jp/wp-content/uploads/files/2006-57/keizaikenkyu5703260.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://econ-review.ier.hit-u.ac.jp (一橋大学『経済研究』：フォーディズムと恐慌論)</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://www.reddit.com/r/AskHistorians/comments/e6ipfw/was_fordism_the_cause_of_overproduction_during/?tl=ja" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.reddit.com (AskHistorians: Was Fordism the cause of overproduction during the Great Depression?)</a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A9%E3%83%BC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：フォーディズム)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑫ ｜ 1920年代アメリカの「フォーディズム（Fordism）」と大衆消費社会の光と影</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        priceText: "850ドル ➔ 550ドル",
+        priceWidth: "70%",
+        priceColor: "#38bdf8",
+        prodText: "急拡大（組立時間12時間半➔93分）",
+        prodWidth: "55%",
+        prodColor: "#38bdf8",
+        riskText: "低（高離職率と単調労働の課題）",
+        riskWidth: "25%",
+        riskColor: "#10b981",
+        desc: "<strong>【Phase 1：1908〜1913年 ― T型フォード発売とベルトコンベア流れ作業の導入】</strong><br>1908年に850ドルで発売されたT型フォードは、部品の共通化（規格化）と<strong>1913年のベルトコンベアによる移動組立法（流れ作業）</strong>の導入によって、車体1台の組立時間を従来の12時間28分からわずか<strong>1時間33分（93分）</strong>へと劇的に短縮しました。しかし極度に細分化された単調作業により、当時の工場では年間離職率が370%に達する深刻な人手不足が生じました。"
+      },
+      {
+        priceText: "490 ドル",
+        priceWidth: "55%",
+        priceColor: "#10b981",
+        prodText: "高（日給5ドル・1日8時間労働）",
+        prodWidth: "75%",
+        prodColor: "#10b981",
+        riskText: "低（好循環サイクルの始動）",
+        riskWidth: "20%",
+        riskColor: "#10b981",
+        desc: "<strong>【Phase 2：1914年 ― 「日給5ドル・1日8時間労働制」の導入と労働者の消費者化】</strong><br>1914年1月、ヘンリー・フォードは当時の業界平均（約2.34ドル）の2倍以上にあたる<strong>「日給5ドル」と「1日8時間労働制（3交代制）」</strong>を断行しました。これにより離職率が激減して生産性がさらに向上しただけでなく、<strong>「労働者自身が自分たちの作った自動車を買える顧客になる」</strong>という大量生産・大量消費の好循環が誕生しました。"
+      },
+      {
+        priceText: "285 ドル（約3分の1に低下）",
+        priceWidth: "33%",
+        priceColor: "#10b981",
+        prodText: "極大（年産約200万台・家電普及）",
+        prodWidth: "92%",
+        prodColor: "#38bdf8",
+        riskText: "中〜高（割賦販売・ローン依存拡大）",
+        riskWidth: "65%",
+        riskColor: "#f59e0b",
+        desc: "<strong>【Phase 3：1925年 ― 「狂騒の20年代」絶頂期と285ドルのT型フォード】</strong><br>流れ作業と規格化の徹底により、発売当初850ドルだったT型フォードは<strong>1925年には285ドル</strong>まで値下がりし、日給5ドルの労働者なら約2ヶ月分の賃金で購入できるようになりました。自動車の普及（モータリゼーション）は道路建設・石油・鉄鋼・郊外住宅ブームを牽引し、ラジオや電気掃除機などの耐久消費財、映画やジャズといった大衆文化が一斉に開花しました。"
+      },
+      {
+        priceText: "市場飽和（T型生産終了・A型へ）",
+        priceWidth: "40%",
+        priceColor: "#f59e0b",
+        prodText: "過剰生産（工場稼働率の頭打ち）",
+        prodWidth: "100%",
+        prodColor: "#f43f5e",
+        riskText: "極限（所得格差・投機バブル崩壊）",
+        riskWidth: "100%",
+        riskColor: "#e11d48",
+        desc: "<strong>【Phase 4：1927〜1929年 ― 供給過剰・所得格差の顕在化と1929年世界恐慌】</strong><br>1920年代後半になると耐久消費財の普及が一巡して市場が飽和し、割賦販売（消費者ローン）で膨らんだ家計需要も限界に達しました。アメリカ経済全体では生産性の上昇に実質賃金が追いつかず、大企業や富裕層に偏在した過剰資金がウォール街の株式投機へ流入。<strong>1929年10月の株価大暴落</strong>を機に、過剰生産能力は一転して深刻なデフレと大量失業（世界恐慌）を引き起こしました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-price').textContent = p.priceText;
+      const bPrice = document.getElementById('b-price');
+      bPrice.style.width = p.priceWidth;
+      bPrice.style.backgroundColor = p.priceColor;
+
+      document.getElementById('m-prod').textContent = p.prodText;
+      const bProd = document.getElementById('b-prod');
+      bProd.style.width = p.prodWidth;
+      bProd.style.backgroundColor = p.prodColor;
+
+      document.getElementById('m-risk').textContent = p.riskText;
+      const bRisk = document.getElementById('b-risk');
+      bRisk.style.width = p.riskWidth;
+      bRisk.style.backgroundColor = p.riskColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
