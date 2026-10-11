@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：銀行寡頭制による政治経済システムのクーデターと無制限の流動性供給メカニズム</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #311042 45%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fde68a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 0.85rem;
+    }
+
+    header p {
+      font-size: 0.98rem;
+      color: #e2e8f0;
+      max-width: 840px;
+    }
+
+    /* Section Card */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .section-num {
+      background: var(--primary-dark);
+      color: #ffffff;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .section-num.rose {
+      background: var(--rose);
+    }
+
+    .section-num.amber {
+      background: var(--accent-dark);
+    }
+
+    .section-num.purple {
+      background: var(--purple);
+    }
+
+    .section-header h2 {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .lead-text {
+      font-size: 0.96rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(to right, #fff1f2, #fffbeb);
+      border-left: 4px solid var(--rose);
+      padding: 1.15rem 1.35rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.93rem;
+    }
+
+    .highlight-box strong {
+      color: var(--crimson);
+    }
+
+    /* Comparison Dual Box (2008 TARP vs Post-2008 Bypass) */
+    .coup-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .coup-card {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.35rem;
+      background: #f8fafc;
+      position: relative;
+    }
+
+    .coup-card.old-regime {
+      border-top: 4px solid var(--accent);
+      background: #fffbeb;
+    }
+
+    .coup-card.new-regime {
+      border-top: 4px solid var(--rose);
+      background: #fff1f2;
+    }
+
+    .coup-card-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .coup-card.old-regime .coup-card-badge {
+      background: #fde68a;
+      color: #92400e;
+    }
+
+    .coup-card.new-regime .coup-card-badge {
+      background: #fecdd3;
+      color: #9f1239;
+    }
+
+    .coup-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .coup-card p, .coup-card li {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .coup-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .coup-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Bypass Flow Diagram */
+    .bypass-diagram {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .bypass-diagram-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fde68a;
+      margin-bottom: 1rem;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    .bypass-lanes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bypass-lane {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .bypass-lane.blocked {
+      border-left: 4px solid #f59e0b;
+    }
+
+    .bypass-lane.active-coup {
+      border-left: 4px solid #f43f5e;
+      background: rgba(244, 63, 94, 0.1);
+    }
+
+    .lane-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .lane-steps {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .lane-node {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.45rem;
+      font-weight: 600;
+    }
+
+    .lane-node.strike {
+      text-decoration: line-through;
+      color: #94a3b8;
+      border-color: #ef4444;
+    }
+
+    .lane-node.highlight-red {
+      background: #881337;
+      border-color: #fb7185;
+      color: #ffe4e6;
+    }
+
+    .lane-arrow {
+      color: #94a3b8;
+      font-weight: 800;
+    }
+
+    /* 5 Pillars Cards */
+    .pillars-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .pillar-item {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.4rem;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+      border-left: 5px solid var(--primary);
+    }
+
+    .pillar-item.p1 { border-left-color: #1e3a8a; }
+    .pillar-item.p2 { border-left-color: #0284c7; }
+    .pillar-item.p3 { border-left-color: #e11d48; background: #fffafb; }
+    .pillar-item.p4 { border-left-color: #7c3aed; }
+    .pillar-item.p5 { border-left-color: #d97706; }
+
+    .pillar-head {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .pillar-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: #1e3a8a;
+    }
+
+    .pillar-item.p3 .pillar-tag {
+      background: #ffe4e6;
+      color: #9f1239;
+    }
+
+    .pillar-item.p4 .pillar-tag {
+      background: #ede9fe;
+      color: #5b21b6;
+    }
+
+    .pillar-item.p5 .pillar-tag {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .pillar-head h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .pillar-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .pillar-body ul {
+      padding-left: 1.25rem;
+      margin-top: 0.45rem;
+    }
+
+    .pillar-body li {
+      margin-bottom: 0.45rem;
+    }
+
+    .pillar-body strong {
+      color: var(--text-main);
+    }
+
+    /* BOE Ukraine Bond Spotlight Box inside Pillar 3 */
+    .boe-spotlight {
+      margin-top: 0.9rem;
+      background: #1e1b4b;
+      color: #f8fafc;
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+
+    .boe-metric {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.55rem;
+      padding: 0.85rem;
+      text-align: center;
+    }
+
+    .boe-metric .m-label {
+      font-size: 0.74rem;
+      color: #cbd5e1;
+      margin-bottom: 0.3rem;
+    }
+
+    .boe-metric .m-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .boe-metric .m-val.rose {
+      color: #fda4af;
+    }
+
+    .boe-metric .m-val.emerald {
+      color: #6ee7b7;
+    }
+
+    .boe-metric .m-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.9rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .sim-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .sim-tab {
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #cbd5e1;
+      padding: 0.7rem 0.6rem;
+      border-radius: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    .sim-tab:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .sim-tab.active {
+      background: linear-gradient(135deg, #be123c, #881337);
+      border-color: #fb7185;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(244, 63, 94, 0.45);
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-metric-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.65rem;
+      padding: 0.9rem;
+    }
+
+    .sim-metric-label {
+      font-size: 0.73rem;
+      color: #94a3b8;
+      margin-bottom: 0.3rem;
+    }
+
+    .sim-metric-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .sim-metric-sub {
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    /* Collateral Valuation Bar inside Simulator */
+    .collateral-bars {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .bar-row {
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 14px;
+      background: #0f172a;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .bar-fill.market {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    .bar-fill.cb-par {
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+    }
+
+    .sim-narrative {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 4px solid #fb7185;
+      padding: 1rem 1.2rem;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Section 3: Political Essence Cards & Table */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      margin: 1.25rem 0;
+    }
+
+    .essence-card {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.3rem;
+      background: #f8fafc;
+      border-top: 4px solid var(--primary-dark);
+    }
+
+    .essence-card.e2 {
+      border-top-color: var(--rose);
+    }
+
+    .essence-card.e3 {
+      border-top-color: var(--accent-dark);
+    }
+
+    .essence-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.55rem;
+    }
+
+    .essence-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #1e293b;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Future Outlook Box */
+    .outlook-box {
+      background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+      color: #f8fafc;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid rgba(251, 113, 133, 0.35);
+    }
+
+    .outlook-box h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fde68a;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .outlook-box p {
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .coup-compare-grid,
+      .boe-spotlight,
+      .sim-tabs,
+      .sim-metrics,
+      .essence-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 1.75rem 1.25rem;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .section-card {
+        padding: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Navigation Bar -->
+    <nav class="nav-box" aria-label="補論ナビゲーション">
+      <div class="nav-title">📚 金融寡占 補論シリーズ</div>
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+      <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+      <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+      <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+      <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+      <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+      <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+      <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+      <a href="Borucar.html" class="nav-link">⑯ ボルカー・ショック</a>
+      <a href="SAP.html" class="nav-link">⑰ 構造調整プログラム</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG危機と救済</a>
+      <a href="BankCoup.html" class="nav-link active">⑲ 銀行寡頭制のクーデター</a>
+    </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge">補論 ⑲｜中央銀行テクノクラシーと議会制民主主義の空洞化</div>
+      <h1>銀行寡頭制による政治経済システムのクーデター<br>――「議会承認を必要としない無制限の流動性供給メカニズム」の正体</h1>
+      <p>
+        アレックス・クレイナー（Alex Krainer）が指摘する「銀行寡頭制による政治経済システムのクーデター」とは何か。2008年リーマン・ショック時に議会への屈辱的な懇願（TARP）を強いられたウォール街と中央銀行が、その後15年間かけて構築した<strong>「議会を一切介さず、中央銀行の独断で無限に資金を注入できるバイパス網」</strong>の全貌を解剖します。
+      </p>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>2008年の原点：議会に屈辱的な懇願を強いられた「TARP」</h2>
+      </div>
+
+      <p class="lead-text">
+        2008年の世界金融危機（リーマン・ショック）は、銀行寡頭制にとって単なる金融危機ではなく、<strong>「民主的な議会手続きという障壁」</strong>を痛感させられた政治的トラウマでした。この経験こそが、以後15年間にわたる静かなる制度的クーデターの出発点となります。
+      </p>
+
+      <div class="coup-compare-grid">
+        <div class="coup-card old-regime">
+          <span class="coup-card-badge">2008年9〜10月：旧来の救済手続き</span>
+          <h3>🏛️ 議会手続きという民主的障壁（TARP）</h3>
+          <ul>
+            <li><strong>屈辱的な懇願</strong>：2008年のリーマン・ショック当時、ヘンリー・ポールソン米財務長官は議会に対し、<strong>7,000億ドル規模の不良資産救済プログラム（TARP）</strong>を承認してもらうために「膝を屈して懇願」しなければなりませんでした。</li>
+            <li><strong>下院での否決と国民の反発</strong>：当初、法案は有権者の猛烈な反発を受けて下院で一度否決されるなど、銀行救済には選挙で選ばれた議会の承認という高いハードルが存在していました。</li>
+          </ul>
+        </div>
+
+        <div class="coup-card new-regime">
+          <span class="coup-card-badge">2008年以降〜現在：寡頭制側の教訓と転換</span>
+          <h3>⚡ 議会を完全排除する「中央銀行バイパス網」</h3>
+          <ul>
+            <li><strong>寡頭制側の結論</strong>：銀行家たちはこの経験を通じて、<strong>「危機のたびに議会を通す手続きは政治的反対に晒され、時間がかかりすぎる」</strong>と判断しました。</li>
+            <li><strong>制度化されたクーデター</strong>：以後の15年間で、議会を一切介さず、中央銀行の独断とキーボード操作だけで即座に無制限の資金を注入できるバイパス網を恒久制度として確立しました。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Visual Flow Diagram -->
+      <div class="bypass-diagram">
+        <div class="bypass-diagram-title">🔄 金融救済アーキテクチャの構造転換（2008年TARP vs 現代の中銀バイパス網）</div>
+        <div class="bypass-lanes">
+          <div class="bypass-lane blocked">
+            <div class="lane-label">
+              <span style="color:#fde68a;">【2008年 TARPルート】民主的統制が機能していた旧回路（寡頭制が嫌悪・放棄）</span>
+              <span style="font-size:0.74rem; color:#fcd34d;">※公聴会・世論の批判・下院否決リスク</span>
+            </div>
+            <div class="lane-steps">
+              <span class="lane-node">メガバンク危機</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node">財務長官が議会へ懇願</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node">上下両院の審議・採決</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node">7,000億ドル上限・監視付き承認</span>
+            </div>
+          </div>
+
+          <div class="bypass-lane active-coup">
+            <div class="lane-label">
+              <span style="color:#fda4af;">【現代のクーデター回路】議会・有権者を完全バイパスする常設・無制限パイプライン</span>
+              <span style="font-size:0.74rem; color:#fecdd3;">※審議ゼロ・秘密裏・額面100%担保認定</span>
+            </div>
+            <div class="lane-steps">
+              <span class="lane-node">不良債権・戦争債券の暴落</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node strike">議会審議・国民的議論</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node highlight-red">中銀の常設レポ・緊急融資枠・スワップ</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node highlight-red">キーボード操作で数兆ドル即時注入</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num rose">2</div>
+        <h2>議会承認を無力化した「5つの無制限流動性供給メカニズム」</h2>
+      </div>
+
+      <p class="lead-text">
+        2008年以降の15年間で、FRB（米連邦準備制度理事会）やイングランド銀行（BOE）、ECB（欧州中央銀行）などの主要中央銀行は、法的例外規定の恒久化とオペレーションの常設化を通じて、以下の5つの具体的メカニズムを構築しました。
+      </p>
+
+      <div class="pillars-list">
+        <!-- Pillar 1 -->
+        <div class="pillar-item p1">
+          <div class="pillar-head">
+            <span class="pillar-tag">メカニズム ①</span>
+            <h3>FRBによる緊急融資枠（連邦準備法第13条第3項）の拡大・恒久化</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>融資対象と担保基準の大幅緩和</strong>：FRBは、本来の監督下にある預金取扱銀行だけでなく、投資銀行や非銀行金融機関（シャドーバンク）に対しても直接融資できるように窓口を拡大しました（<strong>PDCF：プライマリー・ディーラー・クレジット・ファシリティ</strong>や<strong>TALF</strong>など）。</li>
+              <li><strong>不良資産の肩代わり</strong>：通常の健全な国債だけでなく、市場で価格が崩壊した住宅ローン担保証券（MBS）やCDO（債務担保証券）といった質の疑わしい資産まで担保として受け入れ、<strong>実質的に民間銀行の損失を中央銀行のバランスシートへ付け替える枠組み</strong>が定着しました。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-item p2">
+          <div class="pillar-head">
+            <span class="pillar-tag">メカニズム ②</span>
+            <h3>「常設レポファシリティ（SRF）」の導入（日常的な流動性蛇口）</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>臨時措置から恒久インフラへ</strong>：かつては危機時の臨時措置だった資金供給オペレーションが、FRBや主要中銀によって<strong>「常設レポファシリティ（Standing Repo Facility: SRF）」</strong>として恒久化されました。</li>
+              <li><strong>無制限の現金引き出し権</strong>：これにより、メガバンクやプライマリー・ディーラーは、市場の資金繰りが逼迫した際、議会の審議や特別な法令制定を待つまでもなく、手持ちの債券を差し入れて<strong>即座に中央銀行から現金を無制限に引き出す権利</strong>を日常的に手に入れました。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-item p3">
+          <div class="pillar-head">
+            <span class="pillar-tag">メカニズム ③｜クレイナーが暴露した決定的事例</span>
+            <h3>2024年夏：イングランド銀行（BOE）による「不良担保（ウクライナ債）」の額面救済</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>ウクライナ国債の暴落</strong>：クレイナーが具体的な事例として暴露しているのが、<strong>2024年夏のイングランド銀行（Bank of England）によるレポ市場介入</strong>です。当時、西側の債券保有者が大量に抱えていたウクライナ国債は、戦況悪化により<strong>額面1ドルに対して約60セント程度</strong>まで暴落していました。</li>
+              <li><strong>「適格担保の柔軟化（open-minded）」という隠語</strong>：イングランド銀行は「レポ取引で受け入れる担保をより柔軟に（open-mindedに）検討する」と発表し、ウクライナの名前こそ出さなかったものの、これらリスク資産を<strong>額面通り（ドル・フォー・ドル＝1ドル100セント）の健全資産として担保認定</strong>し、現金を貸し出しました。</li>
+              <li><strong>秘密裏の全額ベイルアウト</strong>：もし公的に敗北を認めて和平を結べば一夜にして数百億ドルが吹き飛ぶはずだった投資家や銀行の資産が、中央銀行の裏口融資によって秘密裏に全額救済されました。</li>
+            </ul>
+
+            <div class="boe-spotlight">
+              <div class="boe-metric">
+                <div class="m-label">市場での実勢価格（ウクライナ債）</div>
+                <div class="m-val rose">約 60 セント</div>
+                <div class="m-sub">戦況悪化で額面1ドルから40%暴落</div>
+              </div>
+              <div class="boe-metric">
+                <div class="m-label">BOEレポ窓口での担保評価額</div>
+                <div class="m-val emerald">100 セント（額面通り）</div>
+                <div class="m-sub">「open-minded（柔軟な担保認定）」</div>
+              </div>
+              <div class="boe-metric">
+                <div class="m-label">議会審議・納税者への開示</div>
+                <div class="m-val">完全ゼロ（秘密裏）</div>
+                <div class="m-sub">投資家・メガバンクの損失を中銀が吸収</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-item p4">
+          <div class="pillar-head">
+            <span class="pillar-tag">メカニズム ④</span>
+            <h3>主要中央銀行間の「常設ドル・スワップ協定」</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>国境を越える無制限のドル供給網</strong>：FRBは、ECB（欧州中央銀行）、イングランド銀行、日本銀行、スイス国立銀行などとの間に大規模なドル供与スワップラインを常設化しました。</li>
+              <li><strong>各国議会をバイパスする国際安全網</strong>：欧州や日本の銀行がドル資金のショートに陥った場合でも、自国の議会や米議会を通すことなく、各国中銀がFRBから直接ドルを引き出して現地の民間メガバンクへ供給できる国際的な安全網が敷かれています。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="pillar-item p5">
+          <div class="pillar-head">
+            <span class="pillar-tag">メカニズム ⑤</span>
+            <h3>キーボード操作による「無制限のデジタル通貨発行」</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>虚空からのデジタル通貨創出</strong>：現代の中央銀行は、紙幣を印刷する物理的な手間すら必要とせず、コンピューター上の数値を書き換えるだけでデジタル通貨（中銀当座預金）を創出します。</li>
+              <li><strong>巨大銀行の焦げ付きを直接穴埋め</strong>：JPモルガンやシティグループなど「大きすぎて潰せない（Too Big to Fail）」巨大銀行が、中東でのエネルギー開発焦げ付きやウクライナ関連の減損に直面した際、中銀はキーボードを叩いて何もない虚空から数兆ドル規模の流動性を生み出し、銀行の穴を直接埋め合わせることが可能になりました。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">🎛️ 議会バイパス＆不良担保ロンダリング・シミュレーター</div>
+            <div class="sim-subtitle">フェーズを切り替えて、2008年TARPから2024年BOE介入に至る「銀行救済の自動化・秘密化」を比較</div>
+          </div>
+        </div>
+
+        <div class="sim-tabs" role="tablist">
+          <button type="button" class="sim-tab active" onclick="selectCoupPhase(0)" id="coup-tab-0">
+            Phase 1 (2008年10月)<br>TARP：議会への屈辱的懇願
+          </button>
+          <button type="button" class="sim-tab" onclick="selectCoupPhase(1)" id="coup-tab-1">
+            Phase 2 (13条3項・スワップ)<br>FRB緊急融資枠と国際ドル網
+          </button>
+          <button type="button" class="sim-tab" onclick="selectCoupPhase(2)" id="coup-tab-2">
+            Phase 3 (常設レポ SRF)<br>日常的な無制限流動性蛇口
+          </button>
+          <button type="button" class="sim-tab" onclick="selectCoupPhase(3)" id="coup-tab-3">
+            Phase 4 (2024年夏 BOE)<br>ウクライナ債の額面100%救済
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">議会承認・民主的手続き</div>
+            <div class="sim-metric-value" id="sim-parliament" style="color:#fcd34d;">必須（下院で1度否決）</div>
+            <div class="sim-metric-sub" id="sim-parliament-sub">公聴会での追及と世論の猛反発</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">対象資産と担保評価基準</div>
+            <div class="sim-metric-value" id="sim-collateral" style="color:#93c5fd;">不良資産買取・資本注入</div>
+            <div class="sim-metric-sub" id="sim-collateral-sub">議会が7,000億ドルの上限を設定</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">資金供給スピードと規模</div>
+            <div class="sim-metric-value" id="sim-speed" style="color:#fda4af;">数週間の政治交渉・上限あり</div>
+            <div class="sim-metric-sub" id="sim-speed-sub">法案成立まで市場が動揺</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">国民へのコスト転嫁経路</div>
+            <div class="sim-metric-value" id="sim-cost" style="color:#6ee7b7;">財政支出（可視化された税金）</div>
+            <div class="sim-metric-sub" id="sim-cost-sub">納税者の批判が直接議会へ向かう</div>
+          </div>
+        </div>
+
+        <div class="collateral-bars">
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-market-label">対象資産の市場実勢価値（危機時の暴落価格）</span>
+              <span id="bar-market-val">45 セント / 1ドル</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill market" id="bar-market-fill" style="width: 45%;"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-cb-label">救済枠組みでの認定価値 / 流動性補填率</span>
+              <span id="bar-cb-val">議会承認枠内で段階的資本注入</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill cb-par" id="bar-cb-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-narrative" id="sim-narrative">
+          <strong>【Phase 1：2008年TARPのトラウマ】</strong> リーマン破綻直後、ポールソン財務長官は7,000億ドルの公的資金枠（TARP）を求めて議会に膝を屈して懇願しました。下院が一度法案を否決したことで、銀行寡頭制は「選挙で選ばれた議会に救済の可否を委ねてはならない」という教訓を得て、議会不要の中銀バイパス網構築へと舵を切りました。
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num purple">3</div>
+        <h2>「クーデター」の政治的本質：民主主義の空洞化とインフレ税収奪</h2>
+      </div>
+
+      <p class="lead-text">
+        アレックス・クレイナーがこの一連の制度変容を単なる「金融政策の技術的進化」ではなく<strong>「政治経済システムのクーデター」</strong>と呼ぶ理由は、国家の最高主権である通貨・信用の配分権が、有権者と議会の手から完全に奪取された点にあります。
+      </p>
+
+      <div class="essence-grid">
+        <div class="essence-card">
+          <h3>① 専門家支配（テクノクラシー）への権力移行</h3>
+          <p>
+            「中央銀行の独立性」や「金融技術の専門性」という建前のもとで、国家の最も根幹である<strong>通貨・信用の配分権</strong>が、国民の選挙や議会の民主的統制の枠外へと完全に隔離されました。誰を救済し、どの不良債権を額面で買い支えるかが密室で決定されます。
+          </p>
+        </div>
+
+        <div class="essence-card e2">
+          <h3>② 利益の私有化と損失の公有化</h3>
+          <p>
+            銀行寡頭制は、平時には高レバレッジの投機や地政学的賭け（ウクライナ債や中東エネルギー融資など）で巨額のボーナスや配当を私有化します。そして危機が発生すると「金融システム防衛」を名目に、議会の承認を経ずに中銀の無限マネープリントで損失を埋めさせます。
+          </p>
+        </div>
+
+        <div class="essence-card e3">
+          <h3>③ 「インフレ税」による一般国民からの収奪</h3>
+          <p>
+            キーボード操作で虚空から生み出された数兆ドルの流動性は、最終的に<strong>通貨価値の希薄化（インフレーション）</strong>を引き起こします。議会で増税法案を通す代わりに、預金や年金の購買力を密かに奪う「インフレ税」として一般国民・中間層へコストが転嫁される構造が完成しました。
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>民主的立憲システム（本来の原則・2008年TARP時）</th>
+              <th>銀行寡頭制のクーデター体制（2008年以降の常設バイパス）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>救済の意思決定主体</strong></td>
+              <td>選挙で選ばれた議会（上下両院の審議・採決と納税者への説明責任）</td>
+              <td>非選出の中央銀行テクノクラート（FRB・BOE・ECB等の密室決定）</td>
+            </tr>
+            <tr>
+              <td><strong>救済手段と法的根拠</strong></td>
+              <td>公的資金注入法案（TARP：7,000億ドル上限・議会監視委員会の設置）</td>
+              <td>緊急融資枠（13条3項）、常設レポ（SRF）、中銀間ドル・スワップ協定</td>
+            </tr>
+            <tr>
+              <td><strong>不良担保の扱い</strong></td>
+              <td>市場価格での評価減・株主責任や経営陣追及の議論が不可避</td>
+              <td>「適格担保の柔軟化（open-minded）」により暴落債券（60セント）も額面（100セント）で現金化</td>
+            </tr>
+            <tr>
+              <td><strong>コストの負担形態</strong></td>
+              <td>可視化された国家予算・財政支出（有権者が選挙でNOを突きつけられる）</td>
+              <td>不可視の「インフレ税」（通貨希薄化による預金・年金・実質賃金の購買力収奪）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="outlook-box">
+        <h3>💡 構造的帰結：無制限の流動性供給がもたらす「連邦債務危機・スタグフレーション」への直結</h3>
+        <p>
+          この「議会承認を必要としない無制限の流動性供給メカニズム」は、短期的には巨大銀行の破綻を隠蔽できるものの、長期的には<strong>ソブリン通貨そのものの信認崩壊</strong>を招きます。不良債権や戦費・財政赤字を中央銀行のバランスシートとレポ市場で無限にマネタイズし続ければ、インフレ鎮静化のための高金利が米連邦債務の利払い費を爆発させ、逆に利払いを抑えるために流動性を供給すれば通貨価値が暴落する――という<strong>「財政支配（Fiscal Dominance）と構造的スタグフレーション」</strong>の袋小路へと直結していくのです。
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      金融寡占 補論シリーズ ⑲｜銀行寡頭制による政治経済システムのクーデター（BankCoup.html）
+    </footer>
+  </div>
+
+  <script>
+    const coupPhases = [
+      {
+        parliament: "必須（下院で1度否決）",
+        parliamentColor: "#fcd34d",
+        parliamentSub: "公聴会での追及と世論の猛反発",
+        collateral: "不良資産買取・資本注入",
+        collateralSub: "議会が7,000億ドルの上限を設定",
+        speed: "数週間の政治交渉・上限あり",
+        speedSub: "法案成立まで市場が激しく動揺",
+        cost: "財政支出（可視化された税金）",
+        costSub: "納税者の批判が直接議会へ向かう",
+        marketLabel: "対象資産（サブプライムMBS/CDO）の市場実勢価値",
+        marketVal: "45 セント / 1ドル",
+        marketWidth: "45%",
+        cbLabel: "救済枠組みでの対応（議会上限枠内での公的資本注入）",
+        cbVal: "議会承認7,000億ドル枠内で段階執行",
+        cbWidth: "70%",
+        narrative: "<strong>【Phase 1：2008年TARPのトラウマ】</strong> リーマン破綻直後、ポールソン財務長官は7,000億ドルの公的資金枠（TARP）を求めて議会に膝を屈して懇願しました。下院が一度法案を否決したことで、銀行寡頭制は「選挙で選ばれた議会に救済の可否を委ねてはならない」という教訓を得て、議会不要の中銀バイパス網構築へと舵を切りました。"
+      },
+      {
+        parliament: "不要（FRB理事会の独断）",
+        parliamentColor: "#fda4af",
+        parliamentSub: "連邦準備法第13条第3項の拡大適用",
+        collateral: "MBS・CDO等の不良債権を担保認定",
+        collateralSub: "投資銀行・非銀行（PDCF/TALF）へ窓口拡大",
+        speed: "即時・数兆ドル規模",
+        speedSub: "中銀間ドル・スワップで日欧銀へも供給",
+        cost: "中銀バランスシートへの付け替え",
+        costSub: "民間銀行の損失を公的バランスシートが吸収",
+        marketLabel: "市場で価格崩壊したMBS・CDO等の実勢価値",
+        marketVal: "35〜50 セント / 1ドル",
+        marketWidth: "40%",
+        cbLabel: "FRB緊急融資窓口での担保受け入れ・流動性供給",
+        cbVal: "中銀バランスシートで巨額引き受け",
+        cbWidth: "92%",
+        narrative: "<strong>【Phase 2：FRB緊急融資枠（13条3項）と国際ドル・スワップ網】</strong> FRBは預金銀行だけでなく投資銀行やシャドーバンクにも直接融資（PDCF・TALF）を開放し、価格が崩壊したMBSやCDOを担保に受け入れました。さらにECB・BOE・日銀等との常設ドル・スワップ協定により、世界中のメガバンクへ議会承認なしでドルを供給する国際バイパスが完成しました。"
+      },
+      {
+        parliament: "完全不要（常設制度化）",
+        parliamentColor: "#fda4af",
+        parliamentSub: "危機時対応から「日常の蛇口」へ恒久化",
+        collateral: "適格債券の即時レポ現金化",
+        collateralSub: "プライマリー・ディーラーの特権的窓口",
+        speed: "ミリ秒〜即日・事実上無制限",
+        speedSub: "キーボード操作によるデジタル通貨創出",
+        cost: "慢性的マネー膨張と資産インフレ",
+        costSub: "格差拡大と通貨購買力の段階的希薄化",
+        marketLabel: "資金逼迫時の市場流動性ストレス",
+        marketVal: "レポ金利急騰・担保投げ売りリスク",
+        marketWidth: "55%",
+        cbLabel: "常設レポファシリティ（SRF）による無制限現金供給",
+        cbVal: "100% 即時流動性供給（上限なし）",
+        cbWidth: "100%",
+        narrative: "<strong>【Phase 3：常設レポファシリティ（SRF）とキーボード通貨発行】</strong> かつての臨時オペは「常設レポファシリティ（SRF）」として恒久化されました。JPモルガンやシティなど巨大銀行は、中東エネルギー開発の焦げ付きや市場逼迫に直面しても、議会審議を一切待つことなく、中銀のキーボード操作で虚空から生み出されるデジタル通貨を日常的に引き出せます。"
+      },
+      {
+        parliament: "完全バイパス（秘密裏に実行）",
+        parliamentColor: "#fda4af",
+        parliamentSub: "「ウクライナ」の名すら出さずオペ規約変更",
+        collateral: "暴落したウクライナ国債等を額面認定",
+        collateralSub: "「適格担保の柔軟化（open-minded）」という隠語",
+        speed: "即時・ドルフォー・ドル（100%）",
+        speedSub: "60セントの暴落債券に100セントの現金を貸出",
+        cost: "インフレ税（預金・年金の購買力収奪）",
+        costSub: "戦争・地政学投機の失敗を一般国民へ転嫁",
+        marketLabel: "2024年夏 ウクライナ国債の市場実勢価格（戦況悪化）",
+        marketVal: "約 60 セント / 1ドル（40%暴落）",
+        marketWidth: "60%",
+        cbLabel: "イングランド銀行（BOE）レポ窓口での担保評価額",
+        cbVal: "100 セント / 1ドル（額面通り全額救済）",
+        cbWidth: "100%",
+        narrative: "<strong>【Phase 4：2024年夏 イングランド銀行による「不良担保」額面救済】</strong> 戦況悪化で額面1ドルあたり約60セントへ暴落していたウクライナ国債に対し、イングランド銀行は「担保をより柔軟に（open-mindedに）検討する」と発表。リスク資産を額面通り（1ドル＝100セント）の健全担保と認定して現金を貸し出し、和平を結べば吹き飛ぶはずだった西側投資家・銀行の資産を秘密裏に全額救済しました。"
+      }
+    ];
+
+    function selectCoupPhase(index) {
+      const data = coupPhases[index];
+      for (let i = 0; i < 4; i++) {
+        const tab = document.getElementById("coup-tab-" + i);
+        if (i === index) {
+          tab.classList.add("active");
+        } else {
+          tab.classList.remove("active");
+        }
+      }
+      const pEl = document.getElementById("sim-parliament");
+      pEl.textContent = data.parliament;
+      pEl.style.color = data.parliamentColor;
+      document.getElementById("sim-parliament-sub").textContent = data.parliamentSub;
+
+      document.getElementById("sim-collateral").textContent = data.collateral;
+      document.getElementById("sim-collateral-sub").textContent = data.collateralSub;
+
+      document.getElementById("sim-speed").textContent = data.speed;
+      document.getElementById("sim-speed-sub").textContent = data.speedSub;
+
+      document.getElementById("sim-cost").textContent = data.cost;
+      document.getElementById("sim-cost-sub").textContent = data.costSub;
+
+      document.getElementById("bar-market-label").textContent = data.marketLabel;
+      document.getElementById("bar-market-val").textContent = data.marketVal;
+      document.getElementById("bar-market-fill").style.width = data.marketWidth;
+
+      document.getElementById("bar-cb-label").textContent = data.cbLabel;
+      document.getElementById("bar-cb-val").textContent = data.cbVal;
+      document.getElementById("bar-cb-fill").style.width = data.cbWidth;
+
+      document.getElementById("sim-narrative").innerHTML = data.narrative;
+    }
+  </script>
+</body>
+</html>
