@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：ユーロダラー市場（Eurodollar Market）の仕組み・誕生の背景とオフショア金融支配</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f766e 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.24) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(20, 184, 166, 0.35);
+      color: #ccfbf1;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #0d9488;
+      color: #ffffff;
+      border-color: #5eead4;
+      box-shadow: 0 0 12px rgba(20, 184, 166, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+        <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+        <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+        <a href="EuDaller.html" class="nav-link active">⑭ ユーロダラー市場</a>
+        <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">国際金融・オフショア市場補論</span>
+        <span class="badge badge-sub">国家主権外のドル信用創造空間</span>
+      </div>
+      <h1>ユーロダラー市場（Eurodollar Market）：<br>米国外のオフショア・ドル市場の特徴と誕生の背景</h1>
+      <p class="lead">
+        <strong>ユーロダラー市場</strong>とは、米国外の金融機関（ヨーロッパなど）に預けられた米ドル資金（<strong>ユーロダラー</strong>）が貸し借りされる、国境を越えた<strong>短期金融市場（オフショア市場）</strong>のことです。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Features of the Eurodollar Market -->
+    <section>
+      <h2>🌐 ユーロダラー市場の特徴</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        通貨発行国（アメリカ）の法域外で米ドルを取引することにより、ユーロダラー市場は従来の国内金融市場にはない独自の性格を備えています。
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>① 国内規制を受けない</span>
+          </div>
+          <p class="factor-desc">
+            発行国（アメリカ）の<strong>国内金利規制や預金準備率などの規制が及ばない</strong>ため、自由で弾力的な取引が可能です。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 名称の由来（EURではない）</span>
+          </div>
+          <p class="factor-desc">
+            最初に<strong>ヨーロッパ（特にロンドン）で米ドルの取引が活発化したため「ユーロ」</strong>と名付けられました。通貨が共通通貨ユーロ（EUR）という意味ではありません。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ 他のユーロ通貨（ユーロカレンシー）</span>
+          </div>
+          <p class="factor-desc">
+            米ドル以外の通貨でも同様に国外で取引されるものを<strong>「ユーロカレンシー（ユーロ円やユーロマルクなど）」</strong>と呼びます。<a href="#ref-8" class="cite-tag">[8]</a><a href="#ref-9" class="cite-tag">[9]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">💡 なぜ「規制を受けない」と取引が集中するのか？（金利スプレッドの優位性）</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          アメリカ国内の銀行（オンショア市場）は、FRB（連邦準備制度）によって一定割合の預金を無利子で預け入れる<strong>「法定預金準備率」</strong>や預金保険料、さらには預金金利の上限規制（レギュレーションQ）を課されていました。これに対し、ロンドンなどの米国外にある銀行（ユーロバンク）はこれらの規制コストがゼロであるため、<strong>「米国内の銀行よりも高い預金金利を提示してドルを集め、米国内の銀行よりも低い貸出金利でドルを融資する」</strong>ことができました。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Historical Background & Interactive Simulator -->
+    <section>
+      <h2>🕰️ 誕生の背景と急拡大のメカニズム</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        <strong>1950年代の冷戦期</strong>、ソ連や東欧諸国がアメリカ国内に保有していた米ドル資産を、<strong>アメリカによる資産凍結を恐れてヨーロッパの銀行へ預け替えた</strong>ことが起源とされています。その後、米国の国際収支赤字や国内金利規制（<strong>レギュレーションQ</strong>）を逃れるため、米国外でのドル資金取引がロンドンなどを中心に急拡大しました。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-10" class="cite-tag">[10]</a>
+      </p>
+
+      <!-- 4-Step Flow Diagram -->
+      <div class="flow-grid">
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 1：冷戦下の起源</span>
+          <div class="flow-title">ソ連・東欧のドル逃避</div>
+          <p class="flow-desc">
+            1950年代、ソ連が貿易決済用の米ドルをニューヨークの銀行に置くと米国政府に凍結されるリスクを恐れ、パリ（北欧商業銀行）やロンドンの銀行口座へ預け替えた。
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 2：英国の戦略</span>
+          <div class="flow-title">ロンドン・シティの復活</div>
+          <p class="flow-desc">
+            1957年のポンド危機で英政府がポンド建ての対外融資を制限した際、イングランド銀行は<strong>「外貨（米ドル）建てのオフショア取引」を黙認・奨励</strong>し、シティの国際金融覇権を維持した。
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">STEP 3：米規制からの逃避</span>
+          <div class="flow-title">レギュレーションQと赤字</div>
+          <p class="flow-desc">
+            1960年代、米国の対外赤字（ベトナム戦費等）で海外にドルが溢れる中、米国内の預金金利上限規制（<strong>レギュレーションQ</strong>）や資本流出規制を嫌った米銀・多国籍企業がロンドンへ殺到。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 4：世界的膨張</span>
+          <div class="flow-title">オイルマネーと自由化</div>
+          <p class="flow-desc">
+            1970年代のオイルショックで産油国が得た巨額の<strong>ペトロダラー（オイルマネー）</strong>がユーロダラー市場に預けられ、世界中の政府・企業への国際シンジケートローンへと拡大した。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 ユーロダラー市場の発展フェーズ（1950年代〜現代）シミュレーター</div>
+            <div class="sim-subtitle">時代ボタンを切り替えて、ユーロダラー市場の規模・主要プレイヤー・国際金融システムへの影響を確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1950年代</span>
+            冷戦下のソ連ドル預金とロンドン市場誕生
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1960年代</span>
+            レギュレーションQ回避と米銀のロンドン進出
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1970年代</span>
+            オイルマネー（ペトロダラー）還流と急膨張
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜1980年代〜現在</span>
+            グローバル・シャドー金融とLIBOR／SOFR
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">ユーロダラー市場の規模・成長ドライバー</div>
+            <div class="metric-value" id="m-scale">急拡大（米多国籍企業・米銀の参入）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-scale" style="width: 55%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">米国金融当局（FRB）の規制・管理が及ぶ範囲</div>
+            <div class="metric-value" id="m-reg">圏外（レギュレーションQ・準備率を回避）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-reg" style="width: 15%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国際的な信用創造・投機マネー化の影響力</div>
+            <div class="metric-value" id="m-impact">高（ブレトンウッズ固定相場制の動揺）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-impact" style="width: 75%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 2：1960年代 ― 米国の国際収支赤字と「レギュレーションQ」からの資本逃避】</strong><br>
+          1960年代に入ると、米国は国際収支赤字（ドル流出）を抑えるため利子平衡税（1963年）などの資本規制を導入し、同時に国内では<strong>レギュレーションQ</strong>によって定期預金金利に上限を設けていました。その結果、より高い利回りを求める資金と、資金調達難に直面したアメリカの巨大銀行自身がこぞってロンドンに支店を開設し、規制の及ばないユーロダラー市場を通じて巨額のドルを調達・運用するようになりました。<a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[4]</a><a href="#ref-10" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[10]</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive on Euro Market Structure & Eurobonds -->
+    <section>
+      <h2>🔍 深掘り解説：ユーロ市場全体の仕組み・メリットと「ユーロ債（ユーロドル債）」との違い</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        「短期の貸し借りを行うユーロダラー市場（ユーロマネー市場）」と、「中長期の債券を発行するユーロ債（ユーロドル債など）市場」の違いおよびユーロ市場全体のメリットを整理します。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>🏦 ユーロ市場全体の仕組みとメリット</span>
+          </div>
+          <p class="factor-desc">
+            <strong>① 自由な金利形成と低コスト仲介</strong>：預金準備率や金利上限がないため、資金の出し手には高金利、借り手には低金利を提供できます。<br>
+            <strong>② 源泉徴収税・登録手続きの簡素化</strong>：原則として利子に対する源泉徴収税が免除され、機動的な大口資金調達（ホールセール取引）が可能です。<br>
+            <strong>③ 国際的な流動性調整</strong>：世界の余剰資金（産油国や貿易黒字国のドル・ユーロ円等）を、資金不足の国や多国籍企業へ瞬時に融通するハブとして機能します。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>📜 ユーロダラー（短期）とユーロ債（長期）の違い</span>
+          </div>
+          <p class="factor-desc">
+            <strong>ユーロダラー市場（短期金融市場）</strong>：主に銀行間（インターバンク）や大企業との間で、1年未満（オーバーナイト〜3ヶ月・6ヶ月物など）の<strong>「米ドル建て預金・貸出」</strong>を行う市場です。<br>
+            <strong>ユーロ債／ユーロドル債（長期資本市場）</strong>：米国外（ロンドンやルクセンブルク等）で発行される米ドル建ての<strong>「中長期債券」</strong>です。米国のSEC（証券取引委員会）への煩雑な登録義務を回避して国際シンジケート団を通じて機動的かつ低コストに起債できる特徴があります。<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-9" class="cite-tag">[9]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">比較項目</th>
+              <th style="width: 27%;">ユーロダラー市場<br><span style="font-size: 0.78rem; font-weight: 500;">（オフショア短期金融市場）</span></th>
+              <th style="width: 27%;">ユーロドル債市場<br><span style="font-size: 0.78rem; font-weight: 500;">（オフショア長期債券市場）</span></th>
+              <th style="width: 26%;">米国内市場・ヤンキー債<br><span style="font-size: 0.78rem; font-weight: 500;">（オンショア米国市場）</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>取引される場所・法域</strong></td>
+              <td><strong>米国外</strong>（ロンドン、シンガポール、東京オフショア市場など）。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td><strong>米国外</strong>（主にロンドンで引受、ルクセンブルク等に上場）。<a href="#ref-7" class="cite-tag">[7]</a></td>
+              <td><strong>米国内</strong>（ニューヨーク市場など）。</td>
+            </tr>
+            <tr>
+              <td><strong>主な金融商品・期間</strong></td>
+              <td>銀行間預金・短期貸出・CD（譲渡性預金）。期間は<strong>主に1年以内（短期）</strong>。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td>政府・国際機関・多国籍企業が発行する<strong>中長期の米ドル建て債券</strong>。</td>
+              <td>米国内預金・貸出、および外国発行体が米国で発行するドル建て債（ヤンキー債）。</td>
+            </tr>
+            <tr>
+              <td><strong>米国当局の規制</strong></td>
+              <td><strong>原則対象外</strong>（FRBの預金準備率や国内金利規制が及ばない）。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+              <td><strong>原則対象外</strong>（米SECへの厳格な証券登録義務が免除され発行が迅速）。</td>
+              <td><strong>全面適用</strong>（FRBの金融規制・預金保険・SECの厳格な情報開示義務）。</td>
+            </tr>
+            <tr>
+              <td><strong>他の通貨への展開</strong></td>
+              <td>ユーロ円預金、ユーロマルク預金、ユーロポンド預金など（<strong>ユーロカレンシー市場</strong>）。<a href="#ref-8" class="cite-tag">[8]</a><a href="#ref-9" class="cite-tag">[9]</a></td>
+              <td>ユーロ円債、ユーロユーロ債など（通貨発行国外で発行される債券全般）。</td>
+              <td>日本で外国人が発行する円建て債は「サムライ債」、英国は「ブルドッグ債」。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している証券用語集・官公庁白書・事典の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.tokaitokyo.co.jp/kantan/term/detail_1461.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.tokaitokyo.co.jp (東海東京証券：ユーロダラー市場)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://kotobank.jp/word/%E3%82%86%E3%83%BC%E3%82%8D%E3%81%A0%E3%82%89%E3%83%BC%E5%B8%82%E5%A0%B4-1432041" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：ユーロダラー市場)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E3%82%86%E3%83%BC%E3%82%8D%E3%83%80%E3%83%A9%E3%83%BC-3174171" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：ユーロダラー)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www5.cao.go.jp/keizai3/sekaikeizaiwp/wp-we71/wp-we71-00204.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www5.cao.go.jp (内閣府・世界経済白書：ユーロダラー市場の拡大と背景)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.am.mufg.jp/basic/words/0272.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.am.mufg.jp (三菱UFJアセットマネジメント：ユーロ市場用語解説)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://media.monex.co.jp/ud/glossary/66026736905bd41bb0000174" target="_blank" rel="noopener noreferrer" class="ref-link">https://media.monex.co.jp (マネックス証券：ユーロダラー用語解説)</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://www.nomura.co.jp/terms/japan/yu/euromkt.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.nomura.co.jp (野村證券：ユーロ市場)</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://web.sfc.keio.ac.jp/~taiyo/wordpress/?p=4070" target="_blank" rel="noopener noreferrer" class="ref-link">https://web.sfc.keio.ac.jp (慶應義塾大学SFC：ユーロカレンシー市場の解説)</a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%83%AD%E3%82%AB%E3%83%AC%E3%83%B3%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：ユーロカレンシー)</a>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <a href="https://www.mof.go.jp/public_relations/finance/denshi/202111/pageindices/index19.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.mof.go.jp (財務省広報誌『ファイナンス』：国際金融市場の変遷)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑭ ｜ ユーロダラー市場（Eurodollar Market）の特徴と誕生の背景</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        scaleText: "萌芽期（ソ連・東欧のドル逃避とロンドン取引）",
+        scaleWidth: "25%",
+        scaleColor: "#a855f7",
+        regText: "米国の資産凍結リスク・国内法域を回避",
+        regWidth: "20%",
+        regColor: "#10b981",
+        impactText: "小〜中（ロンドン・シティの国際金融復活）",
+        impactWidth: "35%",
+        impactColor: "#38bdf8",
+        desc: "<strong>【Phase 1：1950年代 ― 冷戦期におけるソ連・東欧のドル逃避と「ユーロバンク」】</strong><br>東西冷戦が激化する中、ソ連や東欧諸国は貿易決済に必要な米ドル資産をアメリカの銀行に預けておくと、米国政府によって資産凍結されることを恐れました。そこでパリのソ連系銀行（北欧商業銀行：電信略号 EUROBANK）やロンドンの銀行に米ドルを預け替えたことが「ユーロダラー」の起源とされています。また1957年のポンド危機後、英国が米ドル建てオフショア取引を容認したことでロンドンが中心地となりました。"
+      },
+      {
+        scaleText: "急拡大（米多国籍企業・米銀の参入）",
+        scaleWidth: "55%",
+        scaleColor: "#38bdf8",
+        regText: "圏外（レギュレーションQ・準備率を回避）",
+        regWidth: "15%",
+        regColor: "#10b981",
+        impactText: "高（ブレトンウッズ固定相場制の動揺）",
+        impactWidth: "75%",
+        impactColor: "#f59e0b",
+        desc: "<strong>【Phase 2：1960年代 ― 米国の国際収支赤字と「レギュレーションQ」からの資本逃避】</strong><br>1960年代に入ると、米国は国際収支赤字（ドル流出）を抑えるため利子平衡税（1963年）などの資本規制を導入し、同時に国内では<strong>レギュレーションQ</strong>によって定期預金金利に上限を設けていました。その結果、より高い利回りを求める資金と、資金調達難に直面したアメリカの巨大銀行自身がこぞってロンドンに支店を開設し、規制の及ばないユーロダラー市場を通じて巨額のドルを調達・運用するようになりました。"
+      },
+      {
+        scaleText: "爆発的膨張（オイルマネーの流入）",
+        scaleWidth: "85%",
+        scaleColor: "#f59e0b",
+        regText: "無規制（準備率ゼロでの国際信用創造）",
+        regWidth: "10%",
+        regColor: "#10b981",
+        impactText: "極大（途上国債務危機への伏線）",
+        impactWidth: "90%",
+        impactColor: "#f43f5e",
+        desc: "<strong>【Phase 3：1970年代 ― ペトロダラー（オイルマネー）還流と国際シンジケートローン】</strong><br>1971年のニクソン・ショック（金ドル交換停止）と1973年・1979年のオイルショックを経て、OPEC産油国が手にした莫大な<strong>オイルマネー（ペトロダラー）</strong>がロンドンのユーロダラー市場へ大量に預け入れられました。欧米の国際銀行団はこのドル資金を原資に、ラテンアメリカなどの発展途上国へ巨額の変動金利シンジケートローンを貸し付け、後の1980年代累積債務危機の温床となりました。"
+      },
+      {
+        scaleText: "天文学的規模（世界のドル流動性の基軸）",
+        scaleWidth: "100%",
+        scaleColor: "#f43f5e",
+        regText: "各国国内規制の緩和・金融自由化を強制",
+        regWidth: "10%",
+        regColor: "#f43f5e",
+        impactText: "極限（グローバル・シャドーバンキング化）",
+        impactWidth: "100%",
+        impactColor: "#e11d48",
+        desc: "<strong>【Phase 4：1980年代〜現在 ― 各国の金融自由化とグローバルなオフショア信用空間】</strong><br>ユーロダラー市場の巨大化により、アメリカや日本を含む各国政府も自国市場の空洞化を防ぐため金利規制撤廃（レギュレーションQの廃止など）やオフショア市場（JOM、IBFなど）の創設を余儀なくされました。今日でも米国外の銀行システムで創造されるユーロダラーは世界の貿易決済・デリバティブ・国際貸出の根幹を握っており、金融危機時にはFRBが各国中央銀行と通貨スワップ協定を結んでドル流動性を供給する構造となっています。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-scale').textContent = p.scaleText;
+      const bScale = document.getElementById('b-scale');
+      bScale.style.width = p.scaleWidth;
+      bScale.style.backgroundColor = p.scaleColor;
+
+      document.getElementById('m-reg').textContent = p.regText;
+      const bReg = document.getElementById('b-reg');
+      bReg.style.width = p.regWidth;
+      bReg.style.backgroundColor = p.regColor;
+
+      document.getElementById('m-impact').textContent = p.impactText;
+      const bImpact = document.getElementById('b-impact');
+      bImpact.style.width = p.impactWidth;
+      bImpact.style.backgroundColor = p.impactColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
