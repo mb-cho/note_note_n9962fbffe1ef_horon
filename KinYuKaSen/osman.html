@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：オスマン帝国へのヨーロッパ列強による干渉と「蚕食」（1876年の危機）</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #7c2d12 55%, #991b1b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.35);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #f1f5f9;
+      font-weight: 400;
+      max-width: 850px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Reform Cards */
+    .reform-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--emerald);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .reform-badge {
+      display: inline-block;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0.15rem 0.6rem;
+      border-radius: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .reform-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .reform-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Interactive Historical Timeline Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #fecdd3;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .year-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      background: #e2e8f0;
+      padding: 0.3rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .year-btn {
+      flex: 1;
+      min-width: 130px;
+      border: none;
+      background: transparent;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .year-btn.active {
+      background: #ffffff;
+      color: var(--crimson);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .meters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .meter-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+
+    .meter-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .meter-track {
+      width: 100%;
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      transition: width 0.35s ease;
+    }
+
+    .sim-event-box {
+      background: #ffffff;
+      border-left: 4px solid var(--crimson);
+      padding: 1.15rem;
+      border-radius: 0.35rem;
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Quote / Callout Box */
+    .quote-box {
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 1px solid #fecdd3;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: var(--crimson);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      color: #4c0519;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    /* Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・歴史ノート）</span>
+      </div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link active">⑧ オスマン帝国蚕食</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 帝国主義と債務の罠・歴史ケーススタディ</span>
+        <span class="badge badge-sub">1875-1881 オスマン帝国危機</span>
+      </div>
+      <h1>オスマン帝国へのヨーロッパ列強による干渉と「蚕食」</h1>
+      <p class="lead">
+        1876年のオスマン帝国は、バルカン半島での民族反乱やヨーロッパ列強による干渉、そして深刻な財政破綻により、領土と主権を文字通り「<strong>蚕食（さんしょく：カイコが桑の葉を食べるように他国の領土・主権を少しずつ削り取ること）</strong>」される未曾有の危機に瀕していました。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 1. 内外からの「蚕食」と危機の要因 -->
+    <section id="crisis-factors">
+      <h2>🔥 1. 内外からの「蚕食」と危機の要因（金融×領土の二重包囲）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        1876年に頂点に達した帝国崩壊危機は、西欧の銀行資本による「<strong>経済的（金融的）蚕食</strong>」と、ロシアおよび列強による「<strong>領土的（地政学的）蚕食</strong>」が同時に進行した複合危機でした。
+      </p>
+
+      <div class="grid-2">
+        <!-- 経済的蚕食 -->
+        <div class="factor-card" style="border-left-color: var(--rose);">
+          <div class="factor-title">
+            <span>🏦 ① 財政破綻（経済的・金融的蚕食）</span>
+          </div>
+          <div class="factor-desc">
+            オスマン帝国はクリミア戦争（1854年）での初の外債発行以降、近代化改革（タンジマート）や戦費、宮廷の浪費を賄うためにイギリス・フランスの金融資本からの外債依存を深めていました。<br><br>
+            しかし高金利と額面割引による過酷な利払いに耐えきれず、前年の<strong>1875年10月に事実上の財政破綻（債務不履行・デフォルト）</strong>を宣言しました。これにより、国家の心臓部である財政・徴税主権が事実上、ヨーロッパ列強の銀行団の管理下に置かれ始めました。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <!-- 領土的蚕食 -->
+        <div class="factor-card" style="border-left-color: var(--accent);">
+          <div class="factor-title">
+            <span>⚔️ ② バルカン半島の反乱と列強の介入（領土的蚕食）</span>
+          </div>
+          <div class="factor-desc">
+            1875年のボスニア・ヘルツェゴヴィナ反乱に続き、1876年にはブルガリアで大規模な反乱が発生。さらにセルビアやモンテネグロもオスマン帝国に宣戦布告しました。<br><br>
+            これを地中海への南下の好機と捉えた<strong>ロシア帝国</strong>が「パン＝スラヴ主義」や正教徒保護を大義名分として介入の構えを強め、ヨーロッパ列強は「<strong>東方問題</strong>」として帝国の領土をどう切り分けるかの交渉を進めていました。<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 金融寡占との接続ボックス -->
+      <div class="quote-box">
+        <div class="quote-title">HISTORICAL ARCHETYPE OF THE DEBT TRAP</div>
+        <div class="quote-text">
+          <strong>【金融寡占資本による主権収奪の典型例】</strong><br>
+          1875年のデフォルトの後、1881年に発布された「ムハッレム勅令」によって<strong>オスマン債務管理局（OPDA）</strong>が設立されました。ロンドンやパリの銀行家代表がイスタンブールに乗り込み、帝国内のタバコ・塩・印紙・酒・生糸などの主要税収を直接徴収して外債の利払いに充てる体制を構築しました。これは主権国家が「債務の罠」によって金融植民地化される歴史的原型となりました。
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 蚕食への抵抗：近代改革の到達点 -->
+    <section id="resistance-and-reform">
+      <h2>📜 2. 蚕食への抵抗：近代改革（タンジマート）の到達点</h2>
+      <p style="margin-bottom: 1.25rem;">
+        帝国が列強によって完全に解体・蚕食されるのを防ぐため、改革派の大宰相<strong>ミドハト・パシャ</strong>を中心とする勢力は、国家体制の抜本的な立憲近代化を推し進めました。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-6" class="cite-badge">[6]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="reform-card" style="border-top-color: var(--primary);">
+          <span class="reform-badge" style="background: #dbeafe; color: var(--primary);">1876年5月〜8月</span>
+          <div class="reform-title">👑 スルタンの相次ぐ交代</div>
+          <div class="reform-desc">
+            財政破綻を招き改革に非協力的だったスルタン・アブデュルアズィズをクーデターで廃位し、続いて精神を病んだムラト5世も退位させ、立憲改革を約束した<strong>アブデュルハミト2世</strong>を新たに即位させました。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-6" class="cite-badge">[6]</a>
+          </div>
+        </div>
+
+        <div class="reform-card" style="border-top-color: var(--emerald);">
+          <span class="reform-badge">1876年12月23日</span>
+          <div class="reform-title">⚖️ ミドハト憲法の発布（アジア初の成文憲法）</div>
+          <div class="reform-desc">
+            列強がイスタンブールに集まり内政干渉案を突きつけた「コンスタンティノープル会議」の初日に合わせ、「近代的な法治国家」であることを示して干渉の口実を奪うため、アジア初の本格的成文憲法である「<a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%B9%E3%83%9E%E3%83%B3%E5%B8%9D%E5%9B%BD%E6%86%B2%E6%B3%95" target="_blank" rel="noopener noreferrer" style="color: var(--primary-light); font-weight: 700;">オスマン帝国憲法（ミドハト憲法）</a>」を発布しました。<br><br>
+            帝国議会が開設され、ムスリムもキリスト教徒も全住民を法の下に平等な「オスマン人」として統合する（<strong>オスマン主義</strong>）ことで、帝国の分裂を防ごうと試みました。<a href="#ref-6" class="cite-badge">[6]</a><a href="#ref-7" class="cite-badge">[7]</a><a href="#ref-8" class="cite-badge">[8]</a><a href="#ref-9" class="cite-badge">[9]</a><a href="#ref-11" class="cite-badge">[11]</a><a href="#ref-12" class="cite-badge">[12]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 結末とさらなる後退への序曲 -->
+    <section id="aftermath">
+      <h2>🥀 3. 結末とさらなる後退への序曲（露土戦争と専制への逆行）</h2>
+
+      <div class="grid-3">
+        <div class="factor-card" style="border-left-color: #b91c1c;">
+          <div class="factor-title">💥 露土戦争の勃発（1877年）</div>
+          <div class="factor-desc">
+            ミドハト憲法による外交的抵抗も虚しく、1877年4月にロシア帝国が宣戦布告し<strong>露土戦争（1877〜1878年）</strong>が勃発。ロシア軍はバルカン半島を突破し、首都イスタンブール近郊（サン・ステファノ）まで迫りました。<a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+
+        <div class="factor-card" style="border-left-color: #475569;">
+          <div class="factor-title">🔒 憲法停止と専制政治（1878年）</div>
+          <div class="factor-desc">
+            敗戦の危機を名目に、アブデュルハミト2世はすでに1877年にミドハト・パシャを罷免・追放しており、1878年2月には<strong>ミドハト憲法を無期限停止・帝国議会を閉鎖</strong>。以後30年間にわたるスルタンの専制政治へと逆戻りしました。<a href="#ref-10" class="cite-badge">[10]</a><a href="#ref-13" class="cite-badge">[13]</a>
+          </div>
+        </div>
+
+        <div class="factor-card" style="border-left-color: #7c3aed;">
+          <div class="factor-title">🗺️ ベルリン条約と領土喪失（1878年）</div>
+          <div class="factor-desc">
+            ビスマルクの仲介による<strong>ベルリン会議（1878年）</strong>の結果、セルビア・モンテネグロ・ルーマニアの完全独立とブルガリア自治公国の成立が認められ、ボスニアはオーストリアが占領、キプロス島はイギリスが占領し、蚕食は決定的なものとなりました。<a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. インタラクティブ・シミュレーター：オスマン帝国蚕食タイムライン -->
+    <section id="interactive-timeline">
+      <h2>⏳ 4. 【インタラクティブ年表】オスマン帝国の債務陥落と蚕食の推移（1854〜1881）</h2>
+      <p style="margin-bottom: 1rem;">
+        年代タブをクリックすると、外債発行からデフォルト、ミドハト憲法による抵抗、露土戦争、そして債務管理局（OPDA）による財政主権喪失に至る<strong>帝国の主権メーター</strong>の変化を確認できます。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">📅 歴史フェーズの選択</div>
+        </div>
+
+        <div class="year-tabs">
+          <button class="year-btn" id="btn1854" onclick="setYear(1854)">① 1854年：外債の始まり</button>
+          <button class="year-btn" id="btn1875" onclick="setYear(1875)">② 1875年：財政破綻宣言</button>
+          <button class="year-btn active" id="btn1876" onclick="setYear(1876)">③ 1876年：ミドハト憲法</button>
+          <button class="year-btn" id="btn1878" onclick="setYear(1878)">④ 1878年：露土戦争と分割</button>
+          <button class="year-btn" id="btn1881" onclick="setYear(1881)">⑤ 1881年：債務管理局設立</button>
+        </div>
+
+        <div class="meters-grid">
+          <div class="meter-card">
+            <div class="meter-top">
+              <span>🏛️ 帝国の財政・徴税主権</span>
+              <span id="valFiscal" style="color: var(--primary);">35%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="barFiscal" style="background: var(--primary); width: 35%;"></div>
+            </div>
+          </div>
+
+          <div class="meter-card">
+            <div class="meter-top">
+              <span>🗺️ バルカン領土の保持率</span>
+              <span id="valTerritory" style="color: var(--emerald);">75%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="barTerritory" style="background: var(--emerald); width: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="meter-card">
+            <div class="meter-top">
+              <span>🩸 欧州金融資本の支配度</span>
+              <span id="valBank" style="color: var(--rose);">65%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="barBank" style="background: var(--rose); width: 65%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-event-box" id="yearDetailBox">
+          <!-- JSで動的更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ヨーロッパ列強各国の思惑と東方問題マトリクス -->
+    <section id="great-powers">
+      <h2>🌐 5. 「東方問題」におけるヨーロッパ列強の思惑と干渉手口</h2>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">列強国</th>
+              <th style="width: 35%;">地政学的・金融的思惑</th>
+              <th style="width: 45%;">オスマン帝国に対する具体的な行動・蚕食</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>🇬🇧 イギリス</strong></td>
+              <td>インドへの連絡路（スエズ運河・東地中海）の防衛と、ロンドン金融資本の債権回収</td>
+              <td>ロシアの南下を抑止しつつ、見返りとして<strong>キプロス島（1878年）</strong>および<strong>エジプト（1882年）</strong>を軍事占領。外債整理を通じて財政を掌握。</td>
+            </tr>
+            <tr>
+              <td><strong>🇫🇷 フランス</strong></td>
+              <td>最大のオスマン外債保有国としての利権保護と北アフリカ・中東への影響力拡大</td>
+              <td>イギリスと組み<strong>オスマン帝国銀行</strong>や<strong>オスマン債務管理局（OPDA）</strong>を主導。1881年にはオスマン領<strong>チュニジア</strong>を軍事占領して保護国化。</td>
+            </tr>
+            <tr>
+              <td><strong>🇷🇺 ロシア帝国</strong></td>
+              <td>黒海海峡（ボスポラス・ダーダネルス）の突破とバルカン半島への南下政策</td>
+              <td><strong>パン＝スラヴ主義</strong>と正教徒保護を掲げてバルカン反乱を支援し、1877年に<strong>露土戦争</strong>を発動してバルカン諸国の独立・分離を推進。</td>
+            </tr>
+            <tr>
+              <td><strong>🇩🇪 ドイツ帝国</strong><br><small>（ビスマルク〜ヴィルヘルム2世）</small></td>
+              <td>当初は「誠実な仲介人」として列強間の調整、のちに<strong>3B政策（バグダード鉄道）</strong>で中東進出</td>
+              <td>1878年ベルリン会議を主催。1890年代以降はドイツ銀行を中心に鉄道敷設権と鉱山利権を獲得し、英仏の金融覇権と激突。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh0803-009_1.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「東方問題とオスマン帝国の領域後退」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-049.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「1875年オスマン帝国の財政破綻とアブデュルハミト2世」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer">
+            Wikipedia「タンジマート（恩恵改革）と外債依存による財政破綻」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh0803-009_1.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「ボスニア・ブルガリアの反乱と列強の干渉」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1202-029.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「露土戦争（1877-78年）・サン＝ステファノ条約・ベルリン条約」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-050.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「ミドハト＝パシャと立憲改革」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%89%E3%83%8F%E3%83%88%E3%83%BB%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener noreferrer">
+            Wikipedia「ミドハト・パシャ（大宰相としての改革と追放）」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-tag">[8]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-049.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「コンスタンティノープル会議と1876年の政変」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-tag">[9]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%B9%E3%83%9E%E3%83%B3%E5%B8%9D%E5%9B%BD%E6%86%B2%E6%B3%95" target="_blank" rel="noopener noreferrer">
+            Wikipedia「オスマン帝国憲法（ミドハト憲法・1876年12月23日発布）」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-tag">[10]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-049.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「1878年の憲法停止とアブデュルハミト2世の専制政治」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-11">
+          <span class="ref-tag">[11]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-044.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「タンジマート期の法制整備とオスマン主義」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-12">
+          <span class="ref-tag">[12]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1403-139_1.html" target="_blank" rel="noopener noreferrer">
+            世界史の窓「アジア初の成文憲法としてのミドハト憲法の位置づけ」
+          </a>
+        </li>
+        <li class="ref-item" id="ref-13">
+          <span class="ref-tag">[13]</span>
+          <a class="ref-link" href="https://history.zashiki.com/young-turk-rev.html" target="_blank" rel="noopener noreferrer">
+            歴史解説「露土戦争から青年トルコ革命へ至るオスマン帝国末期史」
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Ottoman Empire 1876 Crisis &amp; Financial Imperialism Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Timeline Script -->
+  <script>
+    function setYear(yr) {
+      [1854, 1875, 1876, 1878, 1881].forEach(y => {
+        document.getElementById('btn' + y).classList.remove('active');
+      });
+      document.getElementById('btn' + yr).classList.add('active');
+
+      const valFiscal = document.getElementById('valFiscal');
+      const barFiscal = document.getElementById('barFiscal');
+      const valTerritory = document.getElementById('valTerritory');
+      const barTerritory = document.getElementById('barTerritory');
+      const valBank = document.getElementById('valBank');
+      const barBank = document.getElementById('barBank');
+      const box = document.getElementById('yearDetailBox');
+
+      if (yr === 1854) {
+        valFiscal.innerText = '85%';
+        barFiscal.style.width = '85%';
+        valTerritory.innerText = '95%';
+        barTerritory.style.width = '95%';
+        valBank.innerText = '20%';
+        barBank.style.width = '20%';
+        box.style.borderLeftColor = '#3b82f6';
+        box.innerHTML = `
+          <strong style="color: #1e3a8a;">【1854年：クリミア戦争と初のヨーロッパ外債発行】</strong><br>
+          ロシアとのクリミア戦争の戦費を賄うため、オスマン帝国は歴史上初めてロンドンとパリの金融市場で外債を発行しました。これを皮切りに、英仏の銀行団は高利かつ額面を大きく割り引いた過酷な条件で貸付を繰り返し、帝国は「借金を返すために新たな借金をする」債務スパイラルへと引きずり込まれました。
+        `;
+      } else if (yr === 1875) {
+        valFiscal.innerText = '30%';
+        barFiscal.style.width = '30%';
+        valTerritory.innerText = '80%';
+        barTerritory.style.width = '80%';
+        valBank.innerText = '70%';
+        barBank.style.width = '70%';
+        box.style.borderLeftColor = '#d97706';
+        box.innerHTML = `
+          <strong style="color: #b45309;">【1875年10月：財政破綻（デフォルト）宣言とバルカン反乱の連鎖】</strong><br>
+          国家歳入の半分以上が外債の利払いに消える異常事態の末、1873年世界恐慌と大旱魃が重なり、帝国政府はついに利払いの半減（事実上のデフォルト）を宣言しました。同時に重税に苦しむボスニア・ヘルツェゴヴィナで反乱が勃発し、経済破綻と領土崩壊が同時進行し始めました。
+        `;
+      } else if (yr === 1876) {
+        valFiscal.innerText = '35%';
+        barFiscal.style.width = '35%';
+        valTerritory.innerText = '75%';
+        barTerritory.style.width = '75%';
+        valBank.innerText = '65%';
+        barBank.style.width = '65%';
+        box.style.borderLeftColor = '#059669';
+        box.innerHTML = `
+          <strong style="color: #065f46;">【1876年12月：大宰相ミドハト・パシャの抵抗と「ミドハト憲法」発布】</strong><br>
+          ブルガリア反乱やセルビア・モンテネグロとの開戦に乗じて列強がイスタンブールで国際会議を開き内政干渉を迫る中、ミドハト・パシャはアジア初の成文憲法「オスマン帝国憲法」を発布。全住民の平等（オスマン主義）と議会制を導入して列強の干渉口実を封じようと渾身の抵抗を行いました。
+        `;
+      } else if (yr === 1878) {
+        valFiscal.innerText = '20%';
+        barFiscal.style.width = '20%';
+        valTerritory.innerText = '40%';
+        barTerritory.style.width = '40%';
+        valBank.innerText = '80%';
+        barBank.style.width = '80%';
+        box.style.borderLeftColor = '#e11d48';
+        box.innerHTML = `
+          <strong style="color: #be123c;">【1877〜1878年：露土戦争の敗北・憲法停止・ベルリン条約による大蚕食】</strong><br>
+          ロシア軍の侵攻により帝国は大敗。アブデュルハミト2世はミドハト憲法を停止して専制に回帰しました。1878年のベルリン条約でバルカン半島の大部分（ルーマニア、セルビア、モンテネグロ独立、ブルガリア自治化、ボスニアやキプロスの喪失）を削り取られ、さらに巨額の賠償金まで背負わされました。
+        `;
+      } else if (yr === 1881) {
+        valFiscal.innerText = '10%';
+        barFiscal.style.width = '10%';
+        valTerritory.innerText = '35%';
+        barTerritory.style.width = '35%';
+        valBank.innerText = '95%';
+        barBank.style.width = '95%';
+        box.style.borderLeftColor = '#9f1239';
+        box.innerHTML = `
+          <strong style="color: #881337;">【1881年12月：ムハッレム勅令と「オスマン債務管理局（OPDA）」による財政主権の完全喪失】</strong><br>
+          英・仏・独・墺などの債権者シンジケートが帝国内に巨大な徴税機関「オスマン債務管理局（職員数5,000人以上）」を設立。塩・タバコ・印紙・酒などの主要税収と関税を直接差し押さえ、ロンドンのシティやパリの銀行へ自動的に送金する「キャッシュフローのベルトコンベア」が完成しました。
+        `;
+      }
+    }
+
+    setYear(1876);
+  </script>
+</body>
+</html>
