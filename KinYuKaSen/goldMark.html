@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：「金マルク（ゴールドマルク）」に“金”がついている理由とヴァイマル・ハイパーインフレ</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #78350f 55%, #b45309 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(253, 224, 71, 0.28) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Mechanism Flow Cards */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .flow-step.step-primary {
+      border-top-color: var(--primary);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .step-primary .step-num {
+      background: #dbeafe;
+      color: var(--primary-dark);
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+    }
+
+    .factor-card.card-blue {
+      border-left-color: var(--primary);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #d97706;
+      color: #ffffff;
+      border-color: #fde047;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      padding: 0.95rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    .gold-pill {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 0.35rem;
+      font-size: 0.85rem;
+    }
+
+    .paper-pill {
+      display: inline-block;
+      background: #ffe4e6;
+      color: #9f1239;
+      border: 1px solid #fda4af;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 0.35rem;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link active">⑪ 金マルク</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">ヴェルサイユ体制・国際通貨史補論</span>
+        <span class="badge badge-sub">1,320億金マルクと1923年ハイパーインフレ</span>
+      </div>
+      <h1>なぜ「金マルク（ゴールドマルク）」に“金”がついているのか？：<br>紙マルク（1兆分の1暴落）との違いとレンテンマルクの奇跡</h1>
+      <p class="lead">
+        「金マルク（ゴールドマルク）」に“金”がついている理由は、ハイパーインフレや通貨の暴落に影響されない<strong>「金（ゴールド）の価値を基準にした、絶対的な価値」</strong>を示すためです。<br>
+        当時、第一次世界大戦の戦費調達やその後の経済混乱により、ドイツの通常通貨（紙幣のマルク）の価値は急激に下がっていました。もし「マルク（紙幣）」の額面だけで賠償金を決めると、ドイツが紙幣を大量に印刷して意図的に通貨価値を暴落させた（インフレを起こした）場合、実質的な賠償額が紙くず同然になってしまいます。<br>
+        そのため、連合国側は紙幣の価値に関係なく、<strong>純金「1グラム＝約2.79マルク」</strong>という固定の割合で換算した<strong>「金（ゴールド）の重さ」</strong>として賠償金を請求しました。
+      </p>
+    </header>
+
+    <!-- Section 1: Goldmark vs Papiermark Table -->
+    <section>
+      <h2>⚖️ 「金マルク（ゴールドマルク）」と「パピエルマルク（紙マルク）」の違い</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        当時、ドイツには価値の異なる<strong>2つのマルク</strong>が存在していました。
+      </p>
+
+      <div class="table-wrap" style="margin-bottom: 1.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 28%;">通貨の呼び名</th>
+              <th style="width: 72%;">特徴と役割</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="gold-pill">金マルク（ゴールドマルク）</span>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Goldmark（純金約0.3584g相当）</div>
+              </td>
+              <td>
+                <strong>純金と交換できる価値を持つ基準。</strong><br>
+                大戦前の安定していたドイツの通貨価値（金本位制：純金1グラム＝約2.79マルク、1米ドル＝4.198金マルク）をベースにしています。<strong>賠償金の計算はすべてこれで行われました。</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="paper-pill">パピエルマルク（紙マルク）</span>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Papiermark（不換紙幣）</div>
+              </td>
+              <td>
+                <strong>ドイツ国内で実際に流通していた「紙幣」。</strong><br>
+                1914年の第一次世界大戦勃発とともに金（ゴールド）との兌換が停止されて裏付けを失い、1923年のハイパーインフレによって、最終的に<strong>「1兆分の1」の価値にまで大暴落</strong>しました。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Visual Formula Cards -->
+      <div class="grid-3">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>🪙 純金平価の固定基準</span>
+          </div>
+          <p class="factor-desc">
+            <strong>純金 1グラム ＝ 2.79 金マルク</strong><br>
+            （1金マルク ＝ 純金 約0.3584グラム）<br>
+            紙幣がどれだけ刷られようと、1金マルクが指し示す「純金の重さ」は絶対に変わらない仕組みとなっていました。
+          </p>
+        </div>
+
+        <div class="factor-card card-blue">
+          <div class="factor-title">
+            <span>⚖️ 賠償金 1,320億金マルクの重さ</span>
+          </div>
+          <p class="factor-desc">
+            1921年のロンドン会議で決定した<strong>1,320億金マルク</strong>を純金の重量に換算すると、実に<strong>約47,312トン（約4.7万トン）の純金</strong>に相当する天文学的な負担でした。
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>📉 1金マルク ＝ 1兆紙マルク</span>
+          </div>
+          <p class="factor-desc">
+            1923年11月のハイパーインフレ絶頂期には、わずか<strong>1金マルク</strong>を手に入れるために<strong>1兆パピエルマルク（紙マルク）</strong>もの紙幣束が必要となりました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: What if "Gold" was not attached? & Interactive Simulator -->
+    <section>
+      <h2>💥 もし賠償金に「金（ゴールド）」がついていなかったら？</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1923年のハイパーインフレのピーク時、<strong>1金マルクは「1兆パピエルマルク（紙マルク）」</strong>に相当するまで紙幣の価値が落ちました。<br>
+        もし賠償金がただの「1,320億マルク（紙幣）」だった場合、ドイツは大量の紙幣を印刷して支払えば、<strong>一瞬でゼロに等しい負担で完済</strong>できてしまいます。連合国側はそれを防ぐために、ドイツに対して<strong>「紙幣ではなく、金（ゴールド）そのもの、またはそれと同等の価値がある外国の硬貨（ドルやポンドなど）で支払いなさい」</strong>と義務付けたのです。<br>
+        これが、賠償金にわざわざ「金（ゴールド）」という言葉がついている理由です。
+      </p>
+
+      <!-- Interactive Hyperinflation & Reparation Value Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 1914年〜1923年「1金マルク vs パピエルマルク」暴落＆賠償金シミュレーション</div>
+            <div class="sim-subtitle">時代ボタンを切り替えて、もし賠償金に「金」がついていなかった場合に実質負担額がどう変化したかを検証できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">1914年7月（大戦前）</span>
+            1金マルク ＝ 1マルク
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">1919年6月（条約調印）</span>
+            1金マルク ≒ 3.3紙マルク
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">1921年5月（賠償確定）</span>
+            1金マルク ≒ 15紙マルク
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">1923年1月（ルール占領）</span>
+            1金マルク ≒ 4,280紙マルク
+          </button>
+          <button class="phase-btn active" onclick="setPhase(4)">
+            <span class="phase-year">1923年11月（インフレ極致）</span>
+            1金マルク ＝ 1兆紙マルク
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">1金マルクあたりの紙マルク枚数</div>
+            <div class="metric-value" id="m-exchange">1兆 パピエルマルク</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-exchange" style="width: 100%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">「金」指定あり：連合国が要求した絶対価値</div>
+            <div class="metric-value" id="m-gold-rep">1,320億 金マルク（純金4.7万t）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-gold-rep" style="width: 100%; background-color: #fbbf24;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">もし「金」指定なし（紙1,320億マルク）の実質価値</div>
+            <div class="metric-value" id="m-paper-rep" style="color: #fda4af;">わずか 0.132 金マルク（約3セント）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-paper-rep" style="width: 1%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【1923年11月：ハイパーインフレの極致（1金マルク ＝ 1,000,000,000,000 紙マルク）】</strong><br>
+          ルール工業地帯の占領に対する「消極的抵抗」の資金をライヒスバンクの紙幣増刷で賄った結果、紙マルクの価値は戦前の<strong>1兆分の1</strong>に崩壊しました。もし賠償金が単なる「1,320億マルク（紙幣）」と規定されていたら、この時点で<strong>「1,320億紙マルク ＝ わずか0.132金マルク（米貨にして約3セント、当時のパン1斤の端数）」</strong>となり、1000億マルク紙幣を2枚出すだけで国家賠償が完済しお釣りが出ることになります。連合国が<strong>「金マルク（外貨・純金基準）」</strong>で縛っていたため、ドイツはどれだけ紙幣を刷っても賠償金を1マルクたりとも減らせませんでした。
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Rentenmark Miracle & Dawes Plan -->
+    <section>
+      <h2>🏦 深掘り解説：1923年の新通貨「レンテンマルク」とインフレ収束の奇跡</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        紙くずとなったパピエルマルクに代わって1923年11月15日に導入され、さながら「奇跡」のようにハイパーインフレを一夜にして収束させた新通貨<strong>「レンテンマルク（Rentenmark）」</strong>の仕組みと、その後の賠償金支払い体制（ドーズ案）を整理します。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-danger">
+          <span class="step-num">課題：金準備の枯渇</span>
+          <div class="flow-title">金本位制に戻せない</div>
+          <p class="flow-desc">
+            1923年当時のドイツには、新通貨の価値を裏付けるための「金（ゴールド）」がほとんど残っておらず、通常の金兌換紙幣を発行することは不可能だった。
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">奇策：土地・不動産担保</span>
+          <div class="flow-title">レンテンマルクの創出</div>
+          <p class="flow-desc">
+            新設の「ドイツ・レンテン銀行」が、ドイツ全国の<strong>農地・商工業資産に強制抵当権</strong>を設定。その土地抵当債券（年利5%・金マルク建て）を裏付けに新紙幣を発行。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">荒療治：12桁の切り捨て</span>
+          <div class="flow-title">1兆紙マルク＝1レンテンマルク</div>
+          <p class="flow-desc">
+            1923年11月20日、<strong>「1兆パピエルマルク ＝ 1レンテンマルク ＝ 1金マルク（1ドル＝4.2マルク）」</strong>で為替を固定。発行上限を32億マルクに厳格制限し、政府への赤字融資を全面禁止。
+          </p>
+        </div>
+        <div class="flow-step step-primary">
+          <span class="step-num">国際再編：1924年ドーズ案</span>
+          <div class="flow-title">ライヒスマルクと米資本流入</div>
+          <p class="flow-desc">
+            インフレ収束後、1924年の<strong>ドーズ案</strong>により米国（ウォール街）から8億金マルクの借款を導入し、金・外貨裏付けの正式通貨<strong>「ライヒスマルク」</strong>へ移行して賠償支払いを再開。
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald">
+        <div class="callout-title">💡 なぜ「レンテンマルク」は金（ゴールド）と交換できないのに信用されたのか？</div>
+        <p style="font-size: 0.93rem; color: var(--text-main);">
+          実はレンテンマルク紙幣を持参しても、純金ではなく「金マルク建ての土地抵当債券（レンテンブリーフ）」としか交換できませんでした。それにもかかわらず劇的にインフレが止まったのは、①<strong>「ドイツ全土の土地と工場という実物資産が担保になっている」という心理的安心感</strong>に加え、②通貨監督官およびライヒスバンク総裁となった<strong>ヒャルマル・シャハト（Hjalmar Schacht）</strong>らが<strong>「政府の財政赤字の紙幣増刷による穴埋めを完全に遮断し、投機筋への信用供与を徹底的に引き締めた」</strong>ためでした。
+        </p>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top: 1rem;">
+        <div class="callout-title">🔄 金融寡占史における意味：「金マルク賠償」が作ったウォール街中心の国際金融サーカス</div>
+        <p style="font-size: 0.93rem; color: var(--text-main);">
+          連合国がドイツに「金マルク（純金・外貨）」での支払いを義務付けた結果、金を持たないドイツは<strong>ウォール街（J.P.モルガン商会などの米国金融資本）から高利のドル建て借款を借りて英仏に賠償金を支払い、英仏はその資金で米国への第一次大戦戦時債務を返済する</strong>という巨大な資金循環（ドーズ案・ヤング案）に組み込まれました。この構造が1929年のウォール街大暴落とともに逆回転し、ドイツ経済の崩壊と第二次世界大戦への道を開くことになります。
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑪ ｜ 「金マルク（ゴールドマルク）」とパピエルマルク・レンテンマルクの仕組み</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        exchangeText: "1 パピエルマルク（等価）",
+        exchangeWidth: "5%",
+        exchangeColor: "#10b981",
+        goldRepText: "1,320億 金マルク（純金4.7万t）",
+        paperRepText: "1,320億 金マルク相当（等価）",
+        paperRepWidth: "100%",
+        paperRepColor: "#10b981",
+        desc: "<strong>【1914年7月：第一次世界大戦勃発前（金本位制時代）】</strong><br>大戦前のドイツ帝国では金本位制が維持されており、紙幣のマルクはいつでも「純金1グラム＝2.79マルク（1米ドル＝4.198マルク）」で金貨と交換できました。この時点では「金マルク」と「紙のマルク」に価値の差はありませんでしたが、1914年8月の開戦とともに金兌換が停止され、戦費調達のための紙幣増刷が始まりました。"
+      },
+      {
+        exchangeText: "約 3.3 パピエルマルク",
+        exchangeWidth: "20%",
+        exchangeColor: "#38bdf8",
+        goldRepText: "1,320億 金マルク（純金4.7万t）",
+        paperRepText: "約 400億 金マルク相当（約30%に目減り）",
+        paperRepWidth: "30%",
+        paperRepColor: "#38bdf8",
+        desc: "<strong>【1919年6月：ヴェルサイユ条約調印時】</strong><br>4年間の戦争と敗戦により、紙マルクの価値は戦前の約3分の1（1金マルク≒3.3紙マルク）に下落していました。戦勝国（英・仏など）は、ドイツが紙幣増刷によるインフレで賠償負担を実質的に踏み倒すことを警戒し、賠償額を紙幣ではなく<strong>「金マルク（Goldmark）」</strong>基準で算定する方針を固めました。"
+      },
+      {
+        exchangeText: "約 15 パピエルマルク",
+        exchangeWidth: "38%",
+        exchangeColor: "#f59e0b",
+        goldRepText: "1,320億 金マルク（純金4.7万t）",
+        paperRepText: "約 88億 金マルク相当（約6.7%に目減り）",
+        paperRepWidth: "15%",
+        paperRepColor: "#f59e0b",
+        desc: "<strong>【1921年5月：ロンドン最終通牒・賠償総額「1,320億金マルク」の確定】</strong><br>連合国賠償委員会が賠償総額を<strong>1,320億金マルク</strong>と正式決定した時点では、すでに1金マルク≒約15パピエルマルクまで紙幣価値が落ちていました。ドイツ政府は「金マルク（外貨・純金）」を調達するために市場で紙マルクを売ってドルやポンドを買い集めなければならず、これがさらなるマルク暴落を招く悪循環となりました。"
+      },
+      {
+        exchangeText: "約 4,280 パピエルマルク",
+        exchangeWidth: "70%",
+        exchangeColor: "#f97316",
+        goldRepText: "1,320億 金マルク（純金4.7万t）",
+        paperRepText: "約 3,084万 金マルク相当（0.02%に消滅）",
+        paperRepWidth: "4%",
+        paperRepColor: "#f97316",
+        desc: "<strong>【1923年1月：フランス・ベルギー軍によるルール工業地帯占領】</strong><br>ドイツの賠償支払遅滞を理由にフランス・ベルギー軍がルール炭田・工業地帯を占領。ドイツ政府は労働者にストライキ（「消極的抵抗」）を呼びかけ、その間の賃金をライヒスバンクの紙幣印刷で支給したため、紙マルクは制御不能なハイパーインフレへと突入しました。"
+      },
+      {
+        exchangeText: "1兆 パピエルマルク",
+        exchangeWidth: "100%",
+        exchangeColor: "#f43f5e",
+        goldRepText: "1,320億 金マルク（純金4.7万t）",
+        paperRepText: "わずか 0.132 金マルク（約3セント）",
+        paperRepWidth: "1%",
+        paperRepColor: "#f43f5e",
+        desc: "<strong>【1923年11月：ハイパーインフレの極致（1金マルク ＝ 1,000,000,000,000 紙マルク）】</strong><br>ルール工業地帯の占領に対する「消極的抵抗」の資金をライヒスバンクの紙幣増刷で賄った結果、紙マルクの価値は戦前の<strong>1兆分の1</strong>に崩壊しました。もし賠償金が単なる「1,320億マルク（紙幣）」と規定されていたら、この時点で<strong>「1,320億紙マルク ＝ わずか0.132金マルク（米貨にして約3セント、当時のパン1斤の端数）」</strong>となり、1000億マルク紙幣を2枚出すだけで国家賠償が完済しお釣りが出ることになります。連合国が<strong>「金マルク（外貨・純金基準）」</strong>で縛っていたため、ドイツはどれだけ紙幣を刷っても賠償金を1マルクたりとも減らせませんでした。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-exchange').textContent = p.exchangeText;
+      const bEx = document.getElementById('b-exchange');
+      bEx.style.width = p.exchangeWidth;
+      bEx.style.backgroundColor = p.exchangeColor;
+
+      document.getElementById('m-gold-rep').textContent = p.goldRepText;
+
+      const mPaper = document.getElementById('m-paper-rep');
+      mPaper.textContent = p.paperRepText;
+      mPaper.style.color = idx === 4 ? "#fda4af" : "#ffffff";
+
+      const bPaper = document.getElementById('b-paper-rep');
+      bPaper.style.width = p.paperRepWidth;
+      bPaper.style.backgroundColor = p.paperRepColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
