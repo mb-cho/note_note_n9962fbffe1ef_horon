@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：オリガルヒ（Oligarch）徹底解説 ― 国家資産の私物化と寡頭支配の構造</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --slate-dark: #1e293b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.55rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #78350f 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(217, 119, 6, 0.35);
+      color: #fde68a;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 850px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--slate-dark);
+      margin: 1.5rem 0 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Process Cards */
+    .process-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .process-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .process-step {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Concept / Country Cards */
+    .country-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.3rem;
+    }
+
+    .country-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .country-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .country-desc ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    /* Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Interactive Typology Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .type-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      background: #e2e8f0;
+      padding: 0.3rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .type-btn {
+      flex: 1;
+      min-width: 170px;
+      border: none;
+      background: transparent;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .type-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Power Balance Gauge */
+    .power-meter-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .power-labels {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .power-bar {
+      width: 100%;
+      height: 32px;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid var(--border);
+    }
+
+    .power-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      transition: width 0.35s ease;
+    }
+
+    .sim-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .sim-detail-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+
+    .sim-detail-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .sim-detail-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .sim-summary {
+      background: #ffffff;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.2rem;
+      border-radius: 0.35rem;
+      font-size: 0.94rem;
+    }
+
+    /* Summary Box */
+    .summary-box {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+
+    .summary-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-text {
+      color: #78350f;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・政治経済学ノート）</span>
+      </div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link active">⑦ オリガルヒ</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 国際政治経済学・寡頭支配論ノート</span>
+        <span class="badge badge-sub">Oligarch / Олигарх</span>
+      </div>
+      <h1>オリガルヒ（Oligarch）徹底解説</h1>
+      <p class="lead">
+        「オリガルヒ（ロシア語: олигарх、英語: oligarch）」は、本来ギリシャ語の「<strong>オリガルキア（ὀλιγαρχία / 寡頭制＝少数の支配者による統治）</strong>」に由来する言葉です。<br><br>
+        現代の国際政治・経済においては、主に<strong>ソビエト連邦崩壊に伴う市場経済化・急進的な民営化の過程で、国家資産を格安で手に入れて莫大な富と政治的影響力を握った新興財閥層（大富豪）</strong>を指し、さらに広義には欧米等を含む「富をテコに政治権力を動かす超富豪層」全般を指す概念として用いられます。
+      </p>
+    </header>
+
+    <!-- 1. オリガルヒの台頭（1990年代ロシア） -->
+    <section id="rise-of-oligarchs">
+      <h2>🔥 1. オリガルヒの台頭（1990年代ロシアと「ショック療法」）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        オリガルヒが形成された最大の契機は、1991年末のソ連崩壊後にロシアのボリス・エリツィン政権が西側（IMFや米国経済学者ら）の処方箋のもとで推し進めた<strong>「ショック療法」</strong>と呼ばれる急進的な資本主義化・民営化政策にあります。
+      </p>
+
+      <div class="grid-3">
+        <!-- Step 1 -->
+        <div class="process-card">
+          <span class="process-step">STEP 01 (1992〜1994年)</span>
+          <div class="process-title">🎫 バウチャー民営化</div>
+          <div class="process-desc">
+            国民全員に国営企業の株式を購入できる「バウチャー（民営化切符）」が配布されました。しかしハイパーインフレと極度の困窮に直面した一般市民は、日々の食費のためにバウチャーを二束三文で売却。これを買い集めた元コムソモール（共産主義青年同盟）幹部、地下闇商人、新興銀行家が企業の支配権を握りました。
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-card" style="border-top-color: var(--rose);">
+          <span class="process-step" style="background: var(--rose-light); color: var(--rose);">STEP 02 (1995〜1996年)</span>
+          <div class="process-title">🏦 株式担保融資制度</div>
+          <div class="process-desc">
+            深刻な財政難に陥ったエリツィン政権に対し、新興銀行家たちが政府へ資金を融通。その見返りとして、石油・天然ガス・鉱山・ニッケルなどの超優良国営企業の株式を極めて安価な担保として取得し、政府の「返済不能」を理由にそのままタダ同然で私有化しました（Loans for Shares）。
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-card" style="border-top-color: var(--primary);">
+          <span class="process-step" style="background: #dbeafe; color: var(--primary);">STEP 03 (1996年〜)</span>
+          <div class="process-title">👑 7大銀行家（セミバンキルシナ）</div>
+          <div class="process-desc">
+            1996年のロシア大統領選挙において、オリガルヒたちは支配下のテレビ・新聞と資金力を総動員し、支持率数％だったエリツィンを再選へと導きました。その見返りとして閣僚人事や国家政策の決定権にまで介入し、国家権力を背後から操る「オリガルキー体制」が完成しました。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. プーチン政権による統制と変容 -->
+    <section id="putin-era">
+      <h2>🛡️ 2. プーチン政権による統制と変容（2000年代以降）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        2000年に大統領に就任したウラジーミル・プーチンは、「強い国家の復権」を掲げ、国家の上に君臨していたオリガルヒに対する方針を根本から転換しました。
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="country-card" style="border-left-color: var(--rose);">
+          <div class="country-title">⚖️ 「政治的不介入」の密約と見せしめ</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>密約の提示：</strong>「これまでの私有化で得た富は問わないが、政治には一切口を出すな」という暗黙のルール（等距離原則）を突きつけました。</li>
+              <li><strong>ユコス事件（2003年）：</strong>野党支援を行い政権に公然と歯向かった石油最大手ユコスのミハイル・ホドルコフスキー社長を脱税等の罪で逮捕・投獄。同社の優良資産は国営石油会社ロスネフチに編入されました。</li>
+              <li><strong>メディアの接収：</strong>ベレゾフスキーやグシンスキーといった独立系テレビ局を握っていた有力オリガルヒは国外亡命へ追い込まれ、主要メディアは国家統制下に戻されました。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="country-card" style="border-left-color: var(--primary-dark);">
+          <div class="country-title">🕵️ 新型オリガルヒ（シロヴィキ系）の台頭</div>
+          <div class="country-desc">
+            旧世代の金融・財閥オリガルヒを排除・服従させた後、プーチン自身の出身母体であるKGB（現FSB）や旧レニングラード（サンクトペテルブルク）市役所時代の側近たち（<strong>シロヴィキ</strong>＝武闘派・治安機関出身者）が、巨大国営企業やインフラ企業のトップに据えられました。<br><br>
+            ガスプロム（天然ガス）、ロスネフチ（石油）、ロステック（軍需・ハイテク）などの国家戦略企業と、国家発注を独占する新興側近富豪（ローテンブルク兄弟など）による「国家資本主義体制」へと再編されました。
+          </div>
+        </div>
+      </div>
+
+      <!-- 90年代型 vs 2000年代型 比較表 -->
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">区分</th>
+              <th style="width: 40%;">1990年代：エリツィン型オリガルヒ</th>
+              <th style="width: 40%;">2000年代以降：プーチン型オリガルヒ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>主な出身母体</strong></td>
+              <td>地下闇商人、コムソモール（青年同盟）幹部、新興金融投機家</td>
+              <td><strong>KGB・治安機関出身者（シロヴィキ）</strong>、サンクトペテルブルク人脈</td>
+            </tr>
+            <tr>
+              <td><strong>国家との権力関係</strong></td>
+              <td><strong>オリガルヒが政治を操る（企業 ＞ 国家）</strong></td>
+              <td><strong>国家・大統領に完全従属（国家 ＞ 企業）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>富の源泉</strong></td>
+              <td>私有財閥（株式担保融資で奪った石油、金属、民間メディア）</td>
+              <td>巨大国有企業の経営権、政府調達・国家巨大インフラ受注</td>
+            </tr>
+            <tr>
+              <td><strong>代表的な人物</strong></td>
+              <td>ベレゾフスキー、グシンスキー、ホドルコフスキー、アブラモヴィチ</td>
+              <td>イーゴリ・セーチン（ロスネフチ）、チェメゾフ（ロステック）、ローテンブルク兄弟</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. インタラクティブ・シミュレーター：世界のオリガルヒ4類型と権力力学 -->
+    <section id="interactive-typology">
+      <h2>🌐 3. 【動態比較シミュレーター】寡頭支配（オリガルキー）の4類型と権力バランス</h2>
+      <p style="margin-bottom: 1rem;">
+        オリガルヒはロシアだけでなく、ウクライナや旧ソ連圏、さらには欧米の金融・テック寡頭層にも異なる形態で存在します。タブを切り替えて「<strong>国家権力 vs 民間オリガルヒ</strong>」の力関係と支配手法の違いを比較してください。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">⚙️ オリガルヒ・モデルの選択</div>
+        </div>
+
+        <div class="type-tabs">
+          <button class="type-btn active" id="tab90s" onclick="selectType('90s')">① 90年代ロシア型</button>
+          <button class="type-btn" id="tabPutin" onclick="selectType('putin')">② 現代ロシア（シロヴィキ）型</button>
+          <button class="type-btn" id="tabUkr" onclick="selectType('ukr')">③ ウクライナ（多元競合）型</button>
+          <button class="type-btn" id="tabWest" onclick="selectType('west')">④ 欧米（金融・テック寡頭）型</button>
+        </div>
+
+        <div class="power-meter-box">
+          <div class="power-labels">
+            <span style="color: var(--primary-dark);">🏛️ 国家機構・政府主権の優位度</span>
+            <span style="color: var(--accent-dark);">💰 民間オリガルヒ・資本の支配度</span>
+          </div>
+          <div class="power-bar">
+            <div class="power-seg" id="barState" style="background: var(--primary); width: 20%;">国家 20%</div>
+            <div class="power-seg" id="barOligarch" style="background: var(--accent); width: 80%;">オリガルヒ 80%</div>
+          </div>
+        </div>
+
+        <div class="sim-detail-grid" id="detailGrid">
+          <!-- JSで動的生成 -->
+        </div>
+
+        <div class="sim-summary" id="typeSummary">
+          <!-- JSで動的解説 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ロシア以外の国におけるオリガルヒ -->
+    <section id="global-oligarchs">
+      <h2>🗺️ 4. ロシア以外の旧ソ連圏および欧米・世界におけるオリガルヒ</h2>
+
+      <div class="grid-3">
+        <!-- ウクライナ -->
+        <div class="country-card" style="border-left-color: #eab308;">
+          <div class="country-title">🇺🇦 ウクライナ</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>多元的な代理戦争：</strong>絶対的強権者が長期支配しなかったため、複数のオリガルヒがそれぞれ自前の政党・テレビ局・私兵的組織を持ち、議会や政権を巡って抗争を展開しました。</li>
+              <li><strong>代表例：</strong>リナト・アフメトフ（製鉄・エネルギー王）、イーホル・コロモイスキー（金融・メディア）、ペトロ・ポロシェンコ（製菓大手創業者・元大統領）。</li>
+              <li><strong>脱オリガルヒ法：</strong>EU加盟交渉に伴い、メディア支配や政治献金を制限する法整備が進められています。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- カザフスタン -->
+        <div class="country-card" style="border-left-color: #06b6d4;">
+          <div class="country-title">🇰🇿 カザフスタン</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>一族独占型オリガルヒ：</strong>ソ連崩壊後、約30年間君臨した初代大統領ヌルスルタン・ナザルバエフの家族・親族・側近たちが、豊富な石油・天然ガス・ウランなどの鉱物資源利権と銀行セクターを独占しました。</li>
+              <li><strong>利権解体への動き：</strong>2022年1月の大規模暴動以降、現職のトカエフ大統領によって旧ナザルバエフ一族の利権剥奪と資産回収が進められています。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 欧米・アジア -->
+        <div class="country-card" style="border-left-color: var(--purple);">
+          <div class="country-title">🗽 欧米・アジア（広義の用法）</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>アメリカン・オリガルヒ：</strong>米政治学者ジェフリー・ウィンターズらが提唱。ウォール街の金融資本やビッグテック創業者が、スーパーPAC（政治資金団体）、ロビー活動、シンクタンク、財務省・FRBとの「回転ドア」を通じて政策を合法的に支配する構造。</li>
+              <li><strong>東南アジア・中南米：</strong>フィリピンや中南米諸国のように、少数の世襲財閥ファミリーが広大な土地・インフラ・金融を独占し政治と癒着する体制。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 国際社会と経済制裁 -->
+    <section id="sanctions">
+      <h2>🚨 5. 国際社会と対ロシア・オリガルヒ制裁（2022年以降）</h2>
+      <p style="margin-bottom: 1.25rem;">
+        2022年のウクライナ戦争激化以降、米国、EU、英国、日本などの西側諸国は、ロシアのオリガルヒに対して前例のない規模の資産凍結・経済制裁を発動しました。
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="process-card" style="border-top-color: var(--primary-light);">
+          <div class="process-title">🛥️ ① 実物資産の差し押さえ</div>
+          <div class="process-desc">
+            ロンドンやコート・ダジュールの超高級不動産、プライベートジェット、数億ドル規模のスーパーヨット（巨大豪華クルーザー）が世界各地の港や空港で差し押さえられました。
+          </div>
+        </div>
+
+        <div class="process-card" style="border-top-color: var(--purple);">
+          <div class="process-title">🔒 ② 西側金融網からの排除</div>
+          <div class="process-desc">
+            スイス、キプロス、英領バージン諸島、ケイマン諸島などのタックスヘイブン（オフショア金融センター）に隠匿されていた法人口座や信託資産が凍結され、渡航禁止措置が科されました。
+          </div>
+        </div>
+
+        <div class="process-card" style="border-top-color: var(--rose);">
+          <div class="process-title">🧩 ③ 制裁の狙いと構造的限界</div>
+          <div class="process-desc">
+            <strong>狙い：</strong>オリガルヒに経済的苦痛を与え、プーチン政権への反乱や政策転換を促すこと。<br>
+            <strong>限界：</strong>現代ロシアのオリガルヒはすでに政治的実権を奪われプーチン体制に生殺与奪を握られているため、西側で資産を没収されるほど、かえってロシア国内と政権への依存を深める結果となっています。
+          </div>
+        </div>
+      </div>
+
+      <!-- まとめボックス -->
+      <div class="summary-box">
+        <div class="summary-title">📌 まとめ：オリガルヒの本質とは何か</div>
+        <div class="summary-text">
+          オリガルヒとは、自らの技術革新（イノベーション）によって富を築いた単なる「大富豪（Billionaire）」ではありません。<br>
+          それは、<strong>「国家体制の転換期の混乱、法制度の抜け穴、あるいは権力中枢との癒着を利用して公的資産・天然資源・金融インフラを私物化し、政治権力を動かす（または国家権力に従属して特権的レントを分け合う）寡頭支配層」</strong>を意味します。この概念は旧ソ連圏の分析にとどまらず、現代のグローバル金融寡占制を読み解く上でも極めて重要な視座を提供しています。
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Oligarch &amp; Oligarchy Structure Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Typology Script -->
+  <script>
+    function selectType(mode) {
+      ['tab90s', 'tabPutin', 'tabUkr', 'tabWest'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+      });
+
+      const barState = document.getElementById('barState');
+      const barOligarch = document.getElementById('barOligarch');
+      const detailGrid = document.getElementById('detailGrid');
+      const typeSummary = document.getElementById('typeSummary');
+
+      if (mode === '90s') {
+        document.getElementById('tab90s').classList.add('active');
+        barState.style.width = '20%';
+        barState.innerText = '国家 20%';
+        barOligarch.style.width = '80%';
+        barOligarch.innerText = 'オリガルヒ 80%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">権力構造</div>
+            <div class="sim-detail-val" style="color: #b45309;">民間財閥が国家を傀儡化（セミバンキルシナ）</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">富の獲得手段</div>
+            <div class="sim-detail-val">バウチャー買占め・株式担保融資による国有資源の強奪</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">代表例</div>
+            <div class="sim-detail-val">ベレゾフスキー、ホドルコフスキー、グシンスキー</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#d97706';
+        typeSummary.innerHTML = `
+          <strong style="color: #b45309;">【① 1990年代ロシア（エリツィン期）モデル】</strong><br>
+          ソ連崩壊直後の無秩序な民営化（ショック療法）に乗じて、新興銀行家たちが国家の石油・鉱物資源を二束三文で私物化しました。彼らはテレビ局と選挙資金を握ることで大統領すら意のままに操り、国家主権が民間オリガルヒに完全にハイジャックされた時代です。
+        `;
+      } else if (mode === 'putin') {
+        document.getElementById('tabPutin').classList.add('active');
+        barState.style.width = '85%';
+        barState.innerText = '国家・大統領 85%';
+        barOligarch.style.width = '15%';
+        barOligarch.innerText = 'オリガルヒ 15%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">権力構造</div>
+            <div class="sim-detail-val" style="color: #1e3a8a;">大統領・治安機関（シロヴィキ）への絶対服従</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">富の獲得手段</div>
+            <div class="sim-detail-val">国営巨大企業の経営権委任・国家インフラ事業の独占受注</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">代表例</div>
+            <div class="sim-detail-val">セーチン（ロスネフチ）、チェメゾフ、ローテンブルク兄弟</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#1e3a8a';
+        typeSummary.innerHTML = `
+          <strong style="color: #1e3a8a;">【② 2000年代以降ロシア（プーチン・シロヴィキ）モデル】</strong><br>
+          ユコス事件を通じて反抗的な旧オリガルヒを粛清・追放し、「政治に口を出さず国家に忠誠を誓う限りで富を認める」体制へと逆転させました。KGB出身の側近（シロヴィキ）が戦略国営企業を統括し、オリガルヒは大統領の「執事・金庫番」として機能します。
+        `;
+      } else if (mode === 'ukr') {
+        document.getElementById('tabUkr').classList.add('active');
+        barState.style.width = '45%';
+        barState.innerText = '国家・議会 45%';
+        barOligarch.style.width = '55%';
+        barOligarch.innerText = '競合オリガルヒ群 55%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">権力構造</div>
+            <div class="sim-detail-val" style="color: #059669;">複数のオリガルヒ派閥による政党・メディア代理戦争</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">富の獲得手段</div>
+            <div class="sim-detail-val">製鉄・石炭・エネルギー・銀行・テレビ局の複合支配</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">代表例</div>
+            <div class="sim-detail-val">アフメトフ、コロモイスキー、ポロシェンコ</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#059669';
+        typeSummary.innerHTML = `
+          <strong style="color: #065f46;">【③ ウクライナ（多元的オリガルヒ競合）モデル】</strong><br>
+          ロシアのような単一の強権指導者による統合が起きなかった結果、複数の巨大オリガルヒが並立しました。それぞれが自前のテレビ局と政党、議会会派を保有し、選挙や政変のたびに合従連衡を繰り返す「多元的な寡頭政治」が特徴です。
+        `;
+      } else {
+        document.getElementById('tabWest').classList.add('active');
+        barState.style.width = '30%';
+        barState.innerText = '公的統制 30%';
+        barOligarch.style.width = '70%';
+        barOligarch.innerText = '金融・テック寡頭資本 70%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">権力構造</div>
+            <div class="sim-detail-val" style="color: #7c3aed;">ロビー・回転ドア・中央銀行を通じた制度的融合</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">富の獲得手段</div>
+            <div class="sim-detail-val">水平的所有（ビッグスリー）、金融工学、プラットフォーム独占</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">代表例</div>
+            <div class="sim-detail-val">ブラックロック等の巨大資産運用、ウォール街メガバンク、Big Tech</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#7c3aed';
+        typeSummary.innerHTML = `
+          <strong style="color: #6d28d9;">【④ 欧米・グローバル金融寡頭制（アメリカン・オリガルヒ）モデル】</strong><br>
+          露骨な違法民営化ではなく、スーパーPAC（献金）、ロビー活動、シンクタンク、そして財務省やFRBへの「回転ドア（天下り・天上がり）」を通じて、法制度そのものを自らに有利に書き換える最も洗練された寡頭支配です。破綻時には「大きすぎて潰せない」として公的資金と量的緩和で救済されます。
+        `;
+      }
+    }
+
+    selectType('90s');
+  </script>
+</body>
+</html>
