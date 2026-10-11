@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：金融寄生性（Financial Parasitism）― 生産なき利潤と実体経済の収奪構造</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #4c0519 55%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(244, 63, 94, 0.35);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #f1f5f9;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .context-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .context-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .context-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .context-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .context-desc ul {
+      padding-left: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .context-tag {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--crimson);
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 1px solid #fecdd3;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: var(--crimson);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #4c0519;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-top: 0.5rem;
+    }
+
+    /* Interactive Extraction Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #fecdd3;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .slider-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .slider-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .slider-badge {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--rose);
+      background: #fff1f2;
+      padding: 0.2rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecdd3;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Stacked Allocation Bar */
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .stacked-bar {
+      width: 100%;
+      height: 38px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      display: flex;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .bar-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: width 0.25s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .sim-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-stat {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.9rem;
+      text-align: center;
+    }
+
+    .sim-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .sim-stat-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .sim-diagnosis {
+      background: #ffffff;
+      border-left: 4px solid var(--rose);
+      padding: 1rem 1.25rem;
+      border-radius: 0.35rem;
+      font-size: 0.94rem;
+    }
+
+    /* Lineage Cards */
+    .lineage-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.2rem;
+    }
+
+    .lineage-thinker {
+      font-weight: 800;
+      font-size: 1.02rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .lineage-work {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .lineage-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 補論シリーズ</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・貨幣理論ノート）</span>
+      </div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link active">⑥ 金融寄生性</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 / 批判的政治経済学・金融化論ノート</span>
+        <span class="badge badge-sub">生産なき利潤とレント収奪</span>
+      </div>
+      <h1>金融寄生性（Financial Parasitism）</h1>
+      <p class="lead">
+        <strong>金融寄生性（きんゆうきせいせい）</strong>とは、実体経済や労働で額に汗して価値を生み出す人々から、金融システムや仲介機能を通じて富や利潤をかすめ取る（あるいは搾取する）構造や性質を指す批判的な概念です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 1. 主な文脈・使われ方 -->
+    <section id="contexts">
+      <h2>🔍 1. 主な文脈・使われ方（3つの視座）</h2>
+
+      <div class="grid-3">
+        <!-- 文脈1: 労働と金融の関係 -->
+        <div class="context-card" style="border-top-color: var(--rose);">
+          <div>
+            <div class="context-title">
+              <span>🩸 ① 労働と金融（生産なき利潤）</span>
+            </div>
+            <div class="context-desc">
+              <ul>
+                <li>実体経済（ものづくりやサービスなど）を通じた価値創造を伴わずに、株主配当、手数料、金利、トレーディング差益などを得る仕組みが、宿主から栄養を奪う<strong>寄生虫（パラサイト）</strong>に例えられます。</li>
+                <li>レーニン等の帝国主義論における「<strong>資本の腐朽性と寄生性</strong>」の文脈や、現代の「<strong>金融化資本主義（ファイナンス資本主義）</strong>」批判において、金融部門が社会の富を過剰に吸収する現象として語られます。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="context-tag">キーワード：Profiting Without Producing</div>
+        </div>
+
+        <!-- 文脈2: 市場関係者・企業活動 -->
+        <div class="context-card" style="border-top-color: var(--accent);">
+          <div>
+            <div class="context-title">
+              <span>🦅 ② 市場関係者・中間業者批判</span>
+            </div>
+            <div class="context-desc">
+              <ul>
+                <li>個別の企業活動においても、実質的な企業価値や生産性の向上に何ら貢献せず、高額な報酬や仲介手数料だけを要求するアドバイザー、コンサルタント、中間業者に対して「<strong>資本市場の寄生虫</strong>」という批判が使われます。</li>
+                <li>具体例として、形式的な対応で手数料を稼ぐIR業者への批判や、短期的な自社株買い・資産切り売りを迫る一部の過激なアクティビスト・ファンドへの批判などが挙げられます。<a href="#ref-4" class="cite-badge">[4]</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="context-tag" style="color: var(--accent-dark);">キーワード：中抜き（Rent-Seeking）</div>
+        </div>
+
+        <!-- 文脈3: 金融教育・投資に対する視点 -->
+        <div class="context-card" style="border-top-color: var(--primary);">
+          <div>
+            <div class="context-title">
+              <span>⚠️ ③ 金融教育・投資への警鐘</span>
+            </div>
+            <div class="context-desc">
+              <ul>
+                <li>「自らの労働や創意工夫によって社会に実物的な富を生むのではなく、他者の労働所得や経済の上澄みを吸い上げる構造に依存する生き方」に対する倫理的・社会的警鐘として使われます。</li>
+                <li>また逆に、一般大衆が「資産運用ブーム」に乗せられ、高額な信託報酬や手数料を金融機関に吸い上げられる「<strong>カモにされる構造</strong>」を暴く文脈でも用いられます。<a href="#ref-2" class="cite-badge">[2]</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="context-tag" style="color: var(--primary);">キーワード：上澄み吸収構造への依存</div>
+        </div>
+      </div>
+
+      <!-- 核心引用ボックス -->
+      <div class="quote-box">
+        <div class="quote-title">CRITICAL PERSPECTIVE ON FINANCIALIZATION</div>
+        <div class="quote-text">
+          「本来、金融は実体経済という『身体』に血液を巡らせる循環器であるはずだった。しかし金融化が極限に達した現代では、循環器そのものが巨大化した腫瘍（寄生体）となり、宿主である実物産業と労働者の栄養を吸い尽くしている。」
+        </div>
+        <div class="quote-author">― 現代金融化論（マイケル・ハドソン / コスタス・ラパヴィツァスらの視座）</div>
+      </div>
+    </section>
+
+    <!-- 2. インタラクティブ・シミュレーター：宿主（実体経済）と寄生体（金融収奪） -->
+    <section id="simulator">
+      <h2>📊 2. 【動態シミュレーター】付加価値の分配と「宿主（実体経済）」の衰弱プロセス</h2>
+      <p style="margin-bottom: 1rem;">
+        企業が労働と生産によって生み出した付加価値（100単位）が、「<strong>① 労働者への賃金</strong>」「<strong>② 未来への実物投資・研究開発</strong>」「<strong>③ 金融部門への上納（配当・自社株買い・金利・手数料）</strong>」にどう配分されるかをシミュレートします。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>🩸 金融収奪率（金融寄生度）の調整スライダー</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">スライダーを右へ動かすと金融化が進行します</span>
+        </div>
+
+        <div class="slider-panel">
+          <div class="slider-top">
+            <span style="font-weight: 700;">金融セクター・株主への流出割合：</span>
+            <span class="slider-badge" id="extractVal">15 %</span>
+          </div>
+          <input type="range" id="extractSlider" min="5" max="75" step="5" value="15">
+        </div>
+
+        <div class="bar-label-row">
+          <span style="color: var(--emerald);">👷 労働分配・賃金</span>
+          <span style="color: var(--primary);">🏭 実物設備投資・R&amp;D</span>
+          <span style="color: var(--rose);">🩸 金融レント（配当・自社株買い・金利）</span>
+        </div>
+
+        <div class="stacked-bar">
+          <div class="bar-seg" id="barWage" style="background: var(--emerald); width: 55%;">55%</div>
+          <div class="bar-seg" id="barInvest" style="background: var(--primary-light); width: 30%;">30%</div>
+          <div class="bar-seg" id="barFinance" style="background: var(--rose); width: 15%;">15%</div>
+        </div>
+
+        <div class="sim-cards">
+          <div class="sim-stat">
+            <div class="sim-stat-label">実質賃金・中間層の状態</div>
+            <div class="sim-stat-val" id="statWage" style="color: var(--emerald);">健全な成長</div>
+          </div>
+          <div class="sim-stat">
+            <div class="sim-stat-label">技術革新・生産設備</div>
+            <div class="sim-stat-val" id="statTech" style="color: var(--primary);">旺盛な更新</div>
+          </div>
+          <div class="sim-stat">
+            <div class="sim-stat-label">宿主（実体経済）の生命力</div>
+            <div class="sim-stat-val" id="statHost" style="color: var(--emerald);">強靭（共生状態）</div>
+          </div>
+        </div>
+
+        <div class="sim-diagnosis" id="simDiagnosis">
+          <!-- JSで動的更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 経済思想史における「金融寄生性」の系譜 -->
+    <section id="theoretical-lineage">
+      <h2>🏛️ 3. 経済学・思想史における「金融寄生性」の理論的系譜</h2>
+      <p style="margin-bottom: 1.25rem;">
+        「金融が生産活動に寄生する」という洞察は、特定のイデオロギーにとどまらず、古典派・マルクス経済学・ケインズ経済学・現代ポストケインズ派に至るまで、多くの経済思想家によって共通して分析されてきました。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="lineage-card" style="border-left-color: #1d4ed8;">
+          <div class="lineage-thinker">カール・マルクス（Karl Marx）</div>
+          <div class="lineage-work">『資本論』第3巻（1894年）：利子生み資本と擬制資本</div>
+          <div class="lineage-text">
+            本来の産業資本は「貨幣(M) → 商品生産(C) → 増殖された貨幣(M')」という実物的な労働過程を経る。しかし利子生み資本・擬制資本（株式や債券）は、生産過程を飛び越えて「貨幣が直接貨幣を生む（$M - M'$）」という最も物神化・寄生化した形態をとると解明。
+          </div>
+        </div>
+
+        <div class="lineage-card" style="border-left-color: #b91c1c;">
+          <div class="lineage-thinker">ウラジーミル・レーニン（Vladimir Lenin）</div>
+          <div class="lineage-work">『資本主義の最高の段階としての帝国主義』（1917年）</div>
+          <div class="lineage-text">
+            独占段階に達した資本主義を「腐朽し、寄生的な資本主義」と定義。実物生産から遊離し、公債や株式の「利札切り（クーポン・クリッピング）」で暮らす金利生活者階層の肥大化と、資本輸出による植民地・従属国への寄生的収奪（金利生活者国家）を定式化。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <div class="lineage-card" style="border-left-color: #047857;">
+          <div class="lineage-thinker">ジョン・メイナード・ケインズ（J. M. Keynes）</div>
+          <div class="lineage-work">『雇用・利子および貨幣の一般理論』（1936年）</div>
+          <div class="lineage-text">
+            何ら生産的機能を果たさず、資本の希少性レントを利用して高金利を貪る不労所得階層を「機能なき投資家（Functionless Investor）」と呼んで批判。実体経済の完全雇用を実現するために、低金利政策による「金利生活者の安楽死」を提唱。
+          </div>
+        </div>
+
+        <div class="lineage-card" style="border-left-color: #7c3aed;">
+          <div class="lineage-thinker">マイケル・ハドソン / コスタス・ラパヴィツァス</div>
+          <div class="lineage-work">『金融化資本主義』『宿主を殺す寄生体』（21世紀）</div>
+          <div class="lineage-text">
+            現代の新自由主義的金融化を分析。FIREセクター（金融・保険・不動産）が実物経済から富を吸い上げる「生産なき利潤」と、企業の自社株買いによる自食化、さらに住宅・学生ローン等を通じた家計からの直接的収奪構造を実証。<a href="#ref-1" class="cite-badge">[1]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 対比表：健全な金融 vs 寄生的な金融 -->
+      <div class="table-responsive" style="margin-top: 1.75rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">比較項目</th>
+              <th style="width: 39%;">共生的な金融（実体経済の奉仕者）</th>
+              <th style="width: 39%;">寄生的な金融（金融寡占・収奪者）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>本来の目的</strong></td>
+              <td>新結合（イノベーション）と実物生産設備の形成を支援</td>
+              <td>実物生産をバイパスし、金利・配当・売買差益・手数料を極大化</td>
+            </tr>
+            <tr>
+              <td><strong>貨幣の流れ</strong></td>
+              <td>産業的流通（雇用・生産・賃金・設備投資への循環）</td>
+              <td><strong>金融的流通</strong>（既存資産の投機的売買・自社株買い・マネーゲーム）</td>
+            </tr>
+            <tr>
+              <td><strong>企業への要求</strong></td>
+              <td>長期的な技術開発、雇用の安定、製品競争力の向上</td>
+              <td>短期的な株主還元（研究開発費や人件費を削って配当・自社株買いへ）</td>
+            </tr>
+            <tr>
+              <td><strong>最終的な帰結</strong></td>
+              <td>実物経済の成長により、借入の元利が無理なく返済される</td>
+              <td>宿主（実体産業と家計）が債務と投資不足で衰弱し、危機が勃発する</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 出典・参考資料 -->
+    <section id="references">
+      <h2>📚 出典・参考資料</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://www.jsri.or.jp/publish/research/pdf/106/106_11.pdf" target="_blank" rel="noopener noreferrer">
+            日本証券経済研究所『証券経済研究』第106号（金融化資本主義と企業の金融寄生性に関する理論的考察）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://note.com/shinshinohara/n/n7b20778391c4" target="_blank" rel="noopener noreferrer">
+            篠原信 note論考（実物労働と金融の関係・他者の所得の上澄みを吸い上げる構造についての考察）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://api.lib.kyushu-u.ac.jp/opac_download_md/2999989/025_p047.pdf" target="_blank" rel="noopener noreferrer">
+            九州大学学術情報リポジトリ（レーニン帝国主義論における資本の腐朽性・寄生性と現代金融資本）
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://diamond.jp/articles/-/309035" target="_blank" rel="noopener noreferrer">
+            ダイヤモンド・オンライン（アクティビストによる「資本市場の寄生虫」批判と中間業者の手数料構造）
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Financial Parasitism Structure Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Extraction Simulator Script -->
+  <script>
+    const slider = document.getElementById('extractSlider');
+    const extractVal = document.getElementById('extractVal');
+    const barWage = document.getElementById('barWage');
+    const barInvest = document.getElementById('barInvest');
+    const barFinance = document.getElementById('barFinance');
+    const statWage = document.getElementById('statWage');
+    const statTech = document.getElementById('statTech');
+    const statHost = document.getElementById('statHost');
+    const simDiagnosis = document.getElementById('simDiagnosis');
+
+    function updateSim() {
+      const fin = parseInt(slider.value, 10);
+      const remain = 100 - fin;
+      // Split remaining between wage (~65% of remain) and investment (~35% of remain)
+      const wage = Math.round(remain * 0.64);
+      const invest = 100 - fin - wage;
+
+      extractVal.innerText = fin + ' %';
+
+      barWage.style.width = wage + '%';
+      barWage.innerText = wage >= 12 ? `賃金 ${wage}%` : `${wage}%`;
+
+      barInvest.style.width = invest + '%';
+      barInvest.innerText = invest >= 12 ? `設備投資 ${invest}%` : `${invest}%`;
+
+      barFinance.style.width = fin + '%';
+      barFinance.innerText = fin >= 12 ? `金融収奪 ${fin}%` : `${fin}%`;
+
+      if (fin <= 20) {
+        statWage.innerText = '着実な賃上げ';
+        statWage.style.color = '#059669';
+        statTech.innerText = '旺盛な技術投資';
+        statTech.style.color = '#1e3a8a';
+        statHost.innerText = '強靭（健全な共生）';
+        statHost.style.color = '#059669';
+        simDiagnosis.style.borderLeftColor = '#059669';
+        simDiagnosis.innerHTML = `
+          <strong style="color: #065f46;">【✅ 共生フェーズ：健全な産業資本主義】</strong><br>
+          金融部門への分配は ${fin}% に抑えられており、生み出された付加価値の大部分が<strong>労働者の賃金（${wage}%）</strong>と<strong>次世代の設備投資・研究開発（${invest}%）</strong>に還元されています。金融は実体経済の「潤滑油」として機能し、生産力と中間層の購買力がともに拡大する好循環にあります。
+        `;
+      } else if (fin <= 45) {
+        statWage.innerText = '実質賃金の停滞';
+        statWage.style.color = '#d97706';
+        statTech.innerText = '投資抑制・老朽化';
+        statTech.style.color = '#d97706';
+        statHost.innerText = '衰弱（金融化の進行）';
+        statHost.style.color = '#d97706';
+        simDiagnosis.style.borderLeftColor = '#d97706';
+        simDiagnosis.innerHTML = `
+          <strong style="color: #b45309;">【⚠️ 寄生進行フェーズ：株主至上主義と「生産なき利潤」の肥大化】</strong><br>
+          配当や自社株買い、金利・手数料として<strong>付加価値の ${fin}% が金融セクターへ吸い上げられています</strong>。そのしわ寄せとして労働者の実質賃金（${wage}%）は凍結され、企業の設備投資（${invest}%）も削られています。大衆は生活水準を維持するために消費者ローンや住宅ローンに依存し始め、金融への従属が深まります。
+        `;
+      } else {
+        statWage.innerText = '困窮・債務奴隷化';
+        statWage.style.color = '#e11d48';
+        statTech.innerText = '産業空洞化・自食化';
+        statTech.style.color = '#e11d48';
+        statHost.innerText = '危篤（宿主の崩壊危機）';
+        statHost.style.color = '#e11d48';
+        simDiagnosis.style.borderLeftColor = '#e11d48';
+        simDiagnosis.innerHTML = `
+          <strong style="color: #be123c;">【🚨 末期寄生フェーズ：自食型企業と宿主（実体経済）の壊死】</strong><br>
+          生み出された富の <strong>${fin}% が金融オリガルヒ・仲介業者に収奪される極限状態</strong>です。企業は借金をしてまで自社株買いと高配当を行い、実物投資（わずか ${invest}%）を放棄して産業基盤が崩壊します。労働者（分配 ${wage}%）は利払いに追われ、有効需要が蒸発することで、最終的に寄生体である金融システム自身も破綻へと向かいます。
+        `;
+      }
+    }
+
+    slider.addEventListener('input', updateSim);
+    updateSim();
+  </script>
+</body>
+</html>
