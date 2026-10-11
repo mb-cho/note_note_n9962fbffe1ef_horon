@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：ボルカー・ショック（Volcker Shock）と1980年代中南米債務危機のメカニズム</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #7c2d12 50%, #991b1b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Triple Punch Visual Diagram */
+    .triple-diagram {
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+      border: 2px solid #fecdd3;
+      border-radius: 1rem;
+      padding: 1.75rem 1.25rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .tp-top-box {
+      display: inline-block;
+      background: linear-gradient(135deg, #991b1b 0%, #e11d48 100%);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .tp-arrow {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--rose);
+      margin: 0.6rem 0;
+    }
+
+    .tp-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin: 0.5rem 0;
+      text-align: left;
+    }
+
+    .tp-card {
+      background: #ffffff;
+      border: 1px solid #fda4af;
+      border-top: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tp-card-title {
+      font-weight: 800;
+      color: var(--crimson);
+      font-size: 1.02rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .tp-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .tp-bottom-box {
+      display: inline-block;
+      background: #0f172a;
+      color: #fef08a;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 0.75rem;
+      border: 2px solid #f43f5e;
+      box-shadow: var(--shadow);
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Rate Shock Calculator */
+    .calc-panel {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slider-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      min-width: 180px;
+      accent-color: #f43f5e;
+      cursor: pointer;
+    }
+
+    .calc-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .calc-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+        <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+        <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+        <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+        <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+        <a href="Borucar.html" class="nav-link active">⑯ ボルカー・ショック</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">国際金融・累積債務問題補論</span>
+        <span class="badge badge-sub">1979年FRB超高金利と「失われた80年代」</span>
+      </div>
+      <h1>ボルカー・ショック（Volcker Shock）：<br>米国の急激な利上げが引き起こした1980年代中南米債務危機</h1>
+      <p class="lead">
+        <strong>ボルカー・ショック（米国の急激な利上げ政策）</strong>は、1980年代前半に発生した<strong>中南米債務危機（累積債務問題）</strong>を引き起こした最大の引き金（決定打）となりました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        1970年代のオイルマネー流入によって膨らみ続けていた中南米諸国の米ドル建て債務が、米国の金融引き締めによって一気に破綻へと追い込まれた歴史的事件です。両者の関係性と危機のメカニズムは以下の通りです。<a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Prehistory -->
+    <section>
+      <h2>1. 前史：なぜ中南米に債務が積み上がったか</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1970年代のオイルショック後、産油国から欧米の大手銀行（ユーロダラー市場など）に預けられた巨額のオイルマネーが、「国家は破産しない」という楽観論のもとで中南米諸国へ大量に貸し付けられました。
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① オイルマネーの還流</span>
+          </div>
+          <p class="factor-desc">
+            1970年代の2度の石油危機により、中東の産油国に巨額の<strong>「オイルマネー（ペトロダラー）」</strong>が蓄積されました。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>② 安易な巨額融資</span>
+          </div>
+          <p class="factor-desc">
+            先進国の主要銀行は、この資金を原資として<strong>開発途上国（メキシコやブラジルなどの中南米諸国）に積極的な融資</strong>を行いました。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ 変動金利とドル建て</span>
+          </div>
+          <p class="factor-desc">
+            当時は低金利だったため、中南米諸国はインフラ投資や工業化のために<strong>米ドル建て・変動金利</strong>の巨額の借金を重ねました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Direct Hit of Volcker Shock & Triple Punch -->
+    <section>
+      <h2>2. ボルカー・ショックによる直撃（1979年〜）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1979年、米連邦準備制度理事会（FRB）の議長に就任した<strong>ポール・ボルカー（Paul Volcker）</strong>は、米国内の深刻なインフレを退治するため、<strong>政策金利を最高20%近くまで引き上げる猛烈な金融引き締め（量的引き締め）</strong>を断行しました（＝<strong>ボルカー・ショック</strong>）。<a href="#ref-7" class="cite-tag">[7]</a><br>
+        これが中南米諸国に<strong>トリプルパンチ</strong>となって襲いかかりました。
+      </p>
+
+      <!-- Visual Triple Punch Diagram -->
+      <div class="triple-diagram" aria-label="ボルカー・ショックのトリプルパンチ構造図">
+        <div class="tp-top-box">⚡ 【ボルカー・ショック（米超高金利・政策金利約20%）】発動</div>
+        <div class="tp-arrow">⬇ 3つの経路で同時直撃（トリプルパンチ） ⬇</div>
+        <div class="tp-cols">
+          <div class="tp-card">
+            <div class="tp-card-title">① 【利払い費用の急増】</div>
+            <p class="tp-card-desc">
+              <strong>ドル建て変動金利</strong>（LIBOR連動）で借りていたため、米国の利上げに連動して毎年の利払い負担が数倍に跳ね上がる。
+            </p>
+          </div>
+          <div class="tp-card">
+            <div class="tp-card-title">② 【歴史的なドル高】</div>
+            <p class="tp-card-desc">
+              米国の超高金利に世界中の資金が吸い寄せられて<strong>自国通貨安（ドル高）</strong>が進行し、現地通貨換算での実質的な債務負担がさらに膨張する。
+            </p>
+          </div>
+          <div class="tp-card">
+            <div class="tp-card-title">③ 【世界的な景気後退】</div>
+            <p class="tp-card-desc">
+              金融引き締めによる<strong>米国のリセッション（景気後退）</strong>で原油・鉱物・農産物などの一次産品価格が下落し、返済原資となる外貨収入が激減する。
+            </p>
+          </div>
+        </div>
+        <div class="tp-arrow">⬇</div>
+        <div class="tp-bottom-box">💥 【中南米債務危機の発生（外貨枯渇・返済不能）】</div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 ボルカー・ショックと中南米債務危機の時系列＆変動金利負荷シミュレーター</div>
+            <div class="sim-subtitle">時代フェーズの切り替えと、米政策金利スライダーによって途上国の利払い負担がどう爆発したかを検証できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1973〜1978年</span>
+            オイルマネー還流と低金利融資ブーム
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1979〜1981年</span>
+            ボルカー・ショック発動（金利20%）
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1982年8月〜</span>
+            メキシコ・デフォルトと中南米連鎖危機
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜1980年代後半〜89年</span>
+            「失われた10年」とIMF構造調整・ブレイディ構想
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">米国政策金利（FF金利・ドル変動金利水準）</div>
+            <div class="metric-value" id="m-rate">最高 20% 近辺へ急騰</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-rate" style="width: 100%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">ドル相場と一次産品輸出環境</div>
+            <div class="metric-value" id="m-env">歴史的ドル高 ＋ 資源価格急落</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-env" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">中南米諸国の債務返済・経済状態</div>
+            <div class="metric-value" id="m-status">利払い急増（新規借入で利払い穴埋め）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-status" style="width: 85%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 2：1979年10月〜1981年 ― ボルカー・ショック（新金融調節方式と超高金利）】</strong><br>
+          1979年8月にFRB議長に就任したポール・ボルカーは、同年10月に従来の金利誘導からマネーサプライ（通貨供給量）そのものを厳格に絞る量的引き締めへと政策を大転換しました。その結果、米国のフェデラルファンド（FF）金利は1981年には<strong>一時20%（プライムレート21.5%）</strong>という未曾有の水準に達し、ドル建て・変動金利で借金していた中南米諸国は「利払い急増・ドル高・資源安」のトリプルパンチに見舞われました。
+        </div>
+
+        <!-- Floating Rate Debt Burden Calculator -->
+        <div class="calc-panel">
+          <div style="font-weight: 700; color: #fde047; font-size: 0.95rem;">
+            🧮 ドル建て変動金利ショック計算機（対外債務元本 500億ドルの国における金利変動シミュレーション：金利 <span id="rate-val">18</span>%）
+          </div>
+          <div class="slider-row">
+            <span style="font-size: 0.82rem; color: #86efac;">1970年代半ば（6%）</span>
+            <input type="range" id="rate-slider" min="6" max="20" step="1" value="18" oninput="updateDebtCalc(this.value)">
+            <span style="font-size: 0.82rem; color: #fda4af;">ボルカー期ピーク（20%）</span>
+          </div>
+          <div class="calc-compare">
+            <div class="calc-box">
+              <div style="font-size: 0.8rem; color: #93c5fd; font-weight: 700;">💵 年間のドル建て利払い額（元本返済除く）</div>
+              <div style="font-size: 1.35rem; font-weight: 800; margin: 0.3rem 0;" id="interest-usd">年間 90.0 億ドル</div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;" id="interest-note">金利6%時（年30億ドル）の 3.0倍 に膨張</div>
+            </div>
+            <div class="calc-box" style="background: rgba(225, 29, 72, 0.16); border-color: rgba(251, 113, 133, 0.4);">
+              <div style="font-size: 0.8rem; color: #fda4af; font-weight: 700;">📉 輸出外貨収入に占める利払い比率（DSR目安）</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fecdd3; margin: 0.3rem 0;" id="dsr-val">危機水域（外貨枯渇・デフォルト不可避）</div>
+              <div style="font-size: 0.8rem; color: #fecdd3;" id="dsr-note">稼いだ外貨の大部分が利払いだけで消滅し、新たな借金なしでは破綻します</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Crisis Manifestation & Lost Decade -->
+    <section>
+      <h2>3. 危機の顕在化と「失われた80年代（Lost Decade）」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1982年8月のメキシコ危機を皮切りに、民間銀行による新規融資が一斉にストップし、ラテンアメリカ全域が長期の経済停滞とハイパーインフレに沈みました。
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① メキシコのデフォルト（1982年）</span>
+          </div>
+          <p class="factor-desc">
+            <strong>1982年8月</strong>、返済に行き詰まったメキシコが「外貨準備の枯渇」を理由に<strong>債務不履行（デフォルト／モラトリアム）</strong>を宣言。これが危機の引き金となりました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② ドミノ倒し的な波及</span>
+          </div>
+          <p class="factor-desc">
+            その後、<strong>ブラジルやアルゼンチンなど周辺国へも次々と飛び火</strong>し、中南米のほぼ全ての国が返済不能の危機に陥りました。<a href="#ref-9" class="cite-tag">[9]</a><a href="#ref-10" class="cite-tag">[10]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ 失われた10年（Lost Decade）</span>
+          </div>
+          <p class="factor-desc">
+            中南米経済は厳しい緊縮財政と激しいハイパーインフレに見舞われ、経済成長が完全に停滞する<strong>「失われた80年代（Lost Decade）」</strong>を迎えることになりました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-11" class="cite-tag">[11]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Deep Dive Table: Country Cases & IMF / Brady Plan -->
+      <h3>🔍 深掘り整理：主要国の危機状況とIMF構造調整・「ブレイディ構想（1989年）」</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 24%;">国名・政策枠組み</th>
+              <th style="width: 38%;">ボルカー・ショック直撃時の状況</th>
+              <th style="width: 38%;">その後の対応・社会的影響</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>メキシコ<br>（1982年8月危機の発火点）</strong></td>
+              <td>1970年代後半の新油田発見ブームで巨額のドル借入を実施。しかし1981年以降の<strong>原油価格下落＋米金利20%</strong>の挟み撃ちで外貨準備が枯渇し、1982年8月に返済猶予を要請。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-8" class="cite-tag">[8]</a></td>
+              <td>IMFの緊急融資と引き換えに厳しい緊縮財政・ペソ切り下げ・国営企業民営化を実施。実質賃金が大幅に下落。<a href="#ref-8" class="cite-tag">[8]</a></td>
+            </tr>
+            <tr>
+              <td><strong>ブラジル・アルゼンチン<br>（大型債務国への連鎖）</strong></td>
+              <td>輸入代替工業化やインフラ建設をユーロダラー市場の変動金利シンジケートローンで賄っていたため、メキシコ危機後の民間銀行の融資引き揚げで連鎖的に破綻。<a href="#ref-9" class="cite-tag">[9]</a><a href="#ref-10" class="cite-tag">[10]</a></td>
+              <td>通貨切り下げと財政赤字の悪循環から年率数千％に達する<strong>ハイパーインフレ</strong>が発生し、1人あたりGDPが10年間マイナス成長となった。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-11" class="cite-tag">[11]</a></td>
+            </tr>
+            <tr>
+              <td><strong>IMF構造調整プログラムと<br>「ブレイディ構想（1989年）」</strong></td>
+              <td>当初、米国とIMFは「緊縮財政で利払いを続けさせる」方針（ベーカー構想）をとったが、中南米経済の疲弊と米銀自身の不良債権危機が長期化。<a href="#ref-11" class="cite-tag">[11]</a></td>
+              <td>1989年、ブレイディ米財務長官が<strong>「元本・利子の削減」と「米国ゼロクーポン債を担保にした証券化（ブレイディ債）」</strong>を導入し、国営資産の民営化・外資開放とセットで危機を収束させた。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-11" class="cite-tag">[11]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Lessons for the Modern Era -->
+    <section>
+      <h2>🌐 現代への教訓：ドル金利サイクルと新興国危機の定型パターン</h2>
+      <div class="callout callout-rose" style="margin-top: 0;">
+        <div class="callout-title">⚠️ グローバル金融市場における定番のリスクシナリオ</div>
+        <p style="font-size: 0.95rem; color: var(--text-main);">
+          この歴史的教訓は、現代のグローバル金融市場でも<strong>「米国の急激な利上げは、対外債務を抱える脆弱な新興国から資本を流出させ、通貨危機や債務危機を誘発する」</strong>という定番のリスクシナリオとして、常に警戒され続けています。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-12" class="cite-tag">[12]</a><br>
+          <span style="font-size: 0.88rem; color: var(--text-muted); display: block; margin-top: 0.5rem;">※1994年のメキシコ通貨危機（テキーラ・ショック）、1997年のアジア通貨危機、そして2022年以降のFRBの急速な利上げ局面におけるスリランカ等の新興国デフォルト危機に至るまで、「米国の低金利期にドル建て債務を膨張させ、FRBの利上げ・ドル高局面で破綻させて実物資産や経済主権を回収する」という構造が繰り返されています。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している通商白書・FRB史料・学術論文・経済解説の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://note.com/hirokimiyano/n/n7d44a927ecf9" target="_blank" rel="noopener noreferrer" class="ref-link">https://note.com (ボルカー・ショックと中南米債務危機のメカニズム解説)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://diamond.jp/articles/-/48658" target="_blank" rel="noopener noreferrer" class="ref-link">https://diamond.jp (ダイヤモンド・オンライン：米利上げと新興国債務危機の歴史)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.meti.go.jp/report/tsuhaku2023/pdf/1-1-c1.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.meti.go.jp (経済産業省『通商白書2023』コラム：1980年代の中南米債務危機)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.meti.go.jp/report/tsuhaku2023/pdf/1-1-c1.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.meti.go.jp (経済産業省『通商白書2023』：オイルマネー還流と米金融引き締めの影響)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.rbcbluebay.jp/globalassets/japan/220922.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.rbcbluebay.jp (RBCブルーベイ：新興国市場とドル金利サイクルの分析)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E7%B4%AF%E7%A9%8D%E5%82%B5%E5%8B%99%E5%95%8F%E9%A1%8C" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：累積債務問題)</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%9C%E3%83%AB%E3%82%AB%E3%83%BC" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：ポール・ボルカー)</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://www.jstage.jst.go.jp/article/kokusaikeizai1951/1993/44/1993_44_247/_pdf/-char/ja" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.jstage.jst.go.jp (日本国際経済学会『国際経済』：メキシコ債務危機と構造調整)</a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <a href="https://www5.cao.go.jp/keizai3/sekaikeizaiwp/wp-we88-1/wp-we88-00304.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www5.cao.go.jp (内閣府『世界経済白書』：中南米諸国の累積債務問題の推移)</a>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <a href="https://dl.ndl.go.jp/view/prepareDownload?itemId=info%3Andljp%2Fpid%2F11172318&contentNo=1" target="_blank" rel="noopener noreferrer" class="ref-link">https://dl.ndl.go.jp (国立国会図書館デジタルコレクション：ラテンアメリカ累積債務研究)</a>
+        </li>
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <a href="https://www.federalreservehistory.org/essays/latin-american-debt-crisis" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.federalreservehistory.org (Federal Reserve History: Latin American Debt Crisis of the 1980s)</a>
+        </li>
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <a href="https://www.meti.go.jp/report/tsuhaku2023/pdf/1-1-c1.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.meti.go.jp (経済産業省『通商白書2023』：過去の債務危機からの現代への示唆)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑯ ｜ ボルカー・ショック（Volcker Shock）と中南米債務危機・「失われた80年代」</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        rateText: "低金利（実質マイナス金利局面も）",
+        rateWidth: "30%",
+        rateColor: "#10b981",
+        envText: "ドル安基調 ＋ 資源・一次産品高",
+        envWidth: "25%",
+        envColor: "#10b981",
+        statusText: "借入急増（インフラ・工業化投資）",
+        statusWidth: "40%",
+        statusColor: "#38bdf8",
+        desc: "<strong>【Phase 1：1973〜1978年 ― オイルマネーの還流と「ドル建て・変動金利」融資ブーム】</strong><br>第1次オイルショックで中東産油国に蓄積された巨額のオイルマネーは、欧米の商業銀行（ユーロダラー市場）を経由してメキシコやブラジルなどの中南米諸国へ積極的に貸し付けられました。当時はインフレ率に対してドル金利が低く、一次産品価格も好調だったため、中南米諸国は<strong>「米ドル建て・変動金利」</strong>のシンジケートローンを大量に借り入れました。"
+      },
+      {
+        rateText: "最高 20% 近辺へ急騰",
+        rateWidth: "100%",
+        rateColor: "#f43f5e",
+        envText: "歴史的ドル高 ＋ 資源価格急落",
+        envWidth: "90%",
+        envColor: "#f59e0b",
+        statusText: "利払い急増（新規借入で利払い穴埋め）",
+        statusWidth: "85%",
+        statusColor: "#f43f5e",
+        desc: "<strong>【Phase 2：1979年10月〜1981年 ― ボルカー・ショック（新金融調節方式と超高金利）】</strong><br>1979年8月にFRB議長に就任したポール・ボルカーは、同年10月に従来の金利誘導からマネーサプライ（通貨供給量）そのものを厳格に絞る量的引き締めへと政策を大転換しました。その結果、米国のフェデラルファンド（FF）金利は1981年には<strong>一時20%（プライムレート21.5%）</strong>という未曾有の水準に達し、ドル建て・変動金利で借金していた中南米諸国は「利払い急増・ドル高・資源安」のトリプルパンチに見舞われました。"
+      },
+      {
+        rateText: "高止まり（実質高金利の継続）",
+        rateWidth: "75%",
+        rateColor: "#f97316",
+        envText: "民間銀行の融資一斉引き揚げ",
+        envWidth: "100%",
+        envColor: "#e11d48",
+        statusText: "1982年8月 メキシコ破綻・中南米連鎖危機",
+        statusWidth: "100%",
+        statusColor: "#e11d48",
+        desc: "<strong>【Phase 3：1982年8月〜 ― メキシコのデフォルト宣言と中南米全域へのドミノ波及】</strong><br>1982年8月、メキシコ政府が「外貨準備の枯渇」により対外債務の元本返済猶予（事実上のデフォルト）を宣言しました。これに衝撃を受けた欧米の商業銀行団は中南米向けの新規融資を一斉に遮断したため、ブラジル、アルゼンチン、チリ、ベネズエラなど<strong>中南米のほぼ全ての国が連鎖的に返済不能</strong>へと陥りました。"
+      },
+      {
+        rateText: "低下傾向（ただし累積債務は残存）",
+        rateWidth: "45%",
+        rateColor: "#38bdf8",
+        envText: "IMF緊縮プログラム・国営資産民営化",
+        envWidth: "80%",
+        envColor: "#f59e0b",
+        statusText: "「失われた80年代」とブレイディ構想（1989年）",
+        statusWidth: "75%",
+        statusColor: "#a855f7",
+        desc: "<strong>【Phase 4：1980年代後半〜1989年 ― 「失われた80年代」とブレイディ構想による債権再編】</strong><br>債務返済を優先させるためのIMF主導の緊縮財政・通貨切り下げにより、中南米諸国は深刻な不況とハイパーインフレが並存する<strong>「失われた80年代（Lost Decade）」</strong>を経験しました。最終的に1989年の「ブレイディ構想」によって債務の一部削減と証券化（ブレイディ債化）が行われましたが、引き換えに多くの優良な国営企業や資源利権が外資へと売却されました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-rate').textContent = p.rateText;
+      const bRate = document.getElementById('b-rate');
+      bRate.style.width = p.rateWidth;
+      bRate.style.backgroundColor = p.rateColor;
+
+      document.getElementById('m-env').textContent = p.envText;
+      const bEnv = document.getElementById('b-env');
+      bEnv.style.width = p.envWidth;
+      bEnv.style.backgroundColor = p.envColor;
+
+      document.getElementById('m-status').textContent = p.statusText;
+      const bStatus = document.getElementById('b-status');
+      bStatus.style.width = p.statusWidth;
+      bStatus.style.backgroundColor = p.statusColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    function updateDebtCalc(val) {
+      const rate = parseInt(val, 10);
+      document.getElementById('rate-val').textContent = rate;
+      const principal = 500; // 500億ドル
+      const interest = (principal * rate) / 100;
+      const ratioToBase = (rate / 6).toFixed(1);
+
+      document.getElementById('interest-usd').textContent = "年間 " + interest.toFixed(1) + " 億ドル";
+      document.getElementById('interest-note').textContent =
+        "金利6%時（年30.0億ドル）の " + ratioToBase + "倍 に膨張";
+
+      const dsrVal = document.getElementById('dsr-val');
+      const dsrNote = document.getElementById('dsr-note');
+
+      if (rate <= 8) {
+        dsrVal.textContent = "管理可能圏内（輸出収入で利払い可能）";
+        dsrNote.textContent = "一次産品の輸出収入で利払いを賄い、国内インフラ投資を継続できます";
+      } else if (rate <= 13) {
+        dsrVal.textContent = "警戒水域（外貨準備の急減・借換依存）";
+        dsrNote.textContent = "ドル高と利払い増加が重なり、利払いのために新たな短期借入が必要な自転車操業に陥ります";
+      } else {
+        dsrVal.textContent = "危機水域（外貨枯渇・デフォルト不可避）";
+        dsrNote.textContent = "トリプルパンチにより稼いだ外貨の大半が利払いで消滅し、国家破綻（モラトリアム）に直面します";
+      }
+    }
+  </script>
+</body>
+</html>
