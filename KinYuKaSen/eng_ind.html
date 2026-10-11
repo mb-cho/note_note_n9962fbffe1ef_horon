@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：イギリス「インド省（India Office）」の歴史と植民地直接統治の機構（1858–1947年）</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #065f46 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(16, 185, 129, 0.35);
+      color: #d1fae5;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f1f5f9;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Mechanism Flow Cards */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #93c5fd;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.75rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link active">⑩ 英インド省</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">大英帝国植民地統治機構・補論</span>
+        <span class="badge badge-sub">1858年〜1947年 ロンドン中央官庁「インド省」</span>
+      </div>
+      <h1>イギリスの「インド省（India Office）」：<br>東インド会社解散から直接統治・印パ独立までの統治機構</h1>
+      <p class="lead">
+        過去のイギリスには<strong>「インド省（India Office）」</strong>という中央官庁が存在していました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><br>
+        1857年に起きたインド大反乱（シパーヒーの乱）をきっかけに、イギリス政府はそれまでインドを間接支配していた「イギリス東インド会社」を解散させ、本国による直接統治へと切り替えました。その統治事務を担うために<strong>1858年にロンドンで設置されたのがインド省</strong>です。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Core Overview Section -->
+    <section>
+      <h2>🏛️ インド省（India Office）の主な概要</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1858年のインド統治法（Government of India Act 1858）によって設立されたインド省は、約90年間にわたりイギリスの首都ロンドン（ホワイトホール）から英領インド帝国を統括する中枢機関として機能しました。その主な概要は以下の3点に集約されます。
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>① 役割：本国からの広範な統治統括</span>
+          </div>
+          <p class="factor-desc">
+            イギリス領インド帝国に関する<strong>軍事、外交、財務、政治などの広範な統治事務</strong>を本国（ロンドン）から統括しました。
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 責任者：インド大臣と現地総督（副王）</span>
+          </div>
+          <p class="factor-desc">
+            イギリスの閣僚である<strong>「インド担当国務大臣（インド大臣 / Secretary of State for India）」</strong>が省を率いました。現地の責任者である<strong>「インド総督（副王 / Viceroy）」</strong>は、このインド省からの命令を実行する形をとっていました。
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>③ 廃止：1947年8月の印パ独立</span>
+          </div>
+          <p class="factor-desc">
+            <strong>1947年8月</strong>、インドとパキスタンがイギリスから独立したことに伴い、その役割を終えて廃止されました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">📜 歴史資料としての遺産：インド省記録（India Office Records）</div>
+        <p style="font-size: 0.94rem; color: var(--text-main);">
+          当時のインド省が残した膨大な公文書（<strong>インド省記録：India Office Records</strong>）は、現在はロンドンの<strong>大英図書館（British Library）</strong>に保管されており、近代南アジア史の重要な歴史資料となっています。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-8" class="cite-tag">[8]</a><br>
+          <span style="font-size: 0.86rem; color: var(--text-muted);">※1600年の東インド会社設立から1947年のインド省廃止に至る約350年間の文書・地図・書簡（書架延長約14km）が含まれ、南アジアのみならず中東・湾岸地域や東南アジアの近代史研究における第一級史料群となっています。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-8" class="cite-tag">[8]</a></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Governance Command Chain & Interactive Timeline -->
+    <section>
+      <h2>⚙️ ロンドン本国と現地インドを結ぶ統治・財務ネットワーク</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        東インド会社による間接支配からインド省による直接支配への転換により、「イギリスの議会・内閣 → インド省（ロンドン） → インド総督府（カルカッタ／デリー）」という一元的な指揮命令系統と財政還流システム（本国費・インド省手形）が確立されました。
+      </p>
+
+      <!-- 4-Step Command Chain -->
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="step-num">LEVEL 1：主権・立法</span>
+          <div class="flow-title">英国王室・英国議会</div>
+          <p class="flow-desc">
+            1858年インド統治法により統治権を東インド会社から英国王（ヴィクトリア女王、1877年よりインド女帝）へ移管。最終的な立法・監督権を掌握。
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">LEVEL 2：本国中央官庁</span>
+          <div class="flow-title">インド省（ロンドン）</div>
+          <p class="flow-desc">
+            閣僚である<strong>インド担当国務大臣</strong>と諮問機関「インド評議会（Council of India）」が軍事・外交・財務・インド国債発行・為替手形決済を統括。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">LEVEL 3：現地執行機関</span>
+          <div class="flow-title">インド総督（副王）</div>
+          <p class="flow-desc">
+            インド省の訓令の下、現地行政の最高責任者として君臨。エリート官僚組織「インド高等文官（ICS）」と英印軍を率いて直轄領と藩王国を統治。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">LEVEL 4：財政・金融還流</span>
+          <div class="flow-title">本国費とロンドン決済</div>
+          <p class="flow-desc">
+            現地の地租・塩税・アヘン収入から、インド省の行政費・軍人年金・鉄道外債利子（<strong>本国費 Home Charges</strong>）をポンド建てでロンドンへ恒常送金。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 イギリスによるインド統治形態の変遷シミュレーター（1757年〜1947年）</div>
+            <div class="sim-subtitle">時代フェーズを選択して、統治主体・権限構造・インド省の役割の推移を確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1757〜1857年</span>
+            東インド会社による間接支配
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1857〜1858年</span>
+            インド大反乱とインド省創設
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1858〜1918年</span>
+            インド帝国全盛期と遠隔統制
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜1919〜1947年</span>
+            独立運動の高揚とインド省廃止
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">ロンドン本国政府（インド省）の直接統制力</div>
+            <div class="metric-value" id="m-control">100%（直接統治への完全移行）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-control" style="width: 100%; background-color: #3b82f6;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">統治主体・中央機関</div>
+            <div class="metric-value" id="m-body">インド省（1858年ロンドン設置）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-body" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">インド現地の自治・独立移行度</div>
+            <div class="metric-value" id="m-autonomy">極小（ムガル帝国滅亡・直轄化）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-autonomy" style="width: 10%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 2：1857〜1858年 ― インド大反乱（シパーヒーの乱）とインド省の創設】</strong><br>
+          1857年に起きたインド大反乱（シパーヒーの乱）をきっかけに、イギリス政府はムガル帝国を滅亡させるとともに、それまでインドを間接支配していた「イギリス東インド会社」を1858年インド統治法によって解散させました。本国による直接統治へと切り替え、その統治事務をロンドンで一括して担う中央官庁として<strong>「インド省（India Office）」</strong>と閣僚ポスト<strong>「インド担当国務大臣」</strong>が新設されました。
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Comparison Section: India Office vs Viceroy & Financial Drain -->
+    <section>
+      <h2>🔍 深掘り解説：インド大臣（ロンドン）とインド総督（現地）の権限と仕組み</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        「ロンドンのインド省（インド担当国務大臣）」と「現地のインド総督（副王）」がどのように役割を分担し、1947年の独立・廃止に至ったかを整理します。
+      </p>
+
+      <div class="table-wrap" style="margin-bottom: 1.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">比較項目</th>
+              <th style="width: 39%;">インド省 / インド担当国務大臣（本国ロンドン）</th>
+              <th style="width: 39%;">インド政庁 / インド総督・副王（現地インド）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>地位と所在地</strong></td>
+              <td>イギリス内閣の<strong>閣僚（国務大臣）</strong>。ロンドンのホワイトホール庁舎（現在の英外務・英連邦・開発省庁舎の一部）に所在。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td>英国王の代理人（副王：Viceroy）。1911年までは<strong>カルカッタ</strong>、1911年以降は<strong>デリー（ニューデリー）</strong>の総督邸に駐在。<a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>権限と指揮関係</strong></td>
+              <td><strong>最高意思決定権者</strong>。宣戦・講和、外交交渉、予算・起債承認、重要法案への拒否権を握り、総督に対して命令を下す。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+              <td><strong>現地最高執行責任者</strong>。インド省からの命令・基本方針を実行し、現地の治安維持、徴税、藩王国との交渉、行政実務を統括。<a href="#ref-1" class="cite-tag">[1]</a></td>
+            </tr>
+            <tr>
+              <td><strong>通信技術による変容</strong></td>
+              <td>1870年にロンドン〜インド間の<strong>海底電信ケーブル</strong>が開通すると、インド省が日々の政策までリアルタイムで遠隔指示する中央集権体制が強化された。</td>
+              <td>電信開通以前は航路で数ヶ月かかったため総督の現場裁量が大きかったが、電信開通後は「ロンドンのインド大臣の訓令待ち」となる場面が増加した。</td>
+            </tr>
+            <tr>
+              <td><strong>財政・金融上の役割</strong></td>
+              <td>ロンドン・シティで<strong>インド省手形（Council Bills）</strong>やポンド建てインド債を発行し、インドの貿易黒字や税収を本国費（Home Charges）として回収。</td>
+              <td>インド国内で地租・塩税・関税をルピー建てで徴収し、インド省の運営費や英国人官僚・軍人の給与・年金原資を捻出。</td>
+            </tr>
+            <tr>
+              <td><strong>1947年8月の終焉</strong></td>
+              <td>1947年インド独立法（Indian Independence Act 1947）により<strong>1947年8月14〜15日にインド省は廃止</strong>され、業務は英連邦関係省へ移管された。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-7" class="cite-tag">[7]</a></td>
+              <td>最後のインド総督（副王）マウントバッテン卿の下で<strong>インドとパキスタンの分離独立</strong>が実行され、副王職も消滅した。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">💡 金融帝国主義の視点：「インド省」自身の維持費もすべてインド人の税金で賄われた</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          イギリスの植民地支配において特徴的だったのは、ロンドンにある「インド省」の豪華な庁舎建設費や、インド担当国務大臣をはじめとする本国官僚の給与・恩給、さらにはインド征服戦争の戦費外債の利払いに至るまで、イギリスの納税者ではなく<strong>すべてインド現地の税収から「本国費（Home Charges）」としてポンド建てで徴収されていた</strong>点です。またインド省はペルシャ湾・アデン・紅海周辺の外交・軍事管轄権も一部担っており、大英帝国のインド洋・中東支配の要石として機能していました。<a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している事典・アーカイブ機関・歴史解説の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E7%9C%81" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：インド省)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://en.wikipedia.org/wiki/India_Office" target="_blank" rel="noopener noreferrer" class="ref-link">https://en.wikipedia.org (Wikipedia: India Office)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://rekishisougou.seesaa.net/article/505609875.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://rekishisougou.seesaa.net (歴史総合解説：インド大反乱とインド統治法)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.youtube.com/watch?v=vEZvs9PR444&t=438" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.youtube.com (歴史解説動画：東インド会社解散と直接統治)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.qdl.qa/en/india-office-government-london-british-india" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.qdl.qa (Qatar Digital Library: The India Office — Government in London for British India)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.weblio.jp/content/%E3%82%A4%E3%83%B3%E3%83%89%E7%9C%81" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.weblio.jp (Weblio辞書：インド省)</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://www.wikiwand.com/en/India_Office" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.wikiwand.com (Wikiwand: India Office)</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://www.qdl.qa/en/history-india-office-records-and-private-papers" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.qdl.qa (Qatar Digital Library: History of the India Office Records and Private Papers)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑩ ｜ イギリス「インド省（India Office）」と植民地直接統治の機構</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        controlText: "間接監督（東インド会社＋監督庁）",
+        controlWidth: "45%",
+        controlColor: "#f59e0b",
+        bodyText: "イギリス東インド会社（EIC）",
+        bodyWidth: "60%",
+        bodyColor: "#a855f7",
+        autonomyText: "藩王国・ムガル皇帝の名目的存続",
+        autonomyWidth: "35%",
+        autonomyColor: "#f59e0b",
+        desc: "<strong>【Phase 1：1757〜1857年 ― イギリス東インド会社による間接支配】</strong><br>1757年のプラッシーの戦いや1765年の徴税権（ディワーニー）獲得以降、特許会社である<strong>イギリス東インド会社</strong>が独自の軍隊と行政機構を持ってインドを支配しました。イギリス政府は1784年のピットのインド法で「監督庁（Board of Control）」を設けて会社を監督していましたが、統治の実務と責任は東インド会社に委ねられていました。"
+      },
+      {
+        controlText: "100%（直接統治への完全移行）",
+        controlWidth: "100%",
+        controlColor: "#3b82f6",
+        bodyText: "インド省（1858年ロンドン設置）",
+        bodyWidth: "90%",
+        bodyColor: "#f59e0b",
+        autonomyText: "極小（ムガル帝国滅亡・直轄化）",
+        autonomyWidth: "10%",
+        autonomyColor: "#f43f5e",
+        desc: "<strong>【Phase 2：1857〜1858年 ― インド大反乱（シパーヒーの乱）とインド省の創設】</strong><br>1857年に起きたインド大反乱（シパーヒーの乱）をきっかけに、イギリス政府はムガル帝国を滅亡させるとともに、それまでインドを間接支配していた「イギリス東インド会社」を1858年インド統治法によって解散させました。本国による直接統治へと切り替え、その統治事務をロンドンで一括して担う中央官庁として<strong>「インド省（India Office）」</strong>と閣僚ポスト<strong>「インド担当国務大臣」</strong>が新設されました。"
+      },
+      {
+        controlText: "極大（海底電信と官僚機構による統括）",
+        controlWidth: "100%",
+        controlColor: "#2563eb",
+        bodyText: "インド大臣 ➔ インド総督（副王）",
+        bodyWidth: "100%",
+        bodyColor: "#10b981",
+        autonomyText: "限定的な参事会参加のみ",
+        autonomyWidth: "20%",
+        autonomyColor: "#f59e0b",
+        desc: "<strong>【Phase 3：1858〜1918年 ― インド帝国（British Raj）の確立とロンドンからの遠隔統括】</strong><br>1877年にはヴィクトリア女王が「インド女帝」を兼ねるインド帝国が成立。ロンドンの<strong>インド担当国務大臣</strong>が軍事・外交・財政の最高決定権を握り、現地の<strong>インド総督（副王）</strong>がその命令を実行する体制が定着しました。膨大な統治公文書はすべてロンドンのインド省に集積され、これが現在の「インド省記録（India Office Records）」の母体となりました。"
+      },
+      {
+        controlText: "段階的縮小 ➔ 1947年8月に完全廃止",
+        controlWidth: "15%",
+        controlColor: "#10b981",
+        bodyText: "インド省廃止（大英図書館へ文書移管）",
+        bodyWidth: "15%",
+        bodyColor: "#38bdf8",
+        autonomyText: "100%（1947年8月 インド・パキスタン独立）",
+        autonomyWidth: "100%",
+        autonomyColor: "#10b981",
+        desc: "<strong>【Phase 4：1919〜1947年 ― 民族独立運動の高揚と1947年8月のインド省廃止】</strong><br>第一次・第二次世界大戦を経てインド国民会議派やムスリム連盟による独立運動が激化。1919年・1935年のインド統治法改正で州自治が段階的に拡大された後、<strong>1947年8月、インドとパキスタンがイギリスから分離独立</strong>したことに伴い、インド省は約90年にわたる歴史的役割を終えて正式に廃止されました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-control').textContent = p.controlText;
+      const bControl = document.getElementById('b-control');
+      bControl.style.width = p.controlWidth;
+      bControl.style.backgroundColor = p.controlColor;
+
+      document.getElementById('m-body').textContent = p.bodyText;
+      const bBody = document.getElementById('b-body');
+      bBody.style.width = p.bodyWidth;
+      bBody.style.backgroundColor = p.bodyColor;
+
+      document.getElementById('m-autonomy').textContent = p.autonomyText;
+      const bAutonomy = document.getElementById('b-autonomy');
+      bAutonomy.style.width = p.autonomyWidth;
+      bAutonomy.style.backgroundColor = p.autonomyColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
