@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：ユーロダラー市場とロシア経済制裁 ― なぜオフショア・ドルでも制裁を回避できなかったのか？</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #31102f 50%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 113, 133, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-blue {
+      border-left-color: var(--primary);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+        <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+        <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+        <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+        <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+        <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+        <a href="EuDallerRosia.html" class="nav-link active">⑮ ユーロダラーと露制裁</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">国際決済システム・経済制裁補論</span>
+        <span class="badge badge-sub">コルレス銀行清算網・SWIFT排除・二次制裁と脱ドル化</span>
+      </div>
+      <h1>ユーロダラー市場とロシア制裁：<br>なぜ「米国外のドル」でも米国の金融制裁を回避できなかったのか？</h1>
+      <p class="lead">
+        結論から申し上げますと、<strong>ロシアに対する経済制裁をユーロダラー（米国以外の金融機関に預けられた米ドル）市場で回避することは実質的に不可能でした。</strong><br>
+        歴史的には「米国の規制が及ばないドル」として誕生したユーロダラーですが、現代の国際決済システムにおいては、米国の強力な管轄権と<strong>「二次制裁（セカンダリーサンクション）」</strong>の網によって、制裁回避の手段としては機能しませんでした。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: 3 Main Reasons Why Eurodollar Evasion Failed -->
+    <section>
+      <h2>🛑 ユーロダラーで制裁を回避できなかった3つの決定的な理由</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        たとえ米国外（欧州・アジア・中東など）の銀行にドル預金（ユーロダラー）を持っていても、そのドルを電子的に送金・決済しようとした瞬間に、米国とG7が握る3つのチョークポイント（関所）によって遮断される構造になっています。
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>1. すべてのドル決済は最終的に米国を経由する</span>
+          </div>
+          <p class="factor-desc">
+            ユーロダラー市場の資金移動であっても、電子的・国際的な米ドル決済を行うためには、最終的に<strong>米国内にあるコルレス銀行（清算銀行）の口座を経由</strong>する必要があります。<br>
+            米国の<strong>外国資産管理局（OFAC）</strong>などの規制当局は、この米国内の清算ルートを完全に把握・統制できるため、ロシアの制裁対象銀行や企業がユーロダラー口座間でドルを動かそうとしても、決済の最終段階で凍結または拒否されます。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>2. 欧米による「SWIFTからの排除」と外貨準備凍結</span>
+          </div>
+          <p class="factor-desc">
+            G7およびEUは、ロシアの主要銀行を国際的な金融通信網である<strong>SWIFT</strong>から排除し、ロシア中央銀行が海外に持つ<strong>外貨準備（ユーロダラーやユーロ市場の資産を含む）を即座に凍結</strong>しました。これにより、たとえ海外の口座にドルが名目上存在していても、それを実質的に動かすための通信決済ルートが遮断されました。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>3. 第三国銀行を対象とする「二次制裁」の威力</span>
+          </div>
+          <p class="factor-desc">
+            米国は、ロシアの制裁回避を手伝う第三国の金融機関に対しても、米国の金融システムから排除する<strong>二次制裁（セカンダリーサンクション）</strong>を課す姿勢を強めました。ユーロダラーを取り扱う欧州やアジア、中東の主要銀行にとって、米ドル決済網（米国の市場）へのアクセスを失うリスクは大きすぎるため、ロシアとのドル建て取引を一斉に停止せざるを得なくなりました。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 4-Step Mechanism Diagram: Why Eurodollars Must Touch New York -->
+      <h3>🔍 構造図解：なぜ「米国外同士のドル送金」でもニューヨークを経由するのか？</h3>
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="step-num">STEP 1：送金指示</span>
+          <div class="flow-title">海外のA銀行（ユーロダラー）</div>
+          <p class="flow-desc">
+            米国外の銀行にあるドル口座から別の国の銀行へドルを送金しようとする際、まず<strong>SWIFT（ベルギー本部）</strong>で決済メッセージを送る必要がある（→ <strong>SWIFT排除で遮断</strong>）。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 2：米国清算の壁</span>
+          <div class="flow-title">NYコルレス銀行・CHIPS</div>
+          <p class="flow-desc">
+            米国外の銀行同士は直接ドルの中央銀行当座預金を書き換えられないため、必ず<strong>ニューヨークのコルレス銀行（CHIPS／Fedwire）</strong>の口座振替を経由する（→ <strong>OFACが監視・即時凍結</strong>）。
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 3：二次制裁の網</span>
+          <div class="flow-title">第三国銀行への死刑宣告</div>
+          <p class="flow-desc">
+            もし中東・アジア・中国の銀行が独自にロシアのドル取引を仲介すれば、米財務省（OFAC）がその銀行の<strong>米国コルレス口座自体を閉鎖（ドル決済網からの追放）</strong>する。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 4：結果</span>
+          <div class="flow-title">ユーロダラーの完全無力化</div>
+          <p class="flow-desc">
+            世界中の民間銀行が「ロシアとの取引」よりも「米ドル決済アクセス維持」を選択して自主規制（オーバーコンプライアンス）し、ユーロダラーによる制裁回避は不可能となった。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 国際決済ルートの遮断とロシアの代替スキーム検証シミュレーター</div>
+            <div class="sim-subtitle">決済ルート・時代を切り替えて、米国の金融制裁網（OFAC・SWIFT・二次制裁）の捕捉力とロシアの代替行動を比較できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Case 1｜1950年代（冷戦期ソ連）</span>
+            アナログ時代のユーロダラー逃避
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Case 2｜2022年（直接ユーロダラー）</span>
+            NYコルレス清算＆SWIFT遮断
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Case 3｜2023〜24年（第三国経由）</span>
+            OFAC「二次制裁」による迂回封鎖
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Case 4｜非ドル代替ルート</span>
+            人民元（CIPS）・現物紙幣・金・暗号資産
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">米当局（OFAC・NY清算網）による捕捉・凍結力</div>
+            <div class="metric-value" id="m-ofac">ほぼ 100%（NYコルレス口座で即時遮断）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-ofac" style="width: 100%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">ユーロダラーによる制裁回避の実現性</div>
+            <div class="metric-value" id="m-evade">実質ゼロ（外貨準備凍結・送金不能）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-evade" style="width: 3%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">取引コスト・特定経済圏（中国等）への従属度</div>
+            <div class="metric-value" id="m-cost">ドル圏から完全排除（代替模索へ）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-cost" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Case 2：2022年2月以降 ― 現代ユーロダラー決済の試みと完全封鎖】</strong><br>
+          ロシア中央銀行や主要銀行は、米国本土ではなくヨーロッパ等の金融機関（ユーロ市場）に巨額の外貨準備を分散配置していましたが、G7・EUの協調制裁によって<strong>約3,000億ドル相当の外貨準備が即座に凍結</strong>され、主要銀行は<strong>SWIFTから排除</strong>されました。さらに電子的な米ドル送金は必ずニューヨークのコルレス銀行（清算銀行）を通るため、米財務省OFACのフィルターによってユーロダラー口座間の資金移動も完全にブロックされました。
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Russia's Actual Evasion & Alternative Measures -->
+    <section>
+      <h2>🔄 ロシアが実際に取った「回避・代替手段」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        ユーロダラー市場での制裁回避が不可能となったため、ロシアは<strong>ドルやユーロそのものを諦め、金融システムが全く異なる別のルートへとシフト</strong>しました。<a href="#ref-8" class="cite-tag">[8]</a><a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>① 人民元決済（CIPS）へのシフト</span>
+          </div>
+          <p class="factor-desc">
+            中国の<strong>国際銀行間決済システム（CIPS）</strong>や自国の連絡網（<strong>SPFS</strong>）を活用し、ドル依存から<strong>「人民元・ルーブル建て」取引</strong>へ急速に転換しました。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-10" class="cite-tag">[10]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 物理的な現金（紙幣）の密輸</span>
+          </div>
+          <p class="factor-desc">
+            電子決済が使えないため、第三国（アラブ首長国連邦やトルコなど）を経由して、<strong>数十億ドル規模のドル・ユーロの「現物の紙幣」を国内に運び込む</strong>という原始的な方法で一部を補いました。<a href="#ref-11" class="cite-tag">[11]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-blue">
+          <div class="factor-title">
+            <span>③ 暗号資産や金（ゴールド）の利用</span>
+          </div>
+          <p class="factor-desc">
+            追跡が困難な<strong>暗号資産（仮想通貨）のP2P取引</strong>や、<strong>金の現物取引</strong>を通じた決済スキームも一部で利用されています。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-12" class="cite-tag">[12]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Summary Callout -->
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">📌 まとめ：ユーロダラーの歴史的変質と「脱ドル・人民元経済圏への依存」</div>
+        <p style="font-size: 0.94rem; color: var(--text-main);">
+          冷戦期にはソ連が米国の資産凍結を免れるためにユーロダラー市場が活用された歴史がありますが、<strong>現代のデジタル化されたグローバル金融システムにおいて、米国の網をかいくぐってユーロダラーを動かすことは不可能</strong>であり、ロシアは<strong>「脱ドル・人民元経済圏への依存」</strong>という形でしか経済を維持できませんでした。<a href="#ref-8" class="cite-tag">[8]</a><a href="#ref-9" class="cite-tag">[9]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparison Table of Cold War vs Modern Digital Dollar & Alternative Channels -->
+    <section>
+      <h2>📊 深掘り比較：各決済ルート・代替手段の特徴と「二次制裁」下の限界</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        ユーロダラーから人民元（CIPS）、現物紙幣輸送、金・暗号資産に至る各手段の実効性とボトルネックを比較整理します。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-11" class="cite-tag">[11]</a><a href="#ref-12" class="cite-tag">[12]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">決済手段・ルート</th>
+              <th style="width: 26%;">ロシアによる活用の狙い</th>
+              <th style="width: 26%;">欧米の制裁網・捕捉メカニズム</th>
+              <th style="width: 26%;">実質的な結果・限界</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ユーロダラー市場<br>（米国外の電子ドル預金）</strong></td>
+              <td>米国外の欧州・中東・アジアの銀行口座にあるドルを使って貿易決済を継続する。</td>
+              <td><strong>NYコルレス清算網（CHIPS）でのOFAC監視</strong>、SWIFT排除、および第三国銀行への<strong>二次制裁</strong>。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+              <td><strong>回避不可能</strong>。第三国の銀行もドル決済網からの追放を恐れてロシア関連のドル送金を全面拒否。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-7" class="cite-tag">[7]</a></td>
+            </tr>
+            <tr>
+              <td><strong>人民元決済（CIPS）<br>・ルーブル決済（SPFS）</strong></td>
+              <td>米国のコルレス網を通らない中国・ロシア独自の決済網でエネルギー輸出や輸入を決済する。</td>
+              <td>2023年末〜2024年以降、米財務省が<strong>中国の銀行に対しても軍民両用品取引に関する二次制裁</strong>で警告。<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+              <td>中露貿易の9割以上が人民元・ルーブル化されたが、中国の大手銀行も二次制裁を警戒して審査を厳格化。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-8" class="cite-tag">[8]</a></td>
+            </tr>
+            <tr>
+              <td><strong>物理的な現金（ドル・ユーロ紙幣）の空輸・密輸</strong></td>
+              <td>電子台帳（コルレス銀行）を通さない「現物の紙幣」をトルコやUAE等経由で搬入する。</td>
+              <td>米国・EUによる<strong>ロシア向け紙幣輸出禁止措置</strong>と税関監視の強化。<a href="#ref-11" class="cite-tag">[11]</a></td>
+              <td>約23億ドル規模の紙幣が流入したが、輸送コストと物理的限界が大きく国家規模の貿易には不十分。<a href="#ref-11" class="cite-tag">[11]</a></td>
+            </tr>
+            <tr>
+              <td><strong>金（ゴールド）現物・暗号資産（仮想通貨）</strong></td>
+              <td>国家主権に縛られない金地金やステーブルコイン・P2P暗号資産で迂回決済を行う。</td>
+              <td>G7によるロシア産金の輸入禁止、および暗号資産取引所・マイニング企業へのOFAC制裁指定。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-12" class="cite-tag">[12]</a></td>
+              <td>一部の中継貿易や部品調達で利用されるが、流動性・換金スプレッドの負担が重く補完的手段にとどまる。<a href="#ref-12" class="cite-tag">[12]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している米財務省発表・報道機関・研究機関レポートの出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.nikkei.com/article/DGXZQOUB243QY0U2A220C2000000/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.nikkei.com (日本経済新聞：ドル決済網と対ロ金融制裁の仕組み)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.nikkei.com/article/DGXZQOUB281FD0Y2A220C2000000/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.nikkei.com (日本経済新聞：SWIFT排除とロシア中銀の外貨準備凍結)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://jbpress.ismedia.jp/articles/-/90364" target="_blank" rel="noopener noreferrer" class="ref-link">https://jbpress.ismedia.jp (JBpress：国際金融制裁とドル覇権の構造分析)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://home.treasury.gov/news/press-releases/jy2404" target="_blank" rel="noopener noreferrer" class="ref-link">https://home.treasury.gov (U.S. Department of the Treasury: Secondary Sanctions Targeting Foreign Financial Institutions)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.dlri.co.jp/report/macro/184105.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.dlri.co.jp (第一生命経済研究所：対ロ金融制裁と外貨準備・代替決済の検証)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.jfir.or.jp/2024/01/21/10414/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.jfir.or.jp (日本国際フォーラム：二次制裁と中露人民元決済の動向)</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://yipinstitute.org/journal/sanctions-evasion-in-the-russo-ukrainian-war-challenges-case-studies-and-policy-recommendations-for-the-u-s-and-eu" target="_blank" rel="noopener noreferrer" class="ref-link">https://yipinstitute.org (Institute for Youth in Policy: Sanctions Evasion in the Russo-Ukrainian War)</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://www.nikkei.com/article/DGXZQOUB17D0W0X10C23A2000000/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.nikkei.com (日本経済新聞：ロシア経済の脱ドルと人民元依存の進行)</a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <a href="https://www.jstage.jst.go.jp/article/jjce/63/2/63_2_11/_pdf/-char/ja" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.jstage.jst.go.jp (比較経済体制学会誌：経済制裁下のロシア金融・通貨体制)</a>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <a href="https://mainichi.jp/premier/politics/articles/20220305/pol/00m/010/004000c" target="_blank" rel="noopener noreferrer" class="ref-link">https://mainichi.jp (毎日新聞経済プレミア：SWIFT排除と中国CIPS・ロシアSPFS)</a>
+        </li>
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <a href="https://www.reuters.com/jp/world/ukraine/P2NOZBZVCFNGLHZLTXITPMCLWE-2024-08-12/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.reuters.com (ロイター：ロシアへ23億ドル相当のドル・ユーロ現物紙幣が流入)</a>
+        </li>
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <a href="https://www.fdd.org/analysis/2026/07/28/eus-new-russia-sanctions-target-evasion-mechanisms-but-enforcement-challenges-remain/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.fdd.org (Foundation for Defense of Democracies: EU's New Russia Sanctions Target Evasion Mechanisms)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑮ ｜ ユーロダラー市場とロシア経済制裁 ― コルレス決済網・二次制裁・脱ドル化の検証</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        ofacText: "低（紙の台帳・電信時代の間隙）",
+        ofacWidth: "20%",
+        ofacColor: "#10b981",
+        evadeText: "高（パリ・ロンドンの銀行で保全成功）",
+        evadeWidth: "85%",
+        evadeColor: "#10b981",
+        costText: "低（ドル流動性のメリットを享受）",
+        costWidth: "20%",
+        costColor: "#38bdf8",
+        desc: "<strong>【Case 1：1950年代（冷戦期ソ連） ― アナログ時代のユーロダラー逃避】</strong><br>1950年代の冷戦期には、ソ連は米国による資産凍結を免れるため、パリのソ連系銀行（北欧商業銀行）やロンドンの銀行名義に米ドルを預け替えることで米当局の直接凍結を回避できました。当時はまだリアルタイムの電子清算監視網や第三国銀行への包括的な「二次制裁」の仕組みが存在しなかったため、ユーロダラーは「米国の規制が及ばないドル」として機能していました。"
+      },
+      {
+        ofacText: "ほぼ 100%（NYコルレス口座で即時遮断）",
+        ofacWidth: "100%",
+        ofacColor: "#f43f5e",
+        evadeText: "実質ゼロ（外貨準備凍結・送金不能）",
+        evadeWidth: "3%",
+        evadeColor: "#38bdf8",
+        costText: "ドル圏から完全排除（代替模索へ）",
+        costWidth: "90%",
+        costColor: "#f59e0b",
+        desc: "<strong>【Case 2：2022年2月以降 ― 現代ユーロダラー決済の試みと完全封鎖】</strong><br>ロシア中央銀行や主要銀行は、米国本土ではなくヨーロッパ等の金融機関（ユーロ市場）に巨額の外貨準備を分散配置していましたが、G7・EUの協調制裁によって<strong>約3,000億ドル相当の外貨準備が即座に凍結</strong>され、主要銀行は<strong>SWIFTから排除</strong>されました。さらに電子的な米ドル送金は必ずニューヨークのコルレス銀行（清算銀行）を通るため、米財務省OFACのフィルターによってユーロダラー口座間の資金移動も完全にブロックされました。"
+      },
+      {
+        ofacText: "極大（第三国銀行への二次制裁発動）",
+        ofacWidth: "95%",
+        ofacColor: "#e11d48",
+        evadeText: "極小（中東・アジア・中国銀も取引停止）",
+        evadeWidth: "8%",
+        evadeColor: "#f59e0b",
+        costText: "極大（迂回手数料の暴騰と口座閉鎖）",
+        costWidth: "95%",
+        costColor: "#e11d48",
+        desc: "<strong>【Case 3：2023〜2024年 ― 第三国銀行を対象とする「二次制裁（セカンダリーサンクション）」の威力】</strong><br>米国はロシアの制裁回避を手助けする第三国（トルコ、UAE、中央アジア、中国など）の金融機関に対しても、米国の金融システム（ドルコルレス網）から締め出す<strong>二次制裁</strong>を強化しました。世界の主要銀行にとって「米ドルを扱えなくなること」は経営破綻を意味するため、ユーロダラーを扱う第三国の銀行もロシア関連のドル取引を一斉に拒否する結果となりました。"
+      },
+      {
+        ofacText: "ドル網外（ただしCIPS参加銀には二次制裁圧力）",
+        ofacWidth: "45%",
+        ofacColor: "#f59e0b",
+        evadeText: "非ドル領域でのみ機能（人民元・現物紙幣・金）",
+        evadeWidth: "65%",
+        evadeColor: "#10b981",
+        costText: "高（人民元圏への従属・現物輸送コスト）",
+        costWidth: "80%",
+        costColor: "#f43f5e",
+        desc: "<strong>【Case 4：ロシアが実際に取った代替手段 ― 人民元（CIPS）・現物紙幣密輸・金・暗号資産】</strong><br>ユーロダラー市場での制裁回避が不可能となったため、ロシアはドルやユーロの電子決済そのものを諦め、①<strong>中国の人民元決済網（CIPS）や自国SPFSへの転換</strong>、②トルコやUAEを経由した<strong>数十億ドル規模の「現物紙幣」の物理的搬入</strong>、③<strong>金（ゴールド）や暗号資産（P2P取引）</strong>の利用へとシフトし、「脱ドル・人民元経済圏への依存」を深めることになりました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-ofac').textContent = p.ofacText;
+      const bOfac = document.getElementById('b-ofac');
+      bOfac.style.width = p.ofacWidth;
+      bOfac.style.backgroundColor = p.ofacColor;
+
+      document.getElementById('m-evade').textContent = p.evadeText;
+      const bEvade = document.getElementById('b-evade');
+      bEvade.style.width = p.evadeWidth;
+      bEvade.style.backgroundColor = p.evadeColor;
+
+      document.getElementById('m-cost').textContent = p.costText;
+      const bCost = document.getElementById('b-cost');
+      bCost.style.width = p.costWidth;
+      bCost.style.backgroundColor = p.costColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>
