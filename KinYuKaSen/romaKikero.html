@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：共和政ローマ末期の金融寡頭制 ― ブルトゥスの高利貸し事件とキケロのジレンマ</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e1b4b 0%, #4c0519 55%, #7c2d12 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.4);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f1f5f9;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    .lead a {
+      color: #fde047;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .lead a:hover {
+      color: #ffffff;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    /* Content Links & Cite Badges */
+    .ext-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ext-link:hover {
+      color: var(--rose);
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Mechanism Flow Cards */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #e2e8f0;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-blue {
+      border-left-color: var(--primary);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.75rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Interest Rate Compound Calculator */
+    .calc-panel {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slider-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      min-width: 180px;
+      accent-color: #fbbf24;
+      cursor: pointer;
+    }
+
+    .calc-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .calc-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .calc-box.usury {
+      background: rgba(225, 29, 72, 0.18);
+      border-color: rgba(251, 113, 133, 0.45);
+    }
+
+    /* Highlight Quote / Callout */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📚 金融寡占と帝国主義 補論シリーズ</div>
+      <div class="nav-links">
+        <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+        <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+        <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+        <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+        <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+        <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+        <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+        <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+        <a href="romaKikero.html" class="nav-link active">⑨ 共和政ローマ末期</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">古代ローマ金融史・寡頭政治の腐敗</span>
+        <span class="badge badge-sub">紀元前51年 キプロス島サラミス高利貸し事件</span>
+      </div>
+      <h1>共和政ローマ末期の金融収奪：<br>ブルトゥスの「年利48%」高利貸し事件とキケロのジレンマ</h1>
+      <p class="lead">
+        ご提示の歴史的エピソードは、共和政ローマ末期（紀元前1世紀）に起きた<a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%A6%E3%83%8B%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer">マルクス・ユニウス・ブルトゥス</a>（カエサル暗殺の主犯）によるキプロス島サラミス市への法外な高利貸し事件を指しています。<a href="#ref-1" class="cite-tag">[1]</a><br>
+        当時、ローマの支配下にあったキリキア属州のサラミス市（現在のキプロス島）に対し、<a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer">ブルトゥス</a>は代理人を立てて<strong>年利48%</strong>という違法な高利で金を貸し付け、武力を用いて強引に取り立てを行いました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+    </header>
+
+    <!-- Structural Overview & Interactive Simulator -->
+    <section>
+      <h2>🏛️ 属州収奪の「ダミー高利貸し」構造とインタラクティブ検証</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        共和政末期のローマにおいて、元老院議員（貴族・ノビレス層）は表向き商業や高利貸しを法で制限されていましたが、実際には<strong>「重税の賦課 → 代理人（騎士階級）を通じた違法高利融資 → ローマ軍（騎兵隊）の私物化による暴力取り立て」</strong>という巧妙な収奪システムを構築していました。
+      </p>
+
+      <!-- 4-Step Flow Diagram -->
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 1：債務の罠</span>
+          <div class="flow-title">ローマによる重税・賠償金</div>
+          <p class="flow-desc">
+            属州都市（キプロス島サラミス市）は、ローマへの苛烈な貢納金や戦争賠償金を支払うため、首都ローマの有力者から借金を重ねざるを得ない状態に追い込まれる。
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 2：脱法スキーム</span>
+          <div class="flow-title">黒幕ブルトゥスと代理人</div>
+          <p class="flow-desc">
+            元老院議員の直接融資は違法のため、<strong>ブルトゥス</strong>は騎士階級の金融業者<strong>スカプティウス</strong>をダミー代理人に立て、法定上限（12%）の4倍にあたる<strong>年利48%</strong>で貸し付ける。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 3：暴力的取り立て</span>
+          <div class="flow-title">騎兵隊投入と議員5名餓死</div>
+          <p class="flow-desc">
+            前任総督アッピウス（ブルトゥスの義父）が代理人スカプティウスに精鋭騎兵隊を貸与。サラミス市議事堂を包囲・監禁し、<strong>市参事会員5名を餓死</strong>させる惨劇を引き起こす。
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">STEP 4：統治者の葛藤</span>
+          <div class="flow-title">後任総督キケロのジレンマ</div>
+          <p class="flow-desc">
+            紀元前51年に赴任した<strong>キケロ</strong>は騎兵隊を撤収させ利率12%への是正を命じるが、真の資金主が親友ブルトゥスだと知り、法の正義と政治的圧力の間で板挟みとなる。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 サラミス高利貸し事件・時系列フェーズ＆複利収奪シミュレーター</div>
+            <div class="sim-subtitle">フェーズを切り替えて事件の経過と「年利12%（法定上限） vs 年利48%（ブルトゥス要求）」の格差を確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜紀元前56年</span>
+            ダミー融資契約と特例免除（年利48%）
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜紀元前52年</span>
+            騎兵隊による議事堂監禁と5名餓死
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜紀元前51年</span>
+            総督キケロの赴任と「12%」是正命令
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜紀元前50年</span>
+            黒幕ブルトゥスの圧力と決着の先送り
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">債権者側の要求金利（法定上限12%）</div>
+            <div class="metric-value" id="m-rate">年利 48%（月利4%）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-rate" style="width: 100%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国家権力・軍事力の私物化度</div>
+            <div class="metric-value" id="m-force">高（元老院特別免除の悪用）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-force" style="width: 75%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">キケロの政治的・道義的ジレンマ</div>
+            <div class="metric-value" id="m-dilemma">赴任前（未関与）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-dilemma" style="width: 15%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 1：紀元前56年 ― 脱法スキームの成立】</strong><br>
+          ローマでは「ガビニウス法（Lex Gabinia）」により属州都市がローマで借金すること自体が禁じられていましたが、ブルトゥスは元老院での政治力を駆使し、サラミス市への融資を法規制の適用除外とする特別決議を通過させました。表向きの債権者には代理人スカプティウスが立ち、法定上限（年利12%）の4倍にあたる<strong>年利48%</strong>という掠奪的な契約が結ばれました。
+        </div>
+
+        <!-- Compound Interest Comparison Calculator -->
+        <div class="calc-panel">
+          <div style="font-weight: 700; color: #fde047; font-size: 0.95rem;">
+            🧮 元本100タラントに対する債務膨張シミュレーション（経過年数：<span id="year-val">4</span>年後）
+          </div>
+          <div class="slider-row">
+            <span style="font-size: 0.82rem; color: #cbd5e1;">1年後</span>
+            <input type="range" id="year-slider" min="1" max="6" value="4" oninput="updateCalc(this.value)">
+            <span style="font-size: 0.82rem; color: #cbd5e1;">6年後</span>
+          </div>
+          <div class="calc-compare">
+            <div class="calc-box">
+              <div style="font-size: 0.8rem; color: #93c5fd; font-weight: 700;">⚖️ ローマ法定上限金利（年利12%・キケロ裁定）</div>
+              <div style="font-size: 1.4rem; font-weight: 800; margin: 0.3rem 0;" id="legal-total">157.4 タラント</div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;" id="legal-note">元本比 約1.57倍（サラミス市が即時支払いに同意した合法水準）</div>
+            </div>
+            <div class="calc-box usury">
+              <div style="font-size: 0.8rem; color: #fda4af; font-weight: 700;">🩸 ブルトゥス＆スカプティウス要求（年利48%）</div>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #fecdd3; margin: 0.3rem 0;" id="usury-total">479.9 タラント</div>
+              <div style="font-size: 0.8rem; color: #fecdd3;" id="usury-note">元本比 約4.80倍（法定上限との差額：+322.5 タラントの超過収奪）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1 -->
+    <section>
+      <h2>1. 事件の経緯と<a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer" class="ext-link">ブルトゥス</a>の暗躍</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        この事件の概要と、当時のローマの政治背景は以下の通りです。属州への重税、元老院議員による法規制の潜脱、そして軍事力を背景とした私的債権回収が一体となって進行しました。
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① 背景：重税と賠償金による借金</span>
+          </div>
+          <p class="factor-desc">
+            当時の属州都市は、ローマへの重い税金や戦争の賠償金を支払うため、ローマの有力者（元老院議員ら）から借金を重ねていました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>② 高利貸し：代理人を使った「年利48%」</span>
+          </div>
+          <p class="factor-desc">
+            元老院議員が直接高利貸しを行うことは法律で禁じられていたため、<a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer" class="ext-link">ブルトゥス</a>は<strong>スカプティウス（M. Scaptius）</strong>という代理人（徴税請負人・騎士階級）を立ててサラミス市に融資しました。その利率は、当時のローマ法で定められた法定上限（<strong>年利12%</strong>）を遥かに超える<strong>「年利48%」</strong>でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>③ 武力による監禁：市参事会員5人の餓死</span>
+          </div>
+          <p class="factor-desc">
+            サラミス市が返済に窮すると、代理人スカプティウスは前任の属州総督から騎兵隊を借り受け、サラミス市の市参事会員（議員たち）を議事堂に監禁しました。この過酷な監禁により、<strong>5人の議員が餓死する</strong>凄惨な事態に発展しました。
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">🔍 制度的背景：なぜ元老院議員は「代理人（騎士階級）」を使ったのか？</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          共和政ローマでは伝統的に元老院議員が商業・金融・徴税請負に直接携わることが卑しいとされ、法でも制限されていました。そのため元老院議員たちは、実務を担う<strong>騎士階級（エクィテス／徴税請負人プブリカニ）</strong>をダミー代理人（フロント）として立て、自らは背後の匿名投資家として巨額の利潤を吸い上げていました。さらに前任のキリキア総督<strong>アッピウス・クラウディウス・プルケル</strong>はブルトゥスの義父（妻ポルキアの前の妻クラウディアの父）であったため、一介の民間金融業者に過ぎないスカプティウスに「部隊指揮官（プラエフェクトゥス）」の肩書とローマ騎兵隊を貸し与えるという公権力の露骨な私物化が行われました。
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2>2. <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%88%E3%82%A5%E3%83%83%E3%83%AA%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%AD%E3%82%B1%E3%83%AD&kgmid=/m/01tf5" target="_blank" rel="noopener noreferrer" class="ext-link">キケロ</a>の告発とジレンマ</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        紀元前51年、高潔な政治家・文筆家として知られる<a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%88%E3%82%A5%E3%83%83%E3%83%AA%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%AD%E3%82%B1%E3%83%AD&kgmid=/m/01tf5" target="_blank" rel="noopener noreferrer" class="ext-link">マルクス・トゥッリウス・キケロ</a>がキリキア属州の総督として赴任しました。<a href="#ref-1" class="cite-tag">[1]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>⚖️ キケロによる初期の是正命令</span>
+          </div>
+          <p class="factor-desc">
+            <a href="https://www.google.com/search?q=%E3%82%AD%E3%82%B1%E3%83%AD&kgmid=/m/01tf5" target="_blank" rel="noopener noreferrer" class="ext-link">キケロ</a>はこの不正を知り、直ちに<strong>騎兵隊をキプロス島から撤収</strong>させ、商人に軍の指揮権を与えない方針を徹底するとともに、利率を法定上限の<strong>年利12%に引き下げる</strong>よう命じました。サラミス市側はこの法定12%での返済条件を受け入れ、実際に資金を供託する用意まで見せました。
+          </p>
+        </div>
+
+        <div class="factor-card card-blue">
+          <div class="factor-title">
+            <span>⚡ 真の黒幕の発覚と政治的圧力</span>
+          </div>
+          <p class="factor-desc">
+            しかし、この貸し付けの真の黒幕が親しい友人でもあった<a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer" class="ext-link">ブルトゥス</a>だと知り、<a href="https://www.google.com/search?q=%E3%82%AD%E3%82%B1%E3%83%AD&kgmid=/m/01tf5" target="_blank" rel="noopener noreferrer" class="ext-link">キケロ</a>は激しい政治的ジレンマに陥ります。<a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer" class="ext-link">ブルトゥス</a>は<a href="https://www.google.com/search?q=%E3%82%AD%E3%82%B1%E3%83%AD&kgmid=/m/01tf5" target="_blank" rel="noopener noreferrer" class="ext-link">キケロ</a>に圧力をかけ、<strong>48%の利率</strong>を認めさせようとしました。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 1.5rem;">
+        <div class="callout-title">📜 キケロの書簡（『アッティクス宛書簡集』Ad Atticum V.21 / VI.1）に刻まれた苦悩</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          この事件の全貌が今日まで詳細に伝わっているのは、キケロ自身が親友ティトゥス・ポンポニウス・アッティクスに宛てた私信の中で、驚きと苦悶を赤裸々に綴っているためです。当初ブルトゥスは「スカプティウスは自分の知人だからよろしく頼む」とだけ伝えていましたが、審理の過程でスカプティウスが<strong>「実は債権の真の持ち主はブルトゥス本人である」</strong>と明かしたことでキケロは愕然とします。さらに仲介者である親友アッティクスまでもが「ブルトゥスのために少しだけ騎兵（たとえ50騎だけでも）を貸してやれないか」と頼み込んだことに対し、キケロは「君（アッティクス）の口からそんな言葉が出るとは！」と嘆きつつも、共和派の重鎮ブルトゥスと決定的に決裂することを恐れ、サラミス市が申し出た12%での供託による債務消滅を認めず、最終判断を後任総督へ先送りするという苦渋の妥協に追い込まれました。
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+      <h2>3. 歴史的背景：ローマの「寡頭政治」の腐敗</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        この事件は、当時のローマ元老院を中心とする<strong>寡頭政治（貴族共和政）の構造的な腐敗</strong>を象徴しています。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>🏛️ 属州の搾取機関化</span>
+          </div>
+          <p class="factor-desc">
+            共和政末期のローマ貴族（パトリキ）や元老院議員たちは、征服した属州を自分たちの富の搾取機関とみなしていました。ローマ本国の選挙買収や贅沢な暮らしに必要な莫大な資金は、属州民に対する重税と法外な高利貸しによって賄われていました。
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🎭 「偽りの正義」と特権階級の正体</span>
+          </div>
+          <p class="factor-desc">
+            <a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%83%88%E3%82%A5%E3%82%B9&kgmid=/m/099hy" target="_blank" rel="noopener noreferrer" class="ext-link">ブルトゥス</a>は後世「共和政の正義を守るために独裁者カエサルを倒した英雄」として美化されますが、その実態は属州の民を非道な高利貸しで苦しめる、<strong>特権階級の利益代表者（寡頭政治の体現者）</strong>でもありました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+      </div>
+
+      <h3>📊 比較総括：ブルトゥスと共和政ローマ末期「オリガルヒ（寡頭支配層）」の二面性</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">分析視点</th>
+              <th style="width: 39%;">建前・後世の美化イメージ（共和政の守護者）</th>
+              <th style="width: 39%;">歴史的実態（金融寡頭制・属州収奪の体現者）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>守ろうとした「自由（Libertas）」</strong></td>
+              <td>独裁者（カエサル）の専制からローマ市民と共和政の伝統的自由を守る崇高な理念。</td>
+              <td>元老院特権階級（オプティマテス）が<strong>誰にも制限されずに属州を統治・収奪する既得権益としての「自由」</strong>。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+            </tr>
+            <tr>
+              <td><strong>法と道徳に対する態度</strong></td>
+              <td>ストア派哲学やプラトン哲学に通じた、高潔で禁欲的な道徳家・理想主義者。</td>
+              <td>元老院の特別決議で法（ガビニウス法）を骨抜きにし、ダミー代理人を使って<strong>法定上限の4倍（年利48%）</strong>を毟り取る脱法金融家。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>国家権力・軍事力の行使</strong></td>
+              <td>共和国の公的な秩序と元老院の権威を守るための軍隊。</td>
+              <td>私的な高利貸し債権を取り立てるため、総督から騎兵隊を借り受けて<strong>サラミス市議事堂を包囲監禁し議員5名を餓死させる暴力装置</strong>。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>近代「金融帝国主義」との共通性</strong></td>
+              <td>古代特有のエピソードとして切り離されがち。</td>
+              <td>「賠償金・重税の賦課 → 高利外債の押し付け → 軍事力（砲艦外交・騎兵隊）を用いた取り立て」という<strong>近代の植民地金融収奪と全く同一の原型</strong>。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-7" class="cite-tag">[7]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している一次史料研究・歴史解説サイトの出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://dergipark.org.tr/en/pub/olba/article/593326" target="_blank" rel="noopener noreferrer" class="ref-link">https://dergipark.org.tr (OLBA Academic Article on Cilicia &amp; Salamis Loan)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.historytoday.com/history-matters/roman-loans" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.historytoday.com (History Today: Roman Loans)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.y-history.net/appendix/wh0103-027.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：ブルトゥス／共和政ローマ末期)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.newadvent.org/cathen/15235c.htm" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.newadvent.org (Catholic Encyclopedia: History of Usury)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.y-history.net/appendix/wh0103-016.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：閥族派・貴族共和政の変質)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E4%B8%89%E9%A0%AD%E6%94%BF%E6%B2%BB" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：三頭政治・共和政ローマ末期の政治構造)</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://www.aozorabank.co.jp/bank/story/finance/money-talks-1.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.aozorabank.co.jp (あおぞら銀行：金融史コラム Money Talks)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>金融寡占と帝国主義 補論シリーズ ⑨ ｜ 共和政ローマ末期・ブルトゥスのサラミス高利貸し事件とキケロのジレンマ</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        rateText: "年利 48%（月利4%）",
+        rateWidth: "100%",
+        rateColor: "#f43f5e",
+        forceText: "高（元老院特別免除の悪用）",
+        forceWidth: "75%",
+        forceColor: "#f59e0b",
+        dilemmaText: "赴任前（未関与）",
+        dilemmaWidth: "15%",
+        dilemmaColor: "#38bdf8",
+        desc: "<strong>【Phase 1：紀元前56年 ― 脱法スキームの成立】</strong><br>ローマでは「ガビニウス法（Lex Gabinia）」により属州都市がローマで借金すること自体が禁じられていましたが、ブルトゥスは元老院での政治力を駆使し、サラミス市への融資を法規制の適用除外とする特別決議を通過させました。表向きの債権者には代理人スカプティウスが立ち、法定上限（年利12%）の4倍にあたる<strong>年利48%</strong>という掠奪的な契約が結ばれました。"
+      },
+      {
+        rateText: "年利 48%（強行取り立て）",
+        rateWidth: "100%",
+        rateColor: "#e11d48",
+        forceText: "極限（騎兵隊による議事堂監禁）",
+        forceWidth: "100%",
+        forceColor: "#e11d48",
+        dilemmaText: "前任総督アッピウスが加担",
+        dilemmaWidth: "40%",
+        dilemmaColor: "#f59e0b",
+        desc: "<strong>【Phase 2：紀元前52年 ― 騎兵隊による包囲監禁と「市参事会員5名の餓死」】</strong><br>サラミス市が年利48%の返済に窮すると、代理人スカプティウスは前任のキリキア総督アッピウス（ブルトゥスの義父）から部隊指揮官の肩書とローマ騎兵隊を借り受けました。スカプティウスは騎兵隊でサラミス市の議事堂を包囲して市参事会員（議員）たちを閉じ込め、<strong>5人の議員が餓死する</strong>という凄惨な事件を引き起こしました。"
+      },
+      {
+        rateText: "年利 12%（キケロ是正命令）",
+        rateWidth: "25%",
+        rateColor: "#10b981",
+        forceText: "撤収（キプロス島から騎兵排除）",
+        forceWidth: "15%",
+        forceColor: "#10b981",
+        dilemmaText: "中（正義に基づく迅速な介入）",
+        dilemmaWidth: "50%",
+        dilemmaColor: "#38bdf8",
+        desc: "<strong>【Phase 3：紀元前51年 ― 総督キケロの赴任と毅然たる是正命令】</strong><br>新総督として赴任したキケロは、サラミス市からの陳情を受けて惨状を知り、直ちに騎兵隊をキプロス島から撤収させました。さらに総督布告に従って<strong>利率の上限を法定の年利12%（単利・年末複利上限）に引き下げる</strong>よう命じ、サラミス市側も12%での即時返済に合意しました。"
+      },
+      {
+        rateText: "12%供託拒否・48%固執（凍結）",
+        rateWidth: "85%",
+        rateColor: "#f59e0b",
+        forceText: "騎兵再派遣は拒否（決着先送り）",
+        forceWidth: "55%",
+        forceColor: "#f59e0b",
+        dilemmaText: "極限（親友ブルトゥスとアッティクスの圧力）",
+        dilemmaWidth: "100%",
+        dilemmaColor: "#e11d48",
+        desc: "<strong>【Phase 4：紀元前50年 ― 黒幕ブルトゥスの正体発覚とキケロの苦渋】</strong><br>審理の場で、スカプティウスの背後にいる真の資金主が親友<strong>ブルトゥス</strong>であることが発覚します。ブルトゥスと親友アッティクスから「48%の利率を認めよ」「50騎だけでも騎兵を貸せ」と猛烈な圧力をかけられたキケロは、騎兵の再派遣こそ拒み通したものの、ブルトゥスとの政治的決裂を恐れてサラミス市による12%返済金の公式供託（債務完済）も認めず、問題を後任総督へと先送りしました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+      document.getElementById('m-rate').textContent = p.rateText;
+      const bRate = document.getElementById('b-rate');
+      bRate.style.width = p.rateWidth;
+      bRate.style.backgroundColor = p.rateColor;
+
+      document.getElementById('m-force').textContent = p.forceText;
+      const bForce = document.getElementById('b-force');
+      bForce.style.width = p.forceWidth;
+      bForce.style.backgroundColor = p.forceColor;
+
+      document.getElementById('m-dilemma').textContent = p.dilemmaText;
+      const bDilemma = document.getElementById('b-dilemma');
+      bDilemma.style.width = p.dilemmaWidth;
+      bDilemma.style.backgroundColor = p.dilemmaColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    function updateCalc(years) {
+      const y = parseInt(years, 10);
+      document.getElementById('year-val').textContent = y;
+      const principal = 100;
+      const legal = principal * Math.pow(1.12, y);
+      const usury = principal * Math.pow(1.48, y);
+      const diff = usury - legal;
+
+      document.getElementById('legal-total').textContent = legal.toFixed(1) + " タラント";
+      document.getElementById('legal-note').textContent =
+        "元本比 約" + (legal / principal).toFixed(2) + "倍（法定上限12%での累積額）";
+
+      document.getElementById('usury-total').textContent = usury.toFixed(1) + " タラント";
+      document.getElementById('usury-note').textContent =
+        "元本比 約" + (usury / principal).toFixed(2) + "倍（法定上限との差額：+" + diff.toFixed(1) + " タラントの超過収奪）";
+    }
+  </script>
+</body>
+</html>
