@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>補論：流動性選好理論（Liquidity Preference Theory）と流動性の罠</title>
+  <title>補論：流動性選好理論と流動性の罠（図解・数式と記号のやさしい完全解説版）</title>
   <style>
     :root {
       --primary: #1e3a8a;
@@ -38,7 +38,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.7;
+      line-height: 1.75;
       padding: 2rem 1rem;
     }
 
@@ -143,23 +143,23 @@
     }
 
     .badge-sub {
-      background: rgba(124, 58, 237, 0.3);
-      color: #ddd6fe;
+      background: rgba(16, 185, 129, 0.3);
+      color: #a7f3d0;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.95rem;
       font-weight: 800;
-      line-height: 1.3;
+      line-height: 1.35;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
 
     .lead {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #e2e8f0;
       font-weight: 400;
-      max-width: 820px;
+      max-width: 840px;
     }
 
     /* Sections */
@@ -173,15 +173,279 @@
     }
 
     h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.38rem;
+      font-weight: 800;
       color: var(--primary-dark);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.35rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       border-bottom: 2px solid var(--border);
       padding-bottom: 0.75rem;
+    }
+
+    /* Symbol Tag Styling */
+    .sym-tag {
+      display: inline-block;
+      font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+      font-weight: 700;
+      background: #eff6ff;
+      color: var(--primary-dark);
+      border: 1px solid #bfdbfe;
+      padding: 0.05rem 0.45rem;
+      border-radius: 0.35rem;
+      font-size: 0.95em;
+      margin: 0 0.15rem;
+    }
+
+    .sym-tag.rose {
+      background: #fff1f2;
+      color: #9f1239;
+      border-color: #fecdd3;
+    }
+
+    .sym-tag.emerald {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+    }
+
+    .sym-tag.amber {
+      background: #fffbeb;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    /* Visual Fraction Component */
+    .formula-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin: 1.25rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    .formula-banner-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fde68a;
+      margin-bottom: 0.9rem;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .formula-equation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.75rem;
+      padding: 1.1rem 1.5rem;
+    }
+
+    .math-lhs {
+      color: #93c5fd;
+      font-size: 1.25rem;
+    }
+
+    .math-approx {
+      color: #fde68a;
+      font-size: 1.4rem;
+    }
+
+    .math-frac {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .math-num {
+      padding: 0.2rem 0.85rem;
+      border-bottom: 2px solid #ffffff;
+      color: #6ee7b7;
+      font-size: 1.1rem;
+    }
+
+    .math-den {
+      padding: 0.2rem 0.85rem;
+      color: #fda4af;
+      font-size: 1.1rem;
+    }
+
+    .formula-note {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      text-align: center;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* Beginner Glossary Cards */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.15rem;
+      margin-top: 1rem;
+    }
+
+    .glossary-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.8rem;
+      padding: 1.3rem;
+    }
+
+    .glossary-card.y-card {
+      border-top-color: var(--emerald);
+    }
+
+    .glossary-card.r-card {
+      border-top-color: var(--rose);
+    }
+
+    .glossary-head {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .symbol-circle {
+      min-width: 3rem;
+      height: 3rem;
+      padding: 0 0.5rem;
+      border-radius: 0.65rem;
+      background: var(--primary-dark);
+      color: #ffffff;
+      font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .glossary-card.y-card .symbol-circle {
+      background: var(--emerald);
+    }
+
+    .glossary-card.r-card .symbol-circle {
+      background: var(--rose);
+    }
+
+    .glossary-title-group h3 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .glossary-title-group span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .glossary-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .glossary-body strong {
+      color: var(--text-main);
+    }
+
+    /* Concrete Bond Example Grid */
+    .bond-example-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 0.85rem;
+      padding: 1.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .bond-example-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #92400e;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bond-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .bond-case-card {
+      background: #ffffff;
+      border: 1px solid #fcd34d;
+      border-radius: 0.7rem;
+      padding: 1.1rem;
+      text-align: center;
+    }
+
+    .bond-case-card.danger {
+      background: #fff1f2;
+      border-color: #fda4af;
+    }
+
+    .bond-case-step {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      background: #fef3c7;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 0.45rem;
+    }
+
+    .bond-case-card.danger .bond-case-step {
+      background: #ffe4e6;
+      color: #9f1239;
+    }
+
+    .bond-case-calc {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0.45rem 0;
+      background: #f8fafc;
+      padding: 0.45rem;
+      border-radius: 0.4rem;
+    }
+
+    .bond-case-result {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .bond-case-card.danger .bond-case-result {
+      color: var(--rose);
+    }
+
+    .bond-case-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* Grids */
@@ -226,6 +490,14 @@
       color: var(--text-muted);
     }
 
+    .concept-desc ul {
+      padding-left: 1.2rem;
+    }
+
+    .concept-desc li {
+      margin-bottom: 0.35rem;
+    }
+
     /* Motive Cards */
     .motive-card {
       background: #ffffff;
@@ -254,6 +526,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.25rem;
+      flex-shrink: 0;
     }
 
     .motive-title {
@@ -264,18 +537,17 @@
 
     .motive-formula {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       padding: 0.15rem 0.5rem;
       border-radius: 0.25rem;
       margin-top: 0.25rem;
-      font-family: monospace;
     }
 
     .motive-body {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .motive-factor {
@@ -388,8 +660,8 @@
 
     .sim-metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.9rem;
       margin-bottom: 1.5rem;
     }
 
@@ -397,20 +669,26 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 0.5rem;
-      padding: 1rem;
+      padding: 0.95rem;
       text-align: center;
     }
 
     .metric-label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       margin-bottom: 0.25rem;
     }
 
     .metric-val {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--primary);
+    }
+
+    .metric-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
     }
 
     /* Visual Curve Canvas */
@@ -544,7 +822,6 @@
       text-decoration: none;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       margin-top: 3rem;
@@ -554,9 +831,12 @@
       font-size: 0.85rem;
     }
 
-    @media (max-width: 640px) {
-      h1 { font-size: 1.6rem; }
-      .lead { font-size: 1rem; }
+    @media (max-width: 768px) {
+      .bond-cases-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 1.55rem; }
+      .lead { font-size: 0.98rem; }
       section { padding: 1.25rem; }
       .nav-box { flex-direction: column; align-items: flex-start; }
     }
@@ -570,45 +850,130 @@
     <div class="nav-box">
       <div class="nav-title">
         <span>📚 補論シリーズ</span>
-        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・ケインズ貨幣理論）</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">（金融経済学・ケインズ貨幣理論｜わかりやすい解説版）</span>
       </div>
-      <!--
-      <div class="nav-links">
-      <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
-      <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
-      <a href="RyuDouseiSenko.html" class="nav-link active">③ 流動性選好理論</a>
-      <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
-      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
-      <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
-      <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
-      <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
-      <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
-      <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
-      <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
-      <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
-      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
-      <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
-      <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
-      <a href="Borucar.html" class="nav-link">⑯ ボルカー・ショック</a>
-      <a href="SAP.html" class="nav-link">⑰ 構造調整プログラム</a>
-      <a href="AIG.html" class="nav-link">⑱ AIG危機と救済</a>
-      <a href="BankCoup.html" class="nav-link">⑲ 銀行寡頭制のクーデター</a>
-      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ デリバティブ決済網</a>
-    </div>
-      -->
     </div>
 
     <!-- Header -->
     <header>
       <div class="badge-row">
         <span class="badge">補論 / 貨幣理論・金融経済学ノート</span>
-        <span class="badge badge-sub">ケインズ『一般理論』(1936)</span>
+        <span class="badge badge-sub">✨ 記号・数式をゼロから噛み砕いたやさしい解説版</span>
       </div>
       <h1>流動性選好理論（Liquidity Preference Theory）と流動性の罠</h1>
       <p class="lead">
-        <a href="https://www.google.com/search?q=%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%B3%E3%82%BA&kgmid=/m/09gnn" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: underline;">ジョン・メイナード・ケインズ</a>が1936年の著書『<strong>雇用・利子および貨幣の一般理論</strong>』で提唱した<strong>流動性選好理論（流動性選好説）</strong>とは、利子率が「貯蓄と投資のバランス」ではなく、「<strong>貨幣の需要と供給</strong>」によって決まるとする画期的な理論です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+        <a href="https://www.google.com/search?q=%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%8A%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B1%E3%82%A4%E3%83%B3%E3%82%BA" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: underline;">ジョン・メイナード・ケインズ</a>が1936年の著書『<strong>雇用・利子および貨幣の一般理論</strong>』で提唱した<strong>流動性選好理論（流動性選好説）</strong>とは、世の中の金利（利子率）が「貯蓄と投資のバランス」ではなく、「<strong>みんながどれだけ現金を手元に持ちたがるか（貨幣の需要と供給）</strong>」によって決まるとする画期的な理論です。<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
       </p>
     </header>
+
+    <!-- 0. 最初に押さえる！経済記号と数式の超わかりやすい解説 -->
+    <section id="easy-glossary">
+      <h2>📖 0. 最初に押さえる！登場する記号と「債券価格の式」のやさしい解説</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+        経済学の本や解説では、<span class="sym-tag">M<sup>d</sup></span>・<span class="sym-tag emerald">Y</span>・<span class="sym-tag rose">r</span> といったアルファベット記号や、債券価格の割り算の式が登場します。これらは決して難しい数学ではなく、<strong>英語の略語</strong>です。最初にこの記号のイメージを掴んでおくと、全体の仕組みが驚くほどスッキリ理解できます。
+      </p>
+
+      <div class="glossary-grid">
+        <!-- Md -->
+        <div class="glossary-card">
+          <div class="glossary-head">
+            <div class="symbol-circle">M<sup>d</sup></div>
+            <div class="glossary-title-group">
+              <h3>貨幣需要（かへいじゅよう）</h3>
+              <span>Money demand（お金を欲しがる量）</span>
+            </div>
+          </div>
+          <div class="glossary-body">
+            <strong>M</strong> は <strong>Money（貨幣＝現金や普通預金）</strong>、右上の小さな <strong>d</strong> は <strong>demand（需要）</strong>の頭文字です。<br>
+            つまり <span class="sym-tag">M<sup>d</sup></span> とは、<strong>「世の中の人々や企業が、株や債券ではなく『いつでもすぐに使える現金』の形で手元に持っておきたいと望むお金の総額」</strong>のことです。
+          </div>
+        </div>
+
+        <!-- Y -->
+        <div class="glossary-card y-card">
+          <div class="glossary-head">
+            <div class="symbol-circle">Y</div>
+            <div class="glossary-title-group">
+              <h3>国民所得・総産出</h3>
+              <span>National Income / Aggregate Output</span>
+            </div>
+          </div>
+          <div class="glossary-body">
+            経済学では、<strong>「国全体の所得（みんなの給料や企業の儲けの合計＝GDP・産出規模）」</strong>を <span class="sym-tag emerald">Y</span> という記号で表します（※英語の所得「Income」の「I」は「投資 Investment」の頭文字と重複するため、慣例として産出や総生産を表す記号 <span class="sym-tag emerald">Y</span> が使われます）。<br>
+            景気が良くて国全体の稼ぎ（<span class="sym-tag emerald">Y</span>）が増えるほど、毎日の買い物額も増えるため、手元に必要な現金も増えます。
+          </div>
+        </div>
+
+        <!-- r -->
+        <div class="glossary-card r-card">
+          <div class="glossary-head">
+            <div class="symbol-circle">r</div>
+            <div class="glossary-title-group">
+              <h3>市場利子率（しじょうりしりつ）</h3>
+              <span>interest rate（世の中の金利・年何％か）</span>
+            </div>
+          </div>
+          <div class="glossary-body">
+            英語の <strong>interest rate（利子率・金利）</strong>の頭文字をとって <span class="sym-tag rose">r</span> と書きます。<br>
+            金利（<span class="sym-tag rose">r</span>）が「年5%」のように高いときは、現金のままタンスや無利息口座に寝かせておくと「5%の利息をもらい損ねてモッタイナイ！」ので、みんな現金を減らして債券を買います。逆に金利（<span class="sym-tag rose">r</span>）が「0.1%」のようにほぼゼロになると、債券を買っても利息がつかないため、みんな現金のまま持ちたがります。
+          </div>
+        </div>
+      </div>
+
+      <!-- 債券価格 ≈ 表面利息 ÷ 市場利子率 の視覚的・具体的解説 -->
+      <div class="formula-banner">
+        <div class="formula-banner-title">💡 なぜ「金利（市場利子率）」が下がると「債券価格」は上がるのか？</div>
+        <div class="formula-equation">
+          <span class="math-lhs">永久債（コンソル債）の市場価格</span>
+          <span class="math-approx">＝</span>
+          <span class="math-frac">
+            <span class="math-num">毎年もらえる決まった利息（表面利息 C）</span>
+            <span class="math-den">世の中の金利（市場利子率 r）</span>
+          </span>
+        </div>
+        <div class="formula-note">
+          ※ケインズの時代によく取引されていた「満期がなく永久に毎年一定の利息が支払われる債券（コンソル公債）」の理論価格算定式です。満期がある通常の固定利付債でも、「金利が下がると債券価格が上がり、金利が上がると債券価格が下落する」という逆相関の基本原理は全く同じです。
+        </div>
+      </div>
+
+      <div class="bond-example-box">
+        <div class="bond-example-title">
+          <span>🔢 具体的な数字で納得！「毎年 1万円 の利息がもらえる債券（永久債モデル）」で計算してみよう</span>
+        </div>
+        <p style="font-size: 0.9rem; color: #78350f;">
+          あなたが<strong>「持っていれば、毎年かならず 1万円 の利息（表面利息）をもらえる国債」</strong>を持っているとします。この債券自体の値段（債券価格）は、世の中の金利（市場利子率 <span class="sym-tag rose">r</span>）によってどう変わるでしょうか？
+        </p>
+
+        <div class="bond-cases-grid">
+          <div class="bond-case-card">
+            <span class="bond-case-step">ケース①：世の中の金利が「年5%」のとき</span>
+            <div class="bond-case-calc">1万円 ÷ 0.05（5%）</div>
+            <div class="bond-case-result">債券価格 ＝ 20万円</div>
+            <div class="bond-case-desc">
+              世の中の金利が年5%なら、20万円預ければ毎年1万円の利息がつきます。だから「毎年1万円もらえる債券」の価値は<strong>20万円</strong>になります。
+            </div>
+          </div>
+
+          <div class="bond-case-card">
+            <span class="bond-case-step">ケース②：世の中の金利が「年1%」に下がったとき</span>
+            <div class="bond-case-calc">1万円 ÷ 0.01（1%）</div>
+            <div class="bond-case-result">債券価格 ＝ 100万円に高騰！</div>
+            <div class="bond-case-desc">
+              世の中の金利が年1%に下がると、100万円預けないと年1万円の利息はもらえません。だから「毎年1万円もらえる債券」の価値は<strong>100万円</strong>へと5倍に跳ね上がります！
+            </div>
+          </div>
+
+          <div class="bond-case-card danger">
+            <span class="bond-case-step">ケース③：もし金利が「1% → 5%」に戻ったら？</span>
+            <div class="bond-case-calc">100万円 → 20万円へ逆戻り</div>
+            <div class="bond-case-result">▲80万円の大暴落（大損）！</div>
+            <div class="bond-case-desc">
+              金利が1%の超低金利のときに100万円でこの債券を買ってしまうと、将来金利が5%に上がった瞬間に債券価格は20万円へ暴落します。<strong>だから超低金利のときは誰も債券を買わず、現金を握りしめるのです！</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 1. 流動性と利子の本質 -->
     <section id="liquidity-concept">
@@ -621,9 +986,9 @@
           </div>
           <div class="concept-desc">
             <ul>
-              <li>いつでも、どんなもの（商品やサービスなど）とも即座かつスムーズに交換できる性質のことです。</li>
-              <li>資産の中で「<strong>現金（貨幣）</strong>」が最も流動性が高い究極の状態です。</li>
-              <li>「<strong>流動性選好</strong>」とは、人々が利子を生まない現金であっても、手元に持っていたがる（流動性の高いものを好む）心理や性質を指します。<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a></li>
+              <li>いつでも、どんなもの（商品やサービスなど）とも<strong>値下がりする心配なく、即座かつスムーズに交換できる性質</strong>のことです。</li>
+              <li>あらゆる資産の中で「<strong>現金（貨幣）</strong>」が最も流動性が高い究極の状態です（不動産や長期債券はすぐには現金化できず、売るときに値下がりするリスクがあるため流動性が低い資産です）。</li>
+              <li>「<strong>流動性選好</strong>」とは、人々が利子を生まない現金であっても、安心のために手元に持っていたがる（流動性の高いものを好む）心理や性質を指します。<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a></li>
             </ul>
           </div>
         </div>
@@ -633,8 +998,8 @@
             <span>🪙 利子とは何か？（ケインズの再定義）</span>
           </div>
           <div class="concept-desc">
-            古典派経済学は利子を「現在の消費を我慢して貯蓄したことへの報酬」と見なしました。<br><br>
-            しかしケインズはこれを真っ向から否定し、利子を「<strong>流動性の高い現金を手放して、流動性の低い資産（債券など）を一定期間保有することに対する対価・報酬（不便さへの補償）</strong>」であると定義しました。<a href="#ref-4" class="cite-badge">[4]</a>
+            ケインズ以前の古典派経済学は、利子を「現在の消費（買い物）を我慢して貯蓄したことへのご褒美」だと考えていました。<br><br>
+            しかしケインズはこれを真っ向から否定し、「タンス預金のように現金のまま貯蓄しても利子は1円もつかないではないか」と指摘しました。そして利子とは、「<strong>いつでも使える便利な現金（流動性）を手放して、値下がりリスクのある債券などを一定期間保有することに対する補償（不便さとリスクへの対価）</strong>」であると定義したのです。<a href="#ref-4" class="cite-badge">[4]</a>
           </div>
         </div>
       </div>
@@ -643,7 +1008,7 @@
       <div class="quote-box">
         <div class="quote-title">KEY INSIGHT FROM THE GENERAL THEORY (1936)</div>
         <div class="quote-text">
-          「利子率とは、貨幣の退蔵を断念することに対する報酬である。それは貯蓄そのものへの対価ではなく、一定期間にわたって流動性を手放すことの対価に他ならない。」
+          「利子率とは、貨幣の退蔵（現金をそのまま手元に抱え込むこと）を断念することに対する報酬である。それは貯蓄そのものへの対価ではなく、一定期間にわたって流動性（いつでも使える便利さ）を手放すことの対価に他ならない。」
         </div>
         <div class="quote-author">― ジョン・メイナード・ケインズ『雇用・利子および貨幣の一般理論』</div>
       </div>
@@ -651,9 +1016,9 @@
 
     <!-- 2. 3つの貨幣保有動機 -->
     <section id="motives">
-      <h2>🎯 2. 3つの貨幣保有動機（貨幣需要）</h2>
-      <p style="margin-bottom: 1.25rem;">
-        人々がなぜ利子を生まない現金を手元に置いておきたがるのか（貨幣需要 $M^d$）、ケインズは主に<strong>3つの動機</strong>に分類しました：<a href="#ref-6" class="cite-badge">[6]</a>
+      <h2>🎯 2. 人が現金を手元に持ちたがる「3つの動機」（貨幣需要 M<sup>d</sup> の内訳）</h2>
+      <p style="margin-bottom: 12px;">
+        人々がなぜ利子を生まない現金を手元に置いておきたがるのか（＝<strong>貨幣需要</strong> <span class="sym-tag">M<sup>d</sup></span>）、ケインズはその理由を<strong>3つの動機</strong>に分類しました：<a href="#ref-6" class="cite-badge">[6]</a>
       </p>
 
       <div class="grid-3">
@@ -664,17 +1029,17 @@
               <div class="motive-icon" style="background: #eff6ff; color: var(--primary);">🛒</div>
               <div>
                 <div class="motive-title">1. 取引動機</div>
-                <span class="motive-formula" style="background: #dbeafe; color: var(--primary);">L₁(Y) : 所得の増加関数</span>
+                <span class="motive-formula" style="background: #dbeafe; color: var(--primary);">所得（Y）が増えるほど増加</span>
               </div>
             </div>
             <div class="motive-body">
-              <strong>日常の買い物のため</strong><br>
-              食費、光熱費、資材調達など、日々の経済活動や商取引の決済を行うために現金を保有する動機。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-7" class="cite-badge">[7]</a>
+              <strong>日常の買い物や支払いのため</strong><br>
+              家計の食費や光熱費、企業の仕入れ代金や給料の支払いなど、日々の経済活動や商取引の決済を行うために現金を手元に用意しておく動機です。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-7" class="cite-badge">[7]</a>
             </div>
           </div>
           <div class="motive-factor" style="color: var(--primary);">
-            📈 決定要因：国民所得（$Y$）<br>
-            <small style="color: var(--text-muted);">景気が良く収入が多いほど需要が増大</small>
+            📈 決まる要因：国民所得（<span class="sym-tag emerald">Y</span>＝国全体の稼ぎ）<br>
+            <small style="color: var(--text-muted);">景気が良く所得（Y）が多いほど、日常の決済に必要な現金も多くなります（これを経済学では <strong>L<sub>1</sub>(Y)</strong> と書きます）。</small>
           </div>
         </div>
 
@@ -685,17 +1050,17 @@
               <div class="motive-icon" style="background: var(--emerald-light); color: var(--emerald);">🛡️</div>
               <div>
                 <div class="motive-title">2. 予備的動機</div>
-                <span class="motive-formula" style="background: var(--emerald-light); color: var(--emerald);">L₁(Y) : 所得の増加関数</span>
+                <span class="motive-formula" style="background: var(--emerald-light); color: var(--emerald);">所得（Y）が増えるほど増加</span>
               </div>
             </div>
             <div class="motive-body">
-              <strong>万が一の備えのため</strong><br>
-              病気、事故、突然の減収、災害など、予期せぬ突発的な出費に備えて手元に現金を安全弁として残す動機。<a href="#ref-7" class="cite-badge">[7]</a>
+              <strong>万が一のトラブルへの備えのため</strong><br>
+              急な病気やケガ、冠婚葬祭、突然の売上減少や災害など、予期せぬ突発的な出費に備えて「すぐ使える現金」を安全弁として手元に残しておく動機です。<a href="#ref-7" class="cite-badge">[7]</a>
             </div>
           </div>
           <div class="motive-factor" style="color: var(--emerald);">
-            📈 決定要因：国民所得（$Y$）<br>
-            <small style="color: var(--text-muted);">所得水準および将来の不確実性に比例</small>
+            📈 決まる要因：国民所得（<span class="sym-tag emerald">Y</span>＝国全体の稼ぎ）<br>
+            <small style="color: var(--text-muted);">取引規模や所得（Y）が大きいほど、また将来の不確実性が高いほど、備えとしての現金需要も大きくなります。</small>
           </div>
         </div>
 
@@ -706,17 +1071,17 @@
               <div class="motive-icon" style="background: var(--rose-light); color: var(--rose);">📊</div>
               <div>
                 <div class="motive-title">3. 投機的動機</div>
-                <span class="motive-formula" style="background: var(--rose-light); color: var(--rose);">L₂(r) : 利子率の減少関数</span>
+                <span class="motive-formula" style="background: var(--rose-light); color: var(--rose);">金利（r）が低いほど爆発的に増加</span>
               </div>
             </div>
             <div class="motive-body">
-              <strong>利子率・債券価格の変化に備えるため</strong><br>
-              利子率が将来上がると予測（＝債券価格が下落すると予測）すれば、損失を避けるため債券を売って現金を持ちたくなります。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-5" class="cite-badge">[5]</a>
+              <strong>債券の値下がり損を避けるため（ケインズの独創的発見！）</strong><br>
+              世の中の金利（<span class="sym-tag rose">r</span>）が低すぎるとき、「これ以上金利は下がらず、今後は金利上昇によって債券価格が暴落する（損をする）」と警戒し、債券を買わずに<strong>現金のまま待機しよう</strong>とする動機です。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-5" class="cite-badge">[5]</a>
             </div>
           </div>
           <div class="motive-factor" style="color: var(--rose);">
-            📉 決定要因：利子率（$r$）<br>
-            <small style="color: var(--text-muted);">利子率が低いほど貨幣需要は急増</small>
+            📉 決まる要因：市場利子率（<span class="sym-tag rose">r</span>＝世の中の金利）<br>
+            <small style="color: var(--text-muted);">金利（r）が下がるほど、機会費用が小さくなり債券暴落リスクが増すため、現金需要（<strong>L<sub>2</sub>(r)</strong>）が急増します。</small>
           </div>
         </div>
       </div>
@@ -724,22 +1089,22 @@
 
     <!-- 3. インタラクティブ図解 & シミュレーター -->
     <section id="interactive-simulator">
-      <h2>📉 3. 利子率と投機的貨幣需要の動態シミュレーター</h2>
+      <h2>📉 3. 金利（r）・債券価格・現金需要の連動シミュレーター</h2>
       <p style="margin-bottom: 1rem;">
-        債券価格と利子率は<strong>逆相関</strong>の関係にあります（$\text{債券価格} \approx \frac{\text{表面利息}}{\text{市場利子率}}$）。利子率が低下するほど債券価格は高騰し、「これ以上の値上がりはない、次は暴落する」という恐怖から現金の需要（投機的動機）が爆発します。
+        第0章で見た通り、永久債モデルにおいて<strong>「債券価格 ＝ 毎年もらえる表面利息 ÷ 世の中の市場利子率（r）」</strong>という逆相関の関係があります。下のスライダーで世の中の金利（<span class="sym-tag rose">r</span>）を動かして、「毎年1万円の利息がもらえる債券の価格」と「人々の現金需要」がどう連動するか体験してみてください。
       </p>
 
       <div class="sim-box">
         <div class="sim-header">
           <div class="sim-title">
-            <span>⚙️ 市場利子率のコントロール</span>
+            <span>⚙️ 世の中の金利（市場利子率 r）を動かしてみよう</span>
           </div>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">スライダーを動かして流動性の罠の挙動を確認</span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">左（超低金利）へ動かすほど「流動性の罠」に突入します</span>
         </div>
 
         <div class="slider-container">
           <div class="slider-row">
-            <span class="slider-label">市場利子率（$r$）：</span>
+            <span class="slider-label">世の中の市場利子率（<span class="sym-tag rose">r</span>）：</span>
             <span class="slider-val-badge" id="rateDisplay">1.0 %</span>
           </div>
           <input type="range" id="rateSlider" min="0.2" max="8.0" step="0.1" value="1.0">
@@ -747,16 +1112,24 @@
 
         <div class="sim-metrics-grid">
           <div class="metric-card">
-            <div class="metric-label">債券価格の評価水準</div>
+            <div class="metric-label">永久債の理論価格（年1万円利息の例）</div>
+            <div class="metric-val" id="bondYenDisplay" style="color: var(--primary-dark);">100.0 万円</div>
+            <div class="metric-sub" id="bondCalcSub">計算：1万円 ÷ 1.0%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">債券価格の水準感</div>
             <div class="metric-val" id="bondPriceDisplay" style="color: var(--primary);">割高（高値圏）</div>
+            <div class="metric-sub">金利が低い＝債券は高い</div>
           </div>
           <div class="metric-card">
-            <div class="metric-label">将来の債券価格予測</div>
-            <div class="metric-val" id="forecastDisplay" style="color: var(--rose);">下落リスク大</div>
+            <div class="metric-label">投資家の将来予測</div>
+            <div class="metric-val" id="forecastDisplay" style="color: var(--rose);">値下がりリスク大</div>
+            <div class="metric-sub">今後の金利上昇＝債券下落を警戒</div>
           </div>
           <div class="metric-card">
-            <div class="metric-label">投機的貨幣需要 $L_2(r)$</div>
-            <div class="metric-val" id="demandDisplay" style="color: var(--accent-dark);">極めて大</div>
+            <div class="metric-label">現金を持ちたい需要（投機的動機）</div>
+            <div class="metric-val" id="demandDisplay" style="color: var(--accent-dark);">極めて大きい</div>
+            <div class="metric-sub">債券を避け現金へ退避</div>
           </div>
         </div>
 
@@ -773,63 +1146,64 @@
 
     <!-- 4. 流動性の罠 -->
     <section id="liquidity-trap">
-      <h2>⚠️ 4. 流動性の罠（リクイディティ・トラップ）</h2>
+      <h2>⚠️ 4. 流動性の罠（リクイディティ・トラップ）とは何か？</h2>
       
       <div class="trap-box">
         <div class="trap-title">
-          <span>🚨 金融緩和が無効化する「絶対的流動性選好」の領域</span>
+          <span>🚨 金融緩和が効かなくなる「貨幣需要が完全弾力化」した領域</span>
         </div>
         <div class="trap-desc">
-          市場の利子率が極限まで低くなってしまうと、「<strong>これ以上利子率は下がらない（＝債券価格はこれ以上上がらない）、今後は利子率が上昇して債券価格が暴落するに違いない</strong>」と市場参加者全員が確信するようになります。<a href="#ref-2" class="cite-badge">[2]</a><br><br>
-          その結果、人々は債券を一切保有しようとせず、供給されたすべての貨幣を喜んでそのまま現金預金として退蔵（死蔵）してしまいます。<br>
-          中央銀行がマネーをいくら市場に供給しても、利子率はそれ以上低下せず、設備投資や消費を刺激できなくなる状態――これこそがケインズの警告した「<strong>流動性の罠（Liquidity Trap）</strong>」です。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          不況のときに中央銀行が利下げを進め、世の中の利子率（<span class="sym-tag rose">r</span>）がある限界的な低水準（ゼロ近傍）にまで下がると、何が起きるでしょうか？<br><br>
+          債券価格は天井まで高騰し、「<strong>これ以上金利は下がらない（債券価格はこれ以上上がらない）。むしろ今後は金利上昇によって債券価格が暴落するリスクしかない！</strong>」と市場参加者の見方が一致するようになります。<a href="#ref-2" class="cite-badge">[2]</a><br><br>
+          その結果、人々はわずかな利息のために価格下落リスクのある債券を買うことを完全に諦め、<strong>中央銀行がどれだけマネーを供給しても、すべて手元の現金や当座預金として退蔵（死蔵）</strong>してしまいます。<br>
+          こうなると、金融機関の当座預金にマネーがブタ積みされるだけで利子率はそれ以上下がらず、設備投資や消費を刺激できなくなります。これがケインズが着想し、後世のマクロ経済学で定式化された「<strong>流動性の罠（Liquidity Trap）</strong>」です。<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
         </div>
       </div>
 
       <div style="margin-top: 1.5rem;">
         <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.75rem;">
-          💡 「紐で引くことはできても、押すことはできない（Pushing on a string）」
+          💡 「紐（ひも）で引くことはできても、紐で押すことはできない」
         </h3>
-        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-          流動性の罠に陥った経済では、金融政策による金利引き下げの余地が消滅します。中央銀行が銀行にいくら流動性を注入しても、銀行から企業への貸出は伸びず、マネーは金融機関の当座預金口座に滞留するだけとなります。<br>
-          ケインズは、このような極限状態から脱出するためには、金融緩和だけに頼るのではなく、**政府が自ら借金をして有効需要を直接創出する「積極的財政出動（公共投資）」**が不可欠であると論証しました。
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.75;">
+          過熱した景気を冷ますときは、中央銀行が金利を引き上げる（「紐を引く」）ことでブレーキをかけられます。しかし、ひとたび流動性の罠に陥った深い不況期には、いくら中央銀行が市場に資金を供給しようとしても（「紐を押す」）、マネーは当座預金やタンス預金に滞留するだけで実体経済へ流出していきません。<br>
+          このためケインズ経済学では、金融政策のみに頼るのではなく、<strong>政府が自ら財政政策（公共投資や所得移転）を実施して実体需要を直接生み出すこと</strong>が決定的に重要であると説かれます。
         </p>
       </div>
     </section>
 
     <!-- 5. 発展的トピックと古典派との比較 -->
     <section id="comparison-classical">
-      <h2>🏛️ 5. 古典派との比較とマクロ経済学への応用</h2>
+      <h2>🏛️ 5. 古典派経済学との比較と現代経済への視座</h2>
 
       <div class="table-responsive">
         <table>
           <thead>
             <tr>
               <th style="width: 25%;">比較項目</th>
-              <th style="width: 37%;">古典派経済学（新古典派）</th>
-              <th style="width: 38%;">ケインズ経済学（流動性選好説）</th>
+              <th style="width: 37%;">古典派経済学（ケインズ以前の常識）</th>
+              <th style="width: 38%;">ケインズ経済学（流動性選好理論）</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>利子率の決定要因</strong></td>
-              <td>実物要因（貯蓄と投資の需給一致）</td>
-              <td><strong>貨幣要因</strong>（貨幣の供給と流動性選好の需給一致）</td>
+              <td><strong>金利（利子率 r）はどう決まる？</strong></td>
+              <td>「貯蓄したい人」と「投資したい企業」のバランスで自然に決まる</td>
+              <td><strong>「現金を持ちたい需要（M<sup>d</sup>）」と「貨幣供給量」</strong>の需給バランスで決まる</td>
             </tr>
             <tr>
-              <td><strong>利子の本質</strong></td>
-              <td>現在の消費を断念（忍耐）したことへの対価</td>
-              <td><strong>流動性を手放したことへの補償（不便の対価）</strong></td>
+              <td><strong>利子とは何のご褒美？</strong></td>
+              <td>今の消費を我慢して「貯蓄」したことへのご褒美</td>
+              <td><strong>いつでも使える「流動性（現金）」を手放したリスクへの補償</strong></td>
             </tr>
             <tr>
-              <td><strong>貨幣の役割</strong></td>
-              <td>交換の媒介にすぎない（貨幣ヴェール観）</td>
-              <td>価値の保蔵手段であり、<strong>不確実性への防壁</strong></td>
+              <td><strong>お金（貨幣）の役割</strong></td>
+              <td>モノを売買するための単なる交換の仲介道具</td>
+              <td>不確実性や債券下落リスクから逃れるための<strong>「価値の保蔵手段」</strong></td>
             </tr>
             <tr>
-              <td><strong>不況時の金融政策</strong></td>
-              <td>金利が下がり自律的に投資が回復する</td>
-              <td><strong>流動性の罠により無力化</strong>する危険がある</td>
+              <td><strong>大不況時の処方箋</strong></td>
+              <td>市場に任せれば金利が自然低下し投資が回復する</td>
+              <td><strong>「流動性の罠」により金融緩和が無効化</strong>するため、政府の財政出動が必要</td>
             </tr>
           </tbody>
         </table>
@@ -838,19 +1212,20 @@
       <div class="grid-2" style="margin-top: 1.5rem;">
         <div class="concept-card" style="border-left-color: var(--purple);">
           <div class="concept-title">
-            <span>📐 IS-LM分析への接続</span>
+            <span>📐 マクロ経済学（IS-LM分析）での位置づけ</span>
           </div>
           <div class="concept-desc">
-            ジョン・ヒックスが定式化したIS-LM分析において、流動性選好説は「<strong>LM曲線（貨幣市場の均衡）</strong>」の理論的土台となります。流動性の罠の領域では、LM曲線は水平（金利弾力性が無限大）となり、金融政策が完全に無効化することが幾何学的に証明されます。
+            ヒックスらが体系化した「IS-LM分析」において、流動性選好理論は<strong>LM曲線（貨幣市場の均衡線）</strong>の導出基礎となっています。流動性の罠の領域では、利子率の低下余地がなくなりLM曲線が完全に「水平」となるため、貨幣供給を増やしても利子率は低下せず、財政政策（IS曲線の右シフト）のみが国民所得の拡大に有効であると説明されます。
           </div>
         </div>
 
         <div class="concept-card" style="border-left-color: var(--emerald);">
           <div class="concept-title">
-            <span>🇯🇵 現代日本と世界経済の現実</span>
+            <span>🇯🇵 現代のゼロ金利経済と「2つの解釈」</span>
           </div>
           <div class="concept-desc">
-            1990年代以降の日本経済（「失われた30年」）や、2008年リーマンショック後の主要先進国が直面したゼロ金利・マイナス金利政策下での停滞は、まさにケインズの流動性選好理論と流動性の罠が生々しい現実であることを世界に知らしめました。
+            1990年代の日本のバブル崩壊や2008年リーマン危機後、ゼロ金利・量的緩和でもマネーが銀行に滞留した現象は、ポール・クルーグマンらによって「現代の流動性の罠」として分析されました。<br>
+            一方で、リチャード・クーらの「バランスシート不況論」では、純粋な投機的動機だけでなく、資産価格暴落による債務超過を埋めるための「民間企業の債務返済優先（借り手不在）」がマネー滞留の主因であったとも指摘され、両面から活発に議論されています。
           </div>
         </div>
       </div>
@@ -913,7 +1288,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 金融寡占制の歴史と崩壊 補論資料集 | Liquidity Preference Theory Visualizer</p>
+      <p>&copy; 金融経済学ノート 補論資料集 | Liquidity Preference Theory Visualizer</p>
     </footer>
 
   </div>
@@ -922,6 +1297,8 @@
   <script>
     const slider = document.getElementById('rateSlider');
     const rateDisplay = document.getElementById('rateDisplay');
+    const bondYenDisplay = document.getElementById('bondYenDisplay');
+    const bondCalcSub = document.getElementById('bondCalcSub');
     const bondPriceDisplay = document.getElementById('bondPriceDisplay');
     const forecastDisplay = document.getElementById('forecastDisplay');
     const demandDisplay = document.getElementById('demandDisplay');
@@ -935,14 +1312,10 @@
       ctx.clearRect(0, 0, w, h);
 
       // Axes coordinates
-      const originX = 70;
+      const originX = 90;
       const originY = h - 50;
       const maxX = w - 40;
       const maxY = 30;
-
-      // Draw Grid / Axes
-      ctx.strokeStyle = '#e2e8f0';
-      ctx.lineWidth = 1;
 
       // Axis lines
       ctx.beginPath();
@@ -954,27 +1327,26 @@
       ctx.stroke();
 
       // Axis Labels
-      ctx.font = '12px system-ui, sans-serif';
-      ctx.fillStyle = '#475569';
-      ctx.fillText('利子率 (r)', originX - 50, maxY + 10);
-      ctx.fillText('貨幣需要 (M)', maxX - 60, originY + 30);
+      ctx.font = 'bold 12px system-ui, sans-serif';
+      ctx.fillStyle = '#334155';
+      ctx.fillText('市場利子率 r (%)', 12, maxY + 12);
+      ctx.fillText('貨幣需要 Md（投機的動機）→', maxX - 200, originY + 32);
 
       // Draw Liquidity Trap Flat Zone highlight
-      ctx.fillStyle = 'rgba(254, 226, 226, 0.45)';
+      ctx.fillStyle = 'rgba(254, 226, 226, 0.5)';
       ctx.fillRect(originX, originY - 45, maxX - originX, 45);
 
       ctx.fillStyle = '#e11d48';
-      ctx.font = 'bold 11px system-ui, sans-serif';
-      ctx.fillText('← 流動性の罠の領域（極小金利・完全水平）', originX + 220, originY - 15);
+      ctx.font = 'bold 12px system-ui, sans-serif';
+      ctx.fillText('← 流動性の罠の領域（利子率の低下限界により曲線が水平化し、貨幣需要が完全弾力化）', originX + 110, originY - 15);
 
-      // Draw Liquidity Preference Curve L(r)
+      // Draw Liquidity Preference Curve
       ctx.beginPath();
       ctx.strokeStyle = '#1e3a8a';
       ctx.lineWidth = 3;
 
       const points = [];
       for (let r = 0.4; r <= 8.0; r += 0.1) {
-        // formula: M = 20 / (r - 0.3)^0.8 + 15
         const m = 28 / Math.pow(r - 0.25, 0.85);
         const plotX = originX + (m / 80) * (maxX - originX);
         const plotY = originY - (r / 8.0) * (originY - maxY);
@@ -990,7 +1362,7 @@
       // Curve Label
       ctx.fillStyle = '#1e3a8a';
       ctx.font = 'bold 13px system-ui, sans-serif';
-      ctx.fillText('投機的貨幣需要曲線 L₂(r)', maxX - 160, maxY + 35);
+      ctx.fillText('投機的貨幣需要曲線 L2(r)', maxX - 175, maxY + 35);
 
       // Current Point on Curve
       const currR = Math.max(currentRate, 0.35);
@@ -1022,15 +1394,22 @@
       // Text at point
       ctx.fillStyle = '#0f172a';
       ctx.font = 'bold 12px system-ui, sans-serif';
-      ctx.fillText(`現在値 (r = ${currentRate.toFixed(1)}%)`, currX + 10, currY - 10);
+      const labelX = Math.min(currX + 10, maxX - 135);
+      ctx.fillText(`現在の金利 (${currentRate.toFixed(1)}%)`, labelX, currY - 10);
     }
 
     function updateSimulation() {
       const r = parseFloat(slider.value);
       rateDisplay.innerText = r.toFixed(1) + ' %';
 
+      // 毎年1万円の利息がもらえる永久債の理論価格（万円） = 1 / (r / 100) = 100 / r
+      const bondPriceManYen = 100 / r;
+      bondYenDisplay.innerText = bondPriceManYen.toFixed(1) + ' 万円';
+      bondCalcSub.innerText = `計算：1万円 ÷ ${r.toFixed(1)}%`;
+
       if (r <= 1.0) {
-        bondPriceDisplay.innerText = '極限の超高値';
+        bondYenDisplay.style.color = '#e11d48';
+        bondPriceDisplay.innerText = '極限の超高値（天井）';
         bondPriceDisplay.style.color = '#e11d48';
         forecastDisplay.innerText = '暴落確実（上昇余地ゼロ）';
         forecastDisplay.style.color = '#e11d48';
@@ -1039,31 +1418,36 @@
 
         explanationBox.innerHTML = `
           <strong style="color: #be123c;">【🚨 現在の状態：流動性の罠（Liquidity Trap）】</strong><br>
-          利子率が ${r.toFixed(1)}% という極限の低水準にあるため、人々は「債券価格は天井に達しており、これ以上上がる余地はない。今後は金利上昇に伴い債券価格が暴落するだけだ」と確信しています。誰も債券を買いたがらず、供給されたマネーはすべて現金として退蔵されます。この状態では中央銀行がいくら量的緩和を行っても利子率はこれ以上下がらず、金融政策は完全に麻痺します。
+          世の中の金利（r）が <strong>${r.toFixed(1)}%</strong> まで低下したため、永久債モデルでの理論価格は <strong>${bondPriceManYen.toFixed(1)}万円</strong> という極限の高値（天井）に達しています。<br>
+          もし将来金利が5%に復帰すれば、債券価格は20万円へ暴落（<strong>▲${(bondPriceManYen - 20).toFixed(1)}万円のキャピタルロス</strong>）します。このため誰も債券を買い増そうとせず、中央銀行がどれだけマネタリーベースを供給しても、すべて手元の現金や当座預金として退蔵されてしまいます。
         `;
       } else if (r <= 3.0) {
+        bondYenDisplay.style.color = '#d97706';
         bondPriceDisplay.innerText = '割高（高値圏）';
         bondPriceDisplay.style.color = '#d97706';
-        forecastDisplay.innerText = '下落リスク警戒';
+        forecastDisplay.innerText = '値下がりリスク警戒';
         forecastDisplay.style.color = '#d97706';
         demandDisplay.innerText = 'かなり大きい';
         demandDisplay.style.color = '#d97706';
 
         explanationBox.innerHTML = `
-          <strong style="color: #b45309;">【⚠️ 現在の状態：低金利・流動性選好の高まり】</strong><br>
-          市場利子率は ${r.toFixed(1)}% と低めで、債券価格は高値圏にあります。債券を保有して得られる利子収入が少ない割に、将来の金利上昇による元本割れリスクが意識されるため、人々は債券の購入を控えて現金を多めに手元に残そうとする傾向が強まっています。
+          <strong style="color: #b45309;">【⚠️ 現在の状態：低金利・現金選好の高まり】</strong><br>
+          世の中の金利（r）は <strong>${r.toFixed(1)}%</strong> と低く、債券価格は <strong>${bondPriceManYen.toFixed(1)}万円</strong> と割高水準にあります。<br>
+          得られるインカムゲイン（利息）に対して、将来の金利上昇による元本毀損リスクが勝るため、債券保有を控えて現金比率を高めようとするインセンティブが強く働きます。
         `;
       } else {
-        bondPriceDisplay.innerText = '割安（手頃な水準）';
+        bondYenDisplay.style.color = '#059669';
+        bondPriceDisplay.innerText = '適正〜割安水準';
         bondPriceDisplay.style.color = '#059669';
-        forecastDisplay.innerText = '安定または値上がり期待';
+        forecastDisplay.innerText = '安定・値上がり余地あり';
         forecastDisplay.style.color = '#059669';
-        demandDisplay.innerText = '抑制的（小）';
+        demandDisplay.innerText = '小さい（投資へシフト）';
         demandDisplay.style.color = '#059669';
 
         explanationBox.innerHTML = `
-          <strong style="color: #047857;">【✅ 現在の状態：標準〜高金利環境】</strong><br>
-          利子率が ${r.toFixed(1)}% と十分に高いため、債券を保有することで魅力的な利子インカムが得られます。また債券価格も過度に高騰していないため暴落リスクが低く、人々は現金を退蔵するよりも喜んで債券や金融資産に投資します。投機的貨幣需要は抑えられ、資金が活発に循環します。
+          <strong style="color: #047857;">【✅ 現在の状態：通常の金利環境（投資が活性化する状態）】</strong><br>
+          世の中の金利（r）が <strong>${r.toFixed(1)}%</strong> と十分に高いため、債券価格は <strong>${bondPriceManYen.toFixed(1)}万円</strong> と手頃な価格で購入可能です。<br>
+          現金のまま寝かせておくことの機会費用が大きく、将来の金利低下による値上がり益も狙えるため、経済主体は余分な現金を抱え込まず、債券や投資へと資金を振り向けます。
         `;
       }
 
@@ -1071,8 +1455,6 @@
     }
 
     slider.addEventListener('input', updateSimulation);
-
-    // Initial load
     updateSimulation();
   </script>
 </body>
