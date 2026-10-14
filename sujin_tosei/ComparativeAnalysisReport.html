@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【比較検証レポート】日本古代史における国家成立史観の対比分析：技術・鉄のパラダイムシフト論 vs 鉄・海・馬の地政学動員論</title>
+  <style>
+    :root {
+      --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      --font-serif: "BIZ UDPMincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+      /* Light Theme Colors */
+      --bg-primary: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-muted: #f1f5f9;
+      --bg-accent-subtle: #f8fafc;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --text-inverse: #ffffff;
+      --border-color: #e2e8f0;
+      --border-subtle: #cbd5e1;
+
+      /* Accents */
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-subtle: #eff6ff;
+      --primary-border: #bfdbfe;
+
+      --source1-color: #1d4ed8;
+      --source1-bg: #eff6ff;
+      --source1-border: #93c5fd;
+      --source1-badge: #2563eb;
+
+      --source2-color: #b45309;
+      --source2-bg: #fffbeb;
+      --source2-border: #fcd34d;
+      --source2-badge: #d97706;
+
+      --synthesis-color: #047857;
+      --synthesis-bg: #ecfdf5;
+      --synthesis-border: #a7f3d0;
+      --synthesis-badge: #059669;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0b0f19;
+      --bg-surface: #111827;
+      --bg-card: #1f2937;
+      --bg-muted: #1e293b;
+      --bg-accent-subtle: #111827;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-inverse: #0f172a;
+      --border-color: #334155;
+      --border-subtle: #475569;
+
+      --primary: #60a5fa;
+      --primary-light: #93c5fd;
+      --primary-subtle: #1e293b;
+      --primary-border: #2563eb;
+
+      --source1-color: #60a5fa;
+      --source1-bg: #172554;
+      --source1-border: #1d4ed8;
+      --source1-badge: #3b82f6;
+
+      --source2-color: #fbbf24;
+      --source2-bg: #451a03;
+      --source2-border: #b45309;
+      --source2-badge: #f59e0b;
+
+      --synthesis-color: #34d399;
+      --synthesis-bg: #064e3b;
+      --synthesis-border: #047857;
+      --synthesis-badge: #10b981;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Reading Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(90deg, #2563eb, #d97706, #059669);
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+
+    /* App Layout */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+      max-width: 1560px;
+      margin: 0 auto;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      background-color: var(--bg-surface);
+      border-right: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: transform 0.3s ease;
+      z-index: 90;
+    }
+
+    .sidebar-header {
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .nav-item a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+      line-height: 1.4;
+    }
+
+    .nav-item a:hover {
+      background-color: var(--bg-muted);
+      color: var(--primary);
+    }
+
+    .nav-item.active a {
+      background-color: var(--primary-subtle);
+      color: var(--primary);
+      font-weight: 600;
+      border-left: 3px solid var(--primary);
+    }
+
+    .nav-sublist {
+      list-style: none;
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: 0.25rem;
+    }
+
+    .nav-sublist a {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .nav-sublist a:hover {
+      color: var(--text-primary);
+    }
+
+    .sidebar-actions {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: var(--bg-muted);
+      border-color: var(--border-subtle);
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      padding: 2.5rem 3.5rem;
+      max-width: 1200px;
+    }
+
+    /* Hero / Document Header */
+    .document-header {
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .document-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, #2563eb, #d97706, #059669);
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge-primary {
+      background-color: var(--primary-subtle);
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+
+    .badge-source1 {
+      background-color: var(--source1-bg);
+      color: var(--source1-color);
+      border-color: var(--source1-border);
+    }
+
+    .badge-source2 {
+      background-color: var(--source2-bg);
+      color: var(--source2-color);
+      border-color: var(--source2-border);
+    }
+
+    .badge-synthesis {
+      background-color: var(--synthesis-bg);
+      color: var(--synthesis-color);
+      border-color: var(--synthesis-border);
+    }
+
+    .doc-main-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .doc-subtitle {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .doc-subtitle-tag {
+      color: var(--primary-light);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.875rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .meta-value {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* Section Structure */
+    .content-section {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      scroll-margin-top: 2rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--bg-muted);
+    }
+
+    .h1-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .h1-title .num-pill {
+      background-color: var(--primary);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .h2-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .h2-title::before {
+      content: "";
+      width: 4px;
+      height: 1.25rem;
+      background-color: var(--primary);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .h3-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin: 1.5rem 0 0.75rem 0;
+      padding-left: 0.25rem;
+      border-left: 3px solid var(--border-subtle);
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    p strong, li strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* Source Comparison Card Box */
+    .source-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+
+    .source-card {
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .source-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .source-card.source1 {
+      background-color: var(--source1-bg);
+      border-color: var(--source1-border);
+    }
+
+    .source-card.source2 {
+      background-color: var(--source2-bg);
+      border-color: var(--source2-border);
+    }
+
+    .source-card.synthesis {
+      background-color: var(--synthesis-bg);
+      border-color: var(--synthesis-border);
+    }
+
+    .source-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .source-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .source1 .source-card-title { color: var(--source1-color); }
+    .source2 .source-card-title { color: var(--source2-color); }
+    .synthesis .source-card-title { color: var(--synthesis-color); }
+
+    .source-card-body {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      margin: 2rem 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      overflow-x: auto;
+      background-color: var(--bg-surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+      min-width: 780px;
+    }
+
+    thead th {
+      background-color: var(--bg-muted);
+      color: var(--text-primary);
+      font-weight: 700;
+      padding: 1rem 1.25rem;
+      border-bottom: 2px solid var(--border-color);
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    thead th.th-source1 {
+      border-top: 3px solid var(--source1-badge);
+      background-color: var(--source1-bg);
+      color: var(--source1-color);
+    }
+
+    thead th.th-source2 {
+      border-top: 3px solid var(--source2-badge);
+      background-color: var(--source2-bg);
+      color: var(--source2-color);
+    }
+
+    thead th.th-impact {
+      border-top: 3px solid var(--synthesis-badge);
+      background-color: var(--synthesis-bg);
+      color: var(--synthesis-color);
+    }
+
+    tbody td {
+      padding: 1.15rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover td {
+      background-color: var(--bg-accent-subtle);
+    }
+
+    td.cell-header {
+      font-weight: 700;
+      color: var(--text-primary);
+      background-color: var(--bg-muted);
+      white-space: nowrap;
+      width: 18%;
+    }
+
+    td.cell-source1 {
+      background-color: rgba(37, 99, 235, 0.02);
+      width: 27%;
+    }
+
+    td.cell-source2 {
+      background-color: rgba(217, 119, 6, 0.02);
+      width: 27%;
+    }
+
+    td.cell-impact {
+      background-color: rgba(5, 150, 105, 0.03);
+      font-weight: 500;
+      width: 28%;
+    }
+
+    /* Callout & Takeaways */
+    .callout-box {
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      border-left: 4px solid;
+    }
+
+    .callout-info {
+      background-color: var(--primary-subtle);
+      border-color: var(--primary-light);
+      color: var(--text-secondary);
+    }
+
+    .callout-warning {
+      background-color: var(--source2-bg);
+      border-color: var(--source2-badge);
+      color: var(--text-secondary);
+    }
+
+    .callout-synthesis {
+      background-color: var(--synthesis-bg);
+      border-color: var(--synthesis-badge);
+      color: var(--text-secondary);
+    }
+
+    .callout-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    .callout-content {
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--text-primary);
+    }
+
+    /* List Styling */
+    .styled-list {
+      list-style: none;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .styled-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.975rem;
+    }
+
+    .styled-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.35rem;
+      top: 0.7rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+
+    .numbered-list {
+      list-style: none;
+      counter-reset: item;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .numbered-list li {
+      position: relative;
+      padding-left: 2.25rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .numbered-list li::before {
+      content: counter(item);
+      counter-increment: item;
+      position: absolute;
+      left: 0;
+      top: 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: var(--bg-muted);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Diagrams & Graphics */
+    .diagram-container {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .diagram-caption {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Timeline Stepper */
+    .timeline-stepper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .timeline-stepper::before {
+      content: "";
+      position: absolute;
+      left: 1.25rem;
+      top: 1rem;
+      bottom: 1rem;
+      width: 3px;
+      background: linear-gradient(180deg, var(--source1-badge), var(--source2-badge), var(--synthesis-badge));
+      border-radius: 2px;
+    }
+
+    .timeline-step {
+      display: flex;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-step-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--bg-surface);
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+      z-index: 2;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-step:nth-child(1) .timeline-step-icon {
+      border-color: var(--source1-badge);
+      color: var(--source1-badge);
+    }
+
+    .timeline-step:nth-child(2) .timeline-step-icon {
+      border-color: var(--source2-badge);
+      color: var(--source2-badge);
+    }
+
+    .timeline-step:nth-child(3) .timeline-step-icon {
+      border-color: var(--synthesis-badge);
+      color: var(--synthesis-badge);
+    }
+
+    .timeline-step-content {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .timeline-step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .timeline-step-era {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background-color: var(--bg-muted);
+      color: var(--text-muted);
+    }
+
+    /* Mobile toggle */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      box-shadow: var(--shadow-lg);
+      cursor: pointer;
+      z-index: 100;
+      font-size: 1.25rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 11pt;
+      }
+
+      #progress-bar,
+      .sidebar,
+      .sidebar-actions,
+      .menu-toggle,
+      .theme-toggle-btn {
+        display: none !important;
+      }
+
+      .app-container {
+        display: block !important;
+      }
+
+      .main-content {
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .content-section, .document-header {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 1.5rem !important;
+        margin-bottom: 2rem !important;
+        page-break-inside: avoid;
+      }
+
+      table {
+        min-width: 100% !important;
+        page-break-inside: avoid;
+      }
+
+      th, td {
+        border: 1px solid #ccc !important;
+        padding: 0.5rem !important;
+        color: black !important;
+        background: transparent !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .app-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .main-content {
+        padding: 1.5rem 1rem;
+      }
+
+      .document-header, .content-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Reading Progress Indicator -->
+  <div id="progress-bar"></div>
+
+  <div class="app-container">
+    
+    <!-- Left Navigation Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-badge">古代史比較検証レポート</span>
+        <h2 class="sidebar-title">国家成立史観の対比分析</h2>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item active"><a href="#sec-overview">概要・比較軸</a></li>
+          <li class="nav-item"><a href="#sec-intro">1. 導入と背景</a></li>
+          <li class="nav-item">
+            <a href="#sec-consensus">2. 根底における合意</a>
+            <ul class="nav-sublist">
+              <li><a href="#sec-consensus-1">2.1 大和自生モデルの否定</a></li>
+              <li><a href="#sec-consensus-2">2.2 外圧と輸入鉄への依存</a></li>
+              <li><a href="#sec-consensus-3">2.3 北九州の東進と河内王朝</a></li>
+              <li><a href="#sec-consensus-table">2.4 共通パラダイム対比表</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#sec-differences">3. 構造的相違点</a>
+            <ul class="nav-sublist">
+              <li><a href="#sec-diff-1">3.1 東征の主役と成立時期</a></li>
+              <li><a href="#sec-diff-2">3.2 統合・力学の原動力</a></li>
+              <li><a href="#sec-diff-3">3.3 大和（畿内）の解釈</a></li>
+              <li><a href="#sec-diff-table">3.4 構造的相違対比表</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#sec-synthesis">4. 相互補完性と統合考察</a>
+            <ul class="nav-sublist">
+              <li><a href="#sec-syn-1">4.1 前期（3〜4世紀）</a></li>
+              <li><a href="#sec-syn-2">4.2 中期（5〜6世紀初頭）</a></li>
+              <li><a href="#sec-syn-3">4.3 後期（6世紀後半〜7世紀）</a></li>
+              <li><a href="#sec-syn-scenario">4.4 高解像度統合シナリオ</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#sec-conclusion">5. 結論と現代的意義</a>
+            <ul class="nav-sublist">
+              <li><a href="#sec-final-summary">5.1 最終総括（3大ポイント）</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-actions">
+        <button class="btn theme-toggle-btn" id="theme-toggle" title="テーマ切り替え">
+          <span id="theme-icon">🌙</span> <span id="theme-text">ダークモード切替</span>
+        </button>
+        <button class="btn" onclick="window.print()" title="PDF出力・印刷">
+          🖨️ レポート印刷 / PDF化
+        </button>
+        <button class="btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="先頭へ戻る">
+          ⬆️ ページ最上部へ
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Body -->
+    <main class="main-content">
+
+      <!-- Executive Header -->
+      <header class="document-header" id="sec-overview">
+        <div class="badge-container">
+          <span class="badge badge-primary">比較検証レポート</span>
+          <span class="badge badge-source1">技術・鉄のパラダイムシフト論（ソース1）</span>
+          <span class="badge badge-source2">鉄・海・馬の地政学動員論（ソース2）</span>
+          <span class="badge badge-synthesis">止揚・統合シナリオ</span>
+        </div>
+
+        <h1 class="doc-main-title">【比較検証レポート】日本古代史における国家成立史観の対比分析：技術・鉄のパラダイムシフト論 vs 鉄・海・馬の地政学動員論</h1>
+        <div class="doc-subtitle">
+          <span class="doc-subtitle-tag">サブタイトル：</span>技術・鉄のパラダイムシフト論 vs 鉄・海・馬の地政学動員論
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">検証対象ソース</span>
+            <span class="meta-value">ソース1（202610レポート） × ソース2（鉄・海・馬の地政学）</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">中心命題</span>
+            <span class="meta-value">通説「大和自生モデル」の解体と東アジア外圧・渡来技術・地政学動員の再定置</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">主要比較軸</span>
+            <span class="meta-value">時代観とタイムライン / 中心人物・王権の系譜 / 統合と動員のメカニズム / 大和の位置づけ</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">止揚の到達点</span>
+            <span class="meta-value">生産力革命（莫大な食料余剰）と広域軍事動員網の不可分結合 → 製鉄国産化・律令国家完成</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Visual Concept Infographic: SVG Diagram -->
+      <section class="diagram-container">
+        <svg viewBox="0 0 1000 360" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1e3a8a"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+            <linearGradient id="g-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#92400e"/>
+              <stop offset="100%" stop-color="#f59e0b"/>
+            </linearGradient>
+            <linearGradient id="g-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#065f46"/>
+              <stop offset="100%" stop-color="#10b981"/>
+            </linearGradient>
+            <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+              <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.12"/>
+            </filter>
+          </defs>
+
+          <!-- Source 1 Card -->
+          <g filter="url(#shadow)">
+            <rect x="30" y="25" width="280" height="230" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="2"/>
+            <rect x="30" y="25" width="280" height="42" rx="12" fill="url(#g-blue)"/>
+            <text x="170" y="52" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">ソース1：技術・鉄のパラダイムシフト論</text>
+            
+            <text x="45" y="95" fill="#1e3a8a" font-size="12" font-weight="bold">【下部構造・生産力決定論】</text>
+            <text x="45" y="120" fill="#334155" font-size="11.5">• 4段階の渡来波動（水田稲作〜製鉄）</text>
+            <text x="45" y="142" fill="#334155" font-size="11.5">• 朝鮮半島からの鉄素材100%輸入独占</text>
+            <text x="45" y="164" fill="#334155" font-size="11.5">• 崇神東征（3C纒向制圧・鍛冶工房移植）</text>
+            <text x="45" y="186" fill="#334155" font-size="11.5">• 鉄鋌とU字型農具による農業生産力爆発</text>
+            <text x="45" y="208" fill="#334155" font-size="11.5">• 千引カナクロ谷遺跡（製鉄国産化）</text>
+            <text x="45" y="230" fill="#2563eb" font-size="11" font-weight="bold">⇒ 鉄独占崩壊・前方後円墳体制の終焉</text>
+          </g>
+
+          <!-- Source 2 Card -->
+          <g filter="url(#shadow)">
+            <rect x="690" y="25" width="280" height="230" rx="12" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
+            <rect x="690" y="25" width="280" height="42" rx="12" fill="url(#g-amber)"/>
+            <text x="830" y="52" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">ソース2：鉄・海・馬の地政学動員論</text>
+            
+            <text x="705" y="95" fill="#92400e" font-size="12" font-weight="bold">【上部動態・広域動員同盟論】</text>
+            <text x="705" y="120" fill="#334155" font-size="11.5">• 高句麗南下の外圧（好太王碑文）</text>
+            <text x="705" y="142" fill="#334155" font-size="11.5">• 応神東征（5C河内王朝・外来別系統）</text>
+            <text x="705" y="164" fill="#334155" font-size="11.5">• 尾張氏の伊勢湾制海権（太平洋航路）</text>
+            <text x="705" y="186" fill="#334155" font-size="11.5">• 「鉄と馬の循環」システム（東国連携）</text>
+            <text x="705" y="208" fill="#334155" font-size="11.5">• ワカタケル大王（雄略）の全国威光</text>
+            <text x="705" y="230" fill="#d97706" font-size="11" font-weight="bold">⇒ 大和は「スタート」ではなく「到達点」</text>
+          </g>
+
+          <!-- Synthesis Center Card -->
+          <g filter="url(#shadow)">
+            <rect x="345" y="45" width="310" height="280" rx="14" fill="#ffffff" stroke="#6ee7b7" stroke-width="2.5"/>
+            <rect x="345" y="45" width="310" height="46" rx="14" fill="url(#g-emerald)"/>
+            <text x="500" y="74" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">【止揚・Aufheben】統合モデル</text>
+            
+            <text x="360" y="115" fill="#065f46" font-size="12.5" font-weight="bold">インフラ（技術）× ダイナミクス（動員）</text>
+            
+            <rect x="358" y="128" width="284" height="64" rx="6" fill="#ecfdf5" stroke="#a7f3d0"/>
+            <text x="500" y="148" fill="#047857" font-size="11.5" font-weight="bold" text-anchor="middle">【5世紀河内平野の開発と食料余剰】</text>
+            <text x="500" y="166" fill="#0f5132" font-size="11" text-anchor="middle">鉄鋌・U字農具による農業生産力爆発が、</text>
+            <text x="500" y="182" fill="#0f5132" font-size="11" text-anchor="middle">尾張・東国の軍馬・兵力を養う兵糧基盤に！</text>
+
+            <rect x="358" y="202" width="284" height="64" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+            <text x="500" y="222" fill="#047857" font-size="11.5" font-weight="bold" text-anchor="middle">【6世紀後半〜7世紀：律令国家の完成】</text>
+            <text x="500" y="240" fill="#0f5132" font-size="11" text-anchor="middle">製鉄国産化＋白村江・百済亡命技術者融合</text>
+            <text x="500" y="256" fill="#0f5132" font-size="11" text-anchor="middle">墳墓から朝鮮式山城・寺院・律令法制へ</text>
+
+            <text x="500" y="302" fill="#047857" font-size="12" font-weight="bold" text-anchor="middle">中央集権律令国家「日本」の完成</text>
+          </g>
+
+          <!-- Connecting Arrows -->
+          <path d="M 310 140 L 340 140" stroke="#3b82f6" stroke-width="3" fill="none"/>
+          <text x="328" y="130" fill="#2563eb" font-size="10" font-weight="bold" text-anchor="middle">物質基盤</text>
+          
+          <path d="M 690 140 L 660 140" stroke="#f59e0b" stroke-width="3" fill="none"/>
+          <text x="672" y="130" fill="#d97706" font-size="10" font-weight="bold" text-anchor="middle">軍事動員</text>
+
+          <!-- Bottom Footer Label -->
+          <text x="500" y="348" fill="#64748b" font-size="11" text-anchor="middle">※ 下部構造の生産力革命が上部構造の地政学的同盟・兵力動員を支え、双方の相互作用によって古代国家が形成された</text>
+        </svg>
+        <div class="diagram-caption">図1：国家成立史観における「技術史観（ソース1）」と「地政学動員論（ソース2）」の止揚モデル</div>
+      </section>
+
+      <!-- SECTION 1 -->
+      <section class="content-section" id="sec-intro">
+        <div class="section-header">
+          <h2 class="h1-title">
+            <span class="num-pill">1</span>
+            1. 導入：古代日本史観における「大和自生モデル」からの脱却と両史料の比較軸
+          </h2>
+        </div>
+
+        <p>従来の日本古代史研究においては、奈良盆地を中心とする大和勢力が自律的かつ段階的に権威と軍事力を高め、全国の地域勢力を順次従えていったとする「大和自生発展モデル（大和中心説）」が長らく通説的な枠組みとして機能してきた。しかし、近年の考古学的発見や史料批判の精緻化は、この静的な国家形成シナリオに重大な疑問を投げかけている。古代日本の国家成立過程は、列島内部の孤立した進化ではなく、東アジア規模の気候変動、情勢不安、軍事的緊張という「外圧」と、それに伴う渡来技術の段階的受容、および広域的な地政学ネットワークの再編によって主導された動的なプロセスであったという見方が定着しつつある。</p>
+
+        <p>本レポートでは、古代日本国家の形成メカニズムに関して先進的かつ論理的な視点を提供する2つの史料（ソース1「202610レポート」、およびソース2「鉄・海・馬の地政学」）を取り上げ、その構造と史観を高度に比較検証する。</p>
+
+        <ul class="styled-list" style="margin: 1.5rem 0;">
+          <li>
+            <strong>ソース1（202610レポート） ：</strong>縄文・弥生から渡来第4期（百済滅亡前後）に至る約1,700年間の変遷を「4段階の渡来波動（渡来第1期〜第4期）」として体系化し、「水田稲作」と「鉄」の技術革新を主軸に解明する構造論。朝鮮半島からの鉄素材輸入と鍛冶技術の独占、さらには6世紀後半の製鉄技術の国産化（千引カナクロ谷遺跡）による前方後円墳体制の解体と律令国家への移行を、下部構造（生産力・技術）が上部構造（政治・社会体制）を決定づける技術史的パラダイムシフトとして描く。
+          </li>
+          <li>
+            <strong>ソース2（鉄・海・馬の地政学） ：</strong>3世紀時点での大和を突出した基盤を持たない「一ローカルプレイヤー」と捉え、高句麗の脅威（広開土王碑文）という東アジア外圧に対処するため、北九州勢力が東進して河内王朝を樹立したと捉える地政学的動態論。伊勢湾を支配する尾張氏をハブとした東海・東国との「鉄と馬の循環」を通じた広域な挙国一致体制の構築を提示する。
+          </li>
+        </ul>
+
+        <p>両史料は、従来の「大和自力発展モデル」を真っ向から否定する点では軌を一にしているが、国家統合の主役、成立のタイムライン、ならびに「大和（畿内）」という土地の歴史的位置づけにおいて異なるアプローチをとる。本レポートでは、「時代観とタイムライン」「中心人物・王権の系譜」「統合と動員のメカニズム」「大和の位置づけ」という4つの主要比較軸に基づき、両説の共通点と構造的相違点を明確にし、その先にある統合的な古代国家像（止揚）を検証する。</p>
+
+        <p>まずは、アプローチの異なる両史料がその根底において共有している、古代国家形成に関する基本パラダイムを確認する。</p>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="content-section" id="sec-consensus">
+        <div class="section-header">
+          <h2 class="h1-title">
+            <span class="num-pill">2</span>
+            2. 根底における合意：両史料が共通して提示する「古代国家形成」の基本パラダイム
+          </h2>
+        </div>
+
+        <p>ソース1（技術史観）とソース2（地政学動員論）は、分析の主眼において異なる切り口を採用しているものの、日本古代史の基底をなす「国家成立の前提条件」に関しては、極めて深い根底的合意を形成している。両史料が共有する批判的知見は、従来の単線的な大和中心史観を解体し、東アジアの動態の中に日本列島を再定置する上で極めて重要な歴史的意義を持つ。</p>
+
+        <h3 class="h2-title">共通するコア・パラダイムの分析</h3>
+
+        <!-- Subsection 2.1 -->
+        <div id="sec-consensus-1">
+          <h4 class="h3-title">1. 「大和自生発展モデル（自力強大化説）」の完全否定と『記紀』の論理的矛盾</h4>
+          <p>両史料はともに、3世紀時点の大和盆地が自律的に全国を凌駕する権力、海軍力、経済力、あるいは宗教的権威を独自に保持していたとする通説を明確に否定する。</p>
+
+          <ul class="styled-list">
+            <li>
+              <strong>ソース1</strong>は、3世紀前半の纒向（まきむく）遺跡を全国からの搬入土器が集まる交流拠点と認めつつも、初期段階では自前の鉄器生産力を持たず、渡来第1期（菜畑遺跡・板付遺跡）から渡来第2期（博多遺跡群等）にかけて鉄素材と鍛冶技術を独占していた北部九州の鉄器軍事勢力（崇神朝）による制圧と工房移植によって、初めて政治・軍事の中枢となったと分析する。
+            </li>
+            <li>
+              <strong>ソース2</strong>は地政学的観点から、良港も鉄資源も朝鮮半島との直接交易ルートも持たない内陸の大和が、自力で海軍力を整備して北九州や吉備などの先行巨大勢力を屈服させたとする通説を非現実的と断じる。さらに強力な反論エビデンスとして、<strong>「もし内陸大和が自力で海軍力を育てて北九州や吉備を服属させたのなら、なぜ『記紀』にその最大の華々しい征服記録が一切存在しないのか」</strong>という史料上の矛盾を突く。また、群雄割拠期において内陸大和のローカルな祭祀・宗教的権威が遠方の豪族を服従させられるはずがないと指摘する。
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subsection 2.2 -->
+        <div id="sec-consensus-2" style="margin-top: 2rem;">
+          <h4 class="h3-title">2. 対外情勢（東アジア外圧）と「鉄」への絶対的依存</h4>
+          <p>両史料は、日本列島内で砂鉄や鉄鉱石から鉄を取り出す「製鉄（製錬）」技術が未確立であった時代（弥生時代〜古墳時代前期・中期）において、朝鮮半島南部（弁韓・加耶地域）からの鉄素材輸入ルートと鍛造技術の確保こそが王権の生命線であったという認識で一致している。</p>
+
+          <ul class="styled-list">
+            <li>
+              <strong>ソース1</strong>は、弥生時代から古墳時代前期・中期に至る鉄依存度が100％朝鮮半島由来であることを示し、鉄素材（板状鉄斧や鉄鋌）の輸入・分配の独占が王権の支配力（前方後円墳体制）の基盤であったとする。
+            </li>
+            <li>
+              <strong>ソース2</strong>は、東アジアの動乱（高句麗の南下と好太王碑文に見られる戦乱）に伴う鉄補給ルートの危機が、北九州勢力単独の限界を露呈させ、列島規模の広域動員体制へ移行する最大の推進力（外圧）となったと説明する。
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subsection 2.3 -->
+        <div id="sec-consensus-3" style="margin-top: 2rem;">
+          <h4 class="h3-title">3. 北九州勢力の東進と河内王朝（応神朝）の飛躍</h4>
+          <p>両史料は、対外ネットワークと鉄素材・技術を握っていた「北部九州勢力」の東進（瀬戸内航路を経由した畿内・河内への進出）が、古代国家形成における決定的なブレイクスルーであったと捉える。</p>
+
+          <ul class="styled-list">
+            <li>
+              <strong>ソース1</strong>は、渡来第3期にあたる応神朝において大量の渡来系技術者（今来の才伎）と大量の「鉄鋌（ていてい）」が導入され、U字型鉄製農具による深耕や河内平野の治水・干拓（茨田堤等）が達成されたことで、超巨大前方後円墳（百舌鳥・古市古墳群）を造営し得る爆発的な生産力革命が起きたとする。
+            </li>
+            <li>
+              <strong>ソース2</strong>は、応神天皇を北九州からの東進主体と位置づけ、吉備や各沿岸勢力との同盟を経て瀬戸内海の出口である河内へ進出し、「河内王朝」を樹立したとする。これにより、難波津を中心とする物流と対外貿易を一手に把握する基盤が整備されたとする。
+            </li>
+          </ul>
+        </div>
+
+        <!-- Table: Common Paradigms -->
+        <div id="sec-consensus-table" style="margin-top: 2.5rem;">
+          <h3 class="h2-title">共通概念と歴史的構造に対するインパクト（So What?）</h3>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 25%;">共通概念</th>
+                  <th class="th-impact" style="width: 75%;">歴史的構造に対するインパクト・「So What?」</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-header">「大和自生モデル」の否定</td>
+                  <td class="cell-impact">古代国家の成立を「大和盆地からの自発的拡大」ではなく、「外来勢力（北九州・渡来系）の進出・動員・統合の帰結」として捉え直す必要性を示している。特に『記紀』における海軍力・征服記録の欠落は、通説の破綻を明確に裏付けている。</td>
+                </tr>
+                <tr>
+                  <td class="cell-header">「輸入鉄」への絶対依存</td>
+                  <td class="cell-impact">鉄の製錬炉を持たない時代の王権の支配権力限度は、対外貿易ルート（加耶・弁韓）および海上物流網の保持・維持能力と完全に連動していたことを意味する。</td>
+                </tr>
+                <tr>
+                  <td class="cell-header">北九州勢力の東進と河内王朝の飛躍</td>
+                  <td class="cell-impact">九州の鉄・対外技術と、畿内・瀬戸内の広域物流および大規模平野の開発力が結合したことが、列島規模の社会変革（農地拡大・大規模モニュメント造営）をもたらした。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.5rem;">両史料が共有するこれらの基本パラダイムを確認した上で、次に両説が明確に分かれる「王権誕生のメカニズムとタイムライン」の対比分析へと進む。</p>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section class="content-section" id="sec-differences">
+        <div class="section-header">
+          <h2 class="h1-title">
+            <span class="num-pill">3</span>
+            3. 構造的相違点：王権誕生の「メカニズム」と「タイムライン」の対比分析
+          </h2>
+        </div>
+
+        <p>ソース1とソース2の根本的対立は、「技術革新や生産力インフラという下部構造が上部構造（政治）を決定する」と捉える構造論（ソース1）と、「外圧と軍事同盟・物流ネットワークという地政学的動態が中心地を創出する」と捉える動態論（ソース2）の史観の相違に由来する。「だれが・いつ・どのようなメカニズムで」ヤマト王権の全国的な統合を達成したかという解釈の対比は、古代日本史に全く異なる景観をもたらす。</p>
+
+        <h3 class="h2-title">主要な相違点の詳細分析</h3>
+
+        <!-- Subsection 3.1 -->
+        <div id="sec-diff-1">
+          <h4 class="h3-title">3.1 東征の主役と初期ヤマト政権の樹立時期</h4>
+
+          <ul class="styled-list">
+            <li>
+              <strong>ソース1（崇神東征・3世紀成立説）</strong>
+              <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li><strong>主役と時期 ：</strong>第10代崇神天皇（ハツクニシラススメラミコト）が3世紀前半〜中頃に敢行。</li>
+                <li><strong>メカニズム ：</strong>鉄資源の輸入窓口と高度な鍛造技術（博多遺跡群等）を独占していた「北部九州・邪馬台国」の正統な系統である崇神勢力が、圧倒的な鉄器軍事力を率いて東征。当時、全国から土器が集まる交流拠点であった畿内・纒向を武力制圧した。</li>
+                <li><strong>統合の象徴 ：</strong>纒向に大型ふいご鍛冶工房を開設・移植し、鉄器生産力を掌握。邪馬台国の卑弥呼が魏から獲得した「三角縁神獣鏡（舶載鏡）」を全国の地方首長に同盟の証として下賜（不足分は国産の仿製鏡で対応）し、前方後円墳体制と四道将軍派遣を通じた全国統制を3世紀中に確立した。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>ソース2（応神東征・5世紀成立説）</strong>
+              <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li><strong>主役と時期 ：</strong>応神天皇（4世紀末〜5世紀頃）。3世紀の大和は単なる「一ローカルプレイヤー」に過ぎなかったとする。</li>
+                <li><strong>メカニズム ：</strong>4世紀末〜5世紀初頭、朝鮮半島での高句麗好太王（広開土王）の猛攻による敗北（広開土王碑文）に直面し、北九州勢力単独での半島経営と鉄資源確保に限界を迎えた。これにより、列島全体の人的・経済的基盤（挙国一致体制）を構築するため、応神天皇が「北九州 → 瀬戸内海 → 吉備 → 河内」へと東進を敢行し、河内王朝を樹立した。</li>
+                <li><strong>王統の「外来性（別系統）」の根拠 ：</strong>ソース2は、応神王統が大和の在来王統とは異なる外来勢力である根拠として、以下の5つの歴史的・史料的事実を提示する。
+                  <ol class="numbered-list" style="margin-top: 0.5rem;">
+                    <li><strong>筑紫出生伝承</strong> の存在</li>
+                    <li><strong>神功皇后の長期執政</strong> の記述</li>
+                    <li><strong>仲哀天皇崩御から応神即位までの数十年の空白</strong> （王統断絶の痕跡）</li>
+                    <li><strong>河内における巨大前方後円墳群</strong> の形成</li>
+                    <li><strong>『記紀』において応神の大和入りの明確な記述が見当たらないこと</strong></li>
+                  </ol>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subsection 3.2 -->
+        <div id="sec-diff-2" style="margin-top: 2rem;">
+          <h4 class="h3-title">3.2 統合・力学の原動力（技術進化 vs 地政学・広域動員網）</h4>
+
+          <ul class="styled-list">
+            <li>
+              <strong>ソース1（技術的パラダイムシフト論）</strong>
+              <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li><strong>原動力 ：</strong>一貫して「技術の革新」と「鉄の入手形態の変化」が社会構造の転換を決定づけたとする。</li>
+                <li><strong>変遷プロセス ：</strong>渡来第3期（5世紀）の応神朝における今来の才伎の渡来と「鉄鋌」大量流入による農業生産力爆発（U字型鉄製農具）が巨大前方後円墳を生んだ。その後、6世紀初頭に加耶動揺で輸入鉄ルートが危機に瀕したことで応神直系が衰退し、日本海鉄ルートと高度な鍛冶集団を握る継体天皇（越前・近江）へ王権が移行（第1段階）。さらに6世紀後半、千引カナクロ谷遺跡に代表される「製鉄技術の国産化（製錬炉の直接導入）」が達成されたことで王権による鉄独占が崩壊し、鉄器の大衆化（全鉄製農具・群集墳乱立）と前方後円墳体制の終焉、律令国家・仏教寺院建築への移行へと結実した（第2段階）。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>ソース2（地政学・広域動員論）</strong>
+              <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li><strong>原動力 ：</strong>「海上物流ルートの確保」「同盟関係の構築」「軍事資源の循環網」という地政学的ネットワークを重視する。</li>
+                <li><strong>変遷プロセス ：</strong>河内王朝は、伊勢湾を支配する東海の <strong>尾張氏</strong> を媒介として、太平洋航路（海上物流ライン）を通じた東国（関東）との<strong>「鉄と馬の循環」</strong>システムを構築した。河内から馬の種畜と「鉄」を供給し、広大な関東平野で育成された「軍馬」と「兵力（人口）」を河内・畿内へ送る循環網を形成。5世紀後半の雄略天皇（獲加多支鹵大王／ワカタケル大王）期に、熊本の江田船山古墳と埼玉の稲荷山古墳から銘文鉄剣が出土するように全国的な威光を確立し、最終的に大和を征服・統合して「挙国一致体制」を完成させた。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subsection 3.3 -->
+        <div id="sec-diff-3" style="margin-top: 2rem;">
+          <h4 class="h3-title">3.3 「大和（畿内）」という土地の解釈</h4>
+
+          <ul class="styled-list">
+            <li>
+              <strong>ソース1（初期からの王権の中枢拠点） ：</strong>3世紀前半〜中頃の崇神東征によって、北部九州の鉄器軍事勢力が纒向を制圧・定着した場所。早い段階で「列島最大の鉄器生産・軍事中枢」として機能し、四方へ向かって前方後円墳体制を拡大していった出発点とされる。
+            </li>
+            <li>
+              <strong>ソース2（ネットワークの最終到達点・結果として創られた中心） ：</strong>大和は最初から中心であったのではなく、北九州勢力の東進、吉備同盟、尾張氏を介した東国連携、河内王朝の成立という一連のプロセスを経て、外来勢力の物流・軍事ネットワークが最終的に到達・征服した「到達点」。全国制覇が完了した「後」に、統一の帰結として大和の政治的・宗教的権威が完成したとされる。
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subsection 3.4 Table -->
+        <div id="sec-diff-table" style="margin-top: 2.5rem;">
+          <h3 class="h2-title">両史料の対比と解釈上のインプリケーション（So What?）</h3>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 18%;">対比項目</th>
+                  <th class="th-source1" style="width: 27%;">ソース1：技術・鉄のパラダイムシフト論</th>
+                  <th class="th-source2" style="width: 27%;">ソース2：鉄・海・馬の地政学動員論</th>
+                  <th class="th-impact" style="width: 28%;">古代史解釈上のインプリケーション（So What?）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-header">初期ヤマト政権の成立時期と主役</td>
+                  <td class="cell-source1">
+                    <strong>3世紀前半〜中頃</strong><br>
+                    崇神天皇（邪馬台国・九州勢力）
+                  </td>
+                  <td class="cell-source2">
+                    <strong>5世紀</strong><br>
+                    応神天皇（高句麗の脅威に対抗する九州勢力）
+                  </td>
+                  <td class="cell-impact">
+                    王権の「初期設計者」を3世紀の崇神朝に見るか、5世紀の応神朝（河内王朝）に見るかで、古墳時代前期の国家観が根本から異なってくる。
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-header">王統の連続性と別系統性</td>
+                  <td class="cell-source1">
+                    <strong>九州〜纒向の連続性</strong><br>
+                    邪馬台国の鏡・技術を継承
+                  </td>
+                  <td class="cell-source2">
+                    <strong>外来勢力（別系統）の王朝</strong><br>
+                    筑紫出生、神功長期執政、数十年空白等
+                  </td>
+                  <td class="cell-impact">
+                    応神王統を既存の延長と捉えるか、5世紀外圧下で創出された「外来の別系統王朝」と捉えるかの決定的な差。
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-header">国家統合の動力をなす基本メカニズム</td>
+                  <td class="cell-source1">
+                    <strong>技術革新と鉄の形態</strong><br>
+                    （輸入鉄独占 → 製鉄国産化）
+                  </td>
+                  <td class="cell-source2">
+                    <strong>地政学ネットワーク</strong><br>
+                    （尾張氏・太平洋航路を介す「鉄と馬の循環」）
+                  </td>
+                  <td class="cell-impact">
+                    生産力・技術の優位が政治構造を決めたとする「技術史的下部構造論」と、地政学的同盟と兵力動員が中心を決めたとする「動態論」の対照。
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-header">大和（畿内）の位置づけ</td>
+                  <td class="cell-source1">
+                    <strong>政治・軍事の出発点</strong><br>
+                    崇神東征により3世紀に中枢化
+                  </td>
+                  <td class="cell-source2">
+                    <strong>広域ネットワークの到達点</strong><br>
+                    雄略期の大和征服統合により完成
+                  </td>
+                  <td class="cell-impact">
+                    大和の宗教的・政治的権威が「国家統合の『原因』であったのか」、それとも「武力と経済力による統合の『結果』であったのか」という問いを提示する。
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-header">古墳時代の終焉メカニズム</td>
+                  <td class="cell-source1">
+                    <strong>製鉄の国産化（6世紀後半）</strong><br>
+                    鉄の普及による王権の分配独占崩壊
+                  </td>
+                  <td class="cell-source2">
+                    <strong>広域動員体制の完成（6世紀前半〜）</strong><br>
+                    近江毛野の任那派兵に代表される挙国一致
+                  </td>
+                  <td class="cell-impact">
+                    古墳時代の終止符を、技術の普遍化（製鉄国産化）による支配モデルの自壊と見るか、集権的動員機構の完成と見るかの差。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.5rem;">対比によって浮き彫りになった両史料の主張は、一見すると対立するように見えるが、時期ごとの歴史的現象を相互補完的に統合（止揚）することで、より解像度の高い古代国家成立シナリオへと昇華させることができる。次にその統合的考察を行う。</p>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section class="content-section" id="sec-synthesis">
+        <div class="section-header">
+          <h2 class="h1-title">
+            <span class="num-pill">4</span>
+            4. 相互補完性と統合的考察：技術史的視座と地政学的動員論の止揚
+          </h2>
+        </div>
+
+        <p>ソース1が提示する「技術革新と鉄のパラダイムシフト（構造論）」と、ソース2が提示する「地政学的同盟と鉄・海・馬の動員網（動態論）」は、古代日本の国家形成過程における「物質的・技術的基盤（インフラ）」と「政治的・軍事的動態（ダイナミクス）」という表裏一体の側面をそれぞれ描いたものである。両説を時系列に沿って相互補完させることで、因果関係の明確な一貫した歴史シナリオを立ち上げることができる。</p>
+
+        <h3 class="h2-title">時期ごとの相補的理解</h3>
+
+        <div class="timeline-stepper">
+          
+          <!-- Period 1 -->
+          <div class="timeline-step" id="sec-syn-1">
+            <div class="timeline-step-icon">1</div>
+            <div class="timeline-step-content">
+              <div class="timeline-step-header">
+                <span class="timeline-step-title">1. 前期（3世紀〜4世紀）：崇神朝による初期拠点形成と群雄割拠の時代</span>
+                <span class="timeline-step-era">3世紀〜4世紀</span>
+              </div>
+              <p>ソース1が説く「崇神天皇による3世紀の纒向制圧と大型ふいご鍛冶工房の移植」は、初期ヤマト政権が畿内に政治的拠点を築いた事実を説明する。崇神朝中枢の黒塚古墳から33面もの三角縁神獣鏡が一括出土した事実や同笵鏡の全国分布は、鉄器技術を背景とした初期の同盟ネットワーク形成を物語る。しかし、この時点の大和はソース2が指摘するように、全国を圧倒する海軍力や強大な支配権を備えていたわけではなく、日本海・瀬戸内海・東海の各地域に独自の巨大勢力が並立する「群雄割拠」の状態にあった。初期大和は絶対的権力者ではなく、ゆるやかな首長連合の拠点であったと解釈することで両説は整合する。</p>
+            </div>
+          </div>
+
+          <!-- Period 2 -->
+          <div class="timeline-step" id="sec-syn-2">
+            <div class="timeline-step-icon">2</div>
+            <div class="timeline-step-content">
+              <div class="timeline-step-header">
+                <span class="timeline-step-title">2. 中期（5世紀〜6世紀初頭）：生産力爆発と地政学的動員の不可分の結合</span>
+                <span class="timeline-step-era">5世紀〜6世紀初頭</span>
+              </div>
+              <p>4世紀末〜5世紀、高句麗の南下（広開土王碑文）という絶対的な東アジアの外圧に直面した北九州勢力は、ソース2が主張するように広域動員体制を求めて「応神東征」を敢行し、河内王朝を樹立した。</p>
+              
+              <p>ここにおいて、両説の重要な相補的因果関係が立ち現れる。ソース1が示す渡来第3期の「今来の才伎による鉄鋌の大量加工とU字型鉄製農具の普及」は、河内平野（茨田堤等）の膨大な治水・干拓を可能にし、<strong>莫大な食料余剰（農業に従事しない専門軍事集団、馬飼集団、そして養育兵糧）を生み出した。この生産力爆発こそが、ソース2の主張する「尾張氏の太平洋航路を介した東国からの軍馬・兵力動員」を維持・養育するための不可欠な経済・兵糧基盤</strong>となったのである。</p>
+
+              <p>技術革新（インフラ）が地政学的動員（ダイナミクス）を可能にし、百舌鳥・古市古墳群の巨大古墳造営やワカタケル大王（雄略天皇）による全国的威光の確立、そして大和の征服・統合へと結実した。</p>
+            </div>
+          </div>
+
+          <!-- Period 3 -->
+          <div class="timeline-step" id="sec-syn-3">
+            <div class="timeline-step-icon">3</div>
+            <div class="timeline-step-content">
+              <div class="timeline-step-header">
+                <span class="timeline-step-title">3. 後期（6世紀後半〜7世紀）：製鉄国産化による集権律令国家の完成</span>
+                <span class="timeline-step-era">6世紀後半〜7世紀</span>
+              </div>
+              <p>6世紀初頭、加耶諸国の動揺による「輸入鉄ルートの危機」が河内王朝を失墜させ、日本海鉄ルートを握る継体天皇の擁立をもたらした（両説共通）。そして、継体期における全列島規模の軍事動員（近江毛野による任那復興計画のための大軍派兵）を後押ししたのが、6世紀後半に達成された<strong>「製鉄技術の国産化（千引カナクロ谷遺跡）」</strong>であった。</p>
+
+              <p><strong>製鉄の国産化はヤマト王権による「輸入鉄の分配独占」を崩壊させ、全鉄製農具の大衆化と群集墳の乱立を引き起こした。これにより前方後円墳体制は終焉を迎えたが、渡来第4期（663年の白村江の戦い前後）に渡来した百済亡命技術者・高官・僧侶らの知見が融合したことで、国家資源は個人の墳墓から「朝鮮式山城（金田城、大野城、基肄城など）の築造」「飛鳥寺（法興寺）等の本格寺院」「戸籍・律令法制」へと全面的にシフトし、中央集権的律令国家「日本」が完成した。</strong></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- High-Resolution Synthesis Scenario -->
+        <div id="sec-syn-scenario" style="margin-top: 2.5rem;">
+          <h3 class="h2-title">統合的考察から得られる高解像度の古代日本国家形成シナリオ</h3>
+          <p>両史料の分析を統合することで、以下の高解像度な古代国家成立シナリオが導き出される。</p>
+
+          <ul class="styled-list">
+            <li>
+              <strong>「輸入鉄独占」をテコとした初期同盟の形成（3世紀・崇神朝） ：</strong>北部九州の鉄器軍事勢力（崇神朝）が畿内・纒向を制圧し鍛冶工房を移植。黒塚古墳（33面の鏡）に象徴される三角縁神獣鏡の下賜を通じて、ゆるやかな首長同盟（初期前方後円墳体制）を樹立した。
+            </li>
+            <li>
+              <strong>「東アジア外圧」による広域地政学動員と生産力爆発の結合（5世紀・応神〜雄略朝） ：</strong>高句麗の脅威に伴い、九州勢力が東進して河内王朝（応神朝）を樹立。渡来第3期の技術（鉄鋌・U字型農具）による農業生産力爆発が、尾張氏を介した東国との「鉄と馬の循環」および動員兵力を養う食料・兵糧基盤となり、ワカタケル大王の全国的威光と大和征服・統合を達成した。
+            </li>
+            <li>
+              <strong>「製鉄の国産自給化」と渡来第4期技術による律令国家の完成（6世紀後半〜7世紀） ：</strong>千引カナクロ谷遺跡に始まる砂鉄製鉄の確立により「鉄の普遍化」が起き、王権の鉄独占と前方後円墳体制が自壊。白村江の戦い後に亡命した百済技術者・知識人の登用により、国家資源は巨大墳墓から「古代山城・仏教寺院・律令官僚制」へとシフトし、集権国家が完成した。
+            </li>
+          </ul>
+
+          <p style="margin-top: 1.5rem;">本レポートの締めくくりとして、2つの史料の対比分析が提示する現代的な史観の意義を総括する。</p>
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section class="content-section" id="sec-conclusion">
+        <div class="section-header">
+          <h2 class="h1-title">
+            <span class="num-pill">5</span>
+            5. 結論：２つの史料の対比が示す古代日本史観の現代的意義
+          </h2>
+        </div>
+
+        <p>ソース1「技術・鉄のパラダイムシフト論」とソース2「鉄・海・馬の地政学動員論」の比較検証を通じて明らかになったのは、古代日本における国家形成が、内陸の特定地域で自生的に完結した静的な物語では決してなかったという事実である。古代日本国家の誕生とは、東アジア規模の環境変動や過酷な軍事的緊張という「外圧」を契機とし、4段階にわたる渡来技術（水田稲作・鍛冶・製鉄・乗馬・土木・文書行政）の積極的な受容と、海・鉄・馬を介した動的な「広域地政学ネットワークの構築」が高度に組み合わさることで達成された歴史的変革であった。</p>
+
+        <p>ヤマト王権は、孤立した島国の内陸に突如として現れた絶対的権威ではなく、北九州の対外交易・鉄器勢力の東進、吉備との同盟、尾張氏を介した東国との兵力・軍馬の循環、そして河内平野の開発と莫大な食料余剰を経て、ネットワークの「到達点」として創り出された政治体であった。そして、海外からの輸入鉄に100％依存していた初期の脆弱な基盤を、6世紀後半の「製鉄の国産自給化（千引カナクロ谷遺跡）」という技術的ブレイクスルーによって克服したとき、日本列島は墳墓の巨大さを競う時代を脱し、普遍的な法制度と高度な文化インフラを備えた中央集権的律令国家へと結実したのである。</p>
+
+        <div id="sec-final-summary" style="margin-top: 2rem;">
+          <h3 class="h2-title">本レポートの最終総括</h3>
+
+          <ul class="styled-list">
+            <li>
+              <strong>「大和自生モデル」の完全脱却 ：</strong>古代日本国家は、内陸大和の自発的成長ではなく、<strong>「東アジア外圧」「北九州勢力の東進」「4段階の渡来波動による技術受容」</strong>が相互作用した帰結（到達点）として形成された。
+            </li>
+            <li>
+              <strong>「技術史観」と「地政学動員論」の止揚 ：</strong>5世紀の<strong>「U字型鉄製農具による開発と食料余剰」</strong>（ソース1）が、尾張氏の太平洋航路を介した<strong>「東国からの軍馬・兵力動員」</strong>（ソース2）を維持・養育する兵糧基盤となったように、下部構造の技術革新と地政学的動員網は不可分に結合していた。
+            </li>
+            <li>
+              <strong>「製鉄国産化」から「たたら製鉄」への至高の系譜 ：</strong>6世紀後半の<strong>「製鉄技術の国産化（千引カナクロ谷遺跡）」</strong>は、王権による鉄独占と前方後円墳体制を自壊させ、律令国家への移行をもたらした。この国産製鉄の確立は、古代の国家統合にとどまらず、中世・近世の<strong>「永代たたら」</strong>および世界最高純度の鋼<strong>「玉鋼」</strong>を生み出す日本独自の「たたら製鉄」へと結実する、伝統的技術アイデンティティの不可欠な基盤となった。
+            </li>
+          </ul>
+
+          <p style="margin-top: 1.5rem;">両史料の対比は、古代日本の歩みが「外来技術の受容」「地政学的ネットワークの構築」「技術の自前化（国産化）」という、現代の国家や組織の成長過程にも通じるダイナミックなイノベーションと構造改革の連続であったことを鮮明に物語っている。</p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; text-align: center; line-height: 1.6;">
+        <p>【比較検証レポート】日本古代史における国家成立史観の対比分析：技術・鉄のパラダイムシフト論 vs 鉄・海・馬の地政学動員論</p>
+        <p>ソース1（202610レポート） × ソース2（鉄・海・馬の地政学） 統合解析エディション</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Mobile Menu Floating Toggle Button -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="目次を開閉">☰</button>
+
+  <script>
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Theme Toggle (Dark/Light)
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+    
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'ライトモード切替';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'ダークモード切替';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'ダークモード切替';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'ライトモード切替';
+      }
+    });
+
+    // Mobile Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      menuToggle.textContent = sidebar.classList.contains('open') ? '✕' : '☰';
+    });
+
+    // Close sidebar on link click in mobile view
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+          sidebar.classList.remove('open');
+          menuToggle.textContent = '☰';
+        }
+      });
+    });
+
+    // Scrollspy for active navigation link
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.nav-item a');
+
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+      const scrollPos = window.scrollY + 120;
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          currentId = section.getAttribute('id');
+        }
+      });
+
+      if (currentId) {
+        navLinks.forEach(link => {
+          const item = link.closest('.nav-item');
+          if (link.getAttribute('href') === '#' + currentId) {
+            item.classList.add('active');
+          } else if (!link.getAttribute('href').startsWith('#' + currentId)) {
+            // Keep active state coherent
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
