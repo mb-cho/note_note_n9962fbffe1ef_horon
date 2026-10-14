@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：国民経済システム（National System of Economy）―― ハミルトン、クレイ、フリードリヒ・リストの経済思想</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --accent-dark: #78350f;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #854d0e 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fef08a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    header h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 0.9rem;
+    }
+
+    header p {
+      font-size: 0.98rem;
+      color: #e2e8f0;
+      max-width: 860px;
+    }
+
+    /* Section Card */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .section-num {
+      background: var(--primary-dark);
+      color: #ffffff;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .section-num.amber {
+      background: var(--accent);
+    }
+
+    .section-num.emerald {
+      background: var(--emerald);
+    }
+
+    .section-num.purple {
+      background: var(--purple);
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .lead-text {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Concept Dual Cards */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .concept-card {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.35rem;
+      background: #f8fafc;
+      border-top: 4px solid var(--primary);
+    }
+
+    .concept-card.smith {
+      border-top-color: #64748b;
+      background: #f1f5f9;
+    }
+
+    .concept-card.national {
+      border-top-color: var(--accent);
+      background: #fffbeb;
+    }
+
+    .concept-badge {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .concept-card.smith .concept-badge {
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    .concept-card.national .concept-badge {
+      background: #fde68a;
+      color: #92400e;
+    }
+
+    .concept-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.55rem;
+      color: var(--text-main);
+    }
+
+    .concept-card p, .concept-card li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .concept-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .concept-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* 3 Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      margin: 1.35rem 0;
+    }
+
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.35rem;
+      border-top: 5px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pillar-card.p1 { border-top-color: var(--rose); }
+    .pillar-card.p2 { border-top-color: var(--primary); }
+    .pillar-card.p3 { border-top-color: var(--emerald); }
+
+    .pillar-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card.p1 .pillar-num { background: var(--rose-light); color: var(--crimson); }
+    .pillar-card.p2 .pillar-num { background: #dbeafe; color: var(--primary); }
+    .pillar-card.p3 .pillar-num { background: var(--emerald-light); color: var(--emerald); }
+
+    .pillar-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Cycle Loop Banner */
+    .cycle-banner {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-top: 1.35rem;
+    }
+
+    .cycle-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fde68a;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .cycle-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .cycle-node {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 0.85rem;
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    .cycle-node.highlight {
+      background: #854d0e;
+      border-color: #fde68a;
+      color: #fef08a;
+    }
+
+    .cycle-arrow {
+      color: #94a3b8;
+      font-weight: 800;
+    }
+
+    /* List 5 Stages */
+    .stages-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1.25rem 0;
+    }
+
+    .stage-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.15rem;
+      border-radius: 0.65rem;
+      transition: all 0.2s;
+    }
+
+    .stage-row.critical {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left: 5px solid var(--rose);
+    }
+
+    .stage-row.peak {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+      border-left: 5px solid var(--emerald);
+    }
+
+    .stage-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .stage-row.critical .stage-badge {
+      background: var(--rose);
+    }
+
+    .stage-row.peak .stage-badge {
+      background: var(--emerald);
+    }
+
+    .stage-name {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--text-main);
+      min-width: 130px;
+    }
+
+    .stage-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.85rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .sim-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .sim-tab {
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #cbd5e1;
+      padding: 0.65rem 0.4rem;
+      border-radius: 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .sim-tab:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .sim-tab.active {
+      background: linear-gradient(135deg, #b45309, #d97706);
+      border-color: #fde68a;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-metric-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.65rem;
+      padding: 0.9rem;
+    }
+
+    .sim-metric-label {
+      font-size: 0.73rem;
+      color: #94a3b8;
+      margin-bottom: 0.3rem;
+    }
+
+    .sim-metric-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .sim-metric-sub {
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .sim-bars {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .bar-row {
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 14px;
+      background: #0f172a;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .bar-fill.production {
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+    }
+
+    .bar-fill.dependency {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    .sim-narrative {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.2rem;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #1e293b;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Lineage Flow (US -> Germany -> Japan -> Modern) */
+    .lineage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .lineage-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.2rem;
+      border-top: 4px solid var(--primary);
+    }
+
+    .lineage-card.c2 { border-top-color: #854d0e; }
+    .lineage-card.c3 { border-top-color: var(--rose); }
+    .lineage-card.c4 { border-top-color: var(--emerald); }
+
+    .lineage-era {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .lineage-card h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.45rem;
+    }
+
+    .lineage-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .concept-grid,
+      .pillars-grid,
+      .sim-tabs,
+      .sim-metrics,
+      .lineage-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 1.75rem 1.25rem;
+      }
+      header h1 {
+        font-size: 1.45rem;
+      }
+      .section-card {
+        padding: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Navigation Bar -->
+    <nav class="nav-box" aria-label="補論ナビゲーション">
+      <div class="nav-title">📚 金融寡占 補論シリーズ</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① 信用創造の仕組み</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② 能動的預金</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ 流動性選好理論</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ 貨幣の信用理論</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ 景気循環論</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ 金融寄生性</a>
+      <a href="Oligarch.html" class="nav-link">⑦ オリガルヒ</a>
+      <a href="osman.html" class="nav-link">⑧ オスマン帝国蚕食</a>
+      <a href="romaKikero.html" class="nav-link">⑨ 共和政ローマ末期</a>
+      <a href="eng_ind.html" class="nav-link">⑩ 英インド省</a>
+      <a href="goldMark.html" class="nav-link">⑪ 金マルク</a>
+      <a href="fordism.html" class="nav-link">⑫ フォーディズム</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ 軍事ケインズ主義</a>
+      <a href="EuDaller.html" class="nav-link">⑭ ユーロダラー市場</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ ユーロダラーと露制裁</a>
+      <a href="Borucar.html" class="nav-link">⑯ ボルカー・ショック</a>
+      <a href="SAP.html" class="nav-link">⑰ 構造調整プログラム</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG危機と救済</a>
+      <a href="BankCoup.html" class="nav-link">⑲ 銀行寡頭制のクーデター</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ デリバティブ決済網</a>
+      <a href="NationalSystemOfEconomy.html" class="nav-link active">㉑ 国民経済システム</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">補論 ㉑｜経済思想史・産業政策・国家主権</span>
+        <span class="badge" style="background:rgba(245,158,11,0.3); color:#fef08a;">ハミルトン × クレイ × リスト統合版</span>
+      </div>
+      <h1>国民経済システム（National System of Economy）<br>―― 経済的自立、保護育成、そして「富を生み出す力（生産力）」の思想</h1>
+      <p>
+        アダム・スミスに代表される英国古典派の「自由貿易論（世界主義）」に対抗し、独立間もないアメリカ合衆国や後進国ドイツが経済的隷属から脱却するために築き上げた<strong>「国民経済システム（アメリカ・システム / 国民経済学）」</strong>。アレクサンダー・ハミルトン、ヘンリー・クレイ、そしてフリードリヒ・リストが体系化した思想の全貌と、近現代の産業政策への連続性を解剖します。
+      </p>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>思想の根本動機：なぜ「自由貿易」ではなく「国民経済」の確立が必要だったのか？</h2>
+      </div>
+
+      <p class="lead-text">
+        18〜19世紀当時、世界市場を支配していた大英帝国は「自由貿易こそがすべての国を豊かにする普遍の真理である」と主張していました。しかし、アメリカやドイツの後進国知識人・指導者たちは、これこそが<strong>「先行する強国が後発国の工業化の芽を摘み、自国の経済的植民地として永久に固定化するための罠」</strong>であると喝破しました。
+      </p>
+
+      <div class="concept-grid">
+        <div class="concept-card smith">
+          <span class="concept-badge">大英帝国・アダム・スミス（古典派）の主張</span>
+          <h3>🌐 世界主義的自由貿易論（コスモポリタニズム）</h3>
+          <ul>
+            <li><strong>個人の利己心と人類の調和</strong>：個人の自由な取引（レッセフェール）に任せれば、「見えざる手」によって地球全体の富が最大化する。</li>
+            <li><strong>比較優位の原則</strong>：イギリスは工業製品を作り、アメリカやドイツは綿花・小麦・鉱物などの一次産品を輸出して分業すれば双方トクをするという論理。</li>
+            <li><strong>隠された意図</strong>：自国が圧倒的な工業競争力を握った後に「ハシゴを外す（Kicking Away the Ladder）」戦略。</li>
+          </ul>
+        </div>
+
+        <div class="concept-card national">
+          <span class="concept-badge">ハミルトン・クレイ・リスト（国民経済学）の主張</span>
+          <h3>🏛️ 国民経済システム（経済ナショナリズム）</h3>
+          <ul>
+            <li><strong>政治的独立から「経済的自立」へ</strong>：英国の工業製品に依存し、原材料を輸出するだけの国は、政治的に独立しても「実質的な植民地」にすぎない。</li>
+            <li><strong>「個人」と「人類」の間にある「国民」</strong>：国家が未熟なまま世界市場に投げ出されれば強国に搾取される。まず自国の統合された「国民経済」を育成すべきである。</li>
+            <li><strong>生産力（富を生み出す力）の重視</strong>：目先の安売り品を買うより、自国に工場・技術・インフラ・熟練労働者を蓄積することが国家の永続的繁栄を決める。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: American System -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num amber">2</div>
+        <h2>ハミルトンとクレイの「アメリカ・システム（American System）」</h2>
+      </div>
+
+      <p class="lead-text">
+        独立直後のアメリカ合衆国において、初代財務長官<strong>アレクサンダー・ハミルトン</strong>が構想し、19世紀前半に下院議長・国務長官を務めた<strong>ヘンリー・クレイ</strong>がホイッグ党の政策プラットフォームとして昇華させたのが「アメリカ・システム」です。
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card p1">
+          <div>
+            <span class="pillar-num">第1の柱</span>
+            <h3>① 保護関税（Protective Tariffs）</h3>
+            <p>
+              <strong>国内製造業（幼稚産業）の保護と財源確保</strong><br>
+              外国（主にイギリス）からの輸入品に高い関税を課すことで、未熟なアメリカの製造業を英国の安価なダンピング攻勢から防壁で守り、同時に連邦政府のインフラ整備資金を確保する。
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card p2">
+          <div>
+            <span class="pillar-num">第2の柱</span>
+            <h3>② 国定銀行（National Bank）</h3>
+            <p>
+              <strong>通貨信用の安定と産業投資の促進</strong><br>
+              「第二合衆国銀行」などの強力な中央銀行を創設・維持し、バラバラだった各州の紙幣を統一。安定した通貨制度を提供することで、全国規模での商業・製造業への長期投資を可能にする。
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card p3">
+          <div>
+            <span class="pillar-num">第3の柱</span>
+            <h3>③ 内国改良（Internal Improvements）</h3>
+            <p>
+              <strong>国内市場を統合する交通インフラ建設</strong><br>
+              連邦政府主導で道路・運河・鉄道・港湾を建設。広大な国土の物資輸送コストを大幅に引き下げ、北東部・南部・西部を単一の強大な国内市場として物理的に結合する。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3本柱の相互循環サイクル -->
+      <div class="cycle-banner">
+        <div class="cycle-title">🔄 アメリカ・システム3本の柱：自己強化型成長サイクル</div>
+        <div class="cycle-flow">
+          <div class="cycle-node">高い保護関税を徴収</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-node highlight">連邦財源で道路・運河・鉄道を建設（内国改良）</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-node">北部工業と南部・西部の農産物が安価に流通</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-node highlight">国定銀行が統一通貨と融資で産業を後押し</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-node">米国の工業生産力が爆発的に向上！</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem;">
+          ⚔️ ハミルトン派 vs ジェファーソン派の死闘とリンカーンによる開花
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">
+          この思想は激しい政治対立を呼びました。トーマス・ジェファーソンやアンドリュー・ジャクソンら民主党（農本主義者・南部プランテーション農場主）は、「強い連邦政府は違憲だ」「高関税は綿花を輸出する南部を犠牲にして北部の工業資本家を肥え太らせるものだ」と猛反発しました（これが後の南北戦争の深い火種となります）。<br>
+          しかし、南北戦争後に誕生した<strong>エイブラハム・リンカーン率いる初期の共和党</strong>はこの「アメリカ・システム」を完全に国策として継承・断行。19世紀後半、アメリカは高関税と大陸横断鉄道、国定銀行制度によってイギリスを抜き去り、世界最強の工業超大国へと登り詰めることになります。
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Friedrich List -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num emerald">3</div>
+        <h2>フリードリヒ・リストの「国民的生産力論」と「発展段階説」</h2>
+      </div>
+
+      <p class="lead-text">
+        ドイツ出身の経済学者<strong>フリードリヒ・リスト（Friedrich List, 1789〜1846）</strong>は、専制的な祖国を追われて1825年にアメリカへ亡命。ペンシルベニアでハミルトン派の保護貿易運動やヘンリー・クレイのアメリカ・システムを現地で直接体験し、これを理論的・歴史的に大成させて1841年の名著『<strong>政治経済学の国民的体系</strong>』を著しました。
+      </p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <span class="concept-badge">リスト理論の核心 ①</span>
+          <h3>⚙️ 生産力論（富を生み出す力）</h3>
+          <p>
+            リストは、古典派が「現在の交換価値（どれだけ富を持っているか）」ばかり重視していると厳しく批判しました。<br>
+            <strong>「富をつくり出す力（生産力：Productive Forces）は、富そのものよりも無限に重要である。」</strong><br>
+            一国が外国の安い既製品に依存して自国の産業を潰してしまうと、短期的には安上がりでも、長期的には技術力・雇用・国富の泉を失い滅びてしまうと説きました。
+          </p>
+        </div>
+
+        <div class="concept-card national">
+          <span class="concept-badge">リスト理論の核心 ②</span>
+          <h3>🧠 精神的生産力（社会制度・教育・道徳）</h3>
+          <p>
+            生産力とは、工場や機械などの目に見える物理的資本だけではありません。<br>
+            <strong>「国家の法制度、裁判の公正さ、教育・科学技術水準、自由な立憲政治、国民の団結心」</strong>といった目に見えない社会インフラこそが、経済を底上げする「精神的生産力」であると定義しました。
+          </p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin: 1.5rem 0 0.75rem;">
+        📈 リストの「経済発展5段階説」と幼稚産業保護論
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+        リストは、一国の経済は以下の5つの段階を経て発展すると主張しました。最も重要なのは<strong>第4段階</strong>における政策選択です。
+      </p>
+
+      <div class="stages-container">
+        <div class="stage-row">
+          <span class="stage-badge">第 1 段階</span>
+          <span class="stage-name">野蛮状態（未開）</span>
+          <span class="stage-desc">狩猟・採集中心の未開社会。まだ自立した産業経済は成立していない。</span>
+        </div>
+        <div class="stage-row">
+          <span class="stage-badge">第 2 段階</span>
+          <span class="stage-name">牧畜状態</span>
+          <span class="stage-desc">家畜の飼育が中心。定住が進み、原始的な交易が始まる。</span>
+        </div>
+        <div class="stage-row">
+          <span class="stage-badge">第 3 段階</span>
+          <span class="stage-name">農業状態</span>
+          <span class="stage-desc">農業が主産業。この段階では先進国から工業品を輸入して自由貿易を行うことがむしろ発展を促す。</span>
+        </div>
+        <div class="stage-row critical">
+          <span class="stage-badge">第 4 段階 ⚠️</span>
+          <span class="stage-name">農工業状態</span>
+          <span class="stage-desc"><strong>【幼稚産業保護が必須の最重要段階！】</strong> 自国で近代工業が芽生え始める時期。すでに第5段階に達している先進国（当時のイギリス）と自由貿易を行うと、未熟な自国工業は壊滅する。国家が関税で外敵から防壁を作り、国内産業を育てる必要がある。</span>
+        </div>
+        <div class="stage-row peak">
+          <span class="stage-badge">第 5 段階 🏆</span>
+          <span class="stage-name">農工商業状態</span>
+          <span class="stage-desc"><strong>【最高到達点】</strong> 工業・農業・商業が高度に成熟し、世界のどの強国とも互角に戦える段階。すべての国がこの段階に達して初めて、真の「世界自由貿易」が理想となる。</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.25rem; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 0.75rem; padding: 1.15rem;">
+        <strong style="color: var(--primary);">🚆 リストのドイツでの実践：関税同盟（1834年）と全国鉄道網</strong><br>
+        <span style="font-size: 0.88rem; color: var(--text-muted);">
+          ドイツに帰国したリストは、30以上の方言と諸邦国に分断されていたドイツ国内の関税を全廃し、対外的な統一関税を設ける「<strong>ドイツ関税同盟（Zollverein, 1834年）</strong>」の成立に尽力。さらに国内市場を物理的につなぐ<strong>ドイツ鉄道網構想</strong>を精力的に推進し、のちのドイツ第二帝国（ビスマルク期）の爆発的工業化の礎を築きました。
+        </span>
+      </div>
+    </section>
+
+    <!-- Section 4: Interactive Simulator -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num purple">4</div>
+        <h2>発展段階別シミュレーター：自由貿易 vs 国民経済システム</h2>
+      </div>
+
+      <p class="lead-text">
+        リストの発展段階説をもとに、国家の成長段階に応じた政策の成否をシミュレーションします。未熟な状態でイギリス流自由貿易を選んだ場合と、保護育成を選んだ場合の運命を切り替えて確認できます。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">🎛️ リスト式・国家発展段階シミュレーター</div>
+            <div class="sim-subtitle">発展段階を選択し、自国工業の生存率・生産力・経済主権の動態を確認</div>
+          </div>
+        </div>
+
+        <div class="sim-tabs" role="tablist">
+          <button type="button" class="sim-tab" onclick="selectStage(0)" id="stage-tab-0">第1段階<br>野蛮状態</button>
+          <button type="button" class="sim-tab" onclick="selectStage(1)" id="stage-tab-1">第2段階<br>牧畜状態</button>
+          <button type="button" class="sim-tab" onclick="selectStage(2)" id="stage-tab-2">第3段階<br>農業状態</button>
+          <button type="button" class="sim-tab active" onclick="selectStage(3)" id="stage-tab-3">第4段階 (核心)<br>農工業（育成期）</button>
+          <button type="button" class="sim-tab" onclick="selectStage(4)" id="stage-tab-4">第5段階 (最高)<br>農工商業状態</button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">推奨される通商政策</div>
+            <div class="sim-metric-value" id="sim-policy" style="color:#fde68a;">高率保護関税</div>
+            <div class="sim-metric-sub" id="sim-policy-sub">幼稚産業の防壁育成</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">自由貿易を行った場合の結末</div>
+            <div class="sim-metric-value" id="sim-ft-result" style="color:#fda4af;">国内工業が全滅</div>
+            <div class="sim-metric-sub" id="sim-ft-sub">強国製品に駆逐され原料輸出へ後退</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">国家の真の自立度</div>
+            <div class="sim-metric-value" id="sim-sovereignty" style="color:#93c5fd;">急成長中（分岐点）</div>
+            <div class="sim-metric-sub" id="sim-sovereignty-sub">工業化の成否が未来を決める</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">歴史上の該当国・時代</div>
+            <div class="sim-metric-value" id="sim-history" style="color:#6ee7b7;">19世紀 米国・独・明治日本</div>
+            <div class="sim-metric-sub" id="sim-history-sub">富国強兵・殖産興業の時代</div>
+          </div>
+        </div>
+
+        <div class="sim-bars">
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-prod-label">自国生産力（技術・組織・工業力）の蓄積レベル</span>
+              <span id="bar-prod-val">60%（保護育成で加速）</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill production" id="bar-prod-fill" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-dep-label">海外先進国（覇権国）への経済的従属度</span>
+              <span id="bar-dep-val">40%（自由貿易なら90%へ跳ね上がる）</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill dependency" id="bar-dep-fill" style="width: 40%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-narrative" id="sim-narrative">
+          <strong>【第4段階：農工業状態（運命の分岐点）】</strong> 自国で紡績、鉄鋼、機械などの近代産業が生まれ始めた時期です。このとき「目先の安い輸入品を買うのがお得だ」というアダム・スミス流の自由貿易に屈すると、自国の未熟な工場は英国の圧倒的な安売り攻勢で全滅します。ハミルトンとリストが説いた通り、保護関税で国内市場を守り、インフラと教育を整えて技術を自給できるようにすることだけが、国家が永久の経済的隷属から脱出する唯一の道です。
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Historical Lineage and Modern Relevance -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>歴史的系譜と現代的意義：ハミルトン・リストから現代の経済安保へ</h2>
+      </div>
+
+      <p class="lead-text">
+        国民経済システムの思想は、18世紀末のアメリカに端を発し、19世紀ドイツを経て、明治日本の近代化、戦後アジアの発展、そして21世紀の米中覇権競争と「産業政策の復活」へと脈々と受け継がれています。
+      </p>
+
+      <div class="lineage-grid">
+        <div class="lineage-card">
+          <div class="lineage-era">1790〜1860年代｜アメリカ</div>
+          <h3>🇺🇸 ハミルトン〜リンカーン</h3>
+          <p>
+            建国直後の脆弱な農業国から、高関税、大陸横断鉄道、国定銀行によって世界最大の製造業超大国へ大躍進を遂げた。
+          </p>
+        </div>
+
+        <div class="lineage-card c2">
+          <div class="lineage-era">1830〜1870年代｜ドイツ</div>
+          <h3>🇩🇪 リスト〜ビスマルク</h3>
+          <p>
+            ドイツ関税同盟と鉄道網で分断を克服。保護政策のもとで重化学工業・製鉄・電気機械を爆発的に育成し英を圧倒。
+          </p>
+        </div>
+
+        <div class="lineage-card c3">
+          <div class="lineage-era">1870〜1900年代｜日本</div>
+          <h3>🇯🇵 明治維新と殖産興業</h3>
+          <p>
+            大久保利通や前田正名、大島貞益らがリスト思想を熱烈に受容。「官営模範工場」「鉄道敷設」「条約改正（関税自主権回復）」で自立。
+          </p>
+        </div>
+
+        <div class="lineage-card c4">
+          <div class="lineage-era">2020年代〜現代｜世界</div>
+          <h3>🌐 経済安全保障と再工業化</h3>
+          <p>
+            新自由主義的グローバリズムの崩壊に伴い、米CHIPS法やEU産業戦略など「国家によるサプライチェーン防衛・国内回帰」が完全復活。
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top: 1.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">論点</th>
+              <th style="width: 37%;">新自由主義・古典派（グローバリズム）</th>
+              <th style="width: 38%;">国民経済システム（ハミルトン・リスト学派）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>究極の目標</strong></td>
+              <td>地球規模での資本効率と消費者余剰の最大化</td>
+              <td><strong>国民国家の主権・産業自立・永続的な生産力の蓄積</strong></td>
+            </tr>
+            <tr>
+              <td><strong>国家の役割</strong></td>
+              <td>夜警国家（市場への不介入・規制緩和・民営化）</td>
+              <td><strong>戦略的介入（関税防壁・インフラ投資・基幹産業育成）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>富の定義</strong></td>
+              <td>現在の交換価値・金融資産残高（カネの量）</td>
+              <td><strong>生産力（技術・教育・製造基盤・社会的団結心）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>貿易への態度</strong></td>
+              <td>無条件の自由貿易が常に最善である</td>
+              <td><strong>発展段階に応じた保護と、対等な関係でのみ自由貿易を行う</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      金融寡占 補論シリーズ ㉑｜国民経済システム（NationalSystemOfEconomy.html）
+    </footer>
+  </div>
+
+  <script>
+    const stagesData = [
+      {
+        policy: "自由貿易（自然発生的取引）",
+        policySub: "関税制度以前の原初段階",
+        ftResult: "影響なし（自給自足）",
+        ftSub: "市場経済そのものが未成立",
+        sovereignty: "極小（国家未成立）",
+        sovereigntySub: "共同体・部族単位の生活",
+        history: "原始・古代初期",
+        historySub: "文明黎明期",
+        prodVal: "10%（未開）",
+        prodWidth: "10%",
+        depVal: "0%（交易なし）",
+        depWidth: "5%",
+        narrative: "<strong>【第1段階：野蛮状態】</strong> 狩猟や採集を中心とする段階です。まだ近代的な製造業や国家機構が存在しないため、関税や産業政策の対象外です。"
+      },
+      {
+        policy: "緩やかな自由交易",
+        policySub: "家畜・毛皮等の物々交換",
+        ftResult: "軽微な交易拡大",
+        ftSub: "手工業品の輸入が刺激になる",
+        sovereignty: "部族連合レベル",
+        sovereigntySub: "定住と共同体防衛",
+        history: "古代遊牧・初期定住社会",
+        historySub: "農耕以前の段階",
+        prodVal: "20%（原始的手工業）",
+        prodWidth: "20%",
+        depVal: "15%（塩や金属の入手）",
+        depWidth: "15%",
+        narrative: "<strong>【第2段階：牧畜状態】</strong> 家畜の飼育と遊牧が主となる段階です。塩や基礎的金属を外部から手に入れるための交易が行われますが、本格的な工業保護はまだ不要です。"
+      },
+      {
+        policy: "対外自由貿易（一次産品輸出）",
+        policySub: "農産物を輸出し工業品を輸入",
+        ftResult: "農業の活性化と知識の流入",
+        ftSub: "まだ自国に工業がないため輸入が有益",
+        sovereignty: "領主・王国体制",
+        sovereigntySub: "農業地主の支配",
+        history: "中世〜近世初頭のヨーロッパ",
+        historySub: "植民地期アメリカ",
+        prodVal: "35%（伝統的農業力）",
+        prodWidth: "35%",
+        depVal: "50%（手工業品を輸入）",
+        depWidth: "50%",
+        narrative: "<strong>【第3段階：農業状態】</strong> 農業が定着し国富の柱となる段階です。リスト自身も認めている通り、自国にまだ工業の芽がないこの時期は、外国から先進的な道具や工業品を自由に輸入して農業の近代化を促す方が合理的です。"
+      },
+      {
+        policy: "高率保護関税 ＋ 国家インフラ投資",
+        policySub: "幼稚産業の防壁育成（死活的！）",
+        ftResult: "【致命的壊滅】自国工業が全滅",
+        ftSub: "強国の安売り攻勢に駆逐され原料輸出へ転落",
+        sovereignty: "急成長中（運命の分岐点）",
+        sovereigntySub: "工業化の成否が未来を決める",
+        history: "19世紀 米国・ドイツ・明治日本",
+        historySub: "ハミルトン・リストの時代",
+        prodVal: "65%（保護育成で爆発的蓄積）",
+        prodWidth: "65%",
+        depVal: "35%（自由貿易なら95%へ跳ね上がる）",
+        depWidth: "35%",
+        narrative: "<strong>【第4段階：農工業状態（運命の分岐点）】</strong> 自国で近代工業が芽生え始めた最も危険な時期です。ここでアダム・スミス流の自由貿易に屈すると、自国の未熟な工場は英国製品のダンピングで壊滅し、永久に綿花や小麦を輸出するだけの原料供給植民地に固定化されます。ハミルトンとリストが説いた保護関税と国家インフラ投資こそが、大国へ脱皮する唯一の道です。"
+      },
+      {
+        policy: "対等な自由貿易（成熟した互恵関係）",
+        policySub: "十分な競争力を持つ強者同士の通商",
+        ftResult: "世界市場でのシェア拡大と相互繁栄",
+        ftSub: "自国の高付加価値品で外貨を獲得",
+        sovereignty: "完全自立・世界覇権",
+        sovereigntySub: "工業・農業・金融の完全統合",
+        history: "19世紀後半 英国、20世紀 米国",
+        historySub: "現代の産業先進国",
+        prodVal: "95%（世界最高水準）",
+        prodWidth: "95%",
+        depVal: "15%（相互依存的対等関係）",
+        depWidth: "15%",
+        narrative: "<strong>【第5段階：農工商業状態（最高到達点）】</strong> 工業・農業・商業が高度に成熟し、世界市場でいかなる大国とも互角以上に戦える段階です。リストは保護貿易を永遠の目的にしたのではなく、すべての国家がこの第5段階に達して初めて、搾取のない「真の平和的世界自由貿易」が実現すると説きました。"
+      }
+    ];
+
+    function selectStage(index) {
+      const data = stagesData[index];
+      for (let i = 0; i < 5; i++) {
+        const tab = document.getElementById("stage-tab-" + i);
+        if (i === index) {
+          tab.classList.add("active");
+        } else {
+          tab.classList.remove("active");
+        }
+      }
+
+      document.getElementById("sim-policy").textContent = data.policy;
+      document.getElementById("sim-policy-sub").textContent = data.policySub;
+
+      document.getElementById("sim-ft-result").textContent = data.ftResult;
+      document.getElementById("sim-ft-sub").textContent = data.ftSub;
+
+      document.getElementById("sim-sovereignty").textContent = data.sovereignty;
+      document.getElementById("sim-sovereignty-sub").textContent = data.sovereigntySub;
+
+      document.getElementById("sim-history").textContent = data.history;
+      document.getElementById("sim-history-sub").textContent = data.historySub;
+
+      document.getElementById("bar-prod-val").textContent = data.prodVal;
+      document.getElementById("bar-prod-fill").style.width = data.prodWidth;
+
+      document.getElementById("bar-dep-val").textContent = data.depVal;
+      document.getElementById("bar-dep-fill").style.width = data.depWidth;
+
+      document.getElementById("sim-narrative").innerHTML = data.narrative;
+    }
+  </script>
+</body>
+</html>
