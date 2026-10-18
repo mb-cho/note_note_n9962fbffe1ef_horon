@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>『金融寡頭制の歴史と崩壊』Web補論・用語解説ポータル</title>
+  <meta name="description" content="Kindle電子書籍『金融寡頭制の歴史と崩壊：帝国主義の系譜からペトロダラーの終焉、そして多極化実物経済へ』（著：mb_Cho）公式Web補論・用語解説ポータル。信用創造、ペトロダラー、デリバティブ、国民経済システムなどの詳細解説。">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-dark: #0f172a;
+      --primary-subtle: #eff6ff;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --accent-border: #f59e0b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --border-focus: #3b82f6;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 0.75rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Hero Header */
+    header.hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1e293b 100%);
+      color: #ffffff;
+      padding: 3.5rem 0 3rem 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--accent-border);
+    }
+
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(254, 240, 138, 0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #93c5fd;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-notice {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 4px solid var(--accent-border);
+      padding: 1rem 1.25rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.925rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+      max-width: 860px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-notice strong {
+      color: #fde68a;
+    }
+
+    /* Controls Bar */
+    .controls-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .controls-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .controls-grid {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.7rem 1rem 0.7rem 2.5rem;
+      border: 2px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      background: #ffffff;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+      border-color: #cbd5e1;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Content Area */
+    main {
+      padding: 2.5rem 0 4rem 0;
+    }
+
+    .chapter-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .chapter-tag {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.65rem;
+      border-radius: 0.35rem;
+      letter-spacing: 0.05em;
+    }
+
+    .chapter-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+    }
+
+    .term-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+    }
+
+    .term-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #93c5fd;
+    }
+
+    .term-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      background: var(--primary-subtle);
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .category-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .term-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .term-title a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .term-title a:hover {
+      color: var(--primary-light);
+      text-decoration: underline;
+    }
+
+    .term-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .term-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.5rem;
+      transition: all 0.15s;
+    }
+
+    .term-link-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+      color: var(--text-muted);
+    }
+
+    /* Book Info Box */
+    .book-info-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .book-info-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .book-info-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 2.5rem 0;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span>📘 Amazon Kindle 電子書籍 公式補論サイト</span>
+      </div>
+      <h1 class="hero-title">『金融寡頭制の歴史と崩壊』<br>Web補論・用語解説ポータル</h1>
+      <p class="hero-subtitle">帝国主義の系譜からペトロダラーの終焉、そして多極化実物経済へ ｜ 著者：mb_Cho</p>
+      <div class="hero-notice">
+        <strong>【読者の皆様へ】</strong><br>
+        本書で取り上げている金融理論、近現代史の出来事、重要用語の詳細解説および最新アップデートデータを掲載しています。読書中のリファレンスとしてご活用ください。<br>
+        ※Kindle Paperwhite等の電子ペーパー端末をお使いの方は、スマートフォンやPC等で本URL（<code>https://mb-cho.github.io/note_note_n9962fbffe1ef_horon/KinYuKaSen/</code>）にアクセスいただくか、ブラウザのブックマーク等をご活用ください。
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Controls Bar -->
+  <div class="controls-wrapper">
+    <div class="container">
+      <div class="controls-grid">
+        <div class="search-box">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="用語名・キーワードで検索（例: 信用創造、ユーロダラー）...">
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">すべて (21)</button>
+          <button class="filter-btn" data-filter="第1章">第1章</button>
+          <button class="filter-btn" data-filter="第2章">第2章</button>
+          <button class="filter-btn" data-filter="第3章">第3章</button>
+          <button class="filter-btn" data-filter="第4章">第4章</button>
+          <button class="filter-btn" data-filter="第5章">第5章</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div id="noResults" class="no-results">
+      <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem;">該当する補論・用語解説が見つかりませんでした</p>
+      <p>検索キーワードを変更するか、フィルターを「すべて」に戻してください。</p>
+    </div>
+
+    <!-- 第1章 -->
+    <section class="chapter-section" data-chapter="第1章">
+      <div class="chapter-header">
+        <span class="chapter-tag">第1章</span>
+        <h2 class="chapter-title">金融寡頭制の定義</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="第1章" data-keywords="信用創造 しんようそうぞう credit creation 銀行 預金 通貨 ケインズ">
+          <div class="term-meta">
+            <span class="section-badge">1.2 ケインズの定義</span>
+            <span class="category-badge">金融理論</span>
+          </div>
+          <h3 class="term-title"><a href="SinYoSoZo.html">信用創造の仕組みとリスク</a></h3>
+          <p class="term-desc">銀行が預金の貸し出しを繰り返すことで、最初の預金額の何倍もの預金通貨を作り出すメカニズムと、その暴走がもたらす金融リスクを解説。</p>
+          <a href="SinYoSoZo.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第1章" data-keywords="能動的預金 のうどうてきよきん active deposits ケインズ 貨幣論 産業的流通 金融的流通">
+          <div class="term-meta">
+            <span class="section-badge">1.2 ケインズの定義</span>
+            <span class="category-badge">金融理論</span>
+          </div>
+          <h3 class="term-title"><a href="NoDoTeKiYoKin.html">能動的預金（Active Deposits）</a></h3>
+          <p class="term-desc">ケインズ『貨幣論』における概念。実体経済の生産や取引を媒介する能動的預金と、投機や資産市場へ向かう受動的預金の決定的な乖離を検証。</p>
+          <a href="NoDoTeKiYoKin.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第1章" data-keywords="流動性選好 りゅうどうせいせんこう liquidity preference 雇用利子および貨幣の一般理論 流動性の罠 利子率">
+          <div class="term-meta">
+            <span class="section-badge">1.2 ケインズの定義</span>
+            <span class="category-badge">金融理論</span>
+          </div>
+          <h3 class="term-title"><a href="RyuDouseiSenko.html">流動性選好理論と流動性の罠</a></h3>
+          <p class="term-desc">取引動機・予備的動機・投機的動機から人々が手元に現金を保有しようとするメカニズムと、金融緩和が効かなくなる「流動性の罠」を詳解。</p>
+          <a href="RyuDouseiSenko.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第1章" data-keywords="貨幣の信用理論 かへいのしんようりろん credit theory of money シュンペーター 経済発展の理論 動態経済学">
+          <div class="term-meta">
+            <span class="section-badge">1.3 シュンペーターの定義</span>
+            <span class="category-badge">金融理論</span>
+          </div>
+          <h3 class="term-title"><a href="CreditTheoryOfMoney.html">貨幣の信用理論（Credit Theory of Money）</a></h3>
+          <p class="term-desc">貨幣を単なる交換の道具とする古典派見解を打破し、銀行による無からの購買力供与（信用創造）こそがイノベーションの推進力であるとする理論。</p>
+          <a href="CreditTheoryOfMoney.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第1章" data-keywords="景気循環論 けいきじゅんかんろん business cycles 創造的破壊 イノベーション コンドラチェフ ジュグラー キチン">
+          <div class="term-meta">
+            <span class="section-badge">1.3 シュンペーターの定義</span>
+            <span class="category-badge">金融理論</span>
+          </div>
+          <h3 class="term-title"><a href="KeikiJYunkanRon.html">シュンペーターの景気循環論</a></h3>
+          <p class="term-desc">企業家によるイノベーションの群生的発生が引き起こす3つの波動（キチン・ジュグラー・コンドラチェフ）の重なりと第二次波動（投機の空回り）の解明。</p>
+          <a href="KeikiJYunkanRon.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第1章" data-keywords="金融寄生性 きんゆうきせいせい financial parasitism レーニン ヒルファーディング 新自由主義 金融化 収奪">
+          <div class="term-meta">
+            <span class="section-badge">1.4 新自由主義の収奪</span>
+            <span class="category-badge">権力構造</span>
+          </div>
+          <h3 class="term-title"><a href="KinyuKiseiSei.html">金融寄生性（Financial Parasitism）</a></h3>
+          <p class="term-desc">実物生産に従事せず、金利、手数料、配当、金融工学的手法を通じて実体経済の富を吸い上げる「金利生活者国家（レントナー国家）」の寄生構造。</p>
+          <a href="KinyuKiseiSei.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第1章" data-keywords="オリガルヒ オルガルヒ oligarch ロシア 寡頭制 民営化 資源国有化 国富私物化">
+          <div class="term-meta">
+            <span class="section-badge">1.4 新自由主義の収奪</span>
+            <span class="category-badge">権力構造</span>
+          </div>
+          <h3 class="term-title"><a href="Oligarch.html">オリガルヒ（Oligarch）徹底解説</a></h3>
+          <p class="term-desc">ソ連崩壊後のショック療法と民営化の中で国有資産を不当に買い叩き、国家の富と政治権力を握った新興財閥（オリガルヒ）の成立と変遷。</p>
+          <a href="Oligarch.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 第2章 -->
+    <section class="chapter-section" data-chapter="第2章">
+      <div class="chapter-header">
+        <span class="chapter-tag">第2章</span>
+        <h2 class="chapter-title">過去どのような形で現れていたか：戦争と金融寡頭制の近現代史</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="第2章" data-keywords="共和政ローマ きょうわせいろーま ブルトゥス キケロ 高利貸し 年利48パーセント 金融収奪 属州">
+          <div class="term-meta">
+            <span class="section-badge">2.1 帝国主義前夜の原型</span>
+            <span class="category-badge">近現代史</span>
+          </div>
+          <h3 class="term-title"><a href="romaKikero.html">共和政ローマ末期の金融収奪（ブルトゥスとキケロ）</a></h3>
+          <p class="term-desc">カエサル暗殺の首謀者ブルトゥスによる年利48%の過酷な高利貸し事件と、属州総督キケロが直面した金融寡頭制の政治支配の実相。</p>
+          <a href="romaKikero.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="オスマン帝国 おすまんていこく 蚕食 列強干渉 債務管理 財政破綻 1876年">
+          <div class="term-meta">
+            <span class="section-badge">2.1 帝国主義前夜の原型</span>
+            <span class="category-badge">近現代史</span>
+          </div>
+          <h3 class="term-title"><a href="osman.html">オスマン帝国へのヨーロッパ列強による干渉と「蚕食」</a></h3>
+          <p class="term-desc">1876年のオスマン帝国債務危機。巨額の対外借款を通じて主権と税収管理権を奪われ、内政干渉と領土分割に至る「債務の罠」の歴史的典型。</p>
+          <a href="osman.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="インド省 いんどしょう India Office イギリス パックスブリタニカ カウンシルビル 東インド会社 植民地支配">
+          <div class="term-meta">
+            <span class="section-badge">2.2 大英帝国の二重収奪</span>
+            <span class="category-badge">近現代史</span>
+          </div>
+          <h3 class="term-title"><a href="eng_ind.html">イギリス「インド省（India Office）」の歴史と統治機構</a></h3>
+          <p class="term-desc">東インド会社の解散から1947年独立までの直接統治機構。カウンシル・ビル為替手形を通じてインドの富をロンドンへ無償吸い上げた金融収奪の中枢。</p>
+          <a href="eng_ind.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="金マルク きんまるく ゴールドマルク 1320億 ヴェルサイユ体制 ヴァイマル ハイパーインフレ レンテンマルク">
+          <div class="term-meta">
+            <span class="section-badge">2.3 ヴェルサイユ体制と恐慌</span>
+            <span class="category-badge">近現代史</span>
+          </div>
+          <h3 class="term-title"><a href="goldMark.html">なぜ「金マルク」に“金”がついているのか？</a></h3>
+          <p class="term-desc">ヴェルサイユ条約で課された1320億金マルクの過酷な賠償金と、紙マルクの天文学的暴落、レンテンマルクによる奇跡のインフレ収束の真実。</p>
+          <a href="goldMark.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="フォーディズム ふぉーでぃずむ fordism ヘンリーフォード 大量生産 大量消費 世界恐慌 1920年代">
+          <div class="term-meta">
+            <span class="section-badge">2.3 ヴェルサイユ体制と恐慌</span>
+            <span class="category-badge">近現代史</span>
+          </div>
+          <h3 class="term-title"><a href="fordism.html">1920年代アメリカの「フォーディズム」</a></h3>
+          <p class="term-desc">ヘンリー・フォードが確立した日給5ドルとベルトコンベア生産方式。大量消費社会の成立と、それが過剰生産と1929年世界恐慌へと繋がった背景。</p>
+          <a href="fordism.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="軍事ケインズ主義 ぐんじけいんずしゅぎ military keynesianism ブレトンウッズ 朝鮮戦争 国防支出 軍産複合体">
+          <div class="term-meta">
+            <span class="section-badge">2.4 ブレトンウッズの成立</span>
+            <span class="category-badge">近現代史</span>
+          </div>
+          <h3 class="term-title"><a href="MilitaryKeynesianism.html">軍事ケインズ主義（Military Keynesianism）</a></h3>
+          <p class="term-desc">第二次大戦後から朝鮮戦争にかけて定着した、巨額の軍事費支出による有効需要創出と景気浮揚メカニズム、その構造的限界とインフレ帰結。</p>
+          <a href="MilitaryKeynesianism.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="ユーロダラー ゆーろだらー eurodollar オフショア ロンドン市場 ニクソンショック 規制回避">
+          <div class="term-meta">
+            <span class="section-badge">2.5 ドルの流出とオフショア</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="EuDaller.html">ユーロダラー市場（Eurodollar Market）</a></h3>
+          <p class="term-desc">米国外（主に欧州・ロンドン）の銀行に預託された米ドル資金市場。米国の金準備枯渇・ドルの過剰流出と、国家の金融規制をすり抜けるオフショア支配の成立。</p>
+          <a href="EuDaller.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="ユーロダラー ロシア制裁 ろしあせいさい SWIFT 資産凍結 オフショアドル ドル決済網">
+          <div class="term-meta">
+            <span class="section-badge">2.5 ドルの流出とオフショア</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="EuDallerRosia.html">ユーロダラー市場とロシア経済制裁</a></h3>
+          <p class="term-desc">なぜ米国外のオフショア・ドル口座であっても制裁を回避できなかったのか？ コレスポンデント銀行網とニューヨークの決済クリアリング独占のカラクリ。</p>
+          <a href="EuDallerRosia.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="ボルカーショック ぼるかーしょっく 利上げ FRB 中南米債務危機 ペトロダラー 累積債務">
+          <div class="term-meta">
+            <span class="section-badge">2.6 ペトロダラーの完成</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="Borucar.html">ボルカー・ショックと中南米債務危機</a></h3>
+          <p class="term-desc">1979年のFRB議長ボルカーによる殺人的利上げ（政策金利20%）。ペトロダラーを借りまくっていた中南米諸国を襲った破綻のドミノ倒し。</p>
+          <a href="Borucar.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第2章" data-keywords="構造調整プログラム こうぞうちょうせいぷろぐらむ SAP IMF 世界銀行 緊縮財政 民営化 経済主権剥奪">
+          <div class="term-meta">
+            <span class="section-badge">2.6 ペトロダラーの完成</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="SAP.html">構造調整プログラム（SAP：Structural Adjustment Programs）</a></h3>
+          <p class="term-desc">債務危機に陥った途上国に対し、IMF・世界銀行が融資の条件（コンディショナリティ）として課した緊縮財政・民営化・市場開放による富の略奪。</p>
+          <a href="SAP.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 第3章 -->
+    <section class="chapter-section" data-chapter="第3章">
+      <div class="chapter-header">
+        <span class="chapter-tag">第3章</span>
+        <h2 class="chapter-title">21世紀においてどのような形で具現化しているか？</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="第3章" data-keywords="AIG えーあいじー CDS クレジットデフォルトスワップ リーマンショック ゴールドマンサックス 裏口救済">
+          <div class="term-meta">
+            <span class="section-badge">3.1 アルゴリズムの虚構</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="AIG.html">AIG危機とウォール街の「裏口救済」</a></h3>
+          <p class="term-desc">なぜ巨大保険会社AIGがリーマンショックの真の本丸となり、税金1800億ドルで公的救済されたのか？ ゴールドマン・サックスらへの満額資金還流の全貌。</p>
+          <a href="AIG.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 第4章 -->
+    <section class="chapter-section" data-chapter="第4章">
+      <div class="chapter-header">
+        <span class="chapter-tag">第4章</span>
+        <h2 class="chapter-title">どのような形で現代金融寡頭制は終わるか？その予想</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="第4章" data-keywords="銀行クーデター 中央銀行 独立性 マネープリント 量的緩和 テクノクラシー 民主主義空洞化">
+          <div class="term-meta">
+            <span class="section-badge">4.1 銀行寡頭制のクーデター</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="BankCoup.html">銀行寡頭制による政治経済システムのクーデター</a></h3>
+          <p class="term-desc">「中央銀行の独立性」という美名のもとで、通貨発行権と信用配分が議会制民主主義から奪われ、密室で無制限の流動性が特定勢力へ供給される体制の正体。</p>
+          <a href="BankCoup.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="第4章" data-keywords="デリバティブ決済網 でりばてぃぶ 決済インフラ CCP 中央清算機関 分散型台帳 連鎖破綻">
+          <div class="term-meta">
+            <span class="section-badge">4.5 複合的崩壊シナリオ</span>
+            <span class="category-badge">現代金融</span>
+          </div>
+          <h3 class="term-title"><a href="DerivativesSettlementNetwork.html">デリバティブ決済網（CCP・スマート決済）</a></h3>
+          <p class="term-desc">想定元本数千兆円に及ぶデリバティブ網。中央清算機関（CCP）によるリスク集中と、システミック・リスク遮断のための次世代決済インフラの構造。</p>
+          <a href="DerivativesSettlementNetwork.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 第5章 -->
+    <section class="chapter-section" data-chapter="第5章">
+      <div class="chapter-header">
+        <span class="chapter-tag">第5章</span>
+        <h2 class="chapter-title">金融寡頭制のあとに来るものは？：主権国家の復権と多極化実物経済の地平</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="第5章" data-keywords="国民経済システム こくみんけいざいしすてむ ハミルトン ヘンリークレイ フリードリヒリスト 生産力 多極化 実物経済">
+          <div class="term-meta">
+            <span class="section-badge">5.1 国民経済システムの復権</span>
+            <span class="category-badge">国家構想</span>
+          </div>
+          <h3 class="term-title"><a href="NationalSystemOfEconomy.html">国民経済システム（National System of Economy）</a></h3>
+          <p class="term-desc">イギリス型自由貿易（帝国的収奪）に対抗した米国のハミルトン、クレイ、ドイツのフリードリヒ・リストの経済思想。金融投機から実物生産力至上主義への回帰。</p>
+          <a href="NationalSystemOfEconomy.html" class="term-link-btn"><span>補論を読む</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 書籍情報カード -->
+    <div class="book-info-card">
+      <div class="book-info-header">
+        <span style="font-size: 1.5rem;">📖</span>
+        <h3 class="book-info-title">対象電子書籍（Kindle）のご案内</h3>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.8; color: #334155;">
+        <strong>『金融寡頭制の歴史と崩壊：帝国主義の系譜からペトロダラーの終焉、そして多極化実物経済へ』</strong>（著：mb_Cho）<br>
+        大英帝国のパックス・ブリタニカから、米国のペトロダラー体制、ウォール街の金融工学、そして現在のBRICS・多極化実物経済への地殻変動まで――近現代世界を支配してきた「金融寡頭制」の発生・循環・崩壊のメカニズムを実証的史料とともに解き明かした渾身の論考。
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <p style="font-weight: 700; color: #ffffff; margin-bottom: 0.25rem;">『金融寡頭制の歴史と崩壊』Web補論・用語解説ポータル</p>
+        <p>© 2026 mb_cho All Rights Reserved.</p>
+      </div>
+      <div>
+        <p><a href="#">↑ ページ上部へ戻る</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: リアルタイム検索 & カテゴリフィルター -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.term-card');
+      const sections = document.querySelectorAll('.chapter-section');
+      const noResults = document.getElementById('noResults');
+
+      let currentFilter = 'all';
+      let currentQuery = '';
+
+      function updateDisplay() {
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardChapter = card.getAttribute('data-chapter');
+          const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesFilter = (currentFilter === 'all') || (cardChapter === currentFilter);
+          const matchesQuery = (!currentQuery) || 
+                               (cardKeywords.includes(currentQuery)) || 
+                               (cardText.includes(currentQuery));
+
+          if (matchesFilter && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // 章セクションの表示/非表示（カードが1枚もない章はタイトルごと隠す）
+        sections.forEach(sec => {
+          const secCards = sec.querySelectorAll('.term-card');
+          const hasVisible = Array.from(secCards).some(c => c.style.display !== 'none');
+          sec.style.display = hasVisible ? 'block' : 'none';
+        });
+
+        // 検索結果0件の表示制御
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      }
+
+      // 検索入力イベント
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.trim().toLowerCase();
+        updateDisplay();
+      });
+
+      // フィルターボタンイベント
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter');
+          updateDisplay();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
