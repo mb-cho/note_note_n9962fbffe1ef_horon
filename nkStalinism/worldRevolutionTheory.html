@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：世界革命論（永続革命論）徹底解説 ― トロツキーの国際主義 vs スターリンの「一国社会主義」</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 45%, #991b1b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #f43f5e;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+      line-height: 1.75;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.35rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      min-height: 2.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* SVG Architecture Box */
+    .arch-visual-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .arch-visual-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .svg-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      border-left-color: var(--purple);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-purple .callout-title {
+      color: var(--purple);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+      .sim-box { padding: 1.25rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link active">③ 世界革命論と永続革命論</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">ロシア革命・ボリシェヴィキ路線闘争補論</span>
+        <span class="badge badge-sub">トロツキー「永続革命論」 vs スターリン「一国社会主義論」の激突</span>
+      </div>
+      <h1>世界革命論（永続革命論）：<br>トロツキーの国際主義はいかにしてスターリンの「一国社会主義」に敗れ去ったのか</h1>
+      <p class="lead">
+        レフ・トロツキーが提唱した<strong>「永続革命論（永久革命論 / Theory of Permanent Revolution）」および「世界革命論」</strong>とは、資本主義的後進国における民主主義的課題から社会主義的課題への連続的移行と、一国にとどまらない革命の国際的な同時波及を不可欠とするマルクス主義革命理論です。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        「ロシア一国だけで社会主義を完成させることは不可能であり、先進西欧プロレタリアートの世界革命による支援がなければソビエト国家は官僚的に堕落する」と警告したトロツキー。それに対し、レーニン死後の1920年代半ば、ソ連一国のみで社会主義建設が可能であるとする<strong>「一国社会主義論」</strong>を打ち立てて権力を掌握したヨシフ・スターリン。<a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a><br>
+        本補論では、ロシア革命が「世界革命」から「一国社会主義」へ、そして後の中国・北朝鮮における「自力更生・主体思想」へと至る思想史的分岐点を、動態シミュレーターと図解を通じて体系的に解剖します。
+      </p>
+    </header>
+
+    <!-- Section 1: Core Theoretical Pillars of Permanent Revolution -->
+    <section>
+      <h2>🚩 1. トロツキー「永続革命論（世界革命論）」の二大中核原理</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1905年ロシア第一革命の経験からトロツキーが導き出し、1917年十月革命の指導原理となった「永続革命論」は、従来の第二インターナショナル（正統派マルクス主義）の常識を覆す二つの革命的命題から成り立っています。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="grid-2">
+        <!-- 原理1：一段階革命論（連続革命） -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① 一段階革命論（後進国でのプロレタリア独裁）</span>
+          </div>
+          <p class="factor-desc">
+            ロシアのような資本主義的後進国では、国内のブルジョワジー（資本家階級）は脆弱で皇帝専制や地主と結託しており、自ら民主主義革命（土地改革や議会制確立）を完遂する力を持っていません。<a href="#ref-2" class="cite-tag">[2]</a><br>
+            したがって、<strong>労働者階級（プロレタリアート）が農民を率いて自ら権力を奪取し、民主主義的課題の解決から間断なく社会主義的課題（生産手段の国有化）へと連続的（永続的）に突き進まなければならない</strong>と主張しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <!-- 原理2：世界革命論（国際的同時波及） -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>② 世界同時革命論（一国社会主義の絶対的否定）</span>
+          </div>
+          <p class="factor-desc">
+            <strong>「プロレタリアートによる権力の獲得は、革命を完成させるのではなく、ただそれを開始するだけである」</strong>。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a><br>
+            生産力が立ち遅れたロシア一国のみに閉じこもれば、物資の欠乏と国際的孤立から必然的に特権官僚層が台頭し、社会主義は窒息します。ソビエト政権が真に生存し社会主義へ到達するためには、<strong>ドイツや英国など先進資本主義国でのプロレタリア革命（世界革命）の支援が絶対に不可欠</strong>であると説きました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">💡 「不均等・複合発展の法則」とは何か？</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          正統派マルクス主義者（メンシェヴィキら）は、「社会は『封建制 ➔ 資本主義 ➔ 社会主義』と段階を踏まねばならず、後進国ロシアはまずブルジョワ民主主義を発展させるべきだ（二段階革命論）」と考えました。<br>
+          これに対しトロツキーは、<strong>「不均等かつ複合的な発展の法則（Law of Uneven and Combined Development）」</strong>を提示しました。後進国は先進国の数世紀に及ぶ発展過程を機械的に繰り返すのではなく、先進国の最新技術や巨大工場を突然導入し、前近代的な農奴制の残滓と最先端の労働者階級が混在する「複合的社会」を形成します。ゆえに鎖の最も弱い環（ロシア）で世界に先駆けてプロレタリア革命が勃発しうるのです。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Clash with Stalin's Socialism in One Country -->
+    <section>
+      <h2>⚔️ 2. スターリン「一国社会主義論」との激突とボリシェヴィキの変質</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1917年の十月革命直後、レーニンもトロツキーも「西欧先進国での革命が起きなければソビエト政権は破滅する」という点で完全に一致していました。しかし、欧州革命が次々と敗退したことで、ソ連共産党は致命的な方針転換を迫られます。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <!-- 4-Step Degeneration Flow -->
+      <div class="flow-grid">
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 1：期待と熱狂</span>
+          <div class="flow-title">欧州革命への期待</div>
+          <p class="flow-desc">
+            十月革命後、コミンテルン（第3インターナショナル）を創設。ドイツ革命（1918–1919年）やハンガリー革命に世界革命の希望を託した。
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 2：敗北と孤立</span>
+          <div class="flow-title">ドイツ革命の挫折</div>
+          <p class="flow-desc">
+            1923年のドイツ革命再蜂起の失敗により欧州革命の波が退潮。ソビエト・ロシアは資本主義諸国の包囲下で完全孤立に直面した。
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 3：方針の大転換</span>
+          <div class="flow-title">一国社会主義論の提起</div>
+          <p class="flow-desc">
+            1924年、スターリンとブハーリンが「ソ連一国の資源と力だけで社会主義社会を完成できる」と主張。疲弊した国民と党官僚に迎合した。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 4：粛清と従属</span>
+          <div class="flow-title">トロツキー追放と大粛清</div>
+          <p class="flow-desc">
+            トロツキーは「祖国への不信・敗北主義」として追放（1929年）。コミンテルンは世界革命の司令塔から「ソ連国家防衛の外交の道具」へと堕落した。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator Box -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 世界革命論から「一国社会主義・スターリン主義」への4段階動態シミュレーター</div>
+            <div class="sim-subtitle">時代ボタンを切り替えて、国際革命志向・ソ連一国防衛度・官僚専制度の力学変化を確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1917〜1923年</span>
+            十月革命と欧州世界革命への熱狂
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1924〜1929年</span>
+            一国社会主義論の台頭とトロツキー追放
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1930年代〜1943年</span>
+            大粛清とコミンテルン解散（世界革命放棄）
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜冷戦期〜現代</span>
+            新左翼・ゲバラへの波及と北朝鮮「主体思想」
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">国際プロレタリア主義・世界革命への志向</div>
+            <div class="metric-value" id="m-inter">極大（世界革命なしにソ連の生存なし）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-inter" style="width: 95%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">ソ連国家防衛・一国自足優先度</div>
+            <div class="metric-value" id="m-state">従属的（世界革命の前哨基地と位置づけ）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-state" style="width: 25%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">党官僚制（ノメンクラトゥーラ）の専制支配度</div>
+            <div class="metric-value" id="m-bureau">胎動期（戦時共産主義と非常措置）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-bureau" style="width: 35%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Architecture Box -->
+        <div class="arch-visual-box">
+          <div class="arch-visual-title">
+            <span>📐 【世界戦略・権力構造ダイアグラム】</span>
+            <span id="arch-title" style="color: #fde047; font-weight: 800;">Phase 1：十月革命とコミンテルンによる世界同時革命推進体制（1917〜1923年）</span>
+          </div>
+          <div class="svg-wrapper">
+            <svg id="arch-svg" viewBox="0 0 880 220" width="100%" height="220" style="max-width: 880px; display: block; margin: 0 auto;">
+              <!-- JSで動的に切り替え -->
+            </svg>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- JSで動的更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Detailed Comparison Matrix & Trotsky's Prophecy -->
+    <section>
+      <h2>🔍 3. 深掘り比較：トロツキー「永続革命論」 vs スターリン「一国社会主義論」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        この対立は単なる個人の権力闘争にとどまらず、「ソ連という国家の存在理由（レゾンデートル）」と「世界共産主義運動のあり方」を二分する決定的な路線闘争でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">比較項目</th>
+              <th style="width: 40%;">レフ・トロツキー「永続革命論」<br><span style="font-size: 0.78rem; font-weight: 500;">（国際プロレタリア主義）</span></th>
+              <th style="width: 40%;">ヨシフ・スターリン「一国社会主義論」<br><span style="font-size: 0.78rem; font-weight: 500;">（ソ連国家ナショナリズム）</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>社会主義建設の可能性</strong></td>
+              <td><strong>一国のみでは不可能</strong>。先進西欧諸国の革命勝利による技術的・経済的結合が不可欠。<a href="#ref-1" class="cite-tag">[1]</a></td>
+              <td><strong>ソ連一国のみで完全に可能</strong>。ロシアの広大な領土と豊富な資源により完結できる。<a href="#ref-3" class="cite-tag">[3]</a></td>
+            </tr>
+            <tr>
+              <td><strong>コミンテルン（国際共産党）の任務</strong></td>
+              <td>世界革命を指導・推進する<strong>主権的司令部</strong>。ソ連の国益より世界革命を優先する。</td>
+              <td><strong>ソ連国家を防衛・防護するための外交的道具</strong>。ソ連の国益に従属させる。<a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>ソ連官僚制の捉え方</strong></td>
+              <td>物資欠乏と孤立から生じた<strong>「労働者国家の官僚的堕落」</strong>。プロレタリア政治革命で打倒すべき。</td>
+              <td>プロレタリア独裁を担う<strong>正統な前衛国家機関</strong>。「階級闘争激化論」で抑圧機関を拡大。</td>
+            </tr>
+            <tr>
+              <td><strong>後進国革命の戦略</strong></td>
+              <td>ブルジョワジーとの妥協を排し、プロレタリアートが直ちに権力を握る（一段階革命）。<a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td>民族ブルジョワジーとの合作を強要（中国国民党との国共合作など段階革命論）。</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的結末</strong></td>
+              <td>1927年除名、1929年国外追放、1940年メキシコで暗殺。思想は新左翼運動へ継承。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+              <td>大粛清と個人崇拝により一党独裁を確立。ソ連を軍事超大国化させるも1991年崩壊。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Callout: Trotsky's Astute Prophecy -->
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>🔮 トロツキーの予言：なぜ半世紀以上前の『裏切られた革命』（1936年）はソ連崩壊を言い当てたのか？</span>
+        </div>
+        <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.7;">
+          トロツキーはその主著『裏切られた革命（The Revolution Betrayed）』において、ソ連の将来について戦慄すべき正確さで予言していました。<br>
+          「ソ連の官僚層（ノメンクラトゥーラ）は、消費財や特権の分配を独占しているが、自らの特権的地位を子孫へ世襲することができない。したがって、彼らはやがて自らの支配と特権を法的に固定化するため、<strong>国有財産を私物化し、自ら資本家（オリガルヒ）となって資本主義を復活させる道を選ぶだろう</strong>」。<br>
+          1991年のソ連崩壊時、共産党幹部やKGB高官が国営企業・石油資源を二束三文で払い下げて大富豪（オリガルヒ）へと変貌した現実は、まさにトロツキーが一国社会主義の帰結として警告した通りの結末でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-6" class="cite-tag">[6]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Global Influence & Connection to Book Context -->
+    <section>
+      <h2>🌐 4. 国外への影響と『北朝鮮におけるスターリン主義の形成』への思想史的連鎖</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        世界革命論の敗北と一国社会主義の定着は、ソビエト国内の権力構造にとどまらず、アジアの社会主義運動、そして本書の主題である北朝鮮の「主体思想」の形成に決定的な刻印を残しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 新左翼とゲバラ -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>🌍 新左翼・チェ・ゲバラへの波及</span>
+          </div>
+          <p class="factor-desc">
+            スターリン体制に絶望した西欧・中南米の革命家たちは、1938年にトロツキーが創設した<strong>「第四インターナショナル」</strong>やトロツキズムに共鳴しました。<br>
+            キューバ革命の指導者<strong>チェ・ゲバラ</strong>が唱えた「大陸革命論（二つ、三つ、数多くのベトナムを作れ）」や、1968年のフランス五月革命など世界各地の新左翼運動に強大な影響を与えました。<a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <!-- 中国共産党とトロ派レッテル -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🇨🇳 中国共産党と「トロ派」粛清</span>
+          </div>
+          <p class="factor-desc">
+            1927年の上海クーデターでコミンテルン（スターリン）の指導ミスにより大虐殺された中国共産党では、初代総書記・陳独秀らがトロツキズムに転じました。<br>
+            毛沢東は延安整風運動において、党内批判者（王実味ら）を<strong>「トロ派（反革命スパイ）」とレッテル貼りして粛清</strong>する手法をスターリンの『簡明教程』から忠実に継承しました。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <!-- 北朝鮮への帰結：極限の一国主義 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>🇰🇵 北朝鮮「主体思想」への帰結</span>
+          </div>
+          <p class="factor-desc">
+            世界革命論が否定された先にある究極の形態が、北朝鮮の<strong>「主体思想（チュチェ思想）」</strong>です。<br>
+            スターリンの一国社会主義論を極限まで押し進め、「世界革命」の連帯を完全に脱落させて<strong>「一国での自力更生・首領絶対専制・白頭血統の血縁世襲」</strong>へと至った思想史的背景には、この1920年代の国際主義の圧殺という原点が存在しています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している歴史事典・学術解説・古典文献の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-125.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：世界革命論／一国社会主義論)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E6%B0%B8%E7%B6%9A%E9%9D%A9%E5%91%BD%E8%AB%96" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：永続革命論)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E9%9D%A9%E5%91%BD%E8%AB%96" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：世界革命論)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.weblio.jp/content/%E4%B8%96%E7%95%8C%E9%9D%A9%E5%91%BD%E8%AB%96" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.weblio.jp (Weblio辞書：世界革命論とスターリン批判)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.kotensinyaku.jp/books/book54/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.kotensinyaku.jp (光文社古典新訳文庫：トロツキー『ロシア革命史』解説)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AD%E3%83%84%E3%82%AD%E3%82%BA%E3%83%A0" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：トロツキズムと新左翼)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ③ ｜ 世界革命論（永続革命論）の構造と一国社会主義の分岐</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        interText: "極大（世界革命なしにソ連の生存なし）",
+        interWidth: "95%",
+        interColor: "#38bdf8",
+        stateText: "従属的（世界革命の前哨基地と位置づけ）",
+        stateWidth: "25%",
+        stateColor: "#10b981",
+        bureauText: "胎動期（戦時共産主義と非常措置）",
+        bureauWidth: "35%",
+        bureauColor: "#f59e0b",
+        archTitle: "Phase 1：十月革命とコミンテルンによる世界同時革命推進体制（1917〜1923年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Center: Soviet Russia as Red Outpost -->
+          <rect x="290" y="35" width="300" height="50" rx="8" fill="#881337" stroke="#fb7185" stroke-width="2"/>
+          <text x="440" y="60" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">ソビエト・ロシア（レーニン ＆ トロツキー）</text>
+          <text x="440" y="76" fill="#fde68a" font-size="10.5" text-anchor="middle">「世界革命の前哨基地」としてのプロレタリア独裁</text>
+          
+          <!-- Arrows Spreading to World -->
+          <path d="M 290 60 L 170 110" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <path d="M 440 85 L 440 110" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <path d="M 590 60 L 710 110" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          
+          <!-- Target 1: German Revolution -->
+          <rect x="50" y="115" width="220" height="48" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="160" y="137" fill="#bae6fd" font-size="12" font-weight="bold" text-anchor="middle">🇩🇪 ドイツ革命（期待の核心）</text>
+          <text x="160" y="152" fill="#94a3b8" font-size="10" text-anchor="middle">先進工業プロレタリアートの蜂起</text>
+          
+          <!-- Target 2: Comintern Center -->
+          <rect x="310" y="115" width="260" height="48" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="440" y="137" fill="#c7d2fe" font-size="12" font-weight="bold" text-anchor="middle">🌍 コミンテルン（第3インター）</text>
+          <text x="440" y="152" fill="#a5b4fc" font-size="10" text-anchor="middle">世界革命の主権的司令本部</text>
+          
+          <!-- Target 3: Colonial Revolutions -->
+          <rect x="610" y="115" width="220" height="48" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="720" y="137" fill="#bae6fd" font-size="12" font-weight="bold" text-anchor="middle">🇨🇳 東洋・植民地民族解放</text>
+          <text x="720" y="152" fill="#94a3b8" font-size="10" text-anchor="middle">帝国主義後背地での反帝闘争</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="175" width="520" height="22" rx="4" fill="rgba(56, 189, 248, 0.15)"/>
+          <text x="440" y="190" fill="#7dd3fc" font-size="10.5" font-weight="bold" text-anchor="middle">命題：「先進国の世界革命なしにロシア社会主義の完結はあり得ない」</text>
+          
+          <defs>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1917〜1923年 ― 十月革命の熱狂と「欧州世界革命」への全賭け】</strong><br>十月革命を指導したレーニンとトロツキーにとって、ロシア革命は世界同時革命の「突破口（導火線）」にすぎませんでした。後進国ロシアの生産力では社会主義を築くことは不可能であり、工業国ドイツで革命が起きてソ連を支援してくれることが政権生存の絶対条件と信じられていました。1919年に創設されたコミンテルンは、ソ連政府とは独立した「世界革命の司令部」として機能していました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-3' class='cite-tag'>[3]</a>"
+      },
+      {
+        id: 1,
+        interText: "急減退（「敗北主義」として排斥・弾圧）",
+        interWidth: "45%",
+        interColor: "#f59e0b",
+        stateText: "最優先化（「ソ連一国社会主義」の防衛至上主義）",
+        stateWidth: "75%",
+        stateColor: "#f59e0b",
+        bureauText: "急拡大（書記長スターリンへの権限集中）",
+        bureauWidth: "70%",
+        bureauColor: "#f59e0b",
+        archTitle: "Phase 2：一国社会主義論の台頭とトロツキー追放（1924〜1929年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top: Stalin-Bukharin Block -->
+          <rect x="260" y="30" width="360" height="46" rx="8" fill="#4c0519" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="440" y="52" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">スターリン党書記局 ＆ 一国社会主義論</text>
+          <text x="440" y="68" fill="#fecdd3" font-size="10.5" text-anchor="middle">「ソ連一国のみで社会主義の建設・完成は可能である」</text>
+          
+          <!-- Conflict Vector -->
+          <path d="M 280 76 L 160 110" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <path d="M 600 76 L 720 110" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          
+          <!-- Left: Purged Left Opposition (Trotsky) -->
+          <rect x="50" y="115" width="220" height="50" rx="6" fill="#1e1b4b" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="160" y="137" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">🚫 左翼反対派（トロツキー）</text>
+          <text x="160" y="153" fill="#fda4af" font-size="10" text-anchor="middle">「敗北主義者」の烙印・1929年追放</text>
+          
+          <!-- Center: Comintern Subjugation -->
+          <rect x="300" y="115" width="280" height="50" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="440" y="137" fill="#fde047" font-size="12" font-weight="bold" text-anchor="middle">コミンテルンの変質</text>
+          <text x="440" y="153" fill="#cbd5e1" font-size="10" text-anchor="middle">世界革命司令部から「ソ連外交の防壁」へ</text>
+          
+          <!-- Right: Rising Bureaucracy -->
+          <rect x="610" y="115" width="220" height="50" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="720" y="137" fill="#fde047" font-size="12" font-weight="bold" text-anchor="middle">🏢 党官僚層の既得権益化</text>
+          <text x="720" y="153" fill="#cbd5e1" font-size="10" text-anchor="middle">革命の継続より現状維持を欲する層</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="176" width="520" height="22" rx="4" fill="rgba(244, 63, 94, 0.15)"/>
+          <text x="440" y="191" fill="#fecdd3" font-size="10.5" font-weight="bold" text-anchor="middle">大転換：世界革命推進から「ソ連一国の工業化・防衛」への完全従属</text>
+          
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1924〜1929年 ― 「一国社会主義論」の勝利とトロツキーの追放】</strong><br>1923年のドイツ革命敗北と1924年のレーニン死去を受け、スターリンとブハーリンは「一国社会主義論」を定式化しました。過酷な内戦に疲れ果てたソ連国民と、自らの特権的地位を安定させたい党官僚（アパラチキ）層は「世界革命の義務」から解放されるこの理論を歓迎しました。世界革命と永続革命の必要性を説き続けたトロツキーは「ソ連人民の建設力を侮蔑する敗北主義者」と攻撃され、1927年に党除名、1929年にソ連から国外追放されました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a><a href='#ref-3' class='cite-tag'>[3]</a>"
+      },
+      {
+        id: 2,
+        interText: "事実上放棄（コミンテルン正式解散）",
+        interWidth: "10%",
+        interColor: "#f43f5e",
+        stateText: "絶対化（「大祖国戦争」と超大国化）",
+        stateWidth: "95%",
+        stateColor: "#e11d48",
+        bureauText: "極限（NKVDによる大粛清・見せしめ裁判）",
+        bureauWidth: "95%",
+        bureauColor: "#e11d48",
+        archTitle: "Phase 3：大粛清とコミンテルン解散（世界革命の公式な放棄、1930年代〜1943年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top: Stalin Absolute Dictator -->
+          <rect x="280" y="28" width="320" height="44" rx="8" fill="#881337" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="48" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">スターリン絶対独裁 ＆ 「階級闘争激化論」</text>
+          <text x="440" y="64" fill="#fde68a" font-size="10" text-anchor="middle">「トロツキスト・スパイ」の完全抹殺と国家神聖化</text>
+          
+          <!-- Terror Lines -->
+          <path d="M 330 72 L 200 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 550 72 L 680 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          
+          <!-- Left: Great Purge -->
+          <rect x="50" y="108" width="260" height="50" rx="6" fill="#4c0519" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="180" y="130" fill="#fecdd3" font-size="11.5" font-weight="bold" text-anchor="middle">☠️ モスクワ裁判・大粛清</text>
+          <text x="180" y="146" fill="#fda4af" font-size="9.5" text-anchor="middle">ジノヴィエフ、ブハーリンら古参全員銃殺</text>
+          
+          <!-- Center: Trotsky Assassination -->
+          <rect x="330" y="108" width="220" height="50" rx="6" fill="#1e1b4b" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="440" y="130" fill="#fda4af" font-size="11" font-weight="bold" text-anchor="middle">⛏️ 1940年 トロツキー暗殺</text>
+          <text x="440" y="146" fill="#cbd5e1" font-size="9.5" text-anchor="middle">メキシコ亡命先でNKVD暗殺者が決行</text>
+          
+          <!-- Right: Comintern Dissolution -->
+          <rect x="570" y="108" width="260" height="50" rx="6" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="700" y="130" fill="#e2e8f0" font-size="11.5" font-weight="bold" text-anchor="middle">🕊️ 1943年 コミンテルン解散</text>
+          <text x="700" y="146" fill="#94a3b8" font-size="9.5" text-anchor="middle">米英との同盟優先のため世界革命を公式清算</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(136, 19, 55, 0.3)"/>
+          <text x="440" y="187" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">結果：世界革命論の完全消滅と「ソ連一国の超大国覇権体制」の完成</text>
+        `,
+        desc: "<strong>【Phase 3：1930年代〜1943年 ― 大粛清の嵐とコミンテルン解散】</strong><br>スターリンは1930年代後半の大粛清において、かつてレーニンとともに革命を率いたボリシェヴィキ指導者（ジノヴィエフ、カーメネフ、ブハーリンら）を「トロツキーと結託した帝国主義スパイ」として見せしめ裁判にかけ、全員銃殺しました。メキシコに亡命していたトロツキー自身も1940年にNKVDの刺客によってピッケルで暗殺されました。さらに1943年、第二次世界大戦で米英との連合国関係を優先するため、コミンテルンを正式に解散。ソ連は世界革命の理念を公式に埋葬しました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-3' class='cite-tag'>[3]</a>"
+      },
+      {
+        id: 3,
+        interText: "新左翼・ゲバラ運動へ（非主流・多極的分裂）",
+        interWidth: "30%",
+        interColor: "#a855f7",
+        stateText: "一国絶対化（北朝鮮「主体思想・自力更生」）",
+        stateWidth: "100%",
+        stateColor: "#e11d48",
+        bureauText: "極限固定化（白頭血統の絶対君主制）",
+        bureauWidth: "100%",
+        bureauColor: "#e11d48",
+        archTitle: "Phase 4：新左翼・ゲバラへの波及と北朝鮮「主体思想」への極限化（冷戦期〜現代）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Split Path: West / South vs East Bloc / DPRK -->
+          <rect x="50" y="35" width="360" height="50" rx="8" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+          <text x="230" y="58" fill="#e9d5ff" font-size="12" font-weight="bold" text-anchor="middle">🌍 トロツキズムの拡散（新左翼・ゲバラ）</text>
+          <text x="230" y="74" fill="#d8b4fe" font-size="10" text-anchor="middle">第四インター、反スターリン主義、1968年世界反乱</text>
+          
+          <rect x="470" y="35" width="360" height="50" rx="8" fill="#4c0519" stroke="#fbbf24" stroke-width="2"/>
+          <text x="650" y="58" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">🇰🇵 北朝鮮「主体思想」への極限化</text>
+          <text x="650" y="74" fill="#fde68a" font-size="10" text-anchor="middle">一国社会主義の極限 ➔ 世界革命放棄・首領絶対専制</text>
+          
+          <!-- Downward Outcomes -->
+          <rect x="50" y="110" width="360" height="50" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="230" y="132" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">チェ・ゲバラの「大陸革命論」と新左翼</text>
+          <text x="230" y="148" fill="#94a3b8" font-size="9.5" text-anchor="middle">ソ連の「平和共存」を批判し第三世界革命を鼓舞</text>
+          
+          <rect x="470" y="110" width="360" height="50" rx="6" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="650" y="132" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">「思想の主体・経済の自立・国防の自衛」</text>
+          <text x="650" y="148" fill="#fda4af" font-size="9.5" text-anchor="middle">国際的連帯を拒否し、自国と白頭血統の保全に孤立自給化</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="174" width="520" height="22" rx="4" fill="rgba(251, 191, 36, 0.15)"/>
+          <text x="440" y="189" fill="#fde047" font-size="10.5" font-weight="bold" text-anchor="middle">結論：世界革命論の圧殺が、ソ連崩壊と北朝鮮の首領専制を生み出した</text>
+        `,
+        desc: "<strong>【Phase 4：冷戦期〜現代 ― 新左翼・ゲバラへの波及と北朝鮮「主体思想」への帰結】</strong><br>トロツキーが創設した第四インターナショナルは、ソ連スターリン主義を「官僚的に歪曲された労働者国家」と批判し、1960年代の新左翼運動やチェ・ゲバラの連続ゲリラ闘争に引き継がれました。他方、スターリンの「一国社会主義」の論理を最も極限まで純化させたのが北朝鮮でした。金日成は中ソ対立の狭間で「世界革命」への依存を完全に捨て、一国内での自給自足と首領への絶対服従を説く「主体思想」へと閉じこもり、三代世襲の専制君主制へと至りました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-6' class='cite-tag'>[6]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-inter').textContent = p.interText;
+      const bInter = document.getElementById('b-inter');
+      bInter.style.width = p.interWidth;
+      bInter.style.backgroundColor = p.interColor;
+
+      document.getElementById('m-state').textContent = p.stateText;
+      const bState = document.getElementById('b-state');
+      bState.style.width = p.stateWidth;
+      bState.style.backgroundColor = p.stateColor;
+
+      document.getElementById('m-bureau').textContent = p.bureauText;
+      const bBureau = document.getElementById('b-bureau');
+      bBureau.style.width = p.bureauWidth;
+      bBureau.style.backgroundColor = p.bureauColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
