@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：一国社会主義論徹底解説 ― スターリンによる世界革命の放棄と国家要塞化の力学</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #31102f 45%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #f43f5e;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+      line-height: 1.75;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.35rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      min-height: 2.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* SVG Architecture Box */
+    .arch-visual-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .arch-visual-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .svg-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+      .sim-box { padding: 1.25rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <!-- 
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link active">④ 一国社会主義論</a>
+      </div>
+    </nav>
+  -->
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">スターリン主義国家形成の根幹理論補論</span>
+        <span class="badge badge-sub">「世界革命」から「ソ連一国の重工業化・国家要塞化」への大転換</span>
+      </div>
+      <h1>一国社会主義論：<br>なぜソ連は世界同時革命を放棄し、強制重工業化と専制国家要塞化へと突き進んだのか</h1>
+      <p class="lead">
+        <strong>一国社会主義論（いっこくしゃかいしゅぎろん / Socialism in One Country）</strong>とは、先進資本主義国での同時革命が起きなくても、広大な領土と豊富な資源を有するソ連一国だけで社会主義社会を建設・完成させることができるとする政治理論です。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        1924年にヨシフ・スターリンが提唱し、1925年のソ連共産党第14回大会で党の公式路線として採択されました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><br>
+        それは古典的マルクス主義や初期ボリシェヴィキが掲げた「世界革命」の国際主義を事実上棚上げし、資本主義の包囲の中で「ソ連国家の維持・防衛」を絶対視するナショナリズム的転換を意味しました。そして、五カ年計画による強制的重工業化と農業集団化、さらには<strong>「階級闘争激化論」による大粛清とNKVD暴力装置の肥大化</strong>を正当化する最大のイデオロギー的根拠となったのです。<a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Origins & Background of the Doctrine -->
+    <section>
+      <h2>🏛️ 1. 一国社会主義論の登場背景：欧州革命の敗北と「ロシア単独防衛」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        本来のマルクスやエンゲルス、そして十月革命直後のレーニンは、「後進国ロシアの単独の力で社会主義を完成させることは不可能であり、先進工業国（ドイツ・英・仏）でのプロレタリア革命の支援が不可欠である」と考えていました。しかし、1920年代前半の国際情勢の激変がこの常識を覆しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 敗北と安定化 -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① 西欧革命の退潮と資本主義の安定</span>
+          </div>
+          <p class="factor-desc">
+            第一次世界大戦直後に期待されたドイツ革命（1918-1919年スパルタクス団蜂起、1923年ハンブルク蜂起）やハンガリー・ソビエト革命が次々と鎮圧されました。<br>
+            西欧資本主義はドーズ案などを通じて一時的な相対的安定期に入り、<strong>世界革命の早期勃発という見通しは完全に水泡に帰しました</strong>。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+
+        <!-- 革命疲れと官僚の台頭 -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>② 疲弊した社会と党官僚（アパラチキ）</span>
+          </div>
+          <p class="factor-desc">
+            過酷なロシア内戦と戦時共産主義による大飢饉を経て、ロシア国民や労働者は疲弊し、激しい革命の継続よりも「平和と生活の安定」を望んでいました。<br>
+            また、党組織を掌握した官僚層（アパラチキ）は、不確実な世界革命に国力を費やすより、<strong>ソ連国内の地位と特権を安定化させる路線を強く支持</strong>しました。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <!-- スターリンのナショナルな訴求 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ 「自力建設」の自負と権力掌握</span>
+          </div>
+          <p class="factor-desc">
+            スターリンは「世界革命を待つのではなく、ソ連自身の広大な領土と豊富な資源を動員すれば、自力で完全な社会主義を築ける」と主張しました。<a href="#ref-4" class="cite-tag">[4]</a><br>
+            これはロシア人の愛国心と誇りを刺激し、「世界革命に依存しなければ滅びる」と説くトロツキーを<strong>「祖国と国民の力を信用しない敗北主義者」</strong>として排斥することに成功しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">💡 レーニンの「不均等発展の法則」をめぐる解釈の改竄</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          スターリンは自らの正統性を誇示するため、レーニンの1915年の論文『ヨーロッパ合衆国のスローガンについて』の一節（「資本主義の経済的および政治的発展の不均等性は、資本主義の絶対的法則である。ここからして、社会主義はまず初めには少数または一資本主義国において勝利することが可能である」）を巧妙に引用しました。<br>
+          しかし、レーニンが言っていたのは<strong>「革命による国家権力の奪取（革命の口火）」</strong>が一国で可能であるということであり、「一国のみで最終的に社会主義社会を完成させられる」という意味ではありませんでした。スターリンはこの言葉をすり替え、レーニン主義の看板を用いて自らのナショナリズム路線を正当化したのです。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: 3 Major Consequences of Socialism in One Country -->
+    <section>
+      <h2>⚙️ 2. 一国社会主義論がもたらした「国家体制の3大激変」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        「世界革命を待たず一国で社会主義を完成させる」というテーゼは、単なる思想論争にとどまらず、ソ連の社会・経済・政治構造を根底から作り変える破壊的エネルギーとなりました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">激変 1</span>
+          <div class="flow-title">強制重工業化と五カ年計画</div>
+          <p class="flow-desc">
+            資本主義諸国の包囲に対抗するため、消費財を犠牲にして軍事・重工業を最優先する超強行的な「第1次五カ年計画（1928-1932年）」が発動された。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">激変 2</span>
+          <div class="flow-title">農業集団化とクラーク撲滅</div>
+          <p class="flow-desc">
+            重工業化の資金と穀物を強奪するため、農民の私有地を奪いコルホーズ（集団農場）へ編入。抵抗する農民数百万人が追放・餓死（ホロドモール）した。
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">激変 3</span>
+          <div class="flow-title">「階級闘争激化論」と大粛清</div>
+          <p class="flow-desc">
+            社会主義が進むほど敵の抵抗が激化すると捏造。国家死滅論を葬り去り、NKVDテロと収容所（GULAG）による恐怖政治を恒久化した。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">激変 4</span>
+          <div class="flow-title">コミンテルンの防壁化と解散</div>
+          <p class="flow-desc">
+            世界革命を推進する組織であったコミンテルンは、「ソ連国家を防衛するための手先」へ格下げされ、1943年には米英配慮で正式解散された。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator Box -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 一国社会主義の確立と国家要塞化（1924年〜現代）動態シミュレーター</div>
+            <div class="sim-subtitle">時代ボタンを切り替えて、国家要塞化度・内部粛清強度・国際主義の変遷を確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1924〜1928年</span>
+            理論提起と党内論争・トロツキー追放
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1928〜1936年</span>
+            五カ年計画・農業集団化と社会主義完成宣言
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1936〜1953年</span>
+            大粛清・大祖国戦争と軍事超大国化
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜波及と変容</span>
+            北朝鮮「主体思想」への極限的一国主義化
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">一国自足・強制重工業化（国家要塞化）強度</div>
+            <div class="metric-value" id="m-fort">開始（ネップから計画経済への模索）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-fort" style="width: 50%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国家抑圧機構・内部粛清（階級闘争激化論）強度</div>
+            <div class="metric-value" id="m-purge">拡大中（反対派の除名・分派追放）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-purge" style="width: 55%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国際プロレタリア世界革命への関与・依存度</div>
+            <div class="metric-value" id="m-inter">後退（コミンテルンをソ連防衛に従属）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-inter" style="width: 40%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Architecture Box -->
+        <div class="arch-visual-box">
+          <div class="arch-visual-title">
+            <span>📐 【国家要塞化・統治構造ダイアグラム】</span>
+            <span id="arch-title" style="color: #fde047; font-weight: 800;">Phase 1：世界革命の後退とソ連一国内での権力闘争（1924〜1928年）</span>
+          </div>
+          <div class="svg-wrapper">
+            <svg id="arch-svg" viewBox="0 0 880 220" width="100%" height="220" style="max-width: 880px; display: block; margin: 0 auto;">
+              <!-- JSで動的に切り替え -->
+            </svg>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- JSで動的更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive into "Intensification of Class Struggle" -->
+    <section>
+      <h2>🔍 3. 深掘り解説：「階級闘争激化論」― 国家死滅論を葬った悪魔の方程式</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        一国社会主義論が完成したとき、スターリンは重大な論理的矛盾に直面しました。マルクス主義では「社会主義が勝利すれば階級対立はなくなり、国家暴力装置は死滅していく」はずでした。しかし、ソ連の現実はそれとは正反対に、国家警察が肥大化していたのです。この矛盾を埋めるためにスターリンが捏造したのが<strong>「階級闘争激化論」</strong>でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>☠️ 「前進すればするほど敵は狂暴化する」</span>
+          </div>
+          <p class="factor-desc">
+            1928年および1937年の中央委員会総会でスターリンが定式化した命題です。<br>
+            「社会主義建設が前進し成功を収めれば収めるほど、打倒された旧搾取階級の残余分子や国外帝国主義の残党は、自らの滅亡を前にして<strong>ますます絶望的・激烈な破壊工作やスパイ活動を展開する</strong>」。<br>
+            ゆえに、社会主義社会になっても国家権力を弱めるのではなく、<strong>「国家と治安抑圧機関を最大限に強化・肥大化させねばならない」</strong>と結論づけたのです。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>🎯 あらゆる失敗の責任転嫁と粛清の無限連鎖</span>
+          </div>
+          <p class="factor-desc">
+            この論理は、計画経済の非効率や農業集団化による飢饉、工場の事故など、<strong>体制の政策的失敗をすべて「潜入した敵のスパイや怠業分子（サボタージュ）」のせいにする万能の免罪符</strong>となりました。<br>
+            党内批判者や政策異論者は全員「反革命陰謀団」と認定され、モスクワ見せしめ裁判を通じてNKVDにより銃殺または強制労働収容所（GULAG）へと送られました。
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">理論体系</th>
+              <th style="width: 26%;">国家の性格と将来</th>
+              <th style="width: 26%;">対外戦略と世界革命</th>
+              <th style="width: 26%;">国内政治の統制手法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>古典的マルクス主義</strong></td>
+              <td>階級抑圧のための過渡期機関。階級消滅とともに<strong>「国家は死滅する」</strong>。</td>
+              <td>万国の労働者の国際的連帯による<strong>世界革命</strong>が不可欠。</td>
+              <td>パリ・コミューン型の直接民主制・随時解任権・労働者賃金。</td>
+            </tr>
+            <tr>
+              <td><strong>トロツキー「永続革命論」</strong></td>
+              <td>孤立したロシアでは官僚専制が不可避。<strong>プロレタリア政治革命</strong>で官僚を打倒すべき。</td>
+              <td>先進国への<strong>世界革命の波及</strong>なしに社会主義の完結はあり得ない。</td>
+              <td>党内民主主義の回復、分派禁止の解除、労働者ソビエトの実権回復。</td>
+            </tr>
+            <tr>
+              <td><strong>スターリン「一国社会主義論」</strong></td>
+              <td>階級闘争激化論により<strong>国家抑圧機関（NKVD）を空前に肥大化・恒久化</strong>。</td>
+              <td>世界革命を棚上げし、<strong>「ソ連一国の国家防衛」</strong>に他国共産党を従属。</td>
+              <td>民主集中制の一枚岩化、個人崇拝、大粛清によるテロ支配。</td>
+            </tr>
+            <tr>
+              <td><strong>北朝鮮「主体思想（チュチェ）」</strong></td>
+              <td>国家死滅を完全否定。首領・党・人民の<strong>「社会政治的生命体」</strong>として永生。</td>
+              <td>国際連帯を脱落させ、<strong>「思想の主体・経済の自立・国防の自衛」</strong>に孤立自給。</td>
+              <td>「10大原則」による最高掟化、首領絶対服従、白頭血統三代世襲。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Connection to North Korean Stalinism -->
+    <section>
+      <h2>🇰🇵 4. 本書『北朝鮮におけるスターリン主義の形成』への思想史的接続</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        スターリンが作り上げた「一国社会主義論」と「階級闘争激化論」は、毛沢東の中国を経て、朝鮮民主主義人民共和国（北朝鮮）において最も先鋭的かつ異形な極限形態へと到達しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>① 一国社会主義から「主体思想」へ</span>
+          </div>
+          <p class="factor-desc">
+            スターリンの一国主義（ソ連一国での自足）は、中ソ対立に挟まれた金日成によって<strong>「主体思想（チュチェ思想）」</strong>へと引き継がれました。<br>
+            他国（中ソ）の顔色を窺う事大主義を排し、「自国の革命は自らの力で完遂する」という一国完結論の極限形態が生まれたのです。
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 階級闘争激化論から「スパイ粛清」へ</span>
+          </div>
+          <p class="factor-desc">
+            1950年代の南労党派（朴憲永ら）粛清や1956年の8月宗派事件において、金日成派は反対勢力を「米帝のスパイ」「分派宗派分子」と断定しました。<br>
+            政策路線の違いを「内部の敵の陰謀」へとすり替えるスターリンの手法が完全に踏襲されました。
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ 国家要塞化から「白頭血統」へ</span>
+          </div>
+          <p class="factor-desc">
+            スターリンがソ連を工業・軍事要塞国家へと仕立て上げた論理は、北朝鮮において「全国土の要塞化」「先軍政治」「核抑止力」へと先鋭化しました。<br>
+            そして、国家生命体の脳髄である指導者の純血を守るため、「白頭血統」による世襲専制君主制が完成したのです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している歴史事典・学術解説・古典文献の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-123.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：一国社会主義論)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E4%B8%80%E5%9B%BD%E7%A4%BE%E4%BC%9A%E4%B8%BB%E7%BE%A9%E8%AB%96" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：一国社会主義論)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E4%B8%80%E5%9B%BD%E7%A4%BE%E4%BC%9A%E4%B8%BB%E7%BE%A9%E8%AB%96-1269738" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：一国社会主義論)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.historist.jp/word_w_i/entry/039617/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.historist.jp (歴史用語解説：一国社会主義論)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.weblio.jp/content/%E4%B8%80%E5%9B%BD%E7%A4%BE%E4%BC%9A%E4%B8%BB%E7%BE%A9%E8%AB%96" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.weblio.jp (Weblio辞書：一国社会主義論とコミンテルン)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ④ ｜ 一国社会主義論の構造と国家要塞化の力学</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        fortText: "開始（ネップから計画経済への模索）",
+        fortWidth: "50%",
+        fortColor: "#38bdf8",
+        purgeText: "拡大中（反対派の除名・分派追放）",
+        purgeWidth: "55%",
+        purgeColor: "#f59e0b",
+        interText: "後退（コミンテルンをソ連防衛に従属）",
+        interWidth: "40%",
+        interColor: "#f43f5e",
+        archTitle: "Phase 1：世界革命の後退とソ連一国内での権力闘争（1924〜1928年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Outer: Capitalist Encirclement -->
+          <rect x="40" y="35" width="220" height="50" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+          <text x="150" y="58" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">資本主義の安定期（西欧）</text>
+          <text x="150" y="74" fill="#64748b" font-size="10" text-anchor="middle">ドイツ革命敗退・ドーズ案</text>
+          
+          <!-- Center: USSR Internal Turn -->
+          <rect x="290" y="30" width="300" height="58" rx="8" fill="#881337" stroke="#fb7185" stroke-width="2"/>
+          <text x="440" y="54" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">ソ連共産党第14回大会（1925年）</text>
+          <text x="440" y="72" fill="#fde68a" font-size="11" font-weight="bold" text-anchor="middle">一国社会主義論の公式採択</text>
+          
+          <!-- Vector: Inward Consolidation -->
+          <path d="M 440 90 L 440 115" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-warn)"/>
+          
+          <!-- Internal Construction Focus -->
+          <rect x="180" y="118" width="520" height="42" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="440" y="137" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">ロシア自身の資源と労働力による社会主義建設の決断</text>
+          <text x="440" y="152" fill="#cbd5e1" font-size="10" text-anchor="middle">トロツキー（世界革命派）を「敗北主義」として弾圧・追放へ</text>
+          
+          <!-- Comintern Degradation -->
+          <rect x="620" y="35" width="220" height="50" rx="8" fill="#1e1b4b" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="730" y="58" fill="#fecdd3" font-size="11" font-weight="bold" text-anchor="middle">コミンテルンの地位低下</text>
+          <text x="730" y="74" fill="#fda4af" font-size="10" text-anchor="middle">ソ連外交の防壁へ従属開始</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(56, 189, 248, 0.15)"/>
+          <text x="440" y="187" fill="#7dd3fc" font-size="10.5" font-weight="bold" text-anchor="middle">転換点：「世界を革命化する国」から「自国を防衛・建設する国」へ</text>
+          
+          <defs>
+            <marker id="arrow-warn" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1924〜1928年 ― 理論提起と党内論争・トロツキー追放】</strong><br>欧州革命が失敗し資本主義諸国が安定を取り戻す中、スターリンは「ソ連一国の資源と労働力で社会主義社会を完成できる」とする一国社会主義論を提起しました。1925年の党第14回大会で公式採択され、1928年のコミンテルン第6回大会で国際共産党の基本綱領にも組み込まれました。この理論によってトロツキーら世界革命派は「ソ連人民の建設力を侮辱する敗北主義者」とされ、党から追放されました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 1,
+        fortText: "極大（第1次五カ年計画・重工業化強行）",
+        fortWidth: "90%",
+        fortColor: "#f59e0b",
+        purgeText: "激化（クラーク撲滅・強制収容所拡大）",
+        purgeWidth: "80%",
+        purgeColor: "#e11d48",
+        interText: "僅少（コミンテルンは社会ファシズム論で自滅）",
+        interWidth: "20%",
+        interColor: "#f43f5e",
+        archTitle: "Phase 2：五カ年計画・農業集団化と社会主義完成宣言（1928〜1936年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Central Power Engine: Stalin State -->
+          <rect x="270" y="28" width="340" height="46" rx="8" fill="#4c0519" stroke="#f59e0b" stroke-width="2.5"/>
+          <text x="440" y="48" fill="#fef08a" font-size="12.5" font-weight="bold" text-anchor="middle">第1次・第2次五カ年計画 ＆ 農業集団化</text>
+          <text x="440" y="65" fill="#fde68a" font-size="10.5" text-anchor="middle">「50年の遅れを10年で取り戻す」超高速重工業化</text>
+          
+          <!-- Downward Destruction & Construction -->
+          <path d="M 330 75 L 200 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 550 75 L 680 105" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+          
+          <!-- Left: Collectivization & Famine -->
+          <rect x="50" y="108" width="280" height="50" rx="6" fill="#1e1b4b" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="190" y="130" fill="#fca5a5" font-size="11.5" font-weight="bold" text-anchor="middle">🚜 農業集団化（コルホーズ化）</text>
+          <text x="190" y="146" fill="#fda4af" font-size="9.5" text-anchor="middle">クラーク撲滅・穀物強制徴発（ホロドモール）</text>
+          
+          <!-- Right: Industrial Stronghold -->
+          <rect x="550" y="108" width="280" height="50" rx="6" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+          <text x="690" y="130" fill="#6ee7b7" font-size="11.5" font-weight="bold" text-anchor="middle">🏭 重工業・軍事要塞の建設</text>
+          <text x="690" y="146" fill="#a7f3d0" font-size="9.5" text-anchor="middle">マグニトゴルスク鉄鋼・トラクター工場</text>
+          
+          <!-- Bottom Banner: 1936 Constitution -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(245, 158, 11, 0.2)"/>
+          <text x="440" y="187" fill="#fde047" font-size="10.5" font-weight="bold" text-anchor="middle">1936年スターリン憲法：「ソ連における社会主義の基本的勝利」を宣言</text>
+          
+          <defs>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#34d399"/>
+            </marker>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1928〜1936年 ― 五カ年計画・農業集団化と社会主義完成宣言】</strong><br>スターリンはネップ（新経済政策）を破棄し、国家の総力を挙げた第1次五カ年計画を発動しました。「先進諸国より50年〜100年遅れている我々は、10年で追いつかねば踏み潰される」と演説し、重工業化資金を得るため農民の土地を取り上げて強制的にコルホーズ（集団農場）へと統合しました。数百万の富農（クラーク）が粛清・追放され大飢饉（ウクライナのホロドモール等）をもたらしましたが、鉄鋼・機械・発電所などの工業基盤を完成させ、1936年には「社会主義の基本的勝利」を宣言しました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-4' class='cite-tag'>[4]</a>"
+      },
+      {
+        id: 2,
+        fortText: "極限（第二次大戦勝利・核保有・軍事大国）",
+        fortWidth: "100%",
+        fortColor: "#e11d48",
+        purgeText: "極限（モスクワ裁判・大粛清・全社会監視）",
+        purgeWidth: "100%",
+        purgeColor: "#e11d48",
+        interText: "公式消滅（1943年コミンテルン解散）",
+        interWidth: "0%",
+        interColor: "#94a3b8",
+        archTitle: "Phase 3：大粛清・大祖国戦争と軍事超大国化（1936〜1953年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top: Stalin God-Dictator -->
+          <rect x="260" y="25" width="360" height="46" rx="8" fill="#881337" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="46" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">大元帥スターリン ＆ 「階級闘争激化論」</text>
+          <text x="440" y="63" fill="#fde68a" font-size="10.5" text-anchor="middle">「大祖国戦争」勝利によるソ連超大国化と核兵器保有</text>
+          
+          <!-- Two Pillars: Terror & Dissolution -->
+          <rect x="60" y="105" width="340" height="52" rx="6" fill="#4c0519" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="230" y="128" fill="#fecdd3" font-size="12" font-weight="bold" text-anchor="middle">☠️ NKVDによる大粛清・GULAG網</text>
+          <text x="230" y="145" fill="#fda4af" font-size="9.5" text-anchor="middle">社会主義が前進するほど敵は狂暴化するとの口実</text>
+          
+          <rect x="480" y="105" width="340" height="52" rx="6" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="650" y="128" fill="#e2e8f0" font-size="12" font-weight="bold" text-anchor="middle">🕊️ 1943年 コミンテルン解散</text>
+          <text x="650" y="145" fill="#cbd5e1" font-size="9.5" text-anchor="middle">世界革命組織を解体し米英ヤルタ体制へ参入</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(136, 19, 55, 0.3)"/>
+          <text x="440" y="187" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">帰結：世界革命の完全埋葬と、巨大な官僚抑圧機構を持つ軍事要塞国家の完成</text>
+        `,
+        desc: "<strong>【Phase 3：1936〜1953年 ― 大粛清・大祖国戦争と軍事超大国化】</strong><br>社会主義完成宣言にもかかわらず、スターリンは「階級闘争激化論」を唱えて党内外の反対派を「スパイ・妨害分子」として大粛清（1937-1938年）しました。国家の死滅は無期限に葬り去られ、巨大な秘密警察（NKVD）と収容所（GULAG）が全社会を支配しました。第二次世界大戦（大祖国戦争）では共産主義イデオロギーよりもロシアの民族愛国心を前面に押し出して勝利し、1943年にはコミンテルンを正式に解散。世界革命論を完全に清算し、米国と対峙する軍事超大国（東側陣営の覇権国）を築き上げました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 3,
+        fortText: "極限（「国防の自衛」核・ミサイル要塞化）",
+        fortWidth: "100%",
+        fortColor: "#e11d48",
+        purgeText: "完全制度化（10大原則・政治犯収容所・連座制）",
+        purgeWidth: "100%",
+        purgeColor: "#e11d48",
+        interText: "完全皆無（国際連帯拒絶・自力更生）",
+        interWidth: "0%",
+        interColor: "#94a3b8",
+        archTitle: "Phase 4：北朝鮮「主体思想」への極限的一国主義化（冷戦期〜現代）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Godly Dynasty: Kim Jong Un -->
+          <rect x="250" y="26" width="380" height="46" rx="8" fill="#4c0519" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="47" fill="#fef08a" font-size="13" font-weight="900" text-anchor="middle">👑 北朝鮮「首領制」 ＆ 「主体思想」</text>
+          <text x="440" y="63" fill="#fde68a" font-size="10.5" font-weight="bold" text-anchor="middle">スターリン的一国社会主義論の極限的完結形態</text>
+          
+          <!-- Connectors -->
+          <path d="M 330 73 L 230 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 550 73 L 650 105" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow-gold)"/>
+          
+          <!-- Left: Juche Self-Reliance -->
+          <rect x="70" y="106" width="320" height="50" rx="6" fill="#1e1b4b" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="230" y="128" fill="#fecdd3" font-size="11.5" font-weight="bold" text-anchor="middle">「思想の主体・経済の自立・国防の自衛」</text>
+          <text x="230" y="145" fill="#fda4af" font-size="9.5" text-anchor="middle">国際連帯を脱落させ、完全自給自足の要塞国家へ</text>
+          
+          <!-- Right: Paektu Bloodline Dynastic Autocracy -->
+          <rect x="490" y="106" width="320" height="50" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="650" y="128" fill="#fef08a" font-size="11.5" font-weight="bold" text-anchor="middle">「10大原則」と「白頭血統」世襲専制</text>
+          <text x="650" y="145" fill="#fde047" font-size="9.5" text-anchor="middle">社会政治的生命体の脳髄として首領を神聖化</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(251, 191, 36, 0.15)"/>
+          <text x="440" y="187" fill="#fde047" font-size="10.5" font-weight="bold" text-anchor="middle">総括：一国社会主義の論理が、最も閉鎖的な世襲絶対君主制を生み出した</text>
+          
+          <defs>
+            <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#fbbf24"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 4：波及と変容 ― 北朝鮮「主体思想」への極限的一国主義化】</strong><br>スターリンの一国社会主義の論理は、朝鮮民主主義人民共和国（北朝鮮）において最も先鋭的な結晶を遂げました。1950年代のスターリン批判や中ソ対立の荒波の中、金日成は外国への盲従（事大主義）を排して「思想における主体、政治における自主、経済における自立、国防における自衛」を定式化。世界革命への関与を完全に放棄し、自国と指導部を守るための要塞国家・核開発へと直進しました。さらに金正日による「社会政治的生命体論」と「10大原則」、そして「白頭血統」による血縁世襲の正統化は、一国主義論がたどり着いた究極の専制君主制モデルです。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-fort').textContent = p.fortText;
+      const bFort = document.getElementById('b-fort');
+      bFort.style.width = p.fortWidth;
+      bFort.style.backgroundColor = p.fortColor;
+
+      document.getElementById('m-purge').textContent = p.purgeText;
+      const bPurge = document.getElementById('b-purge');
+      bPurge.style.width = p.purgeWidth;
+      bPurge.style.backgroundColor = p.purgeColor;
+
+      document.getElementById('m-inter').textContent = p.interText;
+      const bInter = document.getElementById('b-inter');
+      bInter.style.width = p.interWidth;
+      bInter.style.backgroundColor = p.interColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
