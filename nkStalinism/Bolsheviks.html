@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：ボリシェヴィキ（Bolsheviks）徹底解説 ― 前衛党組織論から十月革命、そして党国体制への変質史</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 45%, #991b1b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #f43f5e;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+      line-height: 1.75;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.35rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      min-height: 2.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* SVG Architecture Box */
+    .arch-visual-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .arch-visual-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .svg-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      border-left-color: var(--purple);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-purple .callout-title {
+      color: var(--purple);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+      .sim-box { padding: 1.25rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link active">⑤ ボリシェヴィキの系譜</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">共産党組織論・党国体制の起源補論</span>
+        <span class="badge badge-sub">1903年党分裂から十月革命、そしてスターリン大粛清による変質史</span>
+      </div>
+      <h1>ボリシェヴィキ（Bolsheviks）：<br>少数の職業革命家集団はいかにしてロシアを掌握し、専制的な「党国体制」へと転化したのか</h1>
+      <p class="lead">
+        <strong>ボリシェヴィキ（Bolsheviks / ロシア語: Большевики、「多数派」の意）</strong>とは、1903年のロシア社会民主労働党第2回大会において、ウラジーミル・レーニンを中心に形成された急進派グループであり、のちのソビエト連邦共産党の直接の前身となった革命政党です。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        誰でも入れる緩やかな大衆政党を目指したメンシェヴィキ（少数派）を退け、鉄の規律と秘密活動の技術を備えた「職業革命家」の精鋭組織（前衛党）を構築。1917年の十月革命で史上初の社会主義政権を打ち立てました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><br>
+        しかし、過酷な内戦と1921年の「分派禁止決議」を経て党内民主主義は窒息し、党が国家機関を完全に吸収する<strong>「党国体制（Party-State System）」</strong>が成立。やがてスターリンによる大粛清によって、革命を率いた「古参ボリシェヴィキ（オールド・ボリシェヴィキ）」のほぼ全員が物理的に抹殺されるという劇的な歴史をたどりました。本補論では、20世紀の共産主義独裁および北朝鮮「首領制」の原型となったボリシェヴィキの組織力学を、動態シミュレーターとともに解剖します。<a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Birth of Bolsheviks & Split with Mensheviks -->
+    <section>
+      <h2>🚩 1. ボリシェヴィキの誕生：1903年ロンドン大会における宿命の分裂</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        ボリシェヴィキの起源は、1903年にブリュッセルおよびロンドンで開催されたロシア社会民主労働党第2回大会に遡ります。党員資格を定めた党規約第1条の文言をめぐり、レーニンとマルトフの間で妥協なき論争が勃発しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+      </p>
+
+      <div class="grid-2">
+        <!-- レーニン派（ボリシェヴィキ） -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>🔴 レーニン案（ボリシェヴィキ：多数派）</span>
+          </div>
+          <p class="factor-desc">
+            党綱領を認め、財政的に支援するだけでなく、<strong>「党の組織の一つに直接参加して活動する者」</strong>に限定する。<br>
+            ツァーリの秘密警察（オフラナ）の弾圧に対抗するため、誰でも入れる大衆政党ではなく、厳格な規律と非合法活動の専門技能を持つ<strong>「少数の職業革命家による精鋭前衛党」</strong>を目指しました（『何をなすべきか？』1902年）。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <!-- マルトフ派（メンシェヴィキ） -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🟡 マルトフ案（メンシェヴィキ：少数派）</span>
+          </div>
+          <p class="factor-desc">
+            党綱領を認め、財政的に支援し、<strong>「党組織の指導の下で規則的に個人的協力を行う者」</strong>であれば党員と認める。<br>
+            西欧（ドイツ社会民主党など）の議会政党のように、ストライキに参加する労働者やシンパ知識人にも広く門戸を開放した<strong>「開かれた大衆的労働者政党」</strong>を目指しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">💡 なぜ「ボリシェヴィキ（多数派）」と呼ばれたのか？</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          党員資格の第1条投票ではマルトフ案が勝利したものの、その後の党中央機関（党機関紙『イスクラ』編集部や中央委員会）の選挙において、ユダヤ人労働者組織（ブンド）などの離脱によりレーニン派が僅差で多数（ボリシンスカ）を獲得しました。<br>
+          これ以降、レーニン派は自らを<strong>「ボリシェヴィキ（多数派）」</strong>、マルトフ派を<strong>「メンシェヴィキ（少数派）」</strong>と名乗るようになりました。実態としてはロシア国内の党員数でメンシェヴィキが上回る時期も長くありましたが、レーニンはこの優位性を誇示する呼称を巧みに定着させました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Journey from October Revolution to Party-State -->
+    <section>
+      <h2>⚔️ 2. 十月革命から一党独裁・「党国体制」への跳躍（1917〜1921年）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        1917年の二月革命で皇帝が退位した直後、亡命先から帰国したレーニンは「四月テーゼ（すべての権力をソビエトへ！）」を掲げて武装蜂起を指導。十月革命によって世界初の社会主義政権を樹立しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 1</span>
+          <div class="flow-title">十月革命と権力奪取</div>
+          <p class="flow-desc">
+            1917年10月、トロツキー率いる軍事革命委員会が臨時政府を打倒し、第2回全露ソビエト大会で政権掌握を宣言した。
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 2</span>
+          <div class="flow-title">憲法制定議会の強制解散</div>
+          <p class="flow-desc">
+            1918年1月、自由選挙で社会革命党（エスエル）が過半数を占めると、レーニンは武力で議会を強制解散。議会制民主主義を完全否定した。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 3</span>
+          <div class="flow-title">内戦とチェーカー（赤色テロ）</div>
+          <p class="flow-desc">
+            白軍・外国干渉軍との過酷な内戦下で秘密警察チェーカーが創設され、階級敵や反体制派への超法規的処刑が日常化した。
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 4</span>
+          <div class="flow-title">分派禁止決議と党国体制</div>
+          <p class="flow-desc">
+            1921年第10回大会で党内分派活動が全面禁止され、党が国家機関・労働組合・司法を完全統括する「党国体制」が確立した。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator Box -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 ボリシェヴィキの組織構造と変質史（1903年〜大粛清）動態シミュレーター</div>
+            <div class="sim-subtitle">時代ボタンを切り替えて、中央集権度・国家権力掌握度・党内民主主義の変遷を動的に確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1903〜1917年</span>
+            地下非合法前衛党とメンシェヴィキ対立
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1917〜1921年</span>
+            十月革命・内戦と「一党独裁」の確立
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1921〜1928年</span>
+            「分派禁止」と党国体制（アパラチキ台頭）
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜1930年代</span>
+            スターリン大粛清と「古参ボリシェヴィキ」壊滅
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">党組織の中央集権化・軍隊的規律の強度</div>
+            <div class="metric-value" id="m-cent">高（職業革命家組織・秘密活動の規律）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-cent" style="width: 75%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国家権力・軍隊・抑圧機構（秘密警察）の掌握度</div>
+            <div class="metric-value" id="m-state">皆無（ツァーリ専制下の地下反体制組織）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-state" style="width: 5%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">党内での自由な討議・分派（異論）の共存度</div>
+            <div class="metric-value" id="m-demo">極大（レーニン方針への猛烈な公然異論）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-demo" style="width: 85%; background-color: #10b981;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Architecture Box -->
+        <div class="arch-visual-box">
+          <div class="arch-visual-title">
+            <span>📐 【ボリシェヴィキ組織・権力フローダイアグラム】</span>
+            <span id="arch-title" style="color: #fde047; font-weight: 800;">Phase 1：少数の職業革命家による地下前衛党組織（1903〜1917年）</span>
+          </div>
+          <div class="svg-wrapper">
+            <svg id="arch-svg" viewBox="0 0 880 220" width="100%" height="220" style="max-width: 880px; display: block; margin: 0 auto;">
+              <!-- JSで動的に切り替え -->
+            </svg>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- JSで動的更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive Comparison: Bolsheviks vs Mensheviks -->
+    <section>
+      <h2>🔍 3. 深掘り比較：ボリシェヴィキ（急進派） vs メンシェヴィキ（穏健派）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        同じロシア社会民主労働党から分裂した両派は、組織論だけでなく、革命の戦略・国家観・民主主義の捉え方においても決定的に異なっていました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 18%;">比較項目</th>
+              <th style="width: 41%;">ボリシェヴィキ（レーニン派）<br><span style="font-size: 0.78rem; font-weight: 500;">後のソビエト連邦共産党</span></th>
+              <th style="width: 41%;">メンシェヴィキ（マルトフ派）<br><span style="font-size: 0.78rem; font-weight: 500;">正統派マルクス主義・西欧型社会民主主義</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>党員資格と組織形態</strong></td>
+              <td><strong>職業革命家の精鋭組織</strong>。党組織に直接所属し、軍隊のような鉄の規律に従う者のみ。<a href="#ref-1" class="cite-tag">[1]</a></td>
+              <td><strong>開かれた大衆政党</strong>。党の指導下で個人的・財政的に協力するシンパ・労働者全般。<a href="#ref-3" class="cite-tag">[3]</a></td>
+            </tr>
+            <tr>
+              <td><strong>革命戦略（段階論）</strong></td>
+              <td><strong>一段階（連続）革命論</strong>。ブルジョワジーを打倒し、労農同盟によって直ちにプロレタリア独裁へ。<a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td><strong>二段階革命論</strong>。後進国ロシアではまずブルジョワ民主主義を発展させ、数十年後に社会主義へ。</td>
+            </tr>
+            <tr>
+              <td><strong>十月革命と議会への態度</strong></td>
+              <td>普通選挙の憲法制定議会を武力で解散。<strong>ソビエト権力（一党独裁）を唯一の正統</strong>とする。</td>
+              <td>武装蜂起を「冒険主義」と批判。議会制民主主義と他党派との協調連立を主張。</td>
+            </tr>
+            <tr>
+              <td><strong>国家暴力・テロの行使</strong></td>
+              <td>反革命鎮圧のため<strong>チェーカー（秘密警察）による赤色テロ</strong>を公然と肯定・行使。<a href="#ref-4" class="cite-tag">[4]</a></td>
+              <td>法の支配を重視し、超法規的処刑や秘密警察によるテロを厳しく糾弾。</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的帰結</strong></td>
+              <td>国家権力を独占しソビエト連邦を建国。スターリン体制を経て超大国化するも1991年崩壊。</td>
+              <td>1918年以降ボリシェヴィキによって非合法化され、指導者は国外亡命または獄死。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Callout: Trotsky's Shocking Prophecy in 1904 -->
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>🔮 トロツキーの戦慄すべき予言（1904年）：なぜボリシェヴィキ組織論は独裁者を生んだのか</span>
+        </div>
+        <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.7;">
+          のちに十月革命でレーニンの右腕となったレフ・トロツキーですが、1903年の党分裂直後はメンシェヴィキに近く、1904年の著書『われわれの政治的任務』において、レーニンの前衛党組織論を次のように痛烈に批判していました。<br><br>
+          <strong>「レーニンの代代理論においては、まず党組織が人民大衆に代わり、次いで中央委員会が党組織に代わり、そして最後には、ひとりの独裁者が中央委員会に代わるだろう」</strong>。<br><br>
+          この言葉は、レーニン自身の意図を超えて、1920年代後半以降にヨシフ・スターリンが書記長として全党と国家を支配し、個人独裁を完成させた歴史的現実を寸分違わず言い当てていました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Legacy in China & North Korea -->
+    <section>
+      <h2>🇰🇵 4. 本書『北朝鮮におけるスターリン主義の形成』への直結：ボリシェヴィキ組織論の極限化</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        レーニンが創始したボリシェヴィキの組織原理（外部注入論・民主集中制・分派禁止）は、コミンテルンを通じて中国共産党（毛沢東）に移植され、さらに朝鮮労働党（金日成）へと引き継がれました。本書が解き明かす「北朝鮮の首領制」は、ボリシェヴィキ前衛党論の最も先鋭化された終着駅です。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 民主集中制の変質 -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>① 民主集中制から「唯一領導」へ</span>
+          </div>
+          <p class="factor-desc">
+            ボリシェヴィキの「中央への服従・分派禁止」の原則は、北朝鮮において<strong>「党の唯一思想体系確立の10大原則」</strong>へと昇華されました。<br>
+            党内議論の余地は完全に消滅し、首領（最高指導者）の言葉が不可侵の教条となりました。
+          </p>
+        </div>
+
+        <!-- 外部注入から生命体論へ -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>② 外部注入から「社会政治的生命体」へ</span>
+          </div>
+          <p class="factor-desc">
+            「大衆は自力で意識化できない（外部注入論）」というレーニンのテーゼは、金正日によって<strong>「人民は手足、首領は脳髄」</strong>とする生命体論へと変質しました。<br>
+            大衆は首領に絶対服従して初めて社会政治的生命を授かるという神学的一体化が完成しました。
+          </p>
+        </div>
+
+        <!-- 古参粛清から白頭血統へ -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>③ 分派粛清から「白頭血統」世襲へ</span>
+          </div>
+          <p class="factor-desc">
+            スターリンが古参ボリシェヴィキを皆殺しにしたのと同様、金日成も「8月宗派事件（1956年）」を通じて延安派・ソ連派を粛清しました。<br>
+            そして満州パルチザン派のみを残し、血縁的純潔性を絶対化する<strong>「白頭血統」三代世襲専制</strong>へと至ったのです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している歴史事典・学術解説・古典文献の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.y-history.net/appendix/wh1501-081.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：ボリシェヴィキ)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%AA%E3%82%B7%E3%82%A7%E3%83%B4%E3%82%A3%E3%82%AD" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：ボリシェヴィキ)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E3%83%9C%E3%83%AA%E3%82%B7%E3%82%A7%E3%83%B4%E3%82%A3%E3%82%AD-133580" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：ボリシェヴィキ)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.weblio.jp/content/%E3%83%9C%E3%83%AA%E3%82%B7%E3%82%A7%E3%83%B4%E3%82%A3%E3%82%AD" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.weblio.jp (Weblio辞書：ボリシェヴィキの歴史とソ連共産党)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.y-history.net/appendix/wh1501-082.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：メンシェヴィキ)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑤ ｜ ボリシェヴィキ（Bolsheviks）の構造と党国体制の系譜</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        centText: "高（職業革命家組織・秘密活動の規律）",
+        centWidth: "75%",
+        centColor: "#38bdf8",
+        stateText: "皆無（ツァーリ専制下の地下反体制組織）",
+        stateWidth: "5%",
+        stateColor: "#10b981",
+        demoText: "極大（レーニン方針への猛烈な公然異論）",
+        demoWidth: "85%",
+        demoColor: "#10b981",
+        archTitle: "Phase 1：少数の職業革命家による地下前衛党組織（1903〜1917年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Outer: Tsarist Oppression -->
+          <rect x="40" y="32" width="230" height="50" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+          <text x="155" y="55" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">ツァーリ専制国家（ロシア帝国）</text>
+          <text x="155" y="71" fill="#64748b" font-size="9.5" text-anchor="middle">秘密警察オフラナによる弾圧・シベリア流刑</text>
+          
+          <!-- Center: Core Vanguard Party -->
+          <rect x="300" y="28" width="280" height="58" rx="8" fill="#881337" stroke="#fb7185" stroke-width="2"/>
+          <text x="440" y="52" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">ボリシェヴィキ（レーニン派）</text>
+          <text x="440" y="70" fill="#fde68a" font-size="10.5" text-anchor="middle">少数の「職業革命家」精鋭集団</text>
+          
+          <!-- Right: Menshevik alternative -->
+          <rect x="610" y="32" width="230" height="50" rx="8" fill="#1e1b4b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="725" y="55" fill="#fde047" font-size="11" font-weight="bold" text-anchor="middle">メンシェヴィキ（マルトフ派）</text>
+          <text x="725" y="71" fill="#cbd5e1" font-size="9.5" text-anchor="middle">開かれた大衆政党・二段階革命論</text>
+          
+          <!-- Infiltration to Working Class -->
+          <path d="M 440 86 L 440 115" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <text x="495" y="104" fill="#38bdf8" font-size="10" font-weight="bold">外部注入</text>
+          
+          <!-- Working Class Factory Cells -->
+          <rect x="180" y="118" width="520" height="42" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="440" y="137" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">地下工場細胞（ペトログラード等の労働者層）</text>
+          <text x="440" y="152" fill="#94a3b8" font-size="10" text-anchor="middle">新聞『プラウダ』を通じた非合法宣伝・指導</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(56, 189, 248, 0.15)"/>
+          <text x="440" y="187" fill="#7dd3fc" font-size="10.5" font-weight="bold" text-anchor="middle">特徴：活発な論争と分派併存を保ちつつ、規律ある地下組織として鍛錬された時代</text>
+          
+          <defs>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1903〜1917年 ― 地下非合法前衛党とメンシェヴィキ対立】</strong><br>1903年の党分裂以来、レーニン率いるボリシェヴィキはツァーリ秘密警察の厳しい取り締まりを潜り抜けるため、「少数の専従職業革命家」による鉄の規律を誇る組織を築きました。一方、党内ではレーニンに対する激しい異論や議論が日常的に行われており、盲目的な服従組織ではありませんでした。1917年の二月革命で帝政が崩壊すると、亡命先から戻ったレーニンは「四月テーゼ」を掲げて党の主導権を確立しました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 1,
+        centText: "超高度（軍事組織化・赤軍動員体制）",
+        centWidth: "85%",
+        centColor: "#f59e0b",
+        stateText: "掌握（ソビエト政権樹立・赤色テロ）",
+        stateWidth: "80%",
+        stateColor: "#f59e0b",
+        demoText: "大幅低下（戦時共産主義下での異論排除）",
+        demoWidth: "45%",
+        demoColor: "#f59e0b",
+        archTitle: "Phase 2：十月革命・内戦と「一党独裁」の確立（1917〜1921年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top Apex: Lenin & Trotsky Sovnarkom -->
+          <rect x="270" y="28" width="340" height="46" rx="8" fill="#4c0519" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="440" y="48" fill="#fef08a" font-size="12.5" font-weight="bold" text-anchor="middle">人民委員会議（ソヴナルコム）＆ ボリシェヴィキ中央</text>
+          <text x="440" y="65" fill="#fde68a" font-size="10.5" text-anchor="middle">レーニン（指導） ＆ トロツキー（赤軍司令官）</text>
+          
+          <!-- Downward Power Pillars -->
+          <path d="M 330 75 L 200 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 550 75 L 680 105" stroke="#e11d48" stroke-width="2" marker-end="url(#arrow-red)"/>
+          
+          <!-- Left: Red Army -->
+          <rect x="50" y="108" width="280" height="50" rx="6" fill="#1e1b4b" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="190" y="130" fill="#fca5a5" font-size="11.5" font-weight="bold" text-anchor="middle">⚔️ 労働者農民赤軍（500万人規模）</text>
+          <text x="190" y="146" fill="#fda4af" font-size="9.5" text-anchor="middle">白軍・外国干渉軍を撃破する軍事基盤</text>
+          
+          <!-- Right: Cheka -->
+          <rect x="550" y="108" width="280" height="50" rx="6" fill="#4c0519" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="690" y="130" fill="#fecdd3" font-size="11.5" font-weight="bold" text-anchor="middle">🛡️ 非常委員会（チェーカー）</text>
+          <text x="690" y="146" fill="#fda4af" font-size="9.5" text-anchor="middle">反革命サボタージュ取締り・赤色テロ</text>
+          
+          <!-- Bottom: Soviets Subjugated -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(244, 63, 94, 0.2)"/>
+          <text x="440" y="187" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">ソビエト（評議会）の実権空洞化 ➔ ボリシェヴィキの追認機関へ</text>
+          
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1917〜1921年 ― 十月革命・内戦と「一党独裁」の確立】</strong><br>十月革命で権力を掌握したボリシェヴィキは、1918年1月の憲法制定議会選挙で社会革命党（エスエル）に敗北すると、武力で議会を強制解散しました。これにより議会制民主主義は捨て去られ、「ソビエト権力＝ボリシェヴィキ一党独裁」へと純化。過酷なロシア内戦（1918-1922年）の中で赤軍が創設され、秘密警察チェーカーによる赤色テロが激化。メンシェヴィキやエスエルなどの他党派は次々と非合法化されました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-4' class='cite-tag'>[4]</a>"
+      },
+      {
+        id: 2,
+        centText: "絶対化（書記局による全党員人事権の独占）",
+        centWidth: "95%",
+        centColor: "#e11d48",
+        stateText: "完全統合（党国体制＝パルティア・ゴスダルストヴォ）",
+        stateWidth: "92%",
+        stateColor: "#e11d48",
+        demoText: "窒息（1921年分派禁止決議・異論の反党化）",
+        demoWidth: "15%",
+        demoColor: "#f43f5e",
+        archTitle: "Phase 3：「分派禁止」と党国体制（アパラチキ台頭、1921〜1928年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Central Apex: Stalin Secretariat -->
+          <rect x="270" y="28" width="340" height="46" rx="8" fill="#881337" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="48" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">党中央書記長 スターリン（1922年就任）</text>
+          <text x="440" y="64" fill="#fde68a" font-size="10.5" text-anchor="middle">全党員・地方支部の任命権・人事権を一手に掌握</text>
+          
+          <!-- Ban on Fractions -->
+          <path d="M 440 75 L 440 102" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrow-warn)"/>
+          <text x="515" y="93" fill="#fde047" font-size="10" font-weight="bold">1921年分派禁止決議</text>
+          
+          <!-- Middle: Monolithic Bureaucracy (Apparatchiks) -->
+          <rect x="180" y="105" width="520" height="45" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="440" y="126" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">党官僚層（アパラチキ）による国家機関・産業の完全吸収</text>
+          <text x="440" y="142" fill="#cbd5e1" font-size="10" text-anchor="middle">党の命令がそのまま国家の法律となり、ソビエトは完全に従属</text>
+          
+          <!-- Bottom: Purged Opposition -->
+          <rect x="60" y="168" width="760" height="26" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-width="1"/>
+          <text x="440" y="185" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">左翼反対派（トロツキー）および右翼反対派（ブハーリン）の分派指定・追放</text>
+        `,
+        desc: "<strong>【Phase 3：1921〜1928年 ― 「分派禁止」と党国体制（アパラチキ台頭）】</strong><br>1921年の第10回党大会において、クロンシュタットの反乱に危機感を抱いたレーニンは「党の統一に関する決議」を提出し、党内での派閥（分派）結成を全面禁止しました。これにより党内の自由な論争は「反党行為」として処罰対象となり、党内民主主義は窒息しました。1922年に書記長に就任したスターリンは、党員の人事権を独占して自らの息のかかった官僚（アパラチキ）を全国に配置。1924年のレーニン死後、トロツキーらを「分派主義者」として排除し、党が国家を支配する「党国体制」を完成させました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 3,
+        centText: "神聖絶対（首領への現人神崇拝）",
+        centWidth: "100%",
+        centColor: "#e11d48",
+        stateText: "極限（NKVDによる大粛清・全体主義統制）",
+        stateWidth: "100%",
+        stateColor: "#e11d48",
+        demoText: "皆無（異論表明＝即時死刑・強制収容所）",
+        demoWidth: "0%",
+        demoColor: "#94a3b8",
+        archTitle: "Phase 4：スターリン大粛清と「古参ボリシェヴィキ」壊滅（1930年代）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top: Absolute Master Stalin -->
+          <rect x="270" y="25" width="340" height="46" rx="8" fill="#4c0519" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="46" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">最高首領 スターリン ＆ 「階級闘争激化論」</text>
+          <text x="440" y="63" fill="#fde68a" font-size="10.5" text-anchor="middle">オールド・ボリシェヴィキを根絶やしにし個人独裁を完成</text>
+          
+          <!-- Guillotine Vectors -->
+          <path d="M 320 72 L 200 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 560 72 L 680 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          
+          <!-- Left: Mass Execution of Founders -->
+          <rect x="50" y="106" width="280" height="52" rx="6" fill="#4c0519" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="190" y="128" fill="#fecdd3" font-size="11.5" font-weight="bold" text-anchor="middle">☠️ モスクワ裁判（1936-38年）</text>
+          <text x="190" y="145" fill="#fda4af" font-size="9.5" text-anchor="middle">ジノヴィエフ、ブハーリン、カーメネフ銃殺</text>
+          
+          <!-- Right: New Stalinist Generation -->
+          <rect x="550" y="106" width="280" height="52" rx="6" fill="#1e1b4b" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="690" y="128" fill="#fef08a" font-size="11.5" font-weight="bold" text-anchor="middle">🏢 新世代スターリン従奉官僚層</text>
+          <text x="690" y="145" fill="#fde047" font-size="9.5" text-anchor="middle">フルシチョフ、ベリヤ、モロトフらによる新体制</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(136, 19, 55, 0.3)"/>
+          <text x="440" y="187" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">結末：レーニンの党は死に、スターリンの個人専制・恐怖政治国家へと転生した</text>
+        `,
+        desc: "<strong>【Phase 4：1930年代 ― スターリン大粛清と「古参ボリシェヴィキ」壊滅】</strong><br>1930年代の大粛清（エジョフシナ）において、スターリンはレーニンとともに十月革命を率いた「古参ボリシェヴィキ（オールド・ボリシェヴィキ）」のほぼ全員を「帝国主義のスパイ」「テロリスト」に仕立て上げて銃殺しました。党中央委員や将校、古参党員数十万人が処刑され、党組織はスターリン個人への絶対服従を誓う新世代の官僚層によって完全に置き換えられました。こうして、かつて自由な理論闘争を繰り広げた革命政党ボリシェヴィキは完全に消滅し、個人崇拝に基づく全体主義専制機関へと変貌を遂げました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-cent').textContent = p.centText;
+      const bCent = document.getElementById('b-cent');
+      bCent.style.width = p.centWidth;
+      bCent.style.backgroundColor = p.centColor;
+
+      document.getElementById('m-state').textContent = p.stateText;
+      const bState = document.getElementById('b-state');
+      bState.style.width = p.stateWidth;
+      bState.style.backgroundColor = p.stateColor;
+
+      document.getElementById('m-demo').textContent = p.demoText;
+      const bDemo = document.getElementById('b-demo');
+      bDemo.style.width = p.demoWidth;
+      bDemo.style.backgroundColor = p.demoColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
