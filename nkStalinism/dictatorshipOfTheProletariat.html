@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：マルクス・レーニン主義の「前衛党論」および「プロレタリア独裁論」徹底解説</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #0f172a;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --accent-dark: #78350f;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --crimson-dark: #4c0519;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.3rem 0.65rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Hero Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #881337 100%);
+      color: #ffffff;
+      padding: 2.75rem 2.25rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #f43f5e;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -25%;
+      right: -8%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.28rem 0.8rem;
+      border-radius: 9999px;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.38;
+      margin-bottom: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.04rem;
+      color: #f8fafc;
+      font-weight: 400;
+      line-height: 1.75;
+      max-width: 890px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.42rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.5rem 0 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.18rem 0.6rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .flow-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.35rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-blue {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      border-left-color: var(--primary);
+    }
+
+    .callout-purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      border-left-color: var(--purple);
+    }
+
+    .callout-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-blue .callout-title {
+      color: var(--primary);
+    }
+
+    .callout-purple .callout-title {
+      color: var(--purple);
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0b1329 0%, #1e1b4b 55%, #18181b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.85rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1.1rem;
+    }
+
+    .sim-title {
+      font-size: 1.24rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.65rem;
+      padding: 0.8rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 14px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-era {
+      display: block;
+      font-size: 0.75rem;
+      color: #fde047;
+      margin-bottom: 0.2rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    /* Metrics */
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1.1rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .metric-label {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .metric-value {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+      min-height: 2.7rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .bar-bg {
+      height: 9px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* Architecture Visualizer Frame (SVG Box) */
+    .visual-arch-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 0.85rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .visual-arch-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .svg-diagram-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    /* Simulator Detailed Grid */
+    .sim-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .sim-detail-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.65rem;
+      padding: 0.95rem 1.1rem;
+    }
+
+    .sim-detail-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+
+    .sim-detail-val {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: #f8fafc;
+      line-height: 1.55;
+    }
+
+    /* Simulator Description Box */
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      font-size: 0.94rem;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 800;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.35rem;
+      margin-right: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-red { background: #ffe4e6; color: #9f1239; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-purple { background: #ede9fe; color: #5b21b6; }
+    .tag-green { background: #d1fae5; color: #065f46; }
+
+    /* Key Concept Box */
+    .concept-box {
+      background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);
+      border: 2px solid #93c5fd;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .concept-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Reference Card */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-icon {
+      color: var(--primary);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: 2.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin-bottom: 0.35rem;
+    }
+
+    @media (max-width: 680px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.85rem 1.35rem; }
+      .sim-box { padding: 1.35rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Web補論ナビゲーション">
+      <div class="nav-title">
+        <span>📕</span>
+        <span>『北朝鮮におけるスターリン主義の形成』公式Web補論・理論解説</span>
+      </div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link active">① 前衛党論とプロレタリア独裁論</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">マルクス・レーニン主義 核心理論補論</span>
+        <span class="badge badge-sub">革命組織論・国家死滅論から「首領制・白頭血統」への思想史的変質</span>
+      </div>
+      <h1>マルクス・レーニン主義の「前衛党論」および「プロレタリア独裁論」：<br>資本主義打倒の核心理論はいかにして官僚独裁と「首領制」へと転化したのか</h1>
+      <p class="lead">
+        マルクス・レーニン主義における<strong>「前衛党論（革命的前衛党組織論）」</strong>と<strong>「プロレタリア独裁論」</strong>は、資本主義体制を打倒し共産主義社会へと移行するための二大中核理論です。<br>
+        自然発生的な労働者の経済闘争を政治闘争へと引き上げる「外部注入論」と「民主集中制」による規律ある前衛党、そして過渡期において旧支配階級（ブルジョワジー）を抑圧するための新型国家権力。<br>
+        本補論では、マルクスが構想したパリ・コミューン型の「過渡期国家・国家死滅論」から、レーニンのボリシェヴィキ一党支配、スターリンの「階級闘争激化論」による大粛清、毛沢東の「継続革命論」、そして北朝鮮における「首領制・10大原則・白頭血統」への極限的変質に至る論理的・構造的メカニズムを、動態シミュレーターと図解を通じて体系的に解剖します。
+      </p>
+    </header>
+
+    <!-- Section 1: 前衛党論（革命的前衛党組織論）の構造と力学 -->
+    <section id="vanguard-party">
+      <h2>🚩 1. 前衛党論（革命的前衛党組織論）：自然発生性の否定と外部注入</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        資本主義社会において、労働者階級（プロレタリアート）はいかにして自らの階級的利害に目覚め、国家権力を掌握するのか。レーニンはこの問いに対し、大衆の自然発生的な運動を信じず、厳格に訓練された「外部の前衛組織」が指導しなければならないと喝破しました。
+      </p>
+
+      <div class="grid-3">
+        <!-- 外部注入論 -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① 「外部注入論」</span>
+            <span class="tag tag-amber">カウツキー / レーニン</span>
+          </div>
+          <p class="factor-desc">
+            労働者階級が自力で到達できるのは「賃金引き上げ」や「労働時間短縮」を求める<strong>労働組合主義（トレード・ユニオニズム）の意識</strong>にすぎません。<br>
+            資本主義そのものを根底から打倒する「社会主義的・政治的意識」は、<strong>ブルジョワ知識人（インテリゲンチャ）によって外部から労働者大衆へ注入されなければならない</strong>とする理論です（『何をなすべきか？』1902年）。
+          </p>
+        </div>
+
+        <!-- 職業革命家組織 -->
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>② 職業革命家の精鋭組織</span>
+            <span class="tag tag-blue">少数の前衛</span>
+          </div>
+          <p class="factor-desc">
+            誰でも自由に出入りできる大衆政党を退け、<strong>革命活動そのものを専門の生業（専従）とする少数の「職業革命家」</strong>によって構成されます。<br>
+            秘密警察の弾圧を潜り抜ける地下活動の技術、軍隊のような鉄の規律、そして理論的武装を兼ね備えたプロフェッショナル集団こそが党の中核とされました。
+          </p>
+        </div>
+
+        <!-- 民主集中制 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ 民主集中制と分派禁止</span>
+            <span class="tag tag-red">絶対服従の原則</span>
+          </div>
+          <p class="factor-desc">
+            <strong>「討議の自由、行動の統一」</strong>を掲げる組織原則です。方針決定までは自由な議論を認める建前ですが、一度党大会や中央委員会が決定した方針に対しては、<strong>全党員および下級組織が中央の決定に絶対服従</strong>しなければなりません。<br>
+            特に決定後の派閥・分派活動は「反党行為」として厳罰に処されました。
+          </p>
+        </div>
+      </div>
+
+      <!-- 民主集中制の構造フロー -->
+      <h3 style="margin-top: 2rem;">🔄 民主集中制（Democratic Centralism）の実態：議論の自由から上意下達の専制へ</h3>
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="step-num">STEP 1</span>
+          <div class="flow-title">下意上達の形式的議論</div>
+          <p class="flow-desc">党員・下級細胞による討議と、上級機関代議員の選出（建前上の民主主義）。</p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 2</span>
+          <div class="flow-title">中央委員会・書記長への集中</div>
+          <p class="flow-desc">権限と情報が党中央（政治局・書記局）に集約され、政策方針が一元的に採択される。</p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 3</span>
+          <div class="flow-title">下級組織への絶対服従命令</div>
+          <p class="flow-desc">決定事項に対する異論・留保は一切許されず、全下級組織は機械的に命令を執行する。</p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 4</span>
+          <div class="flow-title">分派活動の全面禁止・粛清</div>
+          <p class="flow-desc">少数意見を組織化する派閥結成は「党の破壊分子」と見なされ、除名や物理的抹殺の対象となる。</p>
+        </div>
+      </div>
+
+      <!-- スターリンによる一国一前衛党論の定式化 -->
+      <div class="callout callout-rose">
+        <div class="callout-title">
+          <span>📌 スターリンによる「一国一前衛党論」の完成と他党排除</span>
+        </div>
+        <p style="color: var(--text-main); font-size: 0.94rem;">
+          レーニンの死後、スターリンは「プロレタリアートは単一の階級利害を持つため、それを代表する前衛党もまた<strong>一国に唯一つしか存在し得ない</strong>」と定式化しました。<br>
+          これにより、社会革命党（エスエル）やメンシェヴィキなど他の社会主義政党はすべて「反革命」として非合法化され、<strong>前衛党（共産党）による一党独裁体制がイデオロギー的に不可侵の真理として固定化</strong>されました。この原則はコミンテルン（国際共産党）を通じて世界各国の共産党に義務付けられました。
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: プロレタリア独裁論の起源・構想と変容 -->
+    <section id="proletarian-dictatorship">
+      <h2>⚖️ 2. プロレタリア独裁論：過渡期国家の創出から国家肥大化へ</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        「プロレタリア独裁（Dictatorship of the Proletariat）」とは、資本主義から階級のない共産主義社会へ至る移行期において、労働者階級が旧支配者（資本家・地主階級）の抵抗を粉砕するために行使する革命的権力です。
+      </p>
+
+      <div class="grid-2">
+        <!-- マルクスの原構想 -->
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>マルクスの原構想：パリ・コミューン型国家</span>
+            <span class="tag tag-green">1871年 パリ・コミューン</span>
+          </div>
+          <div class="factor-desc">
+            カール・マルクスは、1871年のパリ・コミューンを「プロレタリア独裁の生きた実例」として高く評価しました。
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+              <li><strong>常備軍と警察の廃止：</strong>人民自らの武装組織（国民衛兵）への置き換え。</li>
+              <li><strong>徹底した民主主義と即時解任権（リコール権）：</strong>公務員・代議員は有権者によって選挙され、いつでも解任可能。</li>
+              <li><strong>労働者並みの賃金支給：</strong>特権的官僚階層の発生を防ぐため、最高公務員給与を熟練労働者並みに制限。</li>
+              <li><strong>国家死滅の展望：</strong>旧階級の抵抗が終わり、階級対立が消滅すれば、抑圧機関としての国家は自然と<strong>「死滅（Withering away）」</strong>していく。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- レーニンの発展と十月革命 -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>レーニンの展開：『国家と革命』と暴力装置粉砕</span>
+            <span class="tag tag-purple">1917年 十月革命</span>
+          </div>
+          <div class="factor-desc">
+            レーニンは十月革命直前の『国家と革命』において、ブルジョワ民主主義国家を議会を通じて平和裏に利用することは不可能であり、<strong>既存の国家暴力装置（軍隊・警察・官僚機構）を粉砕・破壊しなければならない</strong>と主張しました。
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+              <li><strong>ソビエト（評議会）権力：</strong>労働者・農民・兵士による直接代表制国家。</li>
+              <li><strong>しかし現実の逆転：</strong>内戦（1918–1922年）と外国干渉、経済崩壊のなかで、労働者ソビエトの実権は空洞化。</li>
+              <li><strong>チェーカー（非常委員会）の創設：</strong>超法規的処刑権を持つ秘密警察が台頭し、「党の独裁」が「労働者階級の独裁」にすり替わっていきました。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- パリ・コミューン型理想とソ連スターリン体制の対比 -->
+      <h3 style="margin-top: 2rem;">📊 理論的理想と現実の巨大な乖離：コミューン型国家 vs スターリン主義国家</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">比較項目</th>
+              <th style="width: 40%;">マルクスのコミューン構想（本来のプロレタリア独裁）</th>
+              <th style="width: 40%;">スターリン主義下の現実（変質したプロレタリア独裁）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>国家機関の性格</strong></td>
+              <td>代議員は労働者であり即時解任可能。特権なき「半国家（Semi-state）」。</td>
+              <td>強大な常備軍、警察、官僚が全社会の上に君臨する「超国家」。</td>
+            </tr>
+            <tr>
+              <td><strong>公務員・官僚の待遇</strong></td>
+              <td>熟練労働者の平均賃金を上限とし、特権を一切排除。</td>
+              <td><strong>ノメンクラトゥーラ（特権官僚階層）</strong>が生まれ、専用配給店や別荘を独占。</td>
+            </tr>
+            <tr>
+              <td><strong>反対派・異論の扱い</strong></td>
+              <td>複数党派（ブランキ派、プルードン派等）が併存・議論するコミューン民主主義。</td>
+              <td>他党派の完全非合法化。党内の異論も「反革命スパイ」としてNKVDが拷問・銃殺。</td>
+            </tr>
+            <tr>
+              <td><strong>「国家の死滅」論</strong></td>
+              <td>階級対立が消滅するにつれて、国家は自ずと消滅・死滅していく。</td>
+              <td><strong>「階級闘争激化論」</strong>により、社会主義が前進するほど国家抑圧を強化すべきと正当化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: 動態シミュレーター（4段階進化・変質） -->
+    <section id="interactive-evolution">
+      <h2>🌐 3. 【動態シミュレーター】過渡期国家から北朝鮮「首領制・白頭血統」への4段階変質</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        タブを切り替えることで、マルクスのコミューン構想が出発点となり、レーニンのボリシェヴィキ体制、スターリンの大粛清を経て、いかにして北朝鮮の「唯一思想体系」「首領制」「白頭血統（世襲絶対専制）」へと極限的に転化していったかの力学を動的に追体験できます。
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">⚙️ 権力集中とイデオロギー変質の歴史的フェーズ選択</div>
+            <div class="sim-subtitle">フェーズを選択すると、権力分布メーター、組織アーキテクチャ図、理論的根拠が連動して切り替わります</div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="phase-tabs">
+          <button class="phase-btn" id="btn-p0" onclick="setPhase(0)">
+            <span class="phase-era">Phase 1｜1871〜1917年</span>
+            マルクス本来のコミューン型構想
+          </button>
+          <button class="phase-btn" id="btn-p1" onclick="setPhase(1)">
+            <span class="phase-era">Phase 2｜1917〜1924年</span>
+            レーニン期ボリシェヴィキ一党支配
+          </button>
+          <button class="phase-btn" id="btn-p2" onclick="setPhase(2)">
+            <span class="phase-era">Phase 3｜1924〜1953年</span>
+            スターリン主義と「階級闘争激化論」
+          </button>
+          <button class="phase-btn active" id="btn-p3" onclick="setPhase(3)">
+            <span class="phase-era">Phase 4｜1950年代〜現代</span>
+            北朝鮮の「首領制・白頭血統」
+          </button>
+        </div>
+
+        <!-- Dynamic Meters -->
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">
+              <span>人民主権・大衆民主主義の度合い</span>
+              <span id="m-demo-pct" style="color: #38bdf8; font-weight: 700;">0%</span>
+            </div>
+            <div class="metric-value" id="m-demo-text">皆無（首領への絶対無条件の服従）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="bar-demo" style="width: 0%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">
+              <span>国家抑圧機構・秘密警察の肥大度</span>
+              <span id="m-opp-pct" style="color: #f43f5e; font-weight: 700;">100%</span>
+            </div>
+            <div class="metric-value" id="m-opp-text">極限（国家保衛省・管理所・連座制）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="bar-opp" style="width: 100%; background-color: #e11d48;"></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">
+              <span>最高指導者への権力集中・神格化度</span>
+              <span id="m-cult-pct" style="color: #fbbf24; font-weight: 700;">100%</span>
+            </div>
+            <div class="metric-value" id="m-cult-text">絶対神聖化（脳髄・白頭血統の世襲）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="bar-cult" style="width: 100%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Architecture Box -->
+        <div class="visual-arch-box">
+          <div class="visual-arch-title">
+            <span>📐 【権力ピラミッド・組織構造ビジュアライザー】</span>
+            <span id="arch-model-title" style="color: #fde047; font-weight: 800;">北朝鮮型：首領（脳髄）➔ 党（神経）➔ 大衆（手足）＋ 血縁世襲構造</span>
+          </div>
+          <div class="svg-diagram-wrapper">
+            <svg id="arch-svg" viewBox="0 0 880 230" width="100%" height="230" style="max-width: 880px; display: block; margin: 0 auto;">
+              <!-- JSで動的に書き換え -->
+            </svg>
+          </div>
+        </div>
+
+        <!-- Detailed Spec Grid -->
+        <div class="sim-detail-grid" id="sim-detail-grid">
+          <!-- JSで動的生成 -->
+        </div>
+
+        <!-- Dynamic Description Box -->
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- JSで動的生成 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 毛沢東・日本共産党・そして現代への展開 -->
+    <section id="global-developments">
+      <h2>🌏 4. 歴史的変遷と世界的影響：毛沢東思想からユーロコミュニズムの脱却まで</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        前衛党論とプロレタリア独裁論は、ソ連・東欧にとどまらず、アジアの革命運動や西側諸国の共産党運動にも決定的かつ対照的な影響を及ぼしました。
+      </p>
+
+      <div class="grid-2">
+        <!-- 毛沢東と中国共産党 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>🇨🇳 毛沢東思想：「継続革命論」と文化大革命</span>
+            <span class="tag tag-red">下からの動員テロ</span>
+          </div>
+          <div class="factor-desc">
+            毛沢東はスターリンの『簡明教程』から「階級闘争激化論」を吸収し、<strong>「プロレタリア独裁下における継続革命の理論」</strong>へと先鋭化させました。
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+              <li><strong>延安整風運動（1941–45年）：</strong>「批判と自我批判」を通じた徹底的な思想改造と、毛沢東への「一元化指導」確立。</li>
+              <li><strong>走資派（資本主義の道を歩む実権派）批判：</strong>党内官僚層の中に新たなブルジョワ階級が生まれていると断定。</li>
+              <li><strong>文化大革命（1966–76年）：</strong>スターリンのように秘密警察（NKVD）で上から粛清するだけでなく、紅衛兵や造反派大衆を煽動して既存の国家・党機関を物理的に破壊させ、未曾有の大混乱と犠牲を生み出しました。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 日本共産党と欧州共産党 -->
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>🇯🇵 🇪🇺 西側共産党：「プロレタリア独裁」規定の放棄</span>
+            <span class="tag tag-green">議会制民主主義への転換</span>
+          </div>
+          <div class="factor-desc">
+            イタリア、フランス、スペインなどの欧州共産党（<strong>ユーロコミュニズム</strong>）や日本共産党は、ソ連の一党独裁や大粛清の歴史的教訓から、基本路線を根本的に見直しました。
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+              <li><strong>「独裁」概念の拒絶：</strong>暴力による専制政治を想起させる「プロレタリア独裁」の文言を綱領から削除（日本共産党は「労働者階級の権力」への言い換えを経て、2004年綱領で全廃）。</li>
+              <li><strong>複数政党制と政権交代の承認：</strong>議会制民主主義、思想・信条・言論の自由を将来の社会主義社会でも無条件で保障すると宣言。</li>
+              <li><strong>国家暴力装置粉砕論の撤回：</strong>平和的・多数派合意による議会を通じた変革路線を定着させました。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 包括的比較マトリクス -->
+      <h3 style="margin-top: 2rem;">📋 各思想・体制における「前衛党」と「独裁」の比較対照マトリクス</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>潮流・体制</th>
+              <th>前衛党の組織観</th>
+              <th>独裁（権力行使）の対象</th>
+              <th>反対派・異論の処理</th>
+              <th>国家死滅論の位置づけ</th>
+              <th>到達点・現代の帰結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① マルクス本来構想</strong></td>
+              <td>労働者全体の政治的代行体（特定の排他的固定組織ではない）</td>
+              <td>旧ブルジョワ階級の抵抗抑圧</td>
+              <td>コミューン内での複数派閥の自由討議</td>
+              <td>階級消滅とともに自ずと死滅</td>
+              <td>1871年パリ・コミューン崩壊で短期終焉</td>
+            </tr>
+            <tr>
+              <td><strong>② レーニン（ボリシェヴィキ）</strong></td>
+              <td>職業革命家による精鋭組織・民主集中制</td>
+              <td>地主・ブルジョワおよび反革命勢力</td>
+              <td>分派禁止決議（1921年）、他党の非合法化</td>
+              <td>過渡期国家の必然性を説くが死滅を展望</td>
+              <td>党国体制（一党独裁）の制度化</td>
+            </tr>
+            <tr>
+              <td><strong>③ ソ連スターリン主義</strong></td>
+              <td>一国一前衛党論・書記長への絶対服従</td>
+              <td>党内外の「人民の敵」「帝国主義スパイ」</td>
+              <td>見せしめ裁判、NKVDによる大粛清・GULAG送り</td>
+              <td>「階級闘争激化論」により死滅論を事実上破棄・国家肥大化</td>
+              <td>ノーメンクラトゥーラ特権支配と1991年ソ連崩壊</td>
+            </tr>
+            <tr>
+              <td><strong>④ 中国（毛沢東主義）</strong></td>
+              <td>党の一元化指導・大衆路線</td>
+              <td>走資派（党内ブルジョワ実権派）</td>
+              <td>批判と自我批判、大衆動員（紅衛兵）による打倒</td>
+              <td>継続革命による長期闘争を強調</td>
+              <td>文革の惨禍を経て改革開放、党主導の国家資本主義へ</td>
+            </tr>
+            <tr>
+              <td><strong>⑤ 北朝鮮（首領制・白頭血統）</strong></td>
+              <td>首領の意思を無条件執行する伝達機関（神経）</td>
+              <td>全社会（首領の教示に背く思想的分子すべて）</td>
+              <td>「10大原則」による日常相互監視、政治犯収容所（管理所）</td>
+              <td>国家死滅を完全否定。「社会政治的生命体」として永続化</td>
+              <td>三代にわたる血縁世襲（白頭血統）の絶対君主制国家</td>
+            </tr>
+            <tr>
+              <td><strong>⑥ 西側共産党（現代路線）</strong></td>
+              <td>議会政党（国民に開かれた党組織）</td>
+              <td>「独裁」概念を完全放棄</td>
+              <td>立憲民主主義・複数政党制・信教と言論の自由を擁護</td>
+              <td>死滅論は棚上げし福祉国家・民主的改革を志向</td>
+              <td>議会内平和共存政党（日本共産党等）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: 本書との連動と理論的総括 -->
+    <section id="conclusion">
+      <h2>💡 5. 総括：なぜ「人民解放の理論」は「最も苛烈な専制」へと転化したのか</h2>
+      <p style="margin-bottom: 1.25rem;">
+        資本主義の搾取から労働者大衆を解放することを掲げたマルクス・レーニン主義が、なぜ最終的に北朝鮮のような<strong>「前近代的な血縁世襲君主制（首領制）」</strong>という異形の政治体制を生み出すに至ったのか。その原因は偶発的な逸脱ではなく、理論的DNAの中に埋め込まれた構造的欠陥にありました。
+      </p>
+
+      <div class="concept-box">
+        <div style="font-weight: 800; color: var(--primary-dark); font-size: 1.12rem;">
+          🔑 解放の論理が専制の論理へと反転した3つの構造的要石
+        </div>
+        <div class="concept-grid">
+          <div class="concept-item">
+            <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent); margin-bottom: 0.35rem;">要石 ①</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.45rem; color: var(--primary-dark);">「外部注入論」による大衆蔑視</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              「労働者は自力では真の意識を持てない」という前提は、必然的に「真理を独占する指導者（前衛）」と「啓蒙されるべき無知な大衆」という不可逆の上下支配関係を正当化しました。
+            </p>
+          </div>
+
+          <div class="concept-item">
+            <div style="font-size: 0.8rem; font-weight: 800; color: var(--rose); margin-bottom: 0.35rem;">要石 ②</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.45rem; color: var(--primary-dark);">「民主集中制」による異論の排除</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              「決定後の分派禁止」と「中央への絶対服従」は、権力濫用を内部から是正するチェック＆バランスの機能を完全に破壊し、中央書記局・独裁者への権力集中を加速させました。
+            </p>
+          </div>
+
+          <div class="concept-item">
+            <div style="font-size: 0.8rem; font-weight: 800; color: var(--purple); margin-bottom: 0.35rem;">要石 ③</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.45rem; color: var(--primary-dark);">「プロレタリア独裁」の超法規性</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              「いかなる法律にも拘束されない直接の暴力権力」という独裁の定義は、法の支配や人権の概念を「ブルジョワ的欺瞞」として斥け、秘密警察テロと収容所制度を理論的に肯定しました。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-blue">
+        <div class="callout-title">
+          <span>📖 本書『北朝鮮におけるスターリン主義の形成』を読むための視座</span>
+        </div>
+        <p style="color: var(--text-main); font-size: 0.94rem; line-height: 1.7;">
+          北朝鮮における金日成の「主体思想」、金正日の「社会政治的生命体論」（首領＝脳髄、党＝神経、人民＝手足）、そして「党の唯一思想体系確立の10大原則」や2013年の「白頭血統」明文化は、唐突に発生した狂気ではありません。<br>
+          それは、<strong>レーニンの前衛党論とプロレタリア独裁論を出発点とし、スターリンの思想統制と毛沢東の一元化指導を極限まで推し進め、儒教的家族国家観と融合させた歴史的必然の産物</strong>であったことが本書において鮮やかに解き明かされます。
+        </p>
+      </div>
+
+      <!-- 参考文献・リンク -->
+      <h3 style="margin-top: 1.75rem;">📚 参照文献・Web資料</h3>
+      <ul class="ref-list">
+        <li class="ref-item">
+          <span class="ref-icon">🔗</span>
+          <div>
+            <strong>レーニン『国家と革命』（1917年） / 『何をなすべきか？』（1902年）</strong>：前衛党組織論およびブルジョワ国家暴力装置破壊論の基本文献。
+          </div>
+        </li>
+        <li class="ref-item">
+          <span class="ref-icon">🔗</span>
+          <div>
+            <strong>カール・マルクス『フランスにおける内乱』（1871年） / 『ゴータ綱領批判』（1875年）</strong>：パリ・コミューンの分析と過渡期国家「プロレタリア独裁」の初出概念。
+          </div>
+        </li>
+        <li class="ref-item">
+          <span class="ref-icon">🔗</span>
+          <div>
+            <strong>ソビエト連邦共産党中央委員会編『ソ同盟共産党（ボ）歴史・簡明教程』（1938年）</strong>：スターリンによる一国社会主義論、階級闘争激化論、反党分派闘争史の教典。
+          </div>
+        </li>
+        <li class="ref-item">
+          <span class="ref-icon">🔗</span>
+          <div>
+            <strong>朝鮮労働党「党の唯一思想体系確立の10大原則」（1974年制定・2013年改訂）</strong>：前衛党論を首領への絶対服従と白頭血統世襲へと完成させた北朝鮮の最高掟規範。
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 『北朝鮮におけるスターリン主義の形成』公式Web補論 ｜ 著：mb_cho</p>
+      <p style="font-size: 0.8rem; color: #94a3b8;">本補論資料は、Amazon Kindle電子書籍『北朝鮮におけるスターリン主義の形成』の読解を深めるための公式解説コンテンツです。</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Simulator Script -->
+  <script>
+    const evolutionPhases = [
+      {
+        id: 0,
+        name: "Phase 1｜1871〜1917年：マルクス本来のコミューン型過渡期国家構想",
+        demoPct: "85%",
+        demoColor: "#10b981",
+        demoText: "直接民主主義（普通選挙・即時リコール・労働者並み賃金）",
+        oppPct: "20%",
+        oppColor: "#38bdf8",
+        oppText: "最小限（旧搾取者の反抗抑圧のみ・常備軍廃止）",
+        cultPct: "5%",
+        cultColor: "#10b981",
+        cultText: "皆無（個人崇拝の徹底拒絶・集団代表制）",
+        archTitle: "コミューン型：主権は大衆コミューンにあり、代表は随時解任・労働者賃金",
+        svgContent: `
+          <!-- Phase 1: Commune Model -->
+          <rect x="20" y="20" width="840" height="190" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Bottom: Armed People & Workers -->
+          <rect x="60" y="145" width="760" height="50" rx="8" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+          <text x="440" y="175" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">武装した労働者・市民大衆（人民コミューン基盤）</text>
+          
+          <!-- Arrows Upward: Direct democracy & election -->
+          <path d="M 240 145 L 240 105" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-green)" stroke-dasharray="4 2"/>
+          <path d="M 440 145 L 440 105" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-green)" stroke-dasharray="4 2"/>
+          <path d="M 640 145 L 640 105" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-green)" stroke-dasharray="4 2"/>
+          <text x="440" y="128" fill="#a7f3d0" font-size="11" text-anchor="middle">普通選挙・即時解任権（随時リコール）</text>
+          
+          <!-- Middle: Commune Council -->
+          <rect x="180" y="55" width="520" height="45" rx="8" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.5"/>
+          <text x="440" y="82" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">パリ・コミューン評議会（複数党派併存・熟練労働者賃金）</text>
+          
+          <!-- State Withering Note -->
+          <rect x="715" y="55" width="125" height="45" rx="6" fill="rgba(52, 211, 153, 0.15)" stroke="#34d399" stroke-width="1"/>
+          <text x="777" y="74" fill="#a7f3d0" font-size="10" font-weight="bold" text-anchor="middle">過渡期国家</text>
+          <text x="777" y="90" fill="#6ee7b7" font-size="9.5" text-anchor="middle">国家の死滅へ</text>
+          
+          <defs>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#34d399"/>
+            </marker>
+          </defs>
+        `,
+        specs: [
+          { label: "権力基盤", val: "武装した労働者大衆（民兵組織）" },
+          { label: "組織原理", val: "下からの普通選挙と即時リコール権" },
+          { label: "特権の防止", val: "公務員給与を熟練労働者並みに制限" },
+          { label: "国家の将来", val: "階級消滅に伴う「国家の死滅（消滅）」" }
+        ],
+        desc: "<strong>【Phase 1：マルクスのコミューン構想（1871年 パリ・コミューン）】</strong><br>マルクスが『フランスにおける内乱』で描いた本来のプロレタリア独裁は、官僚専制とは真逆の徹底した「下からの直接民主制」でした。常備軍と警察を廃止して人民自らが武装し、すべての公務員は有権者の意向でいつでも解任（リコール）され、給与も一般労働者並みに制限されました。階級対立がなくなるにつれて、抑圧機関としての国家そのものが自然と不要になり「死滅」していくと考えられていました。"
+      },
+      {
+        id: 1,
+        name: "Phase 2｜1917〜1924年：レーニン期ボリシェヴィキ一党支配の形成",
+        demoPct: "40%",
+        demoColor: "#f59e0b",
+        demoText: "名目化（労働者ソビエトから党中央委員会への実権移行）",
+        oppPct: "65%",
+        oppColor: "#f59e0b",
+        oppText: "強化（チェーカー創設・赤色テロ・他党非合法化）",
+        cultPct: "35%",
+        cultColor: "#38bdf8",
+        cultText: "前衛党のカリスマ化（分派活動の禁止決議）",
+        archTitle: "レーニン期：外部注入論に基づくボリシェヴィキ前衛党がソビエトを代行支配",
+        svgContent: `
+          <!-- Phase 2: Lenin Vanguard Model -->
+          <rect x="20" y="20" width="840" height="190" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top: Vanguard Party -->
+          <rect x="280" y="35" width="320" height="45" rx="8" fill="#881337" stroke="#fb7185" stroke-width="2"/>
+          <text x="440" y="62" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">ボリシェヴィキ前衛党（職業革命家・民主集中制）</text>
+          
+          <!-- Downward Injection / Commands -->
+          <path d="M 380 80 L 380 120" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <path d="M 500 80 L 500 120" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <text x="440" y="103" fill="#fca5a5" font-size="11" text-anchor="middle">外部注入・党の指導（分派禁止）</text>
+          
+          <!-- Middle: Soviets (Worker councils) dominated by Party -->
+          <rect x="180" y="125" width="520" height="35" rx="6" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="440" y="147" fill="#e2e8f0" font-size="12" font-weight="bold" text-anchor="middle">ソビエト（評議会）機構 ➔ 党の決定を執行する追認機関へ空洞化</text>
+          
+          <!-- Secret Police Cheka -->
+          <rect x="715" y="90" width="130" height="60" rx="6" fill="rgba(225, 29, 72, 0.2)" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="780" y="115" fill="#fecdd3" font-size="11" font-weight="bold" text-anchor="middle">チェーカー</text>
+          <text x="780" y="133" fill="#fda4af" font-size="9" text-anchor="middle">非常委員会（秘密警察）</text>
+          
+          <!-- Bottom: Mass -->
+          <rect x="60" y="175" width="760" height="25" rx="4" fill="#334155"/>
+          <text x="440" y="192" fill="#94a3b8" font-size="11" text-anchor="middle">労働者・農民大衆（赤軍動員）</text>
+          
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        specs: [
+          { label: "権力基盤", val: "職業革命家によるボリシェヴィキ党組織" },
+          { label: "組織原理", val: "民主集中制・外部注入論・1921年分派禁止" },
+          { label: "抑圧機構", val: "チェーカー（反革命・サボタージュ取締非常委員会）" },
+          { label: "他党派の扱い", val: "エスエル・メンシェヴィキの排除・一党支配化" }
+        ],
+        desc: "<strong>【Phase 2：レーニン期ボリシェヴィキ一党支配（1917〜1924年）】</strong><br>十月革命で権力を掌握したボリシェヴィキでしたが、過酷な内戦（ロシア内戦）と外国干渉に直面する中で、「外部注入論」と「民主集中制」が先鋭化しました。労働者ソビエトは実権を奪われて党の追認機関となり、チェーカーによる赤色テロが展開されました。1921年の第10回党大会では「党の統一に関する決議」によって党内での派閥・分派結成が全面禁止され、党内民主主義も失われて一党独裁構造が固まりました。"
+      },
+      {
+        id: 2,
+        name: "Phase 3｜1924〜1953年：スターリン主義と「階級闘争激化論」",
+        demoPct: "10%",
+        demoColor: "#f43f5e",
+        demoText: "名目的（ソビエト憲法は存在したが選挙は単一候補への儀礼的賛成のみ）",
+        oppPct: "92%",
+        oppColor: "#e11d48",
+        oppText: "巨大化（NKVDによる大粛清・見せしめ裁判・GULAG強制収容所）",
+        cultPct: "90%",
+        cultColor: "#f59e0b",
+        cultText: "個人崇拝（スターリン現人神化・「偉大な首領・父」）",
+        archTitle: "スターリン期：書記長個人への絶対権力集中とNKVDによる恐怖支配",
+        svgContent: `
+          <!-- Phase 3: Stalinist Model -->
+          <rect x="20" y="20" width="840" height="190" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top Apex: Stalin Personal Cult -->
+          <rect x="340" y="30" width="200" height="42" rx="8" fill="#881337" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="440" y="55" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">最高指導者 スターリン</text>
+          
+          <!-- Terrifying Control Arrows -->
+          <path d="M 370 72 L 260 115" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 510 72 L 620 115" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          
+          <!-- Middle Left: Monolithic Party -->
+          <rect x="130" y="115" width="260" height="45" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="260" y="137" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">一枚岩の共産党（党国体制）</text>
+          <text x="260" y="152" fill="#cbd5e1" font-size="10" text-anchor="middle">ノメンクラトゥーラ特権官僚層</text>
+          
+          <!-- Middle Right: NKVD Terror Machine -->
+          <rect x="490" y="115" width="260" height="45" rx="6" fill="#4c0519" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="620" y="137" fill="#fecdd3" font-size="12" font-weight="bold" text-anchor="middle">内務人民委員部（NKVD）</text>
+          <text x="620" y="152" fill="#fda4af" font-size="10" text-anchor="middle">大粛清・見せしめ裁判・GULAG</text>
+          
+          <!-- Bottom: Controlled Society -->
+          <rect x="60" y="180" width="760" height="25" rx="4" fill="#0f172a" stroke="#334155"/>
+          <text x="440" y="197" fill="#94a3b8" font-size="10.5" text-anchor="middle">全社会・勤労人民（事前検閲グラブリットと恐怖による絶対服従）</text>
+          
+          <!-- Theoretical Banner -->
+          <rect x="740" y="30" width="105" height="45" rx="6" fill="rgba(244,63,94,0.15)" stroke="#f43f5e" stroke-width="1"/>
+          <text x="792" y="48" fill="#fda4af" font-size="9" font-weight="bold" text-anchor="middle">階級闘争激化論</text>
+          <text x="792" y="64" fill="#fecdd3" font-size="8.5" text-anchor="middle">国家死滅の棚上げ</text>
+        `,
+        specs: [
+          { label: "権力基盤", val: "書記長個人崇拝・特権官僚層（ノメンクラトゥーラ）" },
+          { label: "中核イデオロギー", val: "一国社会主義論・「階級闘争激化論」" },
+          { label: "抑圧機構", val: "NKVD（内務人民委員部）・強制労働収容所GULAG" },
+          { label: "国家の将来", val: "国家死滅論を棚上げし、超強大な暴力国家を恒久化" }
+        ],
+        desc: "<strong>【Phase 3：スターリン主義と階級闘争激化論（1924〜1953年）】</strong><br>スターリンは「一国社会主義論」を打ち立て、国内の社会主義建設が進むほど内外の敵の抵抗が激化するという<strong>「階級闘争激化論」</strong>を捏造しました。これによりマルクス本来の「国家の死滅」は無期限に棚上げされ、NKVDを用いた大規模なテロ（大粛清）と強制収容所（GULAG）網が常態化しました。民主集中制はスターリン個人への絶対服従と一枚岩の指導へと再定義され、党幹部すら生殺与奪を握られる官僚専制国家が完成しました。"
+      },
+      {
+        id: 3,
+        name: "Phase 4｜1950年代〜現代：北朝鮮の「首領制・白頭血統」",
+        demoPct: "0%",
+        demoColor: "#94a3b8",
+        demoText: "皆無（首領への絶対無条件の服従・人民は『手足』）",
+        oppPct: "100%",
+        oppColor: "#e11d48",
+        oppText: "極限（国家保衛省・社会安全省・政治犯収容所・五号担当制・連座制）",
+        cultPct: "100%",
+        cultColor: "#e11d48",
+        cultText: "絶対神聖化（首領＝脳髄・『白頭血統』三代世襲の神聖君主制）",
+        archTitle: "北朝鮮型：首領（脳髄）➔ 党（神経）➔ 大衆（手足）＋ 血縁世襲構造",
+        svgContent: `
+          <!-- Phase 4: North Korea Suryong & Paektu Bloodline Model -->
+          <rect x="20" y="20" width="840" height="190" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top God-like Crown: Suryong & Paektu Bloodline -->
+          <rect x="270" y="28" width="340" height="46" rx="8" fill="#4c0519" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="48" fill="#fef08a" font-size="13" font-weight="900" text-anchor="middle">👑 最高首領（金日成 ➔ 金正日 ➔ 金正恩）</text>
+          <text x="440" y="65" fill="#fde68a" font-size="10.5" font-weight="bold" text-anchor="middle">「白頭血統」による血縁世襲・社会政治的生命体の「脳髄」</text>
+          
+          <!-- Divine Command Line -->
+          <path d="M 440 74 L 440 108" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrow-gold)"/>
+          <text x="495" y="95" fill="#fde047" font-size="10" font-weight="bold">唯一領導体系</text>
+          
+          <!-- Middle: Party as Nervous System & Security as Claw -->
+          <rect x="150" y="110" width="310" height="42" rx="6" fill="#1e1b4b" stroke="#e11d48" stroke-width="2"/>
+          <text x="305" y="130" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">朝鮮労働党（中枢神経）</text>
+          <text x="305" y="145" fill="#cbd5e1" font-size="9.5" text-anchor="middle">「10大原則」による首領の意思の伝達・統制</text>
+          
+          <rect x="480" y="110" width="250" height="42" rx="6" fill="#881337" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="605" y="130" fill="#fecdd3" font-size="12" font-weight="bold" text-anchor="middle">国家保衛省・管理所</text>
+          <text x="605" y="145" fill="#fda4af" font-size="9.5" text-anchor="middle">政治犯収容所・3代連座制</text>
+          
+          <!-- Bottom: Masses as Body Limbs -->
+          <rect x="60" y="175" width="760" height="30" rx="4" fill="#0f172a" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="440" y="195" fill="#f1f5f9" font-size="11" font-weight="bold" text-anchor="middle">人民大衆（首領の手足・肉体的生命より至高の『社会政治的生命』を首領から授かる）</text>
+          
+          <!-- 10 Principles Badge -->
+          <rect x="745" y="30" width="105" height="45" rx="6" fill="rgba(251,191,36,0.15)" stroke="#fbbf24" stroke-width="1"/>
+          <text x="797" y="48" fill="#fde047" font-size="9" font-weight="bold" text-anchor="middle">10大原則</text>
+          <text x="797" y="64" fill="#fef08a" font-size="8.5" text-anchor="middle">最高掟規範</text>
+          
+          <defs>
+            <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#fbbf24"/>
+            </marker>
+          </defs>
+        `,
+        specs: [
+          { label: "指導理論", val: "主体（チュチェ）思想・社会政治的生命体論" },
+          { label: "組織原理", val: "党の唯一思想体系確立の10大原則（2013年白頭血統明記）" },
+          { label: "権力の正統性", val: "抗日パルチザン神話に基づく「白頭血統」の血縁世襲" },
+          { label: "統制・抑圧", val: "国家保衛省、政治犯収容所（完全統制区域）、3代連座制" }
+        ],
+        desc: "<strong>【Phase 4：北朝鮮の首領制と白頭血統（1950年代〜現代）】</strong><br>マルクス・レーニン主義の前衛党論とプロレタリア独裁論がたどり着いた極限の異形が、北朝鮮の<strong>「首領制」</strong>です。1970年代に金正日は「社会政治的生命体論」を体系化し、<strong>「首領＝生命体の脳髄、党＝中枢神経、人民＝手足」</strong>と定義しました。人民は自立した理性を持つ存在ではなく、脳髄である首領の命令に無条件で服従して初めて社会政治的生命を永生できるとされました。1974年に制定され2013年に改訂された「党の唯一思想体系確立の10大原則」では、革命の血統が<strong>「白頭血統（金一族の血縁）」</strong>に限定され、プロレタリア独裁は神権的・前近代的な絶対世襲君主制へと完全変質を遂げました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      // Toggle button states
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`btn-p${i}`);
+        if (btn) {
+          btn.classList.toggle('active', i === idx);
+        }
+      }
+
+      const p = evolutionPhases[idx];
+
+      // Update Meters
+      document.getElementById('m-demo-pct').textContent = p.demoPct;
+      document.getElementById('m-demo-text').textContent = p.demoText;
+      const bDemo = document.getElementById('bar-demo');
+      bDemo.style.width = p.demoPct;
+      bDemo.style.backgroundColor = p.demoColor;
+
+      document.getElementById('m-opp-pct').textContent = p.oppPct;
+      document.getElementById('m-opp-text').textContent = p.oppText;
+      const bOpp = document.getElementById('bar-opp');
+      bOpp.style.width = p.oppPct;
+      bOpp.style.backgroundColor = p.oppColor;
+
+      document.getElementById('m-cult-pct').textContent = p.cultPct;
+      document.getElementById('m-cult-text').textContent = p.cultText;
+      const bCult = document.getElementById('bar-cult');
+      bCult.style.width = p.cultPct;
+      bCult.style.backgroundColor = p.cultColor;
+
+      // Update SVG Architecture Title & Content
+      document.getElementById('arch-model-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+
+      // Update Spec Grid
+      const detailGrid = document.getElementById('sim-detail-grid');
+      detailGrid.innerHTML = p.specs.map(s => `
+        <div class="sim-detail-card">
+          <div class="sim-detail-label">${s.label}</div>
+          <div class="sim-detail-val">${s.val}</div>
+        </div>
+      `).join('');
+
+      // Update Description
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize with Phase 3 (North Korea focus) or 0
+    setPhase(3);
+  </script>
+</body>
+</html>
