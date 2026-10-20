@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：チェーカーと秘密警察・テロル機構の系譜 ― レーニン・赤色テロルからNKVD大粛清、北朝鮮国家保衛省・管理所体制へ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(244, 63, 94, 0.18);
+      color: var(--accent-red);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      text-transform: uppercase;
+    }
+
+    .badge-sub {
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #f8fafc 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section common */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-left: 4px solid var(--accent-red);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      text-align: justify;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .phase-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1.35;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .phase-btn.active {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(244, 63, 94, 0.25));
+      border-color: var(--accent-red);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+    }
+
+    .phase-btn .btn-era {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .meter-label {
+      color: var(--text-secondary);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--accent-red);
+    }
+
+    .meter-track {
+      background: #0f172a;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-diagram-container {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .svg-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .phase-desc-box {
+      background: rgba(15, 23, 42, 0.75);
+      border-left: 4px solid var(--accent-red);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 650px;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    tr:hover td {
+      background: rgba(99, 102, 241, 0.06);
+    }
+
+    /* Logic Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--accent-red);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Quotes */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      text-align: right;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .ref-num {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-tag {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 0.15rem;
+    }
+
+    .cite-tag:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      body { padding: 1rem; }
+      .sim-panel { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link active">⑦ チェーカーと秘密警察の系譜</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">国家暴力・監視統制・政治犯収容所の深層補論</span>
+        <span class="badge badge-sub">チェーカー創設からNKVD大粛清、北朝鮮国家保衛省・完全統制区域へ</span>
+      </div>
+      <h1>チェーカーと秘密警察・テロル機構の系譜</h1>
+      <p class="subtitle">
+        革命の「剣と盾」はいかにして法律を超越した国家内国家となり、全社会粛清装置、そして北朝鮮の3代連座制（管理所）へと結実したのか。レーニン・ジェルジンスキーからNKVD、KGB、現代朝鮮民主主義人民共和国の絶対専制に至る暴力装置の進化史を解明する。
+      </p>
+      <div class="meta-row">
+        <span>📖 本書対応：第1章「ソ連型全体主義の原型」、第2章「北朝鮮における受容」、第4章「唯一思想体系」</span>
+        <span>✍️ 著：mb_cho</span>
+        <span>🗓️ 最新学説・機密解除史料反映版</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section>
+      <h2 class="section-title">1. 問題の所在：法に拘束されない直接の暴力と「剣と盾」の原初形態</h2>
+      <p>
+        ウラジーミル・レーニンは1918年、『プロレタリア革命と背教者カウツキー』において、プロレタリア独裁を次のように定義しました。<strong>「プロレタリアートの革命的独裁とは、ブルジョワジーに対する暴力の行使によって獲得され維持される権力であり、いかなる法律にも拘束されない権限である」</strong><a href="#ref-1" class="cite-tag">[1]</a>。この「法を超越した直接の暴力」という理論的テーゼを物理的・組織的な実体として具現化した最初の装置こそが、十月革命直後の1917年12月20日に創設された<strong>「反革命・サボタージュ・投機取締全ロシア非常委員会（VChK：通称チェーカー）」</strong>でした。
+      </p>
+      <p>
+        初代議長に就任したポーランド出身の貴族革命家フェリックス・ジェルジンスキーは、チェーカーを「党と革命の防衛のための抜かれた剣であり、強固な盾である（党の剣と盾）」と形容しました。しかし、当初はペトログラード防衛のための「一時的な臨時の非常機関」と説明されていたチェーカーは、ロシア内戦の勃発とともに急速に権限を拡大。司法手続き、弁護権、通常の証拠裁判を一切経ることなく、容疑者の逮捕、即決審問、強制労働収容所への送致、そして秘密裏の即時銃殺を執行できる超法規的特権を確立しました。
+      </p>
+      <p>
+        この「非常委員会（チェーカー）」のDNAは、内戦終結後も廃止されることはなく、国家政治保安部（GPU）→ 連合国家政治保安部（OGPU）→ 内務人民委員部（NKVD）→ 国家保安委員会（KGB）へと改編されながら、ソ連国家そのものを監視・統制する巨大な「国家内国家」へと肥大化しました。そして1945年以降、ソ連占領軍の指導下で建国された北朝鮮において、この系譜は「国家政治保衛部（現・国家保衛省）」および「政治犯収容所（完全統制区域・管理所）」として移植され、ソ連や東欧が解体・放棄した恐怖政治を遥かに凌駕する「三代連座制」と「終身隔離」を備えた絶対専制の防壁として現存しています<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>。
+      </p>
+    </section>
+
+    <!-- Section 2: Interactive Simulator -->
+    <section>
+      <h2 class="section-title">2. インタラクティブ図解：秘密警察・テロル機構の進化動態シミュレーター</h2>
+      <p>
+        以下の4つの歴史的変遷フェーズを選択すると、ソ連の創設期から大粛清、冷戦、そして現代北朝鮮に至る秘密警察組織の権力構造、法治破壊度、および処刑・収容システムの変化をダイナミックにシミュレーションできます。
+      </p>
+
+      <div class="sim-panel">
+        <div class="phase-selector">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="btn-era">Phase 1：1917〜1922年</span>
+            チェーカー創設・赤色テロル<br><small>（レーニン＆ジェルジンスキー）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="btn-era">Phase 2：1934〜1938年</span>
+            NKVD・大粛清とGULAG帝国<br><small>（スターリン＆エジョフ／ベリヤ）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="btn-era">Phase 3：1954〜1980年代</span>
+            KGB体制・冷戦型監視統制<br><small>（党による統制と精神医学弾圧）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="btn-era">Phase 4：1973年〜現代</span>
+            北朝鮮 国家保衛省と管理所<br><small>（首領防衛私兵と三代連座制）</small>
+          </button>
+        </div>
+
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">① 法治・司法手続き停止度（超法規性）</span>
+              <span class="meter-val" id="m-law">90%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-law" style="width: 90%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">② 即決銃殺・国家テロル暴力度</span>
+              <span class="meter-val" id="m-ter">95%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-ter" style="width: 95%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">③ 収容所奴隷労働・終身隔離度</span>
+              <span class="meter-val" id="m-gul">40%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-gul" style="width: 40%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="svg-diagram-container">
+          <div class="svg-title" id="arch-title">【構造図】チェーカー創設期：人民委員会議直属の赤色テロル執行機関</div>
+          <svg id="arch-svg" width="100%" height="220" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamically populated via JS -->
+          </svg>
+        </div>
+
+        <div class="phase-desc-box" id="sim-desc">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Historical Comparison Table -->
+    <section>
+      <h2 class="section-title">3. 歴史的変遷・組織比較：チェーカーから国家保衛省への系譜</h2>
+      <p>
+        治安・警察組織が「市民の生命・財産の保護」を目的とする近代法治国家の警察と異なり、共産主義体制下の秘密警察は「体制および指導者個人の権力防衛」と「階級の敵の殲滅」を至上命題として設計されました。以下はその制度的進化の比較です。
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>組織名（時期）</th>
+              <th>主要指導者</th>
+              <th>法的権限・特異性</th>
+              <th>主な弾圧対象・事件</th>
+              <th>処刑・収容システム</th>
+              <th>北朝鮮への継承と影響</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>チェーカー (VChK)</strong><br><small>1917–1922年</small></td>
+              <td>レーニン<br>ジェルジンスキー</td>
+              <td>人民委員会議直属の臨時機関。<br>裁判なしの即時逮捕・審問・即決銃殺権を掌握。</td>
+              <td>「赤色テロル」宣言、ロマノフ家処刑、貴族・ブルジョワ・エスエル党・クロンシュタット水兵の弾圧。</td>
+              <td>初期強制収容所（白海ソロヴェツキー修道院など）、地下牢での秘密銃殺。</td>
+              <td>「階級的敵対分子の物理的撲滅」という政治倫理の原型。</td>
+            </tr>
+            <tr>
+              <td><strong>GPU / OGPU</strong><br><small>1922–1934年</small></td>
+              <td>ジェルジンスキー<br>メンジンスキー</td>
+              <td>内務人民委員部付属から独立機関へ。<br>国境警備隊と全土の強制労働収容所管理を統合。</td>
+              <td>ネップ期の投機摘発、シャフティ裁判、農民の集団化・クラーク（富農）撲滅作戦。</td>
+              <td>白海・バルト海運河建設等の強制労働経済化（GULAGの原型確立）。</td>
+              <td>反体制分子の労働力化と経済建設への動員メカニズム。</td>
+            </tr>
+            <tr>
+              <td><strong>NKVD (GUGB)</strong><br><small>1934–1946年</small></td>
+              <td>ヤゴーダ<br>エジョフ<br>ベリヤ</td>
+              <td>内務人民委員部に国家保安総局を統合。<br><strong>NKVDトロイカ（3人委員会）</strong>による超法規的死刑判決。</td>
+              <td><strong>大粛清（大テロル、1937–38年）</strong>：党幹部、軍将校団（トゥハチェフスキー等）、一般市民68〜80万人銃殺。</td>
+              <td><strong>GULAG（収容所総局）</strong>の極限拡大。シベリア・コリマ金鉱山等の奴隷労働帝国。</td>
+              <td>指令第00447号（地域別ノルマ制粛清）の手法が北朝鮮の党内派閥粛清に直結。</td>
+            </tr>
+            <tr>
+              <td><strong>MGB / KGB</strong><br><small>1954–1991年</small></td>
+              <td>セーロフ<br>シェレーピン<br>アンドロポフ</td>
+              <td>ベリヤ処刑後、党政治局の厳格な統制下に再編。<br>大量銃殺の停止と情報・思想統制への特化。</td>
+              <td>反体制知識人（サハロフ、ソルジェニーツィン）監視、出国禁止、精神医学的強制収容、対外防諜工作。</td>
+              <td>通常刑務所、精神病院、シベリア追放。大量処刑から思想隔離への転換。</td>
+              <td>監視技術・通信傍受網・対外工作員の育成手法を北朝鮮へ軍事技術移転。</td>
+            </tr>
+            <tr>
+              <td><strong>国家保衛省</strong><br><small>1973年〜現代</small></td>
+              <td>金日成<br>金正日<br>金元弘 等</td>
+              <td>首領（金一族）直属の超法規的秘密警察。<br>一般警察（社会安全省）をも監視。成文憲法を超越。</td>
+              <td>8月宗派事件、深化組事件（2万人規模粛清）、張成沢処刑、脱北者摘発・拷問。</td>
+              <td><strong>完全統制区域（管理所）</strong>：14号・15号・16号収容所。<br><strong>三代連座制（種絶滅論）</strong>による終身隔離。</td>
+              <td><strong>チェーカーとNKVDの最悪の要素を純化・固定化。</strong>近代国家で唯一現存する終身強制収容所。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Logic Flow -->
+    <section>
+      <h2 class="section-title">4. 論理展開フロー：テロル機関の自己増殖と「国家内国家」化のメカニズム</h2>
+      <p>
+        なぜ初期の「臨時組織」にすぎなかったチェーカーは、国家全体を監視し、自らの創設者たちすら呑み込む絶対的な怪物へと成長したのでしょうか。そこには全体主義体制特有の4段階の自己増殖プロセスが存在しました。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-heading">非常時の口実と超法規的権限の付与</div>
+          <div class="flow-desc">
+            外国干渉戦争や反革命の反乱に対抗するためという名目で、「裁判手続きを待つ余裕はない」として逮捕・即決銃殺権を臨時に付与。<a href="#ref-1" class="cite-tag">[1]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-heading">常設化と法治機構の完全空洞化</div>
+          <div class="flow-desc">
+            内戦終了後も「階級敵の残党・サボタージュ」を口実にGPU/OGPUとして常設化。検察や司法裁判所は秘密警察の追認機関へ降格。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-heading">奴隷経済の統合とノルマ制殺戮</div>
+          <div class="flow-desc">
+            収容者（囚人）を五カ年計画の無償労働力として利用するGULAG経済と合体。NKVDトロイカによる死刑ノルマの割り当てと競合が発生。<a href="#ref-5" class="cite-tag">[5]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-heading">首領私兵化と血統的終身隔離</div>
+          <div class="flow-desc">
+            北朝鮮において首領の神格化と合体。恩赦のない「完全統制区域」と家族3代を連座させる制度によって体制批判の可能性を遺伝子レベルで根絶。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Deep Dive Cards -->
+    <section>
+      <h2 class="section-title">5. 深層解説：秘密警察体制を支えた6大核心要素</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">
+            <span>🗡️</span>
+            <span>フェリックス・ジェルジンスキーと「赤色テロル」</span>
+          </div>
+          <p>
+            チェーカー創設者ジェルジンスキーは、帝政ロシアの過酷なシベリア流刑と獄中生活を耐え抜いた禁欲的狂信者でした。私利私欲を排し、冷徹に任務を遂行することから「鉄のフェリックス」と称されました。
+          </p>
+          <p>
+            彼は「チェーカーはいかなる法廷でもない。チェーカーは革命の防衛者であり、敵を憐れむことなく粉砕する剣である」と宣言しました。1918年9月、レーニン暗殺未遂事件を機に公式発令された「赤色テロル」指令のもと、チェーカーは個人の具体的な犯罪行為ではなく、「どのような階層に属し、どのような出自を持つか」を基準に何万人もの市民を人質として拘束・処刑しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⚖️</span>
+            <span>「社会主義的合法性」の欺瞞とヴィシンスキー法理</span>
+          </div>
+          <p>
+            スターリン体制下のソ連において、検事総長アンドレイ・ヴィシンスキーは「自白は証拠の女王である」とする中世魔女裁判まがいの法理を確立しました。
+          </p>
+          <p>
+            法律は個人の人権を守る防壁ではなく、「階級闘争の道具」にすぎないと再定義され、NKVDの尋問官による殴打・睡眠剥奪・拷問によって得られた虚偽の自白が、モスクワ公開裁判で「トロツキー派ナチススパイ」としての死刑判決を正当化する唯一の証拠となりました。この「自白強要と見せしめ裁判」のシステムは、北朝鮮の公開裁判や反党宗派分子告発劇の直接の原型となっています。<a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🩸</span>
+            <span>NKVDトロイカとエジョフシナの狂気</span>
+          </div>
+          <p>
+            1937年7月、スターリンの承認のもとで発令されたNKVD極秘指令第00447号は、大粛清（エジョフシナ）の火蓋を切りました。
+          </p>
+          <p>
+            この指令は、各州・共和国ごとに「第1分類（即時銃殺）」と「第2分類（GULAG収容8〜10年）」の人数枠（ノルマ）を中央から機械的に割り振るという、前代未聞の殺戮計画でした。地方のNKVD地方部長、党委員会書記、検事で構成される「NKVDトロイカ（3人委員会）」は、被告人の出廷も弁護もなしに、書類審査だけで1晩に数百人もの死刑を決定しました。ノルマ達成を誇る地方幹部は中央に対して「銃殺枠の増額申請」を競い合いました。<a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🔄</span>
+            <span>「粛清者の粛清」― ベリヤ、エジョフ、ヤゴーダの末路</span>
+          </div>
+          <p>
+            独裁体制における秘密警察の歴史は、「自らが振るった刃によって自らも粛清される」というアイロニーに満ちています。
+          </p>
+          <p>
+            スターリンは秘密警察長官が過大な権力を持つことを極度に警戒し、使い捨ての道具として粛清しました。大粛清の初期を担ったゲンリフ・ヤゴーダは「右翼トロツキー派」として1938年に銃殺され、エジョフシナの主役ニコライ・エジョフも「外国スパイ」として1940年に銃殺されました。そしてスターリン死後、後継権力を狙ったラヴレンチー・ベリヤもフルシチョフら政治局幹部によって急襲・逮捕され、1953年末に秘密裁判で銃殺されました。北朝鮮でも深化組事件を指揮した蔡文徳が後に処刑されるなど、この力学は完全に再生産されています。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⛏️</span>
+            <span>GULAG（収容所総局）と強制労働経済の成立</span>
+          </div>
+          <p>
+            秘密警察の肥大化は、経済的要因と不可分でした。1930年、OGPU傘下に設立されたGULAG（強制労働収容所総局）は、白海・バルト海運河建設、シベリア鉄道複線化、コリマ金鉱山開発など、常人では生存不能な極寒・過酷なインフラ工事に数百万人の囚人を投入しました。
+          </p>
+          <p>
+            囚人は「無償の奴隷労働力」として国家経済計画に組み込まれ、食糧配給は労働ノルマの達成率に厳格に連動させられました。ノルマを達成できない者は餓死に追いやられる構造であり、ソ連の工業化の基礎はこれら数百万人におよぶ収容所犠牲者の遺骨の上に築かれました。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⛓️</span>
+            <span>北朝鮮・国家保衛省と「三代滅族」管理所体制</span>
+          </div>
+          <p>
+            ソ連のGULAGは、スターリン死後の1950年代半ばにフルシチョフによって解体・恩赦が行われ、多くの囚人が社会復帰しました。しかし北朝鮮は、このシステムをさらに悪魔的に進化させました。
+          </p>
+          <p>
+            1973年に設立された国家政治保衛部（現・国家保衛省）は、党組織指導部の直轄下で「完全統制区域（管理所）」を運営。金日成の「階級の敵は種ごと絶滅させよ」という教示に基づき、本人のみならず親・子・孫の三代を一族もろとも強制収容所に連行する「三代連座制」を制度化しました。完全統制区域には刑期が存在せず、一度収容されれば死ぬまで二度とシャバに出ることはできません。衛星画像でも確認される14号（价川）、15号（耀徳）、16号（明澗）などの巨大収容所は、現在も推定10万人以上の人々を収容し続けています。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Primary Sources & Quotes -->
+    <section>
+      <h2 class="section-title">6. 一次資料・歴史的言説の記録</h2>
+
+      <div class="quote-box">
+        <p>
+          「同志たちよ！5つの郡におけるクラーク（富農）の暴動は容赦なく鎮圧されねばならない。……1. 公然たる絞首刑にせよ（人民が見える場所で）、100人以上の名の知れたクラーク、金持ち、吸血鬼どもをだ。2. 彼らの名前を公表せよ。3. 彼らからすべての穀物を没収せよ。……数百キロ四方の人民がこれを見て、震え上がり、理解し、叫ぶようにせよ。『彼らは吸血鬼クラークどもを絞め殺しているのだ』と。」
+        </p>
+        <div class="quote-author">― ウラジーミル・レーニン（1918年8月11日、ペンザ県執行委員会宛て極秘電報）[1]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「チェーカーは正義を実行する司法機関ではない。それは容赦なき打撃を与える部隊であり、自らを防衛する権利すら敵に与えない。……我々は個々の人間を裁判するのではない。我々はブルジョワジーという階級を根絶やしにするのだ。尋問において『被告が言葉や行動でソヴィエト権力に反対したか』などという証拠を探してはならない。最初に問うべきは、彼の出身階層、教育、職業が何であるかだ。これこそが被告の運命を決定する。」
+        </p>
+        <div class="quote-author">― マルティン・ラツィス（チェーカー副議長、1918年11月機関誌『赤色テロル』創刊号）[4]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「全党・全軍・全社会に唯一思想体系を徹底して打ち立て、首領様の革命思想に反するいかなる些細な異端思想や宗派主義的要素も、萌芽の段階で断固として摘み取らねばならない。階級の敵、反党・宗派分子は、たとえその血縁であっても容赦なく隔離・清算せよ。」
+        </p>
+        <div class="quote-author">― 朝鮮労働党『党の唯一思想体系確立の10大原則』（1974年第3条・第4条の精神）[2][3]</div>
+      </div>
+    </section>
+
+    <!-- Section 7: References -->
+    <section>
+      <h2 class="section-title">7. 出典・参考文献・リンク</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%BC%E3%82%AB%E3%83%BC" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：チェーカー / 全ロシア粛清非常委員会)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.hrw.org/ja/world-report/2023/country-chapters/north-korea" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.hrw.org (Human Rights Watch：北朝鮮の政治犯収容所・人権侵害実態)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.amnesty.or.jp/human-rights/topic/north_korea/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.amnesty.or.jp (アムネスティ・インターナショナル：北朝鮮・管理所と連座制の証言)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://kotobank.jp/word/%E3%83%81%E3%82%A7%E3%82%AB-96791" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：チェカ / OGPU / GULAGの歴史的展開)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%86%85%E5%8B%99%E4%BA%BA%E6%B0%91%E5%A7%94%E5%93%A1%E9%83%A8" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：内務人民委員部 / NKVD・トロイカ・大粛清指令第00447号)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑦ ｜ チェーカーと秘密警察・テロル機構の系譜</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        lawText: "90%（法治停止・超法規的権限）",
+        lawWidth: "90%",
+        lawColor: "#f43f5e",
+        terText: "95%（赤色テロル・即決銃殺）",
+        terWidth: "95%",
+        terColor: "#f43f5e",
+        gulText: "40%（ソロヴェツキー等初期収容所）",
+        gulWidth: "40%",
+        gulColor: "#f59e0b",
+        archTitle: "【構造図】Phase 1：チェーカー期（1917〜1922）― レーニン直属の「革命の剣と盾」",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="30" width="160" height="50" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="110" y="55" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">人民委員会議 (ソヴナルコム)</text>
+          <text x="110" y="70" fill="#94a3b8" font-size="11" text-anchor="middle">レーニン・人民委員</text>
+
+          <rect x="290" y="30" width="180" height="60" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="380" y="55" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">非常委員会 (チェーカー)</text>
+          <text x="380" y="73" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">ジェルジンスキー議長</text>
+
+          <rect x="570" y="15" width="230" height="90" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="685" y="38" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">赤色テロルの標的群</text>
+          <text x="685" y="56" fill="#cbd5e1" font-size="11" text-anchor="middle">• 貴族・元帝政官僚・ブルジョワ</text>
+          <text x="685" y="73" fill="#cbd5e1" font-size="11" text-anchor="middle">• エスエル党・メンシェヴィキ・無政府主義者</text>
+          <text x="685" y="90" fill="#cbd5e1" font-size="11" text-anchor="middle">• ストライキ労働者・クロンシュタット水兵</text>
+
+          <rect x="290" y="145" width="180" height="55" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="380" y="168" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">即決執行・初期収容</text>
+          <text x="380" y="186" fill="#cbd5e1" font-size="11" text-anchor="middle">裁判なし即時銃殺 / 人質拘束</text>
+
+          <!-- Arrows -->
+          <line x1="190" y1="55" x2="285" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <text x="238" y="47" fill="#f43f5e" font-size="10" font-weight="bold" text-anchor="middle">超法規指令</text>
+
+          <line x1="470" y1="55" x2="565" y2="55" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <text x="518" y="47" fill="#6366f1" font-size="10" font-weight="bold" text-anchor="middle">捜索・逮捕</text>
+
+          <line x1="380" y1="90" x2="380" y2="140" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <text x="390" y="120" fill="#f43f5e" font-size="10" font-weight="bold" text-anchor="start">即決処分</text>
+
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366f1"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1917〜1922年（チェーカー創設・赤色テロル）】</strong><br>十月革命直後、レーニンの指令により設立されたチェーカー（非常委員会）は、当初「反革命の陰謀を調査する臨時捜査機関」とされました。しかし内戦とレーニン暗殺未遂を機に「赤色テロル」が宣言され、裁判所の司法判断を完全に排除して、容疑者の逮捕から地下室での即決銃殺までを自前で執行する超法規的特権を確立。個人の有罪・無罪ではなく「階級的出自」を問うテロルが全土に吹き荒れました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-4' class='cite-tag'>[4]</a>"
+      },
+      {
+        id: 1,
+        lawText: "100%（成文法・憲法の完全無視）",
+        lawWidth: "100%",
+        lawColor: "#f43f5e",
+        terText: "100%（指令第00447号・ノルマ制虐殺）",
+        terWidth: "100%",
+        terColor: "#f43f5e",
+        gulText: "95%（GULAG奴隷労働経済のピーク）",
+        gulWidth: "95%",
+        gulColor: "#f43f5e",
+        archTitle: "【構造図】Phase 2：NKVD大粛清期（1934〜1938）― トロイカとGULAG巨大帝国",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="20" width="160" height="55" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="100" y="44" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">スターリン / 党政治局</text>
+          <text x="100" y="62" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">極秘指令第00447号</text>
+
+          <rect x="250" y="20" width="180" height="60" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="340" y="45" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">内務人民委員部 (NKVD)</text>
+          <text x="340" y="65" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">エジョフ / GUGB国家保安総局</text>
+
+          <rect x="490" y="15" width="160" height="70" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="570" y="38" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">NKVDトロイカ (3人委員会)</text>
+          <text x="570" y="56" fill="#cbd5e1" font-size="11" text-anchor="middle">地方NKVD長・党書記・検事</text>
+          <text x="570" y="73" fill="#f43f5e" font-size="10" text-anchor="middle">書面審査のみ・1日数百件死刑</text>
+
+          <rect x="680" y="15" width="155" height="70" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="757" y="38" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">第1分類：即時銃殺</text>
+          <text x="757" y="56" fill="#cbd5e1" font-size="11" text-anchor="middle">ノルマ制で70万人処刑</text>
+          <text x="757" y="73" fill="#94a3b8" font-size="10" text-anchor="middle">（遺体は集団埋葬地へ）</text>
+
+          <rect x="370" y="135" width="280" height="70" rx="8" fill="#162032" stroke="#06b6d4" stroke-width="2"/>
+          <text x="510" y="158" fill="#06b6d4" font-size="13" font-weight="bold" text-anchor="middle">第2分類：GULAG (強制収容所総局)</text>
+          <text x="510" y="177" fill="#cbd5e1" font-size="11" text-anchor="middle">シベリア・コリマ・鉱山・運河建設の奴隷労働</text>
+          <text x="510" y="194" fill="#94a3b8" font-size="10" text-anchor="middle">数百万人が劣悪な環境と飢餓で落命</text>
+
+          <!-- Arrows -->
+          <line x1="180" y1="48" x2="245" y2="48" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="430" y1="48" x2="485" y2="48" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <line x1="650" y1="48" x2="675" y2="48" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="570" y1="85" x2="570" y2="130" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow-cyan)"/>
+
+          <defs>
+            <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#06b6d4"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1934〜1938年（NKVD期・大粛清とGULAG帝国）】</strong><br>スターリンの権力集中に伴い、秘密警察は内務人民委員部（NKVD）として極限まで肥大化しました。1937年の指令第00447号により、地域ごとに死刑ノルマ（第1分類）と収容所送りノルマ（第2分類）が割り振られ、NKVDトロイカ（3人委員会）による超法規的略式手続きで約70万人が秘密裏に銃殺されました。さらにGULAG（収容所総局）は数百万人規模の囚人を抱える国家最大の奴隷労働供給企業となり、極東シベリアや北極圏の鉱山開発に投入されました。<a href='#ref-5' class='cite-tag'>[5]</a>"
+      },
+      {
+        id: 2,
+        lawText: "65%（党規約による統制・恣意的拘束）",
+        lawWidth: "65%",
+        lawColor: "#f59e0b",
+        terText: "35%（大量銃殺から監視・逮捕へ）",
+        terWidth: "35%",
+        terColor: "#10b981",
+        gulText: "45%（恩赦・閉鎖と特別精神病院）",
+        gulWidth: "45%",
+        gulColor: "#06b6d4",
+        archTitle: "【構造図】Phase 3：KGB期（1954〜1980年代）― 党による再統制と洗練された思想弾圧",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="30" width="180" height="55" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <text x="120" y="53" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">ソ連共産党中央委員会 (政治局)</text>
+          <text x="120" y="72" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">ベリヤ処刑・党の優位確立</text>
+
+          <rect x="290" y="30" width="190" height="60" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+          <text x="385" y="55" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">国家保安委員会 (KGB)</text>
+          <text x="385" y="73" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">第5総局（反体制派思想監視）</text>
+
+          <rect x="570" y="20" width="240" height="80" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="690" y="43" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">洗練された弾圧手法</text>
+          <text x="690" y="61" fill="#cbd5e1" font-size="11" text-anchor="middle">• 精神医学的弾圧（特別精神病院監禁）</text>
+          <text x="690" y="78" fill="#cbd5e1" font-size="11" text-anchor="middle">• 国外追放・出国禁止・市民権剥奪</text>
+          <text x="690" y="93" fill="#cbd5e1" font-size="11" text-anchor="middle">• サミズダート（地下出版）摘発・電話盗聴</text>
+
+          <rect x="300" y="140" width="170" height="55" rx="8" fill="#162032" stroke="#10b981" stroke-width="1.5"/>
+          <text x="385" y="163" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">GULAGの大規模解体</text>
+          <text x="385" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">フルシチョフ恩赦・通常刑務所化</text>
+
+          <!-- Arrows -->
+          <line x1="210" y1="58" x2="285" y2="58" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+          <line x1="480" y1="58" x2="565" y2="58" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <line x1="385" y1="90" x2="385" y2="135" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+          <defs>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#10b981"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 3：1954〜1980年代（KGB体制・冷戦型監視統制）】</strong><br>スターリンの死後、過度な権力を持ったベリヤが処刑され、秘密警察は党政治局の厳格な統制下に置かれ「国家保安委員会（KGB）」として再編されました。フルシチョフのスターリン批判に伴いGULAGは解体され、大量銃殺は停止しました。しかし弾圧そのものが消えたわけではなく、第5総局を中心とする電話盗聴、郵便検閲、反体制派知識人（サハロフ、ソルジェニーツィン等）の国外追放、そして「緩慢型統合失調症」と診断して特別精神病院へ強制収容する洗練された思想弾圧が行われました。<a href='#ref-4' class='cite-tag'>[4]</a>"
+      },
+      {
+        id: 3,
+        lawText: "100%（成文法無力化・10大原則が絶対規範）",
+        lawWidth: "100%",
+        lawColor: "#f43f5e",
+        terText: "98%（拷問・公開処刑・秘密連行常態化）",
+        terWidth: "98%",
+        terColor: "#f43f5e",
+        gulText: "100%（完全統制区域・三代連座終身収容）",
+        gulWidth: "100%",
+        gulColor: "#f43f5e",
+        archTitle: "【構造図】Phase 4：北朝鮮 国家保衛省期（1973〜現在）― 首領直属の管理所体制",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="20" width="180" height="55" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="110" y="44" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">最高首領 (金正恩 / 国務委員長)</text>
+          <text x="110" y="62" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「10大原則」絶対防衛・白頭血統</text>
+
+          <rect x="270" y="20" width="190" height="60" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="365" y="45" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">国家保衛省 (旧政治保衛部)</text>
+          <text x="365" y="65" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">首領直属・社会安全省をも監視</text>
+
+          <rect x="530" y="15" width="300" height="75" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="680" y="38" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">全住民監視網（51成分分類）</text>
+          <text x="680" y="56" fill="#cbd5e1" font-size="11" text-anchor="middle">• 核心階層 / 動揺階層 / 敵対階層の身分固定</text>
+          <text x="680" y="73" fill="#cbd5e1" font-size="11" text-anchor="middle">• 5号担当制、電話傍受、密告の義務化</text>
+
+          <rect x="300" y="130" width="360" height="75" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="480" y="153" fill="#f43f5e" font-size="14" font-weight="bold" text-anchor="middle">完全統制区域（政治犯収容所／管理所）</text>
+          <text x="480" y="172" fill="#cbd5e1" font-size="11" text-anchor="middle"><strong>「三代滅族」連座制</strong>：親・子・孫を一網打尽に強制隔離</text>
+          <text x="480" y="190" fill="#f59e0b" font-size="11" text-anchor="middle">刑期なし・釈放なし・生涯奴隷労働・秘密公開処刑</text>
+
+          <!-- Arrows -->
+          <line x1="200" y1="50" x2="265" y2="50" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="460" y1="50" x2="525" y2="50" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <line x1="365" y1="80" x2="365" y2="125" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 4：1973年〜現代（北朝鮮・国家保衛省と管理所）】</strong><br>金日成・金正日によって創設された「国家政治保衛部（現・国家保衛省）」は、ソ連チェーカーの超法規性とNKVDの収容所システムを融合・極限純化させた世界で唯一の機構です。裁判を経ずに真夜中に連行される「夜間急襲」、全住民を51の身分に分ける「成分制度」、そして『階級の敵は種ごと根絶やしにせよ』という教示に基づく<strong>三代連座制（完全統制区域）</strong>を確立しました。ソ連が放棄したGULAGを、釈放の道が一切存在しない終身絶滅収容所として現代に固定化させています。<a href='#ref-2' class='cite-tag'>[2]</a><a href='#ref-3' class='cite-tag'>[3]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-law').textContent = p.lawText;
+      const bLaw = document.getElementById('b-law');
+      bLaw.style.width = p.lawWidth;
+      bLaw.style.backgroundColor = p.lawColor;
+
+      document.getElementById('m-ter').textContent = p.terText;
+      const bTer = document.getElementById('b-ter');
+      bTer.style.width = p.terWidth;
+      bTer.style.backgroundColor = p.terColor;
+
+      document.getElementById('m-gul').textContent = p.gulText;
+      const bGul = document.getElementById('b-gul');
+      bGul.style.width = p.gulWidth;
+      bGul.style.backgroundColor = p.gulColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
