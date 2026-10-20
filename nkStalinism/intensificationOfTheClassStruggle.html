@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：階級闘争激化論徹底解説 ― 国家死滅論の圧殺と大粛清・文化大革命・北朝鮮首領制の源流</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #4c0519 45%, #991b1b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #f43f5e;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+      line-height: 1.75;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.35rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #31102f 55%, #18181b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      min-height: 2.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* SVG Architecture Box */
+    .arch-visual-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .arch-visual-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .svg-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      border-left-color: var(--purple);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-purple .callout-title {
+      color: var(--purple);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+      .sim-box { padding: 1.25rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link active">⑥ 階級闘争激化論</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">スターリン主義テロ・思想統制の核心理論補論</span>
+        <span class="badge badge-sub">「国家死滅論」の圧殺と大粛清・文化大革命・北朝鮮管理所のイデオロギー的根拠</span>
+      </div>
+      <h1>階級闘争激化論：<br>なぜ社会主義が前進するほど「敵の抵抗は狂暴化」し、国家抑圧機関は肥大化したのか</h1>
+      <p class="lead">
+        <strong>「階級闘争激化論（Theory of the Intensification of the Class Struggle under Socialism）」</strong>とは、社会主義建設が進展し共産主義に近づけば近づくほど、打倒された旧搾取階級や国外の帝国主義勢力に援助された「内部の敵」の抵抗はますます激烈になるというヨシフ・スターリンの政治理論です。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        本来のマルクス主義では、搾取階級が消滅するにつれて階級対立はなくなり、抑圧機関としての国家暴力装置は自ずと「死滅（Withering away）」していくはずでした。しかしスターリンはこの逆説的テーゼを定式化することで、国家死滅論を無期限に葬り去り、国家保安機関（GPU/NKVD）の空前の肥大化と、1930年代の大粛清（モスクワ裁判・GULAG強制収容所）を理論的に正当化しました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><br>
+        さらにこの論理はスターリン死後も消滅せず、『簡明教程』を通じて毛沢東の「継続革命論（文化大革命）」へと先鋭化し、北朝鮮の「8月宗派事件」や政治犯収容所（完全統制区域）の永続化、そして「白頭血統」の神聖化へと直結していきました。本補論では、20世紀社会主義を狂気へと導いた「悪魔の方程式」の構造と連鎖を動態シミュレーターとともに解剖します。<a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: The Origin of the Theory & Burial of State Withering -->
+    <section>
+      <h2>⚖️ 1. 階級闘争激化論の提起と「国家死滅論」の圧殺</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        スターリンは1928年7月の中央委員会総会演説、および大粛清が最高潮に達する直前の1937年3月総会において、この理論を定式化しました。それはマルクス・エンゲルス本来の共産主義理論を根本から歪曲するものでした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="grid-2">
+        <!-- マルクスの本来構想 -->
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>マルクス・エンゲルス本来の国家死滅論</span>
+          </div>
+          <p class="factor-desc">
+            国家とは「ある階級が他の階級を抑圧するための暴力装置」にすぎません。<br>
+            したがって、私有財産が廃止され、社会主義建設が進んで階級対立が消滅していけば、<strong>抑圧機関としての国家権力や警察・軍隊は自ずと不要になり、自然に「死滅（Withering away）」していく</strong>と考えられていました。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <!-- スターリンの逆説的定式化 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>スターリンによる「激化論」の定式化</span>
+          </div>
+          <p class="factor-desc">
+            「我が国の前進が成功すればするほど、打倒された搾取階級の残党の抵抗は<strong>ますます激烈となり、狂暴な手段で反撃に出る</strong>」。<br>
+            ゆえにスターリンは、「将来における国家の死滅を準備するためには、<strong>現段階において国家権力と秘密警察を最大限に強化・肥大化させねばならない</strong>」という強弁を展開し、専制テロを正当化しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">☠️ 「1937年3月総会演説」：大粛清（エジョフシナ）の青信号となった論理</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          1936年、スターリン自身が「ソ連ではすでに搾取階級は消滅し、社会主義の基本的勝利が達成された」と宣言（スターリン憲法）していました。<br>
+          ならば、なぜ1937年に空前の大粛清が起きるのか？ この矛盾を糊塗するために持ち出されたのが激化論でした。「敵はもはや公然とした階級勢力としては存在しない。だからこそ、<strong>党や軍の奥深くに潜入し、党員手帳を持ちながらトロツキーや帝国主義スパイとして破壊工作を仕掛けてくるのだ</strong>」。この論理により、あらゆる共産党古参幹部が「隠れた敵」として処刑される道が開かれました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Why was this theory indispensable? 3 Functions -->
+    <section>
+      <h2>⚙️ 2. なぜこの理論が不可欠だったのか？ 体制を支えた「3大機能」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        階級闘争激化論は、単なる机上の神学論争ではなく、スターリン主義体制が機能不全に陥った際に体制を守るための極めて実用的な「政治兵器」でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">機能 1</span>
+          <div class="flow-title">失政の責任転嫁（スケープゴート）</div>
+          <p class="flow-desc">
+            農業集団化による大飢饉や工場の事故、計画未達を、体制の欠陥ではなく「潜入した敵のスパイや怠業者（サボタージュ）」のせいにできた。
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">機能 2</span>
+          <div class="flow-title">党内反対派・ライバルの物理的抹殺</div>
+          <p class="flow-desc">
+            政策路線や工業化のテンポに関する議論をすべて「反革命陰謀」へと昇級させ、トロツキー派やブハーリン派を銃殺する名分となった。
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">機能 3</span>
+          <div class="flow-title">普遍的恐怖による全社会の服従</div>
+          <p class="flow-desc">
+            「敵はどこにでも潜んでいる」という恐怖心と疑心暗鬼を国民に植え付け、密告を奨励してスターリン個人への絶対的崇拝を強固にした。
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">機能 4</span>
+          <div class="flow-title">国家暴力装置（NKVD）の恒久化</div>
+          <p class="flow-desc">
+            国家死滅論を葬り去り、巨大な秘密警察と強制労働収容所（GULAG）を社会主義国家の「必要不可欠な防壁」として正当化した。
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator Box -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 「階級闘争激化論」の4大歴史的進化（ソ連 ➔ 中国 ➔ 北朝鮮）動態シミュレーター</div>
+            <div class="sim-subtitle">時代ボタンを切り替えて、粛清の標的・動員形態・専制の深化プロセスを確認できます</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1｜1928〜1938年（ソ連）</span>
+            スターリン大粛清とNKVD秘密警察テロ
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2｜1940〜1950年代（東側輸出）</span>
+            『簡明教程』による東欧・コミンテルン波及
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3｜1966〜1976年（中国）</span>
+            毛沢東「継続革命論」と文化大革命
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4｜1950年代〜現代（北朝鮮）</span>
+            8月宗派事件から「首領制・白頭血統」へ
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">イデオロギー的狂信・「内部の敵」捏造度</div>
+            <div class="metric-value" id="m-fan">極限（反革命スパイ・陰謀の日常化）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-fan" style="width: 95%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">国家抑圧機構・暴力装置（秘密警察）の肥大度</div>
+            <div class="metric-value" id="m-opp">極大（NKVD・モスクワ見せしめ裁判）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-opp" style="width: 95%; background-color: #e11d48;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">社会の恐怖・密告・粛清の浸透度</div>
+            <div class="metric-value" id="m-ter">極大（党中央委員の約7割が銃殺）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-ter" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Architecture Box -->
+        <div class="arch-visual-box">
+          <div class="arch-visual-title">
+            <span>📐 【激化論の構造・暴力フローダイアグラム】</span>
+            <span id="arch-title" style="color: #fde047; font-weight: 800;">Phase 1：スターリンによる「上からの秘密警察テロ」体制（ソ連 1930年代）</span>
+          </div>
+          <div class="svg-wrapper">
+            <svg id="arch-svg" viewBox="0 0 880 220" width="100%" height="220" style="max-width: 880px; display: block; margin: 0 auto;">
+              <!-- JSで動的に切り替え -->
+            </svg>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- JSで動的更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive Matrix: USSR vs China vs North Korea -->
+    <section>
+      <h2>🔍 3. 深掘り比較：3カ国における「階級闘争激化」の変態マトリクス</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        スターリンが創出した激化論は、ソ連・中国・北朝鮮の3国において、それぞれの政治環境に合わせて異なる形態へと変異しながら、いずれも凄惨な専制政治をもたらしました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 18%;">比較項目</th>
+              <th style="width: 27%;">ソビエト連邦（スターリン）<br><span style="font-size: 0.78rem; font-weight: 500;">「上からの秘密警察テロ型」</span></th>
+              <th style="width: 27%;">中国共産党（毛沢東）<br><span style="font-size: 0.78rem; font-weight: 500;">「下からの大衆動員テロ型」</span></th>
+              <th style="width: 28%;">北朝鮮（金日成〜金正恩）<br><span style="font-size: 0.78rem; font-weight: 500;">「制度的世襲・収容所型」</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>理論的スローガン</strong></td>
+              <td><strong>「階級闘争激化論」</strong>（1928/1937年）。社会主義が進むほど敵は狂暴化。<a href="#ref-1" class="cite-tag">[1]</a></td>
+              <td><strong>「無産階級独裁下における継続革命の理論」</strong>。党内にブルジョワジーが生まれる。</td>
+              <td><strong>「思想事業における主体確立」＆「党の唯一思想体系確立の10大原則」</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>主たる暴力執行機関</strong></td>
+              <td><strong>秘密警察（NKVD・KGB）</strong>による夜間の逮捕、拷問、密室銃殺。</td>
+              <td><strong>紅衛兵・造反派大衆</strong>による公然リンチ、批判大会、「批闘会」。</td>
+              <td><strong>国家保衛省</strong>、政治犯収容所（完全統制区域）、3代連座制。</td>
+            </tr>
+            <tr>
+              <td><strong>粛清の主要標的</strong></td>
+              <td>オールド・ボリシェヴィキ、赤軍将校団、知識人、富農（クラーク）。</td>
+              <td>走資派（党内ブルジョワ実権派＝劉少奇、鄧小平ら）、学者・教師。</td>
+              <td>延安派、ソ連派、南労党派、甲山派、および首領の権威に触れた者。</td>
+            </tr>
+            <tr>
+              <td><strong>既存の党・国家への態度</strong></td>
+              <td>党と国家の官僚機構を<strong>極限まで強化</strong>し、個人独裁の道具とした。</td>
+              <td>既存の党・官僚機構を「走資派の巣窟」として<strong>大衆動員で物理的に破壊</strong>。</td>
+              <td>党を首領の「中枢神経」として絶対化し、<strong>「白頭血統」による血縁世襲</strong>を完成。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Callout: The 4 Theses of the Short Course -->
+      <div class="callout callout-purple" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>📖 『ソ連共産党（ボ）歴史・簡明教程』（1938年）の4大テーゼ</span>
+        </div>
+        <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.7;">
+          スターリン自身が編纂に関与し、毛沢東や金日成が延安や平壌で学習を義務付けた『簡明教程』は、激化論を以下の4つの鉄則として教条化しました。<br>
+          <strong>① 社会主義建設の進展に伴い階級闘争は激化する</strong>。<br>
+          <strong>② 旧搾取階級の影響は意識・イデオロギーの「残余」として長期に存続する</strong>。<br>
+          <strong>③ 社会主義下の階級闘争は必ず党内の路線闘争・日和見主義的グループとの闘争として反映される</strong>。<br>
+          <strong>④ 国内外の隠れた階級敵は党内の代理人と共謀し、資本主義の復活を画策する</strong>。<br>
+          この4つのテーゼこそが、毛沢東の文化大革命や北朝鮮の宗派粛清を駆動した「悪魔のDNA」でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Connection to North Korean Stalinism -->
+    <section>
+      <h2>🇰🇵 4. 本書『北朝鮮におけるスターリン主義の形成』への直結</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        スターリンが創出した「階級闘争激化論」は、北朝鮮においていかにして金日成・金正日・金正恩の「首領制」および「白頭血統」の完成へと結びついたのか。本書が解明する歴史的結節点はここにあります。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 8月宗派事件 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① 8月宗派事件（1956年）での実践</span>
+          </div>
+          <p class="factor-desc">
+            スターリン批判に触発されて金日成の個人崇拝と重工業路線を批判した延安派・ソ連派に対し、金日成派は激化論の論理をそのまま適用しました。<br>
+            彼らを「党内に入り込んだスパイ・宗派分子」と断定し、徹底的な粛清と中国亡命へと追い込みました。
+          </p>
+        </div>
+
+        <!-- 10大原則と完全統制 -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 「10大原則」による最高掟化</span>
+          </div>
+          <p class="factor-desc">
+            「思想の残余と敵の策動は永遠に警戒せねばならない」という論理は、金正日によって<strong>「党の唯一思想体系確立の10大原則（1974年）」</strong>へと制度化されました。<br>
+            全国民に毎週の「生活総括（自己批判と相互密告）」を義務付け、全社会を巨大な監視網へと変貌させました。
+          </p>
+        </div>
+
+        <!-- 白頭血統の神聖化 -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ 白頭血統による血縁的解決</span>
+          </div>
+          <p class="factor-desc">
+            「階級闘争が永続し、首領の側近すら信用できない」という究極の疑心暗鬼がたどり着いた結論が、<strong>「血縁（白頭血統）しか信用できない」</strong>という前近代的な世襲君主制でした。<br>
+            プロレタリア独裁は、こうして神権的血統支配へと完全な変質を遂げたのです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している歴史事典・学術解説・古典文献の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-124.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：階級闘争激化論とスターリン大粛清)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%B2%93%E6%B8%85" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：大粛清と階級闘争激化論)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E5%9B%BD%E5%AE%B6%E6%AD%BB%E6%BB%85%E8%AB%96-60862" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：国家死滅論)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：文化大革命と継続革命論)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.weblio.jp/content/%E5%A4%A7%E7%B2%93%E6%B8%85" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.weblio.jp (Weblio辞書：モスクワ裁判と大粛清)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑥ ｜ 階級闘争激化論の構造と専制の進化史</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        fanText: "極限（反革命スパイ・陰謀の日常化）",
+        fanWidth: "95%",
+        fanColor: "#f43f5e",
+        oppText: "極大（NKVD・モスクワ見せしめ裁判）",
+        oppWidth: "95%",
+        oppColor: "#e11d48",
+        terText: "極大（党中央委員の約7割が銃殺）",
+        terWidth: "90%",
+        terColor: "#f59e0b",
+        archTitle: "Phase 1：スターリンによる「上からの秘密警察テロ」体制（ソ連 1930年代）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top Apex: Stalin Absolute Command -->
+          <rect x="280" y="26" width="320" height="46" rx="8" fill="#4c0519" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="47" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">ヨシフ・スターリン ＆ 「激化論」</text>
+          <text x="440" y="63" fill="#fde68a" font-size="10" text-anchor="middle">「社会主義が前進するほど敵は狂暴化する」</text>
+          
+          <!-- Direct Execution Arrow -->
+          <path d="M 440 72 L 440 100" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          
+          <!-- Executioner: NKVD -->
+          <rect x="240" y="100" width="400" height="42" rx="6" fill="#881337" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="440" y="122" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">内務人民委員部（NKVD：ヤゴーダ ➔ エジョフ ➔ ベリヤ）</text>
+          <text x="440" y="136" fill="#fecdd3" font-size="9.5" text-anchor="middle">夜間の逮捕・拷問による自白強要・トロイカ（3人組）即決銃殺</text>
+          
+          <!-- Targets Downward -->
+          <path d="M 320 142 L 200 162" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+          <path d="M 560 142 L 680 162" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+          
+          <rect x="50" y="162" width="300" height="30" rx="4" fill="#1e1b4b" stroke="#f43f5e" stroke-width="1"/>
+          <text x="200" y="181" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">古参党員・軍将校団（見せしめ裁判・銃殺）</text>
+          
+          <rect x="530" y="162" width="300" height="30" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-width="1"/>
+          <text x="680" y="181" fill="#cbd5e1" font-size="10.5" text-anchor="middle">一般市民・技術者（GULAG強制収容所送り）</text>
+          
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1928〜1938年（ソ連） ― スターリン大粛清とNKVD秘密警察テロ】</strong><br>五カ年計画と農業集団化の破綻・飢饉に直面したスターリンは、「階級闘争激化論」を発動して失政の責任を「潜入した敵のスパイ・妨害分子」に転嫁しました。1936〜38年の大粛清では、NKVDが夜間に市民や幹部を連行し、拷問ででっち上げた自白に基づき約68万人以上を即決銃殺、数百万人をシベリアのGULAGへと送還しました。国家の死滅論は完全に埋葬され、暴力装置が全社会に君臨する体制が完成しました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 1,
+        fanText: "高（教条主義的ドグマの浸透）",
+        fanWidth: "80%",
+        fanColor: "#f59e0b",
+        oppText: "拡大（東欧・コミンテルン諸党への強制）",
+        oppWidth: "85%",
+        oppColor: "#f59e0b",
+        terText: "高（東欧見せしめ裁判・スラーンスキー事件）",
+        terWidth: "75%",
+        terColor: "#f59e0b",
+        archTitle: "Phase 2：『簡明教程』による東欧・コミンテルン波及（1940〜1950年代）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Moscow Bible: Short Course -->
+          <rect x="280" y="28" width="320" height="46" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+          <text x="440" y="48" fill="#fef08a" font-size="12.5" font-weight="bold" text-anchor="middle">教典：『ソ連共産党（ボ）歴史・簡明教程』</text>
+          <text x="440" y="65" fill="#c7d2fe" font-size="10" text-anchor="middle">世界各国の共産党員に激化論の4大テーゼを義務付け</text>
+          
+          <!-- Spread Vectors -->
+          <path d="M 280 65 L 160 100" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-warn)"/>
+          <path d="M 600 65 L 720 100" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-warn)"/>
+          
+          <!-- Left: Eastern Europe Purges -->
+          <rect x="40" y="105" width="340" height="50" rx="6" fill="#4c0519" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="210" y="127" fill="#fecdd3" font-size="11.5" font-weight="bold" text-anchor="middle">東欧衛星国での見せしめ裁判</text>
+          <text x="210" y="143" fill="#fda4af" font-size="9.5" text-anchor="middle">チェコ（スラーンスキー）、ハンガリー（ライク）銃殺</text>
+          
+          <!-- Right: Yan'an Rectification in China -->
+          <rect x="500" y="105" width="340" height="50" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="670" y="127" fill="#fde047" font-size="11.5" font-weight="bold" text-anchor="middle">中国共産党：延安整風運動（1941-45）</text>
+          <text x="670" y="143" fill="#cbd5e1" font-size="9.5" text-anchor="middle">教条主義・「トロ派」批判による毛沢東権力確立</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(245, 158, 11, 0.15)"/>
+          <text x="440" y="187" fill="#fde047" font-size="10.5" font-weight="bold" text-anchor="middle">波及：スターリン主義的テロの論理が東側陣営全体の統制モデルへ</text>
+          
+          <defs>
+            <marker id="arrow-warn" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1940〜1950年代（東側輸出） ― 『簡明教程』による東欧・コミンテルン波及】</strong><br>1938年に発刊されたスターリン編纂の『簡明教程』は、東側陣営全域の共産党員にとっての聖書（バイブル）となりました。戦後、ソ連軍が進駐した東欧諸国（ハンガリー、ポーランド、チェコスロバキア等）では、ソ連NKVDの指導のもとで「チトー主義者」「帝国主義スパイ」を仕立て上げる見せしめ裁判が強行されました。また中国共産党でも、毛沢東が延安整風運動においてこの論理を武器に反対派を思想改造・粛清し、一元化指導体制を固めました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-5' class='cite-tag'>[5]</a>"
+      },
+      {
+        id: 2,
+        fanText: "極大（毛沢東語録・造反有理の狂信）",
+        fanWidth: "100%",
+        fanColor: "#e11d48",
+        oppText: "変容（党・国家を破壊し紅衛兵が暴力行使）",
+        oppWidth: "70%",
+        oppColor: "#f59e0b",
+        terText: "極大（全国民的大混乱・リンチ・百万人犠牲）",
+        terWidth: "95%",
+        terColor: "#e11d48",
+        archTitle: "Phase 3：毛沢東「継続革命論」と文化大革命（中国 1966〜1976年）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top: Mao Supreme Authority -->
+          <rect x="280" y="26" width="320" height="46" rx="8" fill="#4c0519" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="440" y="47" fill="#fef08a" font-size="13" font-weight="bold" text-anchor="middle">毛沢東 ＆ 「プロレタリア独裁下継続革命論」</text>
+          <text x="440" y="63" fill="#fde68a" font-size="10" text-anchor="middle">「党内にブルジョワ司令部（走資派）がある！ 司令部を砲撃せよ！」</text>
+          
+          <!-- Downward Flame Vector -->
+          <path d="M 440 72 L 440 100" stroke="#e11d48" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          
+          <!-- Middle: Red Guards Mass Terror -->
+          <rect x="220" y="100" width="440" height="42" rx="6" fill="#881337" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="440" y="122" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">紅衛兵 ＆ 造反派大衆（「下からの暴力動員」）</text>
+          <text x="440" y="136" fill="#fde047" font-size="9.5" text-anchor="middle">秘密警察ではなく、狂信的大衆を煽動して公然リンチを敢行</text>
+          
+          <!-- Targets: Party State Itself -->
+          <path d="M 320 142 L 200 162" stroke="#e11d48" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+          <path d="M 560 142 L 680 162" stroke="#e11d48" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+          
+          <rect x="50" y="162" width="300" height="30" rx="4" fill="#1e1b4b" stroke="#f43f5e" stroke-width="1"/>
+          <text x="200" y="181" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">党・政府官僚（国家主席・劉少奇の獄死）</text>
+          
+          <rect x="530" y="162" width="300" height="30" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-width="1"/>
+          <text x="680" y="181" fill="#cbd5e1" font-size="10.5" text-anchor="middle">知識人・教師・文化遺産（徹底的破壊）</text>
+        `,
+        desc: "<strong>【Phase 3：1966〜1976年（中国） ― 毛沢東「継続革命論」と文化大革命】</strong><br>毛沢東はスターリンの激化論をさらに先鋭化させ、「社会主義社会になっても新たなブルジョワ階級が党・国家内部（実権派＝走資派）から生まれ続ける」とする「継続革命論」を体系化しました。スターリンが秘密警察（NKVD）で上から粛清したのに対し、毛沢東は「造反有理」を叫ぶ数百万の紅衛兵（学生・大衆）を煽動し、既存の国家・党機構そのものを物理的に破壊させるという「下からの動員テロ」を展開。劉少奇国家主席を獄死に追い込み、全中国を内戦状態の惨禍に巻き込みました。<a href='#ref-4' class='cite-tag'>[4]</a>"
+      },
+      {
+        id: 3,
+        fanText: "絶対神格化（「首領様」への神聖忠誠）",
+        fanWidth: "100%",
+        fanColor: "#e11d48",
+        oppText: "制度的極限（国家保衛省・完全統制収容所）",
+        oppWidth: "100%",
+        oppColor: "#e11d48",
+        terText: "完全固定化（生活総括・3代連座制・白頭血統）",
+        terWidth: "100%",
+        terColor: "#e11d48",
+        archTitle: "Phase 4：8月宗派事件から「首領制・白頭血統」へ（北朝鮮 1950年代〜現代）",
+        svgContent: `
+          <rect x="20" y="20" width="840" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Top Godly Crown: Kim Dynasty -->
+          <rect x="250" y="26" width="380" height="46" rx="8" fill="#4c0519" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="440" y="47" fill="#fef08a" font-size="13" font-weight="900" text-anchor="middle">👑 最高首領（金日成 ➔ 金正日 ➔ 金正恩）</text>
+          <text x="440" y="63" fill="#fde68a" font-size="10.5" font-weight="bold" text-anchor="middle">「白頭血統」三代世襲 ＆ 「唯一思想体系10大原則」</text>
+          
+          <!-- Connectors -->
+          <path d="M 330 73 L 230 105" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <path d="M 550 73 L 650 105" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow-gold)"/>
+          
+          <!-- Left: Eternal Threat Narrative -->
+          <rect x="70" y="106" width="320" height="50" rx="6" fill="#1e1b4b" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="230" y="128" fill="#fecdd3" font-size="11.5" font-weight="bold" text-anchor="middle">「帝国主義と宗派分子の策動」の恒久化</text>
+          <text x="230" y="145" fill="#fda4af" font-size="9.5" text-anchor="middle">8月宗派事件（1956年）以来の恒常的スパイ恐怖</text>
+          
+          <!-- Right: Total Surveillance & Camps -->
+          <rect x="490" y="106" width="320" height="50" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="650" y="128" fill="#fef08a" font-size="11.5" font-weight="bold" text-anchor="middle">国家保衛省・管理所（政治犯収容所）</text>
+          <text x="650" y="145" fill="#fde047" font-size="9.5" text-anchor="middle">3代連座制・全社会の生活総括（相互密告制度）</text>
+          
+          <!-- Bottom Banner -->
+          <rect x="180" y="172" width="520" height="22" rx="4" fill="rgba(251, 191, 36, 0.15)"/>
+          <text x="440" y="187" fill="#fde047" font-size="10.5" font-weight="bold" text-anchor="middle">終着駅：「敵の侵入を防ぐ」名分が、血縁世襲絶対専制を永遠に正当化する</text>
+          
+          <defs>
+            <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#fbbf24"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 4：1950年代〜現代（北朝鮮） ― 8月宗派事件から「首領制・白頭血統」へ】</strong><br>北朝鮮における金日成は、1956年の8月宗派事件において延安派やソ連派を「党内に潜入したスパイ・宗派分子」として激化論の論理で粛清しました。金正日はこの論理を「党の唯一思想体系確立の10大原則（1974年）」に昇華させ、全社会に自己批判と相互密告を義務付け、反逆者を3代にわたって強制収容所（管理所）に隔離する連座制を制度化しました。「敵の陰謀はどこまでも続く」という恐怖が、最終的に「血縁（白頭血統）しか信用できない」という三代世襲絶対君主制の最大のイデオロギー的防壁となったのです。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-fan').textContent = p.fanText;
+      const bFan = document.getElementById('b-fan');
+      bFan.style.width = p.fanWidth;
+      bFan.style.backgroundColor = p.fanColor;
+
+      document.getElementById('m-opp').textContent = p.oppText;
+      const bOpp = document.getElementById('b-opp');
+      bOpp.style.width = p.oppWidth;
+      bOpp.style.backgroundColor = p.oppColor;
+
+      document.getElementById('m-ter').textContent = p.terText;
+      const bTer = document.getElementById('b-ter');
+      bTer.style.width = p.terWidth;
+      bTer.style.backgroundColor = p.terColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
