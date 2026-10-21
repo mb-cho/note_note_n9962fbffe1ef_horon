@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：民主集中制の原型と変容 ― レーニンの党組織論からスターリン専制、北朝鮮「首領の一元化指導」へ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      text-transform: uppercase;
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.18);
+      color: var(--accent-red);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #f8fafc 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section common */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      text-align: justify;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .phase-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1.35;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .phase-btn.active {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(244, 63, 94, 0.25));
+      border-color: var(--accent-red);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+    }
+
+    .phase-btn .btn-era {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .meter-label {
+      color: var(--text-secondary);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .meter-track {
+      background: #0f172a;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-diagram-container {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .svg-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .phase-desc-box {
+      background: rgba(15, 23, 42, 0.75);
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 680px;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    tr:hover td {
+      background: rgba(99, 102, 241, 0.06);
+    }
+
+    /* Logic Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Quotes */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      text-align: right;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .ref-num {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-tag {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 0.15rem;
+    }
+
+    .cite-tag:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      body { padding: 1rem; }
+      .sim-panel { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link active">⑨ 民主集中制の原型と変容</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">党組織論・権力構造の核心補論</span>
+        <span class="badge badge-alert">「討論の自由と行動の統一」から「分派禁止・人事独占・首領一元化」へ</span>
+      </div>
+      <h1>民主集中制の原型と変容</h1>
+      <p class="subtitle">
+        レーニンが前衛党のために提唱した「民主集中制」は、なぜ党内民主主義を育むことなく、スターリンによる「書記局支配・ノーメンクラトゥーラ」へと変質し、最終的に北朝鮮の「首領の一元化指導（唯一思想体系の10大原則）」という絶対君主制の道具へと頽廃したのか。組織原則の制度的死に至る病理を解明する。
+      </p>
+      <div class="meta-row">
+        <span>📖 本書対応：第1章「民主集中制の変容」、第2章「8月宗派事件」、第4章「唯一思想体系（10大原則）」</span>
+        <span>✍️ 著：mb_cho</span>
+        <span>🗓️ 最新党史料・比較政治学対照版</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section>
+      <h2 class="section-title">1. 問題の所在：「討論の自由」はいかにして圧殺されたか</h2>
+      <p>
+        共産党や社会主義体制を特徴づける最も基本的な組織原則が<strong>「民主集中制（Democratic Centralism / Демократический централизм）」</strong>です。1905〜1906年、ロシア社会民主労働党第4回大会（統一大会）においてウラジーミル・レーニンらによって採択されたこの原則は、公式には<strong>「討論の自由、行動の統一（freedom in discussion, full unity in action）」</strong>と定式化されました<a href="#ref-1" class="cite-tag">[1]</a>。
+      </p>
+      <p>
+        本来の建前では、①下級から上級に至るすべての指導機関の民主的選挙、②党機関の定期的報告義務、③厳格な党規律と少数者の多数者への服従、④下級組織の上級組織決定への無条件服従、という「民主主義」と「集中主義」の統合が謳われていました。しかし、20世紀の現実の共産主義政権において、この原則は例外なく<strong>「集中（指導部への服従）」のみが肥大化し、「民主（自由な議論と選挙）」が完全に抹殺される</strong>という致命的な変質を遂げました。
+      </p>
+      <p>
+        その決定的な転換点となったのが、1921年のロシア共産党第10回大会における<strong>「党の統一に関する決議（分派禁止決議）」</strong>でした。クロンシュタット反乱の危機の中でレーニン自身が主導したこの決議は、党内における独自のグループ形成や異論の組織的表明を「反革命的策動」として違法化しました。この土台の上に、1922年に書記長に就任したスターリンが「書記局による人事権の独占（ノーメンクラトゥーラ制度）」を構築したことで、民主的選挙は中央が指定した単一候補を拍手承認するだけの茶番劇へと成り果てました。
+      </p>
+      <p>
+        さらに、このソ連型民主集中制を移植した北朝鮮（朝鮮労働党）においては、1956年の「8月宗派事件」で金日成の個人崇拝を批判した幹部たちが「反党宗派分子」として物理的に粛清され、1974年には金正日によって『党の唯一思想体系確立の10大原則』が策定されました。これにより、民主集中制の「下級は上級に従う」という論理は、「人民・全党員は首領に絶対無条件に服従する」という宗教的君主制の最高規範へと完全に反転・固定化されたのです<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>。
+      </p>
+    </section>
+
+    <!-- Section 2: Interactive Simulator -->
+    <section>
+      <h2 class="section-title">2. インタラクティブ図解：民主集中制の変容動態シミュレーター</h2>
+      <p>
+        以下の4つの思想史的フェーズを切り替えることで、初期レーニン期の激しい党内論争から、分派禁止決議、スターリンによる人事支配、そして北朝鮮における首領一元化指導へと至る「党内民主主義の窒息過程」をダイナミックにシミュレーションできます。
+      </p>
+
+      <div class="sim-panel">
+        <div class="phase-selector">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="btn-era">Phase 1：1905〜1920年</span>
+            レーニン初期モデル<br><small>（討論の自由と激しい党内路線対立）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="btn-era">Phase 2：1921〜1928年</span>
+            第10回党大会・分派禁止<br><small>（異論の違法化と書記局人事権掌握）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="btn-era">Phase 3：1930〜1953年</span>
+            スターリン一枚岩専制<br><small>（大粛清・ノーメンクラトゥーラ完成）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="btn-era">Phase 4：1970年代〜現代</span>
+            北朝鮮「首領の一元化指導」<br><small>（8月宗派事件から10大原則・世襲へ）</small>
+          </button>
+        </div>
+
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">① 党内自由討論度（異論・批判の許容度）</span>
+              <span class="meter-val" id="m-disc">80%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-disc" style="width: 80%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">② 中央人事統制・任命集権度</span>
+              <span class="meter-val" id="m-appo">35%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-appo" style="width: 35%; background-color: #06b6d4;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">③ 指導者個人独裁・神格化度</span>
+              <span class="meter-val" id="m-dict">10%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-dict" style="width: 10%; background-color: #94a3b8;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="svg-diagram-container">
+          <div class="svg-title" id="arch-title">【構造図】Phase 1：初期レーニン期（下からの選挙と党内活発論争）</div>
+          <svg id="arch-svg" width="100%" height="220" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamically populated via JS -->
+          </svg>
+        </div>
+
+        <div class="phase-desc-box" id="sim-desc">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparative Table -->
+    <section>
+      <h2 class="section-title">3. 歴史的比較：民主集中制の各段階における変容と帰結</h2>
+      <p>
+        「下級は上級に従う」「決定後は全員で行動する」という組織規律が、いかにして党内民主主義の息の根を止め、最高権力者への盲従システムへと転化したのかを比較します。
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>発展段階</th>
+              <th>主要事件・規定</th>
+              <th>党内議論の現実</th>
+              <th>人事・選挙のメカニズム</th>
+              <th>異論・反対派への処遇</th>
+              <th>制度的帰結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>初期レーニン期</strong><br><small>1905–1920年</small></td>
+              <td>1906年第4回統一大会<br>ブレスト条約・軍事論争</td>
+              <td>活発な論争。レーニンの方針が党内で否決されることも頻繁に発生。</td>
+              <td>下級党員による代議員選出。下からの推薦と議論による決定。</td>
+              <td>「左翼共産主義者」「労働者反対派」などが公然と別個の綱領を提示可能。</td>
+              <td>戦時共産主義と内戦の中で次第に軍事集権化が進むが、論争の精神は残存。</td>
+            </tr>
+            <tr>
+              <td><strong>分派禁止と書記局支配</strong><br><small>1921–1928年</small></td>
+              <td>第10回党大会決議（1921年）<br>スターリン書記長就任（1922年）</td>
+              <td>綱領外の分派結成が「犯罪」化。合意形成ではなく上意下達へ傾斜。</td>
+              <td><strong>人事推薦権（ウチラスプレト）</strong>による地方書記の任命制確立。</td>
+              <td>トロツキー派、合同反対派が「分派」として排斥・党籍剥奪・流刑へ。</td>
+              <td>「民主的選挙」が中央書記局による人事推薦の追認機関（ゴム印）へ降格。</td>
+            </tr>
+            <tr>
+              <td><strong>スターリン専制期</strong><br><small>1929–1953年</small></td>
+              <td>1934年第17回党大会<br>大粛清（1937–38年）</td>
+              <td>完全消滅。党中央委員会や党大会はスターリンを讃える拍手機関へ転落。</td>
+              <td><strong>ノーメンクラトゥーラ制度</strong>の完成。特権官僚層の完全中央統制。</td>
+              <td>「人民の敵」「ナチス・帝国主義スパイ」としてNKVDにより物理的銃殺。</td>
+              <td>民主集中制は指導者個人崇拝を支える暴力的な全体主義支配機構へ変貌。</td>
+            </tr>
+            <tr>
+              <td><strong>北朝鮮 主体思想期</strong><br><small>1956年〜現代</small></td>
+              <td>8月宗派事件（1956年）<br><strong>唯一思想体系の10大原則（1974年）</strong></td>
+              <td>異論は「宗派・反党分子」の重罪。毎週の「生活総和」で相互密告を強制。</td>
+              <td>党組織指導部による徹底査定（51成分分類）。首領による絶対指名。</td>
+              <td><strong>管理所（完全統制区域）への終身収容・三代連座処刑</strong>。</td>
+              <td>民主集中制を「首領の一元化指導」へ昇華。三代世襲の絶対君主制へ結実。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Logic Flow -->
+    <section>
+      <h2 class="section-title">4. 論理展開フロー：民主集中制が「独裁への滑り台」となった4つの病理</h2>
+      <p>
+        「民主主義」を冠しながら、なぜ共産主義政党の民主集中制は必然的に絶対独裁へと帰結したのか。そこには組織構造上の4つの必然的病理が存在しました。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-heading">「行動の統一」による多数派の絶対化</div>
+          <div class="flow-desc">
+            「一度決定されたら少数者は沈黙して従う」という規律が、決定後における政策の誤りの検証や異論の再提起を不可能にした。<a href="#ref-1" class="cite-tag">[1]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-heading">分派禁止による「組織的異論」の犯罪化</div>
+          <div class="flow-desc">
+            個人での意見具申しか許されず、仲間と連帯して意見を述べる行為が「分派」として禁じられたため、孤立した個人は指導部に屈服せざるを得なくなった。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-heading">書記局による人事権の逆流（下からの選挙の死）</div>
+          <div class="flow-desc">
+            本来「下からの選挙」で選ばれるべき指導機関が、中央の人事部（ノーメンクラトゥーラ）によって下級幹部を任命する「上からの統制」へと逆流した。<a href="#ref-5" class="cite-tag">[5]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-heading">「唯一思想」と首領の一元化への昇華</div>
+          <div class="flow-desc">
+            北朝鮮において「民主」の看板すら取り払われ、首領の教示を無条件執行する「10大原則」が憲法をも超越する国家最高規範へと完成された。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Deep Dive Cards -->
+    <section>
+      <h2 class="section-title">5. 深層解説：民主集中制を巡る6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">
+            <span>⚔️</span>
+            <span>ロシア共産党第10回大会（1921年）の悲劇：分派禁止決議</span>
+          </div>
+          <p>
+            1921年3月、内戦の疲弊とクロンシュタット水兵の反乱に直面したボリシェヴィキは、党分裂の危機に怯えていました。レーニンは第10回党大会において、有名な<strong>「党の統一に関する決議」</strong>を提出しました。
+          </p>
+          <p>
+            この決議は、いかなる集団（プラットフォーム）の結成も即時解散を命じ、違反者は直ちに党から除名すると定めました。レーニン自身はこれを「一時的な非常措置」と想定していましたが、この条項こそが後にスターリンがすべての政敵（トロツキー、ジノヴィエフ、ブハーリン）を「分派分子」として葬り去るための最大の法的武器となったのです。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>📋</span>
+            <span>スターリンとノーメンクラトゥーラ：人事権という名の権力独占</span>
+          </div>
+          <p>
+            1922年に新設された「書記長（Генеральный секретарь）」というポストは、当初は事務的・雑務的な役職にすぎませんでした。しかしスターリンは、書記局の人事配分局（ウチラスプレト）を通じて、全国の地方党書記の人事権を完全に掌握しました。
+          </p>
+          <p>
+            党大会の代議員は地方党組織から選出されます。スターリン息のかかった人物を地方書記に任命すれば、党大会には自動的にスターリン支持派の代議員だけが送り込まれます。こうして「下からの選挙」という民主集中制の前提は完全に破壊され、スターリンは合法的に党内多数派を恒久化することに成功しました。<a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🥀</span>
+            <span>「勝者たちの大会」から「銃殺者たちの大会」へ</span>
+          </div>
+          <p>
+            1934年の第17回党大会は、第一次五カ年計画の成功を祝う「勝者たちの大会」と呼ばれました。しかし、この大会の中央委員選挙において、人気の高かったレニングラード党書記セルゲイ・キーロフへの批判票がわずか3票だったのに対し、スターリンには数百票の反対票（白票・削除票）が投じられたとされます。
+          </p>
+          <p>
+            この結果に危機感を抱いたスターリンは、同年末にキーロフが暗殺された事件を口実に大粛清を開始。第17回党大会の代議員1,966人のうち1,108人（56%）、選出された中央委員・候補委員139人のうち98人（70%）が銃殺されました。民主集中制による選挙結果は、物理的抹殺によって完全に無効化されたのです。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🇨🇳</span>
+            <span>毛沢東・延安整風運動と「一元化指導」の確立</span>
+          </div>
+          <p>
+            1941〜1945年、延安における中国共産党で毛沢東が主導した「整風運動」は、民主集中制の中国版変容でした。
+          </p>
+          <p>
+            毛沢東は「批判と自我批判」を全党員に義務付け、コミンテルン派（王明ら）や党内官僚主義を批判した作家・王実味らを「反党トロ派」として投獄・排除しました。1943年の政治局会議で党首への権力集中が決定され、「党・政・軍・民・学、東西南北中、党がすべてを指導する」という<strong>「一元化指導」</strong>が確立。民主集中制は毛沢東思想への服従を意味する言葉へと転換されました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🇰🇵</span>
+            <span>北朝鮮「8月宗派事件（1956年）」：民主集中制への最後の抵抗</span>
+          </div>
+          <p>
+            フルシチョフのスターリン批判（1956年）を受け、北朝鮮の朝鮮労働党内でも「延安派（崔昌益、尹公欽ら）」や「ソ連派（朴昌玉ら）」が、金日成の個人崇拝と過酷な重工業優先路線を是正し、「集団指導体制」への復帰を要求しました。
+          </p>
+          <p>
+            1956年8月の全員会議において尹公欽らが公然と金日成を批判しましたが、金日成派は「党の統一を破壊する反党宗派分子の陰謀」と罵倒して議場を制圧。批判者たちは中国へ亡命するか逮捕・粛清されました。この事件を通じて、朝鮮労働党における「異論の表明」は完全に死滅し、首領独裁制が不可逆的なものとなりました。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>📜</span>
+            <span>「党の唯一思想体系確立の10大原則」による最高規範化</span>
+          </div>
+          <p>
+            1974年、金正日は『党の唯一思想体系確立の10大原則』を発表し、叔父・金英柱らを排除して自らの後継体制を確立しました。
+          </p>
+          <p>
+            10大原則は「首領様への忠実性を最高の規範とし、首領様の教示に反するいかなる些細な異端も萌芽の段階で粉砕せよ」と命じました。憲法や党規約をも超越するこの絶対掟のもとで、全住民は毎週の「生活総和」で自己批判を強制され、民主集中制の「民主」という文字は北朝鮮の政治空間から完全に蒸発しました。2013年には「白頭の血統」が明記され、王朝的世襲の防壁として完成を見るに至ったのです。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Primary Sources -->
+    <section>
+      <h2 class="section-title">6. 一次資料・歴史的言説の記録</h2>
+
+      <div class="quote-box">
+        <p>
+          「民主集中制の原則は、完全な討論の自由と、いかなる行動の完全な統一を意味する。……全党大会の決定は、すべての党組織および個々の党員に対して絶対的な拘束力を持つ。決定が下された後には、いかなる反対運動も許されない。」
+        </p>
+        <div class="quote-author">― ウラジーミル・レーニン『ロシア社会民主労働党第4回大会の決議』（1906年）[1]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「党大会は、いかなる分派の結成をも即時解散することを命ずる。この大会決定を不履行とするすべての組織は、無条件かつ即座に党から除名されなければならない。……中央委員会は、中央委員自身が分派活動を行った場合、中央委員会から罷免し、極端な場合には党から除名する全権を付与される。」
+        </p>
+        <div class="quote-author">― ロシア共産党（ボリシェヴィキ）第10回大会『党の統一に関する決議』（1921年3月）[4]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「党は一枚岩（モノリス）でなければならない。党内にいかなる分派や異端の存在も許してはならない。民主集中制とは、鉄の規律であり、上意下達の無条件な執行である。指導機関に反対することは、プロレタリア独裁そのものに反対することに等しい。」
+        </p>
+        <div class="quote-author">― ヨシフ・スターリン『レーニン主義の諸問題』（1926年）[5]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「偉大な首領金日成同志の革命思想で全党、全社会を一色化しなければならない。……首領様の教示と党の政策に反するいかなる些細な要素も、たとえそれが親兄弟であっても断固として反対して闘争し、首領様の絶対的権威を百方で擁護しなければならない。」
+        </p>
+        <div class="quote-author">― 朝鮮労働党『党の唯一思想体系確立の10大原則』（1974年第1条・第3条）[2][3]</div>
+      </div>
+    </section>
+
+    <!-- Section 7: References -->
+    <section>
+      <h2 class="section-title">7. 出典・参考文献・アーカイブ</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E6%B0%91%E4%B8%BB%E9%9B%86%E4%B8%AD%E5%88%B6" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：民主集中制 / レーニンの組織論と変遷)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://kotobank.jp/word/%E6%B0%91%E4%B8%BB%E9%9B%86%E4%B8%AD%E5%88%B6-140067" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：民主集中制 / 共産党組織原則と権力集中)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%85%9A%E3%81%AE%E5%94%AF%E4%B8%80%E6%80%9D%E6%83%B3%E4%BD%93%E7%B3%BB%E7%A2%BA%E7%AB%8B%E3%81%AE10%E5%A4%A7%E5%8E%9F%E5%89%87" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：党の唯一思想体系確立の10大原則 / 北朝鮮の実質的最高法規)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.marxists.org/archive/lenin/works/1921/10thcong/04.htm" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.marxists.org (Marxists Internet Archive：Lenin: 10th Congress of the R.C.P.(B.) - On Party Unity)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://kotobank.jp/word/%E3%83%8E%E3%83%BC%E3%83%A1%E3%83%B3%E3%82%AF%E3%83%A9%E3%83%88%E3%82%A5%E3%83%BC%E3%83%A9-111166" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：ノーメンクラトゥーラ / ソ連の任命制特権階級)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑨ ｜ 民主集中制の原型と変容</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        discText: "80%（ブレスト条約等、激しい公開論争）",
+        discWidth: "80%",
+        discColor: "#10b981",
+        appoText: "35%（下からの選挙・代議員推薦主導）",
+        appoWidth: "35%",
+        appoColor: "#06b6d4",
+        dictText: "10%（集団指導・レーニンでも否決を経験）",
+        dictWidth: "10%",
+        dictColor: "#94a3b8",
+        archTitle: "【構造図】Phase 1：初期レーニン期（1905〜1920）― 討論の自由と下からの選挙",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="25" width="200" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <text x="130" y="48" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">末端党細胞・労働者</text>
+          <text x="130" y="67" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">活発な意見具申・代議員選挙</text>
+
+          <rect x="310" y="25" width="220" height="60" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">全党大会 (最高機関)</text>
+          <text x="420" y="67" fill="#06b6d4" font-size="11" font-weight="bold" text-anchor="middle">多数決と激しい路線論争</text>
+
+          <rect x="600" y="25" width="210" height="60" rx="8" fill="#162032" stroke="#6366f1" stroke-width="2"/>
+          <text x="705" y="48" fill="#6366f1" font-size="13" font-weight="bold" text-anchor="middle">中央委員会 / 政治局</text>
+          <text x="705" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">集団指導（執行責任）</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#10b981" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">「討論の自由、行動の統一」</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">決定前は自由、決定後は全員服従</text>
+
+          <!-- Arrows -->
+          <line x1="230" y1="55" x2="300" y2="55" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+          <line x1="530" y1="55" x2="590" y2="55" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow-cyan)"/>
+          <line x1="420" y1="85" x2="420" y2="135" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4"/>
+
+          <defs>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#10b981"/>
+            </marker>
+            <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#06b6d4"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1905〜1920年（レーニン初期モデル）】</strong><br>初期ボリシェヴィキにおける民主集中制は、弾圧下の秘密結社としての厳格な規律（行動の統一）を求めつつも、党内ではブレスト＝リトフスク講和条約や労働組合論争など、最高指導者レーニンの意見が否決されるほどの活発な自由討論が行われていました。党員による代議員選挙が機能し、集団指導が保たれていました。<a href='#ref-1' class='cite-tag'>[1]</a>"
+      },
+      {
+        id: 1,
+        discText: "25%（分派禁止令により組織的異論が犯罪化）",
+        discWidth: "25%",
+        discColor: "#f59e0b",
+        appoText: "80%（スターリン書記長による地方幹部任命制）",
+        appoWidth: "80%",
+        appoColor: "#f59e0b",
+        dictText: "45%（書記局による権限独占と反対派追放）",
+        dictWidth: "45%",
+        dictColor: "#f59e0b",
+        archTitle: "【構造図】Phase 2：分派禁止と書記局支配（1921〜1928）― 上からの人事推薦と異論封殺",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">書記長 スターリン (書記局)</text>
+          <text x="130" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">地方書記の任命権 (ウチラスプレト)</text>
+
+          <rect x="310" y="25" width="210" height="65" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="415" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">任命された地方党書記</text>
+          <text x="415" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">党大会代議員の掌握</text>
+
+          <rect x="590" y="25" width="230" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="705" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">反対派（トロツキーら）</text>
+          <text x="705" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">「分派活動」として告発・追放</text>
+
+          <rect x="310" y="140" width="210" height="55" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="415" y="163" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">第10回党大会決議（1921年）</text>
+          <text x="415" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">分派形成の完全禁止令</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="520" y1="57" x2="580" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="415" y1="90" x2="415" y2="135" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1921〜1928年（分派禁止と書記局支配）】</strong><br>1921年の第10回党大会でレーニンが提案した「分派禁止決議」により、党内での独自のグループ形成や意見表明が非合法化されました。翌年書記長に就任したスターリンは、地方党幹部の任命権を独占し、党大会代議員を意のままに操る体制を構築。「下からの選挙」という民主主義は空洞化し、反対派は「分派分子」として次々と追放されました。<a href='#ref-4' class='cite-tag'>[4]</a><a href='#ref-5' class='cite-tag'>[5]</a>"
+      },
+      {
+        id: 2,
+        discText: "0%（異論の表出＝反革命スパイ罪＝即時処刑）",
+        discWidth: "2%",
+        discColor: "#f43f5e",
+        appoText: "100%（ノーメンクラトゥーラ制度による完全中央統制）",
+        appoWidth: "100%",
+        appoColor: "#f43f5e",
+        dictText: "90%（スターリンへの現人神化と中央委員会の形骸化）",
+        dictWidth: "90%",
+        dictColor: "#f43f5e",
+        archTitle: "【構造図】Phase 3：スターリン専制期（1929〜1953）― 一枚岩の指導と大粛清",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="330" y="15" width="200" height="55" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="430" y="38" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">独裁者 スターリン</text>
+          <text x="430" y="55" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">神格化・無謬の指導者</text>
+
+          <rect x="50" y="105" width="200" height="60" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="150" y="128" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">秘密警察 (NKVD)</text>
+          <text x="150" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">異論者・党幹部の銃殺</text>
+
+          <rect x="330" y="105" width="200" height="60" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="2"/>
+          <text x="430" y="128" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">ノーメンクラトゥーラ</text>
+          <text x="430" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">特権と恐怖による官僚支配</text>
+
+          <rect x="600" y="105" width="210" height="60" rx="8" fill="#162032" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="705" y="128" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">党大会 / ソヴィエト</text>
+          <text x="705" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">全会一致拍手追認機関</text>
+
+          <!-- Arrows -->
+          <line x1="380" y1="70" x2="200" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="430" y1="70" x2="430" y2="100" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="480" y1="70" x2="650" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 3：1929〜1953年（スターリン専制と大粛清）】</strong><br>スターリン体制下で民主集中制は「指導者個人への絶対服従と一枚岩の規律」を意味する言葉へと完全に頽廃しました。1934年の第17回党大会でスターリンに批判票を投じた中央委員の大半は大粛清で銃殺され、党大会は単なる「熱狂的な賛美と拍手」の儀式に成り下がりました。特権官僚層（ノーメンクラトゥーラ）が全社会を独占支配する構造が完成しました。<a href='#ref-5' class='cite-tag'>[5]</a>"
+      },
+      {
+        id: 3,
+        discText: "0%（党内異論＝反党宗派＝強制収容所・三代連座）",
+        discWidth: "1%",
+        discColor: "#f43f5e",
+        appoText: "100%（党組織指導部・首領直轄による成分別選別）",
+        appoWidth: "100%",
+        appoColor: "#f43f5e",
+        dictText: "100%（首領の絶対無謬性・唯一思想・白頭血統）",
+        dictWidth: "100%",
+        dictColor: "#f43f5e",
+        archTitle: "【構造図】Phase 4：北朝鮮 主体思想期（1970年代〜現代）― 首領の一元化指導体系",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="330" y="15" width="200" height="55" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="430" y="38" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">最高首領 (金正恩)</text>
+          <text x="430" y="55" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">絶対無謬・白頭血統の脳髄</text>
+
+          <rect x="50" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="160" y="128" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">朝鮮労働党 組織指導部</text>
+          <text x="160" y="147" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">全幹部の思想査定・生殺与奪</text>
+
+          <rect x="320" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="430" y="128" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">唯一思想体系確立の10大原則</text>
+          <text x="430" y="147" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">憲法・党規約を超越する掟</text>
+
+          <rect x="590" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="700" y="128" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">生活総和（相互密告制度）</text>
+          <text x="700" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">毎週の自己批判と忠誠点検</text>
+
+          <!-- Arrows -->
+          <line x1="380" y1="70" x2="200" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="430" y1="70" x2="430" y2="100" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="480" y1="70" x2="650" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 4：1970年代〜現代（北朝鮮・首領の一元化指導体系）】</strong><br>北朝鮮において民主集中制は完全に死滅し、「首領の一元化指導体系」へと昇華されました。1956年の8月宗派事件で集団指導を求めた反対派を根絶した金日成・金正日は、1974年に『党の唯一思想体系確立の10大原則』を策定。首領の教示は議論や修正の対象ではなく『絶対無条件に執行すべき掟』とされ、全社会が毎週の自己批判（生活総和）によって首領へ絶対服従する神権的君主制が完成しました。<a href='#ref-2' class='cite-tag'>[2]</a><a href='#ref-3' class='cite-tag'>[3]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-disc').textContent = p.discText;
+      const bDisc = document.getElementById('b-disc');
+      bDisc.style.width = p.discWidth;
+      bDisc.style.backgroundColor = p.discColor;
+
+      document.getElementById('m-appo').textContent = p.appoText;
+      const bAppo = document.getElementById('b-appo');
+      bAppo.style.width = p.appoWidth;
+      bAppo.style.backgroundColor = p.appoColor;
+
+      document.getElementById('m-dict').textContent = p.dictText;
+      const bDict = document.getElementById('b-dict');
+      bDict.style.width = p.dictWidth;
+      bDict.style.backgroundColor = p.dictColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
