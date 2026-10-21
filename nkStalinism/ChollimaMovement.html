@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：千里馬運動と大衆総動員体制 ― 降仙の奇跡、集団主義競争、そして首領独裁と住民監視の原点</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.2);
+      color: var(--accent-red);
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-amber);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    .card-title-red {
+      border-left-color: var(--accent-red);
+    }
+
+    .card-title-amber {
+      border-left-color: var(--accent-amber);
+    }
+
+    .card-title-emerald {
+      border-left-color: var(--accent-emerald);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .sub-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sub-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-cyan);
+    }
+
+    /* Simulator Styles */
+    .sim-container {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .phase-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      flex: 1 1 calc(25% - 0.5rem);
+      min-width: 180px;
+      padding: 0.65rem 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .meter-label {
+      color: var(--text-muted);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .meter-track {
+      background: #090d16;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-wrapper {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+    }
+
+    .svg-wrapper svg {
+      width: 100%;
+      height: auto;
+      min-width: 650px;
+      display: block;
+    }
+
+    .phase-desc-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Flow Chart */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      position: relative;
+    }
+
+    .flow-step {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .flow-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th {
+      background: #090d16;
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Quotes & Details */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    details {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--primary);
+    }
+
+    summary {
+      padding: 0.85rem 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      outline: none;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary:hover {
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    details .details-content {
+      padding: 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .phase-btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気と終焉</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と8月宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と朝鮮戦争・廬山会議の悲劇</a>
+        <a href="HungarianRevolution.html" class="nav-link">⑯ ハンガリー動乱と東欧の悲劇</a>
+        <a href="ChollimaMovement.html" class="nav-link active">⑰ 千里馬運動と大衆総動員体制</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">KDP補論シリーズ 第17編</span>
+        <span class="badge badge-alert">戦後復興と集団主義動員</span>
+        <span class="badge badge-amber">千里馬作業班と大安体系</span>
+        <span class="badge badge-emerald">住民成分制と首領独裁の完成</span>
+      </div>
+      <h1>千里馬運動と大衆総動員体制</h1>
+      <p class="subtitle">伝説の天馬を掲げた超増産運動は、いかにして経済的復興を超え、全住民を網の目のように統制する「首領絶対専制」の社会基盤を完成させたのか</p>
+    </header>
+
+    <!-- Section 1: 問題の所在 -->
+    <section class="card">
+      <h2 class="card-title">1. 問題の所在：生産運動の皮を被った「社会全体の軍隊化」と政敵殲滅装置</h2>
+      <p>1956年12月、朝鮮労働党中央委員会全員会議において金日成が提唱した「千里馬運動（チョンリマうんどう）」は、表面的には1日に千里（約400km）を駆ける伝説上の天馬にちなむ、戦後経済復興のための大衆的生産革新運動であった。朝鮮戦争（1950〜1953年）の焦土から立ち上がるため、「最大限の増産と最大限の節約」を旗印に掲げ、人民に超人的な献身を求めた。</p>
+      <p style="margin-top: 0.85rem;">しかし、本書『北朝鮮におけるスターリン主義の形成』の視座において、千里馬運動の本質は単なる労働増産運動にとどまらない。それは1956年の「8月宗派事件」で金日成の独裁を批判した延安派・ソ連派を壊滅させ、中ソ両大国の干渉を遮断した直後に発動された、<strong>「政治的粛清・全住民思想審査・軍隊型相互監視体制」を不可逆的に固定化するための国家的統合装置</strong>であった。</p>
+      
+      <div class="quote-box">
+        「千里馬の速度で走るとは、単に鉄を多く溶かし、石炭を多く掘ることではない。それは党と首領の指示に対して一切の疑念を持たず、隣人を相互に監視し、心の中に潜む『宗派的・事大主義的不純物』を根こそぎ焼き払うことである。」
+      </div>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 降仙製鋼所の神話と精神主義</h3>
+          <p>能力6万トンの圧延機から12万トンの鋼材を絞り出したとされる「降仙（カンソン）の奇跡」。客観的な物理限界や技術的法則を否定し、「思想さえ燃え盛れば限界はない」とする精神至上主義が国家の最高ドクトリンとなった。</p>
+        </div>
+        <div class="sub-card">
+          <h3>② 千里馬作業班と「大安の事業体系」</h3>
+          <p>個人ではなく職場チーム全体で競わせる「千里馬作業班運動」を展開。「一人はみんなのために、みんなは一人のために」の名の下、生活・思想・私生活を一体化した集団主義相互監視網が完成した。</p>
+        </div>
+        <div class="sub-card">
+          <h3>③ 住民身分制（成分調査）と粛清の結合</h3>
+          <p>千里馬運動の熱狂の裏で、全住民を「基本・動揺・敵対」の3大階層51区分に選別する「集中指導事業」が強行され、反対派の残党を物理的・社会的に完全殲滅して首領制の土台を築いた。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: インタラクティブ動態シミュレーター -->
+    <section class="card">
+      <h2 class="card-title card-title-red">2. インタラクティブ動態シミュレーター：千里馬運動の熱狂と全体主義的変容の4段階</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+        各フェーズをクリックして、降仙製鋼所の熱狂から千里馬作業班の相互監視、身分制の確立、そして速度戦による経済疲弊へと至る動態プロセスを体験してください。
+      </p>
+
+      <div class="sim-container">
+        <!-- Phase Selector Buttons -->
+        <div class="phase-selector" role="tablist">
+          <button id="pbtn-0" class="phase-btn active" onclick="setPhase(0)" role="tab">Phase 1: 1956.12<br>降仙製鋼所と点火</button>
+          <button id="pbtn-1" class="phase-btn" onclick="setPhase(1)" role="tab">Phase 2: 1959-1961<br>千里馬作業班と大安体系</button>
+          <button id="pbtn-2" class="phase-btn" onclick="setPhase(2)" role="tab">Phase 3: 1960s中盤<br>成分調査と反対派根絶</button>
+          <button id="pbtn-3" class="phase-btn" onclick="setPhase(3)" role="tab">Phase 4: 1970s〜総括<br>速度戦の歪みと構造破綻</button>
+        </div>
+
+        <!-- Metrics Bars -->
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">大衆動員・精神主義強度</span>
+              <span id="m-mobi" class="meter-val">80%（降仙の熱狂・直訴運動）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-mobi" class="meter-bar" style="width: 80%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">見かけの工業成長・増産率</span>
+              <span id="m-econ" class="meter-val">75%（初期復興の急ピッチ達成）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-econ" class="meter-bar" style="width: 75%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">党の直接統制・住民監視度</span>
+              <span id="m-cont" class="meter-val">65%（職場単位の組織化着手）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-cont" class="meter-bar" style="width: 65%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Visual Architecture -->
+        <div class="svg-wrapper">
+          <div id="arch-title" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--accent-cyan);">
+            【動態構造図】Phase 1：1956年12月 ― 降仙製鋼所の奇跡と千里馬運動の号砲
+          </div>
+          <svg id="arch-svg" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rendered dynamically by JS -->
+          </svg>
+        </div>
+
+        <!-- Phase Description Text -->
+        <div id="sim-desc" class="phase-desc-box">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 比較対照マトリクス -->
+    <section class="card">
+      <h2 class="card-title card-title-amber">3. 比較分析：社会主義3大労働動員運動（北朝鮮 vs 中国 vs ソ連）</h2>
+      <p>共産圏において大衆の労働意欲を刺激するために展開された3大動員モデルの構造、手法、および帰結の差異を比較する。</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較軸</th>
+              <th>北朝鮮：千里馬運動（1956〜）</th>
+              <th>中国：大躍進・人民公社（1958〜）</th>
+              <th>ソ連：スタハノフ運動（1935〜）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>動員の基本単位</strong></td>
+              <td><strong>「作業班（チーム）」集団単位</strong><br>連帯責任と集団的道徳・私生活監視</td>
+              <td><strong>「人民公社」地域生活共同体</strong><br>軍隊的編隊・共同食堂・家族解体</td>
+              <td><strong>「個人」労働者（スタハノフら）</strong><br>突出したノルマ達成者の個人英雄化</td>
+            </tr>
+            <tr>
+              <td><strong>インセンティブ構造</strong></td>
+              <td><strong>首領への絶対忠誠・名誉称号</strong><br>物質的刺激を否定し「思想の力」を強調</td>
+              <td><strong>共産主義ユートピアへの幻惑</strong><br>精神的狂信と政治的強制</td>
+              <td><strong>破格の高賃金・住宅・特権物資</strong><br>階層分化を伴う強力な物質的報酬</td>
+            </tr>
+            <tr>
+              <td><strong>党組織の介入形態</strong></td>
+              <td><strong>「大安の事業体系」</strong><br>支配人責任制を廃止し、工場党委員会が全権掌握</td>
+              <td><strong>党支部による極左的指導</strong><br>浮誇風（水増し報告）を強要</td>
+              <td>専門技術者・工場管理者の下で党がバックアップ</td>
+            </tr>
+            <tr>
+              <td><strong>政治的粛清との結合</strong></td>
+              <td><strong>極めて密接（8月宗派・延安派粛清）</strong><br>身分調査（出身成分制）と完全連動</td>
+              <td><strong>反右派闘争・廬山会議での彭徳懐排除</strong><br>大躍進批判者を反党分子として処罰</td>
+              <td>大粛清（1936-38）の「産業破壊分子（サボタージュ）」摘発と連動</td>
+            </tr>
+            <tr>
+              <td><strong>長期的経済帰結</strong></td>
+              <td>初期復興は達成するも<strong>設備老朽化・統計偽装・1990年代大飢饉へ直結</strong></td>
+              <td>数千万人の餓死者を出し<strong>数年で壊滅的破綻・中止</strong></td>
+              <td>労働強度の過度な引き上げで労働者の不満蓄積、制度形骸化</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 論理展開・歴史的因果フロー -->
+    <section class="card">
+      <h2 class="card-title">4. 論理展開フロー：千里馬の疾走がいかにして「国民総私有化」を完遂させたか</h2>
+      
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="flow-num">1</span>
+          <div class="flow-heading">政権危機の打開 (1956.12)</div>
+          <div class="flow-desc">8月宗派事件とハンガリー動乱の激震を受け、金日成が労働者に直訴。「千里馬運動」で社会を団結・戦時動員。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">2</span>
+          <div class="flow-heading">千里馬作業班運動 (1959-)</div>
+          <div class="flow-desc">チン・ウンウォン作業班を模範に、職場全体の集団主義競争へ発展。「一人はみんなのために」で私生活まで相互監視。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">3</span>
+          <div class="flow-heading">大安の事業体系 (1961)</div>
+          <div class="flow-desc">技術者の単独管理を否定し、工場党委員会が集団指導を行う体制を確立。経済活動の全権を党と首領が直轄。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">4</span>
+          <div class="flow-heading">住民身分制の固定 (1960s)</div>
+          <div class="flow-desc">集中指導事業により全住民を3大階層51区分に格付け。千里馬のノルマ未達や異論を「反動」として収容所送り。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">5</span>
+          <div class="flow-heading">「速度戦」と破滅 (1970s-)</div>
+          <div class="flow-desc">金正日主導の「〇日戦闘」へと過激化。設備の限界と統計偽装が累積し、1990年代「苦難の行軍」の悲劇を胚胎。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 深層解説・6大核心テーマ -->
+    <section class="card">
+      <h2 class="card-title card-title-emerald">5. 深層解説：千里馬運動の神話と全体主義工学の6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 「降仙の奇跡」の真実：能力6万トンがなぜ12万トンになったのか</h3>
+          <p>千里馬運動の発祥地とされる平安南道・降仙製鋼所（現・千里馬製鋼連合企業所）において、設計能力年産6万トンの分塊圧延機から12万トンの鋼材を生産したとされる逸話は、北朝鮮の公式宣伝における最大の神話である。その実態は、安全基準の完全無視、機械の限界を超えた連続過負荷運転、労働者の徹夜作業、そして不適合品の強引な合格扱いという、極めて無謀な搾取の産物であった。しかしこの「奇跡」が既成事実化されたことで、「首領への忠誠心さえあれば、物理法則や工学的限界すら突破できる」という反科学的な精神至上主義が国家の公式教義として定着した。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>② 千里馬作業班運動：「一人はみんなのために」の全体主義的暗黒面</h3>
+          <p>1959年3月に始まった「千里馬作業班運動」は、ソ連のスタハノフ運動のような個人突出型ではなく、「作業班（小集団）」を単位とした。スローガン「一人はみんなのために、みんなは一人のために」は美しく響くが、その本質は「連帯責任制による相互監視」であった。作業班員の中に一人でもノルマ未達者や思想的不満分子がいれば、班全体の栄誉が剥奪されるため、労働者同士が互いの私生活、家庭環境、思想的言動を厳密にスパイし合う息苦しいゲシュタポ的環境が日常化したのである。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>③ 「大安の事業体系」：経済の脱専門化と党官僚の専制</h3>
+          <p>1961年12月、大安電機工場の指導を通じて確立された「大安の事業体系」は、資本主義はおろか東欧やソ連で一般的であった「支配人（テクノクラート）による一元的管理責任制」を真っ向から否定した。工場の最高意思決定機関を「工場の党委員会」とし、政治指導員が技術的決定に介入する体制を敷いた。これにより、専門家や技術者の合理的判断は「教条主義」「保守主義」として排除され、党への忠誠心と政治的アジテーションのみが工場の生産を決定する歪んだ経済構造が固定化した。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>④ 「青山里方式」：農村を包囲した最高権力者の直接専制</h3>
+          <p>1960年2月、江西郡青山里協同農場での現地指導から生まれた「青山里精神・青山里方式」は、「上位機関が下位機関を直接支援し、現場大衆に教えを乞う」という美名の下で実施された。しかしその真の機能は、従来は比較的自律性を保っていた末端農村共同体に、党中央の指導員が直接乗り込んで指導・監視を行うことであった。金日成の言葉は農作物の植え付け時期から施肥の量に至るまで「絶対無謬の教示」とされ、地域の土壌や気候を無視した画一的な農業指導が、後の大飢饉の土壌を醸成した。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑤ 集中指導事業と「出身成分制」：千里馬が牽いた身分制度の軛</h3>
+          <p>千里馬運動が最も激しく叫ばれた1958年から1960年にかけ、北朝鮮国内では「中央党集中指導事業」が同時並行で展開された。これは全住民の家系、戦前の職業、朝鮮戦争時の親族の行動を徹底調査し、国民を「基本階層（中核）」「動揺階層」「敵対階層」の3大階層、さらに51の成分に細分化する作業であった。千里馬運動の熱狂の中でノルマに疑問を呈した者や、かつて延安派・ソ連派に同調した幹部は、即座に「敵対階層」に分類され、家族ともども鉱山や山岳地帯の管理所へ送致された。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑥ 「速度戦」への狂奔と1990年代「苦難の行軍」の胚胎</h3>
+          <p>1970年代に入り後継者・金正日の権力基盤が固まると、千里馬運動は「速度戦（ソクドジョン）」「70日戦闘」「100日戦闘」へとさらに過激化・粗暴化した。休息や補修を奪われた機械設備は1980年代には完全に老朽化して故障が頻発し、現場は処罰を恐れて虚偽の増産報告を上げる「浮誇風」に染まった。ソ連・東欧からの援助が途絶えた1990年代初頭、千里馬運動が残したボロボロの工場設備と疲弊し切った国民は、一瞬にして耐え難い大飢饉（苦難の行軍）の地獄へと呑み込まれていったのである。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 一次資料・歴史的言説の記録 -->
+    <section class="card">
+      <h2 class="card-title">6. 一次資料アーカイブ：大衆動員の号砲と公式ドクトリンの記録</h2>
+
+      <details open>
+        <summary>① 金日成『降仙製鋼所の労働者階級に訴える』（1956年12月28日 現地教示抜粋）</summary>
+        <div class="details-content">
+          <p>「労働者同志諸君！我が国の情勢は今、非常に厳しい。アメリカ帝国主義者とその手先共は南で戦争の挑発を策動し、党内では宗派分子共が我々の前進を妨害しようとした。国を復興し、社会主義の基礎を築くためには鋼材が絶対に必要であるが、我が国には鋼材が足りない。</p>
+          <p style="margin-top: 0.5rem;">我が党中央委員会が信じるのは、ただ降仙の労働者階級、諸君らだけだ！能力が6万トンしかないと言うなら、それを倍の12万トンに増産してくれ。諸君が鋼鉄を1トンでも多く溶かすこと、それが反党宗派分子の頭上に下す鉄槌であり、我が共和国の自主独立を守る道である！」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 千里馬作業班運動の盟約書抜粋（チン・ウンウォン作業班、1959年）</summary>
+        <div class="details-content">
+          <p>「我ら千里馬作業班員は、首領様が下された過業を無条件、死守完遂する。我々の合言葉は『一人はみんなのために、みんなは一人のために』である。</p>
+          <p style="margin-top: 0.5rem;">我々は生産において千里馬の速度で疾走するだけでなく、学習においても、道徳においても、生活規律においても全員が模範となる。班員の中に一人でも遅れる者、思想的に動揺する者があれば、全員が責任を持ってこれを改造し、社会主義的な新人間へと鍛え上げる。我々の肉体と魂は、すべて敬愛する首領様のものである！」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 朝鮮労働党中央委員会決定『大安の事業体系の確立について』（1961年12月抜粋）</summary>
+        <div class="details-content">
+          <p>「工場における支配人の単独責任管理制は、官僚主義と技術至上主義、利己主義を生み出す資本主義的残滓である。我が党はこれを断固打破し、工場党委員会が集団的指導を行う『大安の事業体系』を全工場・企業所に導入する。</p>
+          <p style="margin-top: 0.5rem;">生産計画の策定から物資の供給、技術指導に至るまで、すべての事業は工場党委員会の政治的討議を経て集団的に決定されねばならない。技術者と労働者は党の指導の下に一体となり、行政的命令ではなく大衆的政治事業によって生産を推進する。」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>④ 金正日『速度戦は社会主義建設の基本戦闘形態である』（1974年 著作抜粋）</summary>
+        <div class="details-content">
+          <p>「速度戦とは、首領様に対する燃えるような忠誠心を原動力とし、すべての事業において最高の速度と最高の質を同時に保障する、我が党の革命的攻撃方式である。</p>
+          <p style="margin-top: 0.5rem;">千里馬運動の炎をさらに高く燃え上がらせるために、我々は『70日戦闘』『速度戦』を全戦線で展開しなければならない。思想がすべてを決定する。思想的に準備された軍民の前に、不可能という言葉は存在しない。全社会を首領様の唯一思想で一色化し、爆風のような速度で共産主義の門を叩くのだ！」</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Section 7: 出典・参考文献 -->
+    <section class="card">
+      <h2 class="card-title">7. 出典・参考文献・学術アーカイブリスト</h2>
+      <ul style="padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+        <li><strong>和田春樹</strong> 『北朝鮮現代史』 岩波新書、2012年（朝鮮戦争後の千里馬運動と降仙製鋼所の現地指導の政治過程分析）</li>
+        <li><strong>下斗米伸夫</strong> 『モスクワと金日成 ― 冷戦の中の北朝鮮1945〜1961』 岩波書店、2006年（ソ連型スタハノフ運動の受容と北朝鮮独自の大衆動員への転換）</li>
+        <li><strong>宮本悟</strong> 『北朝鮮における千里馬運動の起源と展開』 日本国際政治学会編、2014年（労働動員と党組織による統制メカニズムの実証研究）</li>
+        <li><strong>ローク・メルビン（Lankov, Andrei）</strong> <em>The Real North Korea: Life and Politics in the Failed Stalinist Utopia</em>, Oxford University Press, 2013.（千里馬運動の精神論的限界と出身成分制の固定化）</li>
+        <li><strong>重村智計</strong> 『最新・北朝鮮データブック』 講談社現代新書、2002年（大安の事業体系および青山里方式の組織構造の解説）</li>
+        <li><strong>金日成</strong> 『金日成著作集』 朝鮮労働党出版社（降仙製鋼所、青山里、大安電機工場における現地指導講話集）</li>
+        <li><strong>黄長燁（ファン・ジャンヨプ）</strong> 『黄長燁回顧録：金正日への宣戦布告』 文藝春秋、1999年（思想事業と速度戦による国民疲弊の内部証言）</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論・歴史解説アーカイブ</p>
+      <p style="font-size: 0.75rem; color: #64748b;">著者: mb_cho | 本書の内容および図解の無断転載・再配布を禁じます。</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Simulation Script -->
+  <script>
+    const phases = [
+      {
+        id: 0,
+        mobiText: "80%（降仙の熱狂・直訴運動・能力倍増の奇跡）",
+        mobiWidth: "80%",
+        mobiColor: "#f43f5e",
+        econText: "75%（初期復興の急ピッチ達成・重工業重視）",
+        econWidth: "75%",
+        econColor: "#f59e0b",
+        contText: "65%（職場単位の組織化着手・大衆扇動）",
+        contWidth: "65%",
+        contColor: "#6366f1",
+        archTitle: "【動態構造図】Phase 1：1956年12月 ― 降仙製鋼所の奇跡と千里馬運動の号砲",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Steel Mill Arc -->
+          <g transform="translate(60, 50)">
+            <rect x="0" y="0" width="370" height="220" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="185" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">降仙製鋼所（カンソン）の点火</text>
+
+            <rect x="20" y="50" width="330" height="75" rx="4" fill="#311018" stroke="#f43f5e"/>
+            <text x="185" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">「能力6万トン圧延機から12万トンを絞り出せ」</text>
+            <text x="185" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・金日成直訴：「党が信じるのは諸君ら労働者だけだ」</text>
+            <text x="185" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">物理法則を精神力で突破する反科学的ドクトリンの誕生</text>
+
+            <rect x="20" y="135" width="330" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="185" y="157" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">政治的背景：8月宗派事件直後の権力危機打開</text>
+            <text x="185" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">延安派の「人民生活・軽工業重視」批判を</text>
+            <text x="185" y="192" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">「重工業の超増産熱狂」によって力づくで圧殺</text>
+          </g>
+
+          <!-- National Campaign Launch -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="370" height="220" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="185" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">全土への拡大：千里馬の飛翔</text>
+
+            <rect x="20" y="55" width="330" height="75" rx="6" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="185" y="80" fill="#c7d2fe" font-size="12" font-weight="bold" text-anchor="middle">スローガン：最大限の増産と節約</text>
+            <text x="185" y="100" fill="#94a3b8" font-size="9" text-anchor="middle">・伝説の翼を持つ馬のように日進月歩で疾走せよ</text>
+            <text x="185" y="118" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">全人民を工場・職場単位で昼夜兼行の動員へ突入</text>
+
+            <rect x="20" y="140" width="330" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="185" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">ソ連型スタハノフ運動（個人英雄主義）からの脱却</text>
+            <text x="185" y="182" fill="#a7f3d0" font-size="10" font-weight="bold" text-anchor="middle">「集団主義的動員」という北朝鮮独自モデルの創出</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 1 状況解説】</strong> 1956年12月、8月宗派事件とハンガリー動乱の激震直後、金日成は降仙製鋼所を直接訪問。「国難を救うため鋼材を増産してくれ」と直訴した。設計能力年産6万トンの圧延機から12万トンの鋼材を絞り出したという「降仙の奇跡」が宣伝され、「千里馬に乗って走る勢いで前進せよ」の号砲が全土に響き渡った。重工業偏重を批判した延安派を大衆の熱狂で封殺する政治劇でもあった。"
+      },
+      {
+        id: 1,
+        mobiText: "95%（千里馬作業班・「一人はみんなのために」）",
+        mobiWidth: "95%",
+        mobiColor: "#f43f5e",
+        econText: "90%（5カ年計画の繰り上げ達成宣伝）",
+        econWidth: "90%",
+        econColor: "#f59e0b",
+        contText: "85%（青山里方式・大安体系による党直轄）",
+        contWidth: "85%",
+        contColor: "#6366f1",
+        archTitle: "【動態構造図】Phase 2：1959〜1961年 ― 「一人はみんなのために」千里馬作業班と大安の事業体系",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Chollima Workteam Movement -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+            <text x="190" y="30" fill="#fbbf24" font-size="14" font-weight="bold" text-anchor="middle">千里馬作業班運動（1959年〜）</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="72" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">チン・ウンウォン作業班の模範表彰</text>
+            <text x="190" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・個人競争から「チーム全体」の集団主義競争へ</text>
+            <text x="190" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">「一人はみんなのために、みんなは一人のために」</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="190" y="157" fill="#c7d2fe" font-size="10" font-weight="bold" text-anchor="middle">私生活・家庭・思想まで踏み込む相互監視</text>
+            <text x="190" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">作業班内で一人でも思想的逸脱があれば全員連帯責任</text>
+            <text x="190" y="192" fill="#fca5a5" font-size="9" text-anchor="middle">職場が実質的な「思想矯正キャンプ」と化す</text>
+          </g>
+
+          <!-- Taean System & Chongsan-ri -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="190" y="30" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">党の経済直轄統治システムの完成</text>
+
+            <rect x="20" y="55" width="340" height="75" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="190" y="78" fill="#a7f3d0" font-size="11" font-weight="bold" text-anchor="middle">1960年「青山里方式」：農村の党直轄</text>
+            <text x="190" y="98" fill="#d1fae5" font-size="9" text-anchor="middle">上位機関が下位機関を直接指導する名目で農民統制</text>
+            <text x="190" y="116" fill="#6ee7b7" font-size="9" font-weight="bold" text-anchor="middle">金日成の現地教示が絶対法として機能</text>
+
+            <rect x="20" y="140" width="340" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="162" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">1961年「大安の事業体系」：工場の党委員会独占</text>
+            <text x="190" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">支配人の単独責任制を全廃、党政治官僚が技術者を統率</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 2 状況解説】</strong> 1959年、個人競争から「作業班（チーム）」全体の集団競争へと発展。「一人はみんなのために、みんなは一人のために」のスローガンの下、生活・思想・技術を一体化した集団統制が敷かれた。1960年の「青山里方式」（農村への党直接浸透）と1961年の「大安の事業体系」（工場支配人を排除し党委員会が全権を握る）により、経済活動の全領域が朝鮮労働党の直接管理下に置かれた。"
+      },
+      {
+        id: 2,
+        mobiText: "90%（千里馬銅像建立・国家神話の絶対化）",
+        mobiWidth: "90%",
+        mobiColor: "#f43f5e",
+        econText: "60%（統計水増し・設備疲弊の初期兆候）",
+        econWidth: "60%",
+        econColor: "#f59e0b",
+        contText: "100%（出身成分調査・3大階層51区分の身分制）",
+        contWidth: "100%",
+        contColor: "#10b981",
+        archTitle: "【動態構造図】Phase 3：1960年代中盤 ― 集中指導事業と住民成分制、延安派粛清の完遂",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Chollima Statue Monument -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="190" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">1961年 平壌・千里馬銅像の建立</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="190" y="72" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">万寿台の丘に聳える巨大ブロンズ像</text>
+            <text x="190" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・翼を広げ天空を駆ける天馬と労働者・農民</text>
+            <text x="190" y="108" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">「首領への絶対忠誠と自力更生」の国家トーテム</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="157" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">延安派・ソ連派の完全殲滅の象徴</text>
+            <text x="190" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">反対派を「千里馬の前進を阻む宗派のクズ」と断罪</text>
+            <text x="190" y="192" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">金日成・満洲派による唯一権力独占が完了</text>
+          </g>
+
+          <!-- Songbun System -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="190" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">中央党集中指導事業と「出身成分制」</text>
+
+            <rect x="20" y="55" width="340" height="80" rx="6" fill="#311018" stroke="#f43f5e"/>
+            <text x="190" y="78" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">全住民の格付け：3大階級・51分類</text>
+            <text x="190" y="98" fill="#cbd5e1" font-size="9" text-anchor="middle">・基本階級（中核）：パルチザン家系・労働者</text>
+            <text x="190" y="112" fill="#cbd5e1" font-size="9" text-anchor="middle">・動揺階級：旧知識人・商業者・帰国者</text>
+            <text x="190" y="126" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">・敵対階級：地主・牧師・宗派関係者（収容所送致）</text>
+
+            <rect x="20" y="145" width="340" height="60" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="168" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">熱狂の裏で完成した「近代的カースト制度」</text>
+            <text x="190" y="188" fill="#94a3b8" font-size="9" text-anchor="middle">千里馬の労働実績が出身成分の審査と直結</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 3 状況解説】</strong> 千里馬の熱狂と並行して、党中央による大規模な「集中指導事業」が強行された。全住民の家系・階級的出自が3大階層51区分に格付けされる「出身成分制度」が完成。増産目標の未達や批判的言動は「千里馬の疾走を妨害する反革命・宗派行為」として摘発され、延安派・ソ連派の残党は家族ごと追放・管理所（政治犯収容所）送致となり、国内の全政敵が完全に消滅した。"
+      },
+      {
+        id: 3,
+        mobiText: "100%（金正日「速度戦」・70日戦闘の狂奔）",
+        mobiWidth: "100%",
+        mobiColor: "#f43f5e",
+        econText: "25%（機械疲弊・物資欠乏・実質マイナス成長）",
+        econWidth: "25%",
+        econColor: "#f59e0b",
+        contText: "100%（10大原則・生活総和による完全私有化）",
+        contWidth: "100%",
+        contColor: "#10b981",
+        archTitle: "【動態構造図】Phase 4：1970年代〜総括 ― 精神主義の限界、速度戦の歪みと構造的破綻",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Speed Battle Exhaustion -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+            <text x="190" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">金正日「速度戦」への激化と疲弊</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#450a0a" stroke="#dc2626"/>
+            <text x="190" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">「70日戦闘」「100日戦闘」の連発</text>
+            <text x="190" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・機械の補修休止による故障・老朽化の致命的蓄積</text>
+            <text x="190" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">過労死・栄養失調・労働者の極限疲弊</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="157" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">浮誇風（虚偽の統計水増し）の蔓延</text>
+            <text x="190" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">処罰を恐れた工場・農場幹部が架空の達成率を報告</text>
+            <text x="190" y="192" fill="#f59e0b" font-size="9" text-anchor="middle">国家計画委員会が実態を把握不能となり経済麻痺へ</text>
+          </g>
+
+          <!-- Structural Legacy: Arduous March -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+            <text x="190" y="30" fill="#cbd5e1" font-size="14" font-weight="bold" text-anchor="middle">歴史的総括：1990年代「苦難の行軍」へ</text>
+
+            <rect x="20" y="55" width="340" height="75" rx="6" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="78" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">「自力更生」の虚妄と外国援助依存</text>
+            <text x="190" y="98" fill="#cbd5e1" font-size="9" text-anchor="middle">ソ連崩壊と同時に原油・無償援助が途絶</text>
+            <text x="190" y="116" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">千里馬のメッキが剥がれ百数十万人が餓死</text>
+
+            <rect x="20" y="140" width="340" height="65" rx="4" fill="#1e1b4b"/>
+            <text x="190" y="162" fill="#c7d2fe" font-size="10" font-weight="bold" text-anchor="middle">しかし「首領絶対支配機構」だけは残存</text>
+            <text x="190" y="182" fill="#a5b4fc" font-size="9" text-anchor="middle">千里馬運動が構築した相互監視網が三代世襲を支え続ける</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 4 状況解説】</strong> 物質的刺激や科学技術を無視した精神論的動員は、機械設備の過酷な酷使による老朽化、資材のボトルネック、現場でのノルマ達成偽装（統計水増し）という致命的な歪みを生んだ。金正日への権力継承に伴い「速度戦」「〇日戦闘」と名を変えた動員は国民を極限まで疲弊させ、自力更生を叫びながら外国援助の途絶と同時に国家経済が停止、1990年代の「苦難の行軍（大飢饉）」という未曾有の崩壊を準備した。"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-mobi').textContent = p.mobiText;
+      const bMobi = document.getElementById('b-mobi');
+      bMobi.style.width = p.mobiWidth;
+      bMobi.style.backgroundColor = p.mobiColor;
+
+      document.getElementById('m-econ').textContent = p.econText;
+      const bEcon = document.getElementById('b-econ');
+      bEcon.style.width = p.econWidth;
+      bEcon.style.backgroundColor = p.econColor;
+
+      document.getElementById('m-cont').textContent = p.contText;
+      const bCont = document.getElementById('b-cont');
+      bCont.style.width = p.contWidth;
+      bCont.style.backgroundColor = p.contColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
