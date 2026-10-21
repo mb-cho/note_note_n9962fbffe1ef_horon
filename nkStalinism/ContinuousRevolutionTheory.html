@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：プロレタリア独裁下における継続革命の理論 ― 毛沢東「走資派」批判・文化大革命から北朝鮮「三大革命」へ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      text-transform: uppercase;
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.18);
+      color: var(--accent-red);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #f8fafc 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section common */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-left: 4px solid var(--accent-red);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      text-align: justify;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .phase-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1.35;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .phase-btn.active {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(245, 158, 11, 0.25));
+      border-color: var(--accent-red);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+    }
+
+    .phase-btn .btn-era {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .meter-label {
+      color: var(--text-secondary);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--accent-red);
+    }
+
+    .meter-track {
+      background: #0f172a;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-diagram-container {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .svg-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .phase-desc-box {
+      background: rgba(15, 23, 42, 0.75);
+      border-left: 4px solid var(--accent-red);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 680px;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    tr:hover td {
+      background: rgba(99, 102, 241, 0.06);
+    }
+
+    /* Logic Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--accent-red);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Quotes */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      text-align: right;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .ref-num {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-tag {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 0.15rem;
+    }
+
+    .cite-tag:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      body { padding: 1rem; }
+      .sim-panel { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link active">⑫ プロレタリア独裁下の継続革命論</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">毛沢東主義・文化大革命の核心理論補論</span>
+        <span class="badge badge-alert">「走資派」打倒の狂乱から北朝鮮「三大革命・唯一思想体系」へ</span>
+      </div>
+      <h1>プロレタリア独裁下における継続革命の理論</h1>
+      <p class="subtitle">
+        社会主義体制が成立した後も、党や国家の内部から新たな特権階級（走資派）や資本主義復活の勢力が生み出され続ける――。毛沢東がスターリンの『簡明教程』を独自に先鋭化させ、文化大革命の狂気へと突き進んだ「継続革命論」の論理構造と、それが北朝鮮の「三大革命・首領絶対支配」へと収斂していった思想的軌跡を解剖する。
+      </p>
+      <div class="meta-row">
+        <span>📖 本書対応：第1章「『簡明教程』の継承と継続革命論への展開」、第2章「中ソ論争と自主路線」</span>
+        <span>✍️ 著：mb_cho</span>
+        <span>🗓️ 原典史料・現代中国党史解禁版</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section>
+      <h2 class="section-title">1. 問題の所在：社会主義国家の内部から「新たな敵」が生まれるという恐怖</h2>
+      <p>
+        カール・マルクスやウラジーミル・レーニンの本来の展望では、プロレタリア革命によって地主や資本家から生産手段を剥奪し、国有化・集団化を完了すれば、階級対立の物質的根拠は消滅し、社会は共産主義の高い段階へと前進していくはずでした。
+      </p>
+      <p>
+        しかし1950年代から1960年代にかけて、中国共産党の毛沢東は全く異なる不吉な理論を打ち出しました。それが<strong>「プロレタリア独裁下における継続革命の理論（継続革命論 / 英文: Theory of Continuing the Revolution under the Dictatorship of the Proletariat）」</strong>です<a href="#ref-1" class="cite-tag">[1]</a>。毛沢東は、ソ連におけるフルシチョフのスターリン批判や官僚層の特権化を「資本主義の復活（復辟）」と捉え、<strong>「社会主義社会という歴史的段階の全期間を通じて、階級、階級矛盾、階級闘争は依然として存続し、資本主義復活の危険性が常に存在する」</strong>と定式化しました<a href="#ref-2" class="cite-tag">[2]</a>。
+      </p>
+      <p>
+        この理論の最も急進的で破壊的だった点は、敵が「外部の帝国主義者」や「打倒された旧地主の残党」だけではなく、<strong>「革命を指導しているはずの共産党自身の内部、とりわけ中央指導部そのものから、新たなブルジョワ分子や資本主義の道を歩む実権派（走資派）が生み出される」</strong>と主張したことです。スターリンが国家秘密警察（NKVD）を用いて「上からのテロ」を行ったのに対し、毛沢東は既存の党・国家官僚機構そのものを不信の対象とし、「司令部を砲撃せよ（砲打司令部）」と叫んで紅衛兵や造反派大衆を扇動し、自らの党組織を下から物理的に破壊させる<strong>文化大革命（1966〜1976年）</strong>という未曾有の災禍を引き起こしました<a href="#ref-3" class="cite-tag">[3]</a>。
+      </p>
+      <p>
+        本書『北朝鮮におけるスターリン主義の形成』が指摘するように、北朝鮮の金日成はこの中国文革の無政府的混乱を極左的盲動として警戒しながらも、その核心である「思想的変革を永遠に継続せねば資本主義に侵食される」という論理を巧妙に吸収しました。金日成・金正日はこれを「思想・技術・文化の三大革命」へと換骨奪胎し、首領への絶対服従を義務付ける「唯一思想体系（10大原則）」を確立することで、中国のような党組織の崩壊を回避しつつ、世界で最も強固な三代世襲スルタン主義体制へと結実させたのです<a href="#ref-4" class="cite-tag">[4]</a>。
+      </p>
+    </section>
+
+    <!-- Section 2: Interactive Simulator -->
+    <section>
+      <h2 class="section-title">2. インタラクティブ図解：継続革命論の先鋭化・暴走シミュレーター</h2>
+      <p>
+        以下の4つの思想史的フェーズを切り替えることで、大躍進の失敗と廬山会議から、中ソ対立、文化大革命の狂気、そして北朝鮮における「三大革命」への翻案に至る動態をシミュレーションできます。
+      </p>
+
+      <div class="sim-panel">
+        <div class="phase-selector">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="btn-era">Phase 1：1957〜1959年</span>
+            人民内部の矛盾と廬山会議<br><small>（大躍進の失敗と彭徳懐の失脚）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="btn-era">Phase 2：1962〜1965年</span>
+            中ソ論争と階級闘争の再点火<br><small>（「階級闘争を決して忘れるな」と四清運動）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="btn-era">Phase 3：1966〜1976年</span>
+            文化大革命と党組織の粉砕<br><small>（「司令部を砲撃せよ」と紅衛兵の暴走）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="btn-era">Phase 4：1970年代〜現代</span>
+            北朝鮮「三大革命」への翻案<br><small>（文革の混乱回避と唯一思想10大原則）</small>
+          </button>
+        </div>
+
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">① 大衆動員・狂信的過激化度</span>
+              <span class="meter-val" id="m-mob">55%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-mob" style="width: 55%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">② 既存党・国家機構の解体破滅度</span>
+              <span class="meter-val" id="m-dest">15%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-dest" style="width: 15%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">③ 指導者カリスマの現人神化度</span>
+              <span class="meter-val" id="m-god">70%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-god" style="width: 70%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="svg-diagram-container">
+          <div class="svg-title" id="arch-title">【構造図】Phase 1：廬山会議期（政策批判を「ブルジョワの党内攻撃」へ昇級）</div>
+          <svg id="arch-svg" width="100%" height="220" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamically populated via JS -->
+          </svg>
+        </div>
+
+        <div class="phase-desc-box" id="sim-desc">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparative Table -->
+    <section>
+      <h2 class="section-title">3. 歴史的比較：トロツキー「永続革命」 vs 毛沢東「継続革命」 vs 北朝鮮「三大革命」</h2>
+      <p>
+        同じ「革命の継続」を謳いながら、トロツキー、毛沢東、金日成の理論は対象、手法、そして権力構造において根本的に異なっていました。
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較軸</th>
+              <th>トロツキー：永続革命論<br><small>1905–1930年代</small></th>
+              <th>毛沢東：継続革命論<br><small>1957–1976年</small></th>
+              <th>北朝鮮：三大革命路線<br><small>1973年〜現代</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>理論の核心目的</strong></td>
+              <td>ロシアのような後進国における革命を一国で終わらせず、先進資本主義国の世界革命へと連鎖させる。</td>
+              <td>社会主義権力下で党内・官僚内に生まれる「新たなブルジョワ分子（走資派）」を大衆動員で打倒する。</td>
+              <td>社会主義完全勝利のため「思想・技術・文化」の3領域で革命を継続し、首領への絶対忠誠を定着させる。</td>
+            </tr>
+            <tr>
+              <td><strong>最大の敵の所在</strong></td>
+              <td>国際資本主義勢力、およびソ連国内の保守的官僚主義（スターリン派）。</td>
+              <td><strong>党内中枢の「実権派（劉少奇・鄧小平ら）」</strong>、修正主義官僚、知識人。</td>
+              <td>「資本主義のブルジョワ毒素」「事大主義・宗派主義」「米帝・南朝鮮傀儡」。</td>
+            </tr>
+            <tr>
+              <td><strong>動員のメカニズム</strong></td>
+              <td>プロレタリアートの階級的自覚と国際的労働者連帯。</td>
+              <td><strong>紅衛兵・造反派による既存党・政府機関の物理的破壊（奪権）</strong>。</td>
+              <td><strong>「三大革命小組」</strong>（青年党員エリートの地方派遣）による首領直属統制。</td>
+            </tr>
+            <tr>
+              <td><strong>組織と指導者の関係</strong></td>
+              <td>前衛党の民主的討論を重視し、個人独裁（スターリニズム）を厳しく批判。</td>
+              <td>党組織そのものを不信し、<strong>毛沢東個人のカリスマが大衆を直接操縦</strong>。</td>
+              <td>党組織を解体せず、<strong>首領を「脳髄」とする絶対的一体化（生命体論）</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的帰結</strong></td>
+              <td>スターリン派により排斥、国外追放、暗殺。</td>
+              <td><strong>文化大革命の国家的破滅（数百万人の死）</strong>、1981年党歴史決議で否定。</td>
+              <td><strong>金正日への権力継承基盤の確立、白頭血統による三代世襲王朝の完成</strong>。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Logic Flow -->
+    <section>
+      <h2 class="section-title">4. 論理展開フロー：継続革命論がいかにして文革の狂気へと導いたか</h2>
+      <p>
+        毛沢東の継続革命論は、合理的政策批判を不可能にし、社会全体を猜疑心と破壊の渦へと巻き込む4段階のロジックで暴走しました。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-heading">政策論争の「階級闘争化（昇級）」</div>
+          <div class="flow-desc">
+            大躍進の飢饉を批判した彭徳懐のように、現実的な経済・政策の不一致を「ブルジョワ階級の党内代表による攻撃」と政治的断罪にすり替えた。<a href="#ref-1" class="cite-tag">[1]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-heading">ソ連の「修正主義」認定と孤立化</div>
+          <div class="flow-desc">
+            スターリン批判を行ったソ連を「資本主義が復活した敵」と攻撃し、社会主義社会でも党が変質してブルジョワ化するという危機感を煽った。<a href="#ref-2" class="cite-tag">[2]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-heading">「司令部を砲撃せよ」と大衆の扇動</div>
+          <div class="flow-desc">
+            党の官僚機構（劉少奇国家主席ら）が走資派に乗っ取られたと決めつけ、純真な学生（紅衛兵）を扇動して合法的な国家機関を破壊させた。<a href="#ref-3" class="cite-tag">[3]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-heading">北朝鮮による「制度的安定化」への転用</div>
+          <div class="flow-desc">
+            金日成はこの暴走を反面教師とし、大衆による党破壊を禁じつつ、「思想革命の継続」を金正日直属の三大革命小組に委ねて首領制を神聖化した。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Deep Dive Cards -->
+    <section>
+      <h2 class="section-title">5. 深層解説：継続革命論を巡る6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">
+            <span>⛰️</span>
+            <span>廬山会議（1959年）：政策批判が「反党分派」へと昇級した瞬間</span>
+          </div>
+          <p>
+            1958年に始まった「大躍進運動」は、裏庭での粗悪な鉄密造や農業統計の狂気的誇大報告により、中国全土を未曾有の大飢饉（数千万人餓死）へと陥れました。
+          </p>
+          <p>
+            1959年の廬山会議において、国防部長・彭徳懐元帥は毛沢東に対し「小ブルジョワ的狂熱性」を戒める私信を送りました。しかし毛沢東は激怒し、これを「ブルジョワ階級の党内代理人による右傾機会主義的攻撃」と定義。政策の誤りを認める代わりに、彭徳懐を「反党分派」として解任・軟禁しました。この瞬間、「毛沢東の路線に疑義を挟む者は階級敵である」という継続革命論の実践が始まりました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⚔️</span>
+            <span>中ソ論争と「九評」：フルシチョフ修正主義への恐怖</span>
+          </div>
+          <p>
+            1956年のフルシチョフによるスターリン批判は、毛沢東に深いトラウマを植え付けました。「自らの死後、中国のフルシチョフが現れて自らを否定するのではないか」。
+          </p>
+          <p>
+            中国共産党は1963〜1964年にかけてソ連共産党を痛烈に批判する「9本の公開書簡（九評）」を発表。ソ連では特権官僚層が新たなブルジョワジーとなり、資本主義が平和的に復活したと断罪しました。毛沢東は「中国でも同じことが起きる」と確信し、国内の官僚制を打破するための予防的粛清理論として継続革命論を先鋭化させていきました。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🩸</span>
+            <span>「五・一六通知」と文化大革命：既存国家秩序の自爆</span>
+          </div>
+          <p>
+            1966年5月16日、党政治局拡大会議で採択された「五・一六通知」は、文化大革命の宣戦布告でした。
+          </p>
+          <p>
+            通知は「ブルジョワ階級の代表人物が党、政府、軍隊、文化領域に潜入しており、機会があればプロレタリア独裁をブルジョワ独裁に変えてしまう」と警告。同年8月、毛沢東は自ら『司令部を砲撃せよ』という大字報（壁新聞）を執筆し、ナンバー2の劉少奇国家主席や鄧小平総書記を名指しで標的としました。既存の法秩序、警察、司法は「ブルジョワ的」として麻痺させられ、紅衛兵による略奪、文化財破壊、私的リンチが全国で正当化されました。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>✈️</span>
+            <span>林彪事件（1971年）：理論の破綻と神話の終焉</span>
+          </div>
+          <p>
+            文革の推進役として毛沢東の「親密な戦友にして法定の後継者」と党規約にまで明記されたのが国防部長・林彪でした。
+          </p>
+          <p>
+            しかし林彪は毛沢東との権力摩擦の末、毛沢東暗殺計画（五七一工程紀要）に失敗し、1971年9月、ソ連への逃亡途中にモンゴルで搭乗機が墜落炎死しました。昨日まで「毛沢東の最も忠実な後継者」と讃えられていた人物が、突如として「国民党の隠れたスパイ・裏切り者」と発表されたことで、多くの国民や知識人は文革のイデオロギー的欺瞞に気づき、継続革命論の精神的権威は致命的に崩壊しました。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🇰🇵</span>
+            <span>北朝鮮「三大革命小組」：文革の毒を抜いたエリート支配</span>
+          </div>
+          <p>
+            中国の文化大革命が紅衛兵の暴走によって党・国家機構を崩壊させたのに対し、北朝鮮の金日成・金正日はその教訓を極めて冷徹に分析しました。
+          </p>
+          <p>
+            北朝鮮は「思想革命・技術革命・文化革命」の三大革命を掲げつつも、大衆による自然発生的な暴動は断固として排除しました。代わりに1973年、金正日の直属部隊として大学生や若手インテリから成る<strong>「三大革命小組」</strong>を結成し、全国の工場や農村に派遣。既存の古い党幹部を査定・牽制させました。金正日は「革命の継続」を大衆運動ではなく、自らの後継権力基盤を固めるための組織的テコとして完璧に手なずけたのです。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>📜</span>
+            <span>1981年中共「歴史決議」による公式清算</span>
+          </div>
+          <p>
+            毛沢東の死（1976年）と四人組の逮捕後、権力を掌握した鄧小平のもとで、中国共産党は1981年に「建国以来の党の若干の歴史的問題に関する決議（歴史決議）」を採択しました。
+          </p>
+          <p>
+            決議は、プロレタリア独裁下における継続革命の理論を「社会主義社会の現実と完全に乖離した誤った理論であり、敵と味方を混同して党と人民に最も深刻な災難をもたらした」と公式に断罪・破棄しました。しかし北朝鮮では、この「思想革命の継続」という名分が現在も「資本主義文化（韓国ドラマやK-POP）の流入＝死罪」という反動的鎖国体制の根拠として猛威を振るい続けています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Primary Sources -->
+    <section>
+      <h2 class="section-title">6. 一次資料・歴史的言説の記録</h2>
+
+      <div class="quote-box">
+        <p>
+          「社会主義社会とは、かなり長い歴史的段階である。この歴史的段階において、階級、階級矛盾、階級闘争は終始存在し、社会主義と資本主義という2つの道路の闘争が存在し、資本主義復活の危険性が存在する。……我々は階級闘争の問題を毎年語り、毎月語り、毎日語らねばならない。」
+        </p>
+        <div class="quote-author">― 毛沢東（中国共産党第8期中央委員会第10回全体会議、1962年9月）[2]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「全国の最初の一枚のマルクス・レーニン主義大字報と『人民日報』論説員評論員論文は、なんと見事に書かれていることか！同志諸君、どうかもう一度これを読んでほしい。……中央から地方に至る一部の指導同志たちが、プロレタリア階級の轟々たる文化大革命運動を鎮圧し、白黒を逆転させ、白色テロを実施している。なんと悪毒なことか！ブルジョワ階級の立場に立って、ブルジョワ独裁を実行しているのだ。……司令部を砲撃せよ！」
+        </p>
+        <div class="quote-author">― 毛沢東『司令部を砲撃せよ――私の大字報』（1966年8月5日）[3]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「混入したブルジョワ階級の代表人物、反革命修正主義分子を徹底的に批判・一掃せよ。彼らは我々のそばに潜伏しているフルシチョフのような人物であり、各級党委員会において育成されている。……彼らが権力を奪取するのを絶対に許してはならない。」
+        </p>
+        <div class="quote-author">― 中国共産党中央委員会通知（いわゆる「五・一六通知」、1966年5月16日）[3]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「思想革命、技術革命、文化革命の三大革命は、社会主義・共産主義建設の全期間において一瞬たりとも中断してはならない継続革命の根本任務である。とりわけ思想革命をすべての活動の最優先に据え、全人民を首領様の唯一思想で武装させねばならない。」
+        </p>
+        <div class="quote-author">― 金日成『思想、技術、文化の三大革命をいっそう深化させよう』（1973年演説）[4]</div>
+      </div>
+    </section>
+
+    <!-- Section 7: References -->
+    <section>
+      <h2 class="section-title">7. 出典・参考文献・アーカイブ</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E7%B6%99%E7%B6%9A%E9%9D%A9%E5%91%BD%E8%AB%96" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：継続革命論 / 毛沢東のプロレタリア独裁下における継続革命の理論)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.jstage.jst.go.jp/article/sost/3/1/3_71/_pdf/-char/en" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.jstage.jst.go.jp (J-STAGE学術論文：毛沢東の継続革命論とそのイデオロギー構造)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：文化大革命 / 五・一六通知と司令部砲撃の大字報)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://kotobank.jp/word/%E4%B8%89%E5%A4%A7%E9%9D%A9%E5%91%BD-1327429" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：三大革命 / 北朝鮮における思想・技術・文化革命小組の展開)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑫ ｜ プロレタリア独裁下における継続革命の理論</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        mobText: "55%（大躍進失敗と彭徳懐の指弾）",
+        mobWidth: "55%",
+        mobColor: "#f59e0b",
+        destText: "15%（党内会議での粛清・組織は維持）",
+        destWidth: "15%",
+        destColor: "#10b981",
+        godText: "70%（毛沢東の権威への挑戦を許さず）",
+        godWidth: "70%",
+        godColor: "#6366f1",
+        archTitle: "【構造図】Phase 1：廬山会議期（1957〜1959）― 政策論争を「階級闘争」へ昇級",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="25" width="220" height="60" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="140" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">毛沢東 主席</text>
+          <text x="140" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">大躍進の総路線固執</text>
+
+          <rect x="320" y="25" width="210" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="425" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">廬山会議 (1959)</text>
+          <text x="425" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「ブルジョワ右傾機会主義」断罪</text>
+
+          <rect x="600" y="25" width="210" height="60" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="705" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">彭徳懐 国防部長</text>
+          <text x="705" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">直言批判から失脚・軟禁</text>
+
+          <rect x="320" y="140" width="210" height="55" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="425" y="163" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">政策論争のイデオロギー化</text>
+          <text x="425" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">経済失敗の責任を政敵へ転嫁</text>
+
+          <!-- Arrows -->
+          <line x1="250" y1="55" x2="310" y2="55" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+          <line x1="530" y1="55" x2="590" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="425" y1="85" x2="425" y2="135" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+
+          <defs>
+            <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+            </marker>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1957〜1959年（矛盾論・廬山会議期）】</strong><br>大躍進の悲惨な大飢饉に直面し、彭徳懐が合理的な政策修正を求めたのに対し、毛沢東はこれを「ブルジョワ階級の党内攻撃」と歪曲して罷免。客観的な政策論争を「階級敵との不倶戴天の闘争」へと昇級させる継続革命論の原型がここに始動しました。<a href='#ref-1' class='cite-tag'>[1]</a>"
+      },
+      {
+        id: 1,
+        mobText: "75%（中ソ論争と四清運動・草の根査定）",
+        mobWidth: "75%",
+        mobColor: "#f59e0b",
+        destText: "35%（基層幹部への過激な思想総括）",
+        destWidth: "35%",
+        destColor: "#f59e0b",
+        godText: "85%（「階級闘争を決して忘れるな」のスローガン化）",
+        godWidth: "85%",
+        godColor: "#6366f1",
+        archTitle: "【構造図】Phase 2：階級闘争再点火期（1962〜1965）― 修正主義への恐怖と四清運動",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">中ソ論争・フルシチョフ批判</text>
+          <text x="130" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「ソ連で資本主義が復活した」</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">「階級闘争を決して忘れるな」</text>
+          <text x="420" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">社会主義全期間での階級存続</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#6366f1" stroke-width="2"/>
+          <text x="710" y="48" fill="#6366f1" font-size="13" font-weight="bold" text-anchor="middle">四清運動 (社会主義教育)</text>
+          <text x="710" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">農村・工場の基層幹部査定</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">実権派（走資派）への疑心暗鬼</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">劉少奇・鄧小平への警戒と包囲</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+          <line x1="420" y1="90" x2="420" y2="135" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 2：1962〜1965年（中ソ論争と階級闘争の再点火期）】</strong><br>ソ連のフルシチョフ体制を「修正主義による資本主義復活」と猛烈に攻撃した毛沢東は、「社会主義段階の全期間を通じて階級闘争は存続する」と宣言。実務的な経済回復を進める劉少奇や鄧小平を「党内の走資派（実権派）」と警戒し、四清運動を通じて大衆動員による政治査定を全国へ広げました。<a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 2,
+        mobText: "100%（紅衛兵による暴力・造反有理の内戦）",
+        mobWidth: "100%",
+        mobColor: "#f43f5e",
+        destText: "95%（党組織・政府・司法の完全解体と武闘）",
+        destWidth: "95%",
+        destColor: "#f43f5e",
+        godText: "100%（毛沢東語録を掲げる究極の現人神崇拝）",
+        godWidth: "100%",
+        godColor: "#f43f5e",
+        archTitle: "【構造図】Phase 3：文化大革命期（1966〜1976）― 「司令部を砲撃せよ」と党機構解体",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="330" y="15" width="200" height="55" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="430" y="38" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">毛沢東『司令部を砲撃せよ』</text>
+          <text x="430" y="55" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">既存の全党・政府機関を否定</text>
+
+          <rect x="50" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="160" y="128" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">紅衛兵・造反派大衆</text>
+          <text x="160" y="147" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「造反有理」による破壊と私刑</text>
+
+          <rect x="320" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="2"/>
+          <text x="430" y="128" fill="#f59e0b" font-size="13" font-weight="bold" text-anchor="middle">劉少奇・鄧小平 (走資派)</text>
+          <text x="430" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">国家主席打倒・迫害死・追放</text>
+
+          <rect x="590" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="700" y="128" fill="#6366f1" font-size="12" font-weight="bold" text-anchor="middle">革命委員会（奪権）</text>
+          <text x="700" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">林彪・四人組による軍事統制</text>
+
+          <!-- Arrows -->
+          <line x1="380" y1="70" x2="200" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="430" y1="70" x2="430" y2="100" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="480" y1="70" x2="650" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 3：1966〜1976年（文化大革命期）】</strong><br>毛沢東は自らが創設したはずの中国共産党そのものを「走資派の巣窟」と断じ、十代の学生（紅衛兵）を扇動して「司令部を砲撃せよ」と指令。劉少奇国家主席を獄死に追いやり、党・政府・警察機構を壊滅させました。スターリンの秘密警察テロとは異なる『最高権力者と狂信大衆が結託した国家自爆テロ』という全体主義の極致が出現しました。<a href='#ref-3' class='cite-tag'>[3]</a>"
+      },
+      {
+        id: 3,
+        mobText: "80%（三大革命小組による統制動員・生活総和）",
+        mobWidth: "80%",
+        mobColor: "#f59e0b",
+        destText: "0%（党組織の解体を禁じ、首領制を絶対維持）",
+        destWidth: "2%",
+        destColor: "#10b981",
+        godText: "100%（首領＝脳髄の神聖化・白頭血統三代世襲）",
+        godWidth: "100%",
+        godColor: "#f43f5e",
+        archTitle: "【構造図】Phase 4：北朝鮮「三大革命」期（1970年代〜現代）― 首領絶対世襲への結晶化",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="330" y="15" width="200" height="55" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="430" y="38" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">最高首領 (金日成・金正日)</text>
+          <text x="430" y="55" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">絶対無謬の最高脳髄</text>
+
+          <rect x="50" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="160" y="128" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">三大革命小組運動 (1973)</text>
+          <text x="160" y="147" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">金正日直属エリートによる地方統制</text>
+
+          <rect x="320" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="430" y="128" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">唯一思想10大原則 (1974)</text>
+          <text x="430" y="147" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">党破壊を封じ首領への絶対服従</text>
+
+          <rect x="590" y="105" width="220" height="65" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="2"/>
+          <text x="700" y="128" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">「思想革命」の恒久化</text>
+          <text x="700" y="147" fill="#cbd5e1" font-size="11" text-anchor="middle">ブルジョワ毒素・韓流遮断</text>
+
+          <!-- Arrows -->
+          <line x1="380" y1="70" x2="200" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="430" y1="70" x2="430" y2="100" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="480" y1="70" x2="650" y2="105" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 4：1970年代〜現代（北朝鮮「三大革命」への翻案期）】</strong><br>金日成・金正日は、中国文革の党組織破壊の惨劇を冷徹に反面教師としました。大衆の暴走を許さず、継続革命の論理を青年エリート部隊「三大革命小組」による上からの統制運動へと純化。1974年の『10大原則』によって「思想革命の継続」を首領世襲への絶対服従の義務へとすり替え、絶対専制を恒久化させました。<a href='#ref-4' class='cite-tag'>[4]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-mob').textContent = p.mobText;
+      const bMob = document.getElementById('b-mob');
+      bMob.style.width = p.mobWidth;
+      bMob.style.backgroundColor = p.mobColor;
+
+      document.getElementById('m-dest').textContent = p.destText;
+      const bDest = document.getElementById('b-dest');
+      bDest.style.width = p.destWidth;
+      bDest.style.backgroundColor = p.destColor;
+
+      document.getElementById('m-god').textContent = p.godText;
+      const bGod = document.getElementById('b-god');
+      bGod.style.width = p.godWidth;
+      bGod.style.backgroundColor = p.godColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
