@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：甲山派粛清と「5・25教示」 ― 普天堡の戦友たちの抹殺、唯一思想体系の確立、そして神権首領制への不可逆的跳躍</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.2);
+      color: var(--accent-red);
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-amber);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    .card-title-red {
+      border-left-color: var(--accent-red);
+    }
+
+    .card-title-amber {
+      border-left-color: var(--accent-amber);
+    }
+
+    .card-title-emerald {
+      border-left-color: var(--accent-emerald);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .sub-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sub-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-cyan);
+    }
+
+    /* Simulator Styles */
+    .sim-container {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .phase-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      flex: 1 1 calc(25% - 0.5rem);
+      min-width: 180px;
+      padding: 0.65rem 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .meter-label {
+      color: var(--text-muted);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .meter-track {
+      background: #090d16;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-wrapper {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+    }
+
+    .svg-wrapper svg {
+      width: 100%;
+      height: auto;
+      min-width: 650px;
+      display: block;
+    }
+
+    .phase-desc-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Flow Chart */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      position: relative;
+    }
+
+    .flow-step {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .flow-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th {
+      background: #090d16;
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Quotes & Details */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    details {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--primary);
+    }
+
+    summary {
+      padding: 0.85rem 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      outline: none;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary:hover {
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    details .details-content {
+      padding: 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .phase-btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+        <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気と終焉</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と8月宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と朝鮮戦争・廬山会議の悲劇</a>
+        <a href="HungarianRevolution.html" class="nav-link">⑯ ハンガリー動乱と東欧の悲劇</a>
+        <a href="ChollimaMovement.html" class="nav-link">⑰ 千里馬運動と大衆総動員体制</a>
+        <a href="SpeechByKimIlsung.html" class="nav-link">⑱ 1955年金日成演説と主体の原像</a>
+        <a href="Kapsan.html" class="nav-link active">⑲ 甲山派粛清と唯一思想体系</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">KDP補論シリーズ 第19編</span>
+        <span class="badge badge-alert">1967年5月党中央全員会議</span>
+        <span class="badge badge-amber">「5・25教示」の衝撃</span>
+        <span class="badge badge-emerald">神権的「首領専制」の完成</span>
+      </div>
+      <h1>甲山派粛清と「5・25教示」</h1>
+      <p class="subtitle">普天堡の抗日伝説を共に築いた血の盟友・朴金喆らは、なぜ一網打尽に抹殺されたのか ― 「党の唯一思想体系」確立と近代政党の終焉</p>
+    </header>
+
+    <!-- Section 1: 問題の所在 -->
+    <section class="card">
+      <h2 class="card-title">1. 問題の所在：抗日の英雄伝説を下支えした「盟友の抹殺」と、絶対神格化の最後の関門</h2>
+      <p>1967年5月4日から8日にかけて開催された朝鮮労働党第4期第15回中央委員会全員会議、および同年5月25日の金日成による秘密演説（通称「5・25教示」）は、北朝鮮現代史における**最大の権力構造的断絶点**である。この粛清劇によって、党副委員長・序列第4位の朴金喆（パク・クムチョル）、対南担当書記の李孝淳（リ・ヒョスン）、宣伝扇動部長の金道満（キム・ドマン）ら、いわゆる「甲山派（国内パルチザン派）」が一夜にして反党宗派分子として失脚・抹殺された。</p>
+      <p style="margin-top: 0.85rem;">甲山派とは、1930年代の日本統治下において、白頭山南麓の咸鏡南道甲山郡を中心に地下組織「祖国光復会」を組織し、1937年6月の金日成部隊による「普天堡（ポチョンボ）の戦い」を内通・先導して金日成の抗日英雄神話を作り上げた立役者たちであった。解放後も彼らは金日成の「満洲派」と強固な同盟を結び、南労党派（朴憲永）、ソ連派（朴昌玉）、延安派（崔昌益）を次々と粛清する先頭に立ってきた。それにもかかわらず、なぜ金日成は自らの抗日伝説の最大の証人であり、最も忠実な盟友であった彼らを殲滅しなければならなかったのか。</p>
+      
+      <div class="quote-box">
+        「同志的信頼や共同指導の枠組みが残っている限り、指導者は『同胞の中の第一人者』にとどまる。首領が現人神となり、三代世襲の絶対王朝を築くためには、かつて対等に語り合った過去を知るすべての戦友を抹殺しなければならなかった。」
+      </div>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 映画『一葉の野菊』と抗日神話の独占</h3>
+          <p>甲山派が自派の抗日活動（朴金喆の妻・崔煕淑の犠牲）を顕彰する映画『一葉の野菊』を製作したことが、「金日成唯一の抗日伝説をかすませる宗派的野心」として激しく指弾された。</p>
+        </div>
+        <div class="sub-card">
+          <h3>② 経済・対南路線を巡る政策的亀裂</h3>
+          <p>過度な軍事費増大（並進路線）に反対し民生重視を唱えた朴金喆や、対南地下組織の自律性を主張した李孝淳の合理主義が、ゲリラ過激派へと暴走する金日成路線の障害となった。</p>
+        </div>
+        <div class="sub-card">
+          <h3>③ 金正日・金英柱の台頭と「唯一思想体系」</h3>
+          <p>世襲後継の基盤を築こうとした金正日（当時宣伝指導員）と金英柱（組織指導部長）が甲山派狩りの先頭に立ち、「5・25教示」によって全国民を首領の私兵とする絶対掟を完成させた。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: インタラクティブ動態シミュレーター -->
+    <section class="card">
+      <h2 class="card-title card-title-red">2. インタラクティブ動態シミュレーター：甲山派の栄光から抹殺・唯一思想完成への4段階</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+        各フェーズをクリックして、白頭山の地下パルチザン組織が権力中枢を握り、そして映画事件を契機に抹殺されて「唯一思想体系」が樹立されるプロセスを追体験してください。
+      </p>
+
+      <div class="sim-container">
+        <!-- Phase Selector Buttons -->
+        <div class="phase-selector" role="tablist">
+          <button id="pbtn-0" class="phase-btn active" onclick="setPhase(0)" role="tab">Phase 1: 1937-1958<br>普天堡の血盟と政敵排除</button>
+          <button id="pbtn-1" class="phase-btn" onclick="setPhase(1)" role="tab">Phase 2: 1960s中盤<br>映画『一葉の野菊』摩擦</button>
+          <button id="pbtn-2" class="phase-btn" onclick="setPhase(2)" role="tab">Phase 3: 1967.5<br>第15回全会と「5・25教示」</button>
+          <button id="pbtn-3" class="phase-btn" onclick="setPhase(3)" role="tab">Phase 4: 1970s〜総括<br>唯一思想と神権世襲完成</button>
+        </div>
+
+        <!-- Metrics Bars -->
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">甲山派（国内パルチザン）の権力掌握度</span>
+              <span id="m-kaps" class="meter-val">85%（序列4位・対南・宣伝独占）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-kaps" class="meter-bar" style="width: 85%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">党内思想の画一化・言論統制度</span>
+              <span id="m-ideo" class="meter-val">40%（派閥的論争・多面性の残存）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-ideo" class="meter-bar" style="width: 40%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">金日成の絶対神格化・専制純度</span>
+              <span id="m-lead" class="meter-val">55%（満洲派の同僚意識が残存）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-lead" class="meter-bar" style="width: 55%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Visual Architecture -->
+        <div class="svg-wrapper">
+          <div id="arch-title" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--accent-cyan);">
+            【動態構造図】Phase 1：1937〜1958年 ― 普天堡の血盟と外来派閥（南労・ソ連・延安派）の共同殲滅
+          </div>
+          <svg id="arch-svg" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rendered dynamically by JS -->
+          </svg>
+        </div>
+
+        <!-- Phase Description Text -->
+        <div id="sim-desc" class="phase-desc-box">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 比較対照マトリクス -->
+    <section class="card">
+      <h2 class="card-title card-title-amber">3. 比較分析：朝鮮労働党「4大派閥粛清」の比較と権力集中過程</h2>
+      <p>金日成が1950年代から1960年代にかけて敢行した主要派閥粛清の動機、手法、容疑、および体制変容の力学を対比する。</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>粛清対象</th>
+              <th>時期と主要人物</th>
+              <th>政治的・イデオロギー的容疑</th>
+              <th>粛清の真の動機</th>
+              <th>体制に与えた影響</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>南労党派</strong></td>
+              <td><strong>1953〜1955年</strong><br>朴憲永、李承燁ら</td>
+              <td>「米帝国主義のスパイ」「国家転覆謀反」</td>
+              <td>朝鮮戦争敗北の全責任を転嫁しスケープゴートにする</td>
+              <td>国内共産主義者の最大勢力を解体、平壌主導権確立</td>
+            </tr>
+            <tr>
+              <td><strong>ソ連派</strong></td>
+              <td><strong>1956〜1958年</strong><br>朴昌玉、朴永彬ら</td>
+              <td>「教条主義」「事大主義」「8月宗派」</td>
+              <td>モスクワの脱スターリン化要求（集団指導）を遮断する</td>
+              <td>ソ連共産党による平壌の内政統制を完全に排除</td>
+            </tr>
+            <tr>
+              <td><strong>延安派</strong></td>
+              <td><strong>1956〜1958年</strong><br>崔昌益、尹公欽ら</td>
+              <td>「反党反革命宗派」「事大主義」</td>
+              <td>重工業偏重・個人崇拝批判を粉砕し、中国の干渉を排除</td>
+              <td>中国共産党との軍事的・人的パイプを遮断、千里馬運動へ</td>
+            </tr>
+            <tr>
+              <td><strong>甲山派<br>（国内パルチザン）</strong></td>
+              <td><strong>1967年5月</strong><br>朴金喆、李孝淳、金道満ら</td>
+              <td><strong>「ブルジョワ・修正主義分子」「地方主義」</strong></td>
+              <td><strong>抗日神話を独占し、金日成を絶対神とする「唯一思想」の樹立</strong></td>
+              <td><strong>近代政党の終焉。「5・25教示」による三代世襲神権国家の完成</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 論理展開・歴史的因果フロー -->
+    <section class="card">
+      <h2 class="card-title">4. 論理展開フロー：普天堡の血盟がいかにして「唯一思想の粛清」へと反転したか</h2>
+      
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="flow-num">1</span>
+          <div class="flow-heading">普天堡の血盟 (1937)</div>
+          <div class="flow-desc">甲山地下組織（朴金喆）が金日成部隊を先導し普天堡を襲撃。金日成抗日神話の事実上の母胎となる。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">2</span>
+          <div class="flow-heading">政敵の共同排除 (1950s)</div>
+          <div class="flow-desc">南労・ソ連・延安派を殲滅する過程で甲山派は満洲派と共闘。序列4位に昇り、対南・宣伝・組織を掌握。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">3</span>
+          <div class="flow-heading">路線と顕彰の亀裂 (1965-)</div>
+          <div class="flow-desc">民生重視や対南自律工作を志向。映画『一葉の野菊』等による甲山派顕彰が金日成・金正日の逆鱗に触れる。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">4</span>
+          <div class="flow-heading">第15回全会と失脚 (1967.5)</div>
+          <div class="flow-desc">金英柱・金正日が主導し朴金喆らを「ブルジョワ修正主義」と告発。幹部・親族数千人を逮捕・収容所送り。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">5</span>
+          <div class="flow-heading">「5・25教示」と神権化 (1967-)</div>
+          <div class="flow-desc">「党の唯一思想体系」を布告。党内異論の完全根絶、1972年憲法明記、1974年「10大原則」による世襲制が完結。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 深層解説・6大核心テーマ -->
+    <section class="card">
+      <h2 class="card-title card-title-emerald">5. 深層解説：甲山派粛清の内幕と北朝鮮全体主義の完成</h2>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 普天堡の真実：金日成神話を作った男・朴金喆の悲劇</h3>
+          <p>北朝鮮の公式歴史において最大の聖戦とされる1937年6月4日の「普天堡の戦い」。実態は50人規模の警察官駐在所と役場を襲撃したゲリラ戦であったが、この作戦を国内で準備・案内し、警備情報を流して物資を調達したのは、咸鏡南道甲山郡で「祖国光復会」地下組織を率いていた朴金喆であった。朴金喆は日本の警察に捕まり敗戦まで獄中生活を送った本物の抗日闘士であった。金日成にとって朴金喆は、己の「英雄伝説」の真相をあまりにも知りすぎている証人であり、その存在自体が個人崇拝独占の障害であった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>② 映画『一葉の野菊』事件：戦友の妻への愛が「大逆罪」へ</h3>
+          <p>粛清の引き金を引いたのは、党宣伝扇動部長・金道満の主導で1966年に制作された劇映画『一葉の野菊（한벌의 들국화）』であった。この映画は、抗日パルチザン闘争で銃創を負いながら金日成をかばって犠牲となった女性闘士・崔煕淑（チェ・ヒスク、朴金喆の先妻）の生涯を感動的に描いたものであった。さらに朴金喆の生家復元工事や甲山派の回想録出版が計画された。これに対し金日成・金正日は、「首領以外の人間を神聖視し、首領の威光を分断する許しがたい不遜行為」と激昂。芸術を通じた英雄顕彰が、そのまま反党宗派の罪状へと反転した。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>③ 経済並進路線と対南工作を巡る政策的対立</h3>
+          <p>文化問題の背後には、国家の進路を巡る深刻な路線対立が存在した。金日成は1960年代中盤から「経済建設と国防建設の並進路線」を唱え、国家予算の30%以上を軍事費に注ぎ込む軍事国家化を推し進めた。これに対し、経済実務に通じていた朴金喆らは、住民生活の疲弊を憂い「軽工業と民生安定の優先」を直言した。また、対南担当書記の李孝淳らは南朝鮮革命の独自の地下組織建設を重視したのに対し、金日成らは武装ゲリラによる直接軍事侵略（1968年の青瓦台襲撃未遂事件やプエブロ号拿捕事件）を志向。合理主義派の甲山派は邪魔者となった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>④ 金英柱と金正日の台頭：世襲レースの血の跳躍台</h3>
+          <p>甲山派の粛清において執行部隊の先頭に立ったのは、金日成の実弟・金英柱（党組織指導部長）と、当時25歳で党宣伝指導員として頭角を現しつつあった長男・金正日であった。金英柱らは、朴金喆の「生家復元」や映画制作を克明に調査して「党内にもう一つの指導中心（宗派）を作ろうとしている」と金日成に讒言した。朴金喆ら長老幹部は金一族による世襲化の動きに苦言を呈していたため、若き金正日にとって甲山派の壊滅は、自らが党の思想・文化の全権を握り「唯一の後継者」へ上り詰めるための最大の契機となった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑤ 「5・25教示」の密室性と歴史の隠蔽</h3>
+          <p>1967年5月25日、全員会議直後に金日成が行った演説「5・25教示」は、公式の『金日成著作集』には一切収録されず、党幹部向けの極秘文献としてのみ扱われた。なぜならこの教示は、マルクス・レーニン主義の普遍的原則（集団指導、党内民主主義、自己批判）を事実上破棄し、「党内に首領の思想以外のいかなる思想も存在を許さない」「首領の指示は無条件で執行されねばならない」という絶対服従を命じたものだったからである。この教示を機に、国内の図書館や書店から数多くの歴史書・文学書が焚書坑儒のように没収・破棄された。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑥ 近代政党から「神権的絶対専制」への質的転換</h3>
+          <p>甲山派の粛清をもって、朝鮮労働党内における「意見の相違」や「路線の議論」は完全に違法化された。ボリシェヴィキ以来、共産党は中央委員会の合議や論争を建前としていたが、北朝鮮ではそれが「首領の意思を一方的に拝聴し、誓約する儀式」へと変貌した。1970年第5回党大会での主体思想の唯一規定、1972年社会主義憲法での首領独裁明記、そして1974年の金正日による「党の唯一思想体系確立の10大原則」の策定へと至る一直線の全体主義化は、すべてこの1967年5月の流血から始まったのである。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 一次資料・歴史的言説の記録 -->
+    <section class="card">
+      <h2 class="card-title">6. 一次資料アーカイブ：密室の弾劾と唯一思想の布告文書</h2>
+
+      <details open>
+        <summary>① 金日成「5・25教示」抜粋（1967年5月25日 党中央幹部講話、極秘記録）</summary>
+        <div class="details-content">
+          <p>「我々の党内には、ブルジョワ思想、修正主義思想、地方主義、宗派主義の毒素が依然として深く根を張っていた。朴金喆、李孝淳らの一味は、党の軍事並進路線に公然と不満を抱き、自己の小集団を形成して党の唯一の指導体系を破壊しようと策動した。</p>
+          <p style="margin-top: 0.5rem;">我が党には、唯一の思想――すなわち我が党の指導思想、首領の革命思想以外には、いかなる思想も存在してはならない！党員が首領の思想と異なる異質な思想に染まることは、即ち反革命への第一歩である。全党、全軍、全人民は、首領の思想で鉄のように一色化されねばならない。首領の教示に対して一片の留保や条件を付ける者は、誰であれ容赦なく階級の敵として処断する。」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 朝鮮労働党第4期第15回全員会議 朴金喆糾弾決議文抜粋（1967年5月）</summary>
+        <div class="details-content">
+          <p>「朴金喆は、党の最高指導部の一員でありながら、党首領の不滅の抗日革命闘争の歴史を歪曲し、自らの功績を誇示して個人偶像化を企てた。彼は自らの故郷に生家を復元し、個人の回想録を編纂させ、党の宣伝網を私物化した。</p>
+          <p style="margin-top: 0.5rem;">さらに彼は、アメリカ帝国主義との厳しい対峙の中で推進される国防・経済並進路線を拒否し、修正主義的・投降主義的な生活第一主義を宣伝した。これは明白なるブルジョワ反党反革命行為である。党中央委員会は朴金喆、李孝淳、金道満らの全党職・全公職を剥奪し、党籍から永久追放する。」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 映画『一葉の野菊』批判に関する党宣伝煽動部報告（1967年）</summary>
+        <div class="details-content">
+          <p>「金道満の指導下で製作された映画『一葉の野菊』は、革命映画としての階級的原則を著しく逸脱している。この映画は、抗日革命闘争の全期間を通じて我が民族の唯一の指導星であられた金日成同志の卓越した指導性を副次的なものに押し下げ、特定の女性闘士（崔煕淑）の犠牲を誇張・美化することによって、その背後にいる朴金喆個人に対する崇拝を煽動している。</p>
+          <p style="margin-top: 0.5rem;">映画の全編に流れる感傷主義とブルジョワ的ヒューマニズムは、人民の革命的警戒心を麻痺させる。当該映画の上映を即時全面禁止とし、フィルムをすべて没収・破棄処分に処する。」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>④ 黄長燁による甲山派粛清と「5・25教示」の回顧証言（1999年抜粋）</summary>
+        <div class="details-content">
+          <p>「1967年5月の第15回全員会議は、朝鮮労働党の息の根を止めた日であった。朴金喆や李孝淳が失脚した瞬間、私は背筋が凍るような恐怖を感じた。彼らは金日成が最も信頼していたパルチザンの戦友だったからである。</p>
+          <p style="margin-top: 0.5rem;">金日成は自らの戦友すら情け容赦なく切り捨てた。そして出されたのが『5・25教示』であった。この演説以後、党内での自由な意見交換は完全に死滅した。金日成の言葉は神の啓示となり、いかなる疑問も許されなくなった。金正日はこの粛清の波に乗って宣伝煽動部を完全に牛耳り、金日成の個人崇拝を神権専制へと仕上げていったのである。」</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Section 7: 出典・参考文献 -->
+    <section class="card">
+      <h2 class="card-title">7. 出典・参考文献・学術アーカイブリスト</h2>
+      <ul style="padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+        <li><strong>和田春樹</strong> 『北朝鮮現代史』 岩波新書、2012年（甲山派の形成、普天堡襲撃の歴史的実態、1967年5月粛清の政治過程）</li>
+        <li><strong>徐大粛（Dae-Sook Suh）</strong> <em>Kim Il Sung: The North Korean Leader</em>, Columbia University Press, 1988.（満洲派による権力独占と朴金喆ら国内パルチザン排除の構造分析）</li>
+        <li><strong>黄長燁</strong> 『黄長燁回顧録：金正日への宣戦布告』 文藝春秋、1999年（5・25教示の密室演説と党内思想統一の内部証言）</li>
+        <li><strong>李佑英・林恩正</strong> 『主体思想の形成と変容に関する思想史的研究』 韓国統一研究院、2005年（甲山派粛清が主体思想の唯一体系化に及ぼした影響）</li>
+        <li><strong>金学俊（Kim Hak-joon）</strong> 『北朝鮮の最高権力者たち』 共同通信社、2004年（金英柱・金正日の台頭と甲山派排除の力学）</li>
+        <li><strong>平岩一成</strong> 『朝鮮民主主義人民共和国 ― 体制の成立と構造』 勁草書房、2013年（並進路線と対南ゲリラ工作の過激化過程）</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論・歴史解説アーカイブ</p>
+      <p style="font-size: 0.75rem; color: #64748b;">著者: mb_cho | 本書の内容および図解の無断転載・再配布を禁じます。</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Simulation Script -->
+  <script>
+    const phases = [
+      {
+        id: 0,
+        kapsText: "85%（序列4位・対南・宣伝独占・普天堡の立役者）",
+        kapsWidth: "85%",
+        kapsColor: "#6366f1",
+        ideoText: "40%（派閥的論争・政策的多面性の残存）",
+        ideoWidth: "40%",
+        ideoColor: "#f59e0b",
+        leadText: "55%（満洲派の同僚意識が残存・共同指導）",
+        leadWidth: "55%",
+        leadColor: "#f43f5e",
+        archTitle: "【動態構造図】Phase 1：1937〜1958年 ― 普天堡の血盟と外来派閥（南労・ソ連・延安派）の共同殲滅",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Pochonbo Alliance -->
+          <g transform="translate(60, 50)">
+            <rect x="0" y="0" width="370" height="220" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="185" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">1937年 普天堡の血盟と地下組織</text>
+
+            <rect x="20" y="50" width="330" height="75" rx="4" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="185" y="72" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">金日成部隊 ＆ 朴金喆（甲山地下組織）</text>
+            <text x="185" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・祖国光復会甲山地区工作員が警察署襲撃を先導</text>
+            <text x="185" y="108" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">「金日成抗日神話」の事実上の生みの親</text>
+
+            <rect x="20" y="135" width="330" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="185" y="157" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">解放後の共闘：政敵の共同排除</text>
+            <text x="185" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">南労党派（朴憲永）、ソ連派、延安派を共に粛清</text>
+            <text x="185" y="192" fill="#a7f3d0" font-size="9" font-weight="bold" text-anchor="middle">朴金喆＝序列4位、李孝淳＝対南書記へ登攀</text>
+          </g>
+
+          <!-- Status in 1950s -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="370" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="185" y="30" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">権力中枢での二頭体制</text>
+
+            <rect x="20" y="55" width="330" height="75" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="185" y="78" fill="#a7f3d0" font-size="11" font-weight="bold" text-anchor="middle">満洲パルチザン派 ＋ 甲山国内派</text>
+            <text x="185" y="98" fill="#d1fae5" font-size="9" text-anchor="middle">金日成にとって最も頼れる「本物の戦友」集団</text>
+            <text x="185" y="116" fill="#6ee7b7" font-size="9" font-weight="bold" text-anchor="middle">組織・人事・対南・宣伝の実務を甲山派が掌握</text>
+
+            <rect x="20" y="140" width="330" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="185" y="162" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">しかし「戦友としての対等意識」が残存</text>
+            <text x="185" y="182" fill="#94a3b8" font-size="9" text-anchor="middle">金日成を「絶対神」ではなく第一の同胞とみなす限界</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 1 状況解説】</strong> 1937年6月、朴金喆率いる甲山地下組織が手引きし、金日成部隊が普天堡警察駐在所を襲撃。「金日成の抗日伝説」が誕生した。解放後、甲山派は満洲派と固く結託し、南労党派、ソ連派、延安派を次々と排除。朴金喆は党副委員長（序列4位）、李孝淳は対南書記、金道満は宣伝部長となり、権力中枢を寡占した。"
+      },
+      {
+        id: 1,
+        kapsText: "90%（自派の英雄顕彰・生家復元・政策直言）",
+        kapsWidth: "90%",
+        kapsColor: "#6366f1",
+        ideoText: "60%（民生優先 vs 軍事偏重の深刻な路線対立）",
+        ideoWidth: "60%",
+        ideoColor: "#f59e0b",
+        leadText: "75%（金英柱・金正日が「宗派」と告発準備）",
+        leadWidth: "75%",
+        leadColor: "#f43f5e",
+        archTitle: "【動態構造図】Phase 2：1960年代中盤 ― 映画『一葉の野菊』摩擦と路線の乖離",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Movie & Monument Clash -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+            <text x="190" y="30" fill="#fbbf24" font-size="14" font-weight="bold" text-anchor="middle">映画『一葉の野菊』と甲山派顕彰</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="72" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">宣伝部長・金道満主導の映画製作</text>
+            <text x="190" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・崔煕淑（朴金喆の先妻）の抗日犠牲を美化</text>
+            <text x="190" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">朴金喆の生家復元、甲山回想録の編纂</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#311018" stroke="#f43f5e"/>
+            <text x="190" y="157" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">金日成・金正日の激怒</text>
+            <text x="190" y="175" fill="#cbd5e1" font-size="9" text-anchor="middle">「首領以外の人間を神聖視するとは何事か！」</text>
+            <text x="190" y="192" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">金日成唯一の抗日神話を脅かす大逆罪と認定</text>
+          </g>
+
+          <!-- Policy Rift -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="190" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">政策路線と後継世襲を巡る亀裂</text>
+
+            <rect x="20" y="55" width="340" height="75" rx="6" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="190" y="78" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">並進路線（軍事偏重）への異論</text>
+            <text x="190" y="98" fill="#cbd5e1" font-size="9" text-anchor="middle">朴金喆：「民生を無視した過度な軍事費増大は危険」</text>
+            <text x="190" y="116" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">李孝淳：対南直接武装侵略（ゲリラ派遣）に慎重姿勢</text>
+
+            <rect x="20" y="140" width="340" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="162" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">若き金正日・金英柱による密告網</text>
+            <text x="190" y="182" fill="#94a3b8" font-size="9" text-anchor="middle">甲山派の直言を「党内に別の中心を作る反逆」と讒言</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 2 状況解説】</strong> 1960年代中盤、軍事費偏重の並進路線に疑問を呈し民生安定を唱える朴金喆らと、軍事挑発を志向する金日成との亀裂が表面化。さらに宣伝部長・金道満が朴金喆の先妻を称える映画『一葉の野菊』を製作したことで、「首領以外の人間を神聖化する宗派的野心」として金日成および若き金正日の逆鱗に触れた。"
+      },
+      {
+        id: 2,
+        kapsText: "0%（全員失脚・逮捕・管理所収容・完全壊滅）",
+        kapsWidth: "2%",
+        kapsColor: "#f43f5e",
+        ideoText: "95%（「5・25教示」による思想統制・焚書坑儒）",
+        ideoWidth: "95%",
+        ideoColor: "#f59e0b",
+        leadText: "95%（党の唯一思想体系布告・全異論根絶）",
+        leadWidth: "95%",
+        leadColor: "#f43f5e",
+        archTitle: "【動態構造図】Phase 3：1967年5月 ― 第15回全員会議と「5・25教示」の粛清旋風",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- 15th Plenum Purge -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+            <text x="190" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">1967年5月 第4期第15回中央全会</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#450a0a" stroke="#dc2626"/>
+            <text x="190" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">甲山派の一網打尽・反逆断罪</text>
+            <text x="190" y="92" fill="#fecaca" font-size="9" text-anchor="middle">朴金喆、李孝淳、金道満、高赫らをその場で解任</text>
+            <text x="190" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">「ブルジョワ・修正主義・地方主義宗派分子」</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="157" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">関係者数千人の連座逮捕・収容所送り</text>
+            <text x="190" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">普天堡の地下戦友たちの一族が山岳管理所へ消滅</text>
+            <text x="190" y="192" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">かつての血の盟友が歴史から完全に抹殺される</text>
+          </g>
+
+          <!-- May 25 Instructions -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="190" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">1967年5月25日 金日成「5・25教示」</text>
+
+            <rect x="20" y="55" width="340" height="80" rx="6" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="190" y="78" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">「党の唯一思想体系の確立」を厳命</text>
+            <text x="190" y="100" fill="#cbd5e1" font-size="9" text-anchor="middle">「我が党には首領の思想以外いかなる思想も許されぬ」</text>
+            <text x="190" y="118" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">マルクス主義的党内民主主義の完全な死滅</text>
+
+            <rect x="20" y="145" width="340" height="60" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="168" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">大々的な焚書坑儒と文化粛清</text>
+            <text x="190" y="188" fill="#94a3b8" font-size="9" text-anchor="middle">国内の書籍・映画から首領以外の顕彰を全面消去</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 3 状況解説】</strong> 1967年5月の第15回全員会議において、朴金喆らは「ブルジョワ修正主義宗派」と断罪され失脚。関係者数千人が収容所へ送られた。5月25日、金日成は「5・25教示」を行い、「党内に首領の思想以外のいかなる思想も存在を許さない」と宣言。「党の唯一思想体系」が布告され、党内異論は物理的・制度的に根絶された。"
+      },
+      {
+        id: 3,
+        kapsText: "0%（歴史的抹殺・公的記憶からの消滅）",
+        kapsWidth: "2%",
+        kapsColor: "#94a3b8",
+        ideoText: "100%（10大原則・生活総和による完全洗脳）",
+        ideoWidth: "100%",
+        ideoColor: "#10b981",
+        leadText: "100%（白頭血統三代世襲神権王朝の完成）",
+        leadWidth: "100%",
+        leadColor: "#f43f5e",
+        archTitle: "【動態構造図】Phase 4：1970年代〜総括 ― 「党の唯一思想体系確立の10大原則」と神権世襲の完成",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- 10 Principles Enshrinement -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+            <text x="190" y="30" fill="#fbbf24" font-size="14" font-weight="bold" text-anchor="middle">1974年 「10大原則」による法制化</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#090d16" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="190" y="72" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">金正日策定「党の唯一思想体系確立の10大原則」</text>
+            <text x="190" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・憲法・党規約を超越する国家の最高掟</text>
+            <text x="190" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">首領の指示は「即法」にして「至上の命令」</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#1e1b4b"/>
+            <text x="190" y="157" fill="#c7d2fe" font-size="10" font-weight="bold" text-anchor="middle">国民私有化の日常メカニズム</text>
+            <text x="190" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">毎週土曜日の「生活総和」で相互批判・自己批判</text>
+            <text x="190" y="192" fill="#a5b4fc" font-size="9" text-anchor="middle">全住民が首領への絶対忠誠を誓約する儀式</text>
+          </g>
+
+          <!-- Complete Dynasty -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="190" y="30" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">歴史的総括：近代政党から神権王朝へ</text>
+
+            <rect x="20" y="55" width="340" height="75" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="190" y="78" fill="#a7f3d0" font-size="11" font-weight="bold" text-anchor="middle">抗日英雄伝説の「金日成一族独占」</text>
+            <text x="190" y="98" fill="#d1fae5" font-size="9" text-anchor="middle">普天堡の功績から朴金喆の名は完全に消去</text>
+            <text x="190" y="116" fill="#6ee7b7" font-size="9" font-weight="bold" text-anchor="middle">金正日・金正恩へと続く「白頭血統」世襲を正当化</text>
+
+            <rect x="20" y="140" width="340" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="162" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">戦友を殺した血の上に築かれたピラミッド</text>
+            <text x="190" y="182" fill="#94a3b8" font-size="9" text-anchor="middle">甲山派粛清こそが北朝鮮を神権カルト国家たらしめた</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 4 状況解説】</strong> 甲山派を滅ぼしたことで、金日成の同僚や対等な戦友は消滅し、唯一無二の現人神となった。この粛清を跳躍台として金正日が後継権力を確立。1974年に「党の唯一思想体系確立の10大原則」を策定し、金日成の絶対神聖化と白頭血統による三代世襲支配の基盤を完成させた。甲山派の抹殺こそが、北朝鮮を近代政党から神権専制王朝へと変貌させた決定打であった。"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-kaps').textContent = p.kapsText;
+      const bKaps = document.getElementById('b-kaps');
+      bKaps.style.width = p.kapsWidth;
+      bKaps.style.backgroundColor = p.kapsColor;
+
+      document.getElementById('m-ideo').textContent = p.ideoText;
+      const bIdeo = document.getElementById('b-ideo');
+      bIdeo.style.width = p.ideoWidth;
+      bIdeo.style.backgroundColor = p.ideoColor;
+
+      document.getElementById('m-lead').textContent = p.leadText;
+      const bLead = document.getElementById('b-lead');
+      bLead.style.width = p.leadWidth;
+      bLead.style.backgroundColor = p.leadColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
