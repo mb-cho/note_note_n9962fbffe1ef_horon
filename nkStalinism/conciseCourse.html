@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：『ソ連邦共産党（ボ）党史簡明教程』の解剖 ― 歴史改竄のバイブルと毛沢東・北朝鮮への教条的波及</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      text-transform: uppercase;
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.18);
+      color: var(--accent-red);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #f8fafc 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section common */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-left: 4px solid var(--accent-red);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      text-align: justify;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .phase-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1.35;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .phase-btn.active {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(99, 102, 241, 0.25));
+      border-color: var(--accent-red);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+    }
+
+    .phase-btn .btn-era {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .meter-label {
+      color: var(--text-secondary);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--accent-red);
+    }
+
+    .meter-track {
+      background: #0f172a;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-diagram-container {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .svg-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .phase-desc-box {
+      background: rgba(15, 23, 42, 0.75);
+      border-left: 4px solid var(--accent-red);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 680px;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    tr:hover td {
+      background: rgba(99, 102, 241, 0.06);
+    }
+
+    /* Logic Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--accent-red);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Quotes */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      text-align: right;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .ref-num {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-tag {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 0.15rem;
+    }
+
+    .cite-tag:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      body { padding: 1rem; }
+      .sim-panel { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link active">⑪ 『簡明教程』とスターリン神話</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">スターリニズム公式教典・党史改竄の核心補論</span>
+        <span class="badge badge-alert">世界4000万部発行のバイブルから毛沢東「継続革命」、北朝鮮「主体党史」へ</span>
+      </div>
+      <h1>『ソ連邦共産党（ボ）党史簡明教程』の解剖</h1>
+      <p class="subtitle">
+        1938年、スターリン自らの直接執筆・監修により編纂された『簡明教程（Краткий курс истории ВКП(б)）』。大粛清で抹殺された同志たちを「最初からのスパイ・反逆者」として歴史から消し去り、スターリンを唯一無謬の神話へと祭り上げたこのイデオロギー聖典は、いかにして中国の文化大革命や北朝鮮の「唯一思想体系（首領絶対化）」の思考の檻となったのか。
+      </p>
+      <div class="meta-row">
+        <span>📖 本書対応：第1章「『簡明教程』の継承と継続革命論」、第2章「北朝鮮における受容」、参考文献一覧</span>
+        <span>✍️ 著：mb_cho</span>
+        <span>🗓️ 原典史料・解禁党史料対照版</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section>
+      <h2 class="section-title">1. 問題の所在：20世紀最大の「聖典化された偽書」</h2>
+      <p>
+        1938年9月、ソビエト連邦の機関紙『プラウダ』に連載された後、単行本として刊行された<strong>『ソ連邦共産党（ボリシェヴィキ）歴史小教程（通称『簡明教程』 / Краткий курс истории ВКП(б)）』</strong>は、活版印刷術の発明以来、最も強力に人間の精神を画一化し、束縛した政治的書物の一つです<a href="#ref-1" class="cite-tag">[1]</a>。
+      </p>
+      <p>
+        大粛清（1937〜1938年）の血飛沫がまだ生々しいモスクワで出版された同書は、スターリン自身が編集委員会を指揮し、特に第4章第2節<strong>「弁証法的唯物論と史的唯物論」</strong>を自ら執筆しました。その最大の特徴は、ロシア革命の歴史そのものを徹底的に改竄・捏造した点にあります。レーニンの最側近として十月革命の実戦を指導したレフ・トロツキー、コミンテルン初代議長ジノヴィエフ、ソビエト政府初代議長カーメネフ、党の理論的重鎮ブハーリンらは、すべて「革命の当初から帝国主義スパイ、ファシストの手先として党内に潜入していた悪魔的陰謀者」として描かれました。そして、革命の実相においては一地方幹部・実務家にすぎなかったスターリンが、「レーニンの忠実な戦友にして唯一無二の共同指導者」として歴史の中心に捏造されたのです。
+      </p>
+      <p>
+        『簡明教程』は、ソ連国内だけで1,000万部以上、全世界で67言語・4,000万部以上が印刷され、コミンテルンを通じて世界各国の共産党員に「マルクス・レーニン主義の絶対的基準」として無条件の暗記と学習が強制されました。毛沢東はこの本を延安で貪るように読み、その論理枠組み（社会主義建設が進むほど階級闘争は激化する、党内の異論は敵の策動である）を「継続革命論」や文化大革命のイデオロギー的武器へと発展させました。そして北朝鮮の金日成・金正日は、この『簡明教程』の構造をそっくりそのまま自らの抗日パルチザン神話と「党の唯一思想体系（10大原則）」へと翻案し、三代世襲の絶対専制を支える不可侵の聖典を作り上げたのです<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>。
+      </p>
+    </section>
+
+    <!-- Section 2: Interactive Simulator -->
+    <section>
+      <h2 class="section-title">2. インタラクティブ図解：『簡明教程』の教条化・拡散動態シミュレーター</h2>
+      <p>
+        以下の4つの歴史的フェーズを切り替えることで、1938年のモスクワにおける大粛清正当化から、コミンテルンを通じた東側陣営の画一化、毛沢東による継続革命論への応用、そして北朝鮮における首領神聖化に至る「聖典の波及プロセス」をシミュレーションできます。
+      </p>
+
+      <div class="sim-panel">
+        <div class="phase-selector">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="btn-era">Phase 1：1938〜1940年</span>
+            ソ連・大粛清の正当化<br><small>（歴史の全面改竄と第4章第2節執筆）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="btn-era">Phase 2：1940〜1950年代初</span>
+            コミンフォルム・東欧画一化<br><small>（世界4000万部印刷とチトー主義狩り）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="btn-era">Phase 3：1942〜1960年代</span>
+            中国・毛沢東「継続革命論」<br><small>（延安必読書から文革の論理的武器へ）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="btn-era">Phase 4：1945年〜現代</span>
+            北朝鮮「主体党史」への翻案<br><small>（反宗派闘争と唯一思想10大原則）</small>
+          </button>
+        </div>
+
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">① 歴史改竄・指導者神話化度</span>
+              <span class="meter-val" id="m-myth">95%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-myth" style="width: 95%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">② 党内思考停止・教条化拘束力</span>
+              <span class="meter-val" id="m-dogma">90%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-dogma" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">③ 社会主義圏・対外波及支配度</span>
+              <span class="meter-val" id="m-spread">75%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-spread" style="width: 75%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="svg-diagram-container">
+          <div class="svg-title" id="arch-title">【構造図】Phase 1：大粛清正当化（オールド・ボリシェヴィキの抹殺とスターリン神話）</div>
+          <svg id="arch-svg" width="100%" height="220" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamically populated via JS -->
+          </svg>
+        </div>
+
+        <div class="phase-desc-box" id="sim-desc">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparative Table -->
+    <section>
+      <h2 class="section-title">3. 歴史的比較：『簡明教程』が各国の党史・イデオロギーに与えた変容</h2>
+      <p>
+        スターリンが創出した「正統と悪魔の闘争史」という教条的図式は、ソ連、中国、北朝鮮においてどのように受容され、現地化されていったのかを比較します。
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較軸</th>
+              <th>ソ連：原典『簡明教程』<br><small>1938年（スターリン）</small></th>
+              <th>中国：毛沢東思想への展開<br><small>1942–1966年（毛沢東）</small></th>
+              <th>北朝鮮：主体思想・朝鮮労働党史<br><small>1956年〜現代（金日成・金正日）</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>党史の基本図式</strong></td>
+              <td>レーニン・スターリンの正統路線 vs トロツキー・ブハーリンら「スパイ・裏切り者」の不倶戴天の闘争史</td>
+              <td>毛沢東の「正しい大衆路線」 vs 王明ら教条主義・彭徳懐ら右傾日和見主義の闘争史</td>
+              <td>金日成主席の「百戦百勝の主体路線」 vs 延安派・ソ連派・甲山派ら「反党宗派分子」の撲滅史</td>
+            </tr>
+            <tr>
+              <td><strong>哲学的支柱</strong></td>
+              <td>第4章第2節「弁証法的唯物論と史的唯物論」（自然・社会の客観的発展法則の教条的固定化）</td>
+              <td>『実践論』『矛盾論』（矛盾の普遍性と敵対的矛盾、階級闘争の主観的先鋭化）</td>
+              <td>「社会政治的生命体論」（人間中心の唯物弁証法否定、首領を脳髄とする有機体論）</td>
+            </tr>
+            <tr>
+              <td><strong>階級敵の定義</strong></td>
+              <td>資本主義包囲と結託した「白軍残党、元クラーク、トロツキスト潜入者」</td>
+              <td>「党内のブルジョワ代表人物」「資本主義の道を歩む実権派（走資派）」</td>
+              <td>「外部帝国主義の手先」「反党・反革命・宗派分子」「動揺・敵対階層」</td>
+            </tr>
+            <tr>
+              <td><strong>粛清・弾圧の形式</strong></td>
+              <td>NKVDによる超法規的死刑（モスクワ裁判・指令第00447号・GULAG）</td>
+              <td>整風運動（批判と自我批判）から大衆動員暴力（文化大革命・紅衛兵）へ</td>
+              <td><strong>完全統制区域（管理所）への終身隔離・三代連座制（種絶滅）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>歴史の結末</strong></td>
+              <td>1956年フルシチョフのスターリン批判により公式破棄・回収</td>
+              <td>1981年「歴史決議」により文革・継続革命論は否定（毛の権威は保持）</td>
+              <td><strong>現在も「10大原則」および首領神話として不可侵の最高国是</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Logic Flow -->
+    <section>
+      <h2 class="section-title">4. 論理展開フロー：『簡明教程』が構築した「陰謀論的4重トラップ」</h2>
+      <p>
+        本書第1章第2節でも分析されている通り、『簡明教程』は単なる歴史書ではなく、いかなる党内異論も自動的に「反革命の罪」へと変換する精緻な論理アルゴリズムでした。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-heading">命題1：階級闘争の必然的激化</div>
+          <div class="flow-desc">
+            社会主義建設が進み共産主義に近づくほど、打倒された旧搾取階級は絶望し、その抵抗はますます凶暴・激烈になる。<a href="#ref-1" class="cite-tag">[1]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-heading">命題2：イデオロギー残余の長期存続</div>
+          <div class="flow-desc">
+            経済基盤が社会主義化されても、人々の意識の中に旧ブルジョワ思想の「残りかす（残余）」が何十年も温床として残存する。<a href="#ref-2" class="cite-tag">[2]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-heading">命題3：党内路線闘争への反映</div>
+          <div class="flow-desc">
+            社会の階級闘争は必ず党内に反映され、政策論争や意見の相違は「党内に潜伏する階級の敵の代理人」による攻撃とみなされる。<a href="#ref-1" class="cite-tag">[1]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-heading">命題4：内外共謀による資本主義復活の陰謀</div>
+          <div class="flow-desc">
+            外部の帝国主義勢力は党内の反対派と密謀して国家転覆を画策しているため、指導部へのいかなる批判も物理的抹殺の対象となる。<a href="#ref-3" class="cite-tag">[3]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Deep Dive Cards -->
+    <section>
+      <h2 class="section-title">5. 深層解説：『簡明教程』を巡る6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">
+            <span>📖</span>
+            <span>スターリン自筆の第4章第2節：「弁証法的唯物論」の教条的固定化</span>
+          </div>
+          <p>
+            『簡明教程』の中で最も思想的影響力を持ったのが、スターリン自身が執筆した第4章第2節「弁証法的唯物論と史的唯物論」でした。
+          </p>
+          <p>
+            スターリンはマルクス、エンゲルス、レーニンの複雑で流動的な哲学を、わずか数個の「特徴（法則）」へと単純化・図式化しました。自然界の発展法則（量から質への転化、対立物の闘争など）が人間社会にも機械的に適用されると説き、共産党の指導と自らの独裁が「宇宙の客観的自然法則」と同等の絶対的真理であると論証しました。この教条主義的な公式化は、東側世界の学問・哲学・芸術を完全に窒息させました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🎭</span>
+            <span>「写真から消された同志たち」：歴史修正主義の物理的実践</span>
+          </div>
+          <p>
+            『簡明教程』の出版と並行して、ソ連全土で徹底的な「歴史の書き換え作業」が実行されました。
+          </p>
+          <p>
+            図書館や個人の蔵書から、トロツキー、ジノヴィエフ、カーメネフらの名前や写真が載った本はすべて没収・廃棄されました。レーニンと並んで写っていた革命初期の歴史的写真からは、ネガフィルムの修正によって反対派幹部の姿が綺麗に消され、代わりにスターリンがレーニンのすぐ隣に立っているように合成されました。『簡明教程』は、国家権力が過去の記憶そのものを自在に改竄できることを示したジョージ・オーウェル『1984年』の「真理省」の直接のモデルとなったのです。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🌍</span>
+            <span>世界4000万部のバイブル：コミンテルンと東欧衛星国への強制</span>
+          </div>
+          <p>
+            『簡明教程』は単なるソ連国内向けのテキストではなく、世界革命運動の絶対的指導書として輸出されました。
+          </p>
+          <p>
+            コミンテルンおよび戦後のコミンフォルムは、東欧諸国（ポーランド、東ドイツ、チェコスロバキア、ハンガリー等）や各国の共産党員に対して、聖書のごとくこの書物の学習と輪読を義務付けました。1948年にユーゴスラビアのチトーがソ連から離脱すると、『簡明教程』の論理に従って「東欧のスランスキー裁判やライク裁判」が引き起こされ、党内幹部が「チトー主義・帝国主義スパイ」として次々に処刑されました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🇨🇳</span>
+            <span>毛沢東の精読：延安整風から文化大革命への直系</span>
+          </div>
+          <p>
+            毛沢東は延安の窯洞（ヤオトン）で『簡明教程』が出版されるや直ちに入手し、余白が真っ黒になるほど精読しました。
+          </p>
+          <p>
+            毛沢東は王明らモスクワ帰りの教条主義を批判しつつも、『簡明教程』が提示した「歴史は正統と反党分派の不倶戴天の闘争である」という認識枠組みを完全に自己のものとしました。1959年の廬山会議における彭徳懐の失脚、そして「党内実権派（走資派）を打倒せよ」と叫んで紅衛兵を解き放った文化大革命（1966〜1976年）の狂気は、『簡明教程』の階級闘争激化論を大衆動員型へと極限化させたものでした。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🇰🇵</span>
+            <span>北朝鮮「主体党史」への変質：抗日パルチザン神話の母胎</span>
+          </div>
+          <p>
+            1945年、ソ連軍政下で創設された北朝鮮の朝鮮労働党においても、『簡明教程』は全幹部教育の絶対的な教科書でした。
+          </p>
+          <p>
+            金日成はこのソ連の教科書から「自らを唯一無謬の指導者とし、政敵を反逆者とする党史の書き方」を完璧に学び取りました。1956年の8月宗派事件で延安派やソ連派を粛清した後、北朝鮮の党史は「金日成主席が1930年代に満州で主体思想を創始し、朝鮮革命を一貫して単独で勝利に導いた」という完全な神話へと書き換えられました。『簡明教程』のスターリン神話は、平壌において「白頭血統の首領神話」として永遠化されたのです。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>💥</span>
+            <span>1956年フルシチョフのスターリン批判と『簡明教程』の崩壊</span>
+          </div>
+          <p>
+            1953年のスターリン死後、1956年2月のソ連共産党第20回大会において、第一書記フルシチョフは秘密報告を行い、スターリンの個人崇拝と大粛清の犯罪を公然と暴露しました。
+          </p>
+          <p>
+            これにより『簡明教程』の虚構性は全世界に暴露され、ソ連国内では直ちに回収・破棄されました。しかし、すでにこの書物の教条的論理を権力基盤として取り込んでいた中国の毛沢東や北朝鮮の金日成は、「スターリン批判（修正主義）」に激しく反発。皮肉にも、本家ソ連が捨て去った『簡明教程』の亡霊は、中ソ対立を激化させ、中国の文革と北朝鮮の首領独裁という形でアジアに生き永らえることになったのです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Primary Sources -->
+    <section>
+      <h2 class="section-title">6. 一次資料・歴史的言説の記録</h2>
+
+      <div class="quote-box">
+        <p>
+          「ボリシェヴィキ党の歴史は、何よりもまず、党内の日和見主義的グループ――メンシェヴィキ、社会革命党員、トロツキスト、ジノヴィエフ主義者、ブハーリン主義者、ブルジョワ民族主義者――との闘争と、それらの粉砕の歴史である。……党内の分派主義者や日和見主義者に打撃を与え、彼らを粉砕することなくしては、ボリシェヴィキ党の隊列の統一と鉄の規律を維持することはできなかった。」
+        </p>
+        <div class="quote-author">― ソ連共産党中央委員会編『ソ連邦共産党（ボ）歴史小教程』（1938年結語）[1]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「自然界において物質の運動が対立物の闘争によって前進するように、人間社会の歴史もまた階級闘争によってのみ前進する。……党の路線に異論を唱える者は、階級闘争の不可避の法則によって、客観的にはブルジョワジーの反革命的陰謀の執行者へと転落する。」
+        </p>
+        <div class="quote-author">― ヨシフ・スターリン『弁証法的唯物論と史的唯物論』（『簡明教程』第4章第2節、1938年）[1]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「スターリン同志が監修された『簡明教程』は、過去百年のマルクス主義運動の最高度の総括である。全世界の共産主義者にとって、これほど完璧で、これほど実践的な教科書は他に存在しない。我々はこれを百遍熟読し、毛沢東同志の中国革命の実践と結びつけねばならない。」
+        </p>
+        <div class="quote-author">― 劉少奇『延安中央党校における演説』（1942年）[2]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「我々の党史は、偉大な首領金日成同志の百戦百勝の革命思想と、それに敵対するあらゆる宗派分子、事大主義者、修正主義者どもとの非妥協的闘争の歴史である。首領様の純潔な思想体系に泥を塗ろうとするいかなる異端分子も、歴史の法廷において仮借なく粉砕されねばならない。」
+        </p>
+        <div class="quote-author">― 朝鮮労働党中央委員会『党の唯一思想体系確立の10大原則解説集』（1974年）[3]</div>
+      </div>
+    </section>
+
+    <!-- Section 7: References -->
+    <section>
+      <h2 class="section-title">7. 出典・参考文献・アーカイブ</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.marxists.org/nihon/tokubetsukamoku/sobieto-renpo/cpsu-b-1971.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.marxists.org (マルクス主義文庫：『ソ連邦共産党（ボリシェヴィキ）歴史小教程』日本語PDFアーカイブ)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.zinbun.kyoto-u.ac.jp/~rcmcc/maozedong-paper/10_tanigawa.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.zinbun.kyoto-u.ac.jp (京都大学人文科学研究所：毛沢東と『党史簡明教程』の受容史研究論文)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%82%BD%E9%80%A3%E5%85%B1%E7%94%A3%E5%85%9A%E6%AD%B4%E5%8F%B2%E5%B0%8F%E6%95%99%E7%A8%8B" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：ソ連共産党歴史小教程 / 編纂経緯と世界への波及)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://kotobank.jp/word/%E7%B0%A1%E6%98%8E%E6%95%99%E7%A8%8B-1505315" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：簡明教程 / スターリンによる党史の捏造と教条化)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑪ ｜ 『簡明教程』とスターリン神話</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        mythText: "95%（大粛清の正当化・トロツキーら悪魔化）",
+        mythWidth: "95%",
+        mythColor: "#f43f5e",
+        dogmaText: "90%（第4章第2節による弁証法の公式化）",
+        dogmaWidth: "90%",
+        dogmaColor: "#f59e0b",
+        spreadText: "75%（ソ連国内の全機関・学校で暗記強制）",
+        spreadWidth: "75%",
+        spreadColor: "#6366f1",
+        archTitle: "【構造図】Phase 1：大粛清正当化期（1938〜1940）― モスクワ裁判と歴史全面改竄",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="25" width="220" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="140" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">スターリン編集委員会</text>
+          <text x="140" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">第4章第2節（哲学）自筆執筆</text>
+
+          <rect x="320" y="25" width="210" height="60" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="425" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">公式教典『簡明教程』</text>
+          <text x="425" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">正統路線 vs 悪魔の闘争史</text>
+
+          <rect x="600" y="25" width="210" height="60" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="705" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">オールド・ボリシェヴィキ</text>
+          <text x="705" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">「最初からのスパイ」と捏造</text>
+
+          <rect x="320" y="140" width="210" height="55" rx="8" fill="#162032" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="425" y="163" fill="#6366f1" font-size="12" font-weight="bold" text-anchor="middle">写真・史料の物理的抹殺</text>
+          <text x="425" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">ネガ修正による政敵の消去</text>
+
+          <!-- Arrows -->
+          <line x1="250" y1="55" x2="310" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="530" y1="55" x2="590" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="425" y1="85" x2="425" y2="135" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366f1"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1938〜1940年（ソ連・大粛清の正当化と歴史改竄）】</strong><br>大粛清直後、スターリン自身の指揮下で刊行された『簡明教程』は、トロツキーやブハーリンら処刑された革命の元勲たちを「帝国主義スパイ」と断罪。歴史的写真や記録から政敵を消し去り、スターリンをレーニン唯一の共同指導者として神格化しました。哲学章（第4章第2節）により、自らの独裁を自然法則の絶対真理として定式化しました。<a href='#ref-1' class='cite-tag'>[1]</a>"
+      },
+      {
+        id: 1,
+        mythText: "98%（東欧衛星国でのチトー主義者断罪）",
+        mythWidth: "98%",
+        mythColor: "#f43f5e",
+        dogmaText: "100%（コミンフォルムによる思考の画一化）",
+        dogmaWidth: "100%",
+        dogmaColor: "#f43f5e",
+        spreadText: "100%（世界67言語・4000万部印刷）",
+        spreadWidth: "100%",
+        spreadColor: "#f43f5e",
+        archTitle: "【構造図】Phase 2：コミンフォルム波及期（1940〜1950年代初）― 東側圏の絶対聖典化",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">モスクワ中央 / コミンフォルム</text>
+          <text x="130" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">世界67言語・4000万部供給</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">東欧諸国（ポーランド・東独等）</text>
+          <text x="420" y="67" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">全共産党員の必修聖典化</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="710" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">スランスキー裁判等</text>
+          <text x="710" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">チトー主義者の見せしめ処刑</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">「一国社会主義」の防壁</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">ソ連モデルへの無条件盲従強制</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="420" y1="90" x2="420" y2="135" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+
+          <defs>
+            <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1940〜1950年代初（コミンフォルム・東欧波及期）】</strong><br>第二次世界大戦後、東欧に成立した衛星国群に対し、『簡明教程』は反論を許さない絶対バイブルとして導入されました。ユーゴスラビアのチトー離脱以降、同書の「党内潜伏スパイの論理」に従って東欧全域で粛清裁判（スランスキー裁判、ライク裁判）が吹き荒れ、東側陣営の思想的画一化が完成しました。<a href='#ref-1' class='cite-tag'>[1]</a>"
+      },
+      {
+        id: 2,
+        mythText: "90%（毛沢東の無謬化と彭徳懐ら右傾断罪）",
+        mythWidth: "90%",
+        mythColor: "#f43f5e",
+        dogmaText: "95%（文化大革命・大衆動員のイデオロギー）",
+        dogmaWidth: "95%",
+        dogmaColor: "#f43f5e",
+        spreadText: "50%（中ソ対立と独自の中国化発展）",
+        spreadWidth: "50%",
+        spreadColor: "#f59e0b",
+        archTitle: "【構造図】Phase 3：中国・毛沢東「継続革命論」（1942〜1960年代）― 文革への発展",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">毛沢東の『簡明教程』受容</text>
+          <text x="130" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">延安整風運動の必修教科書</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">「継続革命の理論」</text>
+          <text x="420" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">社会主義段階全般で階級闘争激化</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="710" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">文化大革命 (1966–76)</text>
+          <text x="710" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">紅衛兵動員・党内実権派打倒</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#6366f1" font-size="12" font-weight="bold" text-anchor="middle">フルシチョフ「修正主義」批判</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">ソ連のスターリン批判を裏切りと攻撃</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="420" y1="90" x2="420" y2="135" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow-blue)"/>
+        `,
+        desc: "<strong>【Phase 3：1942〜1960年代（中国・毛沢東「継続革命論」への発展）】</strong><br>毛沢東は延安整風において『簡明教程』を全党員に精読させ、「社会主義が進むほど敵は凶暴化する」「旧思想の残余が党内実権派を生む」という論理を完全に血肉化。フルシチョフのスターリン批判を『修正主義』と拒絶し、このスターリン由来の階級闘争論を大衆動員と結合させて文化大革命の狂乱へと突入しました。<a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 3,
+        mythText: "100%（金日成・白頭血統の神格化・抗日党史）",
+        mythWidth: "100%",
+        mythColor: "#f43f5e",
+        dogmaText: "100%（唯一思想体系の10大原則・絶対無条件執行）",
+        dogmaWidth: "100%",
+        dogmaColor: "#f43f5e",
+        spreadText: "25%（閉鎖的絶対王朝・完全統制区域体制）",
+        spreadWidth: "25%",
+        spreadColor: "#f43f5e",
+        archTitle: "【構造図】Phase 4：北朝鮮「主体党史」への翻案（1945〜現代）― 首領絶対化の完成",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">金日成パルチザン神話</text>
+          <text x="130" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">『簡明教程』の朝鮮版書き換え</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">反宗派闘争（8月宗派事件）</text>
+          <text x="420" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">延安派・ソ連派を「スパイ」根絶</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="710" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">唯一思想10大原則 (1974)</text>
+          <text x="710" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">白頭血統・三代世襲の絶対正統化</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">完全統制区域（管理所）</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">異論者の三代連座絶滅システム</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="420" y1="90" x2="420" y2="135" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 4：1945年〜現代（北朝鮮「主体党史」への翻案と首領絶対化）】</strong><br>北朝鮮において『簡明教程』の論理は、金日成の抗日パルチザン闘争を唯一の革命伝統とする「主体党史」へと完全に移植されました。1956年の8月宗派事件で反対派を「党内に潜入したスパイ」として粛清し、1974年の『10大原則』によって首領への絶対服従を成文法以上の掟として制度化。『簡明教程』が目指した歴史の私物化は、現代北朝鮮の白頭血統世襲支配において究極の完成を見ました。<a href='#ref-3' class='cite-tag'>[3]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-myth').textContent = p.mythText;
+      const bMyth = document.getElementById('b-myth');
+      bMyth.style.width = p.mythWidth;
+      bMyth.style.backgroundColor = p.mythColor;
+
+      document.getElementById('m-dogma').textContent = p.dogmaText;
+      const bDogma = document.getElementById('b-dogma');
+      bDogma.style.width = p.dogmaWidth;
+      bDogma.style.backgroundColor = p.dogmaColor;
+
+      document.getElementById('m-spread').textContent = p.spreadText;
+      const bSpread = document.getElementById('b-spread');
+      bSpread.style.width = p.spreadWidth;
+      bSpread.style.backgroundColor = p.spreadColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
