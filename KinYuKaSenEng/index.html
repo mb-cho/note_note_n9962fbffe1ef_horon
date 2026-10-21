@@ -1,1 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History and Collapse of the Financial Oligarchy — Web Supplements & Terminology Portal</title>
+  <meta name="description" content="Official Web Supplement and Glossary Portal for the Kindle eBook 'History and Collapse of the Financial Oligarchy: From Imperialist Genealogy to the End of the Petrodollar and the Dawn of a Multipolar Real Economy' by mb_Cho. In-depth analyses of credit creation, petrodollars, derivatives, national economic systems, and historical crises.">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-dark: #0f172a;
+      --primary-subtle: #eff6ff;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --accent-border: #f59e0b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --border-focus: #3b82f6;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 0.75rem;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Hero Header */
+    header.hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1e293b 100%);
+      color: #ffffff;
+      padding: 3.5rem 0 3rem 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--accent-border);
+    }
+
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(254, 240, 138, 0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #93c5fd;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .hero-notice {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 4px solid var(--accent-border);
+      padding: 1rem 1.25rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.925rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+      max-width: 920px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-notice strong {
+      color: #fde68a;
+    }
+
+    .hero-notice code {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.85rem;
+      color: #93c5fd;
+    }
+
+    /* Controls Bar */
+    .controls-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .controls-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 860px) {
+      .controls-grid {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.7rem 1rem 0.7rem 2.5rem;
+      border: 2px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      background: #ffffff;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+      border-color: #cbd5e1;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .status-counter {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding-left: 0.25rem;
+    }
+
+    /* Content Area */
+    main {
+      padding: 2.5rem 0 4rem 0;
+    }
+
+    .chapter-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .chapter-tag {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.35rem;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .chapter-tag.archive-tag {
+      background: #475569;
+    }
+
+    .chapter-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      }
+    }
+
+    .term-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+    }
+
+    .term-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #93c5fd;
+    }
+
+    .term-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      background: var(--primary-subtle);
+      padding: 0.2rem 0.55rem;
+      border-radius: 0.25rem;
+    }
+
+    .category-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.2rem 0.55rem;
+      border-radius: 0.25rem;
+    }
+
+    .category-badge.archive-badge {
+      color: #334155;
+      background: #e2e8f0;
+    }
+
+    .term-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .term-title a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .term-title a:hover {
+      color: var(--primary-light);
+      text-decoration: underline;
+    }
+
+    .term-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .term-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.5rem;
+      transition: all 0.15s;
+    }
+
+    .term-link-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+      color: var(--text-muted);
+    }
+
+    .no-results h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Book Info Box */
+    .book-info-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .book-info-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .book-info-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 2.5rem 0;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span>📘 Official Web Supplement & Reference Portal for Amazon Kindle eBook</span>
+      </div>
+      <h1 class="hero-title">History and Collapse of the Financial Oligarchy<br>Web Supplements & Terminology Portal</h1>
+      <p class="hero-subtitle">From Imperialist Genealogy to the End of the Petrodollar and the Rise of a Multipolar Real Economy ｜ Author: mb_Cho</p>
+      <div class="hero-notice">
+        <strong>[Note to Readers]</strong><br>
+        This portal provides technical breakdowns, primary historical context, mathematical models, and data updates corresponding to the concepts explored in the book. Readers can consult these supplements as an active companion reference throughout their reading.<br>
+        ※ If you are accessing this work via an e-ink device (such as Kindle Paperwhite), you can bookmark and access this directory on your smartphone, tablet, or PC browser.
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Controls Bar -->
+  <div class="controls-wrapper">
+    <div class="container">
+      <div class="controls-grid">
+        <div class="search-box">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by term or keyword (e.g., Credit Creation, Eurodollar, Volcker)...">
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All (23)</button>
+          <button class="filter-btn" data-filter="Chapter 1">Chapter 1</button>
+          <button class="filter-btn" data-filter="Chapter 2">Chapter 2</button>
+          <button class="filter-btn" data-filter="Chapter 3">Chapter 3</button>
+          <button class="filter-btn" data-filter="Chapter 4">Chapter 4</button>
+          <button class="filter-btn" data-filter="Chapter 5">Chapter 5</button>
+          <button class="filter-btn" data-filter="Appendices">Appendices</button>
+        </div>
+      </div>
+      <div style="margin-top: 0.5rem; display: flex; justify-content: flex-end;">
+        <span id="counter" class="status-counter">Showing 23 of 23 supplements</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div id="noResults" class="no-results">
+      <h3>No Matching Supplements Found</h3>
+      <p>Try refining your search keyword or resetting the filter category to "All".</p>
+    </div>
+
+    <!-- Chapter 1 -->
+    <section class="chapter-section" data-chapter="Chapter 1">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter 1</span>
+        <h2 class="chapter-title">Definitions and Theoretical Foundations of Financial Oligarchy</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="credit creation fractional reserve banking primary deposit legal reserve multiplier endogenous money keynes 信用創造">
+          <div class="term-meta">
+            <span class="section-badge">1.2 Keynes's Definition</span>
+            <span class="category-badge">Monetary Theory</span>
+          </div>
+          <h3 class="term-title"><a href="SinYoSoZo.html">Mechanics and Risks of Credit Creation</a></h3>
+          <p class="term-desc">The fractional-reserve banking mechanism that repeatedly expands loans into deposit currency many times the base money, paired with an interactive simulation of credit contraction risks.</p>
+          <a href="SinYoSoZo.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="actively created deposits active deposits passive deposits keynes treatise on money industrial circulation financial circulation 能動的預金">
+          <div class="term-meta">
+            <span class="section-badge">1.2 Keynes's Definition</span>
+            <span class="category-badge">Monetary Theory</span>
+          </div>
+          <h3 class="term-title"><a href="NoDoTeKiYoKin.html">Actively Created Deposits (Active vs. Passive Deposits)</a></h3>
+          <p class="term-desc">Keynes's formulation from *A Treatise on Money*: distinguishing active deposits circulating in real production and commerce from passive deposits absorbed into speculative financial assets.</p>
+          <a href="NoDoTeKiYoKin.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="liquidity preference theory liquidity trap transactions precautionary speculative motive bond yield zero lower bound keynes 流動性選好 流動性の罠">
+          <div class="term-meta">
+            <span class="section-badge">1.2 Keynes's Definition</span>
+            <span class="category-badge">Monetary Theory</span>
+          </div>
+          <h3 class="term-title"><a href="RyuDouseiSenko.html">Liquidity Preference Theory and the Liquidity Trap</a></h3>
+          <p class="term-desc">Comprehensive illustrated guide explaining the three motives for cash holdings (transactions, precautionary, speculative), inverse bond price dynamics, and monetary policy paralysis at zero interest.</p>
+          <a href="RyuDouseiSenko.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="credit theory of money schumpeter entrepreneur purchasing power dynamic economics innovation 信用理論 シュンペーター">
+          <div class="term-meta">
+            <span class="section-badge">1.3 Schumpeter's Definition</span>
+            <span class="category-badge">Monetary Theory</span>
+          </div>
+          <h3 class="term-title"><a href="CreditTheoryOfMoney.html">The Credit Theory of Money (Schumpeter's Dynamic Economics)</a></h3>
+          <p class="term-desc">Dismantling the classical view of money as a neutral veil: how bank credit creation *ex nihilo* provides revolutionary entrepreneurs with the purchasing power to alter resource allocation.</p>
+          <a href="CreditTheoryOfMoney.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="business cycle theory schumpeter creative destruction kitchin juglar kondratiev three waves secondary wave speculation 景気循環論">
+          <div class="term-meta">
+            <span class="section-badge">1.3 Schumpeter's Definition</span>
+            <span class="category-badge">Economic Dynamics</span>
+          </div>
+          <h3 class="term-title"><a href="KeikiJYunkanRon.html">Schumpeter's Business Cycle Theory</a></h3>
+          <p class="term-desc">The superposition of three wave cycles (Kitchin, Juglar, Kondratiev) driven by swarms of innovation, creative destruction, and the distortionary excess of secondary speculative credit waves.</p>
+          <a href="KeikiJYunkanRon.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="financial parasitism rent extraction rentier state neoliberalism hilferding lenin financialization unearned income 金融寄生性">
+          <div class="term-meta">
+            <span class="section-badge">1.4 Neoliberal Exploitation</span>
+            <span class="category-badge">Power Structures</span>
+          </div>
+          <h3 class="term-title"><a href="KinyuKiseiSei.html">Financial Parasitism: Rent Extraction & Profiting Without Producing</a></h3>
+          <p class="term-desc">The anatomy of rentier capitalism—how financialization, usurious fees, derivatives, and corporate buybacks siphon societal surplus from productive industrial capacity into non-productive speculative circuits.</p>
+          <a href="KinyuKiseiSei.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 1" data-keywords="oligarchs oligarch russia shock therapy voucher privatization loans for shares resource capture semibankirshchina オリガルヒ">
+          <div class="term-meta">
+            <span class="section-badge">1.4 Neoliberal Exploitation</span>
+            <span class="category-badge">Power Structures</span>
+          </div>
+          <h3 class="term-title"><a href="Oligarch.html">Oligarchs (Олигарх): Shock Therapy & State Asset Capture</a></h3>
+          <p class="term-desc">How Western-designed shock therapy and the infamous 1995 'Loans for Shares' scheme allowed a handful of tycoons to privatize Russia's vast natural resource wealth and capture state power.</p>
+          <a href="Oligarch.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="chapter-section" data-chapter="Chapter 2">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter 2</span>
+        <h2 class="chapter-title">Historical Manifestations: Modern History of War & Financial Hegemony</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="roman republic brutus cicero usury 48 percent salamis cyprus provincial extortion debt slavery publicani 共和政ローマ キケロ ブルトゥス">
+          <div class="term-meta">
+            <span class="section-badge">2.1 Antecedents of Imperialism</span>
+            <span class="category-badge">Historical Extraction</span>
+          </div>
+          <h3 class="term-title"><a href="romaKikero.html">Financial Extraction in the Late Roman Republic: Brutus's Usury & Cicero</a></h3>
+          <p class="term-desc">The hidden banking scandal behind Marcus Junius Brutus's 48% compound interest loan to Salamis, and provincial governor Cicero's moral dilemma facing the senatorial financial oligarchy.</p>
+          <a href="romaKikero.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="ottoman empire opda debt trap default decree of muharram european powers fiscal sovereignty encroachment オスマン帝国 蚕食">
+          <div class="term-meta">
+            <span class="section-badge">2.1 Antecedents of Imperialism</span>
+            <span class="category-badge">Historical Extraction</span>
+          </div>
+          <h3 class="term-title"><a href="osman.html">European Encroachment on the Ottoman Empire (1875–1881)</a></h3>
+          <p class="term-desc">The 1875 sovereign default, the Decree of Muharram, and the creation of the Ottoman Public Debt Administration (OPDA)—the quintessential historical blueprint of sovereign asset surrender via debt traps.</p>
+          <a href="osman.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="india office british raj pax britannica council bills home charges drain of wealth colonial extraction east india company インド省">
+          <div class="term-meta">
+            <span class="section-badge">2.2 Pax Britannica's Dual Drain</span>
+            <span class="category-badge">Colonial Governance</span>
+          </div>
+          <h3 class="term-title"><a href="eng_ind.html">The British India Office: Direct Rule & Financial Extraction (1858–1947)</a></h3>
+          <p class="term-desc">The administrative and monetary mechanisms of direct Crown rule following the East India Company's dissolution, centering on Council Bills and the systematic 'Home Charges' wealth drain to London.</p>
+          <a href="eng_ind.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="gold mark papiermark rentenmark weimar hyperinflation versailles reparations helfferich monetary stabilization 1923 金マルク">
+          <div class="term-meta">
+            <span class="section-badge">2.3 The Versailles Order & Depression</span>
+            <span class="category-badge">Monetary Crises</span>
+          </div>
+          <h3 class="term-title"><a href="goldMark.html">Why Was It Called the "Gold Mark"? Hyperinflation & Rentenmark Miracle</a></h3>
+          <p class="term-desc">Weimar Germany's 132-billion gold mark reparations burden under Versailles, the trillion-to-one collapse of the Papiermark, and the land-backed currency design of the Rentenmark miracle.</p>
+          <a href="goldMark.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="fordism henry ford mass production mass consumption consumer credit installment buying 1929 great depression model t フォーディズム">
+          <div class="term-meta">
+            <span class="section-badge">2.3 The Versailles Order & Depression</span>
+            <span class="category-badge">Industrial Economics</span>
+          </div>
+          <h3 class="term-title"><a href="fordism.html">Fordism in 1920s America: Mass Production & Prelude to 1929</a></h3>
+          <p class="term-desc">Henry Ford's assembly line and $5-a-day wage philosophy: the dawn of modern consumer credit capitalism and the structural overproduction crisis that catalyzed the Great Depression.</p>
+          <a href="fordism.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="military keynesianism pentagon defense spending military industrial complex cold war aggregate demand stagflation 軍事ケインズ主義">
+          <div class="term-meta">
+            <span class="section-badge">2.4 The Bretton Woods System</span>
+            <span class="category-badge">State Stimulus</span>
+          </div>
+          <h3 class="term-title"><a href="MilitaryKeynesianism.html">Military Keynesianism: Defense Stimulus & Structural Contradictions</a></h3>
+          <p class="term-desc">Post-WWII permanent war spending as macroeconomic stimulus: aggregate demand generation through the Pentagon budget, the military-industrial complex, and long-term stagflation traps.</p>
+          <a href="MilitaryKeynesianism.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="eurodollar offshore banking regulation q london petrodollar recycling shadow banking dollar hegemony nixon shock ユーロダラー">
+          <div class="term-meta">
+            <span class="section-badge">2.5 Dollar Outflow & Offshore Hegemony</span>
+            <span class="category-badge">Offshore Banking</span>
+          </div>
+          <h3 class="term-title"><a href="EuDaller.html">The Eurodollar Market: Mechanics, History, & Offshore Hegemony</a></h3>
+          <p class="term-desc">The genesis of London offshore dollar trading bypassing US Regulation Q, petrodollar recycling after 1973, and the emergence of an extraterritorial shadow banking empire beyond central bank control.</p>
+          <a href="EuDaller.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="eurodollar russian sanctions foreign reserve freeze correspondent banking fedwire chips swift weaponized dollar ユーロダラー ロシア制裁">
+          <div class="term-meta">
+            <span class="section-badge">2.5 Dollar Outflow & Offshore Hegemony</span>
+            <span class="category-badge">Sanctions & Dollar Hegemony</span>
+          </div>
+          <h3 class="term-title"><a href="EuDallerRosia.html">The Eurodollar Market & Russian Sanctions: Why Offshore Dollars Were Frozen</a></h3>
+          <p class="term-desc">Why offshore dollar holdings could not escape US sovereign jurisdiction: the clearing monopoly of New York correspondent banks (Fedwire & CHIPS) and the geopolitical weaponization of the dollar.</p>
+          <a href="EuDallerRosia.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="volcker shock fed interest rate 20 percent latin american debt crisis petrodollar recycling floating rate sovereign default ボルカーショック">
+          <div class="term-meta">
+            <span class="section-badge">2.6 Completion of the Petrodollar Regime</span>
+            <span class="category-badge">Debt Diplomacy</span>
+          </div>
+          <h3 class="term-title"><a href="Borucar.html">The Volcker Shock & the 1980s Latin American Debt Crisis</a></h3>
+          <p class="term-desc">Fed Chairman Paul Volcker's unilateral rate spike to 20%, explosive debt-servicing spikes on dollar-denominated loans, and the cascading sovereign defaults across Latin America.</p>
+          <a href="Borucar.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 2" data-keywords="structural adjustment programs sap imf world bank washington consensus austerity conditionality privatization debt crisis 構造調整プログラム">
+          <div class="term-meta">
+            <span class="section-badge">2.6 Completion of the Petrodollar Regime</span>
+            <span class="category-badge">International Institutions</span>
+          </div>
+          <h3 class="term-title"><a href="SAP.html">Structural Adjustment Programs (SAPs): Objectives & Discontents</a></h3>
+          <p class="term-desc">IMF and World Bank conditionalities in the Global South: forced currency devaluation, public asset privatization, slashed social spending, and the institutionalized surrender of domestic economic autonomy.</p>
+          <a href="SAP.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Chapter 3 -->
+    <section class="chapter-section" data-chapter="Chapter 3">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter 3</span>
+        <h2 class="chapter-title">21st-Century Reality: Algorithmic Illusions & Systemic Risk</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="Chapter 3" data-keywords="aig cds credit default swaps subprime cdo backdoor bailout goldman sachs systemic risk 2008 financial crisis aig危機 裏口救済">
+          <div class="term-meta">
+            <span class="section-badge">3.1 Algorithmic Illusions</span>
+            <span class="category-badge">Systemic Bailouts</span>
+          </div>
+          <h3 class="term-title"><a href="AIG.html">The AIG Crisis & Wall Street's "Backdoor Bailout"</a></h3>
+          <p class="term-desc">How AIG's Financial Products division sold hundreds of billions in unhedged CDS protection on toxic mortgage CDOs, and how the $180B Federal bailout paid off counterparties like Goldman Sachs at 100 cents on the dollar.</p>
+          <a href="AIG.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="chapter-section" data-chapter="Chapter 4">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter 4</span>
+        <h2 class="chapter-title">Systemic Endgames: Technocracy, Liquidity, & Clearing Infrastructures</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="Chapter 4" data-keywords="bank coup central bank independence unlimited liquidity quantitative easing technocracy moral hazard democratic deficit 銀行クーデター">
+          <div class="term-meta">
+            <span class="section-badge">4.1 The Banking Oligarchy Coup</span>
+            <span class="category-badge">Technocracy & Power</span>
+          </div>
+          <h3 class="term-title"><a href="BankCoup.html">The Banking Oligarchy's Coup Against Democratic Systems</a></h3>
+          <p class="term-desc">Behind the rhetoric of 'Central Bank Independence': how the monetary issuance power was extracted from democratic legislatures to funnel unlimited liquidity and credit backstops to insolvent megabanks.</p>
+          <a href="BankCoup.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Chapter 4" data-keywords="derivatives settlement network ccp central counterparty fmi margin call systemic risk smart settlement atomic settlement デリバティブ決済網">
+          <div class="term-meta">
+            <span class="section-badge">4.5 Compound Collapse Scenarios</span>
+            <span class="category-badge">Financial Infrastructure</span>
+          </div>
+          <h3 class="term-title"><a href="DerivativesSettlementNetwork.html">Derivatives Settlement Networks: FMIs, CCPs, & Smart Settlement</a></h3>
+          <p class="term-desc">Examining the quadrillion-dollar derivative nexus: systemic risk concentration inside Central Counterparties (CCPs), procyclical margin calls, and blockchain-based atomic clearing architectures.</p>
+          <a href="DerivativesSettlementNetwork.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Chapter 5 -->
+    <section class="chapter-section" data-chapter="Chapter 5">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter 5</span>
+        <h2 class="chapter-title">Beyond Financial Oligarchy: Restoration of Sovereign Real Economies</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="Chapter 5" data-keywords="national system of political economy alexander hamilton henry clay friedrich list productive powers infant industry protectionism multipolar 国民経済システム">
+          <div class="term-meta">
+            <span class="section-badge">5.1 Sovereign Real Economy</span>
+            <span class="category-badge">Political Economy</span>
+          </div>
+          <h3 class="term-title"><a href="NationalSystemOfEconomy.html">The National System of Political Economy: Hamilton, Clay, & List</a></h3>
+          <p class="term-desc">The developmental economic tradition countering British free-trade imperial hegemony: Alexander Hamilton, Henry Clay's American System, and Friedrich List's theory of national productive power in a multipolar world.</p>
+          <a href="NationalSystemOfEconomy.html" class="term-link-btn"><span>Read Supplement</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Appendices -->
+    <section class="chapter-section" data-chapter="Appendices">
+      <div class="chapter-header">
+        <span class="chapter-tag archive-tag">Appendices</span>
+        <h2 class="chapter-title">Mathematical Formulations & Archival Reference Editions</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="term-card" data-chapter="Appendices" data-keywords="liquidity preference mathematical model money demand md interest rate r bond price equation keynesian analytics 流動性選好 数式">
+          <div class="term-meta">
+            <span class="section-badge">Appendix A: Mathematical Formulations</span>
+            <span class="category-badge archive-badge">Quantitative Model</span>
+          </div>
+          <h3 class="term-title"><a href="RyuDouseiSenkoDel.html">Liquidity Preference Theory: Quantitative Formulation Edition</a></h3>
+          <p class="term-desc">The rigorous mathematical draft modeling Keynes's money demand function $M^d = L_1(Y) + L_2(r)$, bond yield mechanics, interest rate elasticity, and asset equilibrium curves.</p>
+          <a href="RyuDouseiSenkoDel.html" class="term-link-btn"><span>Read Mathematical Appendix</span><span>→</span></a>
+        </article>
+
+        <article class="term-card" data-chapter="Appendices" data-keywords="liquidity preference archive edition section 0 foundational guide liquidity trap complete text keynes 流動性選好 アーカイブ">
+          <div class="term-meta">
+            <span class="section-badge">Appendix B: Unabridged Archive</span>
+            <span class="category-badge archive-badge">Complete Edition</span>
+          </div>
+          <h3 class="term-title"><a href="RyuDouseiSenkoOld.html">Liquidity Preference Theory: Comprehensive Archive Edition</a></h3>
+          <p class="term-desc">The unabridged archive edition preserving foundational Section 0 introductory explanations alongside in-depth macro charts, dynamic JavaScript visualizers, and comprehensive historical references.</p>
+          <a href="RyuDouseiSenkoOld.html" class="term-link-btn"><span>Read Archive Edition</span><span>→</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Book Info Card -->
+    <div class="book-info-card">
+      <div class="book-info-header">
+        <span style="font-size: 1.5rem;">📖</span>
+        <h3 class="book-info-title">About the Companion Kindle eBook</h3>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.8; color: #334155;">
+        <strong>"History and Collapse of the Financial Oligarchy: From Imperialist Genealogy to the End of the Petrodollar and the Dawn of a Multipolar Real Economy"</strong> (by mb_Cho)<br>
+        From the Pax Britannica of the British Empire to the post-war US dollar architecture, the hyper-financialization of Wall Street, and the ongoing transition toward BRICS and a multipolar commodity/resource-backed real economy—this definitive inquiry uncovers the structural generation, cyclical mutations, and ultimate breakdown of global financial oligarchy with rigorous empirical documentation.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <p style="font-weight: 700; color: #ffffff; margin-bottom: 0.25rem;">"History and Collapse of the Financial Oligarchy" Web Supplement & Reference Portal</p>
+        <p>© 2026 mb_cho All Rights Reserved.</p>
+      </div>
+      <div>
+        <p><a href="#">↑ Back to Top</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: Real-time Search & Filter Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.term-card');
+      const sections = document.querySelectorAll('.chapter-section');
+      const noResults = document.getElementById('noResults');
+      const counter = document.getElementById('counter');
+      const totalCount = cards.length;
+
+      let currentFilter = 'all';
+      let currentQuery = '';
+
+      function updateDisplay() {
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardChapter = card.getAttribute('data-chapter');
+          const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesFilter = (currentFilter === 'all') || (cardChapter === currentFilter);
+          const matchesQuery = (!currentQuery) || 
+                               (cardKeywords.includes(currentQuery)) || 
+                               (cardText.includes(currentQuery));
+
+          if (matchesFilter && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Hide/show chapter sections if no cards within them are visible
+        sections.forEach(sec => {
+          const secCards = sec.querySelectorAll('.term-card');
+          const hasVisible = Array.from(secCards).some(c => c.style.display !== 'none');
+          sec.style.display = hasVisible ? 'block' : 'none';
+        });
+
+        // Update counter
+        if (counter) {
+          counter.textContent = `Showing ${visibleCount} of ${totalCount} supplements`;
+        }
+
+        // Zero results notification
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      }
+
+      // Search input listener
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.trim().toLowerCase();
+        updateDisplay();
+      });
+
+      // Filter button listeners
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter');
+          updateDisplay();
+        });
+      });
+
+      // Initial execution
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>
