@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：マルクス「国家死滅論」の原像と変容 ― ユートピアの展望からスターリン国家強化論、北朝鮮「生命体論」へ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      text-transform: uppercase;
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.18);
+      color: var(--accent-red);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #f8fafc 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section common */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      text-align: justify;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .phase-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1.35;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .phase-btn.active {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(6, 182, 212, 0.25));
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+    }
+
+    .phase-btn .btn-era {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .meter-label {
+      color: var(--text-secondary);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .meter-track {
+      background: #0f172a;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-diagram-container {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .svg-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .phase-desc-box {
+      background: rgba(15, 23, 42, 0.75);
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 680px;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    tr:hover td {
+      background: rgba(99, 102, 241, 0.06);
+    }
+
+    /* Logic Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Quotes */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      text-align: right;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .ref-num {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-tag {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 0.15rem;
+    }
+
+    .cite-tag:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      body { padding: 1rem; }
+      .sim-panel { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link active">⑧ 国家死滅論の原像と変容</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">マルクス主義国家論・政治思想史の根本補論</span>
+        <span class="badge badge-alert">「階級抑圧装置の消滅」から「国家権力の無限強化・神聖化」へ</span>
+      </div>
+      <h1>マルクス「国家死滅論」の原像と変容</h1>
+      <p class="subtitle">
+        階級なき共産主義社会において国家は人為的に廃止されるのではなく自ずと死滅するというマルクス・エンゲルスの原初的展望。それがなぜソ連における「国家強化論」へと棚上げされ、最終的に北朝鮮の「社会政治的生命体論（国家＝首領＝人民の絶対有機体）」へと反転・固定化されたのか。近代社会主義150年の国家論の変質を徹底解明する。
+      </p>
+      <div class="meta-row">
+        <span>📖 本書対応：第1章「ソ連型全体主義の原型（一国社会主義・階級闘争激化論）」、第3章「北朝鮮における受容と変容」</span>
+        <span>✍️ 著：mb_cho</span>
+        <span>🗓️ 原典史料・理論的批判対照版</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section>
+      <h2 class="section-title">1. 問題の所在：ユートピアの展望としての「国家の死滅」</h2>
+      <p>
+        マルクス主義の政治理論において、最も魅惑的でありながら最も悲劇的な変容を遂げた概念が<strong>「国家の死滅（英: Withering away of the state / 独: Absterben des Staates）」</strong>です。カール・マルクスとフリードリヒ・エンゲルスは、国家を普遍的な公共機関とは見なさず、<strong>「社会が相容れない階級対立に分裂した結果生じた、ある階級が他の階級を抑圧するための組織された暴力装置」</strong>と定義しました<a href="#ref-1" class="cite-tag">[1]</a>。
+      </p>
+      <p>
+        したがって、生産手段が社会全体に共有され、搾取階級（ブルジョワジー）と被搾取階級（プロレタリアート）という階級対立そのものが根絶されれば、誰かを抑圧するための特殊な強制力（常備軍、警察、官僚機構、監獄）としての国家は、もはや存在理由を失います。エンゲルスが『反デューリング論』（1878年）で喝破したように、<strong>「人間に対する政治的統治は、事物の管理および生産プロセスの指揮に取って代わられる。国家は『廃止』されるのではない。それは自ずと死滅するのである」</strong><a href="#ref-2" class="cite-tag">[2]</a>。
+      </p>
+      <p>
+        しかし、20世紀の現実の社会主義実験において現れたのは、国家の死滅とは真逆の事態でした。ソビエト連邦では、チェーカーやNKVD（内務人民委員部）、強制労働収容所（GULAG）を擁する人類史上最も巨大で暴力的な巨大国家機構（リヴァイアサン）が誕生しました。スターリンは1930年代、「国家は死滅する前に、まず最高度に強化されねばならない」という弁証法的詭弁を展開して死滅論を無期限に凍結しました。さらに北朝鮮に至っては、国家の死滅という概念そのものが完全に葬り去られ、首領を頭脳、党を神経、人民を手足とする「社会政治的生命体論」によって、国家権力と最高指導者への絶対服従が「永遠の生命」として神格化されるに至ったのです<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>。
+      </p>
+    </section>
+
+    <!-- Section 2: Interactive Simulator -->
+    <section>
+      <h2 class="section-title">2. インタラクティブ図解：国家死滅論の変容・反転シミュレーター</h2>
+      <p>
+        以下の4つの思想史的フェーズを切り替えることで、マルクス・エンゲルスの原初理論からレーニンの過渡期国家、スターリンの国家強化論、そして北朝鮮の生命体論へと至る「国家の性格」と「死滅論の運命」の変化を比較検証できます。
+      </p>
+
+      <div class="sim-panel">
+        <div class="phase-selector">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="btn-era">Phase 1：1870〜1890年代</span>
+            マルクス・エンゲルス原像<br><small>（二段階発展と自ずからの死滅）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="btn-era">Phase 2：1917〜1920年代</span>
+            レーニン『国家と革命』<br><small>（半国家の理想とプロレタリア独裁）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="btn-era">Phase 3：1930〜1950年代</span>
+            スターリン国家強化論<br><small>（資本主義包囲論と死滅の無期延期）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="btn-era">Phase 4：1970年代〜現代</span>
+            北朝鮮・社会政治的生命体<br><small>（首領制有機体と国家の絶対永遠化）</small>
+          </button>
+        </div>
+
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">① 国家暴力・軍警強制力指数</span>
+              <span class="meter-val" id="m-force">25%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-force" style="width: 25%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">② 事物の管理（純粋行政）純化度</span>
+              <span class="meter-val" id="m-admin">90%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-admin" style="width: 90%; background-color: #06b6d4;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">③ 国家・指導者の神聖化（永遠化度）</span>
+              <span class="meter-val" id="m-divine">0%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-divine" style="width: 0%; background-color: #94a3b8;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="svg-diagram-container">
+          <div class="svg-title" id="arch-title">【構造図】Phase 1：マルクス・エンゲルスの原初モデル（生産手段共有から死滅へ）</div>
+          <svg id="arch-svg" width="100%" height="220" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamically populated via JS -->
+          </svg>
+        </div>
+
+        <div class="phase-desc-box" id="sim-desc">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparative Table -->
+    <section>
+      <h2 class="section-title">3. 思想史的比較：原初マルクス主義から主体思想への国家観の変遷</h2>
+      <p>
+        「国家は悪であり、やがて消滅すべき過渡的な道具にすぎない」というマルクス主義のテーゼは、東側の現実政治の中でどのように歪曲され、最終的に正反対の「国家神聖化」へと至ったのかを整理します。
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>潮流・段階</th>
+              <th>主要論者・著作</th>
+              <th>国家の本質規定</th>
+              <th>国家死滅の条件</th>
+              <th>プロレタリア独裁の位置</th>
+              <th>軍・警察・官僚の運命</th>
+              <th>歴史的帰結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>原初マルクス主義</strong><br><small>1870–1890年代</small></td>
+              <td>マルクス『ゴータ綱領批判』<br>エンゲルス『反デューリング論』</td>
+              <td>特定の支配階級が他階級を抑圧するための暴力装置。一時的悪。</td>
+              <td>生産手段の社会化と階級の完全消滅。「能力に応じ働き、必要に応じ受け取る」共産主義の高い段階。</td>
+              <td>資本主義から共産主義への過渡期における一時的権力。</td>
+              <td>常備軍や官僚は廃止され、武装した人民と「事物の管理」組織へ解消。</td>
+              <td>パリ・コミューンをモデルとするユートピア的展望。国家は自ずと眠り込む。</td>
+            </tr>
+            <tr>
+              <td><strong>レーニン主義</strong><br><small>1917–1920年代</small></td>
+              <td>レーニン『国家と革命』<br>『プロレタリア革命と背教者カウツキー』</td>
+              <td>「いかなる法律にも拘束されない直接の暴力」。旧ブルジョワ国家機構の粉砕。</td>
+              <td>全社会が一個の事務所・一個の工場となり、労働者が自主管理した先。</td>
+              <td>強力なプロレタリア独裁。「半国家（もはや本来の意味の国家ではない）」。</td>
+              <td>内戦と干渉戦争に対抗するため、チェーカー（非常委員会）や赤軍を常設化。</td>
+              <td>「国家の廃止」を掲げつつ、内戦の緊急性から強力な中央集権官僚機構が再生。</td>
+            </tr>
+            <tr>
+              <td><strong>スターリン主義</strong><br><small>1930–1950年代</small></td>
+              <td>スターリン『一国社会主義論』<br>第18回党大会演説（1939年）</td>
+              <td>資本主義包囲から祖国防衛し、内部の敵を粉砕するための最高機関。</td>
+              <td><strong>全地球上で資本主義が完全に包囲・打倒されるまで死滅しない</strong>（無期限棚上げ）。</td>
+              <td>共産主義へ近づくほど「階級闘争が激化する」ため、独裁国家を極限まで強化。</td>
+              <td>NKVD、国境警備隊、GULAG（強制収容所）の空前の肥大化。</td>
+              <td>「死滅論」を封印し、国家死滅を主張する者を「反革命・トロツキー派」として粛清。</td>
+            </tr>
+            <tr>
+              <td><strong>北朝鮮 主体思想</strong><br><small>1970年代〜現代</small></td>
+              <td>金日成『主体思想について』<br>金正日『社会政治的生命体論』</td>
+              <td>人民大衆の自主的生命を保障する母胎であり、首領の意志を実現する絶対有機体。</td>
+              <td><strong>国家の死滅を完全否定</strong>。国家・首領と離れた個人は肉体的存在（死）にすぎない。</td>
+              <td>首領による一元化指導（代継ぎ・白頭血統）によって恒久化。</td>
+              <td>国家保衛省、社会安全省、朝鮮人民軍（先軍政治）が首領絶対防衛の私兵化。</td>
+              <td>マルクス主義の完全な彼岸。近代国家から「三代世襲スルタン主義絶対君主制」へ。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Logic Flow -->
+    <section>
+      <h2 class="section-title">4. 論理展開フロー：ユートピアから巨大怪物（リヴァイアサン）への反転メカニズム</h2>
+      <p>
+        「国家の死滅」という高潔な目標が、いかにして史上最悪の専制国家の正当化論理へと逆転していったのか。そこには理論の内部に潜んでいた4段階の罠が存在しました。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-heading">「過渡期の例外」としてのプロレタリア独裁</div>
+          <div class="flow-desc">
+            「国家を死滅させるため」という名目で、まず「ブルジョワジーの抵抗を力で粉砕する無限の国家権力」を正当化。法治や人権の制約を解除した。<a href="#ref-1" class="cite-tag">[1]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-heading">一国社会主義と「資本主義包囲」の導入</div>
+          <div class="flow-desc">
+            世界革命が挫折すると、スターリンは「外部に資本主義の脅威が存在する限り、国内で階級が消滅しても国家は死滅できない」と条件を外部へ転嫁。<a href="#ref-3" class="cite-tag">[3]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-heading">「死滅の前に極限強化」という弁証法的欺瞞</div>
+          <div class="flow-desc">
+            「国家は自らの死滅の準備のために、まずは極限まで強大化せねばならない」という詭弁を弄し、秘密警察（NKVD）や収容所群（GULAG）の肥大化を合理化。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-heading">「有機体国家論」による死滅の完全埋葬</div>
+          <div class="flow-desc">
+            北朝鮮において「社会政治的生命体論」が導入され、国家は抑圧機関ではなく「人民に永遠の政治的生命を与える首領の肉体」と定義され、永遠の神格化が完了。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Deep Dive Cards -->
+    <section>
+      <h2 class="section-title">5. 深層解説：国家死滅論を巡る6大理論的分岐点</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">
+            <span>📜</span>
+            <span>エンゲルス『反デューリング論』の真意：なぜ「廃止」ではなく「死滅」か</span>
+          </div>
+          <p>
+            エンゲルスは、国家を一挙に廃止しようとするバクーニンら無政府主義者（アナキスト）を強く批判しました。国家は特定の意志によって法的に「宣言・廃止」できるものではなく、階級対立という経済的根拠が消え去ることによって「役割を終えて自然に眠り込む（einschlafen）」ものだと説きました。
+          </p>
+          <p>
+            「社会の名において生産手段を掌握すること――これが国家として行う最初の、そして最後の独自の行為である」とエンゲルスは述べました。以後は、人間を抑圧・処刑・徴税する「政治的支配」は消滅し、工場の稼働計画やインフラ整備などの「事物の管理」という技術的行政のみが残ると予測したのです。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⚖️</span>
+            <span>マルクス『ゴータ綱領批判』：共産主義の「低い段階」と「高い段階」</span>
+          </div>
+          <p>
+            マルクスは1875年、ドイツ社会民主党の綱領草案を批判し、革命後の社会を二段階に明確に区分しました。
+          </p>
+          <p>
+            <strong>①低い段階（社会主義）</strong>：まだ資本主義の母斑を残しており、「能力に応じて働き、労働に応じて受け取る（労働証紙など）」。ここでは分配の規準を維持し、旧社会の不平等を調整するための国家（ブルジョワ的権利の枠組み）が依然として残存する。
+          </p>
+          <p>
+            <strong>②高い段階（完全な共産主義）</strong>：精神労働と肉体労働の対立が消え、生産力が極限まで発達して「能力に応じて働き、必要に応じて受け取る」ことが可能になる。ここで初めて国家は完全に不要となり、死滅する。この「二段階論」が、皮肉にもソ連において「いまは低い段階だから国家がいくら強大でも当然だ」という無限の言い訳に利用されました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🚩</span>
+            <span>レーニン『国家と革命』のユートピア的熱狂とボリシェヴィキの悲劇</span>
+          </div>
+          <p>
+            1917年夏、十月革命の直前に執筆されたレーニンの『国家と革命』は、驚くほど徹底した反国家主義・直接民主主義の書物でした。
+          </p>
+          <p>
+            レーニンはパリ・コミューン（1871年）を賛美し、職業官僚を全廃して「すべての労働者が交代で官僚の役割を果たし、したがって誰も官僚にならない状態」を構想しました。官僚の給与は労働者の平均賃金を超えてはならず、常備軍は廃止されて民衆の武装部隊へと代わると宣言しました。しかし権力を握った直後、ロシア内戦、経済崩壊、クロンシュタットの反乱に直面したレーニンは、自らが構想した原則をすべて破棄し、チェーカー、赤軍、任命制官僚による独裁制を再建することになりました。<a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🛡️</span>
+            <span>スターリン第18回党大会（1939年）演説：エンゲルスの公然たる修正</span>
+          </div>
+          <p>
+            1930年代末、ソ連国内ではクラーク（富農）が撲滅され、工業化と農業集団化が完了したため、理論的には「階級が消滅したのだから国家は死滅し始めるべきではないか」という疑問が党内や法学者（パシュカーニスなど）から上がりました。
+          </p>
+          <p>
+            これに対しスターリンは、パシュカーニスらを「反革命トロツキー派」として粛清した上で、1939年3月の第18回党大会でエンゲルスを公然と批判しました。「エンゲルスの定式は、社会主義がすべての国、または大部分の国で同時に勝利することを前提にしていた。資本主義包囲が存在する一国社会主義の条件下では、国家は死滅するどころか、軍隊・諜報機関・抑圧機関を最高度に強化しなければならない」。これにより、「世界革命が全地球上で完了するまで国家は死滅しない」という無期限延期がソ連の公式教義となりました。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🏭</span>
+            <span>「事物の管理」という幻想と「新階級（ノーメンクラトゥーラ）」の誕生</span>
+          </div>
+          <p>
+            マルクス・エンゲルスの国家死滅論における致命的な盲点は、「人間に対する支配が消え、事物の管理だけが残る」という前提でした。
+          </p>
+          <p>
+            巨大な近代産業社会において、鉄鋼生産、エネルギー配分、物資流通などの「事物を管理・配分する権限」を独占する者は、必然的に「人間を支配する絶対的な権力」を手にします。ミロヴァン・ジラスが『新しい階級』で告発したように、社会主義体制が生み出したのは国家の死滅ではなく、国家財産と特権を私物化する共産党官僚貴族（ノーメンクラトゥーラ）という、歴史上最も強欲で統制された「新たな搾取階級」の成立でした。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🧬</span>
+            <span>北朝鮮「社会政治的生命体論」：国家死滅論の完全なる彼岸</span>
+          </div>
+          <p>
+            北朝鮮の主体思想は、マルクス・レーニン主義から出発しながら、その根本にあった「国家の死滅」という理想を最も完全に解体・逆転させました。
+          </p>
+          <p>
+            1980年代半ば、金正日によって定式化された「社会政治的生命体論」によれば、人間には両親から授かる「肉体的生命」と、首領・党・大衆の統一集団に属することで得られる「社会政治的生命」が存在します。肉体的生命は有限ですが、社会政治的生命は首領の指導に忠実に服従することで永遠に生き続けます。ここでは国家とは死滅すべき階級抑圧の道具ではなく、「人民に永遠の生命を付与する神聖な有機体」であり、首領はその不可欠の「脳髄」です。国家の死滅を語ることは、自らの命の源泉を否定する最大の反逆とされたのです。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Primary Sources -->
+    <section>
+      <h2 class="section-title">6. 一次資料・歴史的言説の記録</h2>
+
+      <div class="quote-box">
+        <p>
+          「プロレタリアートが国家権力を掌握し、生産手段をまず国家所有に転化させる。だが、これによってプロレタリアートは、プロレタリアートとしての自らを廃止し、すべての階級差別と階級対立を廃止し、したがってまた国家としての国家をも廃止する。……真に社会全体の代表者として現れる最初の行為――社会の名において生産手段を掌握すること――が、同時に国家として行う最後の独自の行為である。人間に対する統治は事物の管理と生産プロセスの指揮に取って代わられる。国家は『廃止』されるのではない。それは死滅するのである。」
+        </p>
+        <div class="quote-author">― フリードリヒ・エンゲルス『反デューリング論』（1878年第3編「社会主義」）[2]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「国家が存在する限り、自由はない。自由があるところには、国家はない。……国家が完全に死滅するための経済的基礎とは、精神労働と肉体労働の対立が消滅し、したがって現代の社会的不平等の最も主要な源泉の一つが消滅するような、共産主義の高度の発展である。」
+        </p>
+        <div class="quote-author">― ウラジーミル・レーニン『国家と革命』（1917年第5章「国家死滅の経済的基礎」）[5]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「我々は国家の死滅を主張している。と同時に、我々はプロレタリア独裁の強化を支持している。プロレタリア独裁は、これまで存在したすべての国家権力の中で最も強大で、最も力強い権力である。国家の死滅を準備するために、国家権力を最高度に強化すること――これこそがマルクス主義の公式である。これは矛盾ではないか？ そう、これは『矛盾』である。だが、この矛盾は生命そのものであり、完全にマルクスの弁証法を反映している。」
+        </p>
+        <div class="quote-author">― ヨシフ・スターリン（全同盟共産党第16回党大会における中央委員会報告、1930年6月）[3]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「個々の人間にとって最も尊いのは社会政治的生命である。社会政治的生命は、首領の指導のもとに党と大衆が一体となった社会政治的生命体の一員となることによってのみ得られる。首領は生命体の最高脳髄であり、党は神経組織であり、人民大衆は手足である。首領を離れて生命体の存在は考えられず、首領の思想と指導に無条件に従うことこそが、自主的生命を永遠に保つ道である。」
+        </p>
+        <div class="quote-author">― 金正日『主体思想の教育において提起される幾つかの問題について』（1986年7月15日談話）[4]</div>
+      </div>
+    </section>
+
+    <!-- Section 7: References -->
+    <section>
+      <h2 class="section-title">7. 出典・参考文献・アーカイブ</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%AE%B6%E3%81%AE%E6%AD%BB%E6%BB%85" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：国家の死滅 / カール・マルクスとエンゲルスの国家観)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.marxists.org/japanese/marx/1878/anti-duhring/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.marxists.org (マルクス主義文庫：フリードリヒ・エンゲルス『反デューリング論』日本語訳)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E5%9B%BD%E5%AE%B6%E6%AD%BB%E6%BB%85%E8%AB%96-59918" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：国家死滅論 / スターリンによる修正と資本主義包囲論)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.asahi-net.or.jp/~fv2t-skr/shutaishiso.htm" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.asahi-net.or.jp (主体思想研究：社会政治的生命体論と首領制の有機体モデル)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.marxists.org/japanese/lenin/1917/8-staterev/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.marxists.org (マルクス主義文庫：V・I・レーニン『国家と革命』全編日本語訳)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑧ ｜ マルクス「国家死滅論」の原像と変容</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        forceText: "25%（革命直後の一時的独裁のみ）",
+        forceWidth: "25%",
+        forceColor: "#10b981",
+        adminText: "90%（『事物の管理』へ純化・解消）",
+        adminWidth: "90%",
+        adminColor: "#06b6d4",
+        divineText: "0%（国家は悪であり自ずと消滅）",
+        divineWidth: "3%",
+        divineColor: "#94a3b8",
+        archTitle: "【構造図】Phase 1：マルクス・エンゲルスの原初モデル（生産手段共有から死滅へ）",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="30" width="180" height="55" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <text x="120" y="53" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">生産手段の社会化</text>
+          <text x="120" y="72" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">階級対立の根絶</text>
+
+          <rect x="300" y="30" width="200" height="60" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2.5"/>
+          <text x="400" y="53" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">「事物の管理」への移行</text>
+          <text x="400" y="72" fill="#06b6d4" font-size="11" font-weight="bold" text-anchor="middle">人間支配から技術行政へ</text>
+
+          <rect x="590" y="30" width="220" height="60" rx="8" fill="#162032" stroke="#10b981" stroke-width="2"/>
+          <text x="700" y="53" fill="#10b981" font-size="14" font-weight="bold" text-anchor="middle">国家の死滅 (Absterben)</text>
+          <text x="700" y="72" fill="#cbd5e1" font-size="11" text-anchor="middle">常備軍・警察・官僚の消滅</text>
+
+          <rect x="300" y="140" width="200" height="55" rx="8" fill="#162032" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="400" y="163" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">無政府主義（バクーニン）批判</text>
+          <text x="400" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">「廃止」ではなく「自然死」</text>
+
+          <!-- Arrows -->
+          <line x1="210" y1="58" x2="295" y2="58" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+          <line x1="500" y1="58" x2="585" y2="58" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow-cyan)"/>
+          <line x1="400" y1="90" x2="400" y2="135" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+
+          <defs>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#10b981"/>
+            </marker>
+            <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#06b6d4"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1870〜1890年代（マルクス・エンゲルスの原初モデル）】</strong><br>マルクスとエンゲルスにとって、国家とは「階級対立が生んだ抑圧の暴力装置」であり、それ自体が悪でした。プロレタリア革命によって生産手段が共有され、階級そのものが消滅すれば、国家は役目を終えて自ずから死滅します。政治的支配（軍・警察・官僚）は消え、残るのは純粋な「事物の管理（生産と流通の調整）」のみになるとされました。<a href='#ref-1' class='cite-tag'>[1]</a><a href='#ref-2' class='cite-tag'>[2]</a>"
+      },
+      {
+        id: 1,
+        forceText: "75%（赤軍・チェーカーによる赤色テロル）",
+        forceWidth: "75%",
+        forceColor: "#f43f5e",
+        adminText: "45%（コミューン構想から中央集権管理へ）",
+        adminWidth: "45%",
+        adminColor: "#f59e0b",
+        divineText: "15%（プロレタリア独裁の絶対化開始）",
+        divineWidth: "15%",
+        divineColor: "#f59e0b",
+        archTitle: "【構造図】Phase 2：レーニン期（1917〜1920年代）― パリ・コミューンの理想と内戦の現実",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="180" height="60" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+          <text x="110" y="48" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">『国家と革命』の理想</text>
+          <text x="110" y="67" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">武装人民 / 官僚制の廃止</text>
+
+          <rect x="280" y="25" width="230" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="395" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">現実：内戦と反乱の勃発</text>
+          <text x="395" y="68" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">チェーカー・赤軍・指令経済</text>
+
+          <rect x="580" y="25" width="240" height="65" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="2"/>
+          <text x="700" y="48" fill="#f59e0b" font-size="13" font-weight="bold" text-anchor="middle">「半国家」から「強権国家」へ</text>
+          <text x="700" y="68" fill="#cbd5e1" font-size="11" text-anchor="middle">過渡期国家の固定化と中央集権化</text>
+
+          <rect x="280" y="140" width="230" height="55" rx="8" fill="#162032" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="395" y="163" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">「法に拘束されない暴力」</text>
+          <text x="395" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">プロレタリア独裁の無制限権能</text>
+
+          <!-- Arrows -->
+          <line x1="200" y1="55" x2="275" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="510" y1="55" x2="575" y2="55" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+          <line x1="395" y1="90" x2="395" y2="135" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+            <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1917〜1920年代（レーニン期・過渡期国家の固定化）】</strong><br>レーニンは『国家と革命』で「すべての労働者が交代で統治し、国家を直ちに死滅させ始める（半国家）」という理想を掲げました。しかし十月革命直後に内戦と外国干渉に直面すると、レーニン自身が創設したチェーカー（秘密警察）や赤軍が超法規的暴力を振るう常設機構となり、過渡期のはずの独裁国家が急速に自己増殖を始めました。<a href='#ref-5' class='cite-tag'>[5]</a>"
+      },
+      {
+        id: 2,
+        forceText: "100%（NKVD・大粛清・GULAGの極限暴力）",
+        forceWidth: "100%",
+        forceColor: "#f43f5e",
+        adminText: "15%（指令経済と国家テロルによる強制）",
+        adminWidth: "15%",
+        adminColor: "#f43f5e",
+        divineText: "75%（スターリンへの個人崇拝と祖国防衛）",
+        divineWidth: "75%",
+        divineColor: "#f59e0b",
+        archTitle: "【構造図】Phase 3：スターリン期（1930〜1950年代）― 資本主義包囲論と国家極限強化",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="200" height="60" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="120" y="48" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">資本主義包囲の現実</text>
+          <text x="120" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">「一国社会主義」の防衛</text>
+
+          <rect x="290" y="20" width="240" height="70" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="410" y="44" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">国家死滅論の公式凍結</text>
+          <text x="410" y="63" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「死滅の前にまず最高度に強化」</text>
+          <text x="410" y="80" fill="#94a3b8" font-size="10" text-anchor="middle">（第18回党大会演説 1939年）</text>
+
+          <rect x="600" y="20" width="220" height="70" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="710" y="44" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">巨大テロル機構の確立</text>
+          <text x="710" y="63" fill="#cbd5e1" font-size="11" text-anchor="middle">NKVD・トロイカ・GULAG</text>
+          <text x="710" y="80" fill="#f59e0b" font-size="10" text-anchor="middle">死滅を語る者を「スパイ」と断罪</text>
+
+          <rect x="290" y="140" width="240" height="55" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="410" y="163" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">階級闘争激化論の結合</text>
+          <text x="410" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">前進するほど敵は絶望し凶暴化する</text>
+
+          <!-- Arrows -->
+          <line x1="220" y1="55" x2="285" y2="55" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+          <line x1="530" y1="55" x2="595" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="410" y1="90" x2="410" y2="135" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+        `,
+        desc: "<strong>【Phase 3：1930〜1950年代（スターリン国家強化論と死滅の凍結）】</strong><br>国内で富農撲滅と工業化が達成されたにもかかわらず、スターリンは1939年の第18回党大会で「資本主義諸国に包囲されている限り、国家は死滅せず、軍隊・諜報機関・抑圧機構を最高度に強化しなければならない」と宣言。エンゲルスの死滅論を「時代遅れの教条」と決めつけ、国家死滅論を事実上無期限に棚上げしました。国家の縮小を主張する法学者たちは粛清され、国家は怪物的巨大機構へと完成されました。<a href='#ref-3' class='cite-tag'>[3]</a>"
+      },
+      {
+        id: 3,
+        forceText: "100%（保衛省・完全統制区域・三代連座制）",
+        forceWidth: "100%",
+        forceColor: "#f43f5e",
+        adminText: "0%（事物の管理ではなく首領への人格的服従）",
+        adminWidth: "3%",
+        adminColor: "#f43f5e",
+        divineText: "100%（社会政治的生命体・首領＝脳髄の神聖化）",
+        divineWidth: "100%",
+        divineColor: "#f43f5e",
+        archTitle: "【構造図】Phase 4：北朝鮮 主体思想期（1970年代〜現代）― 社会政治的生命体と国家神聖化",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="20" width="180" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="110" y="44" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">首領 (最高脳髄)</text>
+          <text x="110" y="63" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">金日成・金正日・金正恩</text>
+
+          <rect x="270" y="20" width="220" height="65" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="380" y="44" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">社会政治的生命体</text>
+          <text x="380" y="63" fill="#6366f1" font-size="11" font-weight="bold" text-anchor="middle">党（神経）＋人民大衆（手足）</text>
+          <text x="380" y="79" fill="#06b6d4" font-size="10" text-anchor="middle">国家＝生命の永遠の母胎</text>
+
+          <rect x="560" y="20" width="260" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="690" y="44" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">「国家死滅」の完全否定</text>
+          <text x="690" y="63" fill="#cbd5e1" font-size="11" text-anchor="middle">国家を離れた個人は死・裏切り</text>
+          <text x="690" y="79" fill="#f59e0b" font-size="10" text-anchor="middle">王朝的世襲・白頭血統の絶対化</text>
+
+          <rect x="270" y="135" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="380" y="158" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">物理的担保：国家保衛省</text>
+          <text x="380" y="176" fill="#cbd5e1" font-size="11" text-anchor="middle">管理所（政治犯収容所）・連座制</text>
+          <text x="380" y="192" fill="#94a3b8" font-size="10" text-anchor="middle">成文法超越の「10大原則」</text>
+
+          <!-- Arrows -->
+          <line x1="200" y1="50" x2="265" y2="50" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="490" y1="50" x2="555" y2="50" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+          <line x1="380" y1="85" x2="380" y2="130" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+
+          <defs>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366f1"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 4：1970年代〜現代（北朝鮮・社会政治的生命体と国家神聖化）】</strong><br>金正日によって定式化された「社会政治的生命体論」において、国家死滅論は完全に逆転・埋葬されました。国家・首領・党は人民に『永遠の自主的生命』を授ける不可欠の有機体とされ、国家の死滅を語ることは自らの生命の源泉を否定する大罪と化しました。マルクス主義が『一時的な暴力装置』として敵視した国家は、北朝鮮において『白頭血統の首領を脳髄とする永遠の神聖家族国家』へと結実したのです。<a href='#ref-4' class='cite-tag'>[4]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-force').textContent = p.forceText;
+      const bForce = document.getElementById('b-force');
+      bForce.style.width = p.forceWidth;
+      bForce.style.backgroundColor = p.forceColor;
+
+      document.getElementById('m-admin').textContent = p.adminText;
+      const bAdmin = document.getElementById('b-admin');
+      bAdmin.style.width = p.adminWidth;
+      bAdmin.style.backgroundColor = p.adminColor;
+
+      document.getElementById('m-divine').textContent = p.divineText;
+      const bDivine = document.getElementById('b-divine');
+      bDivine.style.width = p.divineWidth;
+      bDivine.style.backgroundColor = p.divineColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
