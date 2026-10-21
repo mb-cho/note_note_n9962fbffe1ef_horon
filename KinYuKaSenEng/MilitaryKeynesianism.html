@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Military Keynesianism — Defense Spending Stimulus and Structural Economic Contradictions</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Series Nav */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #4c0519 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(225, 29, 72, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.35);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Flow Diagrams */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .flow-step {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flow-step.step-warn { border-top-color: var(--accent); }
+    .flow-step.step-danger { border-top-color: var(--rose); }
+    .flow-step.step-emerald { border-top-color: var(--emerald); }
+
+    .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .flow-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .factor-card.card-emerald { border-left-color: var(--emerald); }
+    .factor-card.card-amber { border-left-color: var(--accent); }
+    .factor-card.card-rose { border-left-color: var(--rose); }
+
+    .factor-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .factor-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      color: #ffffff;
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #334155;
+      box-shadow: var(--shadow);
+    }
+
+    .sim-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sim-subtitle {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.5rem;
+      padding: 0.7rem 0.8rem;
+      color: #e2e8f0;
+      text-align: left;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #fbbf24;
+    }
+
+    .phase-btn.active {
+      background: #fbbf24;
+      color: #0f172a;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.72rem;
+      opacity: 0.85;
+      margin-bottom: 0.2rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.5rem;
+      padding: 0.9rem 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Guns vs Butter Slider */
+    .calc-panel {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slider-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      min-width: 180px;
+      accent-color: #f43f5e;
+      cursor: pointer;
+    }
+
+    .calc-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .calc-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligopoly and Imperialism Supplement Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link active">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Macroeconomic Policy &amp; Military-Industrial Complex Supplement</span>
+        <span class="badge badge-sub">Effective Demand via Arms Spending &amp; Economic Distortions</span>
+      </div>
+      <h1>Military Keynesianism:<br>Mechanisms of Defense-Driven Economic Stimulus and Structural Contradictions</h1>
+      <p class="lead">
+        <strong>Military Keynesianism</strong> denotes an economic policy doctrine and political-economic regime that utilizes large-scale state defense outlays and military procurement to generate effective demand, sustain full employment, and underwrite macroeconomic growth.<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        It represents the strategic application of John Maynard Keynes's macro theory (compensating for private investment deficiencies through counter-cyclical state spending) directed specifically into weapons development, standing armed forces, and geopolitical mobilization.<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Main Features & Mechanism -->
+    <section>
+      <h2>⚙️ Core Characteristics and Mechanisms</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        By transforming national security requisitions into a perpetual, guaranteed ledger of purchase orders for heavy industry and advanced electronics, Military Keynesianism absorbs domestic excess capacity and structural underinvestment.
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>① Direct Demand Generation</span>
+          </div>
+          <p class="factor-desc">
+            Procurement of weapon systems, munitions, aerospace hardware, and naval installations channels public funds directly into corporate revenue streams and payrolls.
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>② Keynesian Multiplier Effects</span>
+          </div>
+          <p class="factor-desc">
+            Vast prime contract outlays disperse downward to sub-tier suppliers, engineering workforces, and local consumer markets, boosting short-term GDP figures.
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>③ Bipartisan Political Consensus</span>
+          </div>
+          <p class="factor-desc">
+            Unlike public housing, healthcare, or civil infrastructure—which provoke ideological resistance regarding "socialism" or private competition—defense spending is justified under national security and geopolitical deterrence.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 4-Step Flow Diagram -->
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 1: Political Legitimization</span>
+          <div class="flow-title">National Security Justification</div>
+          <p class="flow-desc">
+            Conservatives and corporate lobbies who reject domestic welfare spending enthusiastically endorse multi-hundred-billion-dollar defense appropriations under the banner of external threat deterrence.
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">STEP 2: State Procurement</span>
+          <div class="flow-title">Guaranteed Oligopolistic Orders</div>
+          <p class="flow-desc">
+            Funded by deficit bonds, the Treasury awards cost-plus contracts to prime defense contractors (Lockheed Martin, Boeing, General Dynamics), insulating them from market risk.
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 3: Short-Term Multiplier</span>
+          <div class="flow-title">Employment &amp; Capacity Support</div>
+          <p class="flow-desc">
+            Assembly plants, specialized subcontractors, and military base communities experience employment growth, closing deflationary output gaps during economic downturns.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 4: Structural Entrenchment</span>
+          <div class="flow-title">The Military-Industrial Complex</div>
+          <p class="flow-desc">
+            Because munitions do not generate secondary productive capital goods, economic activity becomes addicted to continuous geopolitical tension and ever-expanding military budgets.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 Evolution of Military Keynesianism &amp; "Guns vs. Butter" Discretionary Budget Simulator</div>
+            <div class="sim-subtitle">Explore historical phases and adjust the defense budget share slider to observe economic growth trade-offs, fiscal crowding-out, and inflationary strains</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 | 1939–1945</span>
+            WWII &amp; Ending the Great Depression
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 | 1950s (Cold War &amp; Korea)</span>
+            Permanent Warfare State &amp; NSC-68
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 | 1960s–1980s</span>
+            Vietnam Inflation &amp; Reagan Arms Race
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 | 21st Century–Present</span>
+            War on Terror &amp; Defense Growth Doctrine
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Heavy Industry &amp; Defense Output Stimulus</div>
+            <div class="metric-value" id="m-stim">High (Demand via Cold War &amp; Korean War)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-stim" style="width: 85%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Crowding-Out of Social Infrastructure &amp; Health</div>
+            <div class="metric-value" id="m-crowd">Moderate–High (Defense Primacy in Budget)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-crowd" style="width: 65%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Deficit Strains, Inflation &amp; Complex Addiction</div>
+            <div class="metric-value" id="m-distort">High (Eisenhower's Farewell Warning)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-distort" style="width: 80%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 2: 1950s — NSC-68, the Korean War &amp; The Entrenchment of Military Keynesianism】</strong><br>
+          Following WWII, American policymakers feared that demobilization would plunge the nation back into the Great Depression. The adoption of <strong>NSC-68</strong> and the outbreak of the <strong>Korean War</strong> in 1950 permanently elevated US defense spending to 10–14% of GDP, institutionalizing a "permanent war economy." In his 1961 Farewell Address, President Dwight Eisenhower famously warned the republic against the acquisition of unwarranted influence by the <strong>"Military-Industrial Complex."</strong>
+        </div>
+
+        <!-- Guns vs Butter Interactive Slider -->
+        <div class="calc-panel">
+          <div style="font-weight: 700; color: #fde047; font-size: 0.95rem;">
+            ⚖️ "Guns vs. Butter" Trade-off: Defense Share of Discretionary Budget (<span id="mil-share-val">50</span>%)
+          </div>
+          <div class="slider-row">
+            <span style="font-size: 0.82rem; color: #86efac;">Civilian Welfare Priority (15%)</span>
+            <input type="range" id="mil-slider" min="15" max="75" step="5" value="50" oninput="updateBudget(this.value)">
+            <span style="font-size: 0.82rem; color: #fda4af;">Military Primacy (75%)</span>
+          </div>
+          <div class="calc-compare">
+            <div class="calc-box">
+              <div style="font-size: 0.8rem; color: #93c5fd; font-weight: 700;">🏥 Education, Healthcare &amp; Infrastructure Envelope</div>
+              <div style="font-size: 1.35rem; font-weight: 800; margin: 0.3rem 0;" id="civil-share">Remaining 50%</div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;" id="civil-note">Future productive capacity and human capital investment begin to face crowding-out pressures</div>
+            </div>
+            <div class="calc-box" style="background: rgba(225, 29, 72, 0.16); border-color: rgba(251, 113, 133, 0.4);">
+              <div style="font-size: 0.8rem; color: #fda4af; font-weight: 700;">🚀 Long-Term Structural Growth Quality &amp; Inflation Risk</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fecdd3; margin: 0.3rem 0;" id="macro-effect">Expansion of Unproductive Consumption</div>
+              <div style="font-size: 0.8rem; color: #fecdd3;" id="macro-note">Munitions do not augment consumer supply capacity, causing chronic structural deficits and price pressures</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Criticisms and Concerns -->
+    <section>
+      <h2>⚠️ Critiques and Structural Limitations (Crowding-Out &amp; Distortions)</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        While defense outlays generate short-term demand, critical macroeconomists emphasize that military-led growth induces severe systemic distortions in the real economy and international relations.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① Crowding-Out of Social Infrastructure &amp; Human Capital</span>
+          </div>
+          <p class="factor-desc">
+            Allocating immense resources to weapons systems starves <strong>public education, basic research, preventive healthcare, and green energy modernization</strong> of funding.<br>
+            <span style="font-size: 0.86rem; color: var(--crimson); display: block; margin-top: 0.5rem;">※Known in classical economics as the "Guns versus Butter" trade-off, excessive militarization systematically hollows out domestic physical infrastructure and citizen well-being.</span>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>② Absence of Sustainable Capital Accumulation</span>
+          </div>
+          <p class="factor-desc">
+            Weapons production fails to generate reproducible capital goods. Chronic deficit-funded arms procurement accelerates national debt, distorts technological talent toward weapons engineering, and locks statecraft into permanent geopolitical rivalry.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-title">🔍 The Economic Flaw: Why Arms Production Cannot Sustain Genuine Capital Accumulation</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          Capital invested in roads, ports, power grids, advanced machine tools, and education functions in subsequent production cycles as <strong>reproducible capital</strong> that lowers overall logistical costs and elevates worker productivity. In contrast, guided missiles, artillery shells, and stealth bombers are economically inert: they either detonate and vanish, or sit in depots until obsolete. They inject purchasing power (wages and profits) into the economy without adding a single unit of supply to the consumer market, creating a persistent structural bias toward <strong>stagflation and civilian industrial hollow-out</strong>.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparison Table (Civilian Keynesianism vs Military Keynesianism) -->
+    <section>
+      <h2>📊 Comparative Synthesis: "Civilian Keynesianism" vs. "Military Keynesianism"</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        While both frameworks deploy state deficit financing to stimulate effective demand, their economic multiplier effects and institutional consequences diverge fundamentally.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">Analytical Dimension</th>
+              <th style="width: 39%;">Civilian Keynesianism (Public Works &amp; Social Welfare)</th>
+              <th style="width: 39%;">Military Keynesianism (Weapons Procurement &amp; Bases)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Expenditure Targets</strong></td>
+              <td>Transportation networks, water/power utilities, schools, public healthcare, green energy, basic science.</td>
+              <td>Fighter jets, warships, missiles, munitions, military base construction, defense aerospace R&amp;D.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Long-Term Productivity &amp; Capital Accumulation</strong></td>
+              <td><strong>High</strong>. Directly reduces logistical transaction costs and expands human capital, raising long-term potential GDP.</td>
+              <td><strong>Low (Unproductive Consumption)</strong>. Aside from occasional dual-use spin-offs (Internet, GPS), hardware does not contribute to reproduction.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Job Creation per Dollar of Outlay</strong></td>
+              <td><strong>Substantial</strong>. Public services and civil infrastructure are labor-intensive, creating broad middle-class and regional employment.</td>
+              <td><strong>Relatively Modest</strong>. Modern weapons systems are capital- and specialized-technology-intensive, concentrating funds in a few contractors.<a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Ease of Securing Political Consensus</strong></td>
+              <td>Vulnerable to conservative opposition alleging "excessive government interference" and competition with private enterprise.</td>
+              <td>Easily passed under the bipartisan umbrella of "national defense and deterrence," offering guaranteed profits without competing in consumer markets.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Geopolitical Consequences</strong></td>
+              <td>Prioritizes sustainable domestic living standards, consumer stability, and peaceful international commercial relations.</td>
+              <td>Instigates security dilemmas and arms races, creating an economic imperative for perpetual international tension.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 References &amp; Academic Literature</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        Key references, historical lectures, and macroeconomic analyses on Military Keynesianism:
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.youtube.com/watch?v=RLwfCAy_hkg&t=429" target="_blank" rel="noopener noreferrer" class="ref-link">Lecture Series: Military Keynesianism and the Post-War Economic Order</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E8%BB%8D%E4%BA%8B%E3%82%B1%E3%82%A4%E3%83%B3%E3%82%BA%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: Military Keynesianism (Theoretical Foundations)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.asahi.com/articles/ASV5D312VV5DUTFK004M.html" target="_blank" rel="noopener noreferrer" class="ref-link">Asahi Shimbun: Defense Budget Expansion and Critical Debates on Military Keynesianism</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://toyokeizai.net/articles/-/870404?display=b" target="_blank" rel="noopener noreferrer" class="ref-link">Toyo Keizai: Economic Consequences, Multipliers, and Distortions of Expanding Defense Outlays</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Financial Oligopoly and Imperialism Supplement Series ⑬ | Military Keynesianism: Mechanisms of Defense Stimulus &amp; Critical Macroeconomic Analysis</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        stimText: "Maximum (Total War Mobilization Cut Unemployment to ~1%)",
+        stimWidth: "100%",
+        stimColor: "#10b981",
+        crowdText: "Wartime Command Economy (Consumer Rationing)",
+        crowdWidth: "85%",
+        crowdColor: "#f59e0b",
+        distortText: "Surge in Sovereign War Debt",
+        distortWidth: "60%",
+        distortColor: "#f59e0b",
+        desc: "<strong>【Phase 1: 1939–1945 — WWII &amp; Overcoming the Great Depression】</strong><br>Where New Deal civilian public works failed to fully eliminate structural unemployment, WWII mobilization completely absorbed idle labor and plant capacity. This historic mobilization established the core premise of Military Keynesianism: massive state military spending could instantly eradicate economic stagnation."
+      },
+      {
+        stimText: "High (Demand via Cold War &amp; Korean War)",
+        stimWidth: "85%",
+        stimColor: "#38bdf8",
+        crowdText: "Moderate–High (Defense Primacy in Budget)",
+        crowdWidth: "65%",
+        crowdColor: "#f59e0b",
+        distortText: "High (Eisenhower's Farewell Warning)",
+        distortWidth: "80%",
+        distortColor: "#f43f5e",
+        desc: "<strong>【Phase 2: 1950s — NSC-68, the Korean War &amp; The Entrenchment of Military Keynesianism】</strong><br>Following WWII, American policymakers feared that demobilization would plunge the nation back into the Great Depression. The adoption of <strong>NSC-68</strong> and the outbreak of the <strong>Korean War</strong> in 1950 permanently elevated US defense spending to 10–14% of GDP, institutionalizing a 'permanent war economy.' In his 1961 Farewell Address, President Dwight Eisenhower famously warned the republic against the acquisition of unwarranted influence by the <strong>'Military-Industrial Complex.'</strong>"
+      },
+      {
+        stimText: "Moderate (Heavy Industry Squeeze &amp; High-Tech Defense Bias)",
+        stimWidth: "55%",
+        stimColor: "#f59e0b",
+        crowdText: "High (Social Welfare Cuts vs. Arms Spending)",
+        crowdWidth: "85%",
+        crowdColor: "#f43f5e",
+        distortText: "Extreme (Stagflation, Twin Deficits, Dollar Crisis)",
+        distortWidth: "95%",
+        distortColor: "#e11d48",
+        desc: "<strong>【Phase 3: 1960s–1980s — Vietnam War Inflation, Dollar Shock &amp; Reagan Arms Race】</strong><br>Unfinanced military spending during the Vietnam War unleashed runaway inflation and gold drainage, precipitating the 1971 Nixon Shock. In the 1980s, the Reagan administration slashed civilian social programs while launching massive defense programs (such as the Strategic Defense Initiative), spurring short-term expansion at the expense of chronic 'twin deficits' (fiscal and current account deficits)."
+      },
+      {
+        stimText: "Restricted (Capital-Intensive Arms Limit Broad Job Multipliers)",
+        stimWidth: "45%",
+        stimColor: "#f59e0b",
+        crowdText: "Maximum (Extreme Squeeze on Healthcare, Education &amp; Climate)",
+        crowdWidth: "95%",
+        crowdColor: "#e11d48",
+        distortText: "Extreme (Addiction to Perpetual Conflict &amp; Debt)",
+        distortWidth: "100%",
+        distortColor: "#e11d48",
+        desc: "<strong>【Phase 4: 21st Century–Present — War on Terror &amp; Defense Growth Doctrine】</strong><br>Following post-9/11 operations in Iraq and Afghanistan and recent geopolitical tensions in Eastern Europe and the Middle East, calls have re-emerged across Western nations to treat defense procurement as an 'economic growth engine.' However, modern econometric studies confirm that runaway military budgets crowd out vital healthcare, education, and civilian infrastructure investments without expanding domestic productive capacity."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-stim').textContent = p.stimText;
+      const bStim = document.getElementById('b-stim');
+      bStim.style.width = p.stimWidth;
+      bStim.style.backgroundColor = p.stimColor;
+
+      document.getElementById('m-crowd').textContent = p.crowdText;
+      const bCrowd = document.getElementById('b-crowd');
+      bCrowd.style.width = p.crowdWidth;
+      bCrowd.style.backgroundColor = p.crowdColor;
+
+      document.getElementById('m-distort').textContent = p.distortText;
+      const bDistort = document.getElementById('b-distort');
+      bDistort.style.width = p.distortWidth;
+      bDistort.style.backgroundColor = p.distortColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    function updateBudget(val) {
+      const mil = parseInt(val, 10);
+      const civil = 100 - mil;
+      document.getElementById('mil-share-val').textContent = mil;
+      document.getElementById('civil-share').textContent = "Remaining " + civil + "%";
+
+      const civilNote = document.getElementById('civil-note');
+      const macroEffect = document.getElementById('macro-effect');
+      const macroNote = document.getElementById('macro-note');
+
+      if (mil <= 25) {
+        civilNote.textContent = "Adequate funding is channeled into education, public healthcare, green energy, and basic infrastructure, enhancing long-term societal productivity.";
+        macroEffect.textContent = "Sustainable & Peaceful Economic Base";
+        macroNote.textContent = "Labor-intensive civilian investments generate widespread middle-class employment while curbing inflationary pressures.";
+      } else if (mil <= 50) {
+        civilNote.textContent = "Future-oriented investments in human capital and social infrastructure begin to face tangible crowding-out pressures.";
+        macroEffect.textContent = "Expansion of Unproductive Consumption";
+        macroNote.textContent = "Munitions do not augment consumer supply capacity, causing chronic structural deficits and price pressures.";
+      } else {
+        civilNote.textContent = "Critical social welfare, public education, and municipal infrastructure budgets suffer severe austerity, causing societal decay.";
+        macroEffect.textContent = "Militarized Addiction & Stagflation Risk";
+        macroNote.textContent = "The domestic economy becomes dependent on perpetual geopolitical crisis, triggering currency depreciation and unpayable sovereign debt.";
+      }
+    }
+  </script>
+</body>
+</html>

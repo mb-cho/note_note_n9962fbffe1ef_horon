@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Financial Parasitism — Rent Extraction and Profiting Without Producing</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #4c0519 55%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(244, 63, 94, 0.35);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #f1f5f9;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .context-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .context-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .context-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .context-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .context-desc ul {
+      padding-left: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .context-tag {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--crimson);
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 1px solid #fecdd3;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: var(--crimson);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #4c0519;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-top: 0.5rem;
+    }
+
+    /* Interactive Extraction Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #fecdd3;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .slider-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .slider-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .slider-badge {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--rose);
+      background: #fff1f2;
+      padding: 0.2rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecdd3;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Stacked Allocation Bar */
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .stacked-bar {
+      width: 100%;
+      height: 38px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      display: flex;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .bar-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: width 0.25s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .sim-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-stat {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.9rem;
+      text-align: center;
+    }
+
+    .sim-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .sim-stat-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .sim-diagnosis {
+      background: #ffffff;
+      border-left: 4px solid var(--rose);
+      padding: 1rem 1.25rem;
+      border-radius: 0.35rem;
+      font-size: 0.94rem;
+    }
+
+    /* Lineage Cards */
+    .lineage-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.2rem;
+    }
+
+    .lineage-thinker {
+      font-weight: 800;
+      font-size: 1.02rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .lineage-work {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .lineage-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplementary Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics & Monetary Theory Notes)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link active">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement / Notes on Critical Political Economy &amp; Financialization</span>
+        <span class="badge badge-sub">Profiting Without Producing &amp; Rentier Extraction</span>
+      </div>
+      <h1>Financial Parasitism</h1>
+      <p class="lead">
+        <strong>Financial parasitism</strong> is a critical socioeconomic concept denoting the structural mechanisms and dynamics whereby the financial sector and intermediary apparatus siphon off and extract wealth, surplus value, and unearned income from the real economy and productive labor without contributing to genuine value creation.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 1. Primary Contexts and Perspectives -->
+    <section id="contexts">
+      <h2>🔍 1. Primary Contexts and Perspectives (Three Dimensions)</h2>
+
+      <div class="grid-3">
+        <!-- Dimension 1: Labor vs Finance -->
+        <div class="context-card" style="border-top-color: var(--rose);">
+          <div>
+            <div class="context-title">
+              <span>🩸 ① Labor vs. Finance (Profiting Without Producing)</span>
+            </div>
+            <div class="context-desc">
+              <ul>
+                <li>Mechanisms yielding shareholder payouts, excessive fees, interest, and speculative trading gains without generating physical goods or real services are likened to a <strong>parasite</strong> draining vital nutrients from its host.</li>
+                <li>Explored in classical theories of imperialism (e.g., Lenin's thesis on the "decay and parasitism of capitalism") and modern critiques of "financialized capitalism," wherein the financial sector absorbs a disproportionate share of societal surplus.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="context-tag">Keyword: Profiting Without Producing</div>
+        </div>
+
+        <!-- Dimension 2: Intermediaries -->
+        <div class="context-card" style="border-top-color: var(--accent);">
+          <div>
+            <div class="context-title">
+              <span>🦅 ② Market Intermediaries &amp; Rentier Choke Points</span>
+            </div>
+            <div class="context-desc">
+              <ul>
+                <li>Within corporate governance, financial advisors, underwriters, consultants, and aggressive activist funds that demand exorbitant fees and short-term capital extractions without enhancing real productivity are termed "parasites of the capital markets."</li>
+                <li>Concrete examples include predatory advisory and IR retainer schemes, debt-financed share buybacks, and asset stripping that hollow out long-term operational viability.<a href="#ref-4" class="cite-badge">[4]</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="context-tag" style="color: var(--accent-dark);">Keyword: Rent-Seeking &amp; Intermediation</div>
+        </div>
+
+        <!-- Dimension 3: Wealth Culture Warnings -->
+        <div class="context-card" style="border-top-color: var(--primary);">
+          <div>
+            <div class="context-title">
+              <span>⚠️ ③ Critiques of Financialized Wealth Culture</span>
+            </div>
+            <div class="context-desc">
+              <ul>
+                <li>Serves as an ethical and institutional warning against social structures that glorify extracting unearned surplus from others' labor rather than cultivating productive craftsmanship, technology, and real wealth.</li>
+                <li>Inversely exposes how the general public is lured into retail financialization schemes, only to have household wealth steadily eroded by high asset-management fees and compounding interest burdens.<a href="#ref-2" class="cite-badge">[2]</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="context-tag" style="color: var(--primary);">Keyword: Structural Wealth Siphoning</div>
+        </div>
+      </div>
+
+      <!-- Core Quote Box -->
+      <div class="quote-box">
+        <div class="quote-title">CRITICAL PERSPECTIVE ON FINANCIALIZATION</div>
+        <div class="quote-text">
+          "Finance was originally intended to serve as the circulatory system pumping lifeblood (credit) through the bodily organs of the real economy. In late-stage financialization, however, the circulatory system metastasizes into an autonomous parasite—cannibalizing the very industrial host and workforce that sustain it."
+        </div>
+        <div class="quote-author">― Contemporary Theories of Financialization (Perspectives of Michael Hudson &amp; Costas Lapavitsas)</div>
+      </div>
+    </section>
+
+    <!-- 2. Interactive Simulator -->
+    <section id="simulator">
+      <h2>📊 2. Dynamic Simulator: Value-Added Allocation and Host Deterioration</h2>
+      <p style="margin-bottom: 1rem;">
+        Simulate how 100 units of newly created value-added generated by enterprise labor and production are partitioned among: <strong>① Labor Wages</strong>, <strong>② Capital Investment &amp; R&amp;D</strong>, and <strong>③ Financial Rentier Extraction (dividends, share buybacks, interest, and financial fees)</strong>.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>🩸 Financial Extraction Rate (Parasitism Level)</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Slide right to simulate escalating financialization</span>
+        </div>
+
+        <div class="slider-panel">
+          <div class="slider-top">
+            <span style="font-weight: 700;">Extraction by Financial Sector &amp; Shareholders:</span>
+            <span class="slider-badge" id="extractVal">15 %</span>
+          </div>
+          <input type="range" id="extractSlider" min="5" max="75" step="5" value="15">
+        </div>
+
+        <div class="bar-label-row">
+          <span style="color: var(--emerald);">👷 Labor Compensation / Wages</span>
+          <span style="color: var(--primary);">🏭 Capital Investment &amp; R&amp;D</span>
+          <span style="color: var(--rose);">🩸 Financial Rent (Dividends, Buybacks, Interest)</span>
+        </div>
+
+        <div class="stacked-bar">
+          <div class="bar-seg" id="barWage" style="background: var(--emerald); width: 55%;">55%</div>
+          <div class="bar-seg" id="barInvest" style="background: var(--primary-light); width: 30%;">30%</div>
+          <div class="bar-seg" id="barFinance" style="background: var(--rose); width: 15%;">15%</div>
+        </div>
+
+        <div class="sim-cards">
+          <div class="sim-stat">
+            <div class="sim-stat-label">Real Wage &amp; Middle Class Condition</div>
+            <div class="sim-stat-val" id="statWage" style="color: var(--emerald);">Steady Growth</div>
+          </div>
+          <div class="sim-stat">
+            <div class="sim-stat-label">Technological Innovation &amp; Capital Goods</div>
+            <div class="sim-stat-val" id="statTech" style="color: var(--primary);">Vibrant Renewal</div>
+          </div>
+          <div class="sim-stat">
+            <div class="sim-stat-label">Host (Real Economy) Vitality</div>
+            <div class="sim-stat-val" id="statHost" style="color: var(--emerald);">Robust (Symbiosis)</div>
+          </div>
+        </div>
+
+        <div class="sim-diagnosis" id="simDiagnosis">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Theoretical Lineage in Economic Thought -->
+    <section id="theoretical-lineage">
+      <h2>🏛️ 3. Theoretical Lineage of "Financial Parasitism" in Economic Thought</h2>
+      <p style="margin-bottom: 1.25rem;">
+        The insight that financial capital can detach from and parasitize physical production is not confined to a single ideology. Classical political economists, Marxian theorists, Keynesian economists, and modern Post-Keynesians have all independently analyzed this structural vulnerability.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="lineage-card" style="border-left-color: #1d4ed8;">
+          <div class="lineage-thinker">Karl Marx</div>
+          <div class="lineage-work">Capital, Volume III (1894): Interest-Bearing Capital and Fictitious Capital</div>
+          <div class="lineage-text">
+            Genuine industrial capital traverses the physical circuit of labor and production: Money (M) &rarr; Commodities/Production (C) &rarr; Surplus Money (M'). In contrast, interest-bearing and fictitious capital (stocks, bonds, speculative claims) bypass production entirely, manifesting the most fetishized and parasitic circuit: Money directly generating more Money ($M - M'$).
+          </div>
+        </div>
+
+        <div class="lineage-card" style="border-left-color: #b91c1c;">
+          <div class="lineage-thinker">Vladimir Lenin</div>
+          <div class="lineage-work">Imperialism, the Highest Stage of Capitalism (1917)</div>
+          <div class="lineage-text">
+            Defined monopoly-stage capitalism as inherently decaying and parasitic. Theorized the detachment of finance from real production, the ballooning of a pure rentier class living off "coupon clipping," and the imperialist export of capital that turns entire nations into parasitic "rentier states" sustained by exploiting debtor nations.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <div class="lineage-card" style="border-left-color: #047857;">
+          <div class="lineage-thinker">John Maynard Keynes</div>
+          <div class="lineage-work">The General Theory of Employment, Interest and Money (1936)</div>
+          <div class="lineage-text">
+            Critiqued unearned wealth holders who exploit artificial capital scarcity rents without performing any productive function, terming them the "functionless investor." Famously advocated the "euthanasia of the rentier" via managed low interest rates and state-guided investment to guarantee full employment in the real economy.
+          </div>
+        </div>
+
+        <div class="lineage-card" style="border-left-color: #7c3aed;">
+          <div class="lineage-thinker">Michael Hudson / Costas Lapavitsas</div>
+          <div class="lineage-work">Financialized Capitalism &amp; The Host-Killing Parasite (21st Century)</div>
+          <div class="lineage-text">
+            Analyzed contemporary neoliberal financialization, documenting how the FIRE sector (Finance, Insurance, Real Estate) extracts unearned economic rent ("profiting without producing"). Demonstrated corporate cannibalism via debt-funded buybacks and the direct financial extraction levied against households via mortgages, medical debt, and student loans.<a href="#ref-1" class="cite-badge">[1]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="table-responsive" style="margin-top: 1.75rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">Comparison Dimension</th>
+              <th style="width: 39%;">Symbiotic Finance (Servant of the Real Economy)</th>
+              <th style="width: 39%;">Parasitic Finance (Financial Oligopoly &amp; Rent Extraction)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Core Objective</strong></td>
+              <td>Supports new combinations (innovation), capacity building, and physical plant formation.</td>
+              <td>Bypasses real production to maximize interest, capital gains, buybacks, and trading spreads.</td>
+            </tr>
+            <tr>
+              <td><strong>Monetary Circulation</strong></td>
+              <td>Industrial Circulation: Channeled through employment, real output, payroll, and capex.</td>
+              <td><strong>Financial Circulation</strong>: Trapped in secondary asset turnover, share buybacks, and synthetic leverage games.</td>
+            </tr>
+            <tr>
+              <td><strong>Demands on Corporations</strong></td>
+              <td>Long-term technological horizon, employment stability, engineering quality, and competitive resilience.</td>
+              <td>Short-term shareholder value: Slashing wages and capital budgets to fund dividends and repurchases.</td>
+            </tr>
+            <tr>
+              <td><strong>Ultimate Systemic Outcome</strong></td>
+              <td>Real economic growth generates authentic cash flows that comfortably retire debt burdens.</td>
+              <td>The host (industry and wage-earners) withers under unpayable debt; systemic crash ensues.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section id="references">
+      <h2>📚 References &amp; Academic Literature</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://www.jsri.or.jp/publish/research/pdf/106/106_11.pdf" target="_blank" rel="noopener noreferrer">
+            Japan Securities Research Institute, <em>Securities Economic Studies</em>, No. 106 (Theoretical considerations on financialized capitalism and corporate financial parasitism).
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://note.com/shinshinohara/n/n7b20778391c4" target="_blank" rel="noopener noreferrer">
+            Shin Shinohara, <em>Essays on Labor and Finance</em> (Analysis of productive labor vs. structural skimming of societal surplus).
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://api.lib.kyushu-u.ac.jp/opac_download_md/2999989/025_p047.pdf" target="_blank" rel="noopener noreferrer">
+            Kyushu University Academic Repository (Decay and parasitism of capital in Lenin's theory of imperialism and modern finance).
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://diamond.jp/articles/-/309035" target="_blank" rel="noopener noreferrer">
+            Diamond Online (Activist fund critiques of "capital market parasites" and intermediary fee extraction).
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; History and Collapse of the Financial Oligarchy Supplement Series | Financial Parasitism Structure Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Extraction Simulator Script -->
+  <script>
+    const slider = document.getElementById('extractSlider');
+    const extractVal = document.getElementById('extractVal');
+    const barWage = document.getElementById('barWage');
+    const barInvest = document.getElementById('barInvest');
+    const barFinance = document.getElementById('barFinance');
+    const statWage = document.getElementById('statWage');
+    const statTech = document.getElementById('statTech');
+    const statHost = document.getElementById('statHost');
+    const simDiagnosis = document.getElementById('simDiagnosis');
+
+    function updateSim() {
+      const fin = parseInt(slider.value, 10);
+      const remain = 100 - fin;
+      // Split remaining between wage (~64% of remain) and investment (~36% of remain)
+      const wage = Math.round(remain * 0.64);
+      const invest = 100 - fin - wage;
+
+      extractVal.innerText = fin + ' %';
+
+      barWage.style.width = wage + '%';
+      barWage.innerText = wage >= 12 ? `Wages ${wage}%` : `${wage}%`;
+
+      barInvest.style.width = invest + '%';
+      barInvest.innerText = invest >= 12 ? `Capex/R&D ${invest}%` : `${invest}%`;
+
+      barFinance.style.width = fin + '%';
+      barFinance.innerText = fin >= 12 ? `Extraction ${fin}%` : `${fin}%`;
+
+      if (fin <= 20) {
+        statWage.innerText = 'Steady Wage Growth';
+        statWage.style.color = '#059669';
+        statTech.innerText = 'Vibrant Capital Deepening';
+        statTech.style.color = '#1e3a8a';
+        statHost.innerText = 'Robust (Symbiosis)';
+        statHost.style.color = '#059669';
+        simDiagnosis.style.borderLeftColor = '#059669';
+        simDiagnosis.innerHTML = `
+          <strong style="color: #065f46;">【✅ Symbiotic Phase: Productive Industrial Capitalism】</strong><br>
+          Allocation to the financial sector is constrained to ${fin}%. The vast majority of generated value-added is returned to <strong>workers' wages (${wage}%)</strong> and <strong>future-oriented capex &amp; R&amp;D (${invest}%)</strong>. Finance acts faithfully as a lubricant for the real economy, driving a virtuous expansion in productive capacity and aggregate purchasing power.
+        `;
+      } else if (fin <= 45) {
+        statWage.innerText = 'Real Wage Stagnation';
+        statWage.style.color = '#d97706';
+        statTech.innerText = 'Underinvestment & Aging Assets';
+        statTech.style.color = '#d97706';
+        statHost.innerText = 'Weakened (Deepening Financialization)';
+        statHost.style.color = '#d97706';
+        simDiagnosis.style.borderLeftColor = '#d97706';
+        simDiagnosis.innerHTML = `
+          <strong style="color: #b45309;">【⚠️ Parasitic Incursion Phase: Shareholder Value Primacy &amp; "Profiting Without Producing"】</strong><br>
+          Through dividends, buybacks, interest, and fees, <strong>${fin}% of gross value-added is drained into the financial sector</strong>. As a direct consequence, labor's real wage share (${wage}%) stagnates and productive reinvestment (${invest}%) is curtailed. Households are forced into debt dependency to sustain living standards.
+        `;
+      } else {
+        statWage.innerText = 'Distress & Debt Peonage';
+        statWage.style.color = '#e11d48';
+        statTech.innerText = 'Hollowed-Out Capital Stock';
+        statTech.style.color = '#e11d48';
+        statHost.innerText = 'Critical (Host Systemic Failure)';
+        statHost.style.color = '#e11d48';
+        simDiagnosis.style.borderLeftColor = '#e11d48';
+        simDiagnosis.innerHTML = `
+          <strong style="color: #be123c;">【🚨 Terminal Parasitic Phase: Corporate Cannibalism &amp; Real Economy Necrosis】</strong><br>
+          An extreme crisis state where <strong>${fin}% of societal wealth is seized by financial oligopolies and rentiers</strong>. Enterprises borrow heavily to finance payouts while abandoning capital replacement (a meager ${invest}%). The real foundation decays, domestic demand evaporates (${wage}% labor share), and the parasitic structure triggers cascading default.
+        `;
+      }
+    }
+
+    slider.addEventListener('input', updateSim);
+    updateSim();
+  </script>
+</body>
+</html>

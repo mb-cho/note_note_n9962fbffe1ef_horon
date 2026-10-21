@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Liquidity Preference Theory and the Liquidity Trap (Illustrated & Comprehensive Guide - Archive Edition)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(16, 185, 129, 0.3);
+      color: #a7f3d0;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Symbol Tag Styling */
+    .sym-tag {
+      display: inline-block;
+      font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+      font-weight: 700;
+      background: #eff6ff;
+      color: var(--primary-dark);
+      border: 1px solid #bfdbfe;
+      padding: 0.05rem 0.45rem;
+      border-radius: 0.35rem;
+      font-size: 0.95em;
+      margin: 0 0.15rem;
+    }
+
+    .sym-tag.rose {
+      background: #fff1f2;
+      color: #9f1239;
+      border-color: #fecdd3;
+    }
+
+    .sym-tag.emerald {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+    }
+
+    .sym-tag.amber {
+      background: #fffbeb;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    /* Visual Fraction Component */
+    .formula-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin: 1.25rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    .formula-banner-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fde68a;
+      margin-bottom: 0.9rem;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .formula-equation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.75rem;
+      padding: 1.1rem 1.5rem;
+    }
+
+    .math-lhs {
+      color: #93c5fd;
+      font-size: 1.25rem;
+    }
+
+    .math-approx {
+      color: #fde68a;
+      font-size: 1.4rem;
+    }
+
+    .math-frac {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .math-num {
+      padding: 0.2rem 0.85rem;
+      border-bottom: 2px solid #ffffff;
+      color: #6ee7b7;
+      font-size: 1.1rem;
+    }
+
+    .math-den {
+      padding: 0.2rem 0.85rem;
+      color: #fda4af;
+      font-size: 1.1rem;
+    }
+
+    .formula-note {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      text-align: center;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* Beginner Glossary Cards */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.15rem;
+      margin-top: 1rem;
+    }
+
+    .glossary-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.8rem;
+      padding: 1.3rem;
+    }
+
+    .glossary-card.y-card {
+      border-top-color: var(--emerald);
+    }
+
+    .glossary-card.r-card {
+      border-top-color: var(--rose);
+    }
+
+    .glossary-head {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .symbol-circle {
+      min-width: 3rem;
+      height: 3rem;
+      padding: 0 0.5rem;
+      border-radius: 0.65rem;
+      background: var(--primary-dark);
+      color: #ffffff;
+      font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .glossary-card.y-card .symbol-circle {
+      background: var(--emerald);
+    }
+
+    .glossary-card.r-card .symbol-circle {
+      background: var(--rose);
+    }
+
+    .glossary-title-group h3 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .glossary-title-group span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .glossary-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .glossary-body strong {
+      color: var(--text-main);
+    }
+
+    /* Concrete Bond Example Grid */
+    .bond-example-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 0.85rem;
+      padding: 1.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .bond-example-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #92400e;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bond-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .bond-case-card {
+      background: #ffffff;
+      border: 1px solid #fcd34d;
+      border-radius: 0.7rem;
+      padding: 1.1rem;
+      text-align: center;
+    }
+
+    .bond-case-card.danger {
+      background: #fff1f2;
+      border-color: #fda4af;
+    }
+
+    .bond-case-step {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      background: #fef3c7;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 0.45rem;
+    }
+
+    .bond-case-card.danger .bond-case-step {
+      background: #ffe4e6;
+      color: #9f1239;
+    }
+
+    .bond-case-calc {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0.45rem 0;
+      background: #f8fafc;
+      padding: 0.45rem;
+      border-radius: 0.4rem;
+    }
+
+    .bond-case-result {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .bond-case-card.danger .bond-case-result {
+      color: var(--rose);
+    }
+
+    .bond-case-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .concept-desc ul {
+      padding-left: 1.2rem;
+    }
+
+    .concept-desc li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Motive Cards */
+    .motive-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .motive-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .motive-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .motive-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .motive-formula {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-top: 0.25rem;
+    }
+
+    .motive-body {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .motive-factor {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #c7d2fe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .slider-container {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .slider-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .slider-val-badge {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--rose);
+      background: #fff1f2;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecdd3;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .sim-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.95rem;
+      text-align: center;
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .metric-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Visual Curve Canvas */
+    .curve-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.25rem;
+    }
+
+    .sim-explanation-box {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #ffffff;
+      border-left: 4px solid var(--rose);
+      border-radius: 0.35rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Trap Alert Box */
+    .trap-box {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-left: 4px solid var(--rose);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .trap-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #9f1239;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trap-desc {
+      font-size: 0.95rem;
+      color: #881337;
+      line-height: 1.7;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .bond-cases-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 1.55rem; }
+      .lead { font-size: 0.98rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplementary Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics & Keynesian Monetary Theory | Comprehensive Guide - Archive)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link active">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement / Monetary Theory & Financial Economics Notes</span>
+        <span class="badge badge-sub">✨ Demystifying Symbols & Formulas from First Principles (Archive Edition)</span>
+      </div>
+      <h1>Liquidity Preference Theory and the Liquidity Trap</h1>
+      <p class="lead">
+        Formulated by <a href="https://en.wikipedia.org/wiki/John_Maynard_Keynes" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: underline;">John Maynard Keynes</a> in his 1936 masterpiece <em>The General Theory of Employment, Interest and Money</em>, <strong>Liquidity Preference Theory</strong> is a revolutionary macroeconomic framework asserting that market interest rates are not determined by the classical balance between savings and investment, but rather by <strong>the public's desire to hold liquid cash (the supply and demand for money balances)</strong>.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+      </p>
+    </header>
+
+    <!-- 0. Core Economic Symbols & Bond Formula -->
+    <section id="easy-glossary">
+      <h2>📖 0. First Principles: Economic Symbols and the "Bond Price Formula" Explained</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+        In macroeconomic textbooks, symbols such as <span class="sym-tag">M<sup>d</sup></span>, <span class="sym-tag emerald">Y</span>, and <span class="sym-tag rose">r</span>, alongside bond pricing formulas, appear frequently. These are not daunting higher mathematics, but intuitive <strong>English abbreviations</strong>. Grasping their direct economic meaning makes the entire mechanics remarkably intuitive.
+      </p>
+
+      <div class="glossary-grid">
+        <!-- Md -->
+        <div class="glossary-card">
+          <div class="glossary-head">
+            <div class="symbol-circle">M<sup>d</sup></div>
+            <div class="glossary-title-group">
+              <h3>Money Demand</h3>
+              <span>Demand for Liquid Cash Balances</span>
+            </div>
+          </div>
+          <div class="glossary-body">
+            <strong>M</strong> stands for <strong>Money</strong> (currency and commercial bank demand deposits), while the superscript <strong>d</strong> denotes <strong>demand</strong>.<br>
+            Hence, <span class="sym-tag">M<sup>d</sup></span> represents <strong>"the total volume of purchasing power that households and firms desire to hold in the form of immediately spendable cash or checking balances, rather than locking it up in bonds or equities."</strong>
+          </div>
+        </div>
+
+        <!-- Y -->
+        <div class="glossary-card y-card">
+          <div class="glossary-head">
+            <div class="symbol-circle">Y</div>
+            <div class="glossary-title-group">
+              <h3>National Income / Aggregate Output</h3>
+              <span>Gross National Yield / Aggregate GDP</span>
+            </div>
+          </div>
+          <div class="glossary-body">
+            In macroeconomics, <strong>"the aggregate income of the nation (total wages, corporate earnings, and real production—GDP)"</strong> is denoted by the symbol <span class="sym-tag emerald">Y</span> (since "I" is reserved for "Investment", convention uses <span class="sym-tag emerald">Y</span> for aggregate Yield/Output).<br>
+            As economic prosperity expands and national income (<span class="sym-tag emerald">Y</span>) rises, total transaction volume grows, requiring a proportionally larger quantity of cash on hand.
+          </div>
+        </div>
+
+        <!-- r -->
+        <div class="glossary-card r-card">
+          <div class="glossary-head">
+            <div class="symbol-circle">r</div>
+            <div class="glossary-title-group">
+              <h3>Market Interest Rate</h3>
+              <span>Prevailing Yield (% per Annum)</span>
+            </div>
+          </div>
+          <div class="glossary-body">
+            Derived from the initial letter of <strong>interest rate</strong>, written as <span class="sym-tag rose">r</span>.<br>
+            When prevailing interest rates (<span class="sym-tag rose">r</span>) are high (e.g., 5% per annum), holding sterile cash in vaults or zero-interest accounts incurs a heavy opportunity cost (sacrificing 5% annual returns), prompting agents to reduce cash and acquire bonds. Conversely, when <span class="sym-tag rose">r</span> drops to near zero (e.g., 0.1%), bonds offer negligible yields, leading everyone to prefer safe, liquid cash.
+          </div>
+        </div>
+      </div>
+
+      <!-- Bond Price Equation Banner -->
+      <div class="formula-banner">
+        <div class="formula-banner-title">💡 Why Do "Bond Prices" Surge When "Interest Rates" Fall?</div>
+        <div class="formula-equation">
+          <span class="math-lhs">Market Price of a Perpetual Bond (Consol)</span>
+          <span class="math-approx">＝</span>
+          <span class="math-frac">
+            <span class="math-num">Fixed Annual Coupon Payment (C)</span>
+            <span class="math-den">Prevailing Market Interest Rate (r)</span>
+          </span>
+        </div>
+        <div class="formula-note">
+          *Theoretical valuation formula for a consol (a perpetual bond paying a fixed coupon annually without maturity date), the standard benchmark bond in Keynes's era. For standard fixed-income debt with fixed maturity dates, the exact same inverse pricing dynamic operates: as interest rates decline, bond prices surge; as interest rates rise, bond prices collapse.
+        </div>
+      </div>
+
+      <div class="bond-example-box">
+        <div class="bond-example-title">
+          <span>🔢 Worked Numerical Example: A Perpetual Bond Paying ¥10,000 Annual Interest</span>
+        </div>
+        <p style="font-size: 0.9rem; color: #78350f;">
+          Suppose you hold a government bond that <strong>guarantees a fixed coupon payment of ¥10,000 every single year forever</strong>. How does the market valuation (price) of this bond respond to fluctuations in the prevailing market interest rate (<span class="sym-tag rose">r</span>)?
+        </p>
+
+        <div class="bond-cases-grid">
+          <div class="bond-case-card">
+            <span class="bond-case-step">Case ①: Prevailing Market Rate is 5% p.a.</span>
+            <div class="bond-case-calc">¥10,000 ÷ 0.05 (5%)</div>
+            <div class="bond-case-result">Bond Price ＝ ¥200,000</div>
+            <div class="bond-case-desc">
+              At a 5% market yield, depositing ¥200,000 in a bank generates ¥10,000 in annual interest. Thus, a bond paying ¥10,000 annually is valued at exactly <strong>¥200,000</strong>.
+            </div>
+          </div>
+
+          <div class="bond-case-card">
+            <span class="bond-case-step">Case ②: Prevailing Market Rate Falls to 1% p.a.</span>
+            <div class="bond-case-calc">¥10,000 ÷ 0.01 (1%)</div>
+            <div class="bond-case-result">Bond Price Surges to ¥1,000,000!</div>
+            <div class="bond-case-desc">
+              When rates plunge to 1%, one must deposit ¥1,000,000 to earn ¥10,000 in annual interest. Consequently, the market price of the bond quintuples to <strong>¥1,000,000</strong>!
+            </div>
+          </div>
+
+          <div class="bond-case-card danger">
+            <span class="bond-case-step">Case ③: What If Interest Rates Rebound from 1% to 5%?</span>
+            <div class="bond-case-calc">¥1,000,000 → ¥200,000 Reversal</div>
+            <div class="bond-case-result">-¥800,000 Devastating Crash (-80%)!</div>
+            <div class="bond-case-desc">
+              If an investor buys this bond for ¥1,000,000 during an ultra-low rate regime, any subsequent rate normalization to 5% immediately crashes its value to ¥200,000. <strong>This is why, at near-zero rates, no rational investor touches bonds; everyone hoards cash!</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Liquidity and the Nature of Interest -->
+    <section id="liquidity-concept">
+      <h2>💧 1. The Nature of Liquidity and Interest</h2>
+      
+      <div class="grid-2">
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>🌊 What is Liquidity?</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>The capacity of an asset to be <strong>instantly, smoothly, and costlessly converted into any good or service without loss of capital value</strong>.</li>
+              <li>Among all financial assets, <strong>cash (currency)</strong> represents the supreme and purest form of liquidity (real estate and long-term bonds require time to liquidate and carry market price volatility risk).</li>
+              <li>"<strong>Liquidity preference</strong>" refers to the behavioral propensity of individuals and firms to prefer holding risk-free cash balances, even when cash yields zero nominal interest.<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🪙 What is Interest? (Keynes's Radical Re-definition)</span>
+          </div>
+          <div class="concept-desc">
+            Classical economics viewed interest as "the reward for waiting—the compensation for abstaining from immediate consumption in order to save."<br><br>
+            Keynes rejected this orthodoxy, highlighting that saving cash in a safe yields zero return. Instead, Keynes defined interest as <strong>"the compensation for surrendering liquidity—the premium paid to induce wealth-holders to part with the supreme convenience and security of cash in exchange for price-volatile debt instruments over a specified timeframe."</strong><a href="#ref-4" class="cite-badge">[4]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Quote Box -->
+      <div class="quote-box">
+        <div class="quote-title">KEY INSIGHT FROM THE GENERAL THEORY (1936)</div>
+        <div class="quote-text">
+          "The rate of interest is the reward for parting with liquidity for a specified period... it is the 'price' which equilibrates the desire to hold wealth in the form of cash with the available quantity of cash."
+        </div>
+        <div class="quote-author">― John Maynard Keynes, <em>The General Theory of Employment, Interest and Money</em></div>
+      </div>
+    </section>
+
+    <!-- 2. Three Motives for Holding Cash -->
+    <section id="motives">
+      <h2>🎯 2. The Three Motives for Holding Cash (Components of Money Demand M<sup>d</sup>)</h2>
+      <p style="margin-bottom: 12px;">
+        Why do economic agents choose to hold sterile cash that yields no interest? (i.e., aggregate <strong>money demand</strong> <span class="sym-tag">M<sup>d</sup></span>). Keynes decomposed this preference into <strong>three distinct psychological motives</strong>:<a href="#ref-6" class="cite-badge">[6]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- Transactions Motive -->
+        <div class="motive-card" style="border-top: 4px solid var(--primary-light);">
+          <div>
+            <div class="motive-header">
+              <div class="motive-icon" style="background: #eff6ff; color: var(--primary);">🛒</div>
+              <div>
+                <div class="motive-title">1. Transactions Motive</div>
+                <span class="motive-formula" style="background: #dbeafe; color: var(--primary);">Increases with Income (Y)</span>
+              </div>
+            </div>
+            <div class="motive-body">
+              <strong>To finance everyday commercial exchanges and expenditures.</strong><br>
+              Households need cash for food and utilities, while enterprises require liquidity for raw materials, inventory, and payroll—bridging the temporal gap between cash receipts and necessary disbursements.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-7" class="cite-badge">[7]</a>
+            </div>
+          </div>
+          <div class="motive-factor" style="color: var(--primary);">
+            📈 Governing Factor: National Income (<span class="sym-tag emerald">Y</span> = aggregate economic output)<br>
+            <small style="color: var(--text-muted);">Higher economic activity and earnings expand routine payments, raising transaction money demand: <strong>L<sub>1</sub>(Y)</strong>.</small>
+          </div>
+        </div>
+
+        <!-- Precautionary Motive -->
+        <div class="motive-card" style="border-top: 4px solid var(--emerald);">
+          <div>
+            <div class="motive-header">
+              <div class="motive-icon" style="background: var(--emerald-light); color: var(--emerald);">🛡️</div>
+              <div>
+                <div class="motive-title">2. Precautionary Motive</div>
+                <span class="motive-formula" style="background: var(--emerald-light); color: var(--emerald);">Increases with Income (Y) & Uncertainty</span>
+              </div>
+            </div>
+            <div class="motive-body">
+              <strong>To provide a financial buffer against sudden contingencies.</strong><br>
+              Unforeseen illnesses, accidents, ceremonial obligations, unexpected revenue drops, or natural disasters impel individuals and corporations to retain liquid cash as an indispensable safety cushion.<a href="#ref-7" class="cite-badge">[7]</a>
+            </div>
+          </div>
+          <div class="motive-factor" style="color: var(--emerald);">
+            📈 Governing Factor: National Income (<span class="sym-tag emerald">Y</span>) & Macroeconomic Uncertainty<br>
+            <small style="color: var(--text-muted);">Larger business scale, higher earnings, and heightened perception of future risk expand the precautionary buffer.</small>
+          </div>
+        </div>
+
+        <!-- Speculative Motive -->
+        <div class="motive-card" style="border-top: 4px solid var(--rose);">
+          <div>
+            <div class="motive-header">
+              <div class="motive-icon" style="background: var(--rose-light); color: var(--rose);">📊</div>
+              <div>
+                <div class="motive-title">3. Speculative Motive</div>
+                <span class="motive-formula" style="background: var(--rose-light); color: var(--rose);">Surges As Interest Rates (r) Fall</span>
+              </div>
+            </div>
+            <div class="motive-body">
+              <strong>To avert capital losses on bonds (Keynes's most revolutionary insight!).</strong><br>
+              When prevailing market interest rates (<span class="sym-tag rose">r</span>) are exceedingly depressed, market participants perceive that rates have hit bottom and must eventually rise—which means bond prices will inevitably collapse. To avoid capital destruction, investors refuse to purchase bonds and <strong>choose to wait in sterile cash</strong>.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-5" class="cite-badge">[5]</a>
+            </div>
+          </div>
+          <div class="motive-factor" style="color: var(--rose);">
+            📉 Governing Factor: Market Interest Rate (<span class="sym-tag rose">r</span> = prevailing yield)<br>
+            <small style="color: var(--text-muted);">As interest rates fall, the opportunity cost of holding cash vanishes while bond crash risk explodes, causing speculative demand <strong>L<sub>2</sub>(r)</strong> to escalate exponentially.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Chart & Simulator -->
+    <section id="interactive-simulator">
+      <h2>📉 3. Interactive Simulator: Interest Rates (r), Bond Prices, and Cash Demand</h2>
+      <p style="margin-bottom: 1rem;">
+        As established in Section 0, in a consol bond model, <strong>Bond Price = Fixed Annual Coupon ÷ Market Interest Rate (r)</strong>. Manipulate the interest rate slider below (<span class="sym-tag rose">r</span>) to observe in real time how bond valuations, investor expectations, and speculative cash demand interact dynamically.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>⚙️ Adjust Market Interest Rate (r)</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Sliding leftward (toward zero) drives the economy into the "Liquidity Trap"</span>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-row">
+            <span class="slider-label">Prevailing Market Interest Rate (<span class="sym-tag rose">r</span>):</span>
+            <span class="slider-val-badge" id="rateDisplay">1.0 %</span>
+          </div>
+          <input type="range" id="rateSlider" min="0.2" max="8.0" step="0.1" value="1.0">
+        </div>
+
+        <div class="sim-metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Theoretical Consol Price (¥10k Annual Coupon)</div>
+            <div class="metric-val" id="bondYenDisplay" style="color: var(--primary-dark);">100.0 (¥10k)</div>
+            <div class="metric-sub" id="bondCalcSub">Calc: ¥10,000 ÷ 1.0%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Bond Price Valuation Level</div>
+            <div class="metric-val" id="bondPriceDisplay" style="color: var(--primary);">Elevated (Overpriced)</div>
+            <div class="metric-sub">Low Interest Rate = High Bond Price</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Investor Sentiment / Outlook</div>
+            <div class="metric-val" id="forecastDisplay" style="color: var(--rose);">Severe Crash Risk</div>
+            <div class="metric-sub">Anticipating Rate Hikes = Bond Collapse</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Speculative Cash Demand</div>
+            <div class="metric-val" id="demandDisplay" style="color: var(--accent-dark);">Extremely High</div>
+            <div class="metric-sub">Fleeing Bonds into Safe Cash</div>
+          </div>
+        </div>
+
+        <!-- Canvas Drawing -->
+        <div class="curve-wrapper">
+          <canvas id="curveCanvas" width="760" height="320"></canvas>
+        </div>
+
+        <div class="sim-explanation-box" id="dynamicExplanation">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. The Liquidity Trap -->
+    <section id="liquidity-trap">
+      <h2>⚠️ 4. What is the Liquidity Trap?</h2>
+      
+      <div class="trap-box">
+        <div class="trap-title">
+          <span>🚨 Monetary Policy Impotence: The Regime of "Infinitely Elastic Money Demand"</span>
+        </div>
+        <div class="trap-desc">
+          During severe recessions, what happens when the central bank slashes interest rates until prevailing yields (<span class="sym-tag rose">r</span>) hit an irreducible lower bound near zero?<br><br>
+          Bond prices escalate to their theoretical zenith. Market participants reach unanimous consensus: "<strong>Interest rates cannot fall any further (bond prices cannot rise any higher). The only remaining risk is a future rate rise that will trigger a catastrophic bond crash!</strong>"<a href="#ref-2" class="cite-badge">[2]</a><br><br>
+          Consequently, investors completely abandon purchasing low-yielding, high-risk bonds. <strong>No matter how much liquidity the central bank pumps into the financial system, it is entirely hoarded as idle cash or sterile bank reserves.</strong><br>
+          Excess reserves accumulate uselessly on commercial bank balance sheets; interest rates refuse to decline further, rendering monetary expansion unable to stimulate capital investment or consumption. This is the classic <strong>Liquidity Trap</strong> envisioned by Keynes and formalized in modern macroeconomic theory.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.75rem;">
+          💡 "You Can Pull on a String, But You Cannot Push on a String"
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.75;">
+          To cool down an overheated inflationary boom, the central bank can aggressively hike interest rates ("pulling on a string") to halt credit expansion effectively. But in a deep slump ensnared in a liquidity trap, injecting liquidity ("pushing on a string") fails because cash merely stagnates in bank reserves and mattresses without circulating into real purchasing power.<br>
+          This is why Keynesian economics stresses that monetary easing alone is powerless in deep depressions; <strong>the government must deploy direct fiscal policy (public works investments and direct income transfers) to generate real effective demand.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. Comparison Table & Advanced Perspectives -->
+    <section id="comparison-classical">
+      <h2>🏛️ 5. Classical vs. Keynesian Framework and Contemporary Relevance</h2>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">Analytical Dimension</th>
+              <th style="width: 37%;">Classical Economics (Pre-Keynesian Orthodoxy)</th>
+              <th style="width: 38%;">Keynesian Economics (Liquidity Preference Theory)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Determinant of Interest Rates (r)</strong></td>
+              <td>Natural equilibrium between supply of savings and corporate investment demand</td>
+              <td><strong>Demand for Liquid Cash (M<sup>d</sup>) vs. Supply of Money (M<sup>s</sup>)</strong> in financial markets</td>
+            </tr>
+            <tr>
+              <td><strong>Nature of Interest</strong></td>
+              <td>Reward for postponing consumption and choosing to "save"</td>
+              <td><strong>Compensation for surrendering liquidity (cash) and absorbing bond price risk</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Role of Money</strong></td>
+              <td>A neutral transactional medium facilitating commodity exchanges</td>
+              <td>A vital <strong>"store of value"</strong> hedging against uncertainty and asset price depreciation</td>
+            </tr>
+            <tr>
+              <td><strong>Remedy for Severe Depressions</strong></td>
+              <td>Rely on self-adjusting markets; falling interest rates naturally restore investment</td>
+              <td><strong>Direct fiscal stimulus required</strong>, as monetary easing is disabled in the <strong>Liquidity Trap</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="margin-top: 1.5rem;">
+        <div class="concept-card" style="border-left-color: var(--purple);">
+          <div class="concept-title">
+            <span>📐 Position in Macroeconomic IS-LM Analysis</span>
+          </div>
+          <div class="concept-desc">
+            In the IS-LM framework developed by John Hicks, Liquidity Preference Theory forms the foundation for deriving the <strong>LM curve (money market equilibrium)</strong>. In the liquidity trap zone, because interest rates cannot decline further, the LM curve becomes completely horizontal. Consequently, increases in the money supply cannot shift output, and only fiscal expansion (shifting the IS curve rightward) can effectively stimulate national income.
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>🇯🇵 Modern Zero-Interest Economies: Two Competing Views</span>
+          </div>
+          <div class="concept-desc">
+            Following Japan's 1990s asset bubble collapse and the 2008 global financial crisis, zero-rate policies and quantitative easing failed to spur lending as cash stagnated in banks. Paul Krugman analyzed this phenomenon as a modern Liquidity Trap.<br>
+            Conversely, Richard Koo's "Balance Sheet Recession" framework points out that beyond speculative motives, private enterprises were actively paying down debt to restore solvency after asset crashes, resulting in a borrower shortfall. Both perspectives remain central to modern macroeconomic debates.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- References & Sources -->
+    <section id="references">
+      <h2>📚 References & Sources</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://go2senkyo.com/seijika/185873/posts/1325001" target="_blank" rel="noopener noreferrer">
+            Election dot com Column (Keynes's Liquidity Preference Theory and Foundations of Modern Macroeconomics)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E6%B5%81%E5%8B%95%E6%80%A7%E9%81%B8%E5%A5%BD%E8%AA%AC" target="_blank" rel="noopener noreferrer">
+            Wikipedia: "Liquidity Preference" (Three Motives for Money Demand and Definition of the Liquidity Trap)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://kotobank.jp/word/%E6%B5%81%E5%8B%95%E6%80%A7%E9%81%B8%E5%A5%BD%E8%AA%AC-149754" target="_blank" rel="noopener noreferrer">
+            Kotobank: "Liquidity Preference Theory" (Encyclopaedia Britannica & Encyclopedia Nipponica)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="http://kisoken.org/webjiten/ryudouseisenkou.html" target="_blank" rel="noopener noreferrer">
+            Institute for Basic Economics Web Dictionary ("Definition of Liquidity Preference and Interest")
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=BY7XJwevvno&t=303" target="_blank" rel="noopener noreferrer">
+            YouTube Video Lecture (Keynesian Economics: The Speculative Motive, Interest Rates, and Inverse Bond Pricing)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://b2broker.com/ja/news/what-is-liquidity-preference-theory/" target="_blank" rel="noopener noreferrer">
+            B2Broker Financial Knowledge ("What is Liquidity Preference Theory: Three Motives for Holding Cash")
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11289378576" target="_blank" rel="noopener noreferrer">
+            Economics Q&amp;A (Explanation of Transactions and Precautionary Motives as Increasing Functions of National Income)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-tag">[8]</span>
+          <a class="ref-link" href="https://money-bu-jpx.com/news/article047395/" target="_blank" rel="noopener noreferrer">
+            JPX Money Bu! (Keynesian Economics, Liquidity Preference, and the Motives for Holding Money)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; Financial Oligopoly History and Collapse Supplement Series | Liquidity Preference Theory Visualizer (RyuDouseiSenkoOld.html)</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Chart & Simulator Script -->
+  <script>
+    const slider = document.getElementById('rateSlider');
+    const rateDisplay = document.getElementById('rateDisplay');
+    const bondYenDisplay = document.getElementById('bondYenDisplay');
+    const bondCalcSub = document.getElementById('bondCalcSub');
+    const bondPriceDisplay = document.getElementById('bondPriceDisplay');
+    const forecastDisplay = document.getElementById('forecastDisplay');
+    const demandDisplay = document.getElementById('demandDisplay');
+    const explanationBox = document.getElementById('dynamicExplanation');
+    const canvas = document.getElementById('curveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawChart(currentRate) {
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      // Axes coordinates
+      const originX = 90;
+      const originY = h - 50;
+      const maxX = w - 40;
+      const maxY = 30;
+
+      // Axis lines
+      ctx.beginPath();
+      ctx.moveTo(originX, maxY);
+      ctx.lineTo(originX, originY);
+      ctx.lineTo(maxX, originY);
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Axis Labels
+      ctx.font = 'bold 12px system-ui, sans-serif';
+      ctx.fillStyle = '#334155';
+      ctx.fillText('Market Interest Rate r (%)', 12, maxY + 12);
+      ctx.fillText('Money Demand Md (Speculative Motive) →', maxX - 270, originY + 32);
+
+      // Draw Liquidity Trap Flat Zone highlight
+      ctx.fillStyle = 'rgba(254, 226, 226, 0.5)';
+      ctx.fillRect(originX, originY - 45, maxX - originX, 45);
+
+      ctx.fillStyle = '#e11d48';
+      ctx.font = 'bold 12px system-ui, sans-serif';
+      ctx.fillText('← Liquidity Trap Region (Curve flattens as rate hits floor; money demand becomes perfectly elastic)', originX + 20, originY - 15);
+
+      // Draw Liquidity Preference Curve
+      ctx.beginPath();
+      ctx.strokeStyle = '#1e3a8a';
+      ctx.lineWidth = 3;
+
+      const points = [];
+      for (let r = 0.4; r <= 8.0; r += 0.1) {
+        const m = 28 / Math.pow(r - 0.25, 0.85);
+        const plotX = originX + (m / 80) * (maxX - originX);
+        const plotY = originY - (r / 8.0) * (originY - maxY);
+        points.push({ x: Math.min(plotX, maxX), y: plotY, r: r });
+      }
+
+      for (let i = 0; i < points.length; i++) {
+        if (i === 0) ctx.moveTo(points[i].x, points[i].y);
+        else ctx.lineTo(points[i].x, points[i].y);
+      }
+      ctx.stroke();
+
+      // Curve Label
+      ctx.fillStyle = '#1e3a8a';
+      ctx.font = 'bold 13px system-ui, sans-serif';
+      ctx.fillText('Speculative Money Demand Curve L2(r)', maxX - 250, maxY + 35);
+
+      // Current Point on Curve
+      const currR = Math.max(currentRate, 0.35);
+      const currM = 28 / Math.pow(currR - 0.25, 0.85);
+      const currX = Math.min(originX + (currM / 80) * (maxX - originX), maxX - 15);
+      const currY = originY - (currR / 8.0) * (originY - maxY);
+
+      // Dashed guideline lines
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = '#f43f5e';
+      ctx.lineWidth = 1.5;
+
+      ctx.beginPath();
+      ctx.moveTo(originX, currY);
+      ctx.lineTo(currX, currY);
+      ctx.lineTo(currX, originY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Point marker
+      ctx.beginPath();
+      ctx.arc(currX, currY, 7, 0, Math.PI * 2);
+      ctx.fillStyle = '#e11d48';
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Text at point
+      ctx.fillStyle = '#0f172a';
+      ctx.font = 'bold 12px system-ui, sans-serif';
+      const labelX = Math.min(currX + 10, maxX - 140);
+      ctx.fillText(`Current Rate (${currentRate.toFixed(1)}%)`, labelX, currY - 10);
+    }
+
+    function updateSimulation() {
+      const r = parseFloat(slider.value);
+      rateDisplay.innerText = r.toFixed(1) + ' %';
+
+      // Theoretical consol bond price (in ¥10k units) paying ¥10,000 annual coupon = 1 / (r / 100) = 100 / r
+      const bondPriceManYen = 100 / r;
+      bondYenDisplay.innerText = bondPriceManYen.toFixed(1) + ' (¥10k)';
+      bondCalcSub.innerText = `Calc: ¥10,000 ÷ ${r.toFixed(1)}%`;
+
+      if (r <= 1.0) {
+        bondYenDisplay.style.color = '#e11d48';
+        bondPriceDisplay.innerText = 'Extreme Ceiling (Peak Overvaluation)';
+        bondPriceDisplay.style.color = '#e11d48';
+        forecastDisplay.innerText = 'Imminent Crash (Zero Upside Remaining)';
+        forecastDisplay.style.color = '#e11d48';
+        demandDisplay.innerText = 'Infinite (Liquidity Trap)';
+        demandDisplay.style.color = '#e11d48';
+
+        explanationBox.innerHTML = `
+          <strong style="color: #be123c;">[🚨 Current Regime: Liquidity Trap]</strong><br>
+          With market interest rates (<span class="sym-tag rose">r</span>) compressed to <strong>${r.toFixed(1)}%</strong>, the theoretical price of the consol reaches an astronomical ceiling of <strong>${bondPriceManYen.toFixed(1)} (¥10k) [¥${(bondPriceManYen * 10000).toLocaleString()}]</strong>.<br>
+          If interest rates eventually normalize back to 5%, the bond price will plunge to ¥200,000 (a devastating capital loss of <strong>-¥${((bondPriceManYen - 20) * 10000).toLocaleString()}</strong>). Consequently, no rational market participant will purchase bonds. No matter how much liquidity the central bank injects, the entire money supply is hoarded as sterile cash or idle bank reserves.
+        `;
+      } else if (r <= 3.0) {
+        bondYenDisplay.style.color = '#d97706';
+        bondPriceDisplay.innerText = 'Elevated (Overpriced Territory)';
+        bondPriceDisplay.style.color = '#d97706';
+        forecastDisplay.innerText = 'Downside Risk Caution';
+        forecastDisplay.style.color = '#d97706';
+        demandDisplay.innerText = 'Substantial (Strong Cash Preference)';
+        demandDisplay.style.color = '#d97706';
+
+        explanationBox.innerHTML = `
+          <strong style="color: #b45309;">[⚠️ Current Regime: Low Yields & Heightened Cash Preference]</strong><br>
+          Prevailing market rates (<span class="sym-tag rose">r</span>) are subdued at <strong>${r.toFixed(1)}%</strong>, leaving bond valuations elevated at <strong>${bondPriceManYen.toFixed(1)} (¥10k) [¥${(bondPriceManYen * 10000).toLocaleString()}]</strong>.<br>
+          Because downside capital risk from prospective rate hikes heavily outweighs modest coupon returns, investors possess a compelling incentive to avoid bonds and allocate a higher share of wealth to liquid cash balances.
+        `;
+      } else {
+        bondYenDisplay.style.color = '#059669';
+        bondPriceDisplay.innerText = 'Fair to Undervalued';
+        bondPriceDisplay.style.color = '#059669';
+        forecastDisplay.innerText = 'Stable with Capital Gain Potential';
+        forecastDisplay.style.color = '#059669';
+        demandDisplay.innerText = 'Low (Capital Shift to Investments)';
+        demandDisplay.style.color = '#059669';
+
+        explanationBox.innerHTML = `
+          <strong style="color: #047857;">[✅ Current Regime: Normal Interest Rate Environment (Active Investment)]</strong><br>
+          Market interest rates (<span class="sym-tag rose">r</span>) are robust at <strong>${r.toFixed(1)}%</strong>, offering bonds at accessible prices of <strong>${bondPriceManYen.toFixed(1)} (¥10k) [¥${(bondPriceManYen * 10000).toLocaleString()}]</strong>.<br>
+          The opportunity cost of holding idle cash is high, and investors can capture attractive coupon yields while anticipating capital gains if rates decline in the future. As a result, economic agents minimize dormant cash balances and actively channel funds into productive financial assets and real investments.
+        `;
+      }
+
+      drawChart(r);
+    }
+
+    slider.addEventListener('input', updateSimulation);
+    updateSimulation();
+  </script>
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: The British India Office — Colonial Governance, Direct Rule, and Financial Extraction (1858–1947)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Series Nav */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #065f46 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(16, 185, 129, 0.35);
+      color: #d1fae5;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Flow Diagrams */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .flow-step {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flow-step.step-warn { border-top-color: var(--accent); }
+    .flow-step.step-danger { border-top-color: var(--rose); }
+    .flow-step.step-emerald { border-top-color: var(--emerald); }
+
+    .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .flow-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .factor-card.card-amber { border-left-color: var(--accent); }
+    .factor-card.card-emerald { border-left-color: var(--emerald); }
+
+    .factor-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .factor-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+      color: #ffffff;
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #1e3a8a;
+      box-shadow: var(--shadow);
+    }
+
+    .sim-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sim-subtitle {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.5rem;
+      padding: 0.7rem 0.8rem;
+      color: #e2e8f0;
+      text-align: left;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #fbbf24;
+    }
+
+    .phase-btn.active {
+      background: #fbbf24;
+      color: #0f172a;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.72rem;
+      opacity: 0.85;
+      margin-bottom: 0.2rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.5rem;
+      padding: 0.9rem 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligopoly and Imperialism Supplement Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link active">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">British Imperial Governance &amp; Financial Drain Supplement</span>
+        <span class="badge badge-sub">1858–1947: The London Whitehall "India Office"</span>
+      </div>
+      <h1>The British "India Office":<br>From the Dissolution of the East India Company to Direct Rule and Independence</h1>
+      <p class="lead">
+        Throughout the height of the British Empire, British India was administered directly by a specialized Whitehall department: the <strong>"India Office."</strong><a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><br>
+        In the aftermath of the Indian Rebellion of 1857 (Sepoy Mutiny), the British Crown abolished the British East India Company and extinguished the Mughal dynasty, transferring the subcontinent to direct Crown rule. Established under the Government of India Act 1858, the <strong>India Office in London</strong> functioned for nearly a century as the ultimate imperial command center.<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a>
+      </p>
+    </header>
+
+    <!-- Core Overview Section -->
+    <section>
+      <h2>🏛️ Structural Overview of the India Office</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Created by the Government of India Act 1858, the India Office sat at the apex of imperial bureaucracy in Whitehall for nearly nine decades, exercising comprehensive authority across three primary pillars:
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>① Function: Comprehensive Imperial Command</span>
+          </div>
+          <p class="factor-desc">
+            Directly directed <strong>military deployments, diplomatic relations, taxation, imperial railway concessions, and political affairs</strong> across the British Raj from London.
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② Executive: Secretary of State &amp; The Viceroy</span>
+          </div>
+          <p class="factor-desc">
+            Led by the <strong>Secretary of State for India</strong> (a senior Cabinet minister). The on-site head of administration, the <strong>Viceroy and Governor-General of India</strong>, served as the direct subordinate implementing Whitehall's mandates.
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>③ Abolition: Partition &amp; Independence in August 1947</span>
+          </div>
+          <p class="factor-desc">
+            With the enactment of the Indian Independence Act in <strong>August 1947</strong>, the India Office completed its historical trajectory and was formally abolished upon the independence of India and Pakistan.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">📜 Historical Legacy: The India Office Records</div>
+        <p style="font-size: 0.94rem; color: var(--text-main);">
+          The vast archives generated by the India Office (the <strong>India Office Records</strong>) are preserved today in the <strong>British Library</strong> in London, comprising over 14 kilometers of shelving.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-8" class="cite-tag">[8]</a><br>
+          <span style="font-size: 0.86rem; color: var(--text-muted);">※Spanning 350 years from the chartering of the East India Company in 1600 to 1947, this archive forms the world's premier documentary repository not only for South Asian history, but also for the Persian Gulf, Aden, Burma, and Southeast Asia.<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-8" class="cite-tag">[8]</a></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Governance Command Chain & Interactive Timeline -->
+    <section>
+      <h2>⚙️ The Governance &amp; Financial Network Linking London to British India</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        The transition from corporate monopoly to direct Crown governance unified the chain of command: British Cabinet &rarr; India Office (Whitehall) &rarr; Viceregal Government (Calcutta / New Delhi), anchored by the structural extraction of "Home Charges" through Council Bills.
+      </p>
+
+      <!-- 4-Step Command Chain -->
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="step-num">LEVEL 1: Sovereignty &amp; Law</span>
+          <div class="flow-title">The British Crown &amp; Parliament</div>
+          <p class="flow-desc">
+            Vested ultimate legislative sovereignty in the British monarch (Queen Victoria proclaimed Empress of India in 1876/1877), governing via statutory acts of Parliament.
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">LEVEL 2: Whitehall Ministry</span>
+          <div class="flow-title">The India Office (London)</div>
+          <p class="flow-desc">
+            The <strong>Secretary of State for India</strong> and the Council of India governed imperial budgets, military deployments, railway debt guarantees, and sovereign rupee-sterling exchange.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">LEVEL 3: Field Executive</span>
+          <div class="flow-title">Viceroy &amp; Governor-General</div>
+          <p class="flow-desc">
+            Operating under Whitehall's telegraphic instructions, the Viceroy commanded the British Indian Army and the elite Indian Civil Service (ICS) across provinces and princely states.
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">LEVEL 4: Fiscal Drain Circuit</span>
+          <div class="flow-title">Home Charges &amp; London Bills</div>
+          <p class="flow-desc">
+            Indian land revenues and trade surpluses were systematically siphoned to London via <strong>Home Charges</strong>—servicing sterling debt, British military pensions, and administrative costs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 Evolution of British Governance in India (1757–1947)</div>
+            <div class="sim-subtitle">Select historical phases to trace the shifts in governing authority, direct Whitehall control, and the role of the India Office</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 | 1757–1857</span>
+            Indirect Rule via the East India Company
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 | 1857–1858</span>
+            The 1857 Rebellion &amp; Creation of the India Office
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 | 1858–1918</span>
+            Zenith of the British Raj &amp; Submarine Cable Command
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 | 1919–1947</span>
+            Independence Movements &amp; Abolition of the Office
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Direct Whitehall (London) Sovereign Control</div>
+            <div class="metric-value" id="m-control">100% (Full Transition to Crown Direct Rule)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-control" style="width: 100%; background-color: #3b82f6;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Core Executive Apparatus</div>
+            <div class="metric-value" id="m-body">India Office (London Whitehall, Est. 1858)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-body" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Indian Indigenous Self-Determination</div>
+            <div class="metric-value" id="m-autonomy">Minimal (Mughal Fall / Direct Subjugation)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-autonomy" style="width: 10%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 2: 1857–1858 — The Indian Rebellion &amp; The Creation of the India Office】</strong><br>
+          Triggered by the widespread uprising of 1857 (Sepoy Mutiny), the British government dethroned the final Mughal emperor, dissolved the British East India Company, and transferred sovereignty to Queen Victoria via the Government of India Act 1858. To consolidate centralized administration in London, the <strong>India Office</strong> was founded, headed by the newly created Cabinet post of <strong>Secretary of State for India</strong>.
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Comparison Section: India Office vs Viceroy & Financial Drain -->
+    <section>
+      <h2>🔍 In-Depth Analysis: Division of Authority between the Secretary of State (London) and the Viceroy (India)</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        A structured breakdown of operational jurisdiction between the Whitehall ministry in London and the Viceregal government in India leading up to the 1947 dissolution:
+      </p>
+
+      <div class="table-wrap" style="margin-bottom: 1.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">Comparison Dimension</th>
+              <th style="width: 39%;">India Office / Secretary of State for India (London)</th>
+              <th style="width: 39%;">Government of India / Viceroy &amp; Governor-General (India)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Status &amp; Seat</strong></td>
+              <td>Senior <strong>Cabinet Minister</strong> of the United Kingdom. Headquartered at Whitehall, London (now housing the Foreign, Commonwealth &amp; Development Office).<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td>Direct personal representative of the British Sovereign (Viceroy). Stationed at Government House in <strong>Calcutta</strong> until 1911, and thereafter at <strong>New Delhi</strong>.<a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Command Authority</strong></td>
+              <td><strong>Supreme Decision-Maker</strong>. Retained ultimate authority over war and peace, treaties, loans, budgets, and veto power over colonial legislation.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+              <td><strong>Executive Head in the Field</strong>. Executed directives from London, commanding the civil service (ICS), maintaining domestic order, and overseeing princely states.<a href="#ref-1" class="cite-tag">[1]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Impact of Communications</strong></td>
+              <td>The opening of the direct <strong>undersea telegraph cable</strong> in 1870 transformed the India Office into a real-time command center, micromanaging daily policy from London.</td>
+              <td>Prior to the telegraph, communication took months by sail, allowing viceroys wide discretion; post-1870, viceregal autonomy was sharply subordinated to Whitehall.</td>
+            </tr>
+            <tr>
+              <td><strong>Financial Drain Role</strong></td>
+              <td>Issued <strong>Council Bills</strong> on the City of London and managed sterling-denominated Indian debt, repatriating Indian surpluses as "Home Charges."</td>
+              <td>Levied land revenue, salt excises, and opium monopolies in rupees across Indian peasants to fund provincial administration and remittance obligations.</td>
+            </tr>
+            <tr>
+              <td><strong>Dissolution in August 1947</strong></td>
+              <td>Under the Indian Independence Act 1947, the <strong>India Office was abolished on August 15, 1947</strong>, transferring residual functions to Commonwealth Relations.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-7" class="cite-tag">[7]</a></td>
+              <td>Under Lord Mountbatten (the final Viceroy), the <strong>Partition of British India into India and Pakistan</strong> was executed, terminating the office of Viceroy.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">💡 The Economic Drain: The India Office Itself Was Financed Entirely by Indian Taxes</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          A defining attribute of British financial imperialism was that the lavish palatial headquarters of the India Office in Whitehall, the salaries and pensions of the Secretary of State and London staff, and even the debt service for Britain's military expansion across Asia were not charged to British taxpayers; they were <strong>extracted entirely from Indian revenues via the sterling "Home Charges."</strong> Furthermore, the India Office exerted diplomatic and military jurisdiction over the Persian Gulf, Aden, and the Red Sea, making it the strategic hub of British hegemony across the Indian Ocean basin.<a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 Primary Sources &amp; Archival References</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        Archival holdings, encyclopedic entries, and academic documentation on the British India Office:
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E7%9C%81" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: India Office (Japanese Overview)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://en.wikipedia.org/wiki/India_Office" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: India Office (Administrative History &amp; Structure)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://rekishisougou.seesaa.net/article/505609875.html" target="_blank" rel="noopener noreferrer" class="ref-link">Historical Analysis: The Sepoy Rebellion &amp; The Government of India Act 1858</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.youtube.com/watch?v=vEZvs9PR444&t=438" target="_blank" rel="noopener noreferrer" class="ref-link">Documentary Lecture: Dissolution of the EIC and Direct Crown Rule</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.qdl.qa/en/india-office-government-london-british-india" target="_blank" rel="noopener noreferrer" class="ref-link">Qatar Digital Library: The India Office — Government in London for British India</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.weblio.jp/content/%E3%82%A4%E3%83%B3%E3%83%89%E7%9C%81" target="_blank" rel="noopener noreferrer" class="ref-link">Weblio Encyclopedia: Historical Entries on the India Office</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://www.wikiwand.com/en/India_Office" target="_blank" rel="noopener noreferrer" class="ref-link">Wikiwand: The India Office and Imperial Decolonization</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://www.qdl.qa/en/history-india-office-records-and-private-papers" target="_blank" rel="noopener noreferrer" class="ref-link">Qatar Digital Library: History of the India Office Records &amp; Private Papers</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Financial Oligopoly and Imperialism Supplement Series ⑩ | The British India Office and the Machinery of Direct Colonial Governance</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        controlText: "Indirect Oversight (EIC + Board of Control)",
+        controlWidth: "45%",
+        controlColor: "#f59e0b",
+        bodyText: "British East India Company (EIC)",
+        bodyWidth: "60%",
+        bodyColor: "#a855f7",
+        autonomyText: "Princely States & Nominal Mughal Emperor",
+        autonomyWidth: "35%",
+        autonomyColor: "#f59e0b",
+        desc: "<strong>【Phase 1: 1757–1857 — Indirect Company Rule】</strong><br>Following the Battle of Plassey (1757) and the grant of the Diwani (1765), the chartered <strong>British East India Company</strong> commanded private armies and collected revenues. Pitt's India Act of 1784 established the Board of Control in London to supervise political matters, but on-the-ground governance remained in corporate hands."
+      },
+      {
+        controlText: "100% (Full Transition to Crown Direct Rule)",
+        controlWidth: "100%",
+        controlColor: "#3b82f6",
+        bodyText: "India Office (London Whitehall, Est. 1858)",
+        bodyWidth: "90%",
+        bodyColor: "#f59e0b",
+        autonomyText: "Minimal (Mughal Fall / Direct Subjugation)",
+        autonomyWidth: "10%",
+        autonomyColor: "#f43f5e",
+        desc: "<strong>【Phase 2: 1857–1858 — The Indian Rebellion &amp; The Creation of the India Office】</strong><br>Triggered by the widespread uprising of 1857 (Sepoy Mutiny), the British government dethroned the final Mughal emperor, dissolved the British East India Company, and transferred sovereignty to Queen Victoria via the Government of India Act 1858. To consolidate centralized administration in London, the <strong>India Office</strong> was founded, headed by the newly created Cabinet post of <strong>Secretary of State for India</strong>."
+      },
+      {
+        controlText: "Total (Submarine Telegraph & Bureaucracy)",
+        controlWidth: "100%",
+        controlColor: "#2563eb",
+        bodyText: "Secretary of State ➔ Viceroy & Governor-General",
+        bodyWidth: "100%",
+        bodyColor: "#10b981",
+        autonomyText: "Restricted to Advisory Councils",
+        autonomyWidth: "20%",
+        autonomyColor: "#f59e0b",
+        desc: "<strong>【Phase 3: 1858–1918 — The Imperial British Raj &amp; Telegraphic Command】</strong><br>Queen Victoria was proclaimed Empress of India in 1876/1877. The <strong>Secretary of State for India</strong> exercised supreme command over finance, defense, and foreign affairs, while the <strong>Viceroy in India</strong> implemented policy. With the opening of undersea telegraph lines in 1870, Whitehall micromanaged subcontinental governance in real time, accumulating vast records."
+      },
+      {
+        controlText: "Progressive Devolution ➔ Dissolved in Aug 1947",
+        controlWidth: "15%",
+        controlColor: "#10b981",
+        bodyText: "India Office Abolished (Records to British Library)",
+        bodyWidth: "15%",
+        bodyColor: "#38bdf8",
+        autonomyText: "100% (August 1947 Indian & Pakistani Independence)",
+        autonomyWidth: "100%",
+        autonomyColor: "#10b981",
+        desc: "<strong>【Phase 4: 1919–1947 — Independence Struggles &amp; Abolition of the Office】</strong><br>Intensifying national resistance led by the Indian National Congress and the Muslim League forced devolution under the 1919 and 1935 Acts. In <strong>August 1947, with the partition and independence of India and Pakistan</strong>, the India Office concluded its nearly 90-year tenure and was officially dissolved."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-control').textContent = p.controlText;
+      const bControl = document.getElementById('b-control');
+      bControl.style.width = p.controlWidth;
+      bControl.style.backgroundColor = p.controlColor;
+
+      document.getElementById('m-body').textContent = p.bodyText;
+      const bBody = document.getElementById('b-body');
+      bBody.style.width = p.bodyWidth;
+      bBody.style.backgroundColor = p.bodyColor;
+
+      document.getElementById('m-autonomy').textContent = p.autonomyText;
+      const bAutonomy = document.getElementById('b-autonomy');
+      bAutonomy.style.width = p.autonomyWidth;
+      bAutonomy.style.backgroundColor = p.autonomyColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>

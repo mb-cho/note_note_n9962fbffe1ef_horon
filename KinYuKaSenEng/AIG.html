@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplementary Note: The AIG (American International Group) Crisis and Wall Street's "Backdoor Bailout"</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Bailout Conduit Visual Box */
+    .conduit-box {
+      background: linear-gradient(180deg, #fffbeb 0%, #fff1f2 100%);
+      border: 2px solid #fda4af;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .conduit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      align-items: stretch;
+      margin-top: 1rem;
+    }
+
+    .conduit-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligarchy and Imperialism: Supplementary Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanism of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Active Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ The British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ The Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ The Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ The Eurodollar Market and Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ The Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link active">⑱ The AIG Crisis and Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ The Bank Oligarchy's Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Networks</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">2008 Global Financial Crisis · Derivatives Note</span>
+        <span class="badge badge-sub">CDS (Credit Default Swaps) and the Over-$180 Billion Public Bailout</span>
+      </div>
+      <h1>The AIG (American International Group) Crisis:<br>Why Did a Giant Insurance Company Become the Ground Zero of the Lehman Shock and Get Rescued with Public Funds?</h1>
+      <p class="lead">
+        In this context, <strong>AIG (American International Group)</strong> was an American mega-insurance and financial conglomerate that boasted <strong>the world's largest asset base and the highest credit rating</strong> at the time.<br>
+        While its core businesses were traditional life, property, and casualty insurance operating globally, during the 2008 global financial crisis (the Lehman Shock), <strong>reckless derivative trading by a financial subsidiary comprising merely several dozen staff members</strong> triggered an existential catastrophe that nearly took down the American and global financial systems.
+      </p>
+    </header>
+
+    <!-- Section 1: Why an Insurance Company Became the Epicenter -->
+    <section>
+      <h2>1. Why Did an "Insurance Company" Become the Ground Zero of the Financial Crisis?</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        The root cause of AIG's collapse was a specialized London-based subsidiary known as <strong>AIG Financial Products (AIGFP)</strong>.
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① Monetizing the Crown Jewel: "Top-Tier Credit Rating (AAA)"</span>
+          </div>
+          <p class="factor-desc">
+            At the time, the parent entity of AIG maintained a pristine <strong>AAA credit rating</strong>, the highest tier of creditworthiness in the global market. Using this parent rating as a corporate storefront, AIGFP sold astronomical volumes of <strong>Credit Default Swaps (CDS)</strong> to premier Wall Street and European investment banks (including <strong>Goldman Sachs, Merrill Lynch, Deutsche Bank, Société Générale</strong>, and others).
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>② Pseudo-Insurance Business via Credit Default Swaps (CDS)</span>
+          </div>
+          <p class="factor-desc">
+            A <strong>Credit Default Swap (CDS)</strong> is a financial derivative whereby the seller agrees to compensate the buyer if underlying debt instruments—such as mortgage-backed securities (<strong>MBS</strong>) or collateralized debt obligations (<strong>CDO</strong>)—experience default or severe impairment.
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ The Delusion of "Free Money" and Unchecked Moral Hazard</span>
+          </div>
+          <p class="factor-desc">
+            AIGFP operated under mathematical risk models asserting that a nationwide simultaneous decline in US housing prices was statistically impossible. Consequently, they <strong>held virtually no cash collateral or capital reserves</strong> to cover potential payout obligations, treating guarantee premiums as pure, risk-free profits and distributing massive bonus pools to their traders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Mechanism of Near-Collapse & Interactive Simulator -->
+    <section>
+      <h2>2. The Unraveling Mechanism: 4-Stage Spiral to Insolvency</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        When the US subprime mortgage bubble burst in 2007, the entire derivative superstructure rapidly unraveled in four escalating stages:
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 1: Collapse of Underlying Assets</span>
+          <div class="flow-title">Plummeting CDO Valuations</div>
+          <p class="flow-desc">
+            As delinquencies on subprime mortgages surged, <strong>the market value of collateralized debt obligations (CDOs) insured by AIG collapsed toward zero</strong>.
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 2: Loss of Creditworthiness</span>
+          <div class="flow-title">Credit Rating Downgrades of AIG</div>
+          <p class="flow-desc">
+            Mounting mark-to-market losses forced credit rating agencies to <strong>strip AIG of its vital AAA credit rating</strong>.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 3: Avalanche of Margin Calls</span>
+          <div class="flow-title">Demands for Additional Collateral</div>
+          <p class="flow-desc">
+            Under the terms of the CDS contracts, downgrading triggered contractual covenants requiring AIG to <strong>immediately post tens of billions of dollars in cash collateral</strong> to its banking counterparties.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 4: Liquidity Deadlock</span>
+          <div class="flow-title">Cash Depletion (Liquidity Panic)</div>
+          <p class="flow-desc">
+            Faced with simultaneous cash collateral calls totaling tens of billions of dollars from Wall Street and Europe, AIG's liquidity evaporated completely within days.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 Simulator: From AIGFP's Bubble and Insolvency to the Backdoor Bailout of Wall Street</div>
+            <div class="sim-subtitle">Toggle through phases to trace AIG's rating trajectory, collateral calls, and the conduit flow of over $180 billion in taxpayer bailout funds.</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 ｜ Through 2006 (Bubble Era)</span>
+            AAA Arbitrage &amp; Unrestrained CDS Issuance
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 ｜ 2007 – Summer 2008</span>
+            Subprime CDO Collapse &amp; Mounting Unrealized Losses
+          </button>
+          <button class="phase-btn active" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 ｜ September 15–16, 2008</span>
+            Rating Downgrades, Collateral Calls &amp; Illiquidity
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 ｜ September 16, 2008 Onward</span>
+            $180B+ Nationalization &amp; Backdoor Bank Bailout
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">AIG Parent Credit Rating &amp; Cash Liquidity</div>
+            <div class="metric-value" id="m-rating">AAA Stripped ➔ Total Cash Depletion in Days</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-rating" style="width: 8%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Additional Collateral Calls from Mega-Banks</div>
+            <div class="metric-value" id="m-collateral">Extreme (Immediate Demands for Tens of Billions)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-collateral" style="width: 100%; background-color: #e11d48;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Public Bailout Funds Injected &amp; Transferred to Banks</div>
+            <div class="metric-value" id="m-bailout">Imminent Default (Next-Day $180B+ Rescue)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-bailout" style="width: 90%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>[Phase 3: September 15–16, 2008 — Rating Downgrades Following Lehman's Bankruptcy and the Liquidity Panic]</strong><br>
+          Immediately following Lehman Brothers' filing for bankruptcy on September 15, 2008, all three major rating agencies downgraded AIG's credit ratings. AIGFP's CDS contracts contained credit rating triggers: as long as AIG maintained a AAA rating, it was exempt from posting cash collateral; however, <strong>the instant its rating was downgraded, it was contractually obligated to post tens of billions of dollars in cash collateral immediately</strong>. Demands for immediate cash from counterparties like Goldman Sachs flooded in simultaneously, pushing AIG to the brink of disorderly collapse overnight.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Too Big to Fail & Wall Street Backdoor Bailout -->
+    <section>
+      <h2>3. "Too Big to Fail" and Wall Street's Backdoor Bailout</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        On <strong>September 16, 2008</strong>—the very day after allowing Lehman Brothers to fail—AIG stood completely insolvent and facing imminent bankruptcy.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🏛️ De Facto Nationalization with Over $180 Billion in Public Funds</span>
+          </div>
+          <p class="factor-desc">
+            Having let Lehman fail, the Federal Reserve (FRB) and the US Treasury reversed course completely for AIG, <strong>ultimately injecting over $180 billion in taxpayer funds—the largest financial rescue in history—taking a nearly 80% equity stake in a de facto nationalization</strong>.<br><br>
+            The decision was driven by the realization that because AIG's CDS commitments formed a web spanning the entire global financial architecture, its collapse would inflict catastrophic losses across major US and European banks, causing a <strong>complete systemic meltdown of the Western banking system</strong>.
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>💸 100% Full-Par Backdoor Bailout to Goldman Sachs and Counterparties</span>
+          </div>
+          <p class="factor-desc">
+            Crucially, the public taxpayer funds injected into AIG were channeled directly to AIG's trading counterparties—most notably <strong>Goldman Sachs, Société Générale, Deutsche Bank, and Merrill Lynch—at 100 cents on the dollar, without requiring a single dollar of haircut (loss-sharing)</strong>.<br><br>
+            Consequently, the intervention was widely condemned by the public and independent observers as a <strong>"backdoor bailout," using AIG merely as a conduit to rescue reckless Wall Street mega-banks at public expense</strong> while privatizing their previous profits.
+          </p>
+        </div>
+      </div>
+
+      <!-- Visual Conduit Diagram -->
+      <div class="conduit-box">
+        <div style="font-weight: 800; color: var(--crimson); font-size: 1.08rem;">
+          🔄 The Reality of the "AIG Bailout": A Backdoor Conduit Funneling Public Funds Directly to Mega-Banks
+        </div>
+        <div class="conduit-grid">
+          <div class="conduit-card">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--primary); margin-bottom: 0.3rem;">① Capital Provider (Public Burden)</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.4rem;">Federal Reserve (NY Fed) &amp; US Treasury</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              US taxpayers and the central bank established an unprecedented <strong>$182.3 billion rescue facility</strong> for AIG.
+            </p>
+          </div>
+          <div class="conduit-card" style="border-color: #fbbf24; background: #fffbeb;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 0.3rem;">② Conduit (Pass-Through)</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.4rem;">AIG &amp; Subsidiary AIGFP</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              Tens of billions of dollars in injected state funds were immediately wired out to settle CDS contracts and satisfy collateral demands.
+            </p>
+          </div>
+          <div class="conduit-card" style="border-color: #fda4af; background: #fff1f2;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--rose); margin-bottom: 0.3rem;">③ True Beneficiaries (100% Par Recovery)</div>
+            <div style="font-weight: 800; font-size: 1.02rem; margin-bottom: 0.4rem;">Wall Street &amp; European Mega-Banks</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              <strong>Goldman Sachs (~$12.9B)</strong>, Société Générale, Deutsche Bank, and Merrill Lynch recovered 100% of their claims with zero haircuts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table: Traditional Insurance vs CDS Casino -->
+      <h3>📊 Deep-Dive Comparison: Traditional Insurance Business vs. AIGFP's CDS Casino</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">Comparison Metric</th>
+              <th style="width: 39%;">Traditional Insurance (Life, Property &amp; Casualty)</th>
+              <th style="width: 39%;">AIGFP's CDS (Credit Default Swap) Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Legal Status &amp; Regulatory Oversight</strong></td>
+              <td>Subject to comprehensive state-level <strong>insurance statutory laws and supervisory authorities</strong>.</td>
+              <td>Treated as "over-the-counter derivative contracts rather than insurance," deliberately <strong>exempted from state insurance regulation and capital oversight</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Reserve &amp; Capital Requirements</strong></td>
+              <td>Strictly mandated to maintain statutory <strong>actuarial reserves</strong> to cover future policyholder claims.</td>
+              <td>Shielded by parent AAA rating; <strong>held virtually zero cash reserves or dedicated collateral</strong> while writing hundreds of billions in guarantees.</td>
+            </tr>
+            <tr>
+              <td><strong>Nature of Risk (Law of Large Numbers)</strong></td>
+              <td>Underwrites <strong>uncorrelated, independent perils</strong> (automobile collisions, individual mortality, house fires) where events do not occur simultaneously.</td>
+              <td>Exposed to <strong>correlated systemic risk</strong> (a nationwide collapse of the housing market and global credit crunch occurring all at once).</td>
+            </tr>
+            <tr>
+              <td><strong>Loss-Bearing Architecture Upon Failure</strong></td>
+              <td>Policyholder protection funds and strict asset ring-fencing safeguard policyholders without sovereign contagion.</td>
+              <td><strong>"Profits privatized into enormous trader bonuses; catastrophic losses socialized onto taxpayers under the pretext of 'Too Big to Fail'."</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Financial Oligarchy and Imperialism: Supplementary Series ⑱ ｜ The AIG Crisis, Credit Default Swaps (CDS), and Wall Street's "Backdoor Bailout"</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        ratingText: "Top-Tier AAA Rating (Pristine Market Confidence)",
+        ratingWidth: "100%",
+        ratingColor: "#10b981",
+        collateralText: "Zero (Exempt from Collateral Posting via AAA Status)",
+        collateralWidth: "5%",
+        collateralColor: "#10b981",
+        bailoutText: "None (Massive Trader Bonuses Distributed)",
+        bailoutWidth: "10%",
+        bailoutColor: "#38bdf8",
+        desc: "<strong>[Phase 1: 1998–2006 — Monetizing the AAA Rating &amp; Bonanza of CDS Issuance]</strong><br>Operating from London with around 400 employees, specialized subsidiary AIG Financial Products (AIGFP) utilized the parent company's <strong>AAA credit rating</strong> to underwrite nearly $500 billion in CDS protection on multi-sector Collateralized Debt Obligations (CDOs). Confident in mathematical models showing that a simultaneous national housing collapse was virtually impossible, AIGFP posted no capital reserves and booked upfront premium revenues as pure profit, paying astronomical executive and trader compensation."
+      },
+      {
+        ratingText: "Warning Signals for AAA (Subprime Losses Surface)",
+        ratingWidth: "45%",
+        ratingColor: "#f59e0b",
+        collateralText: "Surging (Goldman Sachs Demands Cash Collateral)",
+        collateralWidth: "65%",
+        collateralColor: "#f59e0b",
+        bailoutText: "Private Financing Capacity Nearing Exhaustion",
+        bailoutWidth: "40%",
+        bailoutColor: "#f59e0b",
+        desc: "<strong>[Phase 2: 2007 – Summer 2008 — Subprime Housing Crash &amp; Plummeting CDO Values]</strong><br>As subprime mortgage defaults escalated, the market value of multi-sector CDOs insured by AIG collapsed. Wall Street counterparties, led by Goldman Sachs, aggressively marked down the value of CDOs and issued multibillion-dollar collateral calls to AIG. AIG began reporting historic quarterly mark-to-market losses running into tens of billions of dollars."
+      },
+      {
+        ratingText: "AAA Stripped ➔ Total Cash Depletion in Days",
+        ratingWidth: "8%",
+        ratingColor: "#f43f5e",
+        collateralText: "Extreme (Immediate Demands for Tens of Billions)",
+        collateralWidth: "100%",
+        collateralColor: "#e11d48",
+        bailoutText: "Imminent Default (Next-Day $180B+ Rescue)",
+        bailoutWidth: "90%",
+        bailoutColor: "#f59e0b",
+        desc: "<strong>[Phase 3: September 15–16, 2008 — Rating Downgrades Following Lehman's Bankruptcy and the Liquidity Panic]</strong><br>Immediately following Lehman Brothers' filing for bankruptcy on September 15, 2008, all three major rating agencies downgraded AIG's credit ratings. AIGFP's CDS contracts contained credit rating triggers: as long as AIG maintained a AAA rating, it was exempt from posting cash collateral; however, <strong>the instant its rating was downgraded, it was contractually obligated to post tens of billions of dollars in cash collateral immediately</strong>. Demands for immediate cash from counterparties like Goldman Sachs flooded in simultaneously, pushing AIG to the brink of disorderly collapse overnight."
+      },
+      {
+        ratingText: "De Facto Nationalization (Government Holds ~80% Equity)",
+        ratingWidth: "25%",
+        ratingColor: "#a855f7",
+        collateralText: "100% Face-Value Payments to Banks via Bailout Funds",
+        collateralWidth: "100%",
+        collateralColor: "#e11d48",
+        bailoutText: "Total Injections Exceed $180 Billion (~$19T Yen)",
+        bailoutWidth: "100%",
+        bailoutColor: "#e11d48",
+        desc: "<strong>[Phase 4: September 16, 2008 Onward — The $180B+ Historic Rescue and the Backdoor Bailout]</strong><br>Fearing that an AIG bankruptcy would trigger a cascade of collapses across global financial institutions and freeze the Western banking system, the Federal Reserve and US Treasury <strong>committed over $180 billion in public funding to seize control of AIG</strong>. Crucially, these funds were paid out to trading counterparties like Goldman Sachs at <strong>100 cents on the dollar with zero haircuts</strong>, provoking public outrage at a backdoor bailout of Wall Street banks disguised as an insurance rescue."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-rating').textContent = p.ratingText;
+      const bRating = document.getElementById('b-rating');
+      bRating.style.width = p.ratingWidth;
+      bRating.style.backgroundColor = p.ratingColor;
+
+      document.getElementById('m-collateral').textContent = p.collateralText;
+      const bCol = document.getElementById('b-collateral');
+      bCol.style.width = p.collateralWidth;
+      bCol.style.backgroundColor = p.collateralColor;
+
+      document.getElementById('m-bailout').textContent = p.bailoutText;
+      const bBail = document.getElementById('b-bailout');
+      bBail.style.width = p.bailoutWidth;
+      bBail.style.backgroundColor = p.bailoutColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>

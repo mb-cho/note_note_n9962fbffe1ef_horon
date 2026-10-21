@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Financial Extraction in the Late Roman Republic — Brutus's 48% Usury Scandal and Cicero's Dilemma</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Series Nav */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #312e81 40%, #1e1b4b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.35);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    .lead a {
+      color: #fbbf24;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    /* Flow Diagrams */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .flow-step {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flow-step.step-warn { border-top-color: var(--accent); }
+    .flow-step.step-danger { border-top-color: var(--rose); }
+    .flow-step.step-purple { border-top-color: var(--purple); }
+
+    .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .flow-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .factor-card.card-amber { border-left-color: var(--accent); }
+    .factor-card.card-emerald { border-left-color: var(--emerald); }
+    .factor-card.card-blue { border-left-color: var(--primary-light); }
+
+    .factor-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .factor-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      color: #ffffff;
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #334155;
+      box-shadow: var(--shadow);
+    }
+
+    .sim-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sim-subtitle {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.5rem;
+      padding: 0.7rem 0.8rem;
+      color: #e2e8f0;
+      text-align: left;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #fbbf24;
+    }
+
+    .phase-btn.active {
+      background: #fbbf24;
+      color: #0f172a;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.72rem;
+      opacity: 0.85;
+      margin-bottom: 0.2rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.5rem;
+      padding: 0.9rem 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Compound Interest Calculator */
+    .calc-panel {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slider-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      min-width: 180px;
+      accent-color: #fbbf24;
+      cursor: pointer;
+    }
+
+    .calc-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .calc-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .calc-box.usury {
+      background: rgba(225, 29, 72, 0.18);
+      border-color: rgba(251, 113, 133, 0.45);
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligopoly and Imperialism Supplement Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link active">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Ancient Roman Financial History &amp; Oligarchic Corruption</span>
+        <span class="badge badge-sub">51 BC: The Salamis Usury Affair in Cyprus</span>
+      </div>
+      <h1>Financial Extraction in the Late Roman Republic:<br>Brutus's 48% Usury Scandal and Cicero's Dilemma</h1>
+      <p class="lead">
+        This historical episode centers on the predatory usury operation orchestrated by <a href="https://en.wikipedia.org/wiki/Marcus_Junius_Brutus" target="_blank" rel="noopener noreferrer">Marcus Junius Brutus</a> (the chief conspirator in the assassination of Julius Caesar) against the city of Salamis on Cyprus in the late Roman Republic (1st century BC).<a href="#ref-1" class="cite-tag">[1]</a><br>
+        Exploiting the fiscal distress of Salamis—then part of the Roman province of Cilicia—<a href="https://en.wikipedia.org/wiki/Marcus_Junius_Brutus" target="_blank" rel="noopener noreferrer">Brutus</a> extended loans through front-men at an extortionate <strong>48% annual compound interest</strong> and enforced collection using state cavalry detachments.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+    </header>
+
+    <!-- Structural Overview & Interactive Simulator -->
+    <section>
+      <h2>🏛️ The "Front-Man Usury" Mechanism of Provincial Plunder &amp; Interactive Analysis</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        In late republican Rome, senatorial aristocrats (nobiles) were formally barred by statute from engaging in trade and usury. In practice, however, they erected a sophisticated extraction circuit: <strong>Crushing Provincial Tributes &rarr; Illegal Usurious Loans via Equestrian Front-Men &rarr; Violent Private Enforcement via Imperial Cavalry</strong>.
+      </p>
+
+      <!-- 4-Step Flow Diagram -->
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 1: The Debt Trap</span>
+          <div class="flow-title">Crushing Tribute &amp; Indemnities</div>
+          <p class="flow-desc">
+            Provincial municipalities (such as Salamis in Cyprus) were coerced into borrowing heavily from Roman magnates merely to pay ruinous imperial taxes and wartime tributes demanded by Rome.
+          </p>
+        </div>
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 2: Regulatory Evasion</span>
+          <div class="flow-title">Brutus &amp; The Equestrian Dummy</div>
+          <p class="flow-desc">
+            Because senators were legally barred from lending, <strong>Brutus</strong> installed an equestrian financier, <strong>Scaptius</strong>, as a nominal front-man, issuing loans at <strong>48% APR</strong>—four times the legal cap of 12%.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">STEP 3: Military Extortion</span>
+          <div class="flow-title">Cavalry Siege &amp; 5 Councilors Starved</div>
+          <p class="flow-desc">
+            The previous governor, Appius Claudius (Brutus's father-in-law), gave Scaptius a military commission and a cavalry unit. Scaptius besieged the town hall of Salamis, <strong>starving five city councilors to death</strong>.
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">STEP 4: Governance Dilemma</span>
+          <div class="flow-title">Proconsul Cicero's Impasse</div>
+          <p class="flow-desc">
+            Arriving as proconsul in 51 BC, <strong>Cicero</strong> withdrew the troops and capped interest at 12%. Upon discovering Brutus was the true creditor, Cicero was caught between legal justice and senatorial peer pressure.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 The Salamis Usury Scandal: Chronological Phases &amp; Compounding Calculator</div>
+            <div class="sim-subtitle">Toggle through the historical phases to observe the stark divergence: Legal 12% Ceiling vs. Brutus's 48% Extortion</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 | 56 BC</span>
+            Dummy Contract &amp; Exemption Decree (48% APR)
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 | 52 BC</span>
+            Cavalry Siege of Town Hall &amp; 5 Councilors Starved
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 | 51 BC</span>
+            Proconsul Cicero's Mandate: 12% Ceiling
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 | 50 BC</span>
+            Brutus's Pressure &amp; Political Impasse Deferred
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Creditor Demanded Yield (Legal Cap 12%)</div>
+            <div class="metric-value" id="m-rate">48% APR (4% monthly)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-rate" style="width: 100%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Privatization of Sovereign Military Coercion</div>
+            <div class="metric-value" id="m-force">High (Abuse of Senate Exemption)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-force" style="width: 75%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Cicero's Ethical &amp; Political Dilemma</div>
+            <div class="metric-value" id="m-dilemma">Pre-Arrival (Unaware)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-dilemma" style="width: 15%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 1: 56 BC — The Regulatory Evasion Scheme】</strong><br>
+          Under the Lex Gabinia, provincial communities were prohibited from borrowing in Rome. However, Brutus used his senatorial clout to pass special senatus consulta exempting the loan to Salamis from statutory bans. Installing his front-man, M. Scaptius, as nominal creditor, he locked the desperate city into an extortionate contract at <strong>48% annual compound interest</strong>—four times the Roman statutory ceiling of 12%.
+        </div>
+
+        <!-- Compound Interest Comparison Calculator -->
+        <div class="calc-panel">
+          <div style="font-weight: 700; color: #fde047; font-size: 0.95rem;">
+            🧮 Debt Compounding Simulation on Principal of 100 Talents (Elapsed Time: <span id="year-val">4</span> Years)
+          </div>
+          <div class="slider-row">
+            <span style="font-size: 0.82rem; color: #cbd5e1;">Year 1</span>
+            <input type="range" id="year-slider" min="1" max="6" value="4" oninput="updateCalc(this.value)">
+            <span style="font-size: 0.82rem; color: #cbd5e1;">Year 6</span>
+          </div>
+          <div class="calc-compare">
+            <div class="calc-box">
+              <div style="font-size: 0.8rem; color: #93c5fd; font-weight: 700;">⚖️ Roman Statutory Ceiling (12% APR / Cicero's Edict)</div>
+              <div style="font-size: 1.4rem; font-weight: 800; margin: 0.3rem 0;" id="legal-total">157.4 Talents</div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;" id="legal-note">approx. 1.57x Principal (Legal total Salamis offered to settle immediately)</div>
+            </div>
+            <div class="calc-box usury">
+              <div style="font-size: 0.8rem; color: #fda4af; font-weight: 700;">🩸 Brutus &amp; Scaptius Demand (48% APR Compounded)</div>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #fecdd3; margin: 0.3rem 0;" id="usury-total">479.9 Talents</div>
+              <div style="font-size: 0.8rem; color: #fecdd3;" id="usury-note">approx. 4.80x Principal (+322.5 Talents of excess usurious extraction over legal cap)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1 -->
+    <section>
+      <h2>1. Chronicle of the Scandal and Brutus's Covert Operation</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        The operation combined crushing provincial tax burdens, senatorial circumvention of usury laws, and the privatization of Roman military units for private debt recovery.
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>① Context: Tributary Exhaustion</span>
+          </div>
+          <p class="factor-desc">
+            To satisfy Rome's extortionate war indemnities and tax requisitions, provincial cities in Cilicia were forced to borrow from elite Roman senators at crushing rates.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>② Predatory Loan: Front-Man at 48% APR</span>
+          </div>
+          <p class="factor-desc">
+            Barred by ancestral tradition from direct money-lending, <strong>Brutus</strong> operated through <strong>Marcus Scaptius</strong> (an equestrian tax farmer). The loan carried an extortionate yield of <strong>48% APR</strong>, grossly exceeding the statutory cap of <strong>12%</strong>.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>③ Military Siege: 5 Councilors Starved</span>
+          </div>
+          <p class="factor-desc">
+            When Salamis fell behind on interest, Scaptius secured Roman cavalry detachments from the prior governor. He besieged the town hall, trapping the city council inside until <strong>five councilors starved to death</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">🔍 Institutional Mechanics: Why Roman Senators Employed Equestrian Front-Men</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          In Republican Rome, the Claudian Law (Lex Claudia) and noble custom prohibited senatorial elites from openly engaging in overseas commerce and public tax-farming contracts. Consequently, the senatorial oligarchy established an anonymous intermediary system: they deployed <strong>Equestrian knights (equites and publicani)</strong> as operational fronts while secretly bankrolling transactions and pocketing massive windfalls. Furthermore, the prior governor of Cilicia, <strong>Appius Claudius Pulcher</strong>, was Brutus's father-in-law. Appius granted Scaptius an official military prefecture (praefectura) and placed state cavalry at the disposal of a private loan shark, exemplifying the brazen privatization of imperial public authority.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2>2. Cicero's Indictment and Moral Dilemma</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        In 51 BC, renowned orator, philosopher, and legal moralist <strong>Marcus Tullius Cicero</strong> took up his post as proconsul of Cilicia.<a href="#ref-1" class="cite-tag">[1]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>⚖️ Cicero's Initial Rectification Decree</span>
+          </div>
+          <p class="factor-desc">
+            Appalled by the atrocity upon arrival, Cicero immediately <strong>expelled the cavalry detachment from Cyprus</strong>, instituted a ban on appointing merchants to military commands, and ruled that debt interest must be capped at the legal ceiling of <strong>12% simple interest</strong>. The Salaminians accepted this ruling and prepared to deposit full payment into a temple vault.
+          </p>
+        </div>
+
+        <div class="factor-card card-blue">
+          <div class="factor-title">
+            <span>⚡ The True Mastermind Revealed</span>
+          </div>
+          <p class="factor-desc">
+            During judicial proceedings, Scaptius revealed that the real creditor behind the loan was none other than Cicero's revered philosophical ally, <strong>Brutus</strong>. Brutus exerted intense pressure on Cicero, demanding that the proconsul enforce the full <strong>48% rate</strong> and reinstate cavalry support.<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 1.5rem;">
+        <div class="callout-title">📜 Cicero's Private Agony (Letters to Atticus: Ad Atticum V.21 / VI.1)</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          The full reality of this scandal survives in Cicero's confidential correspondence with his closest friend and financial confidant, Titus Pomponius Atticus. Brutus had initially sent Cicero a courteous letter asking him to protect Scaptius's business affairs. When Scaptius later confessed that <strong>Brutus himself was the sole proprietor of the debt</strong>, Cicero was shocked. To Cicero's horror, even Atticus urged him to lend Scaptius "at least fifty troopers" to compel payment. Though Cicero stood firm in refusing military violence, he feared a catastrophic break with the senatorial champion Brutus. Ultimately, Cicero refused to let Salamis formally deposit the 12% payoff (which would have legally extinguished the debt), cowardice passing the unresolved dispute to his senatorial successor.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+      <h2>3. Historical Context: The Structural Rot of Roman Oligarchy</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        The Salamis loan scandal epitomizes the structural decadence of the senatorial <strong>oligarchy (the aristocratic republic)</strong> in its final decades.<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>🏛️ Provinces as Private Extraction Engines</span>
+          </div>
+          <p class="factor-desc">
+            The senatorial patricians regarded conquered provinces not as administrative commonwealths, but as private extraction estates. The immense fortunes required to bribe domestic voters, stage gladiator spectacles, and sustain extravagant palatial estates were wrung from subject provincials through extortionate usury and unbridled tax predation.
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🎭 "False Liberty" &amp; The Reality of Senatorial Oligarchs</span>
+          </div>
+          <p class="factor-desc">
+            History often romanticizes <strong>Brutus</strong> as the noble martyr of republican liberty who struck down the tyrant Caesar. In concrete economic reality, he was an arch-representative of an entrenched financial oligarchy whose concept of "liberty" meant the untrammeled right of senatorial elites to exploit provincials without monarchical or popular interference.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+      </div>
+
+      <h3>📊 Comparative Synthesis: Brutus and the Dual Reality of Late Republican Oligarchy</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">Analytical Dimension</th>
+              <th style="width: 39%;">The Idealized Myth (Guardian of the Republic)</th>
+              <th style="width: 39%;">Historical Reality (Financial Oligarch &amp; Provincial Usurer)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Conception of "Liberty" (Libertas)</strong></td>
+              <td>A sublime ideological struggle to defend the traditional Roman constitution against autocratic tyranny (Caesarism).</td>
+              <td>The exclusive class privilege of the <strong>Optimates</strong> to rule, tax, and extract surplus from provinces without sovereign restraint.<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Attitude Toward Law &amp; Ethics</strong></td>
+              <td>A stoic, austere philosopher-statesman steeped in Platonic and Stoic virtue.</td>
+              <td>A predatory financier who leveraged senatorial decrees to circumvent statutory bans, gouging victims at <strong>48% APR (4x legal cap)</strong> via dummy agents.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Deployment of Sovereign Military Power</strong></td>
+              <td>Armed forces dedicated solely to defending the res publica and the majestic authority of the Senate.</td>
+              <td>State cavalry privatized as a debt-collection enforcer, <strong>starving five city councilors to death</strong> inside their municipal council chambers.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Archetype for Modern Financial Imperialism</strong></td>
+              <td>Viewed as an isolated historical curiosity of ancient warfare.</td>
+              <td>The exact precursor to modern gunboat diplomacy and colonial debt traps: <strong>War Indemnity &rarr; Sovereign Usury &rarr; Military Gunboat Enforcement</strong>.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-7" class="cite-tag">[7]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 Primary Sources &amp; References</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        Primary historical texts, epigraphic evidence, and contemporary academic literature referenced in this study:
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://dergipark.org.tr/en/pub/olba/article/593326" target="_blank" rel="noopener noreferrer" class="ref-link">OLBA Academic Journal: The Loan of Salamis and Roman Administration in Cilicia</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://www.historytoday.com/history-matters/roman-loans" target="_blank" rel="noopener noreferrer" class="ref-link">History Today: Roman Loans and the Predatory Financial Network of the Republic</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.y-history.net/appendix/wh0103-027.html" target="_blank" rel="noopener noreferrer" class="ref-link">World History Window: Brutus and the Late Roman Aristocratic Republic</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.newadvent.org/cathen/15235c.htm" target="_blank" rel="noopener noreferrer" class="ref-link">Catholic Encyclopedia: History of Usury and Classical Legal Restrictions</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.y-history.net/appendix/wh0103-016.html" target="_blank" rel="noopener noreferrer" class="ref-link">World History Window: The Optimates and the Degeneration of Republican Institutions</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://en.wikipedia.org/wiki/First_Triumvirate" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: Political Structure and Oligarchic Factions of the Late Roman Republic</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://www.aozorabank.co.jp/bank/story/finance/money-talks-1.html" target="_blank" rel="noopener noreferrer" class="ref-link">Aozora Bank Financial History Columns: Classical Usury and Imperial Debt</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Financial Oligopoly and Imperialism Supplement Series ⑨ | The Salamis Usury Affair &amp; Cicero's Dilemma in the Late Roman Republic</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        rateText: "48% APR (4% monthly)",
+        rateWidth: "100%",
+        rateColor: "#f43f5e",
+        forceText: "High (Abuse of Senate Exemption)",
+        forceWidth: "75%",
+        forceColor: "#f59e0b",
+        dilemmaText: "Pre-Arrival (Unaware)",
+        dilemmaWidth: "15%",
+        dilemmaColor: "#38bdf8",
+        desc: "<strong>【Phase 1: 56 BC — The Regulatory Evasion Scheme】</strong><br>Under the Lex Gabinia, provincial communities were prohibited from borrowing in Rome. However, Brutus used his senatorial clout to pass special senatus consulta exempting the loan to Salamis from statutory bans. Installing his front-man, M. Scaptius, as nominal creditor, he locked the desperate city into an extortionate contract at <strong>48% annual compound interest</strong>—four times the Roman statutory ceiling of 12%."
+      },
+      {
+        rateText: "48% APR (Military Enforcement)",
+        rateWidth: "100%",
+        rateColor: "#e11d48",
+        forceText: "Extreme (Cavalry Siege of Council)",
+        forceWidth: "100%",
+        forceColor: "#e11d48",
+        dilemmaText: "Complicity of Prior Governor Appius",
+        dilemmaWidth: "40%",
+        dilemmaColor: "#f59e0b",
+        desc: "<strong>【Phase 2: 52 BC — Cavalry Siege of Council Hall &amp; 5 Councilors Starved】</strong><br>When Salamis defaulted on the crippling 48% interest, agent Scaptius procured a military commission and a cavalry squadron from the governor of Cilicia, Appius Claudius (Brutus's father-in-law). Scaptius blockaded the council chamber of Salamis with cavalry, <strong>starving five city councilors to death</strong> in a brutal display of private debt collection."
+      },
+      {
+        rateText: "12% APR (Cicero's Statutory Ceiling)",
+        rateWidth: "25%",
+        rateColor: "#10b981",
+        forceText: "Troop Withdrawal (Cavalry Expelled)",
+        forceWidth: "15%",
+        forceColor: "#10b981",
+        dilemmaText: "Moderate (Swift Judicial Intervention)",
+        dilemmaWidth: "50%",
+        dilemmaColor: "#38bdf8",
+        desc: "<strong>【Phase 3: 51 BC — Proconsul Cicero Takes Office &amp; Mandates 12% Ceiling】</strong><br>Arriving in Cilicia, proconsul Cicero heard the desperate petitions from Salamis and immediately ordered the cavalry withdrawn from Cyprus. Furthermore, upholding his edict, he ruled that the interest must be reduced to the statutory maximum of <strong>12% simple interest</strong>, a settlement that the Salaminians gratefully prepared to pay in full."
+      },
+      {
+        rateText: "Refused 12% Deposit / Froze at 48%",
+        rateWidth: "85%",
+        rateColor: "#f59e0b",
+        forceText: "Refused Troops (Dispute Postponed)",
+        forceWidth: "55%",
+        forceColor: "#f59e0b",
+        dilemmaText: "Extreme (Pressure from Brutus &amp; Atticus)",
+        dilemmaWidth: "100%",
+        dilemmaColor: "#e11d48",
+        desc: "<strong>【Phase 4: 50 BC — True Creditor Revealed (Brutus) &amp; Impasse Deferred】</strong><br>At the hearing, Scaptius revealed that the true owner of the loan was Brutus himself. Besieged by letters from Brutus and their mutual friend Atticus demanding that he validate the 48% contract and furnish troops, Cicero held firm against remobilizing cavalry. However, unwilling to permanently alienate the senatorial leader Brutus, Cicero cowardly refused to accept Salamis's formal 12% payoff deposit, punting the unresolved crisis to his successor."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+      document.getElementById('m-rate').textContent = p.rateText;
+      const bRate = document.getElementById('b-rate');
+      bRate.style.width = p.rateWidth;
+      bRate.style.backgroundColor = p.rateColor;
+
+      document.getElementById('m-force').textContent = p.forceText;
+      const bForce = document.getElementById('b-force');
+      bForce.style.width = p.forceWidth;
+      bForce.style.backgroundColor = p.forceColor;
+
+      document.getElementById('m-dilemma').textContent = p.dilemmaText;
+      const bDilemma = document.getElementById('b-dilemma');
+      bDilemma.style.width = p.dilemmaWidth;
+      bDilemma.style.backgroundColor = p.dilemmaColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    function updateCalc(years) {
+      const y = parseInt(years, 10);
+      document.getElementById('year-val').textContent = y;
+      const principal = 100;
+      const legal = principal * Math.pow(1.12, y);
+      const usury = principal * Math.pow(1.48, y);
+      const diff = usury - legal;
+
+      document.getElementById('legal-total').textContent = legal.toFixed(1) + " Talents";
+      document.getElementById('legal-note').textContent =
+        "approx. " + (legal / principal).toFixed(2) + "x Principal (Legal ceiling Salamis agreed to pay immediately)";
+
+      document.getElementById('usury-total').textContent = usury.toFixed(1) + " Talents";
+      document.getElementById('usury-note').textContent =
+        "approx. " + (usury / principal).toFixed(2) + "x Principal (Difference from legal cap: +" + diff.toFixed(1) + " Talents of excess extraction)";
+    }
+  </script>
+</body>
+</html>

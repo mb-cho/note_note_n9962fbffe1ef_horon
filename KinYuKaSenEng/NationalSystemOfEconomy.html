@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: The National System of Political Economy — Hamilton, Clay, and Friedrich List</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --accent-dark: #78350f;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #854d0e 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fef08a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    header h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 0.9rem;
+    }
+
+    header p {
+      font-size: 0.98rem;
+      color: #e2e8f0;
+      max-width: 860px;
+    }
+
+    /* Section Card */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .section-num {
+      background: var(--primary-dark);
+      color: #ffffff;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .section-num.amber {
+      background: var(--accent);
+    }
+
+    .section-num.emerald {
+      background: var(--emerald);
+    }
+
+    .section-num.purple {
+      background: var(--purple);
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .lead-text {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Concept Dual Cards */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .concept-card {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.35rem;
+      background: #f8fafc;
+      border-top: 4px solid var(--primary);
+    }
+
+    .concept-card.smith {
+      border-top-color: #64748b;
+      background: #f1f5f9;
+    }
+
+    .concept-card.national {
+      border-top-color: var(--accent);
+      background: #fffbeb;
+    }
+
+    .concept-badge {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .concept-card.smith .concept-badge {
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    .concept-card.national .concept-badge {
+      background: #fde68a;
+      color: #92400e;
+    }
+
+    .concept-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.55rem;
+      color: var(--text-main);
+    }
+
+    .concept-card p, .concept-card li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .concept-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .concept-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* 3 Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      margin: 1.35rem 0;
+    }
+
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.35rem;
+      border-top: 5px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pillar-card.p1 { border-top-color: var(--rose); }
+    .pillar-card.p2 { border-top-color: var(--primary); }
+    .pillar-card.p3 { border-top-color: var(--emerald); }
+
+    .pillar-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card.p1 .pillar-num { background: var(--rose-light); color: var(--crimson); }
+    .pillar-card.p2 .pillar-num { background: #dbeafe; color: var(--primary); }
+    .pillar-card.p3 .pillar-num { background: var(--emerald-light); color: var(--emerald); }
+
+    .pillar-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Cycle Loop Banner */
+    .cycle-banner {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-top: 1.35rem;
+    }
+
+    .cycle-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fde68a;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .cycle-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .cycle-node {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 0.85rem;
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    .cycle-node.highlight {
+      background: #854d0e;
+      border-color: #fde68a;
+      color: #fef08a;
+    }
+
+    .cycle-arrow {
+      color: #94a3b8;
+      font-weight: 800;
+    }
+
+    /* List 5 Stages */
+    .stages-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1.25rem 0;
+    }
+
+    .stage-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.15rem;
+      border-radius: 0.65rem;
+      transition: all 0.2s;
+    }
+
+    .stage-row.critical {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left: 5px solid var(--rose);
+    }
+
+    .stage-row.peak {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+      border-left: 5px solid var(--emerald);
+    }
+
+    .stage-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .stage-row.critical .stage-badge {
+      background: var(--rose);
+    }
+
+    .stage-row.peak .stage-badge {
+      background: var(--emerald);
+    }
+
+    .stage-name {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--text-main);
+      min-width: 130px;
+    }
+
+    .stage-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.85rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .sim-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .sim-tab {
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #cbd5e1;
+      padding: 0.65rem 0.4rem;
+      border-radius: 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .sim-tab:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .sim-tab.active {
+      background: linear-gradient(135deg, #b45309, #d97706);
+      border-color: #fde68a;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-metric-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.65rem;
+      padding: 0.9rem;
+    }
+
+    .sim-metric-label {
+      font-size: 0.73rem;
+      color: #94a3b8;
+      margin-bottom: 0.3rem;
+    }
+
+    .sim-metric-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .sim-metric-sub {
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .sim-bars {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .bar-row {
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 14px;
+      background: #0f172a;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .bar-fill.production {
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+    }
+
+    .bar-fill.dependency {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    .sim-narrative {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.2rem;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #1e293b;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Lineage Flow (US -> Germany -> Japan -> Modern) */
+    .lineage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .lineage-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.2rem;
+      border-top: 4px solid var(--primary);
+    }
+
+    .lineage-card.c2 { border-top-color: #854d0e; }
+    .lineage-card.c3 { border-top-color: var(--rose); }
+    .lineage-card.c4 { border-top-color: var(--emerald); }
+
+    .lineage-era {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .lineage-card h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.45rem;
+    }
+
+    .lineage-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .concept-grid,
+      .pillars-grid,
+      .sim-tabs,
+      .sim-metrics,
+      .lineage-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 1.75rem 1.25rem;
+      }
+      header h1 {
+        font-size: 1.45rem;
+      }
+      .section-card {
+        padding: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Navigation Bar -->
+    <nav class="nav-box" aria-label="Supplement Series Navigation">
+      <div class="nav-title">📚 Financial Oligopoly Supplement Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Ottoman Empire Exploitation</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark & Rentenmark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism & 1920s America</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Bank Oligarchy Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+      <a href="NationalSystemOfEconomy.html" class="nav-link active">㉑ National System of Economy</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement ㉑ | History of Economic Thought, Industrial Policy & Sovereignty</span>
+        <span class="badge" style="background:rgba(245,158,11,0.3); color:#fef08a;">Integrated Edition: Hamilton x Clay x Friedrich List</span>
+      </div>
+      <h1>The National System of Political Economy<br>— Economic Independence, Infant Industry Protection, and the Theory of "Productive Powers"</h1>
+      <p>
+        In direct opposition to the British classical school's doctrine of "free trade" (cosmopolitanism) championed by Adam Smith, the newly independent United States and latecomer Germany formulated the <strong>"National System of Political Economy" (The American System / Nationalökonomie)</strong> to break free from structural economic subjugation. Here we examine the intellectual architecture synthesized by Alexander Hamilton, Henry Clay, and Friedrich List, and its enduring relevance to modern industrial policy.
+      </p>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Fundamental Motivation: Why Was a "National Economy" Essential Rather Than "Free Trade"?</h2>
+      </div>
+
+      <p class="lead-text">
+        In the 18th and 19th centuries, the dominant British Empire proclaimed that "free trade is a universal truth enriching all nations." However, statesmen and intellectuals in latecomer nations like the United States and Germany saw this doctrine as a calculated stratagem: <strong>"a device allowing the early industrial hegemon to strangle industrialization in latecomer nations in its cradle, locking them into permanent raw-material colonies."</strong>
+      </p>
+
+      <div class="concept-grid">
+        <div class="concept-card smith">
+          <span class="concept-badge">British Classical Orthodoxy (Adam Smith)</span>
+          <h3>🌐 Cosmopolitan Free Trade Doctrine</h3>
+          <ul>
+            <li><strong>Self-Interest & Global Harmony</strong>: Leaving trade to unconstrained individual enterprise (laissez-faire) ensures the "invisible hand" maximizes the wealth of all mankind.</li>
+            <li><strong>The Principle of Comparative Advantage</strong>: England specializes in manufactured goods while America and Germany export raw cotton, wheat, and minerals — a division of labor claimed to benefit both sides equally.</li>
+            <li><strong>The Hidden Agenda</strong>: A policy of "Kicking Away the Ladder" (Ha-Joon Chang) once the dominant nation has already established unrivaled industrial and technological superiority.</li>
+          </ul>
+        </div>
+
+        <div class="concept-card national">
+          <span class="concept-badge">The National School (Hamilton, Clay, List)</span>
+          <h3>🏛️ National System of Political Economy (Economic Nationalism)</h3>
+          <ul>
+            <li><strong>From Political Independence to "Economic Sovereignty"</strong>: A nation that depends on British manufactured imports and merely exports raw materials remains a "virtual colony," regardless of formal political independence.</li>
+            <li><strong>The "Nation" Mediating Between the Individual and Humanity</strong>: Thrusting immature economies into unprotected global competition invites subjugation. A unified, coherent "national economy" must be deliberately nurtured first.</li>
+            <li><strong>The Primacy of Productive Powers</strong>: Rather than prioritizing immediate access to cheap consumer imports, cultivating domestic manufacturing, technology, transport infrastructure, and skilled labor determines enduring national wealth.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: American System -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num amber">2</div>
+        <h2>Alexander Hamilton and Henry Clay's "American System"</h2>
+      </div>
+
+      <p class="lead-text">
+        Conceived by the first U.S. Secretary of the Treasury <strong>Alexander Hamilton</strong> in his landmark <em>Report on Manufactures</em> (1791) and codified into a legislative platform by Speaker of the House <strong>Henry Clay</strong> in the early 19th century, the "American System" rested on three mutually reinforcing pillars:
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card p1">
+          <div>
+            <span class="pillar-num">Pillar I</span>
+            <h3>① Protective Tariffs</h3>
+            <p>
+              <strong>Infant Industry Safeguards & Revenue Generation</strong><br>
+              Imposing robust tariffs on foreign manufactured imports (principally from Britain) to insulate emerging domestic manufacturing from predatory British price dumping, while generating federal revenues to fund infrastructure development.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card p2">
+          <div>
+            <span class="pillar-num">Pillar II</span>
+            <h3>② A National Bank</h3>
+            <p>
+              <strong>Monetary Stability & Industrial Capital Provision</strong><br>
+              Establishing and maintaining a strong central bank (such as the Second Bank of the United States) to harmonize fragmented state currencies, restrain speculative inflation, and ensure stable long-term credit for industrial and commercial expansion.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card p3">
+          <div>
+            <span class="pillar-num">Pillar III</span>
+            <h3>③ Internal Improvements</h3>
+            <p>
+              <strong>Transport Infrastructure Unifying the National Market</strong><br>
+              Federal financing for interstate roads, canals, railroads, and harbors, slashing freight transit costs and forging the Northeast, South, and emerging West into a unified, continental domestic market.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3本柱の相互循環サイクル -->
+      <div class="cycle-banner">
+        <div class="cycle-title">🔄 The Three Pillars of the American System: Self-Reinforcing Growth Cycle</div>
+        <div class="cycle-flow">
+          <div class="cycle-node">Collect High Protective Tariffs</div>
+          <span class="cycle-arrow">&rarr;</span>
+          <div class="cycle-node highlight">Federal Revenues Finance Roads, Canals & Rail (Internal Improvements)</div>
+          <span class="cycle-arrow">&rarr;</span>
+          <div class="cycle-node">Northern Manufactures & Southern/Western Farm Goods Circulate at Low Cost</div>
+          <span class="cycle-arrow">&rarr;</span>
+          <div class="cycle-node highlight">National Bank Supplies Uniform Currency & Stable Credit</div>
+          <span class="cycle-arrow">&rarr;</span>
+          <div class="cycle-node">U.S. Industrial Productive Capacity Explodes!</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem;">
+          ⚔️ The Hamiltonians vs. Jeffersonians and Lincoln's Ultimate Triumph
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">
+          This program triggered intense sectional conflict. Thomas Jefferson and Andrew Jackson's Democratic Party (representing agrarian interests and Southern plantation enslavers) bitterly opposed it, arguing that a strong federal government was unconstitutional and that high tariffs unfairly enriched Northern industrialists at the expense of Southern raw-cotton exports (deep structural roots of the American Civil War).<br>
+          Following the Civil War, Abraham Lincoln's nascent Republican Party fully adopted and executed the American System. Backed by protective tariffs, transcontinental railroads, and national banking, the United States surpassed Great Britain in the late 19th century to become the preeminent industrial superpower on earth.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Friedrich List -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num emerald">3</div>
+        <h2>Friedrich List's "Theory of Productive Powers" and "Stages of Economic Growth"</h2>
+      </div>
+
+      <p class="lead-text">
+        Exiled from Germany in 1825, economist <strong>Friedrich List (1789–1846)</strong> witnessed the American System in practice in Pennsylvania. Absorbing Hamiltonian industrial policy, List synthesized historical and economic theory into his 1841 magnum opus, <em>The National System of Political Economy</em>.
+      </p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <span class="concept-badge">Core Concept ①</span>
+          <h3>⚙️ Theory of Productive Powers</h3>
+          <p>
+            List launched a scathing critique of classical economics for obsessing over "exchange value" (accumulated consumable wealth).<br>
+            <strong>"The power of producing wealth is therefore infinitely more important than wealth itself."</strong><br>
+            If a nation destroys its domestic manufacturing to enjoy cheap foreign imports, it may save pennies today, but it forfeits its technological base, engineering know-how, employment, and future prosperity.
+          </p>
+        </div>
+
+        <div class="concept-card national">
+          <span class="concept-badge">Core Concept ②</span>
+          <h3>🧠 Intellectual & Institutional Productive Powers</h3>
+          <p>
+            Productive forces comprise more than physical machinery and factories.<br>
+            List defined <strong>"a nation's legal framework, judicial impartiality, public education, scientific institutions, constitutional governance, and civic solidarity"</strong> as the indispensable institutional and moral capital that anchors economic development.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin: 1.5rem 0 0.75rem;">
+        📈 List's Five Stages of Economic Development and Infant Industry Protection
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+        List asserted that national economies evolve through five successive historical stages. The most critical policy decisions occur during <strong>Stage 4</strong>:
+      </p>
+
+      <div class="stages-container">
+        <div class="stage-row">
+          <span class="stage-badge">Stage 1</span>
+          <span class="stage-name">Savage State</span>
+          <span class="stage-desc">Hunter-gatherer society without organized domestic industry or structured state institutions.</span>
+        </div>
+        <div class="stage-row">
+          <span class="stage-badge">Stage 2</span>
+          <span class="stage-name">Pastoral State</span>
+          <span class="stage-desc">Animal husbandry and nomadic herding. Emerging barter trade with outside communities.</span>
+        </div>
+        <div class="stage-row">
+          <span class="stage-badge">Stage 3</span>
+          <span class="stage-name">Agricultural State</span>
+          <span class="stage-desc">Agriculture dominates economic life. Free trade with advanced nations is beneficial here to import superior implements and stimulate agrarian productivity.</span>
+        </div>
+        <div class="stage-row critical">
+          <span class="stage-badge">Stage 4 ⚠️</span>
+          <span class="stage-name">Agri-Manufacturing State</span>
+          <span class="stage-desc"><strong>[The Critical Pivot Point Demanding Infant Industry Protection!]</strong> Nascent modern domestic industry begins to take root. Unrestricted free trade with mature industrial leaders (e.g., Britain at the time) will wipe out infant domestic factories through superior scale. The state must build tariff defenses to foster domestic industrial maturity.</span>
+        </div>
+        <div class="stage-row peak">
+          <span class="stage-badge">Stage 5 🏆</span>
+          <span class="stage-name">Agri-Mfg-Commercial State</span>
+          <span class="stage-desc"><strong>[The Zenith of Development]</strong> Agriculture, industry, and commerce are fully matured and capable of competing on equal terms with any global rival. Only when nations attain this stage does universal free trade become mutually beneficial and desirable.</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.25rem; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 0.75rem; padding: 1.15rem;">
+        <strong style="color: var(--primary);">🚆 List's Practical Triumph in Germany: The Customs Union (1834) and National Rail Network</strong><br>
+        <span style="font-size: 0.88rem; color: var(--text-muted);">
+          Upon returning to Germany, List campaigned tirelessly to dismantle internal tolls among over 30 fragmented German principalities and establish a unified external tariff border, achieving the historic <strong>German Customs Union (Zollverein, 1834)</strong>. He simultaneously championed a comprehensive national railway network, laying the industrial foundation for Bismarck's Imperial Germany.
+        </span>
+      </div>
+    </section>
+
+    <!-- Section 4: Interactive Simulator -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num purple">4</div>
+        <h2>Growth Stage Simulator: Free Trade vs. The National System</h2>
+      </div>
+
+      <p class="lead-text">
+        Based on List's stages theory, examine the economic trajectories of nations choosing between premature free trade and strategic developmental protection.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">🎛️ List's National Development Stage Simulator</div>
+            <div class="sim-subtitle">Select a development stage to analyze domestic industrial survival, productive capacity, and sovereign autonomy.</div>
+          </div>
+        </div>
+
+        <div class="sim-tabs" role="tablist">
+          <button type="button" class="sim-tab" onclick="selectStage(0)" id="stage-tab-0">Stage 1<br>Savage State</button>
+          <button type="button" class="sim-tab" onclick="selectStage(1)" id="stage-tab-1">Stage 2<br>Pastoral State</button>
+          <button type="button" class="sim-tab" onclick="selectStage(2)" id="stage-tab-2">Stage 3<br>Agricultural State</button>
+          <button type="button" class="sim-tab active" onclick="selectStage(3)" id="stage-tab-3">Stage 4 (Crucial)<br>Agri-Manufacturing</button>
+          <button type="button" class="sim-tab" onclick="selectStage(4)" id="stage-tab-4">Stage 5 (Zenith)<br>Agri-Mfg-Commercial</button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Prescribed Trade Policy</div>
+            <div class="sim-metric-value" id="sim-policy" style="color:#fde68a;">High Protective Tariffs</div>
+            <div class="sim-metric-sub" id="sim-policy-sub">Infant Industry Protection</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Consequence of Free Trade</div>
+            <div class="sim-metric-value" id="sim-ft-result" style="color:#fda4af;">Domestic Industry Annihilated</div>
+            <div class="sim-metric-sub" id="sim-ft-sub">Crushed by dumping, reverted to raw materials</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">National Sovereign Autonomy</div>
+            <div class="sim-metric-value" id="sim-sovereignty" style="color:#93c5fd;">Rapid Transformation (Fateful Crossroads)</div>
+            <div class="sim-metric-sub" id="sim-sovereignty-sub">Industrialization determines destiny</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Historical Examples & Eras</div>
+            <div class="sim-metric-value" id="sim-history" style="color:#6ee7b7;">19th c. US, Germany, Meiji Japan</div>
+            <div class="sim-metric-sub" id="sim-history-sub">Era of State-Led Industrialization</div>
+          </div>
+        </div>
+
+        <div class="sim-bars">
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-prod-label">Domestic Productive Capacity (Technology, Organization, Industry)</span>
+              <span id="bar-prod-val">65% (Accelerating Under Protection)</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill production" id="bar-prod-fill" style="width: 65%;"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-dep-label">Economic Dependence on Foreign Hegemons</span>
+              <span id="bar-dep-val">35% (Jumps to 95% Under Free Trade)</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill dependency" id="bar-dep-fill" style="width: 35%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-narrative" id="sim-narrative">
+          <strong>[Stage 4: Agricultural-Manufacturing State (The Fateful Crossroads)]</strong> Modern manufacturing begins to emerge in textiles, metals, and machinery. If a nation falls for Adam Smith's free-trade dogma at this stage, infant domestic factories will be ruthlessly obliterated by the incumbent hegemon's price dumping. As Hamilton and List demonstrated, protective tariffs and infrastructure development are the only escape hatch from permanent colonial servitude.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Historical Lineage and Modern Relevance -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Historical Lineage and Contemporary Relevance: From Hamilton to Modern Economic Security</h2>
+      </div>
+
+      <p class="lead-text">
+        The intellectual lineage of the National System originated in late-18th-century America, spread to 19th-century Germany, powered Meiji Japan's modernization and postwar East Asian developmentalism, and has resurfaced in today's global re-industrialization and economic statecraft.
+      </p>
+
+      <div class="lineage-grid">
+        <div class="lineage-card">
+          <div class="lineage-era">1790s–1860s | United States</div>
+          <h3>🇺🇸 Hamilton to Lincoln</h3>
+          <p>
+            Transformed a fragile agrarian republic into the world's foremost manufacturing titan via high protective tariffs, transcontinental railroads, and national banking.
+          </p>
+        </div>
+
+        <div class="lineage-card c2">
+          <div class="lineage-era">1830s–1870s | Germany</div>
+          <h3>🇩🇪 List to Bismarck</h3>
+          <p>
+            Overcame territorial fragmentation through the Zollverein and national rail network. State-fostered steel, chemical, and electrical industries rapidly outpaced Great Britain.
+          </p>
+        </div>
+
+        <div class="lineage-card c3">
+          <div class="lineage-era">1870s–1900s | Japan</div>
+          <h3>🇯🇵 Meiji Restoration & Shokusan Kogyo</h3>
+          <p>
+            Leaders like Okubo Toshimichi and Maeda Masana avidly embraced List's doctrines. State model factories, rail lines, and tariff autonomy struggles secured national independence.
+          </p>
+        </div>
+
+        <div class="lineage-card c4">
+          <div class="lineage-era">2020s–Present | Global</div>
+          <h3>🌐 Economic Statecraft & Re-Industrialization</h3>
+          <p>
+            With the collapse of neoliberal hyper-globalization, aggressive industrial policy has returned: the U.S. CHIPS and IRA acts, EU strategic autonomy, and supply-chain reshoring.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top: 1.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">Core Dimension</th>
+              <th style="width: 37%;">Neoliberal / Classical Paradigm (Hyper-Globalization)</th>
+              <th style="width: 38%;">National System Paradigm (Hamilton-List School)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ultimate Objective</strong></td>
+              <td>Maximizing global capital efficiency and consumer surplus.</td>
+              <td><strong>Preserving national sovereignty, industrial independence, and lasting productive powers.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Role of the State</strong></td>
+              <td>Night-watchman state: market deregulation, privatization, and non-intervention.</td>
+              <td><strong>Strategic developmental state: protective tariffs, infrastructure financing, and strategic industry incubation.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Definition of Wealth</strong></td>
+              <td>Current exchange value and financial asset stocks (volume of money).</td>
+              <td><strong>Productive powers (technological base, education, physical manufacturing, civic cohesion).</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Approach to Trade</strong></td>
+              <td>Unconditional unilateral free trade is always optimal.</td>
+              <td><strong>Strategic trade: stage-appropriate protection, opening to free trade only between mature equals.</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      Financial Oligopoly Supplement Series ㉑ | The National System of Political Economy (NationalSystemOfEconomy.html)
+    </footer>
+  </div>
+
+  <script>
+    const stagesData = [
+      {
+        policy: "Free Trade (Spontaneous Barter)",
+        policySub: "Pre-tariff primitive era",
+        ftResult: "No impact (Subsistence)",
+        ftSub: "Market economy does not yet exist",
+        sovereignty: "Minimal (Pre-state)",
+        sovereigntySub: "Tribal/communal existence",
+        history: "Ancient & Primitive Era",
+        historySub: "Dawn of civilization",
+        prodVal: "10% (Primitive)",
+        prodWidth: "10%",
+        depVal: "0% (No trade)",
+        depWidth: "5%",
+        narrative: "<strong>[Stage 1: Savage State]</strong> Subsistence hunter-gatherer existence. In the absence of state institutions and organized manufacturing, tariffs and industrial policy are inapplicable."
+      },
+      {
+        policy: "Unregulated Local Barter",
+        policySub: "Exchange of livestock and pelts",
+        ftResult: "Modest trade expansion",
+        ftSub: "Import of basic artisan goods stimulates craft",
+        sovereignty: "Tribal Federation",
+        sovereigntySub: "Settlement and collective defense",
+        history: "Nomadic & Early Pastoral Societies",
+        historySub: "Pre-agrarian stage",
+        prodVal: "20% (Primitive craft)",
+        prodWidth: "20%",
+        depVal: "15% (Salt and basic metal acquisition)",
+        depWidth: "15%",
+        narrative: "<strong>[Stage 2: Pastoral State]</strong> Herding and nomadic grazing dominate. External trade exists primarily to secure salt, minerals, and basic weapons; structured industrial protection is premature."
+      },
+      {
+        policy: "Free External Trade (Commodity Exports)",
+        policySub: "Export agricultural surpluses, import tools",
+        ftResult: "Agrarian development and technology transfer",
+        ftSub: "Absence of domestic industry makes imports beneficial",
+        sovereignty: "Feudal / Monarchical Polity",
+        sovereigntySub: "Rule of agricultural landed elites",
+        history: "Medieval to Early Modern Europe",
+        historySub: "Colonial America",
+        prodVal: "35% (Traditional agriculture)",
+        prodWidth: "35%",
+        depVal: "50% (Dependent on imported manufactures)",
+        depWidth: "50%",
+        narrative: "<strong>[Stage 3: Agricultural State]</strong> Farming is the bedrock of societal wealth. As List conceded, because domestic manufacturing has not yet sprouted, freely importing advanced tools and industrial commodities from advanced nations stimulates agricultural modernization."
+      },
+      {
+        policy: "High Protective Tariffs + State Infrastructure",
+        policySub: "Infant industry incubation (Vital!)",
+        ftResult: "[Fatal Collapse] Domestic industry wiped out",
+        ftSub: "Crushed by foreign dumping, relegated to raw-material colony",
+        sovereignty: "Rapid Transformation (Fateful Crossroads)",
+        sovereigntySub: "Industrialization determines destiny",
+        history: "19th c. US, Germany, Meiji Japan",
+        historySub: "Era of Hamilton, List, and Okubo",
+        prodVal: "65% (Explosive accumulation under protection)",
+        prodWidth: "65%",
+        depVal: "35% (Jumps to 95% under unilateral free trade)",
+        depWidth: "35%",
+        narrative: "<strong>[Stage 4: Agricultural-Manufacturing State (The Fateful Crossroads)]</strong> Modern manufacturing begins to emerge in textiles, metals, and machinery. If a nation falls for Adam Smith's free-trade dogma at this stage, infant domestic factories will be ruthlessly obliterated by the incumbent hegemon's price dumping. As Hamilton and List demonstrated, protective tariffs and infrastructure development are the only escape hatch from permanent colonial servitude."
+      },
+      {
+        policy: "Equal & Reciprocal Free Trade",
+        policySub: "Equitable trade between mature competitors",
+        ftResult: "Global market expansion and reciprocal gains",
+        ftSub: "Earning foreign revenues through high-value goods",
+        sovereignty: "Full Autonomy / Global Leadership",
+        sovereigntySub: "Integration of industry, agriculture, and high finance",
+        history: "Late 19th c. Britain, 20th c. United States",
+        historySub: "Modern advanced industrial nations",
+        prodVal: "95% (World-class capacity)",
+        prodWidth: "95%",
+        depVal: "15% (Interdependent, symmetrical relations)",
+        depWidth: "15%",
+        narrative: "<strong>[Stage 5: Agricultural-Manufacturing-Commercial State (The Zenith)]</strong> Agriculture, industry, and commerce have achieved full maturity, allowing the nation to compete on equal terms with any global power. List never viewed protection as an end in itself; rather, he believed true, non-exploitative world free trade can only exist when all nations reach this mature stage."
+      }
+    ];
+
+    function selectStage(index) {
+      const data = stagesData[index];
+      for (let i = 0; i < 5; i++) {
+        const tab = document.getElementById("stage-tab-" + i);
+        if (i === index) {
+          tab.classList.add("active");
+        } else {
+          tab.classList.remove("active");
+        }
+      }
+
+      document.getElementById("sim-policy").textContent = data.policy;
+      document.getElementById("sim-policy-sub").textContent = data.policySub;
+
+      document.getElementById("sim-ft-result").textContent = data.ftResult;
+      document.getElementById("sim-ft-sub").textContent = data.ftSub;
+
+      document.getElementById("sim-sovereignty").textContent = data.sovereignty;
+      document.getElementById("sim-sovereignty-sub").textContent = data.sovereigntySub;
+
+      document.getElementById("sim-history").textContent = data.history;
+      document.getElementById("sim-history-sub").textContent = data.historySub;
+
+      document.getElementById("bar-prod-val").textContent = data.prodVal;
+      document.getElementById("bar-prod-fill").style.width = data.prodWidth;
+
+      document.getElementById("bar-dep-val").textContent = data.depVal;
+      document.getElementById("bar-dep-fill").style.width = data.depWidth;
+
+      document.getElementById("sim-narrative").innerHTML = data.narrative;
+    }
+  </script>
+</body>
+</html>

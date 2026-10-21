@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Mechanism and Risks of Credit Creation</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 800px;
+    }
+
+    /* Section Styles */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Cards Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Timeline / Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      position: relative;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(30, 58, 138, 0.3);
+    }
+
+    .step-num.result-num {
+      background: var(--accent);
+      box-shadow: 0 2px 4px rgba(217, 119, 6, 0.3);
+    }
+
+    .step-content {
+      flex-grow: 1;
+    }
+
+    .step-header {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Calculation Formula Box */
+    .formula-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .formula-title {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .formula-math {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 0.5rem;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .formula-explanation {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive Simulator */
+    .simulator {
+      background: #ffffff;
+      border: 2px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .control-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .control-input {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      background: #f8fafc;
+    }
+
+    .sim-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sim-stat-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .sim-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .sim-stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      max-height: 240px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: right;
+    }
+
+    th, td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--text-main);
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    /* Risk Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .risk-card {
+      background: #fff5f5;
+      border: 1px solid #fecaca;
+      border-left: 4px solid var(--danger);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .risk-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #991b1b;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .risk-desc {
+      font-size: 0.95rem;
+      color: #7f1d1d;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .formula-math { font-size: 1.1rem; }
+    }
+  
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplementary Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics & Keynesian Monetary Theory)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link active">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <span class="badge">Supplement / Geopolitics & Financial Economics Notes</span>
+      <h1>Mechanics and Risks of Credit Creation</h1>
+      <p class="lead">
+        Credit creation is the mechanism through which the commercial banking system repeatedly relends deposits, thereby generating deposit currency (money) across society as a whole that is many times the initial deposit amount.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- Fundamental Concepts -->
+    <section id="concepts">
+      <h2>💡 Core Concepts of Credit Creation</h2>
+      <div class="grid-3">
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>💳 Deposit Currency</span>
+          </div>
+          <div class="concept-desc">
+            Money that exists as digital ledger entries in bank accounts, directly usable for settlements such as bank wire transfers and electronic payments.<a href="#ref-1" class="cite-badge">[1]</a>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>🛡️ Reserve Requirement Ratio</span>
+          </div>
+          <div class="concept-desc">
+            The fraction of customer deposits that commercial banks are legally mandated to retain on reserve (e.g., at the central bank) to ensure withdrawal liquidity.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-title">
+            <span>💰 Primary Deposit</span>
+          </div>
+          <div class="concept-desc">
+            The initial cash deposited from outside into the commercial banking system, which serves as the foundational reserve base for credit expansion.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-6" class="cite-badge">[6]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concrete Example / Mechanism -->
+    <section id="mechanism">
+      <h2>📊 Step-by-Step Mechanism (Assuming a 10% Reserve Requirement)</h2>
+      
+      <div class="steps-container">
+        <!-- Stage 1 -->
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-header">Stage 1: Receipt of the Primary Deposit</div>
+            <div class="step-text">Cash of ¥1,000,000 is deposited into Bank A.<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-header">Stage 2: Initial Credit Extension</div>
+            <div class="step-text">Bank A retains ¥100,000 (10% reserve requirement) in reserves and lends the remaining ¥900,000 to Person X.<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-header">Stage 3: Redeposit Through Settlement</div>
+            <div class="step-text">Person X spends the ¥900,000 in commercial transactions, and the recipient, Person Y, deposits the full ¥900,000 into Bank B.<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-header">Stage 4: Secondary Lending Chain</div>
+            <div class="step-text">Bank B retains ¥90,000 (10%) in reserves and lends ¥810,000 to another borrower (Person Z).<a href="#ref-1" class="cite-badge">[1]</a></div>
+          </div>
+        </div>
+
+        <!-- Outcome -->
+        <div class="step-card" style="border-left: 4px solid var(--accent); background: #fffbeb;">
+          <div class="step-num result-num">★</div>
+          <div class="step-content">
+            <div class="step-header" style="color: var(--accent);">Final Outcome: Multiplier Expansion of Deposit Currency</div>
+            <div class="step-text">
+              As the cascading cycle of "Deposit → Loan → Deposit" repeats across the banking system, theoretically a total of approximately <strong>¥10,000,000</strong> in deposit currency is created throughout society.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula Box -->
+      <div class="formula-box">
+        <div class="formula-title">Theoretical Calculation of Credit Creation (Money Multiplier)</div>
+        <div class="formula-math">
+          Total Deposits = Primary Deposit ÷ Reserve Requirement Ratio
+        </div>
+        <p class="formula-explanation">
+          With a 10% reserve requirement: ¥1,000,000 ÷ 0.10 = <strong>¥10,000,000</strong><br>
+          (Newly created derivative deposit currency: ¥10,000,000 − ¥1,000,000 = <strong>¥9,000,000</strong>)
+        </p>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="simulator">
+        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🧮 Real-Time Credit Creation Simulator</span>
+        </h3>
+        
+        <div class="sim-controls">
+          <div class="control-group">
+            <label class="control-label" for="initialDeposit">Primary Deposit (in ¥10k units):</label>
+            <input type="number" id="initialDeposit" class="control-input" value="100" min="1" step="10">
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="reserveRatio">Reserve Requirement Ratio (%):</label>
+            <input type="number" id="reserveRatio" class="control-input" value="10" min="1" max="50" step="1">
+          </div>
+        </div>
+
+        <div class="sim-results-grid">
+          <div class="sim-stat-card">
+            <div class="sim-stat-label">Theoretical Total Deposits</div>
+            <div class="sim-stat-value" id="statTotal">1,000 (¥10k)</div>
+          </div>
+          <div class="sim-stat-card">
+            <div class="sim-stat-label">Newly Created Deposits (Derivative)</div>
+            <div class="sim-stat-value" id="statCreated" style="color: var(--accent);">900 (¥10k)</div>
+          </div>
+          <div class="sim-stat-card">
+            <div class="sim-stat-label">Credit Multiplier</div>
+            <div class="sim-stat-value" id="statMultiplier" style="color: var(--success);">10.0x</div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Cycle Stage</th>
+                <th>Deposit Amount</th>
+                <th>Required Reserves</th>
+                <th>New Loans</th>
+                <th>Cumulative Deposits</th>
+              </tr>
+            </thead>
+            <tbody id="simTableBody">
+              <!-- Dynamically generated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Risks and Structural Vulnerabilities -->
+    <section id="risks">
+      <h2>⚠️ Systemic Risks and Vulnerabilities</h2>
+      <div class="grid-2">
+        <div class="risk-card">
+          <div class="risk-title">
+            <span>🏃💨 Bank Run (Panics)</span>
+          </div>
+          <div class="risk-desc">
+            A phenomenon where loss of confidence prompts depositors to rush to bank branches simultaneously to withdraw cash. Because vault cash and central bank reserves represent only a fraction of total deposits (e.g., 10%), banks immediately suffer liquidity shortfalls, threatening even solvent institutions with contagious collapse and systemic gridlock.<a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-title">
+            <span>💥 Insolvency & Loan Defaults</span>
+          </div>
+          <div class="risk-desc">
+            When borrowers default due to economic downturns or speculative collapse, non-performing loans severely impair bank assets. Hindered credit recovery impedes new credit extensions, abruptly halting the credit creation mechanism and triggering severe credit contraction (a sharp drop in money supply and a deflationary debt spiral).<a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- References & Sources -->
+    <section id="references">
+      <h2>📚 References & Sources</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://kou.benesse.co.jp/nigate/social/a13s0403.html" target="_blank" rel="noopener noreferrer">
+            Benesse Educational Information (Social Studies Commentary: What is Credit Creation?)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=hTou-bw7dIM&t=215" target="_blank" rel="noopener noreferrer">
+            YouTube Video Lecture (The Mechanism Through Which Banks Generate Money for Society as a Whole)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://manabow.com/hayawakari/hayawakari6_2.html" target="_blank" rel="noopener noreferrer">
+            manabow Financial Economic Education (Primer on Economics: Credit Creation Risks and Bank Runs)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://www.fidelity.co.jp/page/strategist/vol208-flip-side-of-stablecoin-2" target="_blank" rel="noopener noreferrer">
+            Fidelity Investments (Strategist's Perspective: The Flip Side of Stablecoins, Primary Deposits, and Credit Creation)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=yJhxdTNN6yc" target="_blank" rel="noopener noreferrer">
+            YouTube Video Lecture (Modern Money and the Essence of Commercial Bank Credit)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://www.financialdo.co.jp/news/2020/03/09/%E4%BF%A1%E7%94%A8%E5%89%B5%E9%80%A0%E3%80%80-%EF%BD%9E%E9%87%91%E8%9E%8D%E6%A9%9F%E9%86%A2%E3%81%AE%E5%AD%98%E5%9C%A8%E6%84%8F%E7%BE%A9%E3%81%A8%E3%80%8C%E8%85%95%E3%81%AE%E8%A6%8B%E3%81%9B%E6%89%80/" target="_blank" rel="noopener noreferrer">
+            Financial Do News (Credit Creation: The Raison d'Être of Financial Institutions and Where They Show Their Value)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; History and Collapse of the Financial Oligarchy - Supplementary Materials | Credit Creation System Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Simulation Script -->
+  <script>
+    function updateSimulation() {
+      const initialDeposit = parseFloat(document.getElementById('initialDeposit').value) || 0;
+      const reserveRatioPercent = parseFloat(document.getElementById('reserveRatio').value) || 1;
+      const r = Math.min(Math.max(reserveRatioPercent / 100, 0.001), 1.0);
+
+      const totalTheoretical = initialDeposit / r;
+      const createdDeposit = totalTheoretical - initialDeposit;
+      const multiplier = 1 / r;
+
+      document.getElementById('statTotal').innerText = totalTheoretical.toLocaleString(undefined, { maximumFractionDigits: 1 }) + ' (¥10k)';
+      document.getElementById('statCreated').innerText = createdDeposit.toLocaleString(undefined, { maximumFractionDigits: 1 }) + ' (¥10k)';
+      document.getElementById('statMultiplier').innerText = multiplier.toFixed(2) + 'x';
+
+      // Table generation (up to 10 cycles)
+      const tbody = document.getElementById('simTableBody');
+      tbody.innerHTML = '';
+
+      let currentDeposit = initialDeposit;
+      let cumDeposit = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const reserve = currentDeposit * r;
+        const loan = currentDeposit * (1 - r);
+        cumDeposit += currentDeposit;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>Stage ${i}</td>
+          <td>${currentDeposit.toLocaleString(undefined, { maximumFractionDigits: 2 })} (¥10k)</td>
+          <td>${reserve.toLocaleString(undefined, { maximumFractionDigits: 2 })} (¥10k)</td>
+          <td>${loan.toLocaleString(undefined, { maximumFractionDigits: 2 })} (¥10k)</td>
+          <td><strong>${cumDeposit.toLocaleString(undefined, { maximumFractionDigits: 2 })} (¥10k)</strong></td>
+        `;
+        tbody.appendChild(tr);
+
+        currentDeposit = loan;
+        if (currentDeposit < 0.001) break;
+      }
+
+      // Final theoretical limit row
+      const trFinal = document.createElement('tr');
+      trFinal.style.background = '#fef3c7';
+      trFinal.style.fontWeight = 'bold';
+      trFinal.innerHTML = `
+        <td>Theoretical Limit (∞)</td>
+        <td>-</td>
+        <td>${initialDeposit.toLocaleString(undefined, { maximumFractionDigits: 1 })} (¥10k) (Total Reserves)</td>
+        <td>-</td>
+        <td style="color: #b45309;">${totalTheoretical.toLocaleString(undefined, { maximumFractionDigits: 1 })} (¥10k)</td>
+      `;
+      tbody.appendChild(trFinal);
+    }
+
+    document.getElementById('initialDeposit').addEventListener('input', updateSimulation);
+    document.getElementById('reserveRatio').addEventListener('input', updateSimulation);
+
+    // Initial run
+    updateSimulation();
+  </script>
+</body>
+</html>

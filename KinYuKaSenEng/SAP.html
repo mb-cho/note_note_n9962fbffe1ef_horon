@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplementary Note: Objectives, Conditions, and Problems of Structural Adjustment Programs (SAPs)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 48%, #4c1d95 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    .lead a {
+      color: #fde047;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 700;
+    }
+
+    .lead a:hover {
+      color: #ffffff;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-danger {
+      border-top-color: var(--rose);
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-danger .step-num {
+      background: var(--rose-light);
+      color: var(--rose);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+      background: #fff1f2;
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #7c3aed;
+      color: #ffffff;
+      border-color: #c4b5fd;
+      box-shadow: 0 0 12px rgba(124, 58, 237, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligarchy and Imperialism: Supplementary Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanism of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Active Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ The British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ The Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ The Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ The Eurodollar Market and Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ The Volcker Shock</a>
+      <a href="SAP.html" class="nav-link active">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ The AIG Crisis and Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ The Bank Oligarchy's Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Networks</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">IMF · World Bank · Development Economics Note</span>
+        <span class="badge badge-sub">Conditionality and the Washington Consensus</span>
+      </div>
+      <h1>Structural Adjustment Programs (SAPs):<br>Mechanisms of IMF &amp; World Bank Loan Conditions and Their Impact on Developing Nations</h1>
+      <p class="lead">
+        <strong>Structural Adjustment Programs (SAPs)</strong> refer to <strong>macroeconomic structural reform and market-liberalization policies</strong> required by the International Monetary Fund (IMF) and the <a href="https://liberal-arts-guide.com/structural-adjustment-program/" target="_blank" rel="noopener noreferrer">World Bank</a> as conditions for providing financial assistance when developing nations fall into debt crises or economic collapse.<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Main Purpose & Conditions -->
+    <section>
+      <h2>🎯 Primary Objectives and Reform Conditions (Core Agenda)</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Formally introduced during the Latin American debt crisis and African economic crises of the 1980s, Structural Adjustment Programs imposed strict <strong>conditionality</strong> on debtor nations, centered around "small government" and "market fundamentalism (neoliberalism / the Washington Consensus)."
+      </p>
+
+      <h3>📌 Primary Objectives (Two Pillars)</h3>
+      <div class="grid-2" style="margin-bottom: 1.75rem;">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>① Reducing Fiscal Imbalances and Resolving External Debt Crises</span>
+          </div>
+          <p class="factor-desc">
+            Compressing government fiscal deficits and balance-of-payments deficits in developing nations, enabling them to earn foreign exchange and return to a state where they can <strong>sustain external debt service (interest payments)</strong>.
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>② Fostering Medium- to Long-Term Growth via Market Mechanisms</span>
+          </div>
+          <p class="factor-desc">
+            Eliminating state intervention and protectionism to <strong>achieve medium- to long-term economic growth through the introduction of market mechanisms</strong>.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <h3>📋 Core Content (Reform Conditions: The Three Main Packages)</h3>
+      <div class="grid-3">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>1. Liberalization and Deregulation</span>
+          </div>
+          <p class="factor-desc">
+            <strong>Liberalization of exchange rates, interest rates, and trade, alongside the abolition of price controls</strong>.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">*Includes tariff reductions, elimination of import quotas, relaxation of foreign investment restrictions, and currency devaluation.</span>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>2. Privatization</span>
+          </div>
+          <p class="factor-desc">
+            <strong>Privatization of state-owned enterprises (SOEs)</strong>.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">*Requires the sell-off of public assets such as water utilities, electricity, telecommunications, railways, mining, and state oil enterprises to the private sector (frequently multinational corporations and foreign capital from advanced nations).</span>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>3. Fiscal Reform and Spending Cuts</span>
+          </div>
+          <p class="factor-desc">
+            <strong>Drastic reductions in government spending (social safety nets including healthcare and education, subsidies) and comprehensive tax reform</strong>.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">*Involves civil service layoffs, cancellation of subsidies on food and fuel, and the implementation of regressive consumption taxes like Value-Added Tax (VAT).</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Main Problems, Criticisms & Interactive Simulator -->
+    <section>
+      <h2>⚠️ Key Pitfalls, Criticisms, and Regional Impact Simulator</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Because SAPs uniformly enforced rigid fiscal austerity and abrupt market opening, they provoked fierce international condemnation for devastating the lives of the poor, degrading public health, and destroying domestic industries across developing countries.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① Degradation of Social Safety Nets</span>
+          </div>
+          <p class="factor-desc">
+            <strong>The elimination of free healthcare and education (introduction of user fees) along with the elimination of basic subsidies</strong> severely deteriorated the livelihoods of the impoverished.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>② Deterioration of Public Health and Sanitation</span>
+          </div>
+          <p class="factor-desc">
+            Severe cutbacks in public health budgets, corporatization of hospitals, and reduced access to clean drinking water led to <strong>surges in infant mortality and rampant epidemics of infectious diseases</strong> in multiple regions.<a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>③ Economic Dislocation and Instability</span>
+          </div>
+          <p class="factor-desc">
+            <strong>Abrupt trade liberalization overwhelmed domestic smallholders and agricultural producers</strong>, while steep currency devaluations triggered hyperinflation, social unrest, and food riots.<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 Structural Adjustment Programs (SAPs): Mechanisms &amp; Regional Impact Assessment</div>
+            <div class="sim-subtitle">Toggle tabs to compare the institutional roles of the IMF and World Bank with real-world case studies in Sub-Saharan Africa, Latin America, and East Asia.</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn active" onclick="setPhase(0)">
+            <span class="phase-year">Mechanism ｜ IMF &amp; World Bank</span>
+            Coordinated Conditionality (Cross-Conditionality)
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Case 1 ｜ Sub-Saharan Africa</span>
+            Healthcare &amp; Education Cuts and Spikes in Infant Mortality
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Case 2 ｜ Latin America (Mexico, Bolivia, etc.)</span>
+            SOE &amp; Water Privatization and Social Unrest
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Case 3 ｜ 1997 Asian Financial Crisis</span>
+            Forced Austerity, High Interest Rates &amp; Foreign Takeovers
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Priority: External Debt Service &amp; Foreign Capital Access</div>
+            <div class="metric-value" id="m-debt">Absolute Priority (Cross-Conditionality)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-debt" style="width: 95%; background-color: #a855f7;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Blow to Healthcare, Education &amp; Social Welfare</div>
+            <div class="metric-value" id="m-social">High (Forced Public Spending Cuts &amp; User Fees)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-social" style="width: 85%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Impact on Domestic Small Industry &amp; Economic Sovereignty</div>
+            <div class="metric-value" id="m-ind">Tariff Abolition &amp; Privatization of State Assets</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-ind" style="width: 80%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>[Division of Labor Between IMF &amp; World Bank and "Cross-Conditionality"]</strong><br>
+          Originally, the <strong>International Monetary Fund (IMF)</strong> was tasked with short-term balance-of-payments stabilization (currency devaluations, monetary tightening, fiscal deficit contraction), while the <strong>World Bank</strong> was tasked with medium- to long-term structural and development reforms (SOE privatization, trade liberalization, deregulation). From the 1980s onward, however, both institutions acted in lockstep to impose unified SAP packages: <strong>"if a nation refuses IMF austerity terms, neither the World Bank nor commercial creditor syndicates will provide loans."</strong> This cross-conditionality operated as a systemic institutional apparatus guaranteeing debt recovery for creditor nations and international financial capital.<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[2]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[4]</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive Comparison Table -->
+    <section>
+      <h2>🔍 Deep-Dive Comparison: Structural Adjustment Programs — Theory (Stated Aims) vs. Reality (Criticisms)</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        A side-by-side comparison across the three core conditionality packages, contrasting the neoclassical economic rhetoric (the Washington Consensus) championed by the IMF and World Bank with the actual socio-economic outcomes in debtor nations.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%;">Reform Package (SAP)</th>
+              <th style="width: 39%;">Stated Theoretical Objective (IMF / World Bank)</th>
+              <th style="width: 39%;">Actual Consequences &amp; Criticisms (Debtor Nations)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① Liberalization &amp; Deregulation<br>(Trade, FX, Interest Rates, Prices)</strong></td>
+              <td>Promoting exports based on comparative advantage and attracting foreign direct investment (FDI) to dismantle inefficient protectionism and maximize macroeconomic efficiency.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a></td>
+              <td>Inundation of cheap manufactured goods and subsidized agricultural produce from advanced economies <strong>collapsed domestic cottage industries and subsistence farming</strong>. Currency devaluation and deregulation of price ceilings sparked runaway inflation in basic necessities.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+            </tr>
+            <tr>
+              <td><strong>② Privatization of State-Owned Enterprises<br>(Water, Power, Telecom, Natural Resources)</strong></td>
+              <td>Eliminating fiscal subsidies to deficit-ridden state enterprises, restoring fiscal discipline, and improving utility service delivery through private sector management.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td>Under fire-sale conditions during crises, <strong>prime public utilities and valuable natural resource concessions were monopolized by foreign multinationals and domestic oligarchs</strong>, leading to skyrocketing water, gas, and electricity tariffs.<a href="#ref-3" class="cite-tag">[3]</a></td>
+            </tr>
+            <tr>
+              <td><strong>③ Fiscal Reform &amp; Spending Austerity<br>(Healthcare, Education, Subsidy Cuts)</strong></td>
+              <td>Reducing budget deficits to curb inflationary pressures, generating fiscal surpluses to service foreign debt, and stabilizing the macroeconomic framework.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td><strong>The abolition of free healthcare and primary education (introduction of user fees)</strong> caused school dropouts to soar and precipitated severe humanitarian crises, including <strong>escalating infant mortality and rampant epidemics of malaria, cholera, and HIV/AIDS</strong>.<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">🏛️ Context in the History of Financial Oligarchy: From 19th-Century Gunboats &amp; Debt Administrations to Modern SAPs</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          In the late 19th century, when the Ottoman Empire or Egypt defaulted on foreign debts, British and French imperial powers dispatched warships and established institutions like the Ottoman Public Debt Administration (OPDA) to directly seize customs receipts and state monopoly revenues (see Note ⑧). The late 20th-century <strong>Structural Adjustment Programs (SAPs)</strong> served an analogous function: rather than employing overt military occupation, international financial institutions (the IMF and World Bank) functioned as institutional mechanisms that <strong>compelled debtor governments themselves to slash healthcare and education and liquidate state infrastructure and resources to multinational corporations to recover dollar debts</strong>. Following fierce global backlash in the late 1990s, the nomenclature was rebranded under titles like "Poverty Reduction Strategy Papers (PRSPs)"; however, the underlying structural architecture enforcing austerity and market deregulation persisted, continuing through European debt crises (e.g., Greece) and contemporary emerging market bailouts.<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 Citations &amp; References</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        List of international development glossaries, academic theses, and reference publications cited in this analysis.
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://volunteer-platform.org/words/development-cooperation/structural-adjustment-program/" target="_blank" rel="noopener noreferrer" class="ref-link">https://volunteer-platform.org (Development Cooperation Glossary: Structural Adjustment Programs SAP)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://liberal-arts-guide.com/structural-adjustment-program/" target="_blank" rel="noopener noreferrer" class="ref-link">https://liberal-arts-guide.com (Liberal Arts Guide: What Are Structural Adjustment Programs? Relationship with the World Bank &amp; IMF)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.youtube.com/watch?v=CqmL8FsjoGI&t=1" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.youtube.com (Documentary Video: Objectives of SAPs and Their Impact on the Developing World)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://navymule9.sakura.ne.jp/Structural_adjustment.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://navymule9.sakura.ne.jp (Development Economics Review: Evolution of Structural Adjustment Policies and the Washington Consensus)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="http://www.world-economic-review.jp/impact/article3751.html" target="_blank" rel="noopener noreferrer" class="ref-link">http://www.world-economic-review.jp (World Economic Review: Assessment of IMF Structural Adjustment and Liberalization Policies)</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.soc.hit-u.ac.jp/research/archives/doctor/?choice=summary&thesisID=152" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.soc.hit-u.ac.jp (Hitotsubashi University Graduate School of Social Sciences Doctoral Dissertation: Impact of Structural Adjustment on Healthcare and Infant Mortality)</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Financial Oligarchy and Imperialism: Supplementary Series ⑰ ｜ Mechanisms and Critical Analysis of Structural Adjustment Programs (SAPs)</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        debtText: "Absolute Priority (Cross-Conditionality)",
+        debtWidth: "95%",
+        debtColor: "#a855f7",
+        socialText: "High (Forced Public Spending Cuts & User Fees)",
+        socialWidth: "85%",
+        socialColor: "#f43f5e",
+        indText: "Tariff Abolition & Privatization of State Assets",
+        indWidth: "80%",
+        indColor: "#f59e0b",
+        desc: "<strong>[Division of Labor Between IMF &amp; World Bank and \"Cross-Conditionality\"]</strong><br>Originally, the <strong>International Monetary Fund (IMF)</strong> was tasked with short-term balance-of-payments stabilization (currency devaluations, monetary tightening, fiscal deficit contraction), while the <strong>World Bank</strong> was tasked with medium- to long-term structural and development reforms (SOE privatization, trade liberalization, deregulation). From the 1980s onward, however, both institutions acted in lockstep to impose unified SAP packages: <strong>\"if a nation refuses IMF austerity terms, neither the World Bank nor commercial creditor syndicates will provide loans.\"</strong> This cross-conditionality operated as a systemic institutional apparatus guaranteeing debt recovery for creditor nations and international financial capital."
+      },
+      {
+        debtText: "Forced Commodity Exports (Monoculture Lock-in)",
+        debtWidth: "90%",
+        debtColor: "#f59e0b",
+        socialText: "Catastrophic (Surge in Infant Mortality & Epidemics)",
+        socialWidth: "100%",
+        socialColor: "#e11d48",
+        indText: "Collapse of Food Sovereignty, Healthcare & Education",
+        indWidth: "95%",
+        indColor: "#e11d48",
+        desc: "<strong>[Case 1: Sub-Saharan Africa — User Fees in Healthcare/Education and Public Health Collapse]</strong><br>During the 1980s and 1990s, SAPs were enacted across numerous African nations including Ghana, Zambia, Tanzania, and Kenya. As conditions for budget austerity, <strong>free healthcare and primary education were dismantled in favor of user fees</strong>. As a result, impoverished families were excluded from clinics and schools, precipitating severe humanitarian crises marked by <strong>sharp increases in infant mortality, chronic malnutrition, and uncontrolled outbreaks of malaria, tuberculosis, and HIV/AIDS</strong> (starkly documented in UNICEF's groundbreaking report, <em>Adjustment with a Human Face</em>)."
+      },
+      {
+        debtText: "Dollar Debt Service & Opening of Resources to Foreign Capital",
+        debtWidth: "95%",
+        debtColor: "#f43f5e",
+        socialText: "High (Abolition of Food/Fuel Subsidies & Plunging Real Wages)",
+        socialWidth: "90%",
+        socialColor: "#f43f5e",
+        indText: "Catastrophic (Foreign Fire-Sale of Oil, Telecom & Water)",
+        indWidth: "95%",
+        indColor: "#f59e0b",
+        desc: "<strong>[Case 2: Latin America (Mexico, Argentina, Bolivia, etc.) — Privatization and Social Unrest]</strong><br>Following the 1982 debt crisis, Latin American states were forced by SAP mandates to privatize state telecommunications, railways, power utilities, mines, and banks, while eliminating subsidies on staple foodstuffs and public transit. This triggered intense inequality and violent social upheavals, exemplified by Venezuela's 1989 <em>Caracazo</em> riots (ignited by sudden bus fare and fuel hikes) and Bolivia's 2000 Cochabamba Water War (where the privatization of municipal water to a foreign consortium under World Bank pressure caused tariffs to triple, culminating in an insurrection)."
+      },
+      {
+        debtText: "100% Full-Par Recovery for Western Bank Syndicates",
+        debtWidth: "100%",
+        debtColor: "#a855f7",
+        socialText: "High (Mass Unemployment & Austerity-Driven Deflationary Slump)",
+        socialWidth: "80%",
+        socialColor: "#f43f5e",
+        indText: "Catastrophic (Chaebol Breakup & Foreign Takeover of Top Banks/Firms)",
+        indWidth: "100%",
+        indColor: "#e11d48",
+        desc: "<strong>[Case 3: 1997 Asian Financial Crisis (South Korea, Thailand, Indonesia) — Forced Austerity & Vulture Capital]</strong><br>In the 1997 Asian Financial Crisis, although the crisis was caused not by sovereign fiscal deficits but by private sector short-term foreign currency exposure, the IMF dogmatically applied its standard SAP toolkit: punitive interest rate hikes, fiscal contraction, and total deregulation of foreign equity ownership. This triggered a chain reaction of solvent company bankruptcies and a deep deflationary collapse. Consequently, distressed blue-chip corporations and premier commercial banks across South Korea and Southeast Asia were acquired at fire-sale discounts by Western investment banks and private equity funds."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-debt').textContent = p.debtText;
+      const bDebt = document.getElementById('b-debt');
+      bDebt.style.width = p.debtWidth;
+      bDebt.style.backgroundColor = p.debtColor;
+
+      document.getElementById('m-social').textContent = p.socialText;
+      const bSocial = document.getElementById('b-social');
+      bSocial.style.width = p.socialWidth;
+      bSocial.style.backgroundColor = p.socialColor;
+
+      document.getElementById('m-ind').textContent = p.indText;
+      const bInd = document.getElementById('b-ind');
+      bInd.style.width = p.indWidth;
+      bInd.style.backgroundColor = p.indColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>

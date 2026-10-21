@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: The Credit Theory of Money — Schumpeter's Dynamic Economics</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 50%, #065f46 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(16, 185, 129, 0.3);
+      color: #a7f3d0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .concept-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .concept-desc ul {
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      border: 1px solid #a7f3d0;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: #065f46;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #064e3b;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #065f46;
+      margin-top: 0.5rem;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Interactive Schumpeter Engine Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 2px solid #93c5fd;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mode-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      background: #e2e8f0;
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+      gap: 0.25rem;
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-diagram {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .flow-node {
+      background: #ffffff;
+      border: 2px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.1rem;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .flow-node-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .flow-node-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .flow-node-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .sim-status-box {
+      padding: 1.15rem;
+      background: #ffffff;
+      border-left: 4px solid var(--emerald);
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* 5 Types of Innovation Cards */
+    .inno-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--emerald);
+      border-radius: 0.65rem;
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .inno-num {
+      display: inline-block;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .inno-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .inno-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplementary Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics & Monetary Theory Notes)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link active">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement / Dynamic Economics & Monetary Theory Notes</span>
+        <span class="badge badge-sub">Schumpeter: The Theory of Economic Development (1912)</span>
+      </div>
+      <h1>The Credit Theory of Money</h1>
+      <p class="lead">
+        In his 1912 magnum opus <em>The Theory of Economic Development</em>, <a href="https://en.wikipedia.org/wiki/Joseph_Schumpeter" target="_blank" rel="noopener noreferrer" style="color: #a7f3d0; text-decoration: underline;">Joseph Schumpeter</a> launched a foundational critique against classical economics for treating money merely as an exchange convenience (a neutral "veil"). Instead, he formulated the "<strong>Credit Theory of Money</strong>," arguing that the commercial banking system's capacity for <strong>credit creation</strong> is the indispensable engine propelling dynamic capitalist growth and structural evolution.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 1. Four Core Pillars -->
+    <section id="core-points">
+      <h2>💡 1. The Four Core Pillars of the Credit Theory of Money</h2>
+
+      <div class="grid-2">
+        <!-- Pillar 1: Conception of Money -->
+        <div class="concept-card" style="border-left-color: var(--primary-light);">
+          <div class="concept-title">
+            <span>🎫 ① Nature of Money (Credit View of Money)</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>Money is not an intrinsic physical commodity (metal such as gold or silver), but rather an accounting title or social claim—an <strong>"order bill (credit)"</strong> granting commands over societal production and settlement of economic activities.</li>
+              <li>Even without past accumulated savings, <strong>new purchasing power can be brought into existence out of nothing</strong> through the institutional mechanics of the credit system.<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 2: The Banker and Credit Creation -->
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🏦 ② The Banker as Creator of Credit</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>The banker is by no means a passive middleman merely channeling pre-existing surplus savings from households to borrowers.</li>
+              <li>The banker is a "producer of purchasing power" who generates credit <strong>"out of nothing"</strong> and allocates it to entrepreneurs, functioning as the <strong>"Ephor (director) of the exchange economy"</strong> who decides which individuals are entrusted with society's scarce productive resources.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-6" class="cite-badge">[6]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Link to Innovation -->
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>🚀 ③ Indispensable Link to Innovation (New Combinations)</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>Entrepreneurs striving to carry out <strong>"New Combinations (innovations)"</strong>—novel products, new processes, or unexplored markets—typically possess neither capital nor physical means of production at the outset.</li>
+              <li>By securing newly created bank credit, entrepreneurs forcefully detach labor, capital equipment, and materials from routine static channels, igniting <strong>economic development (creative destruction)</strong>.<a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-7" class="cite-badge">[7]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Contrast with Veil of Money -->
+        <div class="concept-card" style="border-left-color: var(--purple);">
+          <div class="concept-title">
+            <span>🎭 ④ Contrast with the Classical "Veil of Money" Doctrine</span>
+          </div>
+          <div class="concept-desc">
+            <ul>
+              <li>Classical doctrine maintained that "money is merely a veil covering real transactions, exercising no enduring influence on the underlying structure of physical production (money neutrality)."</li>
+              <li>In direct opposition, Schumpeter asserted that <strong>money supply injected via credit fundamentally and discontinuously reshapes the real structure of the economic order from within</strong>.<a href="#ref-1" class="cite-badge">[1]</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Box -->
+      <div class="quote-box">
+        <div class="quote-title">SCHUMPETER ON THE BANKER AND CREDIT (1912)</div>
+        <div class="quote-text">
+          "The banker, therefore, is not so much primarily a middleman in the commodity 'purchasing power' as a producer of this commodity... He makes possible the carrying out of new combinations, authorises people, in the name of society as it were, to form them."
+        </div>
+        <div class="quote-author">― Joseph A. Schumpeter, *The Theory of Economic Development*</div>
+      </div>
+    </section>
+
+    <!-- 2. Comparison Table with Classical School -->
+    <section id="comparison">
+      <h2>⚖️ 2. Comparison: "Veil of Money Doctrine (Classical)" vs. "Credit Theory of Money (Schumpeter)"</h2>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 24%;">Analytical Dimension</th>
+              <th style="width: 38%;">Classical / Neoclassical (Commodity Money & Veil View)</th>
+              <th style="width: 38%;">Schumpeter (Credit Theory of Money)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Essence of Money</strong></td>
+              <td>A physical commodity (gold, silver) that lubricates trade; a neutral "veil" over real exchanges</td>
+              <td>An <strong>"order bill (credit)"</strong> conferring active command over societal productive resources</td>
+            </tr>
+            <tr>
+              <td><strong>Source of Investment Funds</strong></td>
+              <td>Prior savings accumulated through past labor and abstinence</td>
+              <td><strong>Credit creation "out of nothing"</strong> by bankers evaluating prospective future returns</td>
+            </tr>
+            <tr>
+              <td><strong>Role of the Banking System</strong></td>
+              <td>Modest intermediary channeling pre-existing funds from savers to borrowers</td>
+              <td>The <strong>"Ephors of the Exchange Economy,"</strong> vetting and authorizing the execution of innovations</td>
+            </tr>
+            <tr>
+              <td><strong>State of the Economy</strong></td>
+              <td>A repetitive, self-contained stationary cycle (<strong>"Circular Flow / Static Equilibrium"</strong>)</td>
+              <td>Endogenous disruption overcoming equilibrium from within (<strong>"Development / Creative Destruction"</strong>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Schumpeterian Simulator -->
+    <section id="simulator">
+      <h2>🔄 3. [Dynamic Simulator] Economic Evolution and Business Cycles Driven by Credit Creation</h2>
+      <p style="margin-bottom: 1rem;">
+        In Schumpeter's framework, depending on how bank credit is channeled, an economy moves through three distinct regimes: <strong>① The Circular Flow (Static Equilibrium)</strong>, <strong>② New Combinations / Primary Wave (Development)</strong>, and <strong>③ The Secondary Wave (Speculation and Financial Crises)</strong>. Switch between phases to examine the structural mechanics.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>⚙️ Select Economic Regime</span>
+          </div>
+          <div class="mode-tabs">
+            <button class="mode-btn" id="btnFlow" onclick="setPhase('flow')">① Circular Flow (Static)</button>
+            <button class="mode-btn active" id="btnInno" onclick="setPhase('inno')">② Primary Wave (Innovation)</button>
+            <button class="mode-btn" id="btnBubble" onclick="setPhase('bubble')">③ Secondary Wave (Speculation)</button>
+          </div>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <div class="sim-status-box" id="phaseExplanation">
+          <!-- Dynamically updated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Five Types of New Combinations -->
+    <section id="five-types">
+      <h2>🌟 4. Schumpeter's Five Types of Innovation ("New Combinations")</h2>
+      <p style="margin-bottom: 1.25rem;">
+        When entrepreneurs are granted credit created out of nothing by the banking system, they reallocate existing productive factors into the following five archetypal patterns of innovation:<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-5" class="cite-badge">[5]</a><a href="#ref-7" class="cite-badge">[7]</a>
+      </p>
+
+      <div class="grid-3">
+        <div class="inno-card">
+          <span class="inno-num">Type 01</span>
+          <div class="inno-title">Introduction of a New Good</div>
+          <div class="inno-desc">
+            The introduction of a new good—one with which consumers are not yet familiar—or of a new quality of a good (Product Innovation).
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">Type 02</span>
+          <div class="inno-title">New Method of Production</div>
+          <div class="inno-desc">
+            The introduction of a new method of production, not yet tested by experience in the branch of manufacture concerned (Process Innovation).
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">Type 03</span>
+          <div class="inno-title">Opening of a New Market</div>
+          <div class="inno-desc">
+            The opening of a new market, into which the particular branch of manufacture of the country in question has not previously entered.
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">Type 04</span>
+          <div class="inno-title">New Source of Supply</div>
+          <div class="inno-desc">
+            The conquest of a new source of supply of raw materials or half-manufactured goods, regardless of whether this source already exists or has to be created.
+          </div>
+        </div>
+
+        <div class="inno-card">
+          <span class="inno-num">Type 05</span>
+          <div class="inno-title">New Industrial Organization</div>
+          <div class="inno-desc">
+            The carrying out of the better organization of any industry, like the creation of a monopoly position or the breaking up of an existing monopoly position.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- References & Sources -->
+    <section id="references">
+      <h2>📚 References & Sources</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%82%BC%E3%83%95%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%BF%E3%83%BC" target="_blank" rel="noopener noreferrer">
+            Wikipedia: "Joseph Schumpeter" (Theory of Economic Development, New Combinations, Credit Creation, and Entrepreneurship)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%82%BC%E3%83%95%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%BF%E3%83%BC" target="_blank" rel="noopener noreferrer">
+            Wikipedia: "Joseph Schumpeter" (Critique of the Classical Veil of Money and Dynamic Evolutionary Economics)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://api.lib.kyushu-u.ac.jp/opac_download_md/4362564/2806_p021.pdf" target="_blank" rel="noopener noreferrer">
+            Kyushu University Institutional Repository (Schumpeter's Theory of Money and Credit: Money as an Order Bill)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://www.jstage.jst.go.jp/article/peq/48/4/48_KJ00009361488/_pdf/-char/ja" target="_blank" rel="noopener noreferrer">
+            J-STAGE: Quarterly Journal of Economic Theory (Schumpeter's Theoretical Position on Credit Creation and Endogenous Money)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://aty800.com/highest-goal/books/schumpeter-importantworks.html" target="_blank" rel="noopener noreferrer">
+            Schumpeter's Major Works Commentary (*The Theory of Economic Development*, *Business Cycles*, *Capitalism, Socialism and Democracy*)
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://dot.asahi.com/articles/-/251127?page=1" target="_blank" rel="noopener noreferrer">
+            AERA dot. (Mechanisms of Credit Creation: How Commercial Bankers Generate Purchasing Power "Out of Nothing")
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://www.keiomcc.com/magazine/post_373/" target="_blank" rel="noopener noreferrer">
+            Keio Marunouchi City Campus Column (Schumpeter's New Combinations, Entrepreneurial Drive, and the Crucial Role of Bank Credit)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; History and Collapse of the Financial Oligarchy - Supplementary Materials | Schumpeter's Credit Theory of Money Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Phase Switcher Script -->
+  <script>
+    function setPhase(phase) {
+      document.getElementById('btnFlow').classList.remove('active');
+      document.getElementById('btnInno').classList.remove('active');
+      document.getElementById('btnBubble').classList.remove('active');
+
+      const diagram = document.getElementById('flowDiagram');
+      const expl = document.getElementById('phaseExplanation');
+
+      if (phase === 'flow') {
+        document.getElementById('btnFlow').classList.add('active');
+        diagram.innerHTML = `
+          <div class="flow-node">
+            <div class="flow-node-icon">🌾</div>
+            <div class="flow-node-title">1. Existing Producers</div>
+            <div class="flow-node-desc">Annual repetitive production of fixed goods with unvarying methods</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-node-icon">🪙</div>
+            <div class="flow-node-title">2. Money as a Neutral Veil</div>
+            <div class="flow-node-desc">Passive transactional convenience merely mediating routine trades</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-node-icon">🔄</div>
+            <div class="flow-node-title">3. Stationary Equilibrium</div>
+            <div class="flow-node-desc">Zero economic profits, zero net entrepreneurial interest, no qualitative growth</div>
+          </div>
+        `;
+        expl.style.borderLeftColor = '#64748b';
+        expl.innerHTML = `
+          <strong style="color: #334155;">[① The Circular Flow Regime (Static Equilibrium)]</strong><br>
+          The stationary world assumed by classical economics. All productive factors are completely committed to routine channels; revenues from past production merely cover current operational costs. In this state, neither New Combinations (innovations) nor credit creation exist; the economy cycles along the exact same path perpetually without genuine developmental evolution.
+        `;
+      } else if (phase === 'inno') {
+        document.getElementById('btnInno').classList.add('active');
+        diagram.innerHTML = `
+          <div class="flow-node" style="border-color: #3b82f6; background: #eff6ff;">
+            <div class="flow-node-icon">🏦</div>
+            <div class="flow-node-title">1. Banker as Ephor</div>
+            <div class="flow-node-desc">Creates new purchasing power (order bills) "out of nothing"</div>
+          </div>
+          <div class="flow-node" style="border-color: #10b981; background: #ecfdf5;">
+            <div class="flow-node-icon">🚀</div>
+            <div class="flow-node-title">2. Entrepreneurial Innovation</div>
+            <div class="flow-node-desc">Credit detaches factors from circular flow to build innovative production</div>
+          </div>
+          <div class="flow-node" style="border-color: #f59e0b; background: #fffbeb;">
+            <div class="flow-node-icon">✨</div>
+            <div class="flow-node-title">3. Creative Destruction & Wealth</div>
+            <div class="flow-node-desc">Surplus goods flood markets; debt is repaid and real societal wealth expands</div>
+          </div>
+        `;
+        expl.style.borderLeftColor = '#059669';
+        expl.innerHTML = `
+          <strong style="color: #065f46;">[② New Combinations / Primary Wave (Schumpeterian Development)]</strong><br>
+          To pioneering entrepreneurs who have no capital of their own, discerning bankers extend purchasing power through <strong>credit creation out of nothing</strong>. The entrepreneur uses this freshly created purchasing power to bid labor and resources away from routine sectors, executing a New Combination (innovation). Once novel goods flow into the market, real output expands to match the money supply; entrepreneurs repay bank loans with interest from their entrepreneurial profits, completing a virtuous developmental cycle.
+        `;
+      } else {
+        document.getElementById('btnBubble').classList.add('active');
+        diagram.innerHTML = `
+          <div class="flow-node" style="border-color: #e11d48; background: #fff1f2;">
+            <div class="flow-node-icon">💸</div>
+            <div class="flow-node-title">1. Unchecked Credit Expansion</div>
+            <div class="flow-node-desc">Reckless lending to imitators and speculators riding the boom wave</div>
+          </div>
+          <div class="flow-node" style="border-color: #e11d48; background: #fff1f2;">
+            <div class="flow-node-icon">📈</div>
+            <div class="flow-node-title">2. The Secondary Wave (Bubble)</div>
+            <div class="flow-node-desc">Speculative bidding on real estate and stocks without technological creation</div>
+          </div>
+          <div class="flow-node" style="border-color: #9f1239; background: #ffe4e6;">
+            <div class="flow-node-icon">💥</div>
+            <div class="flow-node-title">3. Financial Gridlock & Depression</div>
+            <div class="flow-node-desc">Collapse of debt pyramids, non-performing loans, and systemic bank crises</div>
+          </div>
+        `;
+        expl.style.borderLeftColor = '#e11d48';
+        expl.innerHTML = `
+          <strong style="color: #be123c;">[③ The Secondary Wave & Runaway Financial Oligarchy]</strong><br>
+          The pathology Schumpeter warned against in <em>Business Cycles</em>. As the primary wave (genuine entrepreneurial innovation) sparks prosperity, commercial banks abandon disciplined evaluation and extend limitless credit to mere imitators and asset speculators. Newly created liquidity no longer finances productive innovation, but flows into secondary asset speculation (financial circulation). This inflates artificial asset bubbles and unsustainable debt pyramids that inevitably culminate in severe depressions and credit collapse.
+        `;
+      }
+    }
+
+    // Initialize in Innovation phase
+    setPhase('inno');
+  </script>
+</body>
+</html>

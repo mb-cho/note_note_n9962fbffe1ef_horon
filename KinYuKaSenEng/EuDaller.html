@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Mechanics, Historical Background, and Offshore Hegemony of the Eurodollar Market</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f766e 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.24) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(20, 184, 166, 0.35);
+      color: #ccfbf1;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.25rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Flow Grid */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step.step-emerald {
+      border-top-color: var(--emerald);
+    }
+
+    .flow-step.step-warn {
+      border-top-color: var(--accent);
+    }
+
+    .flow-step.step-purple {
+      border-top-color: var(--purple);
+    }
+
+    .step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-emerald .step-num {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .step-warn .step-num {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .step-purple .step-num {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .flow-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Interactive Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #0d9488;
+      color: #ffffff;
+      border-color: #5eead4;
+      box-shadow: 0 0 12px rgba(20, 184, 166, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.74rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplement Series Navigation">
+      <div class="nav-title">📚 Financial Oligopoly and Imperialism Supplement Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Ottoman Empire Exploitation</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark & Rentenmark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism & 1920s America</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link active">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Bank Oligarchy Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">International Finance & Offshore Markets Supplement</span>
+        <span class="badge badge-sub">Dollar Credit Creation Outside Sovereign Jurisdiction</span>
+      </div>
+      <h1>The Eurodollar Market:<br>Mechanisms, Characteristics, and Historical Origins of Offshore Dollars</h1>
+      <p class="lead">
+        The <strong>Eurodollar market</strong> refers to the cross-border, <strong>offshore short-term money market</strong> where U.S. dollar-denominated funds (<strong>Eurodollars</strong>) deposited in financial institutions outside the United States (primarily in Europe and London) are borrowed and lent without regulatory constraints.<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Features of the Eurodollar Market -->
+    <section>
+      <h2>🌐 Characteristics of the Eurodollar Market</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        By transacting U.S. dollars outside the legal jurisdiction of the issuing sovereign (the United States), the Eurodollar market developed unique structural dynamics absent in traditional domestic banking systems.
+      </p>
+
+      <div class="grid-3">
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>① Exemption from Domestic Regulations</span>
+          </div>
+          <p class="factor-desc">
+            Because it is completely unburdened by <strong>domestic U.S. interest rate ceilings (Regulation Q) or statutory reserve requirements</strong>, transactions are executed with total flexibility and minimal structural overhead.<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② Etymology of "Euro" (Not the Currency EUR)</span>
+          </div>
+          <p class="factor-desc">
+            The prefix arose because <strong>cross-border wholesale trading of U.S. dollars originally congregated in European centers (notably the City of London)</strong>. It has no connection to the later European single currency (EUR).<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ Extension to Other Currencies (Eurocurrencies)</span>
+          </div>
+          <p class="factor-desc">
+            Other national currencies deposited and traded outside their domestic borders are similarly classified as <strong>"Eurocurrencies" (such as Euroyen, Euromarks, or Eurosterling)</strong>.<a href="#ref-8" class="cite-tag">[8]</a><a href="#ref-9" class="cite-tag">[9]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">💡 Why Did "Deregulation" Spark Explosive Concentration? (Interest Rate Spread Advantage)</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          Commercial banks within the United States (the onshore market) were mandated by the Federal Reserve to hold zero-interest <strong>statutory reserve requirements</strong>, pay mandatory FDIC insurance levies, and adhere to strict deposit rate ceilings (<strong>Regulation Q</strong>). Conversely, offshore banks in London (Eurobanks) operated with zero reserve costs and zero rate ceilings. Consequently, they could <strong>"offer higher deposit yields than U.S. onshore banks to attract dollar liquidity, while simultaneously lending out dollars at lower interest rates than domestic U.S. lenders"</strong>, earning lucrative profits on razor-thin spreads across enormous wholesale volume.<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Historical Background & Interactive Simulator -->
+    <section>
+      <h2>🕰️ Historical Origins and the Mechanism of Rapid Expansion</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        <strong>During the 1950s Cold War</strong>, the Soviet Union and Eastern European states feared that keeping trade dollar balances in New York banks exposed them to <strong>unilateral asset freezes by the U.S. government</strong>, leading them to transfer dollar holdings to European banks. Later, as chronic U.S. balance-of-payments deficits and domestic deposit rate caps (<strong>Regulation Q</strong>) intensified, offshore dollar financing centered in London expanded exponentially.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-10" class="cite-tag">[10]</a>
+      </p>
+
+      <!-- 4-Step Flow Diagram -->
+      <div class="flow-grid">
+        <div class="flow-step step-purple">
+          <span class="step-num">STEP 1: Cold War Origins</span>
+          <div class="flow-title">Soviet & Eastern Dollar Flight</div>
+          <p class="flow-desc">
+            In the 1950s, the USSR, unwilling to hold trade dollars in New York where Washington could freeze them, redeposited dollar balances in Paris (Banque Commerciale pour l'Europe du Nord / Eurobank) and London.
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">STEP 2: British Strategic Pivot</span>
+          <div class="flow-title">Revival of the City of London</div>
+          <p class="flow-desc">
+            When the 1957 Sterling Crisis forced London to curb sterling-denominated foreign lending, the Bank of England <strong>tacitly sanctioned and encouraged offshore trading in foreign currencies (U.S. dollars)</strong>, securing London's global financial supremacy.
+          </p>
+        </div>
+        <div class="flow-step">
+          <span class="step-num">STEP 3: Escaping U.S. Controls</span>
+          <div class="flow-title">Regulation Q & Chronic Deficits</div>
+          <p class="flow-desc">
+            During the 1960s, as U.S. external deficits flooded Europe with dollars, U.S. banks and multinationals flocked to London to circumvent domestic interest rate caps (<strong>Regulation Q</strong>) and capital outflow taxes.
+          </p>
+        </div>
+        <div class="flow-step step-emerald">
+          <span class="step-num">STEP 4: Global Explosion</span>
+          <div class="flow-title">Petrodollar Recycling</div>
+          <p class="flow-desc">
+            Following the 1970s oil crises, astronomical <strong>Petrodollar surpluses</strong> accrued by OPEC nations were recycled through Eurodollar deposits into syndicated sovereign loans to developing nations worldwide.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 Evolution Phases of the Eurodollar Market (1950s–Present)</div>
+            <div class="sim-subtitle">Select different eras to examine market scale, regulatory evasion, and systemic consequences on the global financial architecture.</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 | 1950s</span>
+            Cold War Soviet Dollar Flight & Birth of London Market
+          </button>
+          <button class="phase-btn active" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 | 1960s</span>
+            Regulation Q Evasion & Expansion of US Bank Branches
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 | 1970s</span>
+            Petrodollar Recycling & Explosive Syndicated Lending
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 | 1980s–Present</span>
+            Global Shadow Banking, LIBOR, and SOFR Transition
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Market Scale & Growth Drivers</div>
+            <div class="metric-value" id="m-scale">Rapid Expansion (Multinationals & U.S. Banks Influx)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-scale" style="width: 55%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">U.S. Regulatory Oversight (FRB) Reach</div>
+            <div class="metric-value" id="m-reg">Outside Jurisdiction (Bypassing Reg Q & Reserves)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-reg" style="width: 15%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Global Credit Creation & Speculative Impact</div>
+            <div class="metric-value" id="m-impact">High (Destabilizing Bretton Woods Parities)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-impact" style="width: 75%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>[Phase 2: 1960s — U.S. Balance-of-Payments Deficits and Capital Flight from Regulation Q]</strong><br>
+          In the 1960s, the U.S. introduced capital controls such as the Interest Equalization Tax (1963) to curtail gold outflows, while the Federal Reserve strictly capped domestic bank deposit interest rates under <strong>Regulation Q</strong>. Seeking higher yields and unconstrained credit, major U.S. commercial banks established prominent branches in London, utilizing the offshore Eurodollar market to mobilize hundreds of billions of dollars beyond the reach of domestic regulators.<a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[4]</a><a href="#ref-10" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a;">[10]</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive on Euro Market Structure & Eurobonds -->
+    <section>
+      <h2>🔍 Deep Dive: Euro Market Structure, Systemic Advantages, and Eurobonds</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Examining the structural distinctions between the short-term Eurodollar (money) market, the medium- to long-term Eurobond market, and onshore domestic capital markets.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>🏦 Mechanics & Advantages of the Broader Euro Market</span>
+          </div>
+          <p class="factor-desc">
+            <strong>1. Market-Driven Rates & Low Intermediation Costs</strong>: Absence of reserve requirements and interest rate caps allows lenders higher yields and borrowers lower interest rates.<br>
+            <strong>2. Tax and Regulatory Exemption</strong>: Cross-border wholesale issues are generally exempt from interest withholding taxes and lengthy national registrations.<br>
+            <strong>3. Frictionless Global Liquidity Allocation</strong>: Serves as an offshore nexus efficiently recycling surplus international capital (oil receipts, export reserves) to capital-hungry sovereigns and enterprises.<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>📜 Eurodollars (Short-Term) vs. Eurobonds (Long-Term)</span>
+          </div>
+          <p class="factor-desc">
+            <strong>Eurodollar Market (Money Market)</strong>: Primarily an interbank wholesale market trading <strong>U.S. dollar-denominated deposits and loans under one year</strong> (overnight, 1-month, 3-month, 6-month tenors).<br>
+            <strong>Eurobonds / Eurodollar Bonds (Capital Market)</strong>: Medium- to long-term debt securities denominated in dollars issued outside the U.S. (syndicated via London, listed in Luxembourg). They avoid cumbersome SEC registration hurdles and allow swift, low-cost capital accumulation.<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-9" class="cite-tag">[9]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">Dimension</th>
+              <th style="width: 27%;">Eurodollar Market<br><span style="font-size: 0.78rem; font-weight: 500;">(Offshore Short-Term Money Market)</span></th>
+              <th style="width: 27%;">Eurodollar Bond Market<br><span style="font-size: 0.78rem; font-weight: 500;">(Offshore Long-Term Capital Market)</span></th>
+              <th style="width: 26%;">U.S. Domestic Market & Yankee Bonds<br><span style="font-size: 0.78rem; font-weight: 500;">(Onshore U.S. Market)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Trading Venue & Jurisdiction</strong></td>
+              <td><strong>Outside the U.S.</strong> (London, Singapore, Tokyo Offshore Market, etc.).<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td><strong>Outside the U.S.</strong> (Primarily syndicated in London, listed in Luxembourg).<a href="#ref-7" class="cite-tag">[7]</a></td>
+              <td><strong>Within the U.S.</strong> (New York domestic money and capital markets).</td>
+            </tr>
+            <tr>
+              <td><strong>Primary Instruments & Maturity</strong></td>
+              <td>Interbank deposits, short-term loans, Certificates of Deposit (CDs). <strong>Primarily &le; 1 year</strong>.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td><strong>Medium- to long-term dollar bonds</strong> issued by sovereign governments, international organizations, and multinationals.</td>
+              <td>Domestic deposits, commercial loans, and dollar-denominated bonds issued by foreign entities registered in the U.S. (Yankee bonds).</td>
+            </tr>
+            <tr>
+              <td><strong>U.S. Regulatory Oversight</strong></td>
+              <td><strong>Exempt</strong> (Fed reserve ratios, FDIC fees, and domestic interest ceilings do not apply).<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a></td>
+              <td><strong>Exempt</strong> (Exempted from stringent U.S. SEC registration, enabling swift issuance).</td>
+              <td><strong>Full Compliance</strong> (Subject to Fed monetary regulation, FDIC insurance, and rigorous SEC disclosure laws).</td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Currency Scope</strong></td>
+              <td>Euroyen, Eurosterling, Euromark, Euroswiss deposits (<strong>Eurocurrency market</strong>).<a href="#ref-8" class="cite-tag">[8]</a><a href="#ref-9" class="cite-tag">[9]</a></td>
+              <td>Euroyen bonds, Euroeuro bonds (bonds denominated in a currency other than that of the issuer's home nation).</td>
+              <td>Yen bonds issued by foreigners in Japan are "Samurai bonds"; foreign sterling bonds in the UK are "Bulldog bonds".</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 Sources & Reference Links</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        Bibliography of official governmental white papers, securities dictionaries, and academic references cited in this analysis:
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.tokaitokyo.co.jp/kantan/term/detail_1461.html" target="_blank" rel="noopener noreferrer" class="ref-link">Tokai Tokyo Securities: Eurodollar Market Definition</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://kotobank.jp/word/%E3%82%86%E3%83%BC%E3%82%8D%E3%81%A0%E3%82%89%E3%83%BC%E5%B8%82%E5%A0%B4-1432041" target="_blank" rel="noopener noreferrer" class="ref-link">Kotobank Encyclopedia: Eurodollar Market</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E3%82%86%E3%83%BC%E3%82%8D%E3%83%80%E3%83%A9%E3%83%BC-3174171" target="_blank" rel="noopener noreferrer" class="ref-link">Kotobank Encyclopedia: Eurodollar</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www5.cao.go.jp/keizai3/sekaikeizaiwp/wp-we71/wp-we71-00204.html" target="_blank" rel="noopener noreferrer" class="ref-link">Cabinet Office of Japan, World Economic White Paper: Expansion of the Eurodollar Market</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.am.mufg.jp/basic/words/0272.html" target="_blank" rel="noopener noreferrer" class="ref-link">Mitsubishi UFJ Asset Management: Euro Market Glossary</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://media.monex.co.jp/ud/glossary/66026736905bd41bb0000174" target="_blank" rel="noopener noreferrer" class="ref-link">Monex Securities: Eurodollar Overview</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://www.nomura.co.jp/terms/japan/yu/euromkt.html" target="_blank" rel="noopener noreferrer" class="ref-link">Nomura Securities: Financial Terms — The Euro Market</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://web.sfc.keio.ac.jp/~taiyo/wordpress/?p=4070" target="_blank" rel="noopener noreferrer" class="ref-link">Keio University SFC: Eurocurrency Market Dynamics</a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%83%AD%E3%82%AB%E3%83%AC%E3%83%B3%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: Eurocurrency</a>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <a href="https://www.mof.go.jp/public_relations/finance/denshi/202111/pageindices/index19.html" target="_blank" rel="noopener noreferrer" class="ref-link">Ministry of Finance Japan, Public Relations 'Finance': Evolution of the International Financial Market</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Financial Oligopoly and Imperialism Supplement Series ⑭ | Characteristics and Historical Origins of the Eurodollar Market</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        scaleText: "Nascent Phase (Soviet Dollar Flight & London Interbank Trading)",
+        scaleWidth: "25%",
+        scaleColor: "#a855f7",
+        regText: "Evading U.S. Asset Freezes & Domestic Jurisdiction",
+        regWidth: "20%",
+        regColor: "#10b981",
+        impactText: "Low to Moderate (Revival of London Financial Center)",
+        impactWidth: "35%",
+        impactColor: "#38bdf8",
+        desc: "<strong>[Phase 1: 1950s — Cold War Soviet Flight from U.S. Jurisdiction and the Eurobank]</strong><br>As Cold War tensions mounted, the Soviet Union and its satellite states feared that holding dollar reserves in New York exposed them to potential U.S. asset freezes. They transferred dollar balances to Soviet-owned banks in Paris (Banque Commerciale pour l'Europe du Nord, telex address: EUROBANK) and London. Following the 1957 Sterling Crisis, the Bank of England permitted London merchant banks to accept and lend foreign currencies free of UK exchange controls, laying the bedrock of the offshore Eurodollar market."
+      },
+      {
+        scaleText: "Rapid Expansion (Multinationals & U.S. Banks Influx)",
+        scaleWidth: "55%",
+        scaleColor: "#38bdf8",
+        regText: "Outside Jurisdiction (Bypassing Reg Q & Reserves)",
+        regWidth: "15%",
+        regColor: "#10b981",
+        impactText: "High (Destabilizing Bretton Woods Parities)",
+        impactWidth: "75%",
+        impactColor: "#f59e0b",
+        desc: "<strong>[Phase 2: 1960s — U.S. Balance-of-Payments Deficits and Capital Flight from Regulation Q]</strong><br>In the 1960s, the U.S. introduced capital controls such as the Interest Equalization Tax (1963) to curtail gold outflows, while the Federal Reserve strictly capped domestic bank deposit interest rates under <strong>Regulation Q</strong>. Seeking higher yields and unconstrained credit, major U.S. commercial banks established prominent branches in London, utilizing the offshore Eurodollar market to mobilize hundreds of billions of dollars beyond the reach of domestic regulators."
+      },
+      {
+        scaleText: "Explosive Expansion (Inflow of Petrodollars)",
+        scaleWidth: "85%",
+        scaleColor: "#f59e0b",
+        regText: "Unregulated (Near-Zero Reserves & Global Credit Creation)",
+        regWidth: "10%",
+        regColor: "#10b981",
+        impactText: "Extremely High (Prelude to Developing Country Debt Crises)",
+        impactWidth: "90%",
+        impactColor: "#f43f5e",
+        desc: "<strong>[Phase 3: 1970s — Petrodollar Recycling and International Syndicated Loans]</strong><br>The collapse of Bretton Woods (1971) and the oil shocks of 1973 and 1979 transferred trillions of dollars to OPEC producers. These vast <strong>Petrodollar surpluses</strong> were deposited into London Eurobanks, which 'recycled' them through floating-rate syndicated loans to sovereign borrowers in Latin America and Eastern Europe. When Volcker raised interest rates in 1979–1981, this unregulated credit pyramid triggered the 1982 sovereign debt crisis."
+      },
+      {
+        scaleText: "Astronomical Scale (Core Backbone of Global Dollar Liquidity)",
+        scaleWidth: "100%",
+        scaleColor: "#f43f5e",
+        regText: "Forced Domestic Deregulation Across Advanced Economies",
+        regWidth: "10%",
+        regColor: "#f43f5e",
+        impactText: "Critical (Global Shadow Banking & Swap Network Anchor)",
+        impactWidth: "100%",
+        impactColor: "#e11d48",
+        desc: "<strong>[Phase 4: 1980s to Present — Domestic Deregulation & Global Offshore Credit]</strong><br>To prevent complete disintermediation and offshore flight, the U.S. repealed Regulation Q and created International Banking Facilities (IBFs), while Japan established the JOM. Today, Eurodollar credit and foreign exchange swaps underpin global trade finance, derivatives, and shadow banking. In crises, the Federal Reserve acts as the ultimate de facto global lender of last resort via central bank liquidity swap lines."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-scale').textContent = p.scaleText;
+      const bScale = document.getElementById('b-scale');
+      bScale.style.width = p.scaleWidth;
+      bScale.style.backgroundColor = p.scaleColor;
+
+      document.getElementById('m-reg').textContent = p.regText;
+      const bReg = document.getElementById('b-reg');
+      bReg.style.width = p.regWidth;
+      bReg.style.backgroundColor = p.regColor;
+
+      document.getElementById('m-impact').textContent = p.impactText;
+      const bImpact = document.getElementById('b-impact');
+      bImpact.style.width = p.impactWidth;
+      bImpact.style.backgroundColor = p.impactColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Schumpeter's Business Cycle Theory — Creative Destruction and the Superposition of Three Waves</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.375rem;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: #f1f5f9;
+      color: var(--primary-light);
+      border-color: var(--primary-light);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .badge-sub {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Section & Cards */
+    section {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid #eff6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      border-left: 4px solid var(--primary);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .concept-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .concept-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Step Process */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-badge {
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-content {
+      flex-grow: 1;
+    }
+
+    .step-header {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .step-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* 3 Waves Cards */
+    .wave-card {
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wave-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .wave-period {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      background: #e2e8f0;
+      color: #334155;
+      margin-bottom: 0.6rem;
+    }
+
+    .wave-cause {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .wave-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Wave Simulator */
+    .sim-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 0.5rem;
+    }
+
+    .sim-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .wave-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      background: #f1f5f9;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .toggle-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+
+    .canvas-wrapper {
+      position: relative;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .sim-caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .ref-item {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+    }
+
+    /* Footnotes in text */
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-decoration: none;
+      vertical-align: super;
+      margin: 0 0.15rem;
+    }
+
+    .cite-badge:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplement Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics &amp; Monetary Theory Notes)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Credit Creation Mechanism</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Active Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link active">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars &amp; Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis &amp; Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Bank Oligarchy Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement / Dynamic Economics &amp; Business Cycle Notes</span>
+        <span class="badge badge-sub">Schumpeter, "Business Cycles" (1939)</span>
+      </div>
+      <h1>Schumpeter's Theory of Business Cycles</h1>
+      <p class="lead">
+        Schumpeter's theory of business cycles is a dynamic theory of economic development positing that the clustered appearance of "<strong>innovations (new combinations)</strong>" driven by entrepreneurs generates economic waves.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+        <br><br>
+        Economist Joseph Alois Schumpeter, in seminal works such as <a href="https://www.amazon.co.jp/dp/4003414721" target="_blank" rel="noopener noreferrer"><em>The Theory of Economic Development</em></a> and <a href="https://www.amazon.co.jp/dp/4641901074" target="_blank" rel="noopener noreferrer"><em>Business Cycles</em></a>, conceptualized the essence of capitalism as a process of "<strong>creative destruction</strong>" and cyclical fluctuations.<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a>
+      </p>
+    </header>
+
+    <!-- 1. Fundamental Concepts -->
+    <section id="basic-concepts">
+      <h2>💡 1. Fundamental Concepts (Three Elements of Dynamic Development)</h2>
+      <div class="grid-3">
+        <div class="concept-card" style="border-left-color: var(--emerald);">
+          <div class="concept-title">
+            <span>⚡ Innovation (New Combinations)</span>
+          </div>
+          <div class="concept-desc">
+            Five forms of innovative activity: introduction of a new good or production method, opening of a new market, conquest of a new source of raw materials, and reorganization of an industry.<a href="#ref-3" class="cite-badge">[3]</a><a href="#ref-4" class="cite-badge">[4]</a>
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--accent);">
+          <div class="concept-title">
+            <span>🧭 Entrepreneur</span>
+          </div>
+          <div class="concept-desc">
+            The innovator who breaks through established routines and stationary circular flow, daring uncertainty to carry out innovations (new combinations).
+          </div>
+        </div>
+
+        <div class="concept-card" style="border-left-color: var(--primary-light);">
+          <div class="concept-title">
+            <span>🏦 Credit Creation</span>
+          </div>
+          <div class="concept-desc">
+            The mechanism whereby banks create new purchasing power "out of nothing" to provide funding, empowering entrepreneurs to withdraw means of production from existing circular channels to execute innovations.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Mechanism of Business Cycles -->
+    <section id="mechanism">
+      <h2>🔄 2. The Mechanism of Business Cycles (Why Waves Occur)</h2>
+      <p style="margin-bottom: 1.25rem;">
+        Innovations do not arise smoothly or evenly over time; rather, they inherently appear in <strong>"swarms" (clusters)</strong> during specific periods, causing capitalist development to trace an inescapably cyclical, wavelike trajectory.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-5" class="cite-badge">[5]</a>
+      </p>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-badge" style="background: var(--emerald);">📈</div>
+          <div class="step-content">
+            <div class="step-header">Phase 1: Prosperity — Swarms of Imitators &amp; Investment Boom</div>
+            <div class="step-text">
+              Once a pioneering entrepreneur overcomes hurdles and successfully executes an innovation, the path is cleared, prompting numerous followers to pursue the exceptional profits in swarms. Fueled by bank credit creation, capital investment and production expand explosively, driving up prices and employment.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge" style="background: var(--rose);">📉</div>
+          <div class="step-content">
+            <div class="step-header">Phase 2: Recession / Depression — Creative Destruction &amp; Shakeout</div>
+            <div class="step-text">
+              As new technologies and products flood the market, prices fall and entrepreneurs repay bank loans out of profits (autodeflation / credit contraction). Obsolete technologies and inefficient legacy industries are liquidated through <strong>creative destruction</strong>, sparking temporary overproduction, insolvencies, and dislocations (exacerbated into deep depression if speculative "secondary waves" collapse).
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge" style="background: var(--primary);">⚖️</div>
+          <div class="step-content">
+            <div class="step-header">Phase 3: Recovery / New Equilibrium — Preparation for the Next Innovation</div>
+            <div class="step-text">
+              As industrial restructuring and price-system realignment (the adaptation process) advance, turmoil subsides. The economy settles into a "<strong>neighborhood of equilibrium</strong>" characterized by higher productivity and real income than before, awaiting the next wave of innovation.<a href="#ref-5" class="cite-badge">[5]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Superposition of Three Cycles -->
+    <section id="three-waves">
+      <h2>🌊 3. The Superposition of Three Cycles (Three-Cycle Schema)</h2>
+      <p style="margin-bottom: 1.25rem;">
+        In his 1939 magnum opus <em>Business Cycles</em>, Schumpeter posited that <strong>three cycles</strong> of differing duration and amplitude operate simultaneously, and their superposition (composite summation) generates the complex fluctuations observed in real economies.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- Kitchin -->
+        <div class="wave-card" style="border-top: 4px solid var(--accent);">
+          <div>
+            <span class="wave-period" style="background: var(--accent-light); color: var(--accent-dark);">Short Wave: Approx. 40 Months (3–4 Years)</span>
+            <div class="wave-title">Kitchin Cycle</div>
+            <div class="wave-cause" style="color: var(--accent-dark);">📦 Primary Cause: Inventory Adjustments</div>
+            <div class="wave-desc">
+              Identified by Joseph Kitchin. A short-term minor cycle driven by inventory buildup during economic expansion and liquidation during demand slowdowns.
+            </div>
+          </div>
+        </div>
+
+        <!-- Juglar -->
+        <div class="wave-card" style="border-top: 4px solid var(--emerald);">
+          <div>
+            <span class="wave-period" style="background: var(--emerald-light); color: var(--emerald);">Medium Wave: Approx. 10 Years (7–11 Years)</span>
+            <div class="wave-title">Juglar Cycle</div>
+            <div class="wave-cause" style="color: var(--emerald);">🏭 Primary Cause: Capital Equipment &amp; Machinery Replacement</div>
+            <div class="wave-desc">
+              Identified by Clément Juglar. The primary medium-term cycle governed by the lifespan and renewal of manufacturing machinery/equipment, coupled with credit expansion and contraction.
+            </div>
+          </div>
+        </div>
+
+        <!-- Kondratiev -->
+        <div class="wave-card" style="border-top: 4px solid var(--primary);">
+          <div>
+            <span class="wave-period" style="background: #dbeafe; color: var(--primary);">Long Wave: Approx. 50 Years (45–60 Years)</span>
+            <div class="wave-title">Kondratiev Cycle</div>
+            <div class="wave-cause" style="color: var(--primary);">🚀 Primary Cause: Paradigm-Shifting Technologies &amp; Infrastructure</div>
+            <div class="wave-desc">
+              Identified by Nikolai Kondratiev. Long-wave transformations driven by foundational innovations that reshape entire techno-economic paradigms, such as steam power, railways, electricity, automobiles, and information technology.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Wave Synthesis Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">📊 [Interactive Wave Synthesis] Schumpeter's Three-Cycle Schema</div>
+          <span style="font-size: 0.82rem; color: var(--text-muted);">1 Long Wave ≈ 6 Medium Waves ≈ 18 Short Waves</span>
+        </div>
+
+        <div class="wave-toggles">
+          <label class="toggle-label" style="color: #1e3a8a;">
+            <input type="checkbox" id="chkKond" checked onchange="drawWaves()">
+            <span>🔵 Kondratiev Wave (50 yrs)</span>
+          </label>
+          <label class="toggle-label" style="color: #059669;">
+            <input type="checkbox" id="chkJug" checked onchange="drawWaves()">
+            <span>🟢 Juglar Wave (10 yrs)</span>
+          </label>
+          <label class="toggle-label" style="color: #d97706;">
+            <input type="checkbox" id="chkKit" checked onchange="drawWaves()">
+            <span>🟠 Kitchin Wave (40 mos)</span>
+          </label>
+          <label class="toggle-label" style="color: #e11d48; font-weight: 800;">
+            <input type="checkbox" id="chkSum" checked onchange="drawWaves()">
+            <span>🔴 Composite Wave (Real Economic Cycle)</span>
+          </label>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="waveCanvas" width="840" height="300"></canvas>
+        </div>
+
+        <div class="sim-caption">
+          <strong>[Interpreting the Waveform &amp; Understanding the 1929 Great Crash]</strong><br>
+          The bold red line (composite wave) represents the cyclical fluctuations experienced by the real economy. During the upswing of a Kondratiev long wave, expansions are robust and durable. Conversely, when the <strong>troughs (downward phases) of all three cycles coincide simultaneously (near the right edge of the chart)</strong>, devastating historical depressions like the Great Depression of 1929 unfold, as Schumpeter demonstrated.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Historical Trajectory of Kondratiev Waves & Comparison with Keynes -->
+    <section id="history-and-comparison">
+      <h2>🏛️ 4. Historical Trajectory of Kondratiev Waves &amp; Comparison with Keynesian Theory</h2>
+
+      <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.5rem;">
+        ① Five Historical Waves of Technological Innovation and Kondratiev Cycles<a href="#ref-2" class="cite-badge">[2]</a>
+      </h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Long Wave</th>
+              <th>Approximate Era</th>
+              <th>Core Innovation (New Combinations)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Wave 1</strong></td>
+              <td>1780s – 1840s</td>
+              <td><strong>Industrial Revolution</strong> (Water &amp; steam power, spinning machines, cotton textiles, iron forging)</td>
+            </tr>
+            <tr>
+              <td><strong>Wave 2</strong></td>
+              <td>1840s – 1890s</td>
+              <td><strong>Age of Steam &amp; Steel</strong> (Railway networks, steamships, Bessemer steelmaking innovation)</td>
+            </tr>
+            <tr>
+              <td><strong>Wave 3</strong></td>
+              <td>1890s – 1940s</td>
+              <td><strong>Age of Electricity, Chemicals &amp; Internal Combustion</strong> (Electrical grids, heavy chemicals, early automotive industry)</td>
+            </tr>
+            <tr>
+              <td><strong>Wave 4</strong></td>
+              <td>1940s – 1990s</td>
+              <td><strong>Age of Petrochemicals, Mass Production &amp; Electronics</strong> (Consumer appliances, aviation, early computing, interstate highways)</td>
+            </tr>
+            <tr>
+              <td><strong>Wave 5</strong></td>
+              <td>1990s – Present</td>
+              <td><strong>Age of Information &amp; Digital Technology</strong> (Internet, telecommunications, artificial intelligence, biotechnology)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin: 1.75rem 0 0.5rem;">
+        ② Two Giants of the 20th Century: Schumpeter vs. Keynes
+      </h3>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 24%;">Perspective</th>
+              <th style="width: 38%;">Schumpeter (Supply, Dynamic, Long-Term)</th>
+              <th style="width: 38%;">Keynes (Demand, Short-Term, Macro Management)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Analytical Time Horizon</strong></td>
+              <td><strong>Long-term &amp; Dynamic</strong> (Multidecadal structural transformation)</td>
+              <td><strong>Short-term &amp; Static</strong> ("In the long run, we are all dead")</td>
+            </tr>
+            <tr>
+              <td><strong>Primary Cause of Fluctuations</strong></td>
+              <td>Entrepreneurial <strong>innovation (new combinations) &amp; creative destruction</strong></td>
+              <td>Shifts in marginal efficiency of capital, <strong>deficiencies in effective demand &amp; liquidity preference</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Interpretation of Slumps</strong></td>
+              <td>An <strong>inevitable adaptation process</strong> liquidating obsolete sectors to reallocate resources</td>
+              <td>A <strong>market failure (economic waste)</strong> generating involuntary unemployment</td>
+            </tr>
+            <tr>
+              <td><strong>Policy Stance</strong></td>
+              <td>Cautious; warns that bailouts and artificial inflation impede structural renewal</td>
+              <td>Active stabilization; <strong>expansionary fiscal policy &amp; monetary easing</strong> to boost aggregate demand</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References & Sources -->
+    <section id="references">
+      <h2>📚 References &amp; Further Reading</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="http://ritsumeikeizai.koj.jp/koj_pdfs/14403.pdf" target="_blank" rel="noopener noreferrer">
+            Ritsumeikan Economic Studies, "Schumpeter's Business Cycle Theory and the Mechanism of Dynamic Economic Development"
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://www.mlit.go.jp/hakusyo/mlit/h28/hakusho/h29/html/n1113c01.html" target="_blank" rel="noopener noreferrer">
+            Ministry of Land, Infrastructure, Transport and Tourism (MLIT) White Paper 2017, "Kondratiev Waves and the Historical Evolution of Innovation"
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://aty800.com/highest-goal/books/schumpeter-importantworks.html" target="_blank" rel="noopener noreferrer">
+            Guide to Major Works of Schumpeter: "The Three-Cycle Schema in The Theory of Economic Development and Business Cycles"
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://mba.globis.ac.jp/about_mba/glossary/detail-11823.html" target="_blank" rel="noopener noreferrer">
+            GLOBIS Graduate School of Management MBA Glossary, "Creative Destruction and Innovation"
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="http://www.eonet.ne.jp/~bookman/kikouhonn/schumpcycles.html" target="_blank" rel="noopener noreferrer">
+            Commentary on Schumpeter's "Business Cycles: A Theoretical, Historical, and Statistical Analysis of the Capitalist Process"
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; History and Collapse of Financial Oligopoly: Supplement Series | Schumpeter's Business Cycles Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive 3-Wave Superposition Script -->
+  <script>
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawWaves() {
+      const showKond = document.getElementById('chkKond').checked;
+      const showJug = document.getElementById('chkJug').checked;
+      const showKit = document.getElementById('chkKit').checked;
+      const showSum = document.getElementById('chkSum').checked;
+
+      const w = canvas.width;
+      const h = canvas.height;
+      const midY = h / 2;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Draw Equilibrium Center Line
+      ctx.beginPath();
+      ctx.setLineDash([5, 5]);
+      ctx.moveTo(40, midY);
+      ctx.lineTo(w - 20, midY);
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = '#64748b';
+      ctx.font = '11px system-ui, sans-serif';
+      ctx.fillText('Equilibrium Level', 45, midY - 6);
+      ctx.fillText('Time (approx. 60 years = 1 Kondratiev cycle) ➔', w - 300, h - 12);
+
+      const startX = 40;
+      const endX = w - 20;
+      const plotW = endX - startX;
+
+      // Wave functions over t in [0, 1] (1 Kondratiev = 6 Juglars = 18 Kitchins)
+      function getKond(t) {
+        return Math.sin(t * 2 * Math.PI) * 58;
+      }
+      function getJug(t) {
+        return Math.sin(t * 6 * 2 * Math.PI) * 28;
+      }
+      function getKit(t) {
+        return Math.sin(t * 18 * 2 * Math.PI) * 12;
+      }
+
+      // 1. Kondratiev Wave
+      if (showKond) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(30, 58, 138, 0.55)';
+        ctx.lineWidth = 2.5;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          const y = midY - getKond(t);
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // 2. Juglar Wave
+      if (showJug) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(5, 150, 105, 0.55)';
+        ctx.lineWidth = 2;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          const y = midY - getJug(t);
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // 3. Kitchin Wave
+      if (showKit) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(217, 119, 6, 0.5)';
+        ctx.lineWidth = 1.5;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          const y = midY - getKit(t);
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // 4. Composite Wave (Sum of selected waves)
+      if (showSum) {
+        ctx.beginPath();
+        ctx.strokeStyle = '#e11d48';
+        ctx.lineWidth = 3.2;
+        for (let x = startX; x <= endX; x++) {
+          const t = (x - startX) / plotW;
+          let val = 0;
+          if (showKond) val += getKond(t);
+          if (showJug) val += getJug(t);
+          if (showKit) val += getKit(t);
+          const y = midY - val;
+          if (x === startX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Highlight deep trough where all 3 align around t = 0.75
+        if (showKond && showJug && showKit) {
+          const troughT = 0.74;
+          const tx = startX + troughT * plotW;
+          const ty = midY - (getKond(troughT) + getJug(troughT) + getKit(troughT));
+
+          ctx.beginPath();
+          ctx.arc(tx, ty, 6, 0, Math.PI * 2);
+          ctx.fillStyle = '#be123c';
+          ctx.fill();
+          ctx.strokeStyle = '#ffffff';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          ctx.fillStyle = '#be123c';
+          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.fillText('⚠️ Great Depression Point: Troughs of 3 Waves Align', tx - 130, ty + 20);
+        }
+      }
+    }
+
+    // Initial render
+    drawWaves();
+  </script>
+</body>
+</html>

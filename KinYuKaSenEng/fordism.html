@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Fordism in 1920s America — Mass Production, Mass Consumption, and the Prelude to the 1929 Great Depression</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Series Nav */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e1b4b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(59, 130, 246, 0.35);
+      color: #bfdbfe;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 860px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Flow Diagrams */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .flow-step {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flow-step.step-warn { border-top-color: var(--accent); }
+    .flow-step.step-danger { border-top-color: var(--rose); }
+
+    .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .flow-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .factor-card.card-emerald { border-left-color: var(--emerald); }
+    .factor-card.card-amber { border-left-color: var(--accent); }
+    .factor-card.card-purple { border-left-color: var(--purple); }
+
+    .factor-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .factor-list {
+      padding-left: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #334155;
+      box-shadow: var(--shadow);
+    }
+
+    .sim-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sim-subtitle {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.5rem;
+      padding: 0.7rem 0.8rem;
+      color: #e2e8f0;
+      text-align: left;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #fbbf24;
+    }
+
+    .phase-btn.active {
+      background: #fbbf24;
+      color: #0f172a;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.72rem;
+      opacity: 0.85;
+      margin-bottom: 0.2rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligopoly and Imperialism Supplement Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link active">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Industrial Capitalism &amp; Mass Consumer Society Supplement</span>
+        <span class="badge badge-sub">Light and Shadow of America's "Roaring Twenties"</span>
+      </div>
+      <h1>Fordism in 1920s America:<br>The Rise of Mass Production &amp; Mass Consumption and the Prelude to the 1929 Crash</h1>
+      <p class="lead">
+        In 1920s America, <strong>Fordism</strong> referred to the integrated socioeconomic regime pioneered by Henry Ford, combining <strong>assembly-line mass production with standardized mass consumption</strong>. This paradigm propelled the unprecedented economic expansion and mass consumer culture known as the <strong>"Roaring Twenties."</strong><a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: 4 Main Features of Fordism -->
+    <section>
+      <h2>🏭 Core Characteristics of Fordism (Four Foundational Mechanisms)</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Fordism was far more than an engineering breakthrough inside factories; it systematically transformed wage structures, product pricing, and working-class lifestyles, forging modern mass consumer society.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="factor-card">
+          <div class="factor-title">
+            <span>① Mechanized Mass Assembly (Manufacturing Revolution)</span>
+          </div>
+          <ul class="factor-list">
+            <li><strong>Introduction of the moving conveyor belt assembly line in 1913.</strong></li>
+            <li>Rigid parts standardization and minute division of labor enabled lightning-fast, ultra-low-cost output of the Model T.<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a></li>
+          </ul>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>② High Wages &amp; Worker Purchasing Power</span>
+          </div>
+          <ul class="factor-list">
+            <li><strong>In 1914, Ford introduced the revolutionary "$5 a Day" wage and the 8-hour workday.</strong></li>
+            <li>Workers themselves became affluent consumers capable of purchasing the very automobiles they manufactured.<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a></li>
+          </ul>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>③ Plunging Retail Prices &amp; Democratized Luxuries</span>
+          </div>
+          <ul class="factor-list">
+            <li>Soaring productivity slashed unit prices: <strong>by 1925, the Model T plunged to just $285</strong>, bringing cars, radios, and vacuum cleaners within reach of ordinary households.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-6" class="cite-tag">[6]</a></li>
+          </ul>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>④ The Genesis of Mass Consumer Society</span>
+          </div>
+          <ul class="factor-list">
+            <li><strong>Rapid mass motorization</strong> spurred highway construction, petroleum demand, steel production, suburban growth, and jazz-age culture.<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-6" class="cite-tag">[6]</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">📊 The Model T Innovation &amp; The "Roaring Twenties" Virtuous-to-Vicious Cycle Simulator</div>
+            <div class="sim-subtitle">Toggle through the historical phases to observe the progression from price deflation and wage empowerment to catastrophic overproduction</div>
+          </div>
+        </div>
+
+        <div class="phase-tabs">
+          <button class="phase-btn" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 | 1908–1913</span>
+            Assembly Line Introduced (1913)
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 | 1914</span>
+            The "$5 a Day / 8-Hour" Revolution
+          </button>
+          <button class="phase-btn active" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 | 1925 (Zenith)</span>
+            The $285 Model T &amp; Mass Culture
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 | 1927–1929</span>
+            Overproduction, Disparity &amp; Crash
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Model T Retail Price (Base $850)</div>
+            <div class="metric-value" id="m-price">$285 (Dropped to ~1/3 of Original)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-price" style="width: 33%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Mass Production &amp; Appliance Penetration</div>
+            <div class="metric-value" id="m-prod">Maximum (~2M units/yr; appliances widespread)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-prod" style="width: 92%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Overproduction, Inequality &amp; Credit Vulnerability</div>
+            <div class="metric-value" id="m-risk">Moderate–High (Installment Loan Expansion)</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-risk" style="width: 65%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-desc-box" id="sim-desc">
+          <strong>【Phase 3: 1925 — The Zenith of the "Roaring Twenties" and the $285 Model T】</strong><br>
+          Through rigorous standardization and moving assembly lines, the Model T's price fell from $850 at launch to <strong>just $285 by 1925</strong>, allowing an autoworker earning $5 a day to purchase one with about two months' wages. Motorization fueled highway expansion, petroleum refining, and residential suburbanization, accompanied by the mass diffusion of radios, refrigerators, phonographs, and cinema.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Shadow Side & Connection to 1929 Great Depression -->
+    <section>
+      <h2>📉 The Shadow Side: Overproduction, Income Inequality, and the 1929 Crash</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Despite its outward brilliance, the Fordist regime harbored severe systemic contradictions—specifically <strong>chronic overproduction and widening income inequality</strong>—that served as primary catalysts for the Great Depression of 1929.<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a><br>
+        For further historical and analytical frameworks, see the detailed entries on <a href="https://en.wikipedia.org/wiki/Fordism" target="_blank" rel="noopener noreferrer" class="ext-link">Wikipedia: Fordism</a>.<a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step step-warn">
+          <span class="step-num">Distortion ①: Labor Alienation</span>
+          <div class="flow-title">Monotony &amp; Wage Stagnation</div>
+          <p class="flow-desc">
+            Extreme specialization turned workers into mindless machine appendages (satirized in Chaplin's <em>Modern Times</em>). Across the 1920s, <strong>real wage gains lagged far behind soaring productivity</strong>, funneling windfalls to corporate capital.
+          </p>
+        </div>
+        <div class="flow-step step-warn">
+          <span class="step-num">Distortion ②: Market Saturation</span>
+          <div class="flow-title">Collapse in Marginal Demand</div>
+          <p class="flow-desc">
+            Rigid mass production of uniform goods (the all-black Model T) hit a brick wall once middle-class households owned a car, allowing General Motors to seize leadership with multi-tier, flexible annual model changes.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">Distortion ③: Installment Credit</span>
+          <div class="flow-title">Borrowing from the Future</div>
+          <p class="flow-desc">
+            To mask the lag in real worker purchasing power, over 60% of cars and home appliances were sold on <strong>installment credit ("buy now, pay later")</strong>, creating an unsustainable household debt pyramid.
+          </p>
+        </div>
+        <div class="flow-step step-danger">
+          <span class="step-num">Distortion ④: Speculative Frenzy</span>
+          <div class="flow-title">The 1929 Wall Street Crash</div>
+          <p class="flow-desc">
+            Excess corporate profits that could no longer find profitable real investment outlets in saturated consumer goods flowed into <strong>Wall Street equity and real estate speculation</strong>, detonating the October 1929 crash.<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-title">🔍 Economic Analysis: The Paradox of Micro High Wages vs. Macro Widening Disparities</div>
+        <p style="font-size: 0.92rem; color: var(--text-main);">
+          While Henry Ford's "$5 a Day" wage was revolutionary in 1914, it was primarily a labor-discipline measure to curtail crippling turnover; independent trade unionism was ruthlessly suppressed. Across the 1920s American economy as a whole, manufacturing productivity leaped by over 40%, yet real wages rose by barely 10%. Consequently, <strong>the wealthiest top 1% captured nearly 24% of national income</strong>. This profound inequality starved the economy of aggregate effective demand. When installment borrowing reached its mathematical limit, domestic consumption froze, triggering cascading corporate defaults and prolonged deflation.<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Evolution to Post-Fordism -->
+    <section>
+      <h2>🔄 In-Depth Comparative Evolution: Transition from 1920s Early Fordism to Post-Fordism (Toyota Production System)</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        Using the analytical lens of the French Regulation School, this comparative table traces the historical evolution from 1920s Early Fordism through Post-War Golden Age Fordism to post-1970s <strong>Post-Fordism (Toyota Production System &amp; Flexible Specialization)</strong>.<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-9" class="cite-tag">[9]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">Analytical Dimension</th>
+              <th style="width: 26%;">① 1920s Early Fordism<br><span style="font-size: 0.78rem; font-weight: 500;">(Roaring Twenties / Pre-Crash)</span></th>
+              <th style="width: 27%;">② 1945–1970s Post-War Fordism<br><span style="font-size: 0.78rem; font-weight: 500;">(New Deal / Capitalist Golden Age)</span></th>
+              <th style="width: 27%;">③ Post-1970s Post-Fordism<br><span style="font-size: 0.78rem; font-weight: 500;">(Toyota Production / Flexible Specialization)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Production Paradigm</strong></td>
+              <td><strong>Low-variety mass production</strong> (Standardized Model T; dedicated assembly lines; fragmented, repetitive physical labor).<a href="#ref-4" class="cite-tag">[4]</a><a href="#ref-5" class="cite-tag">[5]</a></td>
+              <td>Mature mass manufacturing scaled across national economies. Standardization of suburban housing, passenger vehicles, and white goods.</td>
+              <td><strong>High-variety, low-volume production; Just-in-Time (Kanban system)</strong>. Multi-skilled workers, continuous shop-floor Kaizen, zero-inventory buffers.<a href="#ref-9" class="cite-tag">[9]</a></td>
+            </tr>
+            <tr>
+              <td><strong>Wage &amp; Labor Relations</strong></td>
+              <td>Company-directed paternalist wages ($5/day) without collective bargaining; <strong>real wages lagged aggregate productivity</strong>.</td>
+              <td>Union legalization (Wagner Act) and institutionalized collective bargaining: <strong>regular real wage hikes indexed to productivity growth</strong>.</td>
+              <td>Neoliberal labor market flexibility (casualization, gig work, performance bonuses). Global offshoring and fractured supply chains.</td>
+            </tr>
+            <tr>
+              <td><strong>Demand &amp; Role of the State</strong></td>
+              <td>Laissez-faire; absence of welfare nets. Demand deficiencies papered over by <strong>installment credit and stock market margin debt</strong>.</td>
+              <td><strong>Keynesian Welfare State</strong>. Progressive taxation, public infrastructure spending, and social safety nets underpinning consumer purchasing power.</td>
+              <td>Niche marketing, service economy, and digitalization. Aggregate demand sustains itself via <strong>hyper-financialized household borrowing</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Historical Limits &amp; Crisis</strong></td>
+              <td>Overproduction, severe income polarization, and margin debt collapse culminating in the <strong>Great Crash of 1929</strong>.<a href="#ref-7" class="cite-tag">[7]</a><a href="#ref-8" class="cite-tag">[8]</a></td>
+              <td>1970s oil shocks, market saturation, and stagflation as international competition squeezed profit rates.</td>
+              <td>Extreme manufacturing efficiency paired with capital flight into secondary speculative assets, fueling chronic financial instability.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 Academic &amp; Historical References</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        Academic literature, economic treatises, and historical entries referenced in this study:
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://sustabi.com/blog/8966/" target="_blank" rel="noopener noreferrer" class="ref-link">Sustabi Business Review: What is Fordism? The Mechanics of Mass Production</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%A1%86%E6%B6%88%E8%B2%BB%E7%A4%BE%E4%BC%9A" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: Mass Consumer Society and the 1920s Transformation</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.gentosha-book.com/method/trivia/roaring-twenties/" target="_blank" rel="noopener noreferrer" class="ref-link">Historical Analysis: The Roaring Twenties &amp; The Rise of American Consumerism</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-142.html" target="_blank" rel="noopener noreferrer" class="ref-link">World History Window: Henry Ford, The Model T, and Modern Industrial Assembly</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="http://www.kisoken.org/webjiten/fordism.html" target="_blank" rel="noopener noreferrer" class="ref-link">Encyclopedia of Social Economics: Fordism and Labor Management</a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <a href="https://www.y-history.net/appendix/wh1502-143.html" target="_blank" rel="noopener noreferrer" class="ref-link">World History Window: Mass Production and Consumer Durables in 1920s America</a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <a href="https://econ-review.ier.hit-u.ac.jp/wp-content/uploads/files/2006-57/keizaikenkyu5703260.pdf" target="_blank" rel="noopener noreferrer" class="ref-link">Hitotsubashi University Economic Review: Fordism, Structural Crisis, and the 1929 Depression</a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <a href="https://www.reddit.com/r/AskHistorians/comments/e6ipfw/was_fordism_the_cause_of_overproduction_during/?tl=ja" target="_blank" rel="noopener noreferrer" class="ref-link">AskHistorians: Did Fordist Overproduction Trigger the Great Depression?</a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <a href="https://en.wikipedia.org/wiki/Fordism" target="_blank" rel="noopener noreferrer" class="ref-link">Wikipedia: Fordism and the Post-Fordist Industrial Transition</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Financial Oligopoly and Imperialism Supplement Series ⑫ | Fordism in 1920s America and the Dynamics of Mass Consumer Capitalism</p>
+    </footer>
+  </div>
+
+  <script>
+    const phases = [
+      {
+        priceText: "$850 ➔ $550",
+        priceWidth: "70%",
+        priceColor: "#38bdf8",
+        prodText: "Rapid Surge (Assembly 12.5 hrs ➔ 93 mins)",
+        prodWidth: "55%",
+        prodColor: "#38bdf8",
+        riskText: "Low (High Labor Turnover Challenges)",
+        riskWidth: "25%",
+        riskColor: "#10b981",
+        desc: "<strong>【Phase 1: 1908–1913 — Model T Launch &amp; Moving Assembly Line (1913)】</strong><br>Launched in 1908 at $850, the Model T achieved dramatic cost reductions through parts standardization and <strong>the 1913 moving conveyor assembly line</strong>, slashing assembly time per vehicle from 12 hours 28 minutes to a mere <strong>93 minutes</strong>. However, hyper-repetitive work caused factory turnover to surge to an alarming 370% annually."
+      },
+      {
+        priceText: "$490",
+        priceWidth: "55%",
+        priceColor: "#10b981",
+        prodText: "High ($5/Day Wage & 8-Hour Workday)",
+        prodWidth: "75%",
+        prodColor: "#10b981",
+        riskText: "Low (Virtuous Cycle Initiated)",
+        riskWidth: "20%",
+        riskColor: "#10b981",
+        desc: "<strong>【Phase 2: 1914 — The '$5 a Day / 8-Hour' Revolution &amp; Worker-Consumers】</strong><br>In January 1914, Henry Ford doubled prevailing wages to <strong>'$5 a day' and established the 8-hour workday (three shifts)</strong>. Labor turnover plummeted and productivity soared, creating a historic breakthrough: <strong>workers earned enough to become mass consumers of their own products</strong>."
+      },
+      {
+        priceText: "$285 (Dropped to ~1/3 of Original)",
+        priceWidth: "33%",
+        priceColor: "#10b981",
+        prodText: "Maximum (~2M units/yr; appliances widespread)",
+        prodWidth: "92%",
+        prodColor: "#38bdf8",
+        riskText: "Moderate–High (Installment Loan Expansion)",
+        riskWidth: "65%",
+        riskColor: "#f59e0b",
+        desc: "<strong>【Phase 3: 1925 — The Zenith of the 'Roaring Twenties' and the $285 Model T】</strong><br>Through rigorous standardization and moving assembly lines, the Model T's price fell from $850 at launch to <strong>just $285 by 1925</strong>, allowing an autoworker earning $5 a day to purchase one with about two months' wages. Motorization fueled highway expansion, petroleum refining, and residential suburbanization, accompanied by the mass diffusion of radios, refrigerators, phonographs, and cinema."
+      },
+      {
+        priceText: "Market Saturation (Model T Retired for Model A)",
+        priceWidth: "40%",
+        priceColor: "#f59e0b",
+        prodText: "Overproduction (Capacity Ceiling Reached)",
+        prodWidth: "100%",
+        prodColor: "#f43f5e",
+        riskText: "Extreme (Wealth Disparities & Speculative Crash)",
+        riskWidth: "100%",
+        riskColor: "#e11d48",
+        desc: "<strong>【Phase 4: 1927–1929 — Overproduction, Inequality &amp; The Road to the Great Crash】</strong><br>By the late 1920s, household penetration of durable goods reached saturation, and installment debt stretched consumer budgets to the breaking point. With real wages lagging corporate productivity gains, excess profits flooded into Wall Street equity speculation. The <strong>October 1929 stock market crash</strong> turned structural overcapacity into a deflationary spiral and catastrophic global unemployment."
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-price').textContent = p.priceText;
+      const bPrice = document.getElementById('b-price');
+      bPrice.style.width = p.priceWidth;
+      bPrice.style.backgroundColor = p.priceColor;
+
+      document.getElementById('m-prod').textContent = p.prodText;
+      const bProd = document.getElementById('b-prod');
+      bProd.style.width = p.prodWidth;
+      bProd.style.backgroundColor = p.prodColor;
+
+      document.getElementById('m-risk').textContent = p.riskText;
+      const bRisk = document.getElementById('b-risk');
+      bRisk.style.width = p.riskWidth;
+      bRisk.style.backgroundColor = p.riskColor;
+
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+  </script>
+</body>
+</html>

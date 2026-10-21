@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplementary Note: The Banking Oligarchy's Coup Against the Political-Economic System and the Mechanics of Unlimited Liquidity Injection</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #311042 45%, #881337 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fde68a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 0.85rem;
+    }
+
+    header p {
+      font-size: 0.98rem;
+      color: #e2e8f0;
+      max-width: 840px;
+    }
+
+    /* Section Card */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .section-num {
+      background: var(--primary-dark);
+      color: #ffffff;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .section-num.rose {
+      background: var(--rose);
+    }
+
+    .section-num.amber {
+      background: var(--accent-dark);
+    }
+
+    .section-num.purple {
+      background: var(--purple);
+    }
+
+    .section-header h2 {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .lead-text {
+      font-size: 0.96rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(to right, #fff1f2, #fffbeb);
+      border-left: 4px solid var(--rose);
+      padding: 1.15rem 1.35rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.93rem;
+    }
+
+    .highlight-box strong {
+      color: var(--crimson);
+    }
+
+    /* Comparison Dual Box (2008 TARP vs Post-2008 Bypass) */
+    .coup-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .coup-card {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.35rem;
+      background: #f8fafc;
+      position: relative;
+    }
+
+    .coup-card.old-regime {
+      border-top: 4px solid var(--accent);
+      background: #fffbeb;
+    }
+
+    .coup-card.new-regime {
+      border-top: 4px solid var(--rose);
+      background: #fff1f2;
+    }
+
+    .coup-card-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .coup-card.old-regime .coup-card-badge {
+      background: #fde68a;
+      color: #92400e;
+    }
+
+    .coup-card.new-regime .coup-card-badge {
+      background: #fecdd3;
+      color: #9f1239;
+    }
+
+    .coup-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .coup-card p, .coup-card li {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .coup-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .coup-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Bypass Flow Diagram */
+    .bypass-diagram {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .bypass-diagram-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fde68a;
+      margin-bottom: 1rem;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    .bypass-lanes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bypass-lane {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .bypass-lane.blocked {
+      border-left: 4px solid #f59e0b;
+    }
+
+    .bypass-lane.active-coup {
+      border-left: 4px solid #f43f5e;
+      background: rgba(244, 63, 94, 0.1);
+    }
+
+    .lane-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .lane-steps {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .lane-node {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.45rem;
+      font-weight: 600;
+    }
+
+    .lane-node.strike {
+      text-decoration: line-through;
+      color: #94a3b8;
+      border-color: #ef4444;
+    }
+
+    .lane-node.highlight-red {
+      background: #881337;
+      border-color: #fb7185;
+      color: #ffe4e6;
+    }
+
+    .lane-arrow {
+      color: #94a3b8;
+      font-weight: 800;
+    }
+
+    /* 5 Pillars Cards */
+    .pillars-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .pillar-item {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.4rem;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+      border-left: 5px solid var(--primary);
+    }
+
+    .pillar-item.p1 { border-left-color: #1e3a8a; }
+    .pillar-item.p2 { border-left-color: #0284c7; }
+    .pillar-item.p3 { border-left-color: #e11d48; background: #fffafb; }
+    .pillar-item.p4 { border-left-color: #7c3aed; }
+    .pillar-item.p5 { border-left-color: #d97706; }
+
+    .pillar-head {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .pillar-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      background: #dbeafe;
+      color: #1e3a8a;
+    }
+
+    .pillar-item.p3 .pillar-tag {
+      background: #ffe4e6;
+      color: #9f1239;
+    }
+
+    .pillar-item.p4 .pillar-tag {
+      background: #ede9fe;
+      color: #5b21b6;
+    }
+
+    .pillar-item.p5 .pillar-tag {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .pillar-head h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .pillar-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .pillar-body ul {
+      padding-left: 1.25rem;
+      margin-top: 0.45rem;
+    }
+
+    .pillar-body li {
+      margin-bottom: 0.45rem;
+    }
+
+    .pillar-body strong {
+      color: var(--text-main);
+    }
+
+    /* BOE Ukraine Bond Spotlight Box inside Pillar 3 */
+    .boe-spotlight {
+      margin-top: 0.9rem;
+      background: #1e1b4b;
+      color: #f8fafc;
+      border-radius: 0.75rem;
+      padding: 1.15rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+
+    .boe-metric {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.55rem;
+      padding: 0.85rem;
+      text-align: center;
+    }
+
+    .boe-metric .m-label {
+      font-size: 0.74rem;
+      color: #cbd5e1;
+      margin-bottom: 0.3rem;
+    }
+
+    .boe-metric .m-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .boe-metric .m-val.rose {
+      color: #fda4af;
+    }
+
+    .boe-metric .m-val.emerald {
+      color: #6ee7b7;
+    }
+
+    .boe-metric .m-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.9rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .sim-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .sim-tab {
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #cbd5e1;
+      padding: 0.7rem 0.6rem;
+      border-radius: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    .sim-tab:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .sim-tab.active {
+      background: linear-gradient(135deg, #be123c, #881337);
+      border-color: #fb7185;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(244, 63, 94, 0.45);
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-metric-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.65rem;
+      padding: 0.9rem;
+    }
+
+    .sim-metric-label {
+      font-size: 0.73rem;
+      color: #94a3b8;
+      margin-bottom: 0.3rem;
+    }
+
+    .sim-metric-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .sim-metric-sub {
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    /* Collateral Valuation Bar inside Simulator */
+    .collateral-bars {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .bar-row {
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 14px;
+      background: #0f172a;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .bar-fill.market {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    .bar-fill.cb-par {
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+    }
+
+    .sim-narrative {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 4px solid #fb7185;
+      padding: 1rem 1.2rem;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+
+    /* Section 3: Political Essence Cards & Table */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      margin: 1.25rem 0;
+    }
+
+    .essence-card {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.3rem;
+      background: #f8fafc;
+      border-top: 4px solid var(--primary-dark);
+    }
+
+    .essence-card.e2 {
+      border-top-color: var(--rose);
+    }
+
+    .essence-card.e3 {
+      border-top-color: var(--accent-dark);
+    }
+
+    .essence-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.55rem;
+    }
+
+    .essence-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #1e293b;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Future Outlook Box */
+    .outlook-box {
+      background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+      color: #f8fafc;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid rgba(251, 113, 133, 0.35);
+    }
+
+    .outlook-box h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fde68a;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .outlook-box p {
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .coup-compare-grid,
+      .boe-spotlight,
+      .sim-tabs,
+      .sim-metrics,
+      .essence-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 1.75rem 1.25rem;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .section-card {
+        padding: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Navigation Bar -->
+    <nav class="nav-box" aria-label="Supplementary Series Navigation">
+      <div class="nav-title">📚 Financial Oligarchy Supplementary Series</div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanism of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Active Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ The British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ The Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ The Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ The Eurodollar Market and Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ The Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ The AIG Crisis and Bailout</a>
+      <a href="BankCoup.html" class="nav-link active">⑲ The Bank Oligarchy's Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Networks</a>
+    </div>
+      -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge">Supplementary Note ⑲ ｜ Central Bank Technocracy and the Hollowed-Out Parliamentary Democracy</div>
+      <h1>The Banking Oligarchy's Coup Against the Political-Economic System<br>— Unmasking the "Unlimited Liquidity Injection Mechanism Free from Parliamentary Approval"</h1>
+      <p>
+        What is the "coup d'état against the political-economic system by the banking oligarchy" described by Alex Krainer? Having been subjected to the humiliating ordeal of begging Congress for bailout funds (TARP) during the 2008 Lehman crisis, Wall Street and the central banks spent the subsequent 15 years engineering a permanent <strong>"bypass network capable of injecting unlimited liquidity on central bank discretion alone, entirely bypassing parliamentary oversight."</strong> This note dissects its full architecture.
+      </p>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>The 2008 Genesis: The Humiliating Ordeal of Begging Congress (TARP)</h2>
+      </div>
+
+      <p class="lead-text">
+        For the banking oligarchy, the 2008 Global Financial Crisis (the Lehman Shock) was not merely a liquidity crunch, but a profound political trauma that exposed <strong>"the democratic parliamentary process as an unacceptable obstacle."</strong> This realization became the catalyst for a silent, fifteen-year institutional coup.
+      </p>
+
+      <div class="coup-compare-grid">
+        <div class="coup-card old-regime">
+          <span class="coup-card-badge">September–October 2008: The Legacy Bailout Route</span>
+          <h3>🏛️ Democratic Hurdles via Parliamentary Process (TARP)</h3>
+          <ul>
+            <li><strong>Humiliating Entreaty</strong>: During the 2008 Lehman collapse, US Treasury Secretary Henry Paulson had to literally "go down on one knee" to beg Congress to authorize the <strong>$700 billion Troubled Asset Relief Program (TARP)</strong>.</li>
+            <li><strong>Initial House Rejection and Voter Backlash</strong>: Facing intense public fury from constituents, the House of Representatives initially voted down the bill, illustrating the formidable democratic barrier posed by an elected legislature.</li>
+          </ul>
+        </div>
+
+        <div class="coup-card new-regime">
+          <span class="coup-card-badge">Post-2008 to Present: The Oligarchy's Strategic Pivot</span>
+          <h3>⚡ The Central Bank Bypass Pipeline: Total Congressional Exclusion</h3>
+          <ul>
+            <li><strong>The Oligarchic Verdict</strong>: Financiers concluded that <strong>"relying on congressional approval during each crisis is far too slow, politically unpredictable, and subject to democratic resistance."</strong></li>
+            <li><strong>The Institutionalized Coup</strong>: Over the following 15 years, they permanently entrenched a bypass apparatus capable of funneling trillions of dollars instantly via keyboard strokes at central banks, completely evading legislative debate.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Visual Flow Diagram -->
+      <div class="bypass-diagram">
+        <div class="bypass-diagram-title">🔄 Structural Transformation of Financial Bailout Architectures (2008 TARP vs. Modern Central Bank Bypass)</div>
+        <div class="bypass-lanes">
+          <div class="bypass-lane blocked">
+            <div class="lane-label">
+              <span style="color:#fde68a;">[2008 TARP Circuit] The Democratic Control Model (Abhorred and Discarded by the Oligarchy)</span>
+              <span style="font-size:0.74rem; color:#fcd34d;">*Public hearings, voter outrage, risk of legislative veto</span>
+            </div>
+            <div class="lane-steps">
+              <span class="lane-node">Mega-Bank Solvency Crisis</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node">Treasury Secretary Begs Congress</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node">Congressional Debate &amp; Floor Votes</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node">$700B Capped, Monitored Bailout Authorization</span>
+            </div>
+          </div>
+
+          <div class="bypass-lane active-coup">
+            <div class="lane-label">
+              <span style="color:#fda4af;">[Modern Coup Circuit] Permanent, Unlimited Pipeline Completely Bypassing Congress and Voters</span>
+              <span style="font-size:0.74rem; color:#fecdd3;">*Zero debate, covert execution, 100% full-par collateral valuation</span>
+            </div>
+            <div class="lane-steps">
+              <span class="lane-node">Toxic Debt &amp; War Bond Collapse</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node strike">Congressional Debate &amp; Public Scrutiny</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node highlight-red">Standing Repo Facilities, Emergency Lending &amp; Swap Lines</span>
+              <span class="lane-arrow">→</span>
+              <span class="lane-node highlight-red">Trillions Injected Instantly via Keyboard Keystrokes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num rose">2</div>
+        <h2>The Five Pillars of Unlimited Liquidity Injection That Neutralized Parliamentary Oversight</h2>
+      </div>
+
+      <p class="lead-text">
+        Over the 15 years following 2008, major central banks—chief among them the Federal Reserve (FRB), the Bank of England (BOE), and the European Central Bank (ECB)—constructed five core mechanisms by institutionalizing legal emergency exceptions and making crisis facilities permanent.
+      </p>
+
+      <div class="pillars-list">
+        <!-- Pillar 1 -->
+        <div class="pillar-item p1">
+          <div class="pillar-head">
+            <span class="pillar-tag">Mechanism ①</span>
+            <h3>Expansion and Institutionalization of FRB Emergency Lending (Section 13(3) of the Federal Reserve Act)</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>Radical Expansion of Eligible Borrowers and Collateral Standards</strong>: The Fed broadened discount window access beyond regulated commercial banks to directly finance investment banks and shadow banking entities (e.g., the <strong>Primary Dealer Credit Facility [PDCF]</strong> and <strong>TALF</strong>).</li>
+              <li><strong>Absorbing Toxic Assets</strong>: Rather than demanding pristine Treasury debt, the Fed began accepting severely impaired mortgage-backed securities (MBS) and collateralized debt obligations (CDOs), <strong>effectively shifting private bank trading losses directly onto the public central bank balance sheet</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-item p2">
+          <div class="pillar-head">
+            <span class="pillar-tag">Mechanism ②</span>
+            <h3>Establishment of the "Standing Repo Facility (SRF)" (Permanent Liquidity Faucet)</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>From Emergency Expedient to Permanent Infrastructure</strong>: Repo liquidity injections, once reserved for acute crises, were made permanent through the <strong>Standing Repo Facility (SRF)</strong>.</li>
+              <li><strong>Unrestricted Cash Drawing Rights</strong>: Primary dealers and mega-banks gained the permanent privilege of pledging securities to immediately draw unlimited cash from the central bank whenever market conditions tighten, without waiting for legislative deliberation or emergency statutes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-item p3">
+          <div class="pillar-head">
+            <span class="pillar-tag">Mechanism ③ ｜ The Smoking Gun Exposed by Krainer</span>
+            <h3>Summer 2024: Bank of England (BOE) Full-Par Bailout of Impaired Collateral (Ukrainian War Bonds)</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>Collapse of Ukrainian Sovereign Debt</strong>: A critical real-world case study cited by Krainer is the <strong>Bank of England's repo intervention in the summer of 2024</strong>. Western hedge funds and banking syndicates held vast amounts of Ukrainian sovereign debt, which had plummeted to approximately <strong>60 cents on the dollar</strong> due to deteriorating battlefield conditions.</li>
+              <li><strong>The Euphemism of Being "Open-Minded" on Collateral</strong>: The Bank of England announced it would take an "open-minded approach" to acceptable collateral in its repo operations. While omitting Ukraine by name, it accepted these distressed instruments as eligible collateral at <strong>100 cents on the dollar (dollar-for-dollar / full face value)</strong>, lending against them at par.</li>
+              <li><strong>Covert Full Bailout</strong>: Had peace been negotiated and losses realized, tens of billions of dollars in speculative investments would have evaporated. Instead, central bank back-channel financing absorbed the loss entirely without public disclosure or parliamentary vote.</li>
+            </ul>
+
+            <div class="boe-spotlight">
+              <div class="boe-metric">
+                <div class="m-label">Market Value of Ukrainian Bonds</div>
+                <div class="m-val rose">~60 Cents</div>
+                <div class="m-sub">40% plunge from par due to military defeat</div>
+              </div>
+              <div class="boe-metric">
+                <div class="m-label">BOE Repo Window Collateral Valuation</div>
+                <div class="m-val emerald">100 Cents (Full Par)</div>
+                <div class="m-sub">"Open-minded" collateral eligibility</div>
+              </div>
+              <div class="boe-metric">
+                <div class="m-label">Parliamentary Debate &amp; Taxpayer Disclosure</div>
+                <div class="m-val">Zero (Covert Execution)</div>
+                <div class="m-sub">Central bank absorbs private syndicate losses</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-item p4">
+          <div class="pillar-head">
+            <span class="pillar-tag">Mechanism ④</span>
+            <h3>Permanent Central Bank FX Swap Lines (Global Dollar Liquidity Grid)</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>Cross-Border Dollar Safety Net</strong>: The Fed made permanent bilateral swap arrangements with the ECB, Bank of England, Bank of Japan, and Swiss National Bank.</li>
+              <li><strong>Bypassing Domestic Parliaments Internationally</strong>: If European or Asian financial giants face acute dollar shortages, their respective central banks draw dollars directly from the Fed and distribute them locally, bypassing the US Congress and domestic parliaments alike.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="pillar-item p5">
+          <div class="pillar-head">
+            <span class="pillar-tag">Mechanism ⑤</span>
+            <h3>Unrestricted Digital Currency Creation via Keyboard Keystrokes</h3>
+          </div>
+          <div class="pillar-body">
+            <ul>
+              <li><strong>Money Creation from the Void</strong>: Contemporary central banks do not need to print physical currency; they generate central bank reserves by altering ledger balances in computer databases.</li>
+              <li><strong>Directly Plugging Mega-Bank Insolvencies</strong>: When "Too Big to Fail" behemoths like JPMorgan Chase or Citigroup face catastrophic impairments—whether from Middle East energy exposures or Ukrainian defaults—central banks can conjure trillions in digital liquidity from thin air with a few keystrokes to bridge the shortfall.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">🎛️ Parliamentary Bypass &amp; Distressed Collateral Laundering Simulator</div>
+            <div class="sim-subtitle">Toggle phases to compare the evolution from the 2008 TARP political battle to the automated, covert bailout regimes culminating in the 2024 BOE intervention.</div>
+          </div>
+        </div>
+
+        <div class="sim-tabs" role="tablist">
+          <button type="button" class="sim-tab active" onclick="selectCoupPhase(0)" id="coup-tab-0">
+            Phase 1 (Oct 2008)<br>TARP: Begging Congress for Rescue
+          </button>
+          <button type="button" class="sim-tab" onclick="selectCoupPhase(1)" id="coup-tab-1">
+            Phase 2 (Sec 13(3) &amp; Swaps)<br>Fed Emergency Facilities &amp; Dollar Grid
+          </button>
+          <button type="button" class="sim-tab" onclick="selectCoupPhase(2)" id="coup-tab-2">
+            Phase 3 (Standing Repo SRF)<br>Permanent Faucet of Limitless Liquidity
+          </button>
+          <button type="button" class="sim-tab" onclick="selectCoupPhase(3)" id="coup-tab-3">
+            Phase 4 (Summer 2024 BOE)<br>100% Full-Par Bailout of War Debt
+          </button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Parliamentary Approval &amp; Democratic Due Process</div>
+            <div class="sim-metric-value" id="sim-parliament" style="color:#fcd34d;">Mandatory (Rejected Once by House)</div>
+            <div class="sim-metric-sub" id="sim-parliament-sub">Public hearings &amp; intense constituent fury</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Eligible Assets &amp; Collateral Valuation Standard</div>
+            <div class="sim-metric-value" id="sim-collateral" style="color:#93c5fd;">Toxic Asset Purchases &amp; Equity Injections</div>
+            <div class="sim-metric-sub" id="sim-collateral-sub">Congressional ceiling strictly capped at $700B</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Execution Velocity &amp; Funding Capacity</div>
+            <div class="sim-metric-value" id="sim-speed" style="color:#fda4af;">Weeks of Political Gridlock / Statutorily Capped</div>
+            <div class="sim-metric-sub" id="sim-speed-sub">Markets plunged during legislative standoffs</div>
+          </div>
+          <div class="sim-metric-card">
+            <div class="sim-metric-label">Cost Transmission Vector to the Public</div>
+            <div class="sim-metric-value" id="sim-cost" style="color:#6ee7b7;">Fiscal Outlays (Visible Taxpayer Liabilities)</div>
+            <div class="sim-metric-sub" id="sim-cost-sub">Electorate directly punished politicians at polls</div>
+          </div>
+        </div>
+
+        <div class="collateral-bars">
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-market-label">Market Value of Distressed Assets (Subprime MBS / CDOs)</span>
+              <span id="bar-market-val">45 Cents / $1.00 Par</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill market" id="bar-market-fill" style="width: 45%;"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span id="bar-cb-label">Rescue Response (Phased Capital Injection under Congressional Cap)</span>
+              <span id="bar-cb-val">Phased execution within $700B statutory ceiling</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill cb-par" id="bar-cb-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-narrative" id="sim-narrative">
+          <strong>[Phase 1: 2008 TARP Trauma]</strong> Following Lehman's collapse, Treasury Secretary Paulson was forced to get down on his knees to plead with Congress for the $700 billion Troubled Asset Relief Program (TARP). The initial rejection of the bill by the House of Representatives taught the banking oligarchy a lasting lesson: never again leave financial bailouts at the mercy of an elected legislature. The elite immediately set out to engineer a central bank bypass network.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num purple">3</div>
+        <h2>The Political Essence of the "Coup": Hollowing Out Democracy and Imposing the Inflation Tax</h2>
+      </div>
+
+      <p class="lead-text">
+        Alex Krainer characterizes this institutional transformation not as technical refinement of monetary operations, but as an outright <strong>"political-economic coup d'état."</strong> The foundational sovereign prerogative of a democratic state—the authority to allocate money and credit—has been thoroughly wrested from elected representatives and voters.
+      </p>
+
+      <div class="essence-grid">
+        <div class="essence-card">
+          <h3>① Transfer of Power to Unaccountable Technocracy</h3>
+          <p>
+            Under the guise of "central bank independence" and "monetary expertise," the most fundamental power of statehood—<strong>the allocation of sovereign credit</strong>—has been insulated from electoral accountability. Decisions over which institutions survive and which impaired assets are rescued at par are made behind closed doors.
+          </p>
+        </div>
+
+        <div class="essence-card e2">
+          <h3>② Privatization of Profits and Socialization of Losses</h3>
+          <p>
+            During boom cycles, the financial oligarchy reaps astronomical private profits, dividends, and bonuses from hyper-leveraged speculation and geopolitical wagers (e.g., Ukrainian war bonds and high-risk foreign loans). When systemic crises hit, central banks conjure infinite liquidity to absorb private losses under the pretext of "protecting financial stability."
+          </p>
+        </div>
+
+        <div class="essence-card e3">
+          <h3>③ Covert Expropriation via the "Inflation Tax"</h3>
+          <p>
+            Trillions of dollars conjured from nothing inevitably debase the purchasing power of money, manifesting as systemic <strong>price inflation</strong>. Instead of passing transparent tax legislation through parliament, the oligarchy imposes an invisible "inflation tax," quietly confiscating the real wealth of savers, wage earners, and pensioners.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Comparison Dimension</th>
+              <th>Constitutional Democracy (2008 TARP Precedent)</th>
+              <th>Bank Oligarchic Coup Regime (Post-2008 Bypass Infrastructure)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bailout Decision Authority</strong></td>
+              <td>Elected Legislature (Public debate, floor votes, and electoral accountability to taxpayers)</td>
+              <td>Unelected Central Bank Technocrats (Secret deliberations by Fed, BOE, ECB governors)</td>
+            </tr>
+            <tr>
+              <td><strong>Legal Authority &amp; Instrument</strong></td>
+              <td>Statutory fiscal legislation (TARP: $700B cap with Congressional Oversight Panel)</td>
+              <td>Emergency discount facilities (Section 13(3)), Standing Repo Facilities (SRF), and bilateral central bank FX swap lines</td>
+            </tr>
+            <tr>
+              <td><strong>Treatment of Distressed Collateral</strong></td>
+              <td>Severe write-downs, shareholder wipeouts, and rigorous scrutiny of executive bonuses</td>
+              <td>Euphemistic "open-minded" collateral rules monetizing deeply discounted debt (e.g., 60¢ war debt) at 100% full par</td>
+            </tr>
+            <tr>
+              <td><strong>Public Cost Transmission</strong></td>
+              <td>Explicit fiscal line items in national budgets (allowing voters to reject politicians at elections)</td>
+              <td>Invisible "Inflation Tax" (Erosion of purchasing power, real wage suppression, and asset price inflation)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="outlook-box">
+        <h3>💡 Structural Culmination: How Limitless Liquidity Inevitably Leads to Sovereign Debt Crises and Stagflation</h3>
+        <p>
+          While this "parliament-free unlimited liquidity mechanism" successfully disguises private banking insolvencies in the short run, it inevitably destroys <strong>the long-term integrity of sovereign fiat currencies</strong>. Monetizing endless bad debt, war finance, and ballooning deficits through repo windows and central bank balance sheets traps monetary authorities in a fatal dilemma: raising rates to fight inflation explodes the debt-servicing costs of the sovereign, while lowering rates or providing liquidity debases the currency—leading straight into <strong>Fiscal Dominance and structural stagflation</strong>.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Financial Oligarchy: Supplementary Series ⑲ ｜ The Banking Oligarchy's Coup Against the Political-Economic System (BankCoup.html)
+    </footer>
+  </div>
+
+  <script>
+    const coupPhases = [
+      {
+        parliament: "Mandatory (Rejected Once by House)",
+        parliamentColor: "#fcd34d",
+        parliamentSub: "Public hearings & intense constituent fury",
+        collateral: "Toxic Asset Purchases & Equity Injections",
+        collateralSub: "Congressional ceiling strictly capped at $700B",
+        speed: "Weeks of Political Gridlock / Statutorily Capped",
+        speedSub: "Markets plunged during legislative standoffs",
+        cost: "Fiscal Outlays (Visible Taxpayer Liabilities)",
+        costSub: "Electorate directly punished politicians at polls",
+        marketLabel: "Market Value of Distressed Assets (Subprime MBS / CDOs)",
+        marketVal: "45 Cents / $1.00 Par",
+        marketWidth: "45%",
+        cbLabel: "Rescue Response (Phased Capital Injection under Congressional Cap)",
+        cbVal: "Phased execution within $700B statutory ceiling",
+        cbWidth: "70%",
+        narrative: "<strong>[Phase 1: 2008 TARP Trauma]</strong> Following Lehman's collapse, Treasury Secretary Paulson was forced to get down on his knees to plead with Congress for the $700 billion Troubled Asset Relief Program (TARP). The initial rejection of the bill by the House of Representatives taught the banking oligarchy a lasting lesson: never again leave financial bailouts at the mercy of an elected legislature. The elite immediately set out to engineer a central bank bypass network."
+      },
+      {
+        parliament: "Bypassed (Unilateral Fed Board Discretion)",
+        parliamentColor: "#fda4af",
+        parliamentSub: "Broad interpretation of Section 13(3) of Federal Reserve Act",
+        collateral: "Toxic MBS & CDOs Accepted as Eligible Collateral",
+        collateralSub: "Windows opened to broker-dealers & shadow banks (PDCF/TALF)",
+        speed: "Instantaneous / Multitrillion-Dollar Capacity",
+        speedSub: "Cross-border swap lines supplied dollars to foreign central banks",
+        cost: "Transferred to Central Bank Balance Sheet",
+        costSub: "Public balance sheet absorbs private banking impairments",
+        marketLabel: "Market Value of Distressed MBS and CDO Tranches",
+        marketVal: "35–50 Cents / $1.00 Par",
+        marketWidth: "40%",
+        cbLabel: "Fed Emergency Lending Window Collateral Valuation",
+        cbVal: "Massive absorption onto central bank balance sheet",
+        cbWidth: "92%",
+        narrative: "<strong>[Phase 2: Fed Emergency Lending Facilities (Sec 13(3)) & Global Dollar Swaps]</strong> The Fed broadened liquidity access beyond commercial banks to investment banks and shadow financial entities, accepting collapsed CDO and MBS tranches as collateral. Concurrently, permanent bilateral swap lines with the ECB, BOE, and BOJ established an international bypass network funneling unlimited dollars to global mega-banks without congressional approval."
+      },
+      {
+        parliament: "Completely Excluded (Permanent Institutionalization)",
+        parliamentColor: "#fda4af",
+        parliamentSub: "Crisis operations converted into permanent, routine plumbing",
+        collateral: "Instant Liquidity Conversion for Eligible Securities",
+        collateralSub: "Exclusive structural access for Primary Dealers",
+        speed: "Milliseconds to Daily / Effectively Limitless",
+        speedSub: "Fiat reserves created via keyboard entries on central bank ledgers",
+        cost: "Chronic Monetary Inflation & Asset Bubbles",
+        costSub: "Wealth concentration and steady erosion of purchasing power",
+        marketLabel: "Market Liquidity Stress During Funding Squeezes",
+        marketVal: "Repo rate spikes & risk of collateral fire-sales",
+        marketWidth: "55%",
+        cbLabel: "Unlimited Cash Access via Standing Repo Facility (SRF)",
+        cbVal: "100% Instant Liquidity Access (Uncapped)",
+        cbWidth: "100%",
+        narrative: "<strong>[Phase 3: Standing Repo Facility (SRF) & Digital Ledger Currency Creation]</strong> What were previously ad-hoc emergency measures were codified into the permanent 'Standing Repo Facility (SRF).' When mega-banks face funding stress or sovereign impairments, they no longer need to lobby politicians; they simply pledge eligible paper and draw newly created digital reserves directly from the central bank's keyboard."
+      },
+      {
+        parliament: "Total Blackout (Covertly Executed)",
+        parliamentColor: "#fda4af",
+        parliamentSub: "Operational criteria altered without naming Ukraine",
+        collateral: "Plunging Ukrainian Sovereign Bonds Accepted at Full Par",
+        collateralSub: "Euphemism of being 'open-minded' on collateral",
+        speed: "Immediate / Dollar-for-Dollar (100% Par)",
+        speedSub: "100 cents of cash lent against 60-cent impaired bonds",
+        cost: "Inflation Tax (Erosion of Real Wages & Savings)",
+        costSub: "Losses from failed geopolitical bets shifted onto public",
+        marketLabel: "Summer 2024 Market Value of Ukrainian Sovereign Bonds",
+        marketVal: "~60 Cents / $1.00 Par (40% Collapse)",
+        marketWidth: "60%",
+        cbLabel: "Bank of England (BOE) Repo Window Collateral Valuation",
+        cbVal: "100 Cents / $1.00 Par (100% Full-Par Bailout)",
+        cbWidth: "100%",
+        narrative: "<strong>[Phase 4: Summer 2024 Bank of England Full-Par Bailout of War Debt]</strong> With Ukrainian sovereign bonds crashing to roughly 60 cents on the dollar due to mounting war losses, the Bank of England announced an 'open-minded' stance toward repo collateral. Accepting these distressed war bonds at 100 cents on the dollar, the BOE covertly provided 100% par liquidity to private funds and banks, protecting speculative creditors from the losses a negotiated peace would have triggered."
+      }
+    ];
+
+    function selectCoupPhase(index) {
+      const data = coupPhases[index];
+      for (let i = 0; i < 4; i++) {
+        const tab = document.getElementById("coup-tab-" + i);
+        if (i === index) {
+          tab.classList.add("active");
+        } else {
+          tab.classList.remove("active");
+        }
+      }
+      const pEl = document.getElementById("sim-parliament");
+      pEl.textContent = data.parliament;
+      pEl.style.color = data.parliamentColor;
+      document.getElementById("sim-parliament-sub").textContent = data.parliamentSub;
+
+      document.getElementById("sim-collateral").textContent = data.collateral;
+      document.getElementById("sim-collateral-sub").textContent = data.collateralSub;
+
+      document.getElementById("sim-speed").textContent = data.speed;
+      document.getElementById("sim-speed-sub").textContent = data.speedSub;
+
+      document.getElementById("sim-cost").textContent = data.cost;
+      document.getElementById("sim-cost-sub").textContent = data.costSub;
+
+      document.getElementById("bar-market-label").textContent = data.marketLabel;
+      document.getElementById("bar-market-val").textContent = data.marketVal;
+      document.getElementById("bar-market-fill").style.width = data.marketWidth;
+
+      document.getElementById("bar-cb-label").textContent = data.cbLabel;
+      document.getElementById("bar-cb-val").textContent = data.cbVal;
+      document.getElementById("bar-cb-fill").style.width = data.cbWidth;
+
+      document.getElementById("sim-narrative").innerHTML = data.narrative;
+    }
+  </script>
+</body>
+</html>

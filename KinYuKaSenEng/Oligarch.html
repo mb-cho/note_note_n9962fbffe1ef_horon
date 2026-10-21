@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: Oligarchs (Олигарх) — Shock Therapy, State Asset Capture, and Typologies of Oligarchy</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #31104b 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(217, 119, 6, 0.35);
+      color: #fef3c7;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Process Flow Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .process-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .process-step {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Country / Model Cards */
+    .country-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+    }
+
+    .country-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .country-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .country-desc ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Interactive Typology Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .type-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .type-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .type-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .type-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .power-meter-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .power-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .power-bar {
+      width: 100%;
+      height: 32px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      display: flex;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .power-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: width 0.3s ease;
+    }
+
+    .sim-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .sim-detail-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem;
+    }
+
+    .sim-detail-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .sim-detail-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .sim-summary {
+      background: #ffffff;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0.35rem;
+      font-size: 0.94rem;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Summary Box */
+    .summary-box {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+
+    .summary-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-text {
+      color: #78350f;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplementary Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics &amp; Political Economy Notes)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link active">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement / Notes on International Political Economy &amp; Oligarchic Rule</span>
+        <span class="badge badge-sub">Oligarch / Олигарх</span>
+      </div>
+      <h1>A Comprehensive Analysis of Oligarchs (Олигарх)</h1>
+      <p class="lead">
+        The term "oligarch" (Russian: олигарх; English: oligarch) derives etymologically from the classical Greek <strong>"oligarchia" (&ὀλιγαρχία / rule by the few)</strong>.<br><br>
+        In modern international political economy, it denotes primarily the <strong>nouveau-riche magnates and corporate conglomerates who acquired vast state assets at fire-sale prices during the collapse of the Soviet Union and rapid privatization, translating extreme wealth into decisive political influence</strong>. In a broader systemic sense, it encompasses the global ultra-wealthy elites—including those in Western economies—who leverage concentrated financial capital to capture state institutions.
+      </p>
+    </header>
+
+    <!-- 1. The Rise of the Oligarchs -->
+    <section id="rise-of-oligarchs">
+      <h2>🔥 1. The Rise of the Oligarchs (1990s Russia and "Shock Therapy")</h2>
+      <p style="margin-bottom: 1.25rem;">
+        The catalyst for the formation of the Russian oligarchs was the radical economic policy known as <strong>"shock therapy,"</strong> implemented by Boris Yeltsin's administration under the guidance of Western advisors and the IMF following the disintegration of the USSR in late 1991.
+      </p>
+
+      <div class="grid-3">
+        <!-- Step 1 -->
+        <div class="process-card">
+          <span class="process-step">STEP 01 (1992–1994)</span>
+          <div class="process-title">🎫 Voucher Privatization</div>
+          <div class="process-desc">
+            Privatization vouchers intended to purchase shares in state-owned enterprises were distributed to every citizen. However, confronted with hyperinflation and dire poverty, ordinary citizens liquidated their vouchers for pittance to buy food. Former Komsomol (Communist Youth League) cadres, black-market operators, and newly minted bankers scooped up these vouchers to seize majority control of core industrial assets.
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-card" style="border-top-color: var(--rose);">
+          <span class="process-step" style="background: var(--rose-light); color: var(--rose);">STEP 02 (1995–1996)</span>
+          <div class="process-title">🏦 "Loans-for-Shares" Scheme</div>
+          <div class="process-desc">
+            Facing severe fiscal insolvency, the Yeltsin government borrowed directly from commercial banking tycoons. In return, the state pledged controlling equity in the nation's crown-jewel oil, natural gas, nickel, and metallurgical enterprises as collateral at absurdly low valuations. When the government inevitably "defaulted," the bankers foreclosed and claimed full private ownership virtually for free.
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-card" style="border-top-color: var(--primary);">
+          <span class="process-step" style="background: #dbeafe; color: var(--primary);">STEP 03 (1996 Onward)</span>
+          <div class="process-title">👑 The Seven Bankers (Semibankirshchina)</div>
+          <div class="process-desc">
+            In the 1996 presidential election, a cabal of seven banking oligarchs mobilized their private television networks, print media, and colossal financial resources to rescue Yeltsin from single-digit approval ratings and secure his reelection. In return, they dictated cabinet appointments and national policies, establishing an entrenched oligarchic state capture.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Subjugation and Transformation Under Putin -->
+    <section id="putin-era">
+      <h2>🛡️ 2. Subjugation and Transformation Under Putin (2000s to Present)</h2>
+      <p style="margin-bottom: 1.25rem;">
+        Ascending to the presidency in 2000 under the banner of the "Dictatorship of Law" and the restoration of a powerful state, Vladimir Putin fundamentally transformed the balance of power between the Kremlin and the oligarchs.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div class="country-card" style="border-left-color: var(--rose);">
+          <div class="country-title">⚖️ The Non-Interference Compact &amp; Exemplary Purges</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>The Tacit Ultimatum:</strong> Putin offered an implicit bargain (the "equidistance principle"): The state would not retroactively confiscate privatization wealth, provided tycoons ceased all political interference.</li>
+              <li><strong>The Yukos Affair (2003):</strong> Mikhail Khodorkovsky, CEO of oil giant Yukos who funded opposition parties and pursued independent foreign oil deals, was arrested, tried for fraud and tax evasion, and imprisoned. Yukos's prime assets were absorbed into state-controlled Rosneft.</li>
+              <li><strong>Media Re-Nationalization:</strong> Oligarchs controlling independent broadcast empires (such as Boris Berezovsky and Vladimir Gusinsky) were driven into foreign exile, bringing key national media firmly back under Kremlin control.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="country-card" style="border-left-color: var(--primary-dark);">
+          <div class="country-title">🕵️ The Rise of Siloviki State Capitalists</div>
+          <div class="country-desc">
+            After neutralizing the autonomous 1990s finance tycoons, Putin placed loyalists from the intelligence services (the <strong>Siloviki</strong>—veterans of the KGB/FSB) and his Saint Petersburg network into command of strategic state monopolies.<br><br>
+            The economy was restructured into a "state capitalist model" centered on national champions—Gazprom (gas), Rosneft (oil), and Rostec (defense/high-tech)—alongside Kremlin-connected crony billionaires (such as the Rotenberg brothers) who monopolize lucrative state infrastructure contracts.
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">Dimension</th>
+              <th style="width: 40%;">1990s: Yeltsin-Era Oligarchs</th>
+              <th style="width: 40%;">2000s–Present: Putin-Era Oligarchs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Background</strong></td>
+              <td>Black-market entrepreneurs, Komsomol cadres, young financial speculators.</td>
+              <td><strong>KGB / Intelligence veterans (Siloviki)</strong>, Saint Petersburg political intimates.</td>
+            </tr>
+            <tr>
+              <td><strong>Power Dynamic with the State</strong></td>
+              <td><strong>Oligarchs dominate politics (Corporations &gt; State)</strong></td>
+              <td><strong>Complete subservience to the President (State &gt; Corporations)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Source of Wealth</strong></td>
+              <td>Private financial-industrial empires seized via loans-for-shares and media monopolies.</td>
+              <td>Executive stewardship of mega state-owned enterprises; non-competitive public procurement.</td>
+            </tr>
+            <tr>
+              <td><strong>Prominent Figures</strong></td>
+              <td>Boris Berezovsky, Vladimir Gusinsky, Mikhail Khodorkovsky, Roman Abramovich.</td>
+              <td>Igor Sechin (Rosneft), Sergey Chemezov (Rostec), Arkady &amp; Boris Rotenberg.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. Dynamic Typology Simulator -->
+    <section id="interactive-typology">
+      <h2>🌐 3. Dynamic Comparative Simulator: Four Typologies of Oligarchy &amp; Power Balance</h2>
+      <p style="margin-bottom: 1rem;">
+        Oligarchic structures are not unique to Russia; they have manifested across Ukraine, the broader post-Soviet sphere, and within Western financialized capitalism. Switch tabs to observe the shifting balance between <strong>State Authority vs. Private Oligarchic Capital</strong> and their operational mechanisms.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">⚙️ Select Oligarch Model</div>
+        </div>
+
+        <div class="type-tabs">
+          <button class="type-btn active" id="tab90s" onclick="selectType('90s')">① 1990s Russian Model</button>
+          <button class="type-btn" id="tabPutin" onclick="selectType('putin')">② Modern Russian (Siloviki) Model</button>
+          <button class="type-btn" id="tabUkr" onclick="selectType('ukr')">③ Ukrainian (Pluralistic Rivalry) Model</button>
+          <button class="type-btn" id="tabWest" onclick="selectType('west')">④ Western (Financial &amp; Tech Oligarchy) Model</button>
+        </div>
+
+        <div class="power-meter-box">
+          <div class="power-labels">
+            <span style="color: var(--primary-dark);">🏛️ State Sovereign Authority</span>
+            <span style="color: var(--accent-dark);">💰 Private Oligarchic Dominance</span>
+          </div>
+          <div class="power-bar">
+            <div class="power-seg" id="barState" style="background: var(--primary); width: 20%;">State 20%</div>
+            <div class="power-seg" id="barOligarch" style="background: var(--accent); width: 80%;">Oligarchs 80%</div>
+          </div>
+        </div>
+
+        <div class="sim-detail-grid" id="detailGrid">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <div class="sim-summary" id="typeSummary">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Oligarchs Worldwide -->
+    <section id="global-oligarchs">
+      <h2>🗺️ 4. Oligarchs Outside Russia: Post-Soviet States, the West, and the Global Economy</h2>
+
+      <div class="grid-3">
+        <!-- Ukraine -->
+        <div class="country-card" style="border-left-color: #eab308;">
+          <div class="country-title">🇺🇦 Ukraine</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>Pluralistic Proxy Warfare:</strong> In the absence of a single dominant autocrat, multiple competing oligarch clans maintained independent political parties, media empires, and private security forces, clashing through electoral cycles.</li>
+              <li><strong>Key Figures:</strong> Rinat Akhmetov (steel &amp; mining magnate), Ihor Kolomoyskyi (banking &amp; media), Petro Poroshenko (confectionery billionaire &amp; former president).</li>
+              <li><strong>De-Oligarchization Laws:</strong> In connection with EU accession negotiations, Kyiv enacted legal frameworks to curb oligarchic ownership of public media and political financing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kazakhstan -->
+        <div class="country-card" style="border-left-color: #06b6d4;">
+          <div class="country-title">🇰🇿 Kazakhstan</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>Dynastic Clan Monopoly:</strong> Following Soviet dissolution, the family, in-laws, and confidants of long-serving President Nursultan Nazarbayev monopolized the nation's oil, gas, uranium, and banking sectors.</li>
+              <li><strong>Post-2022 Reversal:</strong> Following violent unrest in January 2022, President Kassym-Jomart Tokayev stripped the Nazarbayev clan of systemic privileges, pursuing asset repatriation and regulatory clawbacks.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Western & Global -->
+        <div class="country-card" style="border-left-color: var(--purple);">
+          <div class="country-title">🗽 Western &amp; Global Dimensions</div>
+          <div class="country-desc">
+            <ul>
+              <li><strong>The "American Oligarchy":</strong> Conceptualized by political scientists such as Jeffrey Winters. Wall Street mega-institutions, the "Big Three" asset managers (BlackRock, Vanguard, State Street), and Big Tech titans exert structural policy capture through Super PAC donations, lobbying, think tanks, and the regulatory "revolving door."</li>
+              <li><strong>Southeast Asia &amp; Latin America:</strong> Dynastic family conglomerates retain entrenched feudal monopolies over land, utilities, banking, and legislative bodies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Sanctions -->
+    <section id="sanctions">
+      <h2>🚨 5. The International Community and Anti-Oligarch Sanctions (2022 Onward)</h2>
+      <p style="margin-bottom: 1.25rem;">
+        Following the escalation of the conflict in Ukraine in 2022, the United States, European Union, United Kingdom, and allied nations unleashed an unprecedented wave of asset freezes and economic sanctions targeting Russian oligarchs.
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 1.5rem;">
+        <div class="process-card" style="border-top-color: var(--primary-light);">
+          <div class="process-title">🛥️ ① Seizure of Tangible Luxury Assets</div>
+          <div class="process-desc">
+            Prime residential estates in London and the Côte d'Azur, private business jets, and multi-hundred-million-dollar superyachts were seized and impounded across maritime ports and airports globally.
+          </div>
+        </div>
+
+        <div class="process-card" style="border-top-color: var(--purple);">
+          <div class="process-title">🔒 ② Disconnection from Western Finance</div>
+          <div class="process-desc">
+            Corporate shell accounts, nominee trusts, and offshore entities registered in Switzerland, Cyprus, the British Virgin Islands, and the Cayman Islands were blocked, accompanied by sweeping international travel bans.
+          </div>
+        </div>
+
+        <div class="process-card" style="border-top-color: var(--rose);">
+          <div class="process-title">🧩 ③ Strategic Intent vs. Structural Dilemmas</div>
+          <div class="process-desc">
+            <strong>Intent:</strong> Impose severe financial pain on elite circles to encourage palace coups or policy reversals in the Kremlin.<br>
+            <strong>Structural Limitation:</strong> Because modern Russian oligarchs had long lost sovereign leverage and remain entirely beholden to the Kremlin for physical survival, asset expropriation in the West paradoxically drove their wealth and allegiance back into domestic Russian jurisdiction.
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Box -->
+      <div class="summary-box">
+        <div class="summary-title">📌 Synthesis: The True Essence of Oligarchy</div>
+        <div class="summary-text">
+          An oligarch is not merely an entrepreneur who amassed billions through technological innovation and market competition.<br>
+          An oligarch is an agent of <strong>concentrated power who exploits political transitions, institutional voids, and state intimacy to privatize public wealth, natural endowments, and financial infrastructure—wielding that concentrated wealth to dictate or share in sovereign governance</strong>. This analytical framework provides essential insight not only into post-Soviet transitions, but into the broader mechanics of contemporary global financial oligopoly.
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; History and Collapse of the Financial Oligarchy Supplement Series | Oligarch &amp; Oligarchy Structure Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Typology Script -->
+  <script>
+    function selectType(mode) {
+      ['tab90s', 'tabPutin', 'tabUkr', 'tabWest'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+      });
+
+      const barState = document.getElementById('barState');
+      const barOligarch = document.getElementById('barOligarch');
+      const detailGrid = document.getElementById('detailGrid');
+      const typeSummary = document.getElementById('typeSummary');
+
+      if (mode === '90s') {
+        document.getElementById('tab90s').classList.add('active');
+        barState.style.width = '20%';
+        barState.innerText = 'State 20%';
+        barOligarch.style.width = '80%';
+        barOligarch.innerText = 'Oligarchs 80%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Power Dynamic</div>
+            <div class="sim-detail-val" style="color: #b45309;">Private tycoons puppet state policy (Semibankirshchina)</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Asset Capture Method</div>
+            <div class="sim-detail-val">Cornered vouchers &amp; rigged "Loans-for-Shares" auctions</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Representative Figures</div>
+            <div class="sim-detail-val">Berezovsky, Khodorkovsky, Gusinsky</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#d97706';
+        typeSummary.innerHTML = `
+          <strong style="color: #b45309;">【① 1990s Russian (Yeltsin Era) Model】</strong><br>
+          Exploiting the institutional chaos of post-Soviet shock therapy, commercial bankers privatized sovereign oil, gas, and metals for a fraction of real value. Controlling private television networks and presidential campaign coffers, they held the executive branch hostage, staging a wholesale corporate capture of sovereign power.
+        `;
+      } else if (mode === 'putin') {
+        document.getElementById('tabPutin').classList.add('active');
+        barState.style.width = '85%';
+        barState.innerText = 'President &amp; State 85%';
+        barOligarch.style.width = '15%';
+        barOligarch.innerText = 'Oligarchs 15%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Power Dynamic</div>
+            <div class="sim-detail-val" style="color: #1e3a8a;">Absolute subservience to the Kremlin &amp; Siloviki</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Asset Capture Method</div>
+            <div class="sim-detail-val">Stewardship of state champions; monopoly public contracts</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Representative Figures</div>
+            <div class="sim-detail-val">Igor Sechin (Rosneft), Sergey Chemezov, Rotenberg Brothers</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#1e3a8a';
+        typeSummary.innerHTML = `
+          <strong style="color: #1e3a8a;">【② Post-2000s Russian (Putin &amp; Siloviki) Model】</strong><br>
+          Through the exemplary purge of Yukos, rebellious early tycoons were crushed or exiled, replaced by a strict code of political fealty. Security service veterans (Siloviki) took control of commanding state enterprises. Tycoons retain their wealth only as loyal stewards and financial custodians of sovereign state objectives.
+        `;
+      } else if (mode === 'ukr') {
+        document.getElementById('tabUkr').classList.add('active');
+        barState.style.width = '45%';
+        barState.innerText = 'State &amp; Parliament 45%';
+        barOligarch.style.width = '55%';
+        barOligarch.innerText = 'Rival Clans 55%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Power Dynamic</div>
+            <div class="sim-detail-val" style="color: #059669;">Factional proxy warfare across media and parliamentary blocs</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Asset Capture Method</div>
+            <div class="sim-detail-val">Cross-ownership of heavy industry, mining, utilities, &amp; television</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Representative Figures</div>
+            <div class="sim-detail-val">Rinat Akhmetov, Ihor Kolomoyskyi, Petro Poroshenko</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#059669';
+        typeSummary.innerHTML = `
+          <strong style="color: #065f46;">【③ Ukrainian (Pluralistic Oligarchic Rivalry) Model】</strong><br>
+          Without an all-powerful autocrat consolidating vertical authority, competing industrial clans coexisted. Each oligarch maintained private parliamentary factions, television channels, and regional power bases, engaging in perpetual coalitional bargaining and political warfare.
+        `;
+      } else {
+        document.getElementById('tabWest').classList.add('active');
+        barState.style.width = '30%';
+        barState.innerText = 'Public Governance 30%';
+        barOligarch.style.width = '70%';
+        barOligarch.innerText = 'Finance &amp; Tech Oligopoly 70%';
+
+        detailGrid.innerHTML = `
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Power Dynamic</div>
+            <div class="sim-detail-val" style="color: #7c3aed;">Institutional capture via lobbying, revolving doors, &amp; central banking</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Asset Capture Method</div>
+            <div class="sim-detail-val">Horizontal equity ownership (Big Three), platform monopolies, synthetic credit</div>
+          </div>
+          <div class="sim-detail-card">
+            <div class="sim-detail-label">Representative Figures</div>
+            <div class="sim-detail-val">Mega asset managers (BlackRock), Wall Street primary dealers, Big Tech</div>
+          </div>
+        `;
+        typeSummary.style.borderLeftColor = '#7c3aed';
+        typeSummary.innerHTML = `
+          <strong style="color: #6d28d9;">【④ Western / Global Financial Oligarchy (American Oligarchs) Model】</strong><br>
+          Rather than crude post-collapse expropriation, influence is institutionalized through campaign contributions (Super PACs), think-tank funding, and the regulatory revolving door between Wall Street, the Treasury, and central banks. When insolvency strikes, financial oligopolies are certified "Too Big to Fail" and bailed out via sovereign balance sheets and quantitative easing.
+        `;
+      }
+    }
+
+    selectType('90s');
+  </script>
+</body>
+</html>

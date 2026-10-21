@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement: European Great Power Intervention and Encroachment on the Ottoman Empire (1875–1881)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #9f1239;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #172554 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(217, 119, 6, 0.35);
+      color: #fef3c7;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #f1f5f9;
+      font-weight: 400;
+      max-width: 840px;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Factor & Reform Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .reform-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--emerald);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+    }
+
+    .reform-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .reform-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .reform-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Core Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fde68a;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .quote-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-text {
+      font-size: 0.96rem;
+      color: #78350f;
+      line-height: 1.65;
+    }
+
+    /* Interactive Timeline Simulator */
+    .sim-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .year-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .year-btn {
+      padding: 0.5rem 0.9rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .year-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .year-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .meters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .meter-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+
+    .meter-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .meter-track {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.3s ease;
+    }
+
+    .sim-event-box {
+      background: #ffffff;
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0.35rem;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .ref-tag {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      margin-left: 0.25rem;
+      vertical-align: super;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .lead { font-size: 1rem; }
+      section { padding: 1.25rem; }
+      .nav-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Navigation Bar across Supplements -->
+    <div class="nav-box">
+      <div class="nav-title">
+        <span>📚 Supplementary Series</span>
+        <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Financial Economics &amp; Historical Notes)</span>
+      </div>
+      <!--
+      <div class="nav-links">
+      <a href="SinYoSoZo.html" class="nav-link">① Mechanics of Credit Creation</a>
+      <a href="NoDoTeKiYoKin.html" class="nav-link">② Actively Created Deposits</a>
+      <a href="RyuDouseiSenko.html" class="nav-link">③ Liquidity Preference Theory</a>
+      <a href="CreditTheoryOfMoney.html" class="nav-link">④ Credit Theory of Money</a>
+      <a href="KeikiJYunkanRon.html" class="nav-link">⑤ Business Cycle Theory</a>
+      <a href="KinyuKiseiSei.html" class="nav-link">⑥ Financial Parasitism</a>
+      <a href="Oligarch.html" class="nav-link">⑦ Oligarchs</a>
+      <a href="osman.html" class="nav-link active">⑧ Encroachment on the Ottoman Empire</a>
+      <a href="romaKikero.html" class="nav-link">⑨ Late Roman Republic</a>
+      <a href="eng_ind.html" class="nav-link">⑩ British India Office</a>
+      <a href="goldMark.html" class="nav-link">⑪ Gold Mark</a>
+      <a href="fordism.html" class="nav-link">⑫ Fordism</a>
+      <a href="MilitaryKeynesianism.html" class="nav-link">⑬ Military Keynesianism</a>
+      <a href="EuDaller.html" class="nav-link">⑭ Eurodollar Market</a>
+      <a href="EuDallerRosia.html" class="nav-link">⑮ Eurodollars & Russian Sanctions</a>
+      <a href="Borucar.html" class="nav-link">⑯ Volcker Shock</a>
+      <a href="SAP.html" class="nav-link">⑰ Structural Adjustment Programs</a>
+      <a href="AIG.html" class="nav-link">⑱ AIG Crisis & Bailout</a>
+      <a href="BankCoup.html" class="nav-link">⑲ Oligarchic Bank Coup</a>
+      <a href="DerivativesSettlementNetwork.html" class="nav-link">⑳ Derivatives Settlement Network</a>
+    </div>
+      -->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">Supplement / Imperialism, Debt Traps &amp; Historical Case Studies</span>
+        <span class="badge badge-sub">1875–1881 Ottoman Empire Crisis</span>
+      </div>
+      <h1>European Great Power Intervention and Encroachment on the Ottoman Empire</h1>
+      <p class="lead">
+        By 1876, confronting nationalist uprisings in the Balkans, predatory diplomatic and military pressures from the European Great Powers, and calamitous state bankruptcy, the Ottoman Empire stood on the brink of unprecedented ruin—its territories and sovereign prerogatives subjected to progressive dismemberment and <strong>"encroachment" (piecemeal erosion like silkworms consuming mulberry leaves)</strong>.<a href="#ref-1" class="cite-badge">[1]</a><a href="#ref-2" class="cite-badge">[2]</a>
+      </p>
+    </header>
+
+    <!-- 1. Encroachment from Within and Without -->
+    <section id="crisis-factors">
+      <h2>🔥 1. Encroachment from Within and Without: The Dual Siege of Finance and Territory</h2>
+      <p style="margin-bottom: 1.25rem;">
+        The existential crisis culminating in 1876 was driven by a twin siege: the <strong>financial and economic colonization</strong> orchestrated by Western merchant banking capital, proceeding hand-in-hand with <strong>territorial dismemberment</strong> led by the Russian Empire and rival European powers.
+      </p>
+
+      <div class="grid-2">
+        <!-- Economic Encroachment -->
+        <div class="factor-card" style="border-left-color: var(--rose);">
+          <div class="factor-title">
+            <span>🏦 ① Sovereign Insolvency (Economic &amp; Financial Encroachment)</span>
+          </div>
+          <div class="factor-desc">
+            Beginning with its first foreign loan during the Crimean War (1854), the Sublime Porte relied ever more heavily on British and French bond markets to finance modernizing reforms (Tanzimat), wartime mobilization, and palace luxuries.<br><br>
+            Crushed by punishing coupon yields and substantial underwriting discounts, the Ottoman Treasury was unable to sustain interest service, formally declaring <strong>partial default in October 1875</strong>. This surrender effectively placed imperial fiscal and tax-collecting sovereignty under the direct tutelage of European creditor syndicates.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-3" class="cite-badge">[3]</a>
+          </div>
+        </div>
+
+        <!-- Territorial Encroachment -->
+        <div class="factor-card" style="border-left-color: var(--accent);">
+          <div class="factor-title">
+            <span>⚔️ ② Balkan Insurrections &amp; Great Power Intervention (Territorial Encroachment)</span>
+          </div>
+          <div class="factor-desc">
+            Following the 1875 peasant revolt in Bosnia and Herzegovina, violent rebellion flared across Bulgaria in 1876, swiftly followed by declarations of war from Serbia and Montenegro.<br><br>
+            Seizing an opportune path toward the Mediterranean under the mantle of Pan-Slavism and the protection of Orthodox Christians, the <strong>Russian Empire</strong> mobilized for intervention, while the Great Powers convened international conferences under the aegis of the "Eastern Question" to partition Ottoman realms.<a href="#ref-4" class="cite-badge">[4]</a><a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Historical Connection Quote -->
+      <div class="quote-box">
+        <div class="quote-title">HISTORICAL ARCHETYPE OF THE DEBT TRAP</div>
+        <div class="quote-text">
+          <strong>【The Classic Archetype of Sovereign Dispossession by Financial Capital】</strong><br>
+          Following the 1875 default, the sultan was compelled in 1881 to issue the Decree of Muharram, establishing the <strong>Ottoman Public Debt Administration (OPDA)</strong>. Representatives of British, French, German, and Austrian creditors took over Istanbul's tax machinery, directly intercepting revenues from salt, tobacco, spirits, silk tithes, and customs duties to service foreign bonds. This apparatus established the historical archetype of turning a sovereign state into a debt-peonage financial colony.
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Resistance to Encroachment -->
+    <section id="resistance-and-reform">
+      <h2>📜 2. Resistance to Encroachment: The Apex of the Tanzimat Modernization Reforms</h2>
+      <p style="margin-bottom: 1.25rem;">
+        To forestall the imminent disintegration and partition of the empire, constitutionalist reformers led by Grand Vizier <strong>Midhat Pasha</strong> launched a daring institutional counteroffensive through radical constitutional modernization.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-6" class="cite-badge">[6]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="reform-card" style="border-top-color: var(--primary);">
+          <span class="reform-badge" style="background: #dbeafe; color: var(--primary);">May–August 1876</span>
+          <div class="reform-title">👑 Palace Revolutions &amp; Imperial Succession</div>
+          <div class="reform-desc">
+            Sultan Abdülaziz, held responsible for sovereign insolvency and obstruction of reform, was deposed in a palace coup. His successor, Murad V, was removed shortly thereafter due to psychological incapacity, bringing the reform-pledged <strong>Abdul Hamid II</strong> to the throne.<a href="#ref-2" class="cite-badge">[2]</a><a href="#ref-6" class="cite-badge">[6]</a>
+          </div>
+        </div>
+
+        <div class="reform-card" style="border-top-color: var(--emerald);">
+          <span class="reform-badge">December 23, 1876</span>
+          <div class="reform-title">⚖️ Proclamation of the Midhat Constitution (Asia's First Written Constitution)</div>
+          <div class="reform-desc">
+            Timed precisely to coincide with the opening session of the Constantinople Conference—where the Great Powers presented partition ultimatums—the Ottoman government promulgated the <a href="https://en.wikipedia.org/wiki/Ottoman_constitution_of_1876" target="_blank" rel="noopener noreferrer" style="color: var(--primary-light); font-weight: 700;">Ottoman Constitution (Midhat Constitution)</a> to demonstrate that the empire was a modern constitutional state, eliminating the pretext for foreign intervention.<br><br>
+            A representative parliament was established, declaring all imperial subjects—regardless of religion or ethnicity—equal citizens under the umbrella of <strong>"Ottomanism" (Osmanlılık)</strong> to prevent the secession of Balkan nationalities.<a href="#ref-6" class="cite-badge">[6]</a><a href="#ref-7" class="cite-badge">[7]</a><a href="#ref-8" class="cite-badge">[8]</a><a href="#ref-9" class="cite-badge">[9]</a><a href="#ref-11" class="cite-badge">[11]</a><a href="#ref-12" class="cite-badge">[12]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The Denouement -->
+    <section id="aftermath">
+      <h2>🥀 3. The Denouement and Prelude to Autocracy: The Russo-Turkish War and Constitutional Suspension</h2>
+
+      <div class="grid-3">
+        <div class="factor-card" style="border-left-color: #b91c1c;">
+          <div class="factor-title">💥 The Russo-Turkish War (1877–1878)</div>
+          <div class="factor-desc">
+            Constitutional diplomacy failed to stop Russian ambitions. In April 1877, Tsar Alexander II declared war. Russian forces broke through Balkan fortifications, capturing Plevna and advancing to San Stefano, on the direct outskirts of Istanbul.<a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+
+        <div class="factor-card" style="border-left-color: #475569;">
+          <div class="factor-title">🔒 Constitutional Suspension &amp; Autocracy (1878)</div>
+          <div class="factor-desc">
+            Citing wartime emergency, Abdul Hamid II banished Midhat Pasha and, in February 1878, <strong>indefinitely suspended the constitution and dissolved parliament</strong>, instituting thirty years of autocratic rule.<a href="#ref-10" class="cite-badge">[10]</a><a href="#ref-13" class="cite-badge">[13]</a>
+          </div>
+        </div>
+
+        <div class="factor-card" style="border-left-color: #7c3aed;">
+          <div class="factor-title">🗺️ The Treaty of Berlin &amp; Dismemberment (1878)</div>
+          <div class="factor-desc">
+            At the <strong>Congress of Berlin (1878)</strong> mediated by Bismarck, Serbia, Montenegro, and Romania were granted full sovereignty, Bulgaria became an autonomous principality, Austria-Hungary occupied Bosnia, and Britain occupied Cyprus, solidifying the empire's dismemberment.<a href="#ref-5" class="cite-badge">[5]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Interactive Timeline -->
+    <section id="interactive-timeline">
+      <h2>⏳ 4. Dynamic Timeline: Ottoman Debt Traps and the Progression of Encroachment (1854–1881)</h2>
+      <p style="margin-bottom: 1rem;">
+        Select chronological phases below to track the shifting indices of <strong>Ottoman Sovereign Prerogatives</strong> as financial debt traps transformed into territorial partition and administrative subjugation.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div class="sim-title">📅 Select Historical Phase</div>
+        </div>
+
+        <div class="year-tabs">
+          <button class="year-btn" id="btn1854" onclick="setYear(1854)">① 1854: Genesis of Foreign Debt</button>
+          <button class="year-btn" id="btn1875" onclick="setYear(1875)">② 1875: Declaration of Default</button>
+          <button class="year-btn active" id="btn1876" onclick="setYear(1876)">③ 1876: The Midhat Constitution</button>
+          <button class="year-btn" id="btn1878" onclick="setYear(1878)">④ 1878: Defeat &amp; Treaty of Berlin</button>
+          <button class="year-btn" id="btn1881" onclick="setYear(1881)">⑤ 1881: Foundation of the OPDA</button>
+        </div>
+
+        <div class="meters-grid">
+          <div class="meter-card">
+            <div class="meter-top">
+              <span>🏛️ Fiscal &amp; Tax Sovereignty</span>
+              <span id="valFiscal" style="color: var(--primary);">35%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="barFiscal" style="background: var(--primary); width: 35%;"></div>
+            </div>
+          </div>
+
+          <div class="meter-card">
+            <div class="meter-top">
+              <span>🗺️ Balkan Territorial Retention</span>
+              <span id="valTerritory" style="color: var(--emerald);">75%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="barTerritory" style="background: var(--emerald); width: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="meter-card">
+            <div class="meter-top">
+              <span>🩸 European Financial Capital Control</span>
+              <span id="valBank" style="color: var(--rose);">65%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="barBank" style="background: var(--rose); width: 65%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-event-box" id="yearDetailBox">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Matrix of Great Power Calculations -->
+    <section id="great-powers">
+      <h2>🌐 5. Strategic Calculations and Encroachment Methods of the Great Powers in the "Eastern Question"</h2>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">Great Power</th>
+              <th style="width: 35%;">Geopolitical &amp; Financial Objectives</th>
+              <th style="width: 45%;">Concrete Actions &amp; Encroachment on Ottoman Sovereignty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>🇬🇧 Great Britain</strong></td>
+              <td>Securing imperial lifelines to British India (Suez Canal, Eastern Mediterranean) and enforcing London bondholder debt recovery.</td>
+              <td>Restrained full Russian expansion while exacting territorial concessions: military occupation of <strong>Cyprus (1878)</strong> and <strong>Egypt (1882)</strong>, taking control of Egyptian and Ottoman debt syndicates.</td>
+            </tr>
+            <tr>
+              <td><strong>🇫🇷 France</strong></td>
+              <td>Protecting Paris bourses as the largest holder of Ottoman foreign bonds; expanding commercial dominance across North Africa and the Levant.</td>
+              <td>Co-managed the <strong>Imperial Ottoman Bank</strong> and drove the creation of the <strong>OPDA</strong>. Occupied and established a protectorate over Ottoman <strong>Tunisia in 1881</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>🇷🇺 Russian Empire</strong></td>
+              <td>Controlling the Turkish Straits (Bosporus and Dardanelles) and achieving direct naval breakout into the Mediterranean.</td>
+              <td>Championed <strong>Pan-Slavism</strong> to arm Balkan rebels; launched the <strong>Russo-Turkish War of 1877–78</strong>, forcing the creation of Greater Bulgaria and extracting enormous war indemnities.</td>
+            </tr>
+            <tr>
+              <td><strong>🇩🇪 German Empire</strong><br><small>(Bismarck to Wilhelm II)</small></td>
+              <td>Initially arbitrated as the "honest broker" between rivals; subsequently pivoted toward economic penetration via the <strong>Berlin-Baghdad Railway (3B Policy)</strong>.</td>
+              <td>Hosted the 1878 Congress of Berlin. In the 1890s, Deutsche Bank secured concessions for railway construction and mineral exploitation, directly challenging British-French financial supremacy.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section id="references">
+      <h2>📚 References &amp; Historical Literature</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-tag">[1]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh0803-009_1.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "The Eastern Question and the Territorial Retraction of the Ottoman Empire."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-tag">[2]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-049.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "The 1875 Ottoman Sovereign Default and Abdul Hamid II."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-tag">[3]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer">
+            Wikipedia, "Tanzimat Reforms and Sovereign Default Induced by Foreign Debt Overhang."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-tag">[4]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh0803-009_1.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "Balkan Rebellions in Bosnia &amp; Bulgaria and European Intervention."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-tag">[5]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1202-029.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "The Russo-Turkish War (1877–78), Treaty of San Stefano, and Congress of Berlin."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-tag">[6]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-050.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "Midhat Pasha and Constitutionalist Reform."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-tag">[7]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%89%E3%83%8F%E3%83%88%E3%83%BB%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener noreferrer">
+            Wikipedia, "Midhat Pasha: Grand Vizier Reforms and Exile."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-tag">[8]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-049.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "The Constantinople Conference and the Coups of 1876."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-tag">[9]</span>
+          <a class="ref-link" href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%B9%E3%83%9E%E3%83%B3%E5%B8%9D%E5%9B%BD%E6%86%B2%E6%B3%95" target="_blank" rel="noopener noreferrer">
+            Wikipedia, "The Ottoman Constitution of 1876 (Kanûn-ı Esâsî)."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-tag">[10]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-049.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "Constitutional Suspension of 1878 and Abdul Hamid's Autocracy."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-11">
+          <span class="ref-tag">[11]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1301-044.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "Legal Modernization and Ottomanism in the Tanzimat Era."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-12">
+          <span class="ref-tag">[12]</span>
+          <a class="ref-link" href="https://www.y-history.net/appendix/wh1403-139_1.html" target="_blank" rel="noopener noreferrer">
+            World History Window, "The Historic Significance of Midhat's Constitution in Asian Modernity."
+          </a>
+        </li>
+        <li class="ref-item" id="ref-13">
+          <span class="ref-tag">[13]</span>
+          <a class="ref-link" href="https://history.zashiki.com/young-turk-rev.html" target="_blank" rel="noopener noreferrer">
+            Historical Monograph, "From the Russo-Turkish War to the Young Turk Revolution: The Fall of the Ottoman Empire."
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; History and Collapse of the Financial Oligarchy Supplement Series | Ottoman Empire 1876 Crisis &amp; Financial Imperialism Visualizer</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Timeline Script -->
+  <script>
+    function setYear(yr) {
+      [1854, 1875, 1876, 1878, 1881].forEach(y => {
+        document.getElementById('btn' + y).classList.remove('active');
+      });
+      document.getElementById('btn' + yr).classList.add('active');
+
+      const valFiscal = document.getElementById('valFiscal');
+      const barFiscal = document.getElementById('barFiscal');
+      const valTerritory = document.getElementById('valTerritory');
+      const barTerritory = document.getElementById('barTerritory');
+      const valBank = document.getElementById('valBank');
+      const barBank = document.getElementById('barBank');
+      const box = document.getElementById('yearDetailBox');
+
+      if (yr === 1854) {
+        valFiscal.innerText = '85%';
+        barFiscal.style.width = '85%';
+        valTerritory.innerText = '95%';
+        barTerritory.style.width = '95%';
+        valBank.innerText = '20%';
+        barBank.style.width = '20%';
+        box.style.borderLeftColor = '#3b82f6';
+        box.innerHTML = `
+          <strong style="color: #1e3a8a;">【1854: The Crimean War &amp; The First European Foreign Bond Issuance】</strong><br>
+          To finance wartime operations against the Russian Empire during the Crimean War, the Sublime Porte issued foreign sovereign bonds in London and Paris for the first time in imperial history. This initiated a predatory lending cycle: British and French merchant bankers issued loans at severe face-value discounts and extortionate interest rates, sucking the empire into an intractable debt spiral where new debt was contracted merely to roll over prior obligations.
+        `;
+      } else if (yr === 1875) {
+        valFiscal.innerText = '30%';
+        barFiscal.style.width = '30%';
+        valTerritory.innerText = '80%';
+        barTerritory.style.width = '80%';
+        valBank.innerText = '70%';
+        barBank.style.width = '70%';
+        box.style.borderLeftColor = '#d97706';
+        box.innerHTML = `
+          <strong style="color: #b45309;">【October 1875: Declaration of Sovereign Insolvency (Default) &amp; The Balkan Chain Reaction】</strong><br>
+          With over half of imperial revenues consumed by debt service, the confluence of the Panic of 1873 and severe Anatolian drought forced the Porte to declare a 50% moratorium on coupon payments—a formal sovereign default. Concurrently, tax revolts erupted across Bosnia and Herzegovina, catalyzing concurrent fiscal collapse and territorial disintegration.
+        `;
+      } else if (yr === 1876) {
+        valFiscal.innerText = '35%';
+        barFiscal.style.width = '35%';
+        valTerritory.innerText = '75%';
+        barTerritory.style.width = '75%';
+        valBank.innerText = '65%';
+        barBank.style.width = '65%';
+        box.style.borderLeftColor = '#059669';
+        box.innerHTML = `
+          <strong style="color: #065f46;">【December 1876: Grand Vizier Midhat Pasha's Constitutional Counteroffensive】</strong><br>
+          As the Great Powers convened the Constantinople Conference to dictate partition terms amid the Bulgarian uprising, Grand Vizier Midhat Pasha promulgated the Midhat Constitution—Asia's first written constitution. By instituting parliamentary governance and equal civic status (Ottomanism) across all religious communities, the reformers made a desperate bid to deprive European powers of intervention pretexts.
+        `;
+      } else if (yr === 1878) {
+        valFiscal.innerText = '20%';
+        barFiscal.style.width = '20%';
+        valTerritory.innerText = '40%';
+        barTerritory.style.width = '40%';
+        valBank.innerText = '80%';
+        barBank.style.width = '80%';
+        box.style.borderLeftColor = '#e11d48';
+        box.innerHTML = `
+          <strong style="color: #be123c;">【1877–1878: Defeat in the Russo-Turkish War, Constitutional Suspension &amp; The Treaty of Berlin】</strong><br>
+          Russian armies crushed Ottoman defenses, advancing to the gates of Istanbul. Abdul Hamid II suspended the constitution and dissolved parliament, reviving imperial autocracy. At the Congress of Berlin (1878), the empire was stripped of most of the Balkans (independence for Romania, Serbia, Montenegro; autonomy for Bulgaria; Austrian occupation of Bosnia; British occupation of Cyprus) alongside crippling war reparations.
+        `;
+      } else if (yr === 1881) {
+        valFiscal.innerText = '10%';
+        barFiscal.style.width = '10%';
+        valTerritory.innerText = '35%';
+        barTerritory.style.width = '35%';
+        valBank.innerText = '95%';
+        barBank.style.width = '95%';
+        box.style.borderLeftColor = '#9f1239';
+        box.innerHTML = `
+          <strong style="color: #881337;">【December 1881: The Decree of Muharram &amp; Total Subjugation under the OPDA】</strong><br>
+          European creditor syndicates established the Ottoman Public Debt Administration (OPDA), a mammoth autonomous revenue bureau employing over 5,000 agents. The OPDA directly seized monopolies over salt, tobacco, spirits, fisheries, stamp taxes, and silk tithes, creating a financial conveyor belt that automatically transferred imperial revenues directly to bondholders in the City of London and the Paris Bourse.
+        `;
+      }
+    }
+
+    setYear(1876);
+  </script>
+</body>
+</html>
