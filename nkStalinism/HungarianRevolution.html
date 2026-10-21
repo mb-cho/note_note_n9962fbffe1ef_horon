@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：ハンガリー動乱と東欧の悲劇 ― ブダペストの流血、ナジ・イムレの処刑、そして金日成による延安派大粛清の間隙</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.2);
+      color: var(--accent-red);
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-amber);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    .card-title-red {
+      border-left-color: var(--accent-red);
+    }
+
+    .card-title-amber {
+      border-left-color: var(--accent-amber);
+    }
+
+    .card-title-emerald {
+      border-left-color: var(--accent-emerald);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .sub-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sub-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-cyan);
+    }
+
+    /* Simulator Styles */
+    .sim-container {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .phase-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      flex: 1 1 calc(25% - 0.5rem);
+      min-width: 180px;
+      padding: 0.65rem 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .meter-label {
+      color: var(--text-muted);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .meter-track {
+      background: #090d16;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-wrapper {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+    }
+
+    .svg-wrapper svg {
+      width: 100%;
+      height: auto;
+      min-width: 650px;
+      display: block;
+    }
+
+    .phase-desc-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Flow Chart */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      position: relative;
+    }
+
+    .flow-step {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .flow-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th {
+      background: #090d16;
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Quotes & Details */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    details {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--primary);
+    }
+
+    summary {
+      padding: 0.85rem 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      outline: none;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary:hover {
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    details .details-content {
+      padding: 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .phase-btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気と終焉</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と8月宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と朝鮮戦争・廬山会議の悲劇</a>
+        <a href="HungarianRevolution.html" class="nav-link active">⑯ ハンガリー動乱と東欧の悲劇</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">KDP補論シリーズ 第16編</span>
+        <span class="badge badge-alert">冷戦・東欧の流血革命</span>
+        <span class="badge badge-amber">ナジ・イムレの悲劇</span>
+        <span class="badge badge-emerald">平壌・延安派大粛清の間隙</span>
+      </div>
+      <h1>ハンガリー動乱と東欧の悲劇</h1>
+      <p class="subtitle">ブダペストの反ソ蜂起とソ連戦車の武力鎮圧は、いかにして中ソの監視を東欧へ釘付けにし、金日成による延安派・ソ連派の完全殲滅を可能にしたのか</p>
+    </header>
+
+    <!-- Section 1: 問題の所在 -->
+    <section class="card">
+      <h2 class="card-title">1. 問題の所在：ブダペストの市街戦が平壌の「絶対零度」の独裁を生んだ地政学的逆説</h2>
+      <p>1956年10月23日、ハンガリーの首都ブダペストで勃発した「ハンガリー動乱（ハンガリー革命）」は、第二次世界大戦後のソ連共産圏における最大規模の大衆武装蜂起であった。スターリン主義的恐怖支配を敷いたラーコシ体制への怨嗟と、フルシチョフの秘密報告（スターリン批判）に触発された学生や労働者は、ソ連軍の即時撤退、一党独裁の廃止、言論の自由を求めて立ち上がった。</p>
+      <p style="margin-top: 0.85rem;">復権した改革派共産主義者ナジ・イムレ首相は民衆の熱狂を背負い、一党独裁を破棄して複数政党制を導入、さらにワルシャワ条約機構からの脱退と永世中立を宣言した。しかし、これはソ連および東側陣営にとって「帝国の防衛線崩壊」を意味する絶対に越えてはならない一線であった。11月4日、ソ連軍は戦車1,000両と6万の兵力を投入してブダペストを火の海に変え、蜂起を無慈悲に粉砕した。</p>
+      
+      <div class="quote-box">
+        「ブダペストの街路にソ連軍のT-54戦車が轟音を響かせ、東西陣営が第三次世界大戦の恐怖に凍りついたその瞬間、平壌の金日成は天の恵みとも言える歴史的間隙（空白）を手に入れた。中ソ両大国の視線が欧州へ固定された隙を突き、金日成は9月に交わした妥協の約束を破棄して、国内の政敵を皆殺しにしたのである。」
+      </div>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 東欧の防波堤崩壊とソ連の戦慄</h3>
+          <p>共産党の秘密警察（AVH）隊員が街頭で私刑に処され、ナジがワルシャワ条約脱退を叫んだとき、モスクワは東欧衛星国全体のドミノ崩壊を恐れた。北京の毛沢東も「武力鎮圧あるのみ」とフルシチョフを強硬に煽動した。</p>
+        </div>
+        <div class="sub-card">
+          <h3>② 平壌監視の完全なる空白化</h3>
+          <p>1956年9月、ミコヤンと彭徳懐の平壌急派によって金日成に突きつけられた「延安派・ソ連派の処分撤回と党内民主化」の監視体制は、ハンガリー危機の勃発により一夜にして完全に霧散・無効化された。</p>
+        </div>
+        <div class="sub-card">
+          <h3>③ 「反革命」レッテルによる根絶滅</h3>
+          <p>金日成は「非スターリン化を許せばブダペストのように帝国主義の反革命を招く」と宣伝。1956年12月以降、千里馬運動で社会を戦時動員し、延安派・ソ連派数千人を「反革命宗派分子」として物理的に抹殺した。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: インタラクティブ動態シミュレーター -->
+    <section class="card">
+      <h2 class="card-title card-title-red">2. インタラクティブ動態シミュレーター：ブダペストの流血から平壌大粛清への4段階動態</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+        各フェーズをクリックして、ハンガリーの蜂起とソ連軍の軍事介入がいかに中ソの関心を欧州へ釘付けにし、北朝鮮における金日成の絶対権力確立をもたらしたかを検証してください。
+      </p>
+
+      <div class="sim-container">
+        <!-- Phase Selector Buttons -->
+        <div class="phase-selector" role="tablist">
+          <button id="pbtn-0" class="phase-btn active" onclick="setPhase(0)" role="tab">Phase 1: 1956.10.23-28<br>ブダペスト蜂起と像切断</button>
+          <button id="pbtn-1" class="phase-btn" onclick="setPhase(1)" role="tab">Phase 2: 1956.10.30-11.1<br>脱退宣言と中ソ介入決定</button>
+          <button id="pbtn-2" class="phase-btn" onclick="setPhase(2)" role="tab">Phase 3: 1956.11.4-10<br>「旋風作戦」戦車の制圧</button>
+          <button id="pbtn-3" class="phase-btn" onclick="setPhase(3)" role="tab">Phase 4: 1956.12-1958<br>平壌の反撃・延安派絶滅</button>
+        </div>
+
+        <!-- Metrics Bars -->
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">ブダペスト革命・大衆蜂起強度</span>
+              <span id="m-revo" class="meter-val">85%（学生デモ・警察銃撃戦）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-revo" class="meter-bar" style="width: 85%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">ソ連共産圏の危機感・欧州集中度</span>
+              <span id="m-sovi" class="meter-val">70%（東欧防衛線崩壊の恐怖）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-sovi" class="meter-bar" style="width: 70%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">金日成の反撃自由度・平壌自立度</span>
+              <span id="m-kimh" class="meter-val">20%（中ソの監視下に拘束）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-kimh" class="meter-bar" style="width: 20%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Visual Architecture -->
+        <div class="svg-wrapper">
+          <div id="arch-title" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--accent-cyan);">
+            【動態構造図】Phase 1：1956年10月下旬 ― ブダペスト蜂起の爆発とスターリン巨像の切断
+          </div>
+          <svg id="arch-svg" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rendered dynamically by JS -->
+          </svg>
+        </div>
+
+        <!-- Phase Description Text -->
+        <div id="sim-desc" class="phase-desc-box">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 比較対照マトリクス -->
+    <section class="card">
+      <h2 class="card-title card-title-amber">3. 比較分析：1956年「非スターリン化の激震」に対する4カ国の対応と帰結</h2>
+      <p>フルシチョフの秘密報告に端を発した共産圏の動乱に対し、各政権はその地政学的位置と指導部の性格によって真逆の道を選択した。</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較軸</th>
+              <th>ハンガリー（ナジ・イムレ）</th>
+              <th>ポーランド（ゴミュウカ）</th>
+              <th>中国（毛沢東）</th>
+              <th>北朝鮮（金日成）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>蜂起・動乱の形態</strong></td>
+              <td><strong>全面武装蜂起・体制破壊</strong><br>秘密警察への私刑、国旗紋章切除、軍部反乱</td>
+              <td><strong>ポズナン労働者暴動</strong><br>パンと自由を求めたデモから党内改革派へ収斂</td>
+              <td><strong>知識人の動揺と批判</strong><br>百花斉放百家争鳴による党批判の噴出</td>
+              <td><strong>党内クーデター（8月宗派事件）</strong><br>全員会議での演説告発と中国亡命</td>
+            </tr>
+            <tr>
+              <td><strong>対ソ連関係・安保路線</strong></td>
+              <td><strong>ワルシャワ条約機構脱退・中立</strong><br>ソ連軍完全撤退と国連保護を要求</td>
+              <td><strong>同盟維持と自主権交渉</strong><br>ソ連軍駐留を容認しつつ内政干渉を排除</td>
+              <td><strong>中ソ対立への決定的旋回</strong><br>ソ連の軟弱さを批判、武力鎮圧を要求</td>
+              <td><strong>「事大主義」排撃・中ソ遮断</strong><br>外部干渉を拒絶し「自主路線」を宣言</td>
+            </tr>
+            <tr>
+              <td><strong>最高権力構造の変化</strong></td>
+              <td><strong>複数政党制・一党独裁廃止</strong><br>連立内閣の樹立と大衆民主主義</td>
+              <td><strong>党内改革派の政権掌握</strong><br>農業集団化の一時停止と教会融和</td>
+              <td><strong>反右派闘争と毛沢東絶対化</strong><br>55万人の知識人を失脚させ大躍進へ</td>
+              <td><strong>「首領絶対専制」の確立</strong><br>集団指導を完全否定、唯一思想へ</td>
+            </tr>
+            <tr>
+              <td><strong>ソ連軍の介入と結末</strong></td>
+              <td><strong>戦車侵攻（旋風作戦）で壊滅</strong><br>ナジ首相絞首刑、20万人西側亡命</td>
+              <td><strong>武力介入寸前で外交的妥協</strong><br>ソ連戦車の侵攻を阻止し体制維持</td>
+              <td>ソ連を支援しつつ覇権争いへ突入</td>
+              <td><strong>干渉を跳ね除け数千人を粛清</strong><br>延安派・ソ連派を完全殲滅</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的教訓・体制の運命</strong></td>
+              <td>1989年「国民革命」として再評価、東欧革命の嚆矢</td>
+              <td>「連帯」運動の母体となり共産党体制崩壊へ</td>
+              <td>文革の国家的カタストロフィへ直進</td>
+              <td><strong>世界で唯一、三代世襲の独裁王朝が完成</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 論理展開・歴史的因果フロー -->
+    <section class="card">
+      <h2 class="card-title">4. 論理展開フロー：ブダペストの銃声がいかに平壌の「首領専制」を決定づけたか</h2>
+      
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="flow-num">1</span>
+          <div class="flow-heading">平壌での屈辱的妥協 (1956.9)</div>
+          <div class="flow-desc">中ソ合同代表団（ミコヤン・彭徳懐）の直接干渉を受け、金日成は延安派・ソ連派の処分撤回を余儀なくされる。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">2</span>
+          <div class="flow-heading">ブダペスト動乱爆発 (1956.10)</div>
+          <div class="flow-desc">ハンガリー民衆が蜂起しナジ政権が脱退宣言。東欧全域の共産体制がドミノ崩壊の危機に直面。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">3</span>
+          <div class="flow-heading">ソ連戦車突入・旋風作戦 (1956.11)</div>
+          <div class="flow-desc">ソ連軍がブダペストを軍事制圧。中ソ指導部の関心と外交リソースが完全に東欧危機に釘付けとなる。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">4</span>
+          <div class="flow-heading">平壌監視の空白と反撃 (1956.12-)</div>
+          <div class="flow-desc">金日成はこの間隙を見逃さず妥協の約束を破棄。千里馬運動を発動して社会を戦時動員体制へ再編。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">5</span>
+          <div class="flow-heading">延安派殲滅と首領制完成 (1957-58)</div>
+          <div class="flow-desc">「反革命に呼応した宗派分子」として国内反対派数千人を一網打尽に抹殺。金日成の絶対独裁が不可逆化。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 深層解説・6大核心テーマ -->
+    <section class="card">
+      <h2 class="card-title card-title-emerald">5. 深層解説：ハンガリー動乱と北朝鮮権力闘争を巡る6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① スターリン巨像切断の衝撃：偶像破壊の恐怖</h3>
+          <p>1956年10月23日夜、ブダペスト市内の英雄広場に聳え立っていた高さ25メートルの巨大なスターリン青銅像にワイヤーが掛けられ、アセチレントーチで切断されて引き倒された。台座には巨大なブーツだけが残り、切り落とされたスターリンの頭部は街路を引きずり回されて嘲笑された。この映像と報道は、モスクワのみならず平壌の金日成に底知れぬ恐怖を与えた。「大衆に一度でも自由化の幻想を与えれば、自らの銅像も同じ運命を辿る」――この強烈な強迫観念が、北朝鮮における妥協なき恐怖政治の根源となった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>② ナジ・イムレの「致命的一線」：中立宣言の悲劇</h3>
+          <p>ナジ・イムレ首相は元来忠実な共産主義者であったが、民衆の熱狂的エネルギーに押され、一党独裁の廃止のみならずワルシャワ条約機構からの脱退と永世中立宣言という不可逆の決断を下した。NATOと対峙するソ連にとって、東欧の要衝ハンガリーの中立化は「安全保障防衛線の完全な穴あき」を意味した。ポーランドのゴミュウカが巧みにソ連軍駐留を受け入れて軍事介入を回避したのに対し、ナジの急進主義はソ連軍の戦車部隊「旋風作戦」を誘発し、彼自身の絞首刑という悲惨な末路を招いた。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>③ 毛沢東の「鎮圧煽動」と中ソ介入合意の内幕</h3>
+          <p>ハンガリー動乱の勃発当初、フルシチョフは軍事介入を躊躇していた。しかし、北京から訪ソ中であった中国代表団（劉少奇、鄧小平）を通じて毛沢東は「帝国主義と反革命に断固たる鉄槌を下せ」「後退すれば社会主義陣営は崩壊する」とソ連首脳部を激しく突き上げた。中ソが欧州の流血鎮圧で一致団結したこの外交的局面において、極東の平壌で金日成が何をしていようと、中ソ指導部にはそれを気にかける余裕など微塵も残されていなかった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>④ 「天恵の間隙」：金日成の冷徹な政治的嗅覚</h3>
+          <p>1956年9月、ソ連副首相ミコヤンと中国国防部長・彭徳懐に怒鳴りつけられ、屈辱に震えながら「反対派処分の撤回」を約束した金日成にとって、10月下旬のハンガリー動乱はまさに奇跡的な「天恵の神風」であった。ソ連軍がブダペストへ突入した11月4日、金日成は中ソ代表団の監視が完全に消滅したことを確信。9月の決定を反故にし、復党させた延安派・ソ連派幹部を再び孤立させ、大粛清の青写真を秘密裡に完成させた。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑤ 千里馬運動という「平壌版戦時動員体制」</h3>
+          <p>1956年12月の朝鮮労働党中央全員会議において、金日成は「千里馬運動」を提唱した。これは単なる経済復興の増産運動ではなく、住民を職場や工場ごとに徹底的に組織化・監視下に置き、一切の異論を許さない戦時動員体制の構築であった。「ブダペストのように帝国主義者が虎視眈々と侵略を狙っている」と危機感を煽り、労働者に超人的なノルマを課すことで、政治的反対派が活動する空間を物理的・精神的に根絶したのである。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑥ 「非スターリン化」の拒絶が生んだ東アジアの世襲王朝</h3>
+          <p>ハンガリー動乱は、ソ連型共産主義体制にとって「非スターリン化の限界」を露呈した事件であった。部分的な自由化や批判の許容は、最終的に共産党独裁そのものの正統性を揺るがすという教訓を、東側陣営は血の代償で学んだ。そしてその教訓を世界で最も徹底的・過激に実践したのが北朝鮮であった。金日成は「少しでも緩めればハンガリーの二の舞になる」という恐怖を推進力として、スターリン主義の純化を極限まで押し進め、やがて「唯一思想・三代世襲」という前代未聞の怪物を生み出したのである。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 一次資料・歴史的言説の記録 -->
+    <section class="card">
+      <h2 class="card-title">6. 一次資料アーカイブ：歴史の激震を記録した宣言と電報</h2>
+
+      <details open>
+        <summary>① ナジ・イムレ首相による「永世中立と国連への訴願」（1956年11月1日 ラジオ演説）</summary>
+        <div class="details-content">
+          <p>「ハンガリー人民よ！我が政府は、深き責任感と国民の全幅の意志に基づき、ここにワルシャワ条約機構からの即時脱退を宣言し、ハンガリーの永世中立を全世界に向けて布告する。</p>
+          <p style="margin-top: 0.5rem;">我が国は、四大超大国および国際連合に対し、ハンガリーの中立を保障するよう要請した。我が国民は、東洋とも西洋とも真の友情を保ち、主権独立の自由な国民として平和に暮らすことを望んでいる。いかなる外国軍の駐留も、我が国の土壌において許されることはない！」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>② ソ連共産党幹部会（政治局）秘密議事録（1956年10月31日 介入決定の瞬間）</summary>
+        <div class="details-content">
+          <p>「フルシチョフ発言：情勢は極めて悪化している。もし我々がハンガリーから軍を引けば、資本主義者共はこれを我々の弱さと見なし、総攻撃に出てくるだろう。東欧の防衛線は崩壊し、ソ連共産党の威信は地に堕ちる。</p>
+          <p style="margin-top: 0.5rem;">我々は決定を覆さねばならない。軍事力を行使してブダペストの反革命を力で粉砕する。カーダール同志を首班とする暫定革命政府を組織し、軍の突入と同時に治安を掌握させるのだ。犠牲を恐れてはならない。これは社会主義の生死に関わる問題である！」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 金日成『1956年12月党中央委員会全員会議における演説』（抜粋）</summary>
+        <div class="details-content">
+          <p>「同志諸君、我々は最近の国際情勢、とりわけハンガリーで起きた反革命動乱の教訓を銘記しなければならない。帝国主義者とその手先共は、社会主義陣営の内部を撹乱し、我々のプロレタリア独裁を転覆させようと狂奔している。</p>
+          <p style="margin-top: 0.5rem;">我が党内においても、ハンガリーの反革命分子共と気脈を通じ、大国の威を借りて党の団結を破壊しようとした宗派分子どもが存在した。我々はこれら事大主義的宗派分子に対して一片の妥協も許してはならない。全人民が千里馬に乗って前進し、階級の敵を容赦なく叩き潰さねばならない！」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>④ ナジ・イムレの処刑を巡るハンガリー最高裁判所宣告書（1958年6月16日公表）</summary>
+        <div class="details-content">
+          <p>「被告ナジ・イムレおよびその一味は、人民民主主義体制の転覆を企て、外国の帝国主義勢力と結託して武力暴動を煽動した。被告らはワルシャワ条約機構を破棄して祖国を敵に売り渡そうとした反逆者である。</p>
+          <p style="margin-top: 0.5rem;">ハンガリー人民共和国最高裁判所国民法廷は、国家反逆罪および体制転覆指導罪に基づき、主犯ナジ・イムレに対し死刑を宣告する。判決は直ちに執行された。」（※1989年6月16日、ナジの再埋葬式に数十万人が集結し、体制転換の導火線となった）</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Section 7: 出典・参考文献 -->
+    <section class="card">
+      <h2 class="card-title">7. 出典・参考文献・学術アーカイブリスト</h2>
+      <ul style="padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+        <li><strong>南塚信吾</strong> 『ハンガリー動乱 ― 民衆の革命・軍事介入・体制崩壊』 東京大学出版会、2006年（ハンガリー近現代史の基本文献）</li>
+        <li><strong>下斗米伸夫</strong> 『モスクワと金日成 ― 冷戦の中の北朝鮮1945〜1961』 岩波書店、2006年（ハンガリー動乱と北朝鮮8月宗派事件の国際的連鎖の解明）</li>
+        <li><strong>沈志華（Shen Zhihua）</strong> 『最後の「天朝」：毛沢東・金日成時代の中国と北朝鮮』 岩波書店、2016年（毛沢東の対ソ鎮圧要請とミコヤン・彭徳懐介入の無力化過程）</li>
+        <li><strong>ローク・メルビン（Lankov, Andrei）</strong> <em>Crisis in North Korea: The Failure of De-Stalinization, 1956</em>, University of Hawaii Press, 2005.（ハンガリー動乱が金日成の権力集中に与えた決定的影響の実証）</li>
+        <li><strong>ヴィクトル・セベスチェン（Sebestyen, Victor）</strong> 『十二日間の革命 ― 1956年ハンガリー動乱の全貌』 白水社、2008年（米ソ機密文書と証言によるブダペスト市街戦のドキュメント）</li>
+        <li><strong>和田春樹</strong> 『北朝鮮現代史』 岩波新書、2012年（千里馬運動の開始と延安派・ソ連派粛清の政治史）</li>
+        <li><strong>チャールズ・ガティ（Gati, Charles）</strong> <em>Failed Illusions: Moscow, Washington, Budapest, and the 1956 Hungarian Revolt</em>, Stanford University Press, 2006.</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論・歴史解説アーカイブ</p>
+      <p style="font-size: 0.75rem; color: #64748b;">著者: mb_cho | 本書の内容および図解の無断転載・再配布を禁じます。</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Simulation Script -->
+  <script>
+    const phases = [
+      {
+        id: 0,
+        revoText: "85%（学生デモ・警察銃撃戦・スターリン像切断）",
+        revoWidth: "85%",
+        revoColor: "#f43f5e",
+        soviText: "70%（東欧防衛線崩壊の恐怖・介入躊躇）",
+        soviWidth: "70%",
+        soviColor: "#f59e0b",
+        kimhText: "20%（中ソの監視下に拘束・妥協中）",
+        kimhWidth: "20%",
+        kimhColor: "#6366f1",
+        archTitle: "【動態構造図】Phase 1：1956年10月下旬 ― ブダペスト蜂起の爆発とスターリン巨像の切断",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Budapest Arena -->
+          <g transform="translate(60, 50)">
+            <rect x="0" y="0" width="370" height="220" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="185" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">ブダペスト・大衆武装蜂起（10月23日〜）</text>
+
+            <rect x="20" y="50" width="155" height="85" rx="4" fill="#311018" stroke="#f43f5e"/>
+            <text x="97" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">英雄広場の偶像破壊</text>
+            <text x="97" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・スターリン巨大青銅像切断</text>
+            <text x="97" y="108" fill="#cbd5e1" font-size="9" text-anchor="middle">・台座にブーツのみ残存</text>
+            <text x="97" y="124" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">国旗中央の紋章切除</text>
+
+            <rect x="195" y="50" width="155" height="85" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="272" y="72" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">市街武装衝突</text>
+            <text x="272" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・ラジオ局前での銃撃戦</text>
+            <text x="272" y="108" fill="#cbd5e1" font-size="9" text-anchor="middle">・秘密警察（AVH）私刑</text>
+            <text x="272" y="124" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">ナジ・イムレ首相復権</text>
+
+            <rect x="20" y="145" width="330" height="60" rx="4" fill="#090d16"/>
+            <text x="185" y="168" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">ソ連指導部の戦慄：東欧衛星国のドミノ崩壊危機</text>
+            <text x="185" y="188" fill="#94a3b8" font-size="9" text-anchor="middle">フルシチョフ：軍事介入か宥和かの狭間で激しく動揺</text>
+          </g>
+
+          <!-- Pyongyang Link -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="370" height="220" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="185" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">平壌：金日成の戦慄と警戒</text>
+
+            <rect x="20" y="55" width="330" height="75" rx="6" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="185" y="80" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">中ソ介入（9月）の余波に緊縛</text>
+            <text x="185" y="100" fill="#94a3b8" font-size="9" text-anchor="middle">ミコヤン・彭徳懐に強制された「延安派復党」に署名中</text>
+            <text x="185" y="118" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">「偶像破壊の炎」が平壌に飛び火することを極度に警戒</text>
+
+            <rect x="20" y="140" width="330" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="185" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">しかし欧州の混乱は</text>
+            <text x="185" y="182" fill="#facc15" font-size="11" font-weight="bold" text-anchor="middle">「中ソの干渉を吹き飛ばす間隙」の到来を予感させる</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 1 状況解説】</strong> 1956年10月23日、ブダペストで学生や労働者20万人が反ソ・民主化デモを敢行。秘密警察の発砲を機に全面武装蜂起へと発展した。市民は市中心部のスターリン巨大青銅像をアセチレントーチで切断して引き倒し、国旗から共産党マークを切り抜いた。モスクワのフルシチョフ指導部は東欧防衛線の崩壊に直面して戦慄し、一方の平壌では金日成が偶像破壊の伝播を極度に警戒しながら情勢を注視した。"
+      },
+      {
+        id: 1,
+        revoText: "100%（複数政党制・ワルシャワ条約機構脱退宣言）",
+        revoWidth: "100%",
+        revoColor: "#f43f5e",
+        soviText: "100%（毛沢東の強硬進言・全面武力鎮圧を決定）",
+        soviWidth: "100%",
+        soviColor: "#f59e0b",
+        kimhText: "60%（中ソの視線が欧州へ完全固定・隙の発生）",
+        kimhWidth: "60%",
+        kimhColor: "#6366f1",
+        archTitle: "【動態構造図】Phase 2：1956年10月末〜11月初 ― ワルシャワ条約機構脱退宣言と中ソの介入合意",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Nagy Declaration -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="190" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">ナジ政権の「レッドライン越え」宣言</text>
+
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#311018" stroke="#f43f5e"/>
+            <text x="190" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">11月1日：ワルシャワ条約機構脱退・永世中立</text>
+            <text x="190" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・一党独裁廃止・複数政党制の連立内閣樹立</text>
+            <text x="190" y="108" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">・国連安保理へ「四大国の永世中立保障」を要請</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="157" fill="#facc15" font-size="10" font-weight="bold" text-anchor="middle">モスクワ・北京の逆鱗と武力介入の決定</text>
+            <text x="190" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">毛沢東が劉少奇を通じてフルシチョフに「断固武力鎮圧」を進言</text>
+            <text x="190" y="192" fill="#fca5a5" font-size="9" text-anchor="middle">ソ連幹部会：電撃作戦「旋風作戦」の発動を全員一致で承認</text>
+          </g>
+
+          <!-- Pivot for Pyongyang -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="190" y="30" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">平壌：金日成の戦略的勝機</text>
+
+            <rect x="20" y="55" width="340" height="80" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="190" y="80" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle">「中ソの内政干渉」が機能停止へ</text>
+            <text x="190" y="102" fill="#d1fae5" font-size="10" text-anchor="middle">ミコヤンも彭徳懐も欧州問題へ総動員</text>
+            <text x="190" y="120" fill="#6ee7b7" font-size="10" font-weight="bold" text-anchor="middle">平壌の延安派・ソ連派は後ろ盾を完全に喪失</text>
+
+            <rect x="20" y="145" width="340" height="60" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="168" fill="#cbd5e1" font-size="10" text-anchor="middle">金日成：「反革命撲滅」の大義名分を獲得</text>
+            <text x="190" y="188" fill="#f59e0b" font-size="9" text-anchor="middle">「非スターリン化＝ブルジョワ反革命の導入」と断罪開始</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 2 状況解説】</strong> 11月1日、ナジ・イムレ首相は一党独裁を廃止し、ワルシャワ条約機構からの脱退と永世中立、国連への保護要請を電撃宣言した。この「緩衝地帯の喪失」はソ連にとって絶対に許容できないレッドラインであった。北京の毛沢東も「断固鎮圧せよ」とフルシチョフを強硬に後押しし、ソ連軍の武力侵攻作戦「旋風作戦」が決定された。この瞬間、中ソ両国の関心は欧州危機へ完全に釘付けとなり、平壌に対する監視体制は音を立てて崩壊した。"
+      },
+      {
+        id: 2,
+        revoText: "40%（市街戦壊滅・ナジ逮捕・20万人西側脱出）",
+        revoWidth: "40%",
+        revoColor: "#f43f5e",
+        soviText: "85%（「旋風作戦」戦車6万人投入・カーダール樹立）",
+        soviWidth: "85%",
+        soviColor: "#f59e0b",
+        kimhText: "90%（平壌監視の完全消滅・反撃準備完了）",
+        kimhWidth: "90%",
+        kimhColor: "#6366f1",
+        archTitle: "【動態構造図】Phase 3：1956年11月上旬 ― 「旋風作戦」戦車6万人の制圧とナジ失脚",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Soviet Invasion -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+            <text x="190" y="30" fill="#fbbf24" font-size="14" font-weight="bold" text-anchor="middle">11月4日 ソ連軍「旋風作戦」の武力鎮圧</text>
+
+            <rect x="20" y="50" width="340" height="80" rx="4" fill="#450a0a" stroke="#dc2626"/>
+            <text x="190" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">戦車1,000両・兵力6万人の市街突入</text>
+            <text x="190" y="92" fill="#fecaca" font-size="9" text-anchor="middle">・ブダペスト市街の砲撃、数千人の市民死亡</text>
+            <text x="190" y="108" fill="#fecaca" font-size="9" text-anchor="middle">・火炎瓶で戦う少年兵・労働者の壊滅</text>
+            <text x="190" y="122" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">約20万人の市民がオーストリアへ脱出</text>
+
+            <rect x="20" y="140" width="340" height="70" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="162" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">親ソ派カーダール政権の樹立</text>
+            <text x="190" y="180" fill="#94a3b8" font-size="9" text-anchor="middle">ナジはユーゴ大使館脱出後に逮捕、1958年絞首刑</text>
+            <text x="190" y="196" fill="#facc15" font-size="9" text-anchor="middle">東欧の脱スターリン化は「血の反革命」の汚名を着せられ頓挫</text>
+          </g>
+
+          <!-- Pyongyang Action -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="190" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">平壌：金日成の電撃的約束反故</text>
+
+            <rect x="20" y="55" width="340" height="75" rx="6" fill="#1e1b4b" stroke="#818cf8"/>
+            <text x="190" y="80" fill="#c7d2fe" font-size="12" font-weight="bold" text-anchor="middle">9月全員会議の決定を事実上破棄</text>
+            <text x="190" y="100" fill="#cbd5e1" font-size="10" text-anchor="middle">「復党させた宗派分子は反革命の共犯者である」</text>
+            <text x="190" y="118" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">金日成：延安派・ソ連派の再拘束を着手</text>
+
+            <rect x="20" y="140" width="340" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="162" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">中ソからの抗議・制止はゼロ</text>
+            <text x="190" y="182" fill="#94a3b8" font-size="9" text-anchor="middle">中ソ共に東欧の防衛で手一杯であり、北朝鮮を黙認</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 3 状況解説】</strong> 11月4日未明、ソ連軍は暗号名「旋風作戦」を発動。戦車1,000両と6万の兵力でブダペストへ突入し、火炎瓶で抵抗する学生や労働者を徹底的に蹂躙した。数千人が死亡し、20万人以上が西側へ脱出。ナジ首相は後に捕らえられ処刑された。この流血の軍事制圧により、中ソ両国にとって平壌の金日成に対する内政干渉など完全に過去の遺物となった。金日成は中ソの沈黙を確認し、延安派幹部らの再拘束を開始した。"
+      },
+      {
+        id: 3,
+        revoText: "0%（東欧ソ連覇権再固定・反体制運動沈静）",
+        revoWidth: "2%",
+        revoColor: "#f43f5e",
+        soviText: "40%（東欧衛星国再掌握・中ソ対立激化へ）",
+        soviWidth: "40%",
+        soviColor: "#f59e0b",
+        kimhText: "100%（延安派・ソ連派完全絶滅・首領独裁完成）",
+        kimhWidth: "100%",
+        kimhColor: "#10b981",
+        archTitle: "【動態構造図】Phase 4：1956年12月〜1958年 ― 平壌の約束反故、千里馬運動と延安派・ソ連派根絶滅",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- East Europe Frozen -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="350" height="220" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+            <text x="175" y="30" fill="#94a3b8" font-size="14" font-weight="bold" text-anchor="middle">東欧：恐怖による凍結（1957-1989）</text>
+
+            <rect x="20" y="55" width="310" height="75" rx="4" fill="#090d16"/>
+            <text x="175" y="78" fill="#cbd5e1" font-size="11" font-weight="bold" text-anchor="middle">カーダール「グヤーシュ共産主義」</text>
+            <text x="175" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">政治的自由の完全剥奪と引き換えの生活改善</text>
+            <text x="175" y="116" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">「脱スターリン化＝体制崩壊」の恐怖固定</text>
+
+            <rect x="20" y="140" width="310" height="65" rx="4" fill="#1e1b4b"/>
+            <text x="175" y="162" fill="#c7d2fe" font-size="10" font-weight="bold" text-anchor="middle">1989年体制転換への伏線</text>
+            <text x="175" y="182" fill="#a5b4fc" font-size="9" text-anchor="middle">33年後のナジ再埋葬がベルリンの壁崩壊へ直結</text>
+          </g>
+
+          <!-- Pyongyang Totalitarian Victory -->
+          <g transform="translate(440, 50)">
+            <rect x="0" y="0" width="410" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="205" y="30" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">平壌：千里馬運動と首領絶対専制の完成</text>
+
+            <rect x="20" y="55" width="370" height="75" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="205" y="78" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle">1956年12月全員会議：千里馬運動の発動</text>
+            <text x="205" y="98" fill="#d1fae5" font-size="10" text-anchor="middle">全社会を戦時動員体制化、異論の余地をゼロへ</text>
+            <text x="205" y="116" fill="#6ee7b7" font-size="10" font-weight="bold" text-anchor="middle">延安派・ソ連派数千人を「反革命宗派」として完全粛清</text>
+
+            <rect x="20" y="140" width="370" height="65" rx="4" fill="#090d16" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="205" y="162" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">歴史のアイロニー：超スターリン主義の確立</text>
+            <text x="205" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">ブダペストの流血を口実に、本家スターリンを超える三代世襲制へ</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 4 状況解説】</strong> ハンガリー動乱の鎮圧により中ソの介入能力が霧散した間隙を突き、金日成は1956年12月に「千里馬運動」を発動。全社会を軍隊的な超増産動員体制に叩き込み、1957年から1958年にかけて延安派・ソ連派幹部数千人を「反革命宗派分子」として根こそぎ捕縛・処刑した。ブダペストの反ソ蜂起の恐怖を最大限に利用することで、北朝鮮は外部からの非スターリン化を完全拒絶し、神権的「首領絶対専制」を完成させたのである。"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-revo').textContent = p.revoText;
+      const bRevo = document.getElementById('b-revo');
+      bRevo.style.width = p.revoWidth;
+      bRevo.style.backgroundColor = p.revoColor;
+
+      document.getElementById('m-sovi').textContent = p.soviText;
+      const bSovi = document.getElementById('b-sovi');
+      bSovi.style.width = p.soviWidth;
+      bSovi.style.backgroundColor = p.soviColor;
+
+      document.getElementById('m-kimh').textContent = p.kimhText;
+      const bKimh = document.getElementById('b-kimh');
+      bKimh.style.width = p.kimhWidth;
+      bKimh.style.backgroundColor = p.kimhColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
