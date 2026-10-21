@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：元帥・彭徳懐の悲劇 ― 朝鮮戦争の激闘、8月宗派事件の内政介入、廬山会議の直言から文革の非業の死まで</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.2);
+      color: var(--accent-red);
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-amber);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    .card-title-red {
+      border-left-color: var(--accent-red);
+    }
+
+    .card-title-amber {
+      border-left-color: var(--accent-amber);
+    }
+
+    .card-title-emerald {
+      border-left-color: var(--accent-emerald);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .sub-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sub-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-cyan);
+    }
+
+    /* Simulator Styles */
+    .sim-container {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .phase-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      flex: 1 1 calc(25% - 0.5rem);
+      min-width: 180px;
+      padding: 0.65rem 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .meter-label {
+      color: var(--text-muted);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .meter-track {
+      background: #090d16;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-wrapper {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+    }
+
+    .svg-wrapper svg {
+      width: 100%;
+      height: auto;
+      min-width: 650px;
+      display: block;
+    }
+
+    .phase-desc-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Flow Chart */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      position: relative;
+    }
+
+    .flow-step {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .flow-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th {
+      background: #090d16;
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Quotes & Details */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    details {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--primary);
+    }
+
+    summary {
+      padding: 0.85rem 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      outline: none;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary:hover {
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    details .details-content {
+      padding: 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .phase-btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気と終焉</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と8月宗派事件</a>
+        <a href="hotokukai.html" class="nav-link active">⑮ 彭徳懐と朝鮮戦争・廬山会議の悲劇</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">KDP補論シリーズ 第15編</span>
+        <span class="badge badge-alert">中国人民志願軍総司令員</span>
+        <span class="badge badge-amber">1959年廬山会議の直言</span>
+        <span class="badge badge-emerald">中朝関係と文革の悲劇</span>
+      </div>
+      <h1>元帥・彭徳懐の悲劇</h1>
+      <p class="subtitle">朝鮮戦争で金日成政権を救い、1956年に平壌へ乗り込んだ剛直の軍人は、なぜ廬山会議で毛沢東に葬られ、文革の暗闇で非業の死を遂げたのか</p>
+    </header>
+
+    <!-- Section 1: 問題の所在 -->
+    <section class="card">
+      <h2 class="card-title">1. 問題の所在：中華人民共和国元勲の直言と、中朝権力闘争史の結節点</h2>
+      <p>彭徳懐（ほう・とくかい、1898〜1974年）は、朱徳と並ぶ中国紅軍・人民解放軍の創設者であり、中華人民共和国の初代国防部長（国防相）、十大元帥の序列第二位に叙された不世出の名将である。農民出身の彼は極めて清廉かつ剛直で、権力者に対しても一切のへつらいを排して真実を直言する「硬骨の士」として全軍・党内から絶大な信望を集めていた。</p>
+      <p style="margin-top: 0.85rem;">本書『北朝鮮におけるスターリン主義の形成』の文脈において、彭徳懐は単なる中国国内の悲劇の英雄にとどまらない。朝鮮戦争（1950〜1953年）において壊滅寸前の北朝鮮を救命した総司令官であり、1956年9月には金日成の専制を制止するため平壌へ乗り込んで直接内政干渉を行った最大の当事者であった。そして彼が1959年の廬山会議で大躍進政策の破綻を直言して失脚した事件こそが、毛沢東の「階級闘争激化論・継続革命論」を暴走させ、文化大革命の惨劇と、平壌における延安派完全粛清・首領絶対専制の完成へと直結したのである。</p>
+      
+      <div class="quote-box">
+        「山高路遠坑深、大軍縦横馳騁。誰敢横刀立馬、唯我彭大将軍！（山高く道遠く谷深し、大軍縦横に馳騁す。誰か敢えて刀を横たえ馬に立つ、ただ我が彭大将軍あるのみ！）」<br>
+        ―― 1935年 長征の途上、毛沢東が彭徳懐の武勇を讃えて贈った六言詩
+      </div>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 朝鮮戦争の激闘と金日成との確執</h3>
+          <p>米軍の仁川上陸で鴨緑江まで追い詰められた北朝鮮を救った志願軍総司令官。補給を無視して無謀な反撃を主張する金日成を怒鳴りつけ、作戦指揮権を剥奪したことで、金日成の心中に深い遺恨と恐怖を植え付けた。</p>
+        </div>
+        <div class="sub-card">
+          <h3>② 1956年平壌急派と8月宗派介入</h3>
+          <p>延安派（尹公欽ら）の中国亡命を受け、毛沢東の特使としてソ連のミコヤンと共に平壌へ直行。「同志の流した血を何と心得るか！」と金日成を恫喝し、処分撤回を強制したことで金日成の不倶戴天の敵となった。</p>
+        </div>
+        <div class="sub-card">
+          <h3>③ 廬山会議の直言と文革の非業の死</h3>
+          <p>1959年、大躍進・人民公社の飢餓と惨状を憂えて毛沢東に「意見書」を提出したことで「反党集団」と断罪され失脚。後任に林彪が座り、文革で紅衛兵の暴行・私刑の果てに暗黒の病室で無念の獄死を遂げた。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: インタラクティブ動態シミュレーター -->
+    <section class="card">
+      <h2 class="card-title card-title-red">2. インタラクティブ動態シミュレーター：彭徳懐の栄光と失脚・中朝力学の4段階変遷</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+        各フェーズをクリックして、彭徳懐元帥が朝鮮の戦野から平壌介入、廬山の直言、そして文革の惨殺へと至る歴史の悲劇的ダイナミズムを検証してください。
+      </p>
+
+      <div class="sim-container">
+        <!-- Phase Selector Buttons -->
+        <div class="phase-selector" role="tablist">
+          <button id="pbtn-0" class="phase-btn active" onclick="setPhase(0)" role="tab">Phase 1: 1950-1953<br>朝鮮戦争と指揮権対立</button>
+          <button id="pbtn-1" class="phase-btn" onclick="setPhase(1)" role="tab">Phase 2: 1956.9<br>平壌急派と金日成叱責</button>
+          <button id="pbtn-2" class="phase-btn" onclick="setPhase(2)" role="tab">Phase 3: 1959<br>廬山会議の直言と失脚</button>
+          <button id="pbtn-3" class="phase-btn" onclick="setPhase(3)" role="tab">Phase 4: 1966-1978<br>文革の私刑・獄死と名誉回復</button>
+        </div>
+
+        <!-- Metrics Bars -->
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">彭徳懐の軍事的威信・発言力</span>
+              <span id="m-pres" class="meter-val">95%（英雄元帥）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-pres" class="meter-bar" style="width: 95%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">毛沢東との政治的信頼度</span>
+              <span id="m-mao" class="meter-val">80%（長征以来の戦友・微妙な影）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-mao" class="meter-bar" style="width: 80%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">金日成・北朝鮮との摩擦・敵意度</span>
+              <span id="m-kim" class="meter-val">85%（指揮権対立と激しい叱責）</span>
+            </div>
+            <div class="meter-track">
+              <div id="b-kim" class="meter-bar" style="width: 85%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Visual Architecture -->
+        <div class="svg-wrapper">
+          <div id="arch-title" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--accent-cyan);">
+            【動態構造図】Phase 1：1950〜1953年 ― 朝鮮戦争の激闘と金日成との軍事指揮権対立
+          </div>
+          <svg id="arch-svg" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rendered dynamically by JS -->
+          </svg>
+        </div>
+
+        <!-- Phase Description Text -->
+        <div id="sim-desc" class="phase-desc-box">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 比較対照マトリクス -->
+    <section class="card">
+      <h2 class="card-title card-title-amber">3. 比較分析：中共3大軍事指導者の性格・路線と運命の対比</h2>
+      <p>毛沢東を軍事的に支えた十大元帥の中でも、彭徳懐、林彪、朱徳の3名は際立った個性を持ち、その運命は毛沢東の権力独裁化と中朝関係の展開に決定的な足跡を残した。</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較軸</th>
+              <th>彭徳懐（元帥・初代国防部長）</th>
+              <th>林彪（元帥・第2代国防部長）</th>
+              <th>朱徳（元帥・全軍総司令）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>性格と気風</strong></td>
+              <td><strong>剛直無比・直情径行・農民的リアリスト</strong><br>不正や人民の苦難を見過ごせず、最高権力者にも直言</td>
+              <td><strong>陰険緻密・病弱・権謀術数の徒</strong><br>毛沢東の意図を過激に先回りし、権力闘争を煽動</td>
+              <td><strong>温厚篤実・長老・調整役</strong><br>党軍の象徴的存在として対立を調停、自ら権力を誇示せず</td>
+            </tr>
+            <tr>
+              <td><strong>朝鮮戦争への態度</strong></td>
+              <td><strong>総司令官として志願軍を率い参戦</strong><br>米軍を38度線以南へ押し戻し休戦を勝ち取る</td>
+              <td><strong>病気を口実に参戦・指揮を辞退</strong><br>米軍との全面対決を恐れ、ソ連での病気療養を選択</td>
+              <td>後方で党軍の動員と国家建設を統括</td>
+            </tr>
+            <tr>
+              <td><strong>大躍進・廬山会議での行動</strong></td>
+              <td><strong>「意見書」で大躍進の破綻を直言・批判</strong><br>浮誇風・鉄くず製造・人民の餓死を憂い反旗</td>
+              <td><strong>毛沢東を狂信的に擁護、彭徳懐を猛攻撃</strong><br>失脚した彭徳懐に代わり国防部長に就任</td>
+              <td>彭徳懐に同情的な態度を示し、毛沢東から冷遇される</td>
+            </tr>
+            <tr>
+              <td><strong>毛沢東個人崇拝への姿勢</strong></td>
+              <td><strong>断固拒否</strong><br>「毛主席も一党員に過ぎず誤りを犯す」「神格化は有害」</td>
+              <td><strong>極限まで推進</strong><br>『毛主席語録』を編纂、「毛主席の指示は一句が万句に値する」</td>
+              <td>過度な個人崇拝には距離を置くが沈黙を守る</td>
+            </tr>
+            <tr>
+              <td><strong>北朝鮮・金日成との関係</strong></td>
+              <td><strong>極めて険悪（指揮権剥奪・8月宗派介入）</strong><br>金日成にとって最大のトラウマと脅威の象徴</td>
+              <td><strong>友好的・文革期の狂信的同調</strong><br>中朝軍事協力を称賛するも文革の混乱を波及させる</td>
+              <td>伝統的な中朝親善の象徴として儀礼的接遇</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的結末</strong></td>
+              <td><strong>1974年 文革の暴行・迫害の末に獄死</strong><br>1978年 鄧小平により完全名誉回復、清廉の名将と追慕</td>
+              <td><strong>1971年 クーデター失敗・逃亡墜落死</strong><br>党規約の後継者条項から一転、反逆者として永久除名</td>
+              <td>1976年 全国人民代表大会常務委員長として天寿を全う</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 論理展開・歴史的因果フロー -->
+    <section class="card">
+      <h2 class="card-title">4. 論理展開フロー：彭徳懐の直言がいかにして北朝鮮の首領専制を間接的に完成させたか</h2>
+      
+      <div class="flow-grid">
+        <div class="flow-step">
+          <span class="flow-num">1</span>
+          <div class="flow-heading">朝鮮戦争での屈辱 (1950-53)</div>
+          <div class="flow-desc">彭徳懐が金日成から軍事指揮権を奪い、作戦の無能を激しく叱責。金日成の心中に「中国軍の横暴」への警戒と屈辱感が深く刻まれる。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">2</span>
+          <div class="flow-heading">8月宗派での平壌恫喝 (1956.9)</div>
+          <div class="flow-desc">延安派の亡命を受け、彭徳懐がミコヤンと共に平壌急派。金日成に処分撤回を強要。金日成は屈伏するが、彭徳懐＝延安派の黒幕と敵視。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">3</span>
+          <div class="flow-heading">廬山会議での自爆失脚 (1959.8)</div>
+          <div class="flow-desc">彭徳懐が大躍進の飢餓を直言し毛沢東の逆鱗に触れ失脚。中国指導部が左傾狂信化し、延安派の後ろ盾であった彭徳懐が完全に消滅。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">4</span>
+          <div class="flow-heading">平壌での延安派絶滅 (1959-60)</div>
+          <div class="flow-desc">後ろ盾を失った北朝鮮国内の延安派幹部を金日成が完全に一網打尽。中国側の干渉能力が失われた間隙を突き、政敵の根絶滅を完遂。</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">5</span>
+          <div class="flow-heading">文革の惨殺と首領独裁 (1966-74)</div>
+          <div class="flow-desc">彭徳懐は文革の私刑で非業の死。中国が文革で自爆するのを尻目に、金日成は「自主路線・10大原則」で揺るぎない絶対王朝を確立。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 深層解説・6大核心テーマ -->
+    <section class="card">
+      <h2 class="card-title card-title-emerald">5. 深層解説：彭徳懐と中朝権力闘争を巡る6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 毛岸英戦死の影：毛沢東の消えぬ個人的怨嗟</h3>
+          <p>1950年11月25日、平安北道東倉郡の志願軍司令部が米軍爆撃機に空襲され、毛沢東の最愛の長男・毛岸英（当時28歳、ロシア語通訳兼参謀）がナパーム弾の直撃を受け焼死した。彭徳懐は北京へ自責の電報を打ったが、毛沢東は表面上「戦争に犠牲はつきものだ」と淡白を装った。しかし、後継者として帝王教育を施すはずだった愛息を失った毛沢東の心中に、彭徳懐の防空管理への暗い不満と怨嗟が刻まれたとされる。廬山会議において毛沢東が「私には子供がいない。一人は死に、一人は狂った」と感情を爆発させた背景には、この戦死の影が色濃く横たわっていた。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>② 朝鮮戦争前線での金日成叱責と指揮権強奪</h3>
+          <p>1950年10月に志願軍が参戦した際、金日成は北朝鮮軍の独立指揮権を主張し、米軍の補給路遮断を無視した無謀な全面反撃を命じようとした。彭徳懐は金日成を面罵し、「お前の稚拙な指揮で何十万の将兵が犬死にしたと思っているのか！軍隊の指揮は兵法を知る者が執る！」と激昂。スターリンに直訴して「中朝連合司令部」を創設させ、軍事指揮権を彭徳懐が一手に掌握した。金日成にとって、国家存亡の危機を救われた恩義と同時に、自国の領土で外国の将軍に怒鳴りつけられ主権を奪われた屈辱は、終生消えないトラウマとなった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>③ 1956年9月「平壌電撃急派」：延安派救出の最後の一撃</h3>
+          <p>1956年8月全員会議で尹公欽らが金日成の個人崇拝を糾弾し中国へ亡命した際、北京で亡命者から報告を受けた彭徳懐は「金日成は恩知らずの専制君主か！」と激怒した。毛沢東の指示でソ連副首相ミコヤンと共に平壌へ乗り込んだ彭徳懐は、金日成を直視し、「中国人民志願軍が血を流して守ったこの国で、抗日と朝鮮戦争を共に戦った同志を反逆者として殺すことは絶対に許さん！」と恫喝。金日成に決定撤回と処分取り消しを呑ませた。しかし、この強硬な内政干渉こそが、金日成に「延安派は中国の回し者であり、彭徳懐はその黒幕である」との確信を決定づけた。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>④ 廬山会議「意見書」：なぜ忠言が「反党反逆」と化すのか</h3>
+          <p>1959年7月、風光明媚な江西省・廬山で開かれた党中央政治局拡大会議において、彭徳懐は故郷・湖南省の農村で目撃した惨状（餓死者の群れ、田畑の荒廃、土法高炉による使い物にならない鉄くず）を告発すべく、毛沢東宛の私信（「意見書」）を書いた。文面は極めて礼を尽くし、大躍進の総路線を肯定しつつも「小ブルジョア的狂信」「左の誤り」を戒める愛党的な直言であった。しかし、個人崇拝の絶頂にあり自らの無謬性を疑わない毛沢東は、これを「党と毛主席に対するブルジョワ右翼の組織的挑戦」と受け止め、全参加者に書簡を印刷・配布して彭徳懐を吊し上げた。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑤ 彭徳懐失脚がもたらした平壌の「延安派完全殲滅」</h3>
+          <p>彭徳懐が国防部長を解任され軟禁されると、その後任には毛沢東に絶対服従する林彪が就任した。この北京の劇変を平壌の金日成は快哉を叫んで迎えた。なぜなら、北朝鮮国内の延安派幹部にとって最強の後ろ盾であった彭徳懐が失脚したことで、中国側がもはや北朝鮮の内政に介入する意志も能力も失ったからである。金日成は間髪を容れず、1959年末から1960年にかけて、国内に残存していた延安派幹部や軍高官を「反党宗派分子」として根こそぎ逮捕・処刑。彭徳懐の悲劇は、逆説的に金日成の絶対権力確立を決定的に後押しした。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>⑥ 文化大革命の私刑と301病院の暗黒の死</h3>
+          <p>1966年に文革が勃発すると、江青や康生の命を受けた紅衛兵（北京航空学院「赤旗」戦闘隊）が四川省・成都で第三線建設に従事していた彭徳懐を急襲・拉致した。北京に連行された老元帥は、十数万人を集めた批闘大会で首に「反党分子・彭徳懐」の巨大な木札を掛けられ、両腕を後ろにねじり上げられる「噴水式」の拷問を受け、肋骨を何本も折られた。直腸癌を患っても「反革命に麻酔は不要」とまともな治療を拒否され、病室の窓を板で塞がれた暗闇の人民解放軍総医院（301病院）第14病棟で、1974年11月29日、76歳の苦難に満ちた生涯を閉じた。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 一次資料・歴史的言説の記録 -->
+    <section class="card">
+      <h2 class="card-title">6. 一次資料アーカイブ：歴史を動かした書簡と証言記録</h2>
+
+      <details open>
+        <summary>① 彭徳懐の廬山会議「意見書」（1959年7月14日、毛沢東宛私信抜粋）</summary>
+        <div class="details-content">
+          <p>「毛主席、今回の廬山会議は非常に重要であります。1958年の大躍進において、我が国の社会主義建設は偉大な成果を収めましたが、同時に一連の深刻な問題も発生いたしました。</p>
+          <p style="margin-top: 0.5rem;">浮誇風（水増し報告の風潮）が全国に蔓延し、信じがたい高収穫の嘘が新聞を飾り、国家計画の均衡を破壊いたしました。小規模な土法高炉による製鉄運動では、莫大な物資と森林資源、労働力を浪費し、出来上がったのは使い物にならない鉄くずでありました。これらの現象は、プロレタリア的な実事求是の精神に反し、小ブルジョア的な狂信の現れであります。我々は頭を冷やし、客観的な経済法則を尊重しなければなりません。」</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 毛沢東が彭徳懐を讃えた詩『六言詩・給彭徳懐同志』（1935年 長征呉起鎮）</summary>
+        <div class="details-content">
+          <p style="font-family: serif; font-size: 1.05rem; line-height: 1.8; color: var(--accent-amber);">
+            山高路遠坑深（山高く路遠く坑深し）<br>
+            大軍縦横馳騁（大軍縦横に馳騁す）<br>
+            誰敢横刀立馬（誰か敢えて刀を横たえ馬に立つ）<br>
+            唯我彭大将軍！（唯だ我が彭大将軍あるのみ！）
+          </p>
+          <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            ※1935年10月、国民党軍の猛追を振り切って陝西省へ到達した際、毛沢東が彭徳懐の武勇を絶賛して贈った詩。彭徳懐は謙虚にも末尾の「唯我彭大将軍」を「唯我英勇紅軍（ただ我が勇敢なる紅軍あるのみ）」と書き換えて返したという。この至高の戦友愛が、四半世紀後に憎悪の粛清へと転じた。
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 朝鮮戦争前線における彭徳懐と金日成の会談記録（1951年1月 志願軍司令部）</summary>
+        <div class="details-content">
+          <p>「金日成同志、あなた方は我が志願軍将兵が鴨緑江を越えていなければ、すでに祖国を失っていたはずだ。それにもかかわらず、兵站の補給も整わぬまま、いたずらに将兵を南進させて米軍の罠に飛び込ませろと言うのか。</p>
+          <p style="margin-top: 0.5rem;">戦争は感情や願望で行うものではない。軍事とは補給であり、火力の計算である。朝鮮人民軍の独断専行はこれ以上絶対に認められない。今後は中朝連合司令部の決定に従ってもらう。命令に従わぬ将官は、誰であれ軍法会議にかける！」（彭徳懐の叱責に対する金日成の沈黙と反発）</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>④ 中国共産党第11期3中全会における彭徳懐同志名誉回復決議（1978年12月抜粋）</summary>
+        <div class="details-content">
+          <p>「彭徳懐同志は、我が党、我が軍、我が国家の卓越した指導者の一人であり、国内外で名声を誇る不世出のプロレタリア革命家、軍事家であった。彼は半世紀にわたり党と人民に忠誠を尽くし、清廉潔白にして私心を挟まず、人民の利益のために身を捧げた。</p>
+          <p style="margin-top: 0.5rem;">1959年の廬山会議における彭徳懐同志への批判、およびその後の『反党集団』としての処分は完全に誤りであり、文化大革命期における林彪・江青反革命集団による迫害は極めて残虐な犯罪であった。党中央は彭徳懐同志のすべての冤罪を全面的に取り消し、その不滅の功績を永遠に讃えるものである。」</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Section 7: 出典・参考文献 -->
+    <section class="card">
+      <h2 class="card-title">7. 出典・参考文献・学術アーカイブリスト</h2>
+      <ul style="padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+        <li><strong>彭徳懐伝記組編</strong> 『彭徳懐自述 ― 中国元帥の遺言』 サイマル出版会、1982年（獄中での過酷な尋問に耐えながら執筆した自伝・名誉回復の基礎史料）</li>
+        <li><strong>李鋭</strong> 『廬山会議実録』 春秋出版社、1989年（毛沢東の秘書を務めた著者による廬山会議の生々しい逐語記録）</li>
+        <li><strong>シャー・ユーフォン（夏宇鋒）</strong> 『彭徳懐元帥の悲劇 ― 毛沢東と名将の宿命』 白帝社、2004年（軍事・外交文書に基づき彭徳懐の失脚過程を検証）</li>
+        <li><strong>沈志華（Shen Zhihua）</strong> 『最後の「天朝」：毛沢東・金日成時代の中国と北朝鮮』 岩波書店、2016年（朝鮮戦争における彭徳懐と金日成の指揮権対立、1956年9月平壌急派の中国外交部解禁文書解読）</li>
+        <li><strong>和田春樹</strong> 『朝鮮戦争全史』 岩波書店、2002年（志願軍の参戦決定と中朝連合司令部成立の軍事政治史）</li>
+        <li><strong>高文謙</strong> 『周恩来の謎』 文藝春秋、2006年（廬山会議における周恩来、毛沢東、彭徳懐の力学と文革での迫害の真相）</li>
+        <li><strong>徐大粛（Dae-Sook Suh）</strong> <em>Kim Il Sung: The North Korean Leader</em>, Columbia University Press, 1988.（延安派粛清における中国軍閥勢力の排除分析）</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論・歴史解説アーカイブ</p>
+      <p style="font-size: 0.75rem; color: #64748b;">著者: mb_cho | 本書の内容および図解の無断転載・再配布を禁じます。</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Simulation Script -->
+  <script>
+    const phases = [
+      {
+        id: 0,
+        presText: "95%（英雄元帥・志願軍総司令官）",
+        presWidth: "95%",
+        presColor: "#6366f1",
+        maoText: "80%（長征以来の戦友・微妙な影）",
+        maoWidth: "80%",
+        maoColor: "#10b981",
+        kimText: "85%（指揮権対立と激しい叱責）",
+        kimWidth: "85%",
+        kimColor: "#f43f5e",
+        archTitle: "【動態構造図】Phase 1：1950〜1953年 ― 朝鮮戦争の激闘と金日成との軍事指揮権対立",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+          
+          <!-- Yalu River & Troops -->
+          <path d="M50,160 Q200,120 400,160 T850,140" stroke="#1e293b" stroke-width="4" stroke-dasharray="8 4" fill="none"/>
+          <text x="200" y="145" fill="#64748b" font-size="11">鴨緑江（中朝国境）</text>
+
+          <!-- Peng Dehuai Command -->
+          <g transform="translate(80, 60)">
+            <rect x="0" y="0" width="230" height="180" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+            <text x="115" y="30" fill="#818cf8" font-size="14" font-weight="bold" text-anchor="middle">中国人民志願軍総司令部</text>
+            <text x="115" y="55" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">司令員兼政治委員：彭徳懐</text>
+            <rect x="15" y="75" width="200" height="85" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="115" y="98" fill="#cbd5e1" font-size="10" text-anchor="middle">・米軍撃破と38度線奪還</text>
+            <text x="115" y="118" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">・金日成の冒険的反撃を拒否</text>
+            <text x="115" y="138" fill="#38bdf8" font-size="10" text-anchor="middle">・中朝連合司令部で作戦権一元化</text>
+          </g>
+
+          <!-- Clash Arrow -->
+          <g transform="translate(340, 120)">
+            <line x1="0" y1="30" x2="100" y2="30" stroke="#f43f5e" stroke-width="3" stroke-dasharray="4 2"/>
+            <text x="50" y="20" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">指揮権激突</text>
+            <text x="50" y="50" fill="#94a3b8" font-size="9" text-anchor="middle">「兵站なき前進拒否」</text>
+          </g>
+
+          <!-- Kim Il Sung Headquarter -->
+          <g transform="translate(470, 60)">
+            <rect x="0" y="0" width="210" height="180" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="105" y="30" fill="#fca5a5" font-size="14" font-weight="bold" text-anchor="middle">北朝鮮最高司令部</text>
+            <text x="105" y="55" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">金日成・満洲派</text>
+            <rect x="15" y="75" width="180" height="85" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="105" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">・壊滅寸前からの命脈維持</text>
+            <text x="105" y="118" fill="#f43f5e" font-size="10" font-weight="bold" text-anchor="middle">・彭徳懐に面罵され指揮権喪失</text>
+            <text x="105" y="138" fill="#f59e0b" font-size="10" text-anchor="middle">・屈辱と「事大の恨み」の蓄積</text>
+          </g>
+
+          <!-- Mao Anying's Death Shadow -->
+          <g transform="translate(710, 60)">
+            <rect x="0" y="0" width="150" height="180" rx="8" fill="#1e1b4b" stroke="#a855f7" stroke-dasharray="4 2"/>
+            <text x="75" y="30" fill="#c084fc" font-size="12" font-weight="bold" text-anchor="middle">毛岸英戦死の影</text>
+            <rect x="15" y="50" width="120" height="110" rx="4" fill="#090d16"/>
+            <text x="75" y="75" fill="#fca5a5" font-size="10" text-anchor="middle">1950.11空襲</text>
+            <text x="75" y="95" fill="#e9d5ff" font-size="10" text-anchor="middle">毛沢東の愛息焼死</text>
+            <text x="75" y="125" fill="#f43f5e" font-size="9" font-weight="bold" text-anchor="middle">毛沢東の心中に</text>
+            <text x="75" y="140" fill="#f43f5e" font-size="9" font-weight="bold" text-anchor="middle">消えぬ怨恨の種</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 1 状況解説】</strong> 1950年10月、米軍の北進により存亡の危機に瀕した北朝鮮を救うため、彭徳懐は中国人民志願軍総司令員として参戦。米軍を38度線以南へ押し戻す赫々たる武功を挙げた。しかし作戦指導を巡っては、補給を無視して無謀な突撃を要求する金日成を「何十万の命を粗末にする気か！」と激しく叱責。中朝連合司令部を結成して実質的な指揮権を剥奪した。金日成にとって彭徳懐は救世主であると同時に最大の屈辱の象徴となり、また毛沢東の愛息・毛岸英の戦死は彭徳懐の未来に暗い影を落とした。"
+      },
+      {
+        id: 1,
+        presText: "90%（初代国防部長・国家元勲）",
+        presWidth: "90%",
+        presColor: "#6366f1",
+        maoText: "70%（ソ連型近代化重視への警戒）",
+        maoWidth: "70%",
+        maoColor: "#10b981",
+        kimText: "100%（直接内政干渉による極限の対立）",
+        kimWidth: "100%",
+        kimColor: "#f43f5e",
+        archTitle: "【動態構造図】Phase 2：1956年9月 ― 平壌電撃急派と金日成への直接恫喝・妥協強要",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Beijing Decision -->
+          <g transform="translate(50, 60)">
+            <rect x="0" y="0" width="210" height="200" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="105" y="30" fill="#34d399" font-size="13" font-weight="bold" text-anchor="middle">北京：毛沢東・中国党</text>
+            <rect x="15" y="50" width="180" height="60" rx="4" fill="#090d16"/>
+            <text x="105" y="72" fill="#cbd5e1" font-size="10" text-anchor="middle">尹公欽ら延安派の越境亡命</text>
+            <text x="105" y="92" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">「金日成はスターリンの再来」</text>
+            <rect x="15" y="120" width="180" height="65" rx="4" fill="#064e3b" stroke="#10b981"/>
+            <text x="105" y="145" fill="#a7f3d0" font-size="10" font-weight="bold" text-anchor="middle">彭徳懐へ平壌急派命令</text>
+            <text x="105" y="165" fill="#6ee7b7" font-size="9" text-anchor="middle">「ソ連代表団と共同介入せよ」</text>
+          </g>
+
+          <!-- Confrontation in Pyongyang -->
+          <g transform="translate(300, 50)">
+            <rect x="0" y="0" width="350" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+            <text x="175" y="30" fill="#fbbf24" font-size="14" font-weight="bold" text-anchor="middle">平壌・労働党本部対面（9月19日）</text>
+            
+            <rect x="20" y="55" width="145" height="85" rx="6" fill="#1e1b4b" stroke="#6366f1"/>
+            <text x="92" y="80" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">彭徳懐 ＆ ミコヤン</text>
+            <text x="92" y="100" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">「血の盟約を裏切るな」</text>
+            <text x="92" y="120" fill="#94a3b8" font-size="9" text-anchor="middle">・処分撤回と復党要求</text>
+
+            <rect x="185" y="55" width="145" height="85" rx="6" fill="#311018" stroke="#f43f5e"/>
+            <text x="257" y="80" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">金日成（屈服・妥協）</text>
+            <text x="257" y="100" fill="#facc15" font-size="10" font-weight="bold" text-anchor="middle">「戦術的撤回・署名」</text>
+            <text x="257" y="120" fill="#94a3b8" font-size="9" text-anchor="middle">・怨嗟の炎を胸に秘匿</text>
+
+            <rect x="20" y="155" width="310" height="48" rx="4" fill="#090d16"/>
+            <text x="175" y="175" fill="#cbd5e1" font-size="10" text-anchor="middle">9月全員会議：形式的決定撤回</text>
+            <text x="175" y="192" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">金日成：彭徳懐＝延安派の親玉と完全認定</text>
+          </g>
+
+          <!-- North Korea Counter-plot -->
+          <g transform="translate(690, 60)">
+            <rect x="0" y="0" width="160" height="200" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="80" y="30" fill="#f87171" font-size="12" font-weight="bold" text-anchor="middle">金日成の誓い</text>
+            <rect x="15" y="50" width="130" height="135" rx="4" fill="#450a0a" stroke="#b91c1c"/>
+            <text x="80" y="75" fill="#fecaca" font-size="10" text-anchor="middle">「二度と外国軍の</text>
+            <text x="80" y="92" fill="#fecaca" font-size="10" text-anchor="middle">指図は受けぬ！」</text>
+            <text x="80" y="120" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">事大主義撲滅</text>
+            <text x="80" y="138" fill="#fca5a5" font-size="9" text-anchor="middle">主体思想への跳躍</text>
+            <text x="80" y="165" fill="#38bdf8" font-size="9" text-anchor="middle">延安派殲滅の決意</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 2 状況解説】</strong> 1956年8月全員会議での金日成独裁批判と尹公欽らの中国亡命を受け、激怒した毛沢東は彭徳懐をソ連のミコヤン副首相と共に平壌へ急派した。彭徳懐は金日成と対面し、「我々が流した血を何と考えているのか！反対派をただちに復党させよ！」と猛然と叱責。軍事的・経済的圧力の前に金日成は屈伏し、9月23日の全員会議で処分を撤回した。しかし金日成にとってこれは生涯最大の屈辱であり、彭徳懐は「平壌の自主権を侵害した不倶戴天の敵」として怨恨の標的となった。"
+      },
+      {
+        id: 2,
+        presText: "20%（反党分子・全軍職解任）",
+        presWidth: "20%",
+        presColor: "#f43f5e",
+        maoText: "0%（党と毛主席への反逆者と断罪）",
+        maoWidth: "2%",
+        maoColor: "#ef4444",
+        kimText: "0%（彭徳懐失脚を大歓迎・延安派殲滅へ）",
+        kimWidth: "2%",
+        kimColor: "#10b981",
+        archTitle: "【動態構造図】Phase 3：1959年7〜8月 ― 廬山会議の直言と失脚、北朝鮮延安派の後ろ盾消滅",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Lushan Meeting -->
+          <g transform="translate(60, 50)">
+            <rect x="0" y="0" width="360" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+            <text x="180" y="30" fill="#fbbf24" font-size="14" font-weight="bold" text-anchor="middle">江西省・廬山会議（1959年7〜8月）</text>
+
+            <rect x="20" y="50" width="150" height="85" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="95" y="72" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">彭徳懐の「意見書」</text>
+            <text x="95" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">・大躍進の浮誇風批判</text>
+            <text x="95" y="108" fill="#cbd5e1" font-size="9" text-anchor="middle">・農村の餓死・鉄くず告発</text>
+            <text x="95" y="124" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">「小ブルジョア的狂信」</text>
+
+            <rect x="190" y="50" width="150" height="85" rx="4" fill="#311018" stroke="#f43f5e"/>
+            <text x="265" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">毛沢東の逆鱗と反撃</text>
+            <text x="265" y="92" fill="#fecaca" font-size="9" text-anchor="middle">「彭徳懐は右翼日和見」</text>
+            <text x="265" y="108" fill="#fecaca" font-size="9" text-anchor="middle">「党に対する組織的攻撃」</text>
+            <text x="265" y="124" fill="#f87171" font-size="9" font-weight="bold" text-anchor="middle">全面闘争へ突入</text>
+
+            <rect x="20" y="145" width="320" height="60" rx="4" fill="#1e1b4b"/>
+            <text x="180" y="168" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">国防部長解任・後任に林彪就任</text>
+            <text x="180" y="188" fill="#94a3b8" font-size="9" text-anchor="middle">全職剥奪・呉家花園へ軟禁・人民解放軍の狂信化開始</text>
+          </g>
+
+          <!-- Resonance in Pyongyang -->
+          <g transform="translate(460, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="190" y="30" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">平壌：金日成の好機到来と大粛清</text>
+
+            <rect x="20" y="55" width="340" height="75" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="190" y="80" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle">「彭徳懐失脚」の朗報</text>
+            <text x="190" y="100" fill="#d1fae5" font-size="10" text-anchor="middle">中国の後ろ盾消滅 → 延安派への介入リスクが完全消滅</text>
+            <text x="190" y="118" fill="#6ee7b7" font-size="10" font-weight="bold" text-anchor="middle">金日成：延安派残党の完全殲滅を断行</text>
+
+            <rect x="20" y="140" width="340" height="65" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="162" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">国内延安派幹部・軍高官を全員逮捕・処刑</text>
+            <text x="190" y="182" fill="#94a3b8" font-size="9" text-anchor="middle">満洲派による朝鮮労働党・軍権の完全独占が完了</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 3 状況解説】</strong> 1959年の廬山会議において、彭徳懐は大躍進政策による農村の飢餓や製鉄運動の浪費を憂い、毛沢東へ真摯な「意見書」を提出した。しかし個人崇拝に囚われた毛沢東はこれを反逆と断罪。「反党集団・右翼日和見主義分子」として彭徳懐を国防部長から解任・失脚させ、後任に毛沢東を盲信・偶像化する林彪を据えた。この北京の劇変を平壌の金日成は大歓迎した。延安派最強の後ろ盾が自滅したことで中国の内政干渉能力は完全に失われ、金日成は国内の延安派残党を容赦なく一網打尽に大粛清した。"
+      },
+      {
+        id: 3,
+        presText: "100%（歴史的再評価・共和国永遠の名将）",
+        presWidth: "100%",
+        presColor: "#10b981",
+        maoText: "10%（毛沢東の晩年の最大の過誤の象徴）",
+        maoWidth: "10%",
+        maoColor: "#f59e0b",
+        kimText: "10%（歴史の闇に葬られた記憶）",
+        kimWidth: "10%",
+        kimColor: "#94a3b8",
+        archTitle: "【動態構造図】Phase 4：1966〜1978年 ― 文化大革命の暴行私刑・暗黒の獄死から歴史的名誉回復へ",
+        svgContent: `
+          <rect width="900" height="320" fill="#090d16" rx="10"/>
+
+          <!-- Cultural Revolution Torment -->
+          <g transform="translate(50, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+            <text x="190" y="30" fill="#f87171" font-size="14" font-weight="bold" text-anchor="middle">文化大革命の私刑と受難（1966-1974）</text>
+            
+            <rect x="20" y="50" width="340" height="75" rx="4" fill="#311018" stroke="#f43f5e"/>
+            <text x="190" y="72" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">紅衛兵による拉致・「噴水式」拷問</text>
+            <text x="190" y="92" fill="#fecaca" font-size="9" text-anchor="middle">・北京航空学院紅衛兵による暴行、肋骨骨折</text>
+            <text x="190" y="108" fill="#fecaca" font-size="9" text-anchor="middle">・130回以上の批闘大会で首に巨大な木札</text>
+
+            <rect x="20" y="135" width="340" height="75" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="157" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="middle">301病院・暗黒の病室での獄死（1974.11.29）</text>
+            <text x="190" y="177" fill="#94a3b8" font-size="9" text-anchor="middle">・窓を板で塞がれ治療を拒否され直腸癌で死亡</text>
+            <text x="190" y="195" fill="#f59e0b" font-size="9" text-anchor="middle">・遺灰は「王川」の偽名で成都へ隠蔽される</text>
+          </g>
+
+          <!-- Rehabilitation 1978 -->
+          <g transform="translate(470, 50)">
+            <rect x="0" y="0" width="380" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="190" y="30" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">第11期3中全会と全面名誉回復（1978年12月）</text>
+
+            <rect x="20" y="55" width="340" height="80" rx="6" fill="#064e3b" stroke="#10b981"/>
+            <text x="190" y="80" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle">鄧小平主導による公式名誉回復</text>
+            <text x="190" y="102" fill="#d1fae5" font-size="10" text-anchor="middle">・「卓越したプロレタリア革命家・不世出の名将」</text>
+            <text x="190" y="120" fill="#6ee7b7" font-size="10" font-weight="bold" text-anchor="middle">・廬山会議の冤罪完全破棄・八宝山革命公墓へ改葬</text>
+
+            <rect x="20" y="145" width="340" height="60" rx="4" fill="#090d16" stroke="#334155"/>
+            <text x="190" y="168" fill="#cbd5e1" font-size="10" text-anchor="middle">歴史のアイロニー：彭徳懐の死が遺した教訓</text>
+            <text x="190" y="188" fill="#facc15" font-size="9" text-anchor="middle">個人崇拝の暴走が国家を滅ぼす実証 ―― 朝鮮半島では首領制固定化</text>
+          </g>
+        `,
+        desc: "<strong>【Phase 4 状況解説】</strong> 1966年に文革が勃発すると、彭徳懐は紅衛兵に拉致され連日凄惨な暴力に晒された。両腕を後ろにねじり上げられる「噴水式」拷問を受け、肋骨を何本も折られながらも「私は反革命ではない！」と叫び続けた。癌に侵されても適切な治療を拒まれ、病室の窓を板で塞がれた暗闇の301病院で1974年11月に非業の死を遂げた。毛沢東死後の1978年12月、鄧小平主導の第11期3中全会において彭徳懐は名誉回復され、「不世出の名将」として永遠に歴史に刻まれた。"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-pres').textContent = p.presText;
+      const bPres = document.getElementById('b-pres');
+      bPres.style.width = p.presWidth;
+      bPres.style.backgroundColor = p.presColor;
+
+      document.getElementById('m-mao').textContent = p.maoText;
+      const bMao = document.getElementById('b-mao');
+      bMao.style.width = p.maoWidth;
+      bMao.style.backgroundColor = p.maoColor;
+
+      document.getElementById('m-kim').textContent = p.kimText;
+      const bKim = document.getElementById('b-kim');
+      bKim.style.width = p.kimWidth;
+      bKim.style.backgroundColor = p.kimColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
