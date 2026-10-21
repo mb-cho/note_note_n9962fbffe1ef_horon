@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：文化大革命の狂気と終焉 ― 「造反有理」の国家的自爆から中朝対立、北朝鮮「唯一思想」防壁へ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      text-transform: uppercase;
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.18);
+      color: var(--accent-red);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #f8fafc 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section common */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-left: 4px solid var(--accent-red);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      text-align: justify;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .sim-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .phase-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: var(--bg-card-sub);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1.35;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .phase-btn.active {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(245, 158, 11, 0.25));
+      border-color: var(--accent-red);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+    }
+
+    .phase-btn .btn-era {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .meter-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meter-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .meter-label {
+      color: var(--text-secondary);
+    }
+
+    .meter-val {
+      font-weight: 700;
+      color: var(--accent-red);
+    }
+
+    .meter-track {
+      background: #0f172a;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .svg-diagram-container {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .svg-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .phase-desc-box {
+      background: rgba(15, 23, 42, 0.75);
+      border-left: 4px solid var(--accent-red);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 680px;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    tr:hover td {
+      background: rgba(99, 102, 241, 0.06);
+    }
+
+    /* Logic Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .flow-num {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--accent-red);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+    }
+
+    .flow-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Quotes */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      text-align: right;
+    }
+
+    /* References */
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .ref-num {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ref-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cite-tag {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 0.15rem;
+    }
+
+    .cite-tag:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      body { padding: 1rem; }
+      .sim-panel { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link active">⑬ 文化大革命の狂気と終焉</a>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">毛沢東主義・全体主義大衆暴力の解剖補論</span>
+        <span class="badge badge-alert">「造反有理」の10年内乱から中朝国境摩擦、北朝鮮「自主路線」完成へ</span>
+      </div>
+      <h1>文化大革命の狂気と終焉</h1>
+      <p class="subtitle">
+        1966年から1976年にかけて中国全土を破壊の渦に巻き込んだ無産階級文化大革命。毛沢東による「司令部を砲撃せよ」の大号令のもと、紅衛兵がいかにして党・国家機構を粉砕し、市街戦と国家的自爆を引き起こしたのか。そして北京の紅衛兵による「金日成批判」に直面した北朝鮮が、この狂乱をいかにして自らの「唯一思想体系（10大原則）」防壁へと転換させたのかを解剖する。
+      </p>
+      <div class="meta-row">
+        <span>📖 本書対応：第1章「文化大革命への道」、第2章「中ソ対立と自主路線の定式化」、第4章「唯一思想体系」</span>
+        <span>✍️ 著：mb_cho</span>
+        <span>🗓️ 最新党史・冷戦解禁史料反映版</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section>
+      <h2 class="section-title">1. 問題の所在：最高権力者が自らの国家機構を破壊した前代未聞の内乱</h2>
+      <p>
+        1966年5月、中国共産党中央政治局拡大会議における「五・一六通知」を合図に始まった<strong>プロレタリア文化大革命（無産階級文化大革命 / Cultural Revolution）</strong>は、20世紀の全体主義史において最も異形かつ破壊的な政治運動でした<a href="#ref-1" class="cite-tag">[1]</a>。
+      </p>
+      <p>
+        歴史上のあらゆる独裁体制（ナチス・ドイツやスターリン期のソ連）において、テロルは常に「国家抑圧機関（秘密警察や軍）」が上から国民を監視・粛清する形で執行されました。しかし文化大革命において、毛沢東は自らの国家警察や共産党官僚機構そのものを「資本主義の道を歩む実権派（走資派）に乗っ取られた敵」とみなしました。毛沢東は正規の法制度や党組織を飛び越え、「造反有理（反乱には正当な理由がある）」のスローガンとともに十代の学生たち（紅衛兵）や労働者大衆を扇動。<strong>「最高権力者が大衆を直接煽動して自らの党・国家機構を物理的に破壊・奪権させる」</strong>という前代未聞の国家的自爆テロを敢行したのです<a href="#ref-2" class="cite-tag">[2]</a>。
+      </p>
+      <p>
+        この運動は、国家元首である劉少奇国家主席や鄧小平総書記の失脚・迫害死、数千万人におよぶ知識人・幹部・一般市民の集団リンチと追放、歴史的文化財の壊滅的破壊（破四旧）、そして全国的な重火器を用いた武闘（内戦）へと暴走しました。
+      </p>
+      <p>
+        さらに重要なのは、この文革の炎が中朝関係と北朝鮮国内政治に決定的な地殻変動をもたらした点です。1960年代後半、北京の紅衛兵は金日成を「贅沢三昧の修正主義者」「フルシチョフの追随者」と名指しで弾劾する大字報を貼り出し、中朝国境では拡声器による激しい誹謗合戦や小競り合いが勃発しました。金日成はこの中国文革の無政府的狂乱を「極左的盲動主義」と激しく警戒。1966年に中ソ双方から距離を置く「自主路線」を宣言するとともに、1967年には国内の甲山派を粛清して「党の唯一思想体系」を宣布しました。中国のような大衆反乱を絶対に許さず、首領への絶対服従を義務付ける「10大原則（1974年）」を築き上げる最大の外的契機となったのです<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>。
+      </p>
+    </section>
+
+    <!-- Section 2: Interactive Simulator -->
+    <section>
+      <h2 class="section-title">2. インタラクティブ図解：文化大革命・破滅の10年動態シミュレーター</h2>
+      <p>
+        以下の4つの歴史的フェーズを切り替えることで、紅衛兵の蜂起から奪権闘争の全面内戦、林彪事件の自滅、そして北朝鮮における「唯一思想体系」防壁の完成に至る動態をシミュレーションできます。
+      </p>
+
+      <div class="sim-panel">
+        <div class="phase-selector">
+          <button class="phase-btn active" id="pbtn-0" onclick="setPhase(0)">
+            <span class="btn-era">Phase 1：1966年</span>
+            紅衛兵蜂起と破四旧の狂風<br><small>（赤い八月・大串聯と知識人迫害）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-1" onclick="setPhase(1)">
+            <span class="btn-era">Phase 2：1967〜1968年</span>
+            奪権闘争と全面武闘（内戦）<br><small>（一月風暴・劉少奇打倒と北京の金日成批判）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-2" onclick="setPhase(2)">
+            <span class="btn-era">Phase 3：1968〜1971年</span>
+            軍事軍管と林彪の墜落死<br><small>（知識青年下放運動と文革神話の崩壊）</small>
+          </button>
+          <button class="phase-btn" id="pbtn-3" onclick="setPhase(3)">
+            <span class="btn-era">Phase 4：1976年〜総括</span>
+            四人組逮捕と北朝鮮の防壁<br><small>（中国の改革開放と北朝鮮「10大原則」完成）</small>
+          </button>
+        </div>
+
+        <div class="meter-cluster">
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">① 大衆狂信・暴力動員度</span>
+              <span class="meter-val" id="m-fan">85%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-fan" style="width: 85%; background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">② 国家機関・法秩序解体度</span>
+              <span class="meter-val" id="m-anar">60%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-anar" style="width: 60%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label-row">
+              <span class="meter-label">③ 中朝対立・国境摩擦指数</span>
+              <span class="meter-val" id="m-fric">45%</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="b-fric" style="width: 45%; background-color: #6366f1;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="svg-diagram-container">
+          <div class="svg-title" id="arch-title">【構造図】Phase 1：紅衛兵蜂起（毛沢東語録を掲げた旧秩序破壊）</div>
+          <svg id="arch-svg" width="100%" height="220" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamically populated via JS -->
+          </svg>
+        </div>
+
+        <div class="phase-desc-box" id="sim-desc">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comparative Table -->
+    <section>
+      <h2 class="section-title">3. 歴史的比較：ソ連大粛清 vs 中国文化大革命 vs 北朝鮮「唯一思想」確立</h2>
+      <p>
+        社会主義陣営における三大政治的粛清・統制運動を比較すると、文化大革命が持っていた特異な「大衆動員性」と、北朝鮮がいかにその罠を回避して絶対君主制へと昇華させたかが浮き彫りになります。
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>ソ連：スターリン大粛清<br><small>1937–1938年</small></th>
+              <th>中国：無産階級文化大革命<br><small>1966–1976年</small></th>
+              <th>北朝鮮：唯一思想体系の確立<br><small>1967–1974年</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>動員の主体</strong></td>
+              <td>国家秘密警察（NKVD）。密室での秘密逮捕と裁判。</td>
+              <td><strong>十代の学生（紅衛兵）・造反派労働者</strong>。街頭での公開吊し上げ。</td>
+              <td><strong>国家保衛省・党組織指導部・三大革命小組</strong>。中央直轄統制。</td>
+            </tr>
+            <tr>
+              <td><strong>党・国家機構の扱い</strong></td>
+              <td>党機構を維持したまま、指導部内の政敵や将校をピンポイントで抹殺。</td>
+              <td><strong>「司令部を砲撃せよ」として既存の全党・行政・司法機構を物理的粉砕</strong>。</td>
+              <td><strong>党機構を絶対不可侵の「神経」として死守</strong>。下からの造反を徹底排除。</td>
+            </tr>
+            <tr>
+              <td><strong>破壊の対象</strong></td>
+              <td>反革命スパイ、元クラーク、党内反対派（オールド・ボリシェヴィキ）。</td>
+              <td>「四旧（旧思想・文化・風俗・習慣）」、伝統文化財、知識人、<strong>走資派官僚</strong>。</td>
+              <td>「宗派分子（甲山派・延安派）」、「ブルジョワ残余思想」、「事大主義」。</td>
+            </tr>
+            <tr>
+              <td><strong>暴力のコントロール</strong></td>
+              <td>スターリンとエジョフによる指令第00447号など、完全な上からのノルマ制。</td>
+              <td><strong>完全な制御不能</strong>。各派閥が重機関銃・大砲を奪って市街戦を展開。</td>
+              <td><strong>完全な上意下達</strong>。生活総和と強制収容所（管理所）による無音の恐怖。</td>
+            </tr>
+            <tr>
+              <td><strong>対外関係への波及</strong></td>
+              <td>第3インターナショナル（コミンテルン）を通じた各国の服従。</td>
+              <td><strong>外交部占拠、各国大使館放火、金日成を「修正主義」と攻撃</strong>。</td>
+              <td>中ソ双方から距離を置く<strong>「自主路線」の宣言</strong>、絶対鎖国体制。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Logic Flow -->
+    <section>
+      <h2 class="section-title">4. 論理展開フロー：文化大革命がいかにして北朝鮮の首領独裁を完成させたか</h2>
+      <p>
+        中国の文化大革命は、単なる隣国の混乱にとどまらず、北朝鮮が自らの政治体制を「首領絶対主義」へと不可逆的に純化させる決定的な触媒となりました。
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-heading">紅衛兵による「金日成批判」の衝撃</div>
+          <div class="flow-desc">
+            北京の街頭で金日成を「贅沢三昧の修正主義者」と罵倒する壁新聞が貼られ、鴨緑江対岸から拡声器で誹謗中傷を浴びせられた。<a href="#ref-3" class="cite-tag">[3]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-heading">「自主路線」宣言による中ソ離脱</div>
+          <div class="flow-desc">
+            ソ連の「修正主義」と中国の「教条主義・大国主義的狂乱」の双方を拒絶し、1966年に独自の「自主路線」を公式宣言。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-heading">甲山派粛清と「唯一思想体系」宣布</div>
+          <div class="flow-desc">
+            文革の余波の中で、国内の経済重視派・満州パルチザン傍流（甲山派）を「反党分派」として一網打尽に粛清（1967年5月全員会議）。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-heading">「10大原則」による下からの反乱遮断</div>
+          <div class="flow-desc">
+            中国のような「下からの大衆造反」を悪夢とみなした金日成・金正日は、首領への絶対服従を義務付ける掟を制定し、世襲君主制を固めた。<a href="#ref-4" class="cite-tag">[4]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Deep Dive Cards -->
+    <section>
+      <h2 class="section-title">5. 深層解説：文化大革命と中朝関係を巡る6大核心テーマ</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">
+            <span>🔥</span>
+            <span>「破四旧」と赤い八月：北京から始まった文明の破壊</span>
+          </div>
+          <p>
+            1966年8月、天安門広場で毛沢東から接見された100万人を超える紅衛兵は、「旧思想・旧文化・旧風俗・旧習慣を打破せよ（破四旧）」と叫んで北京市街へ突入しました。
+          </p>
+          <p>
+            孔子廟や仏教寺院、歴代王朝の墳墓が徹底的に破壊され、貴重な古典籍や美術品が広場で焼き払われました。紅衛兵は教師や大学教授、文化人を「牛鬼蛇神」として三角帽子をかぶせ、墨汁を顔に塗りたくって市中を引き回しました。作家の老舎が耐えかねて湖に入水自殺するなど、わずか1ヶ月の「赤い八月」だけで北京市内において1,700人以上が私刑で惨殺されました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⚔️</span>
+            <span>武闘（全面内戦）：戦車と大砲が火を噴いた奪権闘争</span>
+          </div>
+          <p>
+            1967年の「一月風暴（上海での党・政府権力の強奪）」以降、全国の都市で複数の造反派閥が「誰が本物の毛主席の戦士か」を巡って主導権争いを激化させました。
+          </p>
+          <p>
+            対立は棍棒や投石から、人民解放軍の武器庫を襲撃して奪った自動小銃、重機関銃、対戦車砲、さらには装甲車や砲艇を用いた本格的な軍事衝突（武闘）へと発展しました。特に重慶市や四川省、広西チワン族自治区では正規戦まがいの戦闘が繰り広げられ、数万人規模の市民・労働者が命を落としました。既存の公安・検察・裁判所は完全に機能停止し、国家秩序は消滅しました。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🥀</span>
+            <span>国家元首・劉少奇の惨劇：開封での無惨な獄死</span>
+          </div>
+          <p>
+            文化大革命の最大の標的とされたのが、毛沢東に次ぐ党ナンバー2であり中華人民共和国国家主席であった劉少奇でした。
+          </p>
+          <p>
+            劉少奇は中南海の自宅で紅衛兵による連日の罵倒・暴行を受け、1968年10月の党拡大中央委員会において「党内に隠れた反逆者、内通者、労働貴族」と断罪され、党籍を永久に剥奪されました。重度の糖尿病と肺炎を患いながら十分な治療を与えられず、河南省開封の隔離施設へ極秘移送された劉少奇は、髪は伸び放題、下半身は麻痺した状態で床の上に放置され、1969年11月に悲惨な死を遂げました。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>📢</span>
+            <span>北京の紅衛兵大字報事件：金日成への名指し攻撃と中朝危機</span>
+          </div>
+          <p>
+            文革の狂乱は、隣国北朝鮮の指導者・金日成にも容赦なく向けられました。1967年、北京の街頭には「金日成は贅沢三昧に溺れるブルジョワであり、朝鮮のフルシチョフだ」と罵倒する紅衛兵の大字報が林立しました。
+          </p>
+          <p>
+            中国側の鴨緑江岸には巨大な拡声器が設置され、平壌に向けて非難放送が流されました。金日成は激怒し、中国からの軍事同盟への介入を拒絶。中国外交部を造反派が占拠したことも重なり、中朝関係は朝鮮戦争以来最悪の冷戦期対立状態へと突入しました。この事件は金日成に「大国は中国であれソ連であれ信用できない」という強烈な不信を決定づけました。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>🛡️</span>
+            <span>1967年甲山派粛清と「党の唯一思想体系」宣布</span>
+          </div>
+          <p>
+            中国文革の混乱を目の当たりにした金日成は、1967年5月の朝鮮労働党第4期第15回全員会議において、国内の最大派閥であった「甲山派（朴金喆、李孝淳ら）」を一挙に粛清しました。
+          </p>
+          <p>
+            甲山派は経済建設や民生を重視し、過度な個人崇拝に慎重な立場をとっていました。金日成は彼らを「唯一思想体系に反するブルジョワ宗派分子」と断罪。この会議を契機に、金日成の思想以外のいかなる異論も許さない<strong>「党の唯一思想体系」</strong>が公式宣言されました。中国文革がもたらした衝撃は、北朝鮮における首領独裁制を最終的に完成させる決定的な契機となったのです。<a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>⚖️</span>
+            <span>文革の終焉と「歴史決議」：中国の再建と北朝鮮の固定化</span>
+          </div>
+          <p>
+            1976年9月の毛沢東死去直後、華国鋒、葉剣英らによるクーデターで江青ら「四人組」が逮捕され、10年に及ぶ文化大革命は幕を閉じました。
+          </p>
+          <p>
+            鄧小平指導下の中国共産党は1981年、「建国以来の党の若干の歴史的問題に関する決議」において、文革を「指導者が誤って発動し、反革命集団に利用され、党、国家、人民に重大な災難をもたらした内乱である」と公式に断罪しました。中国がこの教訓から改革開放と集団指導体制へと舵を切ったのに対し、北朝鮮は逆に文革の恐怖を口実にして「10大原則」による王朝的世襲独裁を極限まで固定化させ、正反対の歴史的進路を歩むことになったのです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Primary Sources -->
+    <section>
+      <h2 class="section-title">6. 一次資料・歴史的言説の記録</h2>
+
+      <div class="quote-box">
+        <p>
+          「ブルジョワ階級の学問的権威を徹底的に批判・粉砕し、ブルジョワ階級のイデオロギーを批判し、教育を改革し、文芸を改革し、社会主義の経済基盤に適応しない一切の上部構造を改革せよ。……大衆を大胆に発動し、彼らに自ら教育させ、自ら解放させよ。『造反有理』の革命的精神を大いに発揚せよ！」
+        </p>
+        <div class="quote-author">― 中国共産党中央委員会『プロレタリア文化大革命に関する決定』（いわゆる「十六条」、1966年8月8日）[1]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「諸君、憲法を読みたまえ！私は中華人民共和国の国家主席である。たとえ私一個人を罷免しようとも、人民代表大会の法的手続きを踏まねばならない！なぜ私に発言の機会すら与えないのか？個人の人権をここまで踏みにじることは、我が国の憲法と法秩序に対する最大の冒涜である！」
+        </p>
+        <div class="quote-author">― 劉少奇（1967年8月、中南海で紅衛兵による暴力査問に晒された際の最後の抗議）[2]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「中国で起きているいわゆる『文化大革命』なるものは、マルクス・レーニン主義とは何の関係もない極左的盲動主義であり、大国主義的狂乱にすぎない。彼らは我が国の首領様を誹謗する壁新聞を貼り、国境で騒ぎ立てている。我々は誰の顔色もうかがわない。思想において主体、政治において自主、経済において自立、国防において自衛を貫徹せよ！」
+        </p>
+        <div class="quote-author">― 金日成（朝鮮労働党幹部協議会における内部講話、1967年）[3][4]</div>
+      </div>
+
+      <div class="quote-box">
+        <p>
+          「文化大革命は、プロレタリア独裁下においてプロレタリア階級がブルジョワ階級および一切の搾取階級を転覆するために行った政治的大革命である。この革命は、我が国のプロレタリア独裁を強固にし、資本主義の復活を防ぎ、社会主義を建設するために、完全に必要であり、極めて時宜に適したものであった。」
+        </p>
+        <div class="quote-author">― 中国共産党第9回全国代表大会政治報告（林彪による報告、1969年4月）[1]</div>
+      </div>
+    </section>
+
+    <!-- Section 7: References -->
+    <section>
+      <h2 class="section-title">7. 出典・参考文献・アーカイブ</h2>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：文化大革命 / 概要・経過・紅衛兵と奪権闘争)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://kotobank.jp/word/%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD-130097" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：文化大革命 / 毛沢東の動機と劉少奇迫害・武闘の記録)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://www.wilsoncenter.org/publication/limits-allies-the-sino-north-korean-relationship-during-the-cultural-revolution" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.wilsoncenter.org (Wilson Center：文革期における中朝対立と紅衛兵大字報事件の研究史料)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E5%85%9A%E3%81%AE%E5%94%AF%E4%B8%80%E6%80%9D%E6%83%B3%E4%BD%93%E7%B3%BB%E7%A2%BA%E7%AB%8B%E3%81%AE10%E5%A4%A7%E5%8E%9F%E5%89%87" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：党の唯一思想体系確立の10大原則 / 1967年甲山派粛清から1974年採択へ)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ⑬ ｜ 文化大革命の狂気と終焉</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        id: 0,
+        fanText: "85%（破四旧・天安門接見・赤い八月の私刑）",
+        fanWidth: "85%",
+        fanColor: "#f43f5e",
+        anarText: "60%（学校閉鎖・大串聯・教師・知識人追放）",
+        anarWidth: "60%",
+        anarColor: "#f59e0b",
+        fricText: "45%（北京での批判的言説の芽生え）",
+        fricWidth: "45%",
+        fricColor: "#6366f1",
+        archTitle: "【構造図】Phase 1：紅衛兵蜂起期（1966年）― 「造反有理」と四旧破壊",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="30" y="25" width="220" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="140" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">毛沢東 主席</text>
+          <text x="140" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">天安門広場で紅衛兵に接見</text>
+
+          <rect x="320" y="25" width="210" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="425" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">紅衛兵 (十代の学生)</text>
+          <text x="425" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「造反有理」・毛沢東語録</text>
+
+          <rect x="600" y="25" width="210" height="60" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="2"/>
+          <text x="705" y="48" fill="#f59e0b" font-size="13" font-weight="bold" text-anchor="middle">破四旧と知識人迫害</text>
+          <text x="705" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">寺院破壊・老舎ら自殺</text>
+
+          <rect x="320" y="140" width="210" height="55" rx="8" fill="#162032" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="425" y="163" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">「大串聯」による全国移動</text>
+          <text x="425" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">数千万人が無料鉄道で移動・拡散</text>
+
+          <!-- Arrows -->
+          <line x1="250" y1="55" x2="310" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="530" y1="55" x2="590" y2="55" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="425" y1="85" x2="425" y2="135" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+
+          <defs>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 1：1966年（紅衛兵蜂起と破四旧の狂風）】</strong><br>毛沢東の「司令部を砲撃せよ」を合図に、全国の学生たちが紅衛兵を結成。天安門広場での100万人接見を経て「造反有理」を叫び、寺院・旧跡の破壊や知識人・教師への公開虐待（赤い八月）を展開。既存の学校教育と法秩序が停止しました。<a href='#ref-1' class='cite-tag'>[1]</a>"
+      },
+      {
+        id: 1,
+        fanText: "100%（派閥抗争・重火器による奪権市街戦）",
+        fanWidth: "100%",
+        fanColor: "#f43f5e",
+        anarText: "100%（党・政府・公安の全面機能停止と武闘）",
+        anarWidth: "100%",
+        anarColor: "#f43f5e",
+        fricText: "90%（北京で金日成を修正主義と攻撃・国境緊張）",
+        fricWidth: "90%",
+        fricColor: "#f43f5e",
+        archTitle: "【構造図】Phase 2：全面武闘期（1967〜1968）― 劉少奇打倒と北京の金日成批判",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">中央文革小組 (江青ら)</text>
+          <text x="130" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">「一月風暴」上海奪権の指令</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">全面武闘（内戦状態）</text>
+          <text x="420" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">重機関銃・大砲による市街戦</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2"/>
+          <text x="710" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">劉少奇 国家主席打倒</text>
+          <text x="710" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">党籍剥奪・開封での惨死</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#6366f1" stroke-width="2"/>
+          <text x="420" y="163" fill="#6366f1" font-size="12" font-weight="bold" text-anchor="middle">北京で金日成批判大字報</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">中朝国境での拡声器誹謗合戦</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="420" y1="90" x2="420" y2="135" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+          <defs>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366f1"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 2：1967〜1968年（奪権闘争と全面武闘・中朝対立激化）】</strong><br>造反派が全国の工場や政府機関を占拠（一月風暴）。各派閥が武器庫から重機関銃や大砲を奪って市街戦を繰り広げ、国家機構は麻痺。国家主席・劉少奇は除名・迫害死。さらに北京の紅衛兵は金日成を『修正主義者』と大字報で名指し攻撃し、中朝国境は軍事的緊張に包まれました。<a href='#ref-2' class='cite-tag'>[2]</a><a href='#ref-3' class='cite-tag'>[3]</a>"
+      },
+      {
+        id: 2,
+        fanText: "65%（軍による治安回復と1600万人下放）",
+        fanWidth: "65%",
+        fanColor: "#f59e0b",
+        anarText: "70%（革命委員会による軍管統治）",
+        anarWidth: "70%",
+        anarColor: "#f59e0b",
+        fricText: "35%（林彪暗殺未遂・逃亡墜落死と対外正常化模索）",
+        fricWidth: "35%",
+        fricColor: "#10b981",
+        archTitle: "【構造図】Phase 3：軍管・林彪事件期（1968〜1971）― 下放運動と文革神話の破綻",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">毛沢東 ＆ 林彪元帥</text>
+          <text x="130" y="67" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">人民解放軍による軍事統制</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">上山下郷運動 (下放)</text>
+          <text x="420" y="67" fill="#06b6d4" font-size="11" font-weight="bold" text-anchor="middle">暴走した紅衛兵1600万人を農村追放</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="710" y="48" fill="#f43f5e" font-size="13" font-weight="bold" text-anchor="middle">林彪事件 (1971)</text>
+          <text x="710" y="67" fill="#cbd5e1" font-size="11" text-anchor="middle">毛暗殺計画失敗・墜落炎死</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">文革イデオロギーの破綻</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">「後継者」の反逆に国民が幻滅</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="420" y1="90" x2="420" y2="135" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+
+          <defs>
+            <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 3：1968〜1971年（軍事軍管・知識青年下放と林彪事件）】</strong><br>暴走した紅衛兵を抑え込むため軍が介入し、1,600万人もの青年を農村へ強制追放（下放）。さらに毛沢東の「法定後継者」とされた林彪が毛暗殺に失敗してソ連逃亡中に墜落死（林彪事件）。党の公式後継者が一夜にして『売国奴』とされたことで、文革神話は致命的に崩壊しました。<a href='#ref-1' class='cite-tag'>[1]</a>"
+      },
+      {
+        id: 3,
+        fanText: "0%（中国：四人組逮捕・改革開放と文革断罪）",
+        fanWidth: "2%",
+        fanColor: "#10b981",
+        anarText: "0%（中国：法治秩序再建 / 北朝鮮：首領絶対制）",
+        anarWidth: "2%",
+        anarColor: "#10b981",
+        fricText: "10%（中朝関係改善・北朝鮮は唯一思想10大原則固定）",
+        fricWidth: "10%",
+        fricColor: "#10b981",
+        archTitle: "【構造図】Phase 4：四人組逮捕と北朝鮮の防壁（1976〜現代）― 正反対の歴史的帰結",
+        svgContent: `
+          <!-- Nodes -->
+          <rect x="20" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <text x="130" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">中国：四人組逮捕 (1976)</text>
+          <text x="130" y="67" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">文革終結・鄧小平の改革開放</text>
+
+          <rect x="310" y="25" width="220" height="65" rx="8" fill="#162032" stroke="#10b981" stroke-width="2"/>
+          <text x="420" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">1981年「歴史決議」</text>
+          <text x="420" y="67" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">文革を「重大な内乱」と公式断罪</text>
+
+          <rect x="600" y="25" width="220" height="65" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="710" y="48" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">北朝鮮：唯一思想10大原則</text>
+          <text x="710" y="67" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">文革を反面教師に首領世襲完成</text>
+
+          <rect x="310" y="140" width="220" height="55" rx="8" fill="#162032" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="420" y="163" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">大衆造反の完全封殺</text>
+          <text x="420" y="181" fill="#cbd5e1" font-size="11" text-anchor="middle">生活総和と管理所で異論を根絶</text>
+
+          <!-- Arrows -->
+          <line x1="240" y1="57" x2="300" y2="57" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+          <line x1="530" y1="57" x2="590" y2="57" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+          <line x1="710" y1="90" x2="530" y2="155" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+          <defs>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-flow">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#10b981"/>
+            </marker>
+          </defs>
+        `,
+        desc: "<strong>【Phase 4：1976年〜総括（四人組逮捕と北朝鮮の防壁完成）】</strong><br>毛沢東の死直後に四人組が逮捕され、1981年の歴史決議で文革は『党と人民に壊滅的打撃を与えた内乱』と断罪。中国が改革開放へ舵を切る一方、北朝鮮は文革の暴走を冷徹な反面教師とし、1974年の『10大原則』によって大衆蜂起の芽を完全に摘み取り、首領への絶対服従と三代世襲の閉鎖国家を完成させました。<a href='#ref-4' class='cite-tag'>[4]</a>"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-fan').textContent = p.fanText;
+      const bFan = document.getElementById('b-fan');
+      bFan.style.width = p.fanWidth;
+      bFan.style.backgroundColor = p.fanColor;
+
+      document.getElementById('m-anar').textContent = p.anarText;
+      const bAnar = document.getElementById('b-anar');
+      bAnar.style.width = p.anarWidth;
+      bAnar.style.backgroundColor = p.anarColor;
+
+      document.getElementById('m-fric').textContent = p.fricText;
+      const bFric = document.getElementById('b-fric');
+      bFric.style.width = p.fricWidth;
+      bFric.style.backgroundColor = p.fricColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    setPhase(0);
+  </script>
+</body>
+</html>
