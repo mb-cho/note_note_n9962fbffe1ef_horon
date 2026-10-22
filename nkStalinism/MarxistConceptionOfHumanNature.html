@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：史的唯物論の人間観と首領論 ― 「社会的諸関係の総体」からスターリンの歯車論、そして北朝鮮「社会政治的生命体論」への転倒</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: linear-gradient(135deg, var(--primary), #8b5cf6);
+      color: #fff;
+      border-color: #8b5cf6;
+      font-weight: 700;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.2);
+      color: #fda4af;
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fde68a;
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Sections */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-style: italic;
+      color: #fde68a;
+    }
+
+    .quote-source {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      text-align: right;
+      font-style: normal;
+    }
+
+    /* Grid layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .sub-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sub-card h3 {
+      font-size: 1.05rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .phase-selector {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      flex: 1 1 200px;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Gauge / Metrics */
+    .metrics-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .metric-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: #334155;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* Diagram Canvas */
+    .arch-diagram {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .diagram-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .svg-container {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .desc-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(22, 32, 50, 0.5);
+    }
+
+    /* Source Links / Footnotes */
+    .source-list {
+      list-style-type: none;
+    }
+
+    .source-list li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .source-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .phase-btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+        <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気と終焉</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と8月宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と朝鮮戦争・廬山会議の悲劇</a>
+        <a href="HungarianRevolution.html" class="nav-link">⑯ ハンガリー動乱と東欧の悲劇</a>
+        <a href="ChollimaMovement.html" class="nav-link">⑰ 千里馬運動と大衆総動員体制</a>
+        <a href="SpeechByKimIlsung.html" class="nav-link">⑱ 1955年金日成演説と主体の原像</a>
+        <a href="Kapsan.html" class="nav-link">⑲ 甲山派粛清と唯一思想体系</a>
+        <a href="Soviet.html" class="nav-link">⑳ ソビエト制度の原像と変容</a>
+        <a href="MarxistConceptionOfHumanNature.html" class="nav-link active">㉑ 史的唯物論の人間観と首領論</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">KDP補論シリーズ 第21編</span>
+        <span class="badge badge-emerald">フォイエルバッハ・テーゼ第6</span>
+        <span class="badge badge-amber">スターリンの「歯車・ネジ」論</span>
+        <span class="badge badge-alert">社会政治的生命体論の神権専制</span>
+      </div>
+      <h1>史的唯物論の人間観と首領論</h1>
+      <p class="subtitle">マルクスの「社会的諸関係の総体」としての人間解放思想は、いかにしてスターリン主義の部品化を経て、北朝鮮「首領＝脳髄、人民＝手足」の絶対隷属哲学へと転倒したか</p>
+    </header>
+
+    <!-- Section 1: 問題の所在 -->
+    <section class="card">
+      <h2 class="card-title">1. 問題の所在：マルクスにおける「人間の解放」と、全体主義における「有機的隷属」への転倒</h2>
+      <p>カール・マルクスが打ち立てた史的唯物論（唯物史観）の核心には、**「人間とはいかなる存在か」**という根源的な人間観が横たわっている。1845年の『フォイエルバッハに関するテーゼ』第6テーゼにおいて、マルクスは「人間の本質は、ある個体に宿る抽象物ではない。その現実性においては、**社会的諸関係の総体**である」と喝破した。人間は神によって創造された客体でも、孤立した抽象的個人でもなく、自然に対する実践的な働きかけ（労働）を通じて社会関係を結び、歴史と自己自身を形成していく変革の主体であると位置づけられた。</p>
+      <p style="margin-top: 0.85rem;">マルクスにとって共産主義の目的とは、資本主義が生み出す「疎外された労働」（人間が自らの生み出した生産物や社会機構の奴隷となる現象）を止揚し、すべての個人が自由かつ全面的にその諸能力を発展させうる「自由なアソシエーション」を実現することであった。しかし、ソヴィエト連邦から北朝鮮に至る20世紀の現実の社会主義体制が辿った軌跡は、この崇高な人間解放の理念を無残にも粉砕し、真逆の**「首領への絶対的肉体・精神の隷属」**へと転倒させていった。</p>
+      
+      <div class="quote-box">
+        「個々人の肉体的生命には限りがあるが、首領・党・大衆が一体となった社会政治的生命は不滅である。人間は首領の指導に無条件で服従し、その思想を唯一の血液として生きるとき、初めて真の尊厳と永生を獲得する。」
+        <div class="quote-source">― 金正日『革命的首領観をしっかりと確立することについて』（1986年）</div>
+      </div>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① マルクスの原像：実践的・解放的主体</h3>
+          <p>宗教的宿命論やブルジョワ的利己主義を退け、労働を通じた自律的自己産出と、階級闘争による不条理な社会構造の変革を説いた解放の哲学。</p>
+        </div>
+        <div class="sub-card">
+          <h3>② スターリンの機械論：国家の部品・歯車（ヴィンチク）</h3>
+          <p>五カ年計画と重工業化の遂行において、人間を「国家マシーンを動かす交換可能な機能部品」へと格下げし、思想改造と大粛清によって規格化。</p>
+        </div>
+        <div class="sub-card">
+          <h3>③ 北朝鮮の神権論：社会政治的生命体論</h3>
+          <p>黄長燁が構想した「人間中心の主体思想」を金日成・金正日が簒奪。「首領は脳髄、党は神経系、大衆は手足」とする生物学的有機体論へ接合し、現人神独裁を完成。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: インタラクティブ動態シミュレーター -->
+    <section class="card">
+      <h2 class="card-title">2. インタラクティブ動態シミュレーター：人間観の変貌と首領専制への4段階</h2>
+      <p>各フェーズをクリックして、マルクスの解放的主体論が、スターリン主義の部品化、主体思想の人間中心主義を通過し、いかにして北朝鮮の首領専制・神権有機体論へと反転したか、その力学を検証してください。</p>
+
+      <!-- Phase Selector Buttons -->
+      <div class="phase-selector" role="tablist">
+        <button id="pbtn-0" class="phase-btn active" onclick="setPhase(0)" role="tab">Phase 1: 1845年 マルクス原典<br>社会的諸関係の総体と疎外の克服</button>
+        <button id="pbtn-1" class="phase-btn" onclick="setPhase(1)" role="tab">Phase 2: 1930s スターリン体制<br>国家の歯車・部品（ヴィンチク）化</button>
+        <button id="pbtn-2" class="phase-btn" onclick="setPhase(2)" role="tab">Phase 3: 1970s 主体思想の誕生<br>「人間中心」の標榜と二重構造</button>
+        <button id="pbtn-3" class="phase-btn" onclick="setPhase(3)" role="tab">Phase 4: 1980s〜 社会政治的生命体<br>首領＝脳髄、人民＝手足の神権専制</button>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-container">
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>人間の自律的自己決定・解放度</span>
+            <span id="m-auto" class="metric-val">90%（労働による自己実現・疎外の止揚）</span>
+          </div>
+          <div class="bar-bg">
+            <div id="b-auto" class="bar-fill" style="width: 90%; background-color: var(--accent-emerald);"></div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>国家・党機構による部品化・規格化</span>
+            <span id="m-gear" class="metric-val">15%（国家の道具化を批判・アソシエーション構想）</span>
+          </div>
+          <div class="bar-bg">
+            <div id="b-gear" class="bar-fill" style="width: 15%; background-color: var(--primary);"></div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>首領（現人神）への有機的隷属度</span>
+            <span id="m-sub" class="metric-val">0%（個人崇拝・絶対権能の完全否定）</span>
+          </div>
+          <div class="bar-bg">
+            <div id="b-sub" class="bar-fill" style="width: 2%; background-color: var(--accent-cyan);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture Diagram (SVG) -->
+      <div class="arch-diagram">
+        <div id="arch-title" class="diagram-title">【動態構造図】Phase 1：1845年 マルクス原典 ― 「社会的諸関係の総体」と実践的変革主体</div>
+        <div class="svg-container">
+          <svg id="arch-svg" viewBox="0 0 760 260" width="100%" height="260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamic SVG injected by JS -->
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dynamic Description -->
+      <div id="sim-desc" class="desc-box">
+        <!-- Dynamic text injected by JS -->
+      </div>
+    </section>
+
+    <!-- Section 3: 構造比較分析 -->
+    <section class="card">
+      <h2 class="card-title">3. 比較分析：共産主義思想における「人間観」の系統的変遷</h2>
+      <p>マルクスからスターリン、毛沢東、そして北朝鮮の金日成・金正日に至る人間観の定義、国家との関係、政治的帰結を対比検証します。</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>① マルクス原典（唯物史観）</th>
+              <th>② スターリン主義（ソ連）</th>
+              <th>③ 毛沢東思想（中国）</th>
+              <th>④ 北朝鮮（社会政治的生命体論）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>人間の本質定義</strong></td>
+              <td>「社会的諸関係の総体」<br>実践的労働を通じた自己産出</td>
+              <td>社会主義建設を担う「国家の歯車・部品（ヴィンチク）」</td>
+              <td>階級闘争を通じて不断に自己批判・思想改造される大衆</td>
+              <td>「自主性・創造性・意識性」をもつが、首領なしには無力な細胞</td>
+            </tr>
+            <tr>
+              <td><strong>生命・価値の源泉</strong></td>
+              <td>現実の物質的生活・労働と類的本質の実践</td>
+              <td>国家計画経済のノルマ達成と党への機能的貢献</td>
+              <td>革命的実践（大衆路線）と毛主席への忠誠心</td>
+              <td><strong>首領から授受される「社会政治的生命」</strong>（肉体的生命の従属）</td>
+            </tr>
+            <tr>
+              <td><strong>国家・指導者との関係</strong></td>
+              <td>国家死滅を展望・個人の自由な共同体（アソシエーション）</td>
+              <td>強力な党・国家官僚制への絶対的規格化・上意下達</td>
+              <td>大衆総動員（文革）による官僚批判と毛沢東神格化</td>
+              <td><strong>首領（脳髄）＝党（神経）＝大衆（手足）</strong>の完全有機体</td>
+            </tr>
+            <tr>
+              <td><strong>異論・個性の位置づけ</strong></td>
+              <td>個性の全面的開花こそが共産主義の目的</td>
+              <td>「反革命宗派・トロツキスト」として排除・銃殺</td>
+              <td>「ブルジョワ反動分子」として三角帽子を被せられ糾弾</td>
+              <td><strong>脳髄（首領）に逆らう「がん細胞・毒草」</strong>として一族管理所収容</td>
+            </tr>
+            <tr>
+              <td><strong>歴史的・政治的帰結</strong></td>
+              <td><strong>人間解放のユートピア構想</strong></td>
+              <td><strong>工業化優先の全体主義官僚支配</strong></td>
+              <td><strong>大衆熱狂と文化大革命の破滅的混乱</strong></td>
+              <td><strong>白頭血統三代世襲の神権的現人神王朝</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 深層分析 -->
+    <section class="card">
+      <h2 class="card-title">4. 深層分析：なぜ「唯物論の人間観」は「首領専制の神権哲学」へと転落したのか</h2>
+      <p>客観的物質的条件を重視するはずの唯物史観が、なぜ極端な観念論であり封建的な専制支配の正当化論へと化石化したのか、3つの深層力学から解剖します。</p>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 黄長燁の「人間中心哲学」の挫折と金正日による簒奪</h3>
+          <p>黄長燁（元労働党国際担当書記・最高人民会議議長）は、スターリン主義の機械的決定論（人間を物質や生産力の奴隷とする教条）を批判し、「世界において人間が最も発展した存在であり、世界の主人である」とする哲学的定立を試みた。しかし金正日はこれを権力掌握のために逆用。「人間が世界の主人であるならば、その人間を導く『最高指導者（首領）』こそが万能の主人である」と強弁し、哲学を首領絶対化の道具へと完全にすり替えた。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>② 「二重の生命論」がもたらした完全な精神的支配</h3>
+          <p>北朝鮮体制の最も凶悪な理論的発明は、「肉体的生命」と「社会政治的生命」の分離である。親から受け継ぐ肉体の生命はせいぜい数十年の有限なものに過ぎないが、首領への忠誠を通じて授かる社会政治的生命は肉体が滅びても永遠に続く（永生）とされる。このロジックにより、首領のために命を捨てて死ぬことこそが「最大の栄誉であり永遠の生命を得る道」と教化され、特攻・殉職を惜しまない全体主義的自爆心理が完成した。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>③ 儒教的家父長観念とスターリン主義有機体論の野合</h3>
+          <p>マルクスの唯物史観は近代西欧の個人主義と市民社会批判を前提としていたが、これが東アジア・朝鮮半島に移植された際、伝統的な朱子学・儒教の「忠孝一体観」「家父長制」と奇形的に融合した。首領は国家という巨大な「大家族」の絶対的慈父（オボイ）となり、党は母、人民は従順な子どもと位置づけられた。科学的社会主義の看板を掲げながら、その中身は中世封建王朝の神聖君主論へと退行したのである。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 一次資料と学術文献 -->
+    <section class="card">
+      <h2 class="card-title">5. 一次資料と重要文献</h2>
+      <p>史的唯物論の原初的人間観、スターリン主義の部品化論、そして北朝鮮における社会政治的生命体論の形成過程を示す一次文献です。</p>
+
+      <ul class="source-list">
+        <li>
+          <strong>カール・マルクス『フォイエルバッハに関するテーゼ』第6テーゼ（1845年）</strong><br>
+          「フォイエルバッハは宗教的本質を人間の本質に解消する。しかし人間の本質は、ある個体に宿る抽象物ではない。その現実性においては、それは社会的諸関係の総体である。」
+        </li>
+        <li>
+          <strong>カール・マルクス『経済学・哲学草稿』（1844年）</strong><br>
+          「労働の対象は、人間の類的生命の対象化である。人間は対象的世界において自らを二重化し、自ら作り出した世界の中で自分自身を直観する。」
+        </li>
+        <li>
+          <strong>I.V.スターリン「赤軍士官学校卒業生大会での演説」（1935年5月4日）</strong><br>
+          「我々の偉大な国家機構において、指導者だけでなく、無名で目立たない小さな人々こそが大切である。彼らは巨大な国家機構を動かす小さなネジ（歯車）である。」
+        </li>
+        <li>
+          <strong>金正日『主体思想について』（1982年3月31日）</strong><br>
+          「人間は自主性と創造性、意識性をもつ社会的自我である。人間が自らの運命を開拓するためには、卓越した首領の指導を絶対に受けなければならない。」
+        </li>
+        <li>
+          <strong>金正日『革命的首領観をしっかりと確立することについて』（1986年10月10日）</strong><br>
+          「首領、党、大衆は運命を共にする一つの社会政治的生命体である。首領はこの生命体の最高の脳髄であり、指導の中心である。手足が脳髄の命令に従って動くように、大衆は首領の意思に無条件に従わねばならない。」
+        </li>
+        <li>
+          <strong>参考文献</strong>：
+          黄長燁『黄長燁回顧録 ― 朝鮮労働党元書記の証言』、和田春樹『北朝鮮現代史』、徐大粛『金日成と金正日』、今村仁司『労働の疎外論』。
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論シリーズ 第21編 / 著者: mb_cho</p>
+      <p style="margin-top: 0.35rem; font-size: 0.8rem; color: #6b7280;">Standalone HTML Edition with Historical Conception of Human Nature Simulator</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript for Interactive Simulator -->
+  <script>
+    const phases = [
+      {
+        autoText: "90%（労働による自己実現・疎外の止揚）",
+        autoWidth: "90%",
+        autoColor: "var(--accent-emerald)",
+        gearText: "15%（国家の道具化を批判・アソシエーション構想）",
+        gearWidth: "15%",
+        gearColor: "var(--primary)",
+        subText: "0%（個人崇拝・絶対権能の完全否定）",
+        subWidth: "2%",
+        subColor: "var(--accent-cyan)",
+        archTitle: "【動態構造図】Phase 1：1845年 マルクス原典 ― 「社会的諸関係の総体」と実践的変革主体",
+        svgContent: `
+          <rect x="50" y="30" width="280" height="85" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <text x="190" y="58" fill="#6ee7b7" font-size="14" font-weight="bold" text-anchor="middle">自律的個人（実践的主体）</text>
+          <text x="190" y="80" fill="#cbd5e1" font-size="11" text-anchor="middle">労働を通じた自然の改変と自己産出</text>
+          <text x="190" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">【類の自由】疎外された労働の克服を目指す</text>
+
+          <path d="M 330 72 L 430 72" stroke="#10b981" stroke-width="3" stroke-dasharray="4"/>
+          
+          <rect x="430" y="30" width="280" height="85" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+          <text x="570" y="58" fill="#67e8f9" font-size="14" font-weight="bold" text-anchor="middle">社会的諸関係の総体</text>
+          <text x="570" y="80" fill="#cbd5e1" font-size="11" text-anchor="middle">生産関係・共同体・歴史的連帯</text>
+          <text x="570" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">各人の自由な発展が全員の自由の条件</text>
+
+          <rect x="180" y="155" width="400" height="70" rx="8" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
+          <text x="380" y="185" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">人間観の本質：自由なアソシエーション（共同社会）</text>
+          <text x="380" y="207" fill="#cbd5e1" font-size="11" text-anchor="middle">国家機構や権力の奴隷となることを全否定・人間の全面解放</text>
+        `,
+        desc: "<strong>【Phase 1 状況解説】</strong> カール・マルクスは『フォイエルバッハに関するテーゼ』第6テーゼにおいて、人間を固定的な本質をもつ抽象的個体ではなく、『社会的諸関係の総体』と定義した。人間は自然へ労働を働きかけることによって自己自身と歴史を創造する。資本主義のもとで人間が疎外され、商品や資本の奴隷となる状況を止揚し、自由な諸個人の自律的結合（アソシエーション）を実現することこそが共産主義の目的であった。"
+      },
+      {
+        autoText: "25%（党の計画への従属・個性の抑圧）",
+        autoWidth: "25%",
+        autoColor: "var(--accent-amber)",
+        gearText: "85%（五カ年計画を動かす機能部品・規格化）",
+        gearWidth: "85%",
+        gearColor: "var(--primary)",
+        subText: "60%（書記長スターリンへの無条件追従）",
+        subWidth: "60%",
+        subColor: "var(--accent-red)",
+        archTitle: "【動態構造図】Phase 2：1930年代 スターリン体制 ― 「国家の小さなネジ・歯車（ヴィンチク）」化",
+        svgContent: `
+          <rect x="230" y="20" width="300" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="380" y="45" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">スターリン（国家計画・巨大装置）</text>
+          <text x="380" y="65" fill="#cbd5e1" font-size="10" text-anchor="middle">五カ年計画・重工業化・コルホーズ集団化の至上命令</text>
+
+          <path d="M 380 80 L 380 120" stroke="#f43f5e" stroke-width="3"/>
+          
+          <rect x="180" y="120" width="400" height="75" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="380" y="145" fill="#fde68a" font-size="13" font-weight="bold" text-anchor="middle">「国家の小さな歯車・ネジ（ヴィンチク）」</text>
+          <text x="380" y="165" fill="#cbd5e1" font-size="11" text-anchor="middle">スタハノフ運動（労働ノルマ達成）／自己犠牲の美化</text>
+          <text x="380" y="182" fill="#fca5a5" font-size="10" text-anchor="middle">規格に合わない歯車（異論・不満）は即座に大粛清・グラグ送り</text>
+
+          <text x="380" y="230" fill="#94a3b8" font-size="11" text-anchor="middle">【転倒】主体であった人間が、国家マシーンを動かす交換可能な道具へ退行</text>
+        `,
+        desc: "<strong>【Phase 2 状況解説】</strong> スターリン体制下のソ連において、人間観は急速に機械論的・機能主義的なものへと変質した。1935年の演説でスターリン自身が述べたように、大衆は巨大な国家機構を円滑に回すための『小さなネジ・歯車（ヴィンチク）』と位置づけられた。人間性は重工業化のノルマ達成やスタハノフ運動の生産性に還元され、規格に収まらない自律的知性や個性は『反革命分子』として粛清・矯正収容所（グラグ）へと送られた。"
+      },
+      {
+        autoText: "35%（自主性を謳うが、首領への忠誠が前提）",
+        autoWidth: "35%",
+        autoColor: "var(--accent-amber)",
+        gearText: "70%（党指導部による思想統一・生活総和）",
+        gearWidth: "70%",
+        gearColor: "var(--primary)",
+        subText: "75%（首領の指導を受けねば自主性を発揮不能）",
+        subWidth: "75%",
+        subColor: "var(--accent-red)",
+        archTitle: "【動態構造図】Phase 3：1970年代 主体思想の誕生 ― 「人間中心」の標榜と首領論の接合",
+        svgContent: `
+          <rect x="150" y="20" width="460" height="65" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+          <text x="380" y="45" fill="#67e8f9" font-size="14" font-weight="bold" text-anchor="middle">主体思想の命題：「人間はすべての主であり決定者」</text>
+          <text x="380" y="68" fill="#cbd5e1" font-size="11" text-anchor="middle">黄長燁が理論化した人間中心哲学（自主性・創造性・意識性）</text>
+
+          <path d="M 380 85 L 380 120" stroke="#a855f7" stroke-width="3"/>
+          
+          <rect x="180" y="120" width="400" height="75" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+          <text x="380" y="145" fill="#d8b4fe" font-size="13" font-weight="bold" text-anchor="middle">金日成・金正日によるすり替えの罠</text>
+          <text x="380" y="165" fill="#cbd5e1" font-size="11" text-anchor="middle">「大衆は自らの力だけでは自らの運命を開拓できない」</text>
+          <text x="380" y="182" fill="#fda4af" font-size="10" font-weight="bold" text-anchor="middle">卓越した首領の正しい指導を受けて初めて自主的主体となれる</text>
+
+          <text x="380" y="230" fill="#94a3b8" font-size="11" text-anchor="middle">【二重構造】人権・ヒューマニズムの装飾を用いて、首領絶対化へ論理を誘導</text>
+        `,
+        desc: "<strong>【Phase 3 状況解説】</strong> 1970年代、黄長燁らが定立した初期の主体思想哲学は、『人間は自主性・創造性・意識性をもつ世界の主人公である』と宣言し、マルクス・レーニン主義の物質的決定論を超克する人間中心哲学を装った。しかし金正日はこの理論を巧妙に歪曲し、『大衆は客観的世界の主人であるが、首領の指導を仰がなければ目先の利益に惑わされる盲目的な存在である』と規定。人間中心という甘美な言葉を足場にして、首領絶対化の土台が築かれた。"
+      },
+      {
+        autoText: "0%（自律性の完全喪失・首領の教示が唯一の思考）",
+        autoWidth: "2%",
+        autoColor: "#334155",
+        gearText: "100%（生活総和・思想検証による完全ロボット化）",
+        gearWidth: "100%",
+        gearColor: "var(--accent-red)",
+        subText: "100%（首領＝脳髄、人民＝手足・社会政治的生命）",
+        subWidth: "100%",
+        subColor: "var(--accent-red)",
+        archTitle: "【動態構造図】Phase 4：1980年代〜総括 ― 「社会政治的生命体論」と神権的肉体・精神隷属",
+        svgContent: `
+          <rect x="220" y="15" width="320" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="3"/>
+          <text x="380" y="38" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">首領（最高の脳髄・生命の母体）</text>
+          <text x="380" y="58" fill="#cbd5e1" font-size="10" text-anchor="middle">白頭血統現人神・社会政治的生命を人民に付与する唯一の源泉</text>
+
+          <path d="M 380 75 L 380 115" stroke="#f43f5e" stroke-width="3"/>
+          
+          <rect x="250" y="115" width="260" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="380" y="140" fill="#fde68a" font-size="12" font-weight="bold" text-anchor="middle">朝鮮労働党（神経系統・伝達器官）</text>
+
+          <path d="M 380 155 L 380 190" stroke="#f59e0b" stroke-width="3"/>
+          
+          <rect x="150" y="190" width="460" height="55" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+          <text x="380" y="212" fill="#cbd5e1" font-size="13" font-weight="bold" text-anchor="middle">人民大衆（手足・末梢細胞）</text>
+          <text x="380" y="232" fill="#f43f5e" font-size="10" font-weight="bold" text-anchor="middle">脳髄（首領）から切り離された個体は「死んだ肉体」／忠誠による永生</text>
+        `,
+        desc: "<strong>【Phase 4 状況解説】</strong> 1980年代後半、金正日は『社会政治的生命体論』を公式化した。人間には親から与えられた有限な『肉体的生命』と、首領から授与される不滅の『社会政治的生命』の2つがあり、首領（脳髄）・党（神経系統）・大衆（手足）は不可分の三位一体であるとした。この神権的有機体論により、首領の教示に対する批判や躊躇は、自らの肉体を腐らせる『がん細胞』と同一視され、絶対的狂信と完全な奴隷化が哲学的に完成された。"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-auto').textContent = p.autoText;
+      const bAuto = document.getElementById('b-auto');
+      bAuto.style.width = p.autoWidth;
+      bAuto.style.backgroundColor = p.autoColor;
+
+      document.getElementById('m-gear').textContent = p.gearText;
+      const bGear = document.getElementById('b-gear');
+      bGear.style.width = p.gearWidth;
+      bGear.style.backgroundColor = p.gearColor;
+
+      document.getElementById('m-sub').textContent = p.subText;
+      const bSub = document.getElementById('b-sub');
+      bSub.style.width = p.subWidth;
+      bSub.style.backgroundColor = p.subColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
