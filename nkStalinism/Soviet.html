@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：ソビエト制度の原像と変容 ― 直接民主制の評議会からボリシェヴィキ独裁、そして北朝鮮「最高人民会議」のゴム印ファサードへ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-sub: #162032;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-red: #f43f5e;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .nav-link.active {
+      background: linear-gradient(135deg, var(--primary), #8b5cf6);
+      color: #fff;
+      border-color: #8b5cf6;
+      font-weight: 700;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.2);
+      color: #fda4af;
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fde68a;
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Sections */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-style: italic;
+      color: #fde68a;
+    }
+
+    .quote-source {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      text-align: right;
+      font-style: normal;
+    }
+
+    /* Grid layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .sub-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sub-card h3 {
+      font-size: 1.05rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Interactive Simulator */
+    .phase-selector {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      flex: 1 1 200px;
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .phase-btn:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Gauge / Metrics */
+    .metrics-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .metric-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: #334155;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    /* Diagram Canvas */
+    .arch-diagram {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .diagram-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .svg-container {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .desc-box {
+      background: var(--bg-card-sub);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(22, 32, 50, 0.5);
+    }
+
+    /* Source Links / Footnotes */
+    .source-list {
+      list-style-type: none;
+    }
+
+    .source-list li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .source-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .phase-btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+        <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁論</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命論</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察の系譜</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の原像と変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型と変容</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』とスターリン神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ プロレタリア独裁下の継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気と終焉</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と8月宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と朝鮮戦争・廬山会議の悲劇</a>
+        <a href="HungarianRevolution.html" class="nav-link">⑯ ハンガリー動乱と東欧の悲劇</a>
+        <a href="ChollimaMovement.html" class="nav-link">⑰ 千里馬運動と大衆総動員体制</a>
+        <a href="SpeechByKimIlsung.html" class="nav-link">⑱ 1955年金日成演説と主体の原像</a>
+        <a href="Kapsan.html" class="nav-link">⑲ 甲山派粛清と唯一思想体系</a>
+        <a href="Soviet.html" class="nav-link active">⑳ ソビエト制度の原像と変容</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">KDP補論シリーズ 第20編</span>
+        <span class="badge badge-emerald">パリ・コミューンからクロンシュタットへ</span>
+        <span class="badge badge-amber">1936年スターリン憲法</span>
+        <span class="badge badge-alert">最高人民会議のファサード化</span>
+      </div>
+      <h1>ソビエト制度の原像と変容</h1>
+      <p class="subtitle">直接民主制の労働者評議会はいかにしてボリシェヴィキに簒奪され、スターリン主義のゴム印議会、そして北朝鮮「最高人民会議」の独裁装飾へと堕落したか</p>
+    </header>
+
+    <!-- Section 1: 問題の所在 -->
+    <section class="card">
+      <h2 class="card-title">1. 問題の所在：「すべての権力をソビエトへ」という熱狂の逆転と、全体主義国家の「議会ファサード」</h2>
+      <p>「ソビエト（ロシア語: Совет）」とは、本来「話し合い」「評議会」を意味する普通名詞である。1905年の第1次ロシア革命および1917年の二月革命において、工場労働者、前線の兵士、小作農民らが自然発生的に組織した**直接民主制の大衆自治組織**であった。既存のブルジョワ代議制議会（ドゥーマ）が特権階級の利益を代表する「空談の場」であったのに対し、ソビエトは労働現場から直接選出され、いつでも不適格者を即時リコール（解職）でき、自ら法律を定めて自ら執行する「行動するコミューン型機関」として熱狂的に迎えられた。</p>
+      <p style="margin-top: 0.85rem;">ウラジーミル・レーニンは1917年の『四月テーゼ』で「すべての権力をソビエトへ！」というスローガンを掲げ、続く『国家と革命』において、常備軍や警察、官僚制を廃絶し、全武装人民の直接統治機関としての「ソビエト共和国」を人類最高の民主主義モデルとして称揚した。しかし、十月革命を経てボリシェヴィキが一党独裁を確立していく過程で、この崇高な理想は真逆の現実へと転落していった。</p>
+      
+      <div class="quote-box">
+        「ソビエトは死んだ。残ったのは、ボリシェヴィキの官僚機構とチェーカーの銃口だけだ。我々が求めたのは、自由な選挙による真の労働者・農民ソビエトであり、党の独裁ではない。」
+        <div class="quote-source">― クロンシュタット反乱軍『イスヴェスチヤ』第1号（1921年3月）</div>
+      </div>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 直接自治の簒奪（クロンシュタットの悲劇）</h3>
+          <p>1918年の憲法制定会議の武力解散に始まり、メンシェヴィキや社会革命党（エス・エル）の排除、そして1921年の「党なきソビエト」を掲げたクロンシュタット水兵の武力虐殺を経て、ソビエトは実質的にボリシェヴィキの「伝達ベルト（下請け機関）」へと変質させられた。</p>
+        </div>
+        <div class="sub-card">
+          <h3>② スターリン憲法（1936年）によるゴム印化の完成</h3>
+          <p>「世界で最も民主的な憲法」と豪語されたスターリン憲法下の最高会議（最高ソビエト）は、秘密警察（NKVD）の恐怖政治の下、単一候補者に対する「賛成率99.9%」の拍手マシーンとして、大粛清や強制収容所（グラグ）支配を合法化する装飾物に堕落した。</p>
+        </div>
+        <div class="sub-card">
+          <h3>③ 北朝鮮への移植：人民委員会から「最高人民会議」へ</h3>
+          <p>1945年解放直後、朝鮮半島各地に自然発生した自治機関「人民委員会」をソ連軍政が接収。1948年に創設された「最高人民会議」は、金日成の「唯一思想体系」と神権世襲独裁を、一握りの異論も許さず万場一致で追認する完全な「劇場の舞台装置」となった。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: インタラクティブ動態シミュレーター -->
+    <section class="card">
+      <h2 class="card-title">2. インタラクティブ動態シミュレーター：ソビエト制度の堕落と形骸化の4段階</h2>
+      <p>各フェーズをクリックして、原初の自発的労働者自治組織が、ボリシェヴィキの党独裁、スターリンの官僚支配を経て、北朝鮮における首領制独裁のファサード（隠れ蓑）へと転落していく権力力学を検証してください。</p>
+
+      <!-- Phase Selector Buttons -->
+      <div class="phase-selector" role="tablist">
+        <button id="pbtn-0" class="phase-btn active" onclick="setPhase(0)" role="tab">Phase 1: 1905〜1917年<br>原初ソビエトの直接民主制</button>
+        <button id="pbtn-1" class="phase-btn" onclick="setPhase(1)" role="tab">Phase 2: 1918〜1921年<br>ボリシェヴィキ簒奪とクロンシュタット</button>
+        <button id="pbtn-2" class="phase-btn" onclick="setPhase(2)" role="tab">Phase 3: 1936年〜<br>スターリン憲法とゴム印議会</button>
+        <button id="pbtn-3" class="phase-btn" onclick="setPhase(3)" role="tab">Phase 4: 1948年〜現在<br>北朝鮮最高人民会議と神権ファサード</button>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-container">
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>大衆の直接自治・自発性</span>
+            <span id="m-mass" class="metric-val">90%（現場からの直接選出・即時リコール）</span>
+          </div>
+          <div class="bar-bg">
+            <div id="b-mass" class="bar-fill" style="width: 90%; background-color: var(--accent-emerald);"></div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>党中央・国家官僚の集権統制</span>
+            <span id="m-party" class="metric-val">20%（多党派共存・ボリシェヴィキは少数派）</span>
+          </div>
+          <div class="bar-bg">
+            <div id="b-party" class="bar-fill" style="width: 20%; background-color: var(--primary);"></div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>議会の形骸化・ゴム印ファサード度</span>
+            <span id="m-rubber" class="metric-val">10%（白熱した議論と政策の自律的決定）</span>
+          </div>
+          <div class="bar-bg">
+            <div id="b-rubber" class="bar-fill" style="width: 10%; background-color: var(--accent-cyan);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture Diagram (SVG) -->
+      <div class="arch-diagram">
+        <div id="arch-title" class="diagram-title">【動態構造図】Phase 1：1905〜1917年 ― 自発的民衆自治・直接民主制のコミューン構造</div>
+        <div class="svg-container">
+          <svg id="arch-svg" viewBox="0 0 760 260" width="100%" height="260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamic SVG injected by JS -->
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dynamic Description -->
+      <div id="sim-desc" class="desc-box">
+        <!-- Dynamic text injected by JS -->
+      </div>
+    </section>
+
+    <!-- Section 3: 構造比較分析 -->
+    <section class="card">
+      <h2 class="card-title">3. 比較分析：ソビエト（評議会）制度の変容と各時代の権力構造対比</h2>
+      <p>「ソビエト」という名称を掲げた制度が、時代と国家によってどのようにその本質を反転させていったかを網羅的に比較対照します。</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>① 1905/1917年 原初ソビエト</th>
+              <th>② 1918〜1921年 レーニン・内戦期</th>
+              <th>③ 1936年 スターリン憲法下</th>
+              <th>④ 1948年〜現在 北朝鮮（最高人民会議）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>権力の源泉</strong></td>
+              <td>工場労働者・兵士・農民の自発的団結</td>
+              <td>ボリシェヴィキ中央委員会・赤軍</td>
+              <td>スターリン書記長・党政治局（ノーメンクラトゥーラ）</td>
+              <td>白頭血統（首領）の絶対神権・党組織指導部</td>
+            </tr>
+            <tr>
+              <td><strong>代議員の選出方式</strong></td>
+              <td>現場での直接挙手選出・即時罷免（リコール）可能</td>
+              <td>複数政党から選出も、反ボリシェヴィキ派は順次剥奪</td>
+              <td>党が事前公認した単一候補に対する信任投票（事実上の強制）</td>
+              <td>党組織指導部が100%指定した単一候補・投票率100%賛成100%</td>
+            </tr>
+            <tr>
+              <td><strong>複数政党・異論の存在</strong></td>
+              <td>多党派共存（メンシェヴィキ、エス・エル、無所属など）</td>
+              <td>左翼エス・エル反乱後に他党派全面追放・一党独裁化</td>
+              <td>共産党単独支配・党内分派禁止・異論は「反革命銃殺」</td>
+              <td>「祖国統一民主主義戦線」という完全な官製衛星政党の茶番</td>
+            </tr>
+            <tr>
+              <td><strong>立法と執行の関係</strong></td>
+              <td>議決機関と執行機関の一致（パリ・コミューン原則）</td>
+              <td>人民委員会議（ソヴナルコム）が全権掌握・ソビエト後退</td>
+              <td>最高会議（議会）は年2回の短期間開催・幹部会と党が実権掌握</td>
+              <td>最高人民会議は年1〜2回のセレモニー（拍手・起立のみ）</td>
+            </tr>
+            <tr>
+              <td><strong>制度的本質</strong></td>
+              <td><strong>直接民主制の革命的自治機関</strong></td>
+              <td><strong>党独裁を正当化する過渡的伝達ベルト</strong></td>
+              <td><strong>全体主義官僚独裁の装飾的ファサード</strong></td>
+              <td><strong>世襲王朝の「現人神独裁」を粉飾する儀礼装置</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 深層分析 -->
+    <section class="card">
+      <h2 class="card-title">4. 深層分析：なぜ「評議会（ソビエト）」は全体主義のファサードへと堕落したのか</h2>
+      <p>マルクス主義やレーニン主義が当初掲げた「直接民主主義」「国家死滅」の理想が、いかにして必然的に怪物的な国家権力とゴム印議会へと帰結したのか、3つの本質的力学から解剖します。</p>
+
+      <div class="card-grid">
+        <div class="sub-card">
+          <h3>① 「前衛党論」と「ソビエト自発性」の構造的敵対</h3>
+          <p>レーニンは『何をなすべきか』において「労働者階級は自らの力だけでは労働組合的意識しか持ち得ない」とし、外部からの「前衛党による注入」を説いた。この時点で、大衆が下から自発的に作るソビエトと、真理を独占する前衛党との間には決定的な上下関係が生じる。党が自らを「プロレタリアートの前衛」と定義した瞬間、党の決定に反するソビエトの決議はすべて「階級意識の遅れた後進分子、あるいは反革命」とみなされ、弾圧の対象となった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>② 「権力分立の否定」が招いた無制限の独裁</h3>
+          <p>レーニンはブルジョワ民主主義の「三権分立（立法・行政・司法の分離）」を欺瞞的として激しく攻撃し、パリ・コミューンに倣って「自ら法律を作り、自ら執行する」権力統一を称賛した。しかし、権力を抑制・均衡させるチェック・アンド・バランスを「ブルジョワ的偏見」として全否定した結果、一度ボリシェヴィキがソビエトの執行部（人民委員会議）を握ると、何者もその暴走を法的に止める手段が存在しなくなった。</p>
+        </div>
+
+        <div class="sub-card">
+          <h3>③ 北朝鮮における「人民委員会」の変質と神権世襲の隠れ蓑</h3>
+          <p>1945年の解放時、朝鮮半島各地には呂運亨らが指導する「建国準備委員会」の下部組織として「人民委員会」が草の根から結成された。しかし北部を占領したソ連軍政（沿海州軍管区司令部・シュティコフ大将）は、この自然発生的な人民委員会を速やかに自らの統制下に組み入れ、満洲派（金日成）の権力基盤へと改編した。こうして生まれた「最高人民会議」は、社会主義的代議制の形態を完全に保ちながら、中身は世界で唯一の「白頭血統三代世襲神権専制」を全会一致で称賛する劇場の舞台装置と化したのである。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 一次資料と学術文献 -->
+    <section class="card">
+      <h2 class="card-title">5. 一次資料と重要文献</h2>
+      <p>ソビエト制度の誕生、変質、そして北朝鮮への制度移植を実証する歴史的一次資料および基本文献です。</p>
+
+      <ul class="source-list">
+        <li>
+          <strong>V.I.レーニン『四月テーゼ（現在の革命におけるプロレタリアートの任務）』（1917年4月）</strong><br>
+          「議会制共和国ではなく、下から全国にわたる労働者・農民・兵士代表ソビエトの共和国へ。すべての国家権力をソビエトへ。」
+        </li>
+        <li>
+          <strong>クロンシュタット臨時革命委員会宣言『我々は何を求めて戦っているのか』（1921年3月8日）</strong><br>
+          「労働者・農民の国家を建てると誓ったボリシェヴィキは、前代未聞の官僚的専制を打ち立てた。彼らは自由なソビエトを解体し、自らの党員を指名して住民を監視している。第3の革命が必要である。」
+        </li>
+        <li>
+          <strong>1936年ソビエト連邦憲法（スターリン憲法）第134条・第135条</strong><br>
+          「ソ連最高会議は、普通・平等・直接・秘密投票により全人民から選出される。」（※しかし第126条により「共産党は全勤労大衆の指導的中核」と定められ、事実上党員・非党員ブロックの単一候補しか出馬できなかった）
+        </li>
+        <li>
+          <strong>朝鮮民主主義人民共和国社会主義憲法（現行）第87条・第91条</strong><br>
+          「最高人民会議は、朝鮮民主主義人民共和国の最高主権機関である。」「憲法の修正・補充、国家の対内対外政策の基本原則の樹立、国務委員長（金正恩）の推戴を行う。」（※実態は全代議員が党組織指導部の指名により当選率100%、反対票0票のゴム印機関）
+        </li>
+        <li>
+          <strong>参考文献</strong>：
+          E.H.カー『ボリシェヴィキ革命 1917-1923』、ハンナ・アーレント『革命について』、ローザ・ルクセンブルク『ロシア革命論』、和田春樹『北朝鮮現代史』、徐大粛『金日成と金正日』。
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論シリーズ 第20編 / 著者: mb_cho</p>
+      <p style="margin-top: 0.35rem; font-size: 0.8rem; color: #6b7280;">Standalone HTML Edition with Dynamic Soviet Power Architecture Simulator</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript for Interactive Simulator -->
+  <script>
+    const phases = [
+      {
+        massText: "90%（現場からの直接選出・即時リコール）",
+        massWidth: "90%",
+        massColor: "var(--accent-emerald)",
+        partyText: "20%（多党派共存・ボリシェヴィキは少数派）",
+        partyWidth: "20%",
+        partyColor: "var(--primary)",
+        rubberText: "10%（白熱した議論と政策の自律的決定）",
+        rubberWidth: "10%",
+        rubberColor: "var(--accent-cyan)",
+        archTitle: "【動態構造図】Phase 1：1905〜1917年 ― 自発的民衆自治・直接民主制のコミューン構造",
+        svgContent: `
+          <rect x="30" y="30" width="320" height="90" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <text x="190" y="60" fill="#6ee7b7" font-size="14" font-weight="bold" text-anchor="middle">労働者・兵士・農民の大衆組織</text>
+          <text x="190" y="85" fill="#cbd5e1" font-size="11" text-anchor="middle">工場スト委員会・兵舎評議会・農村コミューン</text>
+          <text x="190" y="103" fill="#94a3b8" font-size="10" text-anchor="middle">【下からの主権】直接挙手選出・随時解職可能</text>
+
+          <path d="M 350 75 L 430 75" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-emerald)" />
+          
+          <rect x="430" y="30" width="300" height="90" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+          <text x="580" y="60" fill="#67e8f9" font-size="14" font-weight="bold" text-anchor="middle">ペトログラード・ソビエト（評議会）</text>
+          <text x="580" y="85" fill="#cbd5e1" font-size="11" text-anchor="middle">メンシェヴィキ / 社会革命党 / ボリシェヴィキ</text>
+          <text x="580" y="103" fill="#94a3b8" font-size="10" text-anchor="middle">多党派が共存し激論・臨時政府と並立（二重権力）</text>
+
+          <rect x="180" y="160" width="400" height="70" rx="8" fill="#0f172a" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4"/>
+          <text x="380" y="190" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">権力の特徴：パリ・コミューン型の「行動する機関」</text>
+          <text x="380" y="212" fill="#cbd5e1" font-size="11" text-anchor="middle">立法権と行政執行権の一致・官僚的常備軍の否定・人民武装</text>
+        `,
+        desc: "<strong>【Phase 1 状況解説】</strong> 1905年および1917年のロシア革命において自然発生したソビエトは、搾取階級の議会を否定する労働者・兵士・農民の直接民主制機関であった。代議員は現場の信任を失えば直ちにリコールされ、多党派（メンシェヴィキ、左翼・右翼エス・エル、ボリシェヴィキ）が議席を競い合った。レーニンはこの下からの自発的爆発力を『四月テーゼ』で捉え、『すべての権力をソビエトへ』を合言葉に臨時政府を打倒する原動力とした。"
+      },
+      {
+        massText: "35%（ストライキ禁止・チェーカーの監視）",
+        massWidth: "35%",
+        massColor: "var(--accent-amber)",
+        partyText: "75%（ボリシェヴィキ一党独裁・他党派追放）",
+        partyWidth: "75%",
+        partyColor: "var(--primary)",
+        rubberText: "65%（党決定の追認機関へ転落）",
+        rubberWidth: "65%",
+        rubberColor: "var(--accent-red)",
+        archTitle: "【動態構造図】Phase 2：1918〜1921年 ― ボリシェヴィキによる簒奪とクロンシュタット弾圧",
+        svgContent: `
+          <rect x="230" y="20" width="300" height="70" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="380" y="47" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">ボリシェヴィキ党中央・政治局</text>
+          <text x="380" y="70" fill="#cbd5e1" font-size="11" text-anchor="middle">レーニン、トロツキー、スターリン、チェーカー（秘密警察）</text>
+
+          <path d="M 380 90 L 380 130" stroke="#f43f5e" stroke-width="3" />
+          
+          <rect x="180" y="130" width="400" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="380" y="157" fill="#fde68a" font-size="13" font-weight="bold" text-anchor="middle">ソビエト執行部（全ロシア・ソビエト大会）</text>
+          <text x="380" y="180" fill="#cbd5e1" font-size="11" text-anchor="middle">メンシェヴィキ・エス・エル追放／党指名幹部が独占</text>
+
+          <rect x="50" y="140" width="100" height="50" rx="4" fill="#881337" stroke="#f43f5e" stroke-width="1.5"/>
+          <text x="100" y="162" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">クロンシュタット</text>
+          <text x="100" y="177" fill="#fecdd3" font-size="9" text-anchor="middle">「党なきソビエト」叫び血の鎮圧</text>
+
+          <path d="M 150 165 L 180 165" stroke="#f43f5e" stroke-width="2" stroke-dasharray="3"/>
+          
+          <text x="380" y="235" fill="#94a3b8" font-size="11" text-anchor="middle">【変容】下からの代表機関から、党の指令を上意下達する「伝達ベルト」へ</text>
+        `,
+        desc: "<strong>【Phase 2 状況解説】</strong> 十月革命後、ボリシェヴィキは憲法制定会議を武力解散し、内戦（戦時共産主義）を名目にメンシェヴィキやエス・エルをソビエトから完全追放した。1921年3月、「ボリシェヴィキの独裁を廃し、自由なソビエト選挙を！」と叫んだクロンシュタット海軍要塞の水兵たちの蜂起を、トロツキー率いる赤軍が氷上を渡って血の海に沈めた。これにより、ソビエトの直接民主制は完全に圧殺され、党の一党独裁を追認する『伝達ベルト』となった。"
+      },
+      {
+        massText: "5%（投票強制・NKVDの銃口下の単一投票）",
+        massWidth: "5%",
+        massColor: "#475569",
+        partyText: "95%（スターリン個人独裁・ノーメンクラトゥーラ）",
+        partyWidth: "95%",
+        partyColor: "var(--accent-red)",
+        rubberText: "98%（全会一致・拍手マシーンの完成）",
+        rubberWidth: "98%",
+        rubberColor: "var(--accent-red)",
+        archTitle: "【動態構造図】Phase 3：1936年 ― スターリン憲法と最高会議（ゴム印議会）の完成",
+        svgContent: `
+          <rect x="230" y="15" width="300" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="380" y="38" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">スターリン（書記長・個人崇拝）</text>
+          <text x="380" y="58" fill="#cbd5e1" font-size="10" text-anchor="middle">党政治局・NKVD（国家保安人民委員部）による大粛清支配</text>
+
+          <path d="M 380 75 L 380 115" stroke="#f43f5e" stroke-width="3" />
+          
+          <rect x="150" y="115" width="460" height="75" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+          <text x="380" y="140" fill="#93c5fd" font-size="13" font-weight="bold" text-anchor="middle">ソ連邦最高会議（最高ソビエト）</text>
+          <text x="380" y="160" fill="#cbd5e1" font-size="11" text-anchor="middle">「世界一民主的な普通・直接選挙」という宣伝ファサード</text>
+          <text x="380" y="176" fill="#fca5a5" font-size="10" text-anchor="middle">各選挙区1名の党公認候補／賛成率99.9%／全会一致の拍手決議</text>
+
+          <rect x="200" y="210" width="360" height="35" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+          <text x="380" y="232" fill="#64748b" font-size="10" text-anchor="middle">機能：法案審議なし・大粛清や独裁指令に合法性の衣を着せる儀礼</text>
+        `,
+        desc: "<strong>【Phase 3 状況解説】</strong> 1936年に制定されたいわゆる『スターリン憲法』は、普通・平等・直接・秘密選挙を謳い、最高会議（最高ソビエト）を最高主権機関と定めた。しかし各選挙区の候補者は共産党が指名する1名のみであり、反対票を投じることはNKVDに『反革命分子』として逮捕・銃殺されることを意味した。最高会議は年にわずか数日間開かれ、演説に対して嵐のような拍手を送り、党が用意した法案を全会一致で可決する『完璧なゴム印（Rubber Stamp）』に完成された。"
+      },
+      {
+        massText: "0%（恐怖と監視・生活総和による完全動員）",
+        massWidth: "2%",
+        massColor: "#334155",
+        partyText: "100%（首領の絶対神権・国家保衛省・党組織指導部）",
+        partyWidth: "100%",
+        partyColor: "var(--accent-red)",
+        rubberText: "100%（現人神への全会一致賛美・儀礼装置）",
+        rubberWidth: "100%",
+        rubberColor: "var(--accent-red)",
+        archTitle: "【動態構造図】Phase 4：1948年〜現在 ― 北朝鮮最高人民会議と神権世襲の隠れ蓑",
+        svgContent: `
+          <rect x="200" y="15" width="360" height="60" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="3"/>
+          <text x="380" y="38" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">白頭血統・最高指導者（首領神権）</text>
+          <text x="380" y="58" fill="#cbd5e1" font-size="10" text-anchor="middle">金日成 ➔ 金正日 ➔ 金正恩（唯一領導体系・国務委員会）</text>
+
+          <path d="M 380 75 L 380 115" stroke="#f43f5e" stroke-width="3" />
+          
+          <rect x="130" y="115" width="500" height="80" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+          <text x="380" y="140" fill="#d8b4fe" font-size="13" font-weight="bold" text-anchor="middle">北朝鮮 最高人民会議（代議員687名）</text>
+          <text x="380" y="160" fill="#cbd5e1" font-size="11" text-anchor="middle">憲法上「国家最高主権機関」／党組織指導部が100%名簿を作成</text>
+          <text x="380" y="178" fill="#f43f5e" font-size="10" font-weight="bold" text-anchor="middle">投票率99.99%・賛成率100%・反対0票・起立拍手歓呼マシーン</text>
+
+          <rect x="160" y="215" width="440" height="35" rx="4" fill="#0f172a" stroke="#6b21a8" stroke-width="1.5"/>
+          <text x="380" y="237" fill="#c084fc" font-size="10" text-anchor="middle">本質：共産主義の人民民主主義装飾を用いた「東洋的専制王朝」の合法化舞台</text>
+        `,
+        desc: "<strong>【Phase 4 状況解説】</strong> 北朝鮮の『最高人民会議』は、ソ連の最高ソビエトを直輸入した機関である。憲法上は『最高主権機関』と規定され、法の制定や予算審議、国家首長推戴の権限を持つが、実態は全代議員が党組織指導部によって事前に厳密に選抜され、投票率99.99%・賛成率100%で選ばれる。壇上の首領の入場に熱狂的な拍手を送り、一切の質疑応答もなく全会一致で採択するだけの『独裁のファサード（粉飾装置）』であり、かつての民衆自治機関ソビエトの面影は完全に消滅した。"
+      }
+    ];
+
+    function setPhase(idx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`pbtn-${i}`);
+        if (btn) btn.classList.toggle('active', i === idx);
+      }
+
+      const p = phases[idx];
+
+      document.getElementById('m-mass').textContent = p.massText;
+      const bMass = document.getElementById('b-mass');
+      bMass.style.width = p.massWidth;
+      bMass.style.backgroundColor = p.massColor;
+
+      document.getElementById('m-party').textContent = p.partyText;
+      const bParty = document.getElementById('b-party');
+      bParty.style.width = p.partyWidth;
+      bParty.style.backgroundColor = p.partyColor;
+
+      document.getElementById('m-rubber').textContent = p.rubberText;
+      const bRubber = document.getElementById('b-rubber');
+      bRubber.style.width = p.rubberWidth;
+      bRubber.style.backgroundColor = p.rubberColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
