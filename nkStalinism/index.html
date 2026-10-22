@@ -1,1 +1,1232 @@
-test
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>『北朝鮮におけるスターリン主義の形成』Web補論・理論解説ポータル</title>
+  <meta name="description" content="Kindle電子書籍『北朝鮮におけるスターリン主義の形成：思想統制の原型・中ソ対立・そして白頭血統へ』（著：mb_cho）公式Web補論・歴史的力学シミュレーターポータル。全21編のインタラクティブ図解・史料解説。">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --primary-blue: #2563eb;
+      --accent-red: #dc2626;
+      --accent-red-dark: #991b1b;
+      --accent-gold: #d97706;
+      --accent-gold-light: #fef3c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --border-focus: #3b82f6;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 0.75rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Hero Header */
+    header.hero {
+      background: linear-gradient(135deg, #090d16 0%, #1e1b4b 45%, #450a0a 100%);
+      color: #ffffff;
+      padding: 3.5rem 0 3rem 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--accent-red);
+    }
+
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(220, 38, 38, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      color: #fef08a;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(254, 240, 138, 0.3);
+      letter-spacing: 0.03em;
+    }
+
+    .hero-badge-red {
+      color: #fca5a5;
+      border-color: rgba(239, 68, 68, 0.4);
+      background: rgba(220, 38, 38, 0.2);
+    }
+
+    .hero-badge-cyan {
+      color: #67e8f9;
+      border-color: rgba(6, 182, 212, 0.4);
+      background: rgba(6, 182, 212, 0.15);
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      line-height: 1.28;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      max-width: 860px;
+    }
+
+    .hero-notice {
+      background: rgba(15, 23, 42, 0.65);
+      border-left: 4px solid var(--accent-red);
+      padding: 1.1rem 1.35rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.93rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+      max-width: 900px;
+      backdrop-filter: blur(6px);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-notice strong {
+      color: #fca5a5;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(217, 119, 6, 0.5);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Controls Bar */
+    .controls-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .controls-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 860px) {
+      .controls-grid {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 440px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.4rem;
+      border: 2px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      background: #ffffff;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+      border-color: #cbd5e1;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .status-counter {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Main Content */
+    main {
+      padding: 2.5rem 0 4.5rem 0;
+    }
+
+    .chapter-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .chapter-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.7rem;
+      border-radius: 0.35rem;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      margin-top: 0.25rem;
+    }
+
+    .pill-blue { background: #2563eb; color: #fff; }
+    .pill-red { background: #dc2626; color: #fff; }
+    .pill-amber { background: #d97706; color: #fff; }
+    .pill-purple { background: #7c3aed; color: #fff; }
+
+    .chapter-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.35;
+      margin-bottom: 0.3rem;
+    }
+
+    .chapter-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      }
+    }
+
+    /* Card */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: #93c5fd;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .card-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-red { background: #fee2e2; color: #991b1b; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+    .card-chap-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.38;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .card-title a:hover {
+      color: var(--primary-blue);
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-red-dark);
+      margin-bottom: 0.65rem;
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .card-tag {
+      font-size: 0.72rem;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .card-tag:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
+    }
+
+    .card-footer {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      border: 1px solid #bfdbfe;
+      transition: all 0.15s;
+    }
+
+    .card-btn:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+    .btn-arrow {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.15s;
+    }
+
+    .card-btn:hover .btn-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Empty state */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+    }
+
+    .no-results h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .no-results p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 0;
+      border-top: 1px solid #1e293b;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .copyright {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badges">
+        <span class="hero-badge">Kindle KDP連動</span>
+        <span class="hero-badge hero-badge-red">全21編 完全収録</span>
+        <span class="hero-badge hero-badge-cyan">インタラクティブ動態シミュレーター完備</span>
+      </div>
+      <h1 class="hero-title">『北朝鮮におけるスターリン主義の形成』<br>公式Web補論・用語解説ポータル</h1>
+      <p class="hero-subtitle">
+        思想統制の原型・中ソ対立・そして白頭血統へ ―― 20世紀全体主義の極限的進化を一次史料と数理シミュレーションで解剖する
+      </p>
+      <div class="hero-notice">
+        <strong>【読者のみなさまへ】</strong><br>
+        本書で登場する多岐にわたる専門概念（一国社会主義論、延安整風、継続革命論、8月宗派事件、社会政治的生命体論、白頭血統など）の完全な背景史料と動態モデルを、全21編のスタンドアロンWeb補論として公開しています。各補論内のシミュレーターはブラウザ上で操作可能です。
+      </div>
+      <div class="hero-actions">
+        <a href="../../epub/kindle_%E5%8C%97%E6%9C%9D%E9%AE%AE%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AA%E3%83%B3%E4%B8%BB%E7%BE%A9%E3%81%AE%E5%BD%A2%E6%88%90%EF%BD%9Cmb_cho%EF%BD%9Cnote.epub" download class="hero-btn btn-gold">
+          📥 Kindle EPUB をダウンロード
+        </a>
+        <a href="../../cover_preview.html" class="hero-btn btn-outline">
+          🎨 表紙デザイン 3案プレビュー
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls Bar -->
+  <div class="controls-wrapper">
+    <div class="container">
+      <div class="controls-grid">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="理論名・人物・事件・キーワードで検索（例: 宗派事件, 延安, 彭徳懐）">
+        </div>
+        <div class="filter-tabs">
+          
+        <button class="filter-btn active" data-filter="all">すべて (全21編)</button>
+        <button class="filter-btn" data-filter="intro">序論・基礎理論 (2)</button>
+        <button class="filter-btn" data-filter="chap1">第1章：ソ連原型・中国波及 (11)</button>
+        <button class="filter-btn" data-filter="chap2">第2章：対外干渉・主体確立 (6)</button>
+        <button class="filter-btn" data-filter="chap3">第3章：体制比較・首領制 (2)</button>
+    
+        </div>
+        <div class="status-counter" id="statusCounter">
+          表示中: 21 / 21編
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      
+      <section class="chapter-section" id="section-intro" data-chapter="intro">
+        <div class="chapter-header">
+          <span class="chapter-pill pill-blue">序論・問題の所在</span>
+          <div>
+            <h2 class="chapter-title">序論：問題の所在と分析枠組み</h2>
+            <p class="chapter-desc">北朝鮮における「首領制」および「白頭血統」による神権的全体主義の根本矛盾と、マルクス・レーニン主義の基本ドクトリンからの変質過程を提示する基礎理論。</p>
+          </div>
+        </div>
+        <div class="cards-grid">
+          
+          <article class="card" data-chapter="intro" data-num="1">
+            <div class="card-header">
+              <span class="card-badge badge-blue">第1編</span>
+              <span class="card-chap-tag">序論・問題の所在</span>
+            </div>
+            <h3 class="card-title">
+              <a href="dictatorshipOfTheProletariat.html">前衛党論とプロレタリア独裁論</a>
+            </h3>
+            <div class="card-subtitle">革命組織論・国家死滅論から官僚独裁への転化メカニズム</div>
+            <p class="card-desc">レーニン主義の根幹である「外部注入論」と「民主集中制」による規律ある前衛党、そして旧階級抑圧のための過渡期国家権力。いかにしてパリ・コミューン型の理想が首領絶対専制へと変質したのかを解剖。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('レーニン主義')">#レーニン主義</span><span class="card-tag" onclick="filterByTag('前衛党')">#前衛党</span><span class="card-tag" onclick="filterByTag('外部注入論')">#外部注入論</span><span class="card-tag" onclick="filterByTag('プロレタリア独裁')">#プロレタリア独裁</span><span class="card-tag" onclick="filterByTag('国家死滅論')">#国家死滅論</span>
+            </div>
+            <div class="card-footer">
+              <a href="dictatorshipOfTheProletariat.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="intro" data-num="2">
+            <div class="card-header">
+              <span class="card-badge badge-blue">第2編</span>
+              <span class="card-chap-tag">序論・問題の所在</span>
+            </div>
+            <h3 class="card-title">
+              <a href="syutai.html">主体思想と首領制</a>
+            </h3>
+            <div class="card-subtitle">「人間中心の哲学」から「首領制・白頭血統」への思想史的転化</div>
+            <p class="card-desc">マルクス主義の哲学的再解釈を装いながら、「首領は脳髄、人民は手足」とする絶対服従の論理へと変貌。血縁的世襲正統化と10大原則による神権専制支配の全貌を追究。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('主体思想')">#主体思想</span><span class="card-tag" onclick="filterByTag('首領制')">#首領制</span><span class="card-tag" onclick="filterByTag('社会政治的生命体論')">#社会政治的生命体論</span><span class="card-tag" onclick="filterByTag('白頭血統')">#白頭血統</span><span class="card-tag" onclick="filterByTag('人間中心哲学')">#人間中心哲学</span>
+            </div>
+            <div class="card-footer">
+              <a href="syutai.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+        </div>
+      </section>
+        
+      <section class="chapter-section" id="section-chap1" data-chapter="chap1">
+        <div class="chapter-header">
+          <span class="chapter-pill pill-red">第1章 連鎖の原型</span>
+          <div>
+            <h2 class="chapter-title">第1章：スターリン主義思想統制の原型と中国共産党への波及</h2>
+            <p class="chapter-desc">一国社会主義論、階級闘争激化論、大粛清から毛沢東の延安整風運動、継続革命論、文化大革命に至る中ソ二大国の思想統制・暴力装置の原型。</p>
+          </div>
+        </div>
+        <div class="cards-grid">
+          
+          <article class="card" data-chapter="chap1" data-num="3">
+            <div class="card-header">
+              <span class="card-badge badge-red">第3編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="worldRevolutionTheory.html">世界革命論と永続革命論</a>
+            </h3>
+            <div class="card-subtitle">トロツキーの国際主義 vs スターリンの「一国社会主義」</div>
+            <p class="card-desc">後進国ロシアの革命は先進国のプロレタリア革命によってのみ完遂されるとしたトロツキー。孤立したソヴィエト国家の防衛を優先するスターリンとの死闘と、その思想的帰結。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('トロツキー')">#トロツキー</span><span class="card-tag" onclick="filterByTag('永続革命論')">#永続革命論</span><span class="card-tag" onclick="filterByTag('世界革命')">#世界革命</span><span class="card-tag" onclick="filterByTag('コミンテルン')">#コミンテルン</span><span class="card-tag" onclick="filterByTag('路線闘争')">#路線闘争</span>
+            </div>
+            <div class="card-footer">
+              <a href="worldRevolutionTheory.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="4">
+            <div class="card-header">
+              <span class="card-badge badge-red">第4編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="SocialismInOneCountry.html">一国社会主義論</a>
+            </h3>
+            <div class="card-subtitle">スターリンによる世界革命の放棄と国家要塞化の力学</div>
+            <p class="card-desc">世界革命の棚上げと「ソ連一国での社会主義建設」の定着。国際主義の後退と国内プロレタリア独裁の飛躍的強化、そして反体制派を「外国の手先」として排撃する論理の源流。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('スターリン')">#スターリン</span><span class="card-tag" onclick="filterByTag('一国社会主義')">#一国社会主義</span><span class="card-tag" onclick="filterByTag('重工業化')">#重工業化</span><span class="card-tag" onclick="filterByTag('農業集団化')">#農業集団化</span><span class="card-tag" onclick="filterByTag('国家要塞化')">#国家要塞化</span>
+            </div>
+            <div class="card-footer">
+              <a href="SocialismInOneCountry.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="5">
+            <div class="card-header">
+              <span class="card-badge badge-red">第5編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="Bolsheviks.html">ボリシェヴィキの系譜</a>
+            </h3>
+            <div class="card-subtitle">前衛党組織論から十月革命、そして党国体制への変質史</div>
+            <p class="card-desc">1903年ロシア社民党第2回大会でのメンシェヴィキとの分裂から、十月革命、内戦期の戦時共産主義、一党支配の完成に至る職業革命家組織の権力化プロセスを辿る。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('ボリシェヴィキ')">#ボリシェヴィキ</span><span class="card-tag" onclick="filterByTag('十月革命')">#十月革命</span><span class="card-tag" onclick="filterByTag('党国体制')">#党国体制</span><span class="card-tag" onclick="filterByTag('職業革命家')">#職業革命家</span><span class="card-tag" onclick="filterByTag('レーニン')">#レーニン</span>
+            </div>
+            <div class="card-footer">
+              <a href="Bolsheviks.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="6">
+            <div class="card-header">
+              <span class="card-badge badge-red">第6編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="intensificationOfTheClassStruggle.html">階級闘争激化論</a>
+            </h3>
+            <div class="card-subtitle">国家死滅論の圧殺と大粛清・文化大革命・北朝鮮首領制の源流</div>
+            <p class="card-desc">「社会主義建設が進むほど内部の敵の抵抗は激化する」というスターリンのドクトリン。あらゆる失政の責任を「内部の敵・スパイ」へ転嫁し、大粛清と恐怖支配を恒常化させた論理の原型。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('階級闘争激化論')">#階級闘争激化論</span><span class="card-tag" onclick="filterByTag('大粛清')">#大粛清</span><span class="card-tag" onclick="filterByTag('モスクワ裁判')">#モスクワ裁判</span><span class="card-tag" onclick="filterByTag('GULAG')">#GULAG</span><span class="card-tag" onclick="filterByTag('内部の敵')">#内部の敵</span>
+            </div>
+            <div class="card-footer">
+              <a href="intensificationOfTheClassStruggle.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="7">
+            <div class="card-header">
+              <span class="card-badge badge-red">第7編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="Cheka.html">チェーカーと秘密警察・テロル機構の系譜</a>
+            </h3>
+            <div class="card-subtitle">レーニン・赤色テロルからNKVD大粛清、北朝鮮国家保衛省へ</div>
+            <p class="card-desc">法の手続きを排した「直接の暴力」を行使する特務機関の進化史。ジェルジンスキーのチェーカーからGPU、NKVD、KGB、そして北朝鮮の国家保衛省・管理所（収容所）体制への連鎖。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('チェーカー')">#チェーカー</span><span class="card-tag" onclick="filterByTag('赤色テロル')">#赤色テロル</span><span class="card-tag" onclick="filterByTag('NKVD')">#NKVD</span><span class="card-tag" onclick="filterByTag('国家保衛省')">#国家保衛省</span><span class="card-tag" onclick="filterByTag('強制収容所')">#強制収容所</span>
+            </div>
+            <div class="card-footer">
+              <a href="Cheka.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="8">
+            <div class="card-header">
+              <span class="card-badge badge-red">第8編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="WitheringAwayOfTheState_Marx.html">国家死滅論の原像と変容</a>
+            </h3>
+            <div class="card-subtitle">ユートピアの展望からスターリン国家強化論、北朝鮮「生命体論」へ</div>
+            <p class="card-desc">マルクスとエンゲルスが構想した「階級の消滅とともに国家も死滅する」というテーゼが、なぜソ連と北朝鮮において史上最も巨大な国家抑圧機構へと正反対の転換を遂げたのかを解剖。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('国家死滅論')">#国家死滅論</span><span class="card-tag" onclick="filterByTag('マルクス')">#マルクス</span><span class="card-tag" onclick="filterByTag('エンゲルス')">#エンゲルス</span><span class="card-tag" onclick="filterByTag('国家強化論')">#国家強化論</span><span class="card-tag" onclick="filterByTag('過渡期国家')">#過渡期国家</span>
+            </div>
+            <div class="card-footer">
+              <a href="WitheringAwayOfTheState_Marx.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="9">
+            <div class="card-header">
+              <span class="card-badge badge-red">第9編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="democratiCentralism.html">民主集中制の原型と変容</a>
+            </h3>
+            <div class="card-subtitle">レーニンの党組織論からスターリン専制、北朝鮮「首領の一元化指導」へ</div>
+            <p class="card-desc">本来「討議の自由と行動の統一」を意味した民主集中制が、いかにして党内異論の表明や派閥結成を「反党分派」として抹殺する組織専制の道具へと変質していったのか。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('民主集中制')">#民主集中制</span><span class="card-tag" onclick="filterByTag('党内民主主義')">#党内民主主義</span><span class="card-tag" onclick="filterByTag('分派禁止')">#分派禁止</span><span class="card-tag" onclick="filterByTag('一元化指導')">#一元化指導</span><span class="card-tag" onclick="filterByTag('一枚岩化')">#一枚岩化</span>
+            </div>
+            <div class="card-footer">
+              <a href="democratiCentralism.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="10">
+            <div class="card-header">
+              <span class="card-badge badge-red">第10編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="YanAnWindRectificationMovement.html">延安整風運動と思想改造の系譜</a>
+            </h3>
+            <div class="card-subtitle">毛沢東「一元化指導」の確立から北朝鮮「生活総和」へ</div>
+            <p class="card-desc">1940年代前半の延安で毛沢東が推進した思想改造運動。物理的抹殺ではなく小組での「批判と自我批判」による人間改造手法が、北朝鮮の「生活総和」や住民統制の規範へと受け継がれた経路。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('延安整風運動')">#延安整風運動</span><span class="card-tag" onclick="filterByTag('毛沢東')">#毛沢東</span><span class="card-tag" onclick="filterByTag('批判と自我批判')">#批判と自我批判</span><span class="card-tag" onclick="filterByTag('思想改造')">#思想改造</span><span class="card-tag" onclick="filterByTag('生活総和')">#生活総和</span>
+            </div>
+            <div class="card-footer">
+              <a href="YanAnWindRectificationMovement.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="11">
+            <div class="card-header">
+              <span class="card-badge badge-red">第11編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="conciseCourse.html">『ソ連共産党（ボ）歴史簡明教程』の解剖</a>
+            </h3>
+            <div class="card-subtitle">歴史改竄のバイブルと毛沢東・北朝鮮への教条的波及</div>
+            <p class="card-desc">スターリン自らが編纂を指揮した公式党史。すべての党史を「正統路線と反党分派との不倶戴天の闘争」として再構成する陰謀論的史観が、東側陣営全域にドグマとして定着したプロセス。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('簡明教程')">#簡明教程</span><span class="card-tag" onclick="filterByTag('公式史観')">#公式史観</span><span class="card-tag" onclick="filterByTag('歴史改竄')">#歴史改竄</span><span class="card-tag" onclick="filterByTag('教条主義')">#教条主義</span><span class="card-tag" onclick="filterByTag('神話化')">#神話化</span>
+            </div>
+            <div class="card-footer">
+              <a href="conciseCourse.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="12">
+            <div class="card-header">
+              <span class="card-badge badge-red">第12編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="ContinuousRevolutionTheory.html">プロレタリア独裁下における継続革命の理論</a>
+            </h3>
+            <div class="card-subtitle">毛沢東「走資派」批判・文化大革命から北朝鮮「三大革命」へ</div>
+            <p class="card-desc">大躍進の失敗を突かれた毛沢東が、党内の政策論争を「階級敵との生死をかけた闘争」へと昇級させた論理。ソ連「修正主義」批判を経て文化大革命へと雪崩れ込む理論構造。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('継続革命論')">#継続革命論</span><span class="card-tag" onclick="filterByTag('走資派')">#走資派</span><span class="card-tag" onclick="filterByTag('廬山会議')">#廬山会議</span><span class="card-tag" onclick="filterByTag('三大革命')">#三大革命</span><span class="card-tag" onclick="filterByTag('イデオロギー純化')">#イデオロギー純化</span>
+            </div>
+            <div class="card-footer">
+              <a href="ContinuousRevolutionTheory.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap1" data-num="13">
+            <div class="card-header">
+              <span class="card-badge badge-red">第13編</span>
+              <span class="card-chap-tag">第1章 連鎖の原型</span>
+            </div>
+            <h3 class="card-title">
+              <a href="culturalRevolution.html">文化大革命の狂気と終焉</a>
+            </h3>
+            <div class="card-subtitle">「造反有理」の国家的自爆から中朝対立、北朝鮮「唯一思想」防壁へ</div>
+            <p class="card-desc">紅衛兵を扇動して自らの党・国家機構を物理的に破壊させた毛沢東の暴走。北朝鮮がこの混乱を反面教師として警戒し、「中ソ双方に依存しない唯一思想体系」の構築を急いだ因果関係。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('文化大革命')">#文化大革命</span><span class="card-tag" onclick="filterByTag('紅衛兵')">#紅衛兵</span><span class="card-tag" onclick="filterByTag('造反有理')">#造反有理</span><span class="card-tag" onclick="filterByTag('中朝対立')">#中朝対立</span><span class="card-tag" onclick="filterByTag('唯一思想体系')">#唯一思想体系</span>
+            </div>
+            <div class="card-footer">
+              <a href="culturalRevolution.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+        </div>
+      </section>
+        
+      <section class="chapter-section" id="section-chap2" data-chapter="chap2">
+        <div class="chapter-header">
+          <span class="chapter-pill pill-amber">第2章 対外干渉と主体</span>
+          <div>
+            <h2 class="chapter-title">第2章：中ソの対外干渉と金日成の反発・「主体思想」の確立</h2>
+            <p class="chapter-desc">スターリン批判の衝撃と8月宗派事件、彭徳懐・ミコヤン共同介入の屈辱、ハンガリー動乱の間隙を突いた大粛清、そして「主体（チュチェ）」への跳躍。</p>
+          </div>
+        </div>
+        <div class="cards-grid">
+          
+          <article class="card" data-chapter="chap2" data-num="14">
+            <div class="card-header">
+              <span class="card-badge badge-amber">第14編</span>
+              <span class="card-chap-tag">第2章 対外干渉と主体</span>
+            </div>
+            <h3 class="card-title">
+              <a href="SecretSpeech.html">スターリン批判の衝撃と8月宗派事件</a>
+            </h3>
+            <div class="card-subtitle">個人崇拝の告発、東欧動乱、そして北朝鮮における首領独裁の逆説的純化</div>
+            <p class="card-desc">1956年のフルシチョフ秘密報告がもたらした激震。すでに個人崇拝を進めていた金日成に対する延安派・ソ連派の公然たる反旗と、議場怒号・亡命・大粛清の幕開け。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('スターリン批判')">#スターリン批判</span><span class="card-tag" onclick="filterByTag('フルシチョフ秘密報告')">#フルシチョフ秘密報告</span><span class="card-tag" onclick="filterByTag('8月宗派事件')">#8月宗派事件</span><span class="card-tag" onclick="filterByTag('延安派')">#延安派</span><span class="card-tag" onclick="filterByTag('ソ連派')">#ソ連派</span>
+            </div>
+            <div class="card-footer">
+              <a href="SecretSpeech.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap2" data-num="15">
+            <div class="card-header">
+              <span class="card-badge badge-amber">第15編</span>
+              <span class="card-chap-tag">第2章 対外干渉と主体</span>
+            </div>
+            <h3 class="card-title">
+              <a href="hotokukai.html">元帥・彭徳懐の悲劇</a>
+            </h3>
+            <div class="card-subtitle">朝鮮戦争の激闘、8月宗派事件の内政介入、廬山会議の直言から文革の非業の死まで</div>
+            <p class="card-desc">中国人民志願軍司令官として金日成を救った猛将。中ソ代表団として平壌に乗り込み金日成を屈服させた男が、なぜ毛沢東への直言によって失脚し、文革で悲惨な最期を遂げたのか。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('彭徳懐')">#彭徳懐</span><span class="card-tag" onclick="filterByTag('朝鮮戦争')">#朝鮮戦争</span><span class="card-tag" onclick="filterByTag('中国人民志願軍')">#中国人民志願軍</span><span class="card-tag" onclick="filterByTag('廬山会議')">#廬山会議</span><span class="card-tag" onclick="filterByTag('中ソ共同介入')">#中ソ共同介入</span>
+            </div>
+            <div class="card-footer">
+              <a href="hotokukai.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap2" data-num="16">
+            <div class="card-header">
+              <span class="card-badge badge-amber">第16編</span>
+              <span class="card-chap-tag">第2章 対外干渉と主体</span>
+            </div>
+            <h3 class="card-title">
+              <a href="HungarianRevolution.html">ハンガリー動乱と東欧の悲劇</a>
+            </h3>
+            <div class="card-subtitle">ブダペストの流血、ナジ・イムレの処刑、そして金日成による延安派大粛清の間隙</div>
+            <p class="card-desc">1956年10月のブダペスト蜂起とソ連軍戦車の突入。中ソの関心が東欧情勢に奪われた決定的な間隙を突き、金日成が中ソの合意を反故にして国内反対派を徹底的に粛清した歴史の転換点。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('ハンガリー動乱')">#ハンガリー動乱</span><span class="card-tag" onclick="filterByTag('ナジ・イムレ')">#ナジ・イムレ</span><span class="card-tag" onclick="filterByTag('ブダペスト')">#ブダペスト</span><span class="card-tag" onclick="filterByTag('東欧動揺')">#東欧動揺</span><span class="card-tag" onclick="filterByTag('粛清再開')">#粛清再開</span>
+            </div>
+            <div class="card-footer">
+              <a href="HungarianRevolution.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap2" data-num="17">
+            <div class="card-header">
+              <span class="card-badge badge-amber">第17編</span>
+              <span class="card-chap-tag">第2章 対外干渉と主体</span>
+            </div>
+            <h3 class="card-title">
+              <a href="ChollimaMovement.html">千里馬運動と大衆総動員体制</a>
+            </h3>
+            <div class="card-subtitle">降仙の奇跡、集団主義競争、そして首領独裁と住民監視の原点</div>
+            <p class="card-desc">中ソの援助に頼らず自力更生を掲げた猛烈な増産運動。「1日に千里を駆ける伝説の馬」をシンボルに、労働者大衆を競争させながら思想的純化と首領への忠誠を叩き込んだ総動員体制。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('千里馬運動')">#千里馬運動</span><span class="card-tag" onclick="filterByTag('自力更生')">#自力更生</span><span class="card-tag" onclick="filterByTag('降仙製鋼所')">#降仙製鋼所</span><span class="card-tag" onclick="filterByTag('大衆総動員')">#大衆総動員</span><span class="card-tag" onclick="filterByTag('集団主義')">#集団主義</span>
+            </div>
+            <div class="card-footer">
+              <a href="ChollimaMovement.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap2" data-num="18">
+            <div class="card-header">
+              <span class="card-badge badge-amber">第18編</span>
+              <span class="card-chap-tag">第2章 対外干渉と主体</span>
+            </div>
+            <h3 class="card-title">
+              <a href="SpeechByKimIlsung.html">1955年金日成演説と主体の原像</a>
+            </h3>
+            <div class="card-subtitle">「事大主義排撃」の号砲から8月宗派事件、そして神権的「首領絶対専制」への跳躍</div>
+            <p class="card-desc">「思想事業において教条主義と形式主義を一掃し、主体を構築するために」。ソ連文化の機械的模倣を激しく批判し、北朝鮮公式イデオロギー「主体」が初めて公式に叫ばれた記念碑的演説。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('1955年演説')">#1955年演説</span><span class="card-tag" onclick="filterByTag('事大主義')">#事大主義</span><span class="card-tag" onclick="filterByTag('教条主義')">#教条主義</span><span class="card-tag" onclick="filterByTag('我々式革命')">#我々式革命</span><span class="card-tag" onclick="filterByTag('主体の原像')">#主体の原像</span>
+            </div>
+            <div class="card-footer">
+              <a href="SpeechByKimIlsung.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap2" data-num="19">
+            <div class="card-header">
+              <span class="card-badge badge-amber">第19編</span>
+              <span class="card-chap-tag">第2章 対外干渉と主体</span>
+            </div>
+            <h3 class="card-title">
+              <a href="Kapsan.html">甲山派粛清と「5・25教示」</a>
+            </h3>
+            <div class="card-subtitle">普天堡の戦友たちの抹殺、唯一思想体系の確立、そして神権首領制への不可逆的跳躍</div>
+            <p class="card-desc">抗日パルチザン時代の国内組・甲山派（朴金喆、李孝淳ら）の粛清。唯一の革命伝統を「金日成家門」だけに独占させ、「党の唯一思想体系」を宣言して金正日後継への道を開いた決定的政変。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('甲山派')">#甲山派</span><span class="card-tag" onclick="filterByTag('5・25教示')">#5・25教示</span><span class="card-tag" onclick="filterByTag('朴金喆')">#朴金喆</span><span class="card-tag" onclick="filterByTag('普天堡の戦い')">#普天堡の戦い</span><span class="card-tag" onclick="filterByTag('唯一思想体系')">#唯一思想体系</span>
+            </div>
+            <div class="card-footer">
+              <a href="Kapsan.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+        </div>
+      </section>
+        
+      <section class="chapter-section" id="section-chap3" data-chapter="chap3">
+        <div class="chapter-header">
+          <span class="chapter-pill pill-purple">第3章 体制比較と生命体論</span>
+          <div>
+            <h2 class="chapter-title">第3章：ソ連の「党・国家体制」と北朝鮮の「社会政治的生命体論」の比較</h2>
+            <p class="chapter-desc">制度的支配と公的機関の枠組みを残したソ連に対し、国家を有機的生命体に見立て「首領＝脳髄、人民＝手足」とする疑似宗教的支配へと純化した北朝鮮の構造比較。</p>
+          </div>
+        </div>
+        <div class="cards-grid">
+          
+          <article class="card" data-chapter="chap3" data-num="20">
+            <div class="card-header">
+              <span class="card-badge badge-purple">第20編</span>
+              <span class="card-chap-tag">第3章 体制比較と生命体論</span>
+            </div>
+            <h3 class="card-title">
+              <a href="Soviet.html">ソビエト制度の原像と変容</a>
+            </h3>
+            <div class="card-subtitle">直接民主制の評議会からボリシェヴィキ独裁、そして北朝鮮「最高人民会議」のゴム印ファサードへ</div>
+            <p class="card-desc">1905年・1917年革命で労働者が自発的に結成した「ソヴィエト（評議会）」。レーニンの「全権力をソヴィエトへ」がいかに党の従属機関化し、北朝鮮の全員一致ゴム印議会へと変質したのか。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('ソビエト制度')">#ソビエト制度</span><span class="card-tag" onclick="filterByTag('労働者評議会')">#労働者評議会</span><span class="card-tag" onclick="filterByTag('最高人民会議')">#最高人民会議</span><span class="card-tag" onclick="filterByTag('直接民主制')">#直接民主制</span><span class="card-tag" onclick="filterByTag('ゴム印議会')">#ゴム印議会</span>
+            </div>
+            <div class="card-footer">
+              <a href="Soviet.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+          <article class="card" data-chapter="chap3" data-num="21">
+            <div class="card-header">
+              <span class="card-badge badge-purple">第21編</span>
+              <span class="card-chap-tag">第3章 体制比較と生命体論</span>
+            </div>
+            <h3 class="card-title">
+              <a href="MarxistConceptionOfHumanNature.html">史的唯物論の人間観と首領論</a>
+            </h3>
+            <div class="card-subtitle">「社会的諸関係の総体」からスターリンの歯車論、そして北朝鮮「社会政治的生命体論」への転倒</div>
+            <p class="card-desc">人間を物質的生産活動と社会的関係の中に捉えるマルクス史的唯物論。スターリンの「国家の歯車」論を経て、北朝鮮が「首領の指導なくして人間は真の生命を得られない」とする神秘主義へ至る思想史。</p>
+            <div class="card-tags">
+              <span class="card-tag" onclick="filterByTag('史的唯物論')">#史的唯物論</span><span class="card-tag" onclick="filterByTag('人間観')">#人間観</span><span class="card-tag" onclick="filterByTag('フォイエルバッハ論')">#フォイエルバッハ論</span><span class="card-tag" onclick="filterByTag('歯車論')">#歯車論</span><span class="card-tag" onclick="filterByTag('社会政治的生命体論')">#社会政治的生命体論</span>
+            </div>
+            <div class="card-footer">
+              <a href="MarxistConceptionOfHumanNature.html" class="card-btn">
+                <span>補論・図解を読む</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+            
+        </div>
+      </section>
+        
+
+      <!-- No Results -->
+      <div class="no-results" id="noResults">
+        <h3>該当するWeb補論が見つかりませんでした</h3>
+        <p>検索語句を変更するか、フィルターを「すべて」に戻してお試しください。</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="../../cover_preview.html">KDP表紙デザイン</a>
+        <span>・</span>
+        <a href="../../epub/kindle_%E5%8C%97%E6%9C%9D%E9%AE%AE%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AA%E3%83%B3%E4%B8%BB%E7%BE%A9%E3%81%AE%E5%BD%A2%E6%88%90%EF%BD%9Cmb_cho%EF%BD%9Cnote.epub" download>Kindle EPUBダウンロード</a>
+        <span>・</span>
+        <a href="https://note.com/mb_cho" target="_blank" rel="noopener noreferrer">note公式</a>
+        <span>・</span>
+        <a href="https://youtu.be/m9rhloSwBCQ" target="_blank" rel="noopener noreferrer">YouTube解説動画</a>
+      </div>
+      <p class="copyright">
+        © 2026 mb_cho All Rights Reserved. 『北朝鮮におけるスターリン主義の形成』公式Web補論ポータル
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    const sections = document.querySelectorAll('.chapter-section');
+    const noResults = document.getElementById('noResults');
+    const statusCounter = document.getElementById('statusCounter');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function applyFilterAndSearch() {
+      let visibleCount = 0;
+
+      sections.forEach(section => {
+        const sectionChapter = section.getAttribute('data-chapter');
+        const sectionCards = section.querySelectorAll('.card');
+        let sectionVisibleCards = 0;
+
+        sectionCards.forEach(card => {
+          const cardChapter = card.getAttribute('data-chapter');
+          const title = card.querySelector('.card-title').textContent.toLowerCase();
+          const subtitle = card.querySelector('.card-subtitle').textContent.toLowerCase();
+          const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+          const tags = card.querySelector('.card-tags').textContent.toLowerCase();
+
+          const matchesCategory = (currentFilter === 'all') || (cardChapter === currentFilter);
+          const matchesSearch = !searchQuery || 
+                                title.includes(searchQuery) || 
+                                subtitle.includes(searchQuery) || 
+                                desc.includes(searchQuery) || 
+                                tags.includes(searchQuery);
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = 'flex';
+            sectionVisibleCards++;
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Hide section if no cards match
+        if (sectionVisibleCards > 0) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+
+      statusCounter.textContent = `表示中: ${visibleCount} / 21編`;
+
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    // Filter Buttons
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        applyFilterAndSearch();
+      });
+    });
+
+    // Search Input
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      applyFilterAndSearch();
+    });
+
+    // Tag Click Search
+    window.filterByTag = function(tagName) {
+      searchInput.value = tagName;
+      searchQuery = tagName.toLowerCase();
+      applyFilterAndSearch();
+      window.scrollTo({ top: document.querySelector('.controls-wrapper').offsetTop - 20, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
