@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロレタリア独裁をめぐるスターリンとトロツキーの激突：一国社会主義・官僚独裁 vs 永続革命・労働者民主主義 | 『北朝鮮におけるスターリン主義の形成』補論</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #0f172a;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #92400e;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding-bottom: 4rem;
+    }
+
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Series Navigation */
+    .nav-box {
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 0.9rem 1.25rem;
+      border-radius: 0 0 0.85rem 0.85rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #93c5fd;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .nav-link {
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--rose);
+      color: #ffffff;
+      border-color: #fda4af;
+      font-weight: 700;
+    }
+
+    /* Hero Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #31102f 48%, #7f1d1d 100%);
+      color: #ffffff;
+      padding: 3rem 2rem;
+      margin-bottom: 2.5rem;
+      border-radius: 1.25rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 880px;
+      line-height: 1.75;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.35rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Dynamic Visual Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.72rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .arch-visual-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .arch-visual-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #93c5fd;
+      margin-bottom: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      border-left-color: var(--purple);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    .callout-purple .callout-title {
+      color: var(--purple);
+    }
+
+    /* Mechanism Analyzer Tabs */
+    .mech-container {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .mech-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    .mech-tab {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mech-tab:hover {
+      background: #eff6ff;
+      color: var(--primary);
+    }
+
+    .mech-tab.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    .mech-content-panel {
+      display: none;
+    }
+
+    .mech-content-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+      .sim-box { padding: 1.25rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <!-- <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察</a>
+        <a href="ChekAndMensheviks.html" class="nav-link">★ チェーカーとメンシェビキ</a>
+        <a href="proDokuStaTro.html" class="nav-link active">★ プロレタリア独裁・スターリン・トロツキー</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』と神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ 継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と廬山会議</a>
+        <a href="HungarianRevolution.html" class="nav-link">⑯ ハンガリー動乱</a>
+        <a href="ChollimaMovement.html" class="nav-link">⑰ 千里馬運動</a>
+        <a href="SpeechByKimIlsung.html" class="nav-link">⑱ 1955年金日成演説</a>
+        <a href="Kapsan.html" class="nav-link">⑲ 甲山派粛清と唯一思想</a>
+        <a href="Soviet.html" class="nav-link">⑳ ソビエト制度の変容</a>
+        <a href="MarxistConceptionOfHumanNature.html" class="nav-link">㉑ 史的唯物論と首領論</a>
+      </div> -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">プロレタリア独裁論・ソ連政治思想史補論</span>
+        <span class="badge badge-sub">一国社会主義 vs 永続革命・官僚独裁 vs ソヴィエト民主主義</span>
+      </div>
+      <h1>プロレタリア独裁をめぐるスターリンとトロツキーの激突：<br>「党官僚による一国専制」か、「労働者評議会と世界革命」か</h1>
+      <p class="lead">
+        マルクス・レーニン主義において、資本主義を打倒した後の過渡期国家を指す<strong>「プロレタリア独裁（プロレタリアート独裁）」</strong>。1924年のレーニン死後、この同一の概念の解釈と実践をめぐって、<strong>ヨシフ・スターリン</strong>と<strong>レフ・トロツキー</strong>は歴史的な死闘を繰り広げました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        両者の本質的な違いは、<strong>①「革命の範囲（一国か世界か）」</strong>と<strong>②「権力の所在（党・官僚か、労働者のソヴィエトか）」</strong>という2つの座標軸にあります。スターリンは「一国社会主義論」のもとで共産党書記局と国家官僚が労働者を代弁して上から強権統制する<strong>「官僚的・国家的独裁」</strong>を構築しました。これに対しトロツキーは「永続革命論」に立ち、先進国への世界革命の波及と、労働者評議会（ソヴィエト）における下からの民主的討論・統制に基づく<strong>「国際的・労働者民主主義的独裁」</strong>を主張し、スターリン体制を「裏切られた革命（退化した労働者国家）」と弾劾しました。<a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a><br>
+        この論争におけるスターリンの勝利とトロツキーの追放・暗殺は、単にソ連一国の運命を決めただけではありません。スターリンが完成させた<strong>「党官僚による上からの独裁・国家権力の絶対的強化・異論派の物理的抹殺」</strong>という統治モデルこそが、第二次世界大戦後に北朝鮮へ移植され、金日成の「首領制」と「唯一思想体系」を生み出す直接の設計図となったのです。<a href="#ref-5" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[5]</a><a href="#ref-8" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[8]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Two Axes of Divergence -->
+    <section>
+      <h2>⚖️ 1. 本質的な違いを生んだ「2つの座標軸」：一国か世界か、官僚か評議会か</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        スターリンとトロツキーはともに「プロレタリア独裁」を掲げましたが、その中身は正反対でした。両者の分岐点を規定したのは、<strong>第1軸「社会主義建設の空間的範囲（国内完結か、世界連鎖か）」</strong>および<strong>第2軸「独裁を行使する政治的主体（党・国家官僚機構か、労働者自身のソヴィエトか）」</strong>という根本的な対立です。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+      </p>
+
+      <div class="grid-2">
+        <!-- スターリンのプロレタリア独裁観 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>🔴 スターリン：一国社会主義と「上からの党・官僚独裁」</span>
+            <span style="font-size: 0.75rem; background: #ffe4e6; color: var(--crimson); padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-weight: 700;">国家官僚主義モデル</span>
+          </div>
+          <p class="factor-desc">
+            <strong>【第1軸：革命の範囲＝一国社会主義論】</strong><br>
+            西欧での革命が遅れる中、広大な領土と資源を持つソ連一国だけでも、国内の労働力と資源を総動員すれば社会主義社会の完全な建設が可能であると主張（1924年末に定式化）。<br>
+            <strong>【第2軸：権力の所在＝共産党・官僚機構による上からの独裁】</strong><br>
+            プロレタリア独裁とは実質的に「前衛党（ボリシェヴィキ）の独裁」であり、党指導部（政治局・書記局）と国家官僚機構が労働者階級を「代弁」して上から強権的に社会を統制・指導する体制であると規定。<br>
+            <strong>【国家と農民への姿勢】</strong><br>
+            資本主義列強の包囲と国内の階級敵に対抗するため、「階級闘争激化論」に基づき<strong>国家権力（軍・秘密警察OGPU/NKVD・官僚機構）を死滅させるどころか極限まで強化</strong>し、農民層を強制的コルホーズ化で動員・収奪しました。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-6" class="cite-tag">[6]</a>
+          </p>
+        </div>
+
+        <!-- トロツキーのプロレタリア独裁観 -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🔵 トロツキー：永続革命論と「下からの労働者民主主義」</span>
+            <span style="font-size: 0.75rem; background: #fef3c7; color: var(--accent-dark); padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-weight: 700;">国際・評議会民主主義モデル</span>
+          </div>
+          <p class="factor-desc">
+            <strong>【第1軸：革命の範囲＝永続革命論（世界革命）】</strong><br>
+            経済的・技術的に立ち遅れた農業国ロシア（ソ連）一国だけでは、世界資本主義市場の経済的・軍事的圧力に耐えられず社会主義の完成は不可能。ドイツやイギリスなど先進工業国への<strong>世界革命の波及と国際連帯</strong>が不可欠であると主張。<br>
+            <strong>【第2軸：権力の所在＝ソヴィエト（労働者評議会）による下からの独裁】</strong><br>
+            プロレタリア独裁の主体はあくまで労働者階級自身であり、彼らが職場や地域で選出し、いつでも解任（リコール）できる<strong>ソヴィエトにおける自由な討論と民主的決定</strong>こそが生命線。党書記局や官僚が労働者に成り代わる事態を「プロレタリア独裁の官僚的退化」として激しく批判。<br>
+            <strong>【国家と農民への姿勢】</strong><br>
+            農民層は小土地所有者の性質を持つため、労働者階級が主導権（ヘゲモニー）を保持しつつ指導・説得すべき同盟軍と位置づけ、世界革命の進展とともに国家権力は本来のマルクス主義通り<strong>段階的に死滅（解体）</strong>すべきであると論じました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Callout: Why did the same term diverge? -->
+      <div class="callout callout-purple" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>📜 思想史の逆説：なぜ「労働者の解放」を掲げた権力が「史上最強の官僚専制」へと変貌したのか</span>
+        </div>
+        <p style="font-size: 0.93rem; color: var(--text-main);">
+          1917年の十月革命当初、「すべての権力をソヴィエトへ！」というスローガンは、労働者・兵士・農民の直接民主主義的評議会による自治を意味していました。しかし、1918〜20年の凄惨なロシア内戦と外国干渉戦争、そして戦時共産主義による経済崩壊の結果、革命を支えた都市の熟練労働者階級は戦死・離散して激減しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a><br>
+          「プロレタリア独裁」を行使すべき当のプロレタリアート（労働者階級）が空洞化した空白を埋めたのが、党の任命制人事（ノメンクラトゥーラ）によって急膨張した<strong>党・国家官僚層（アパラーチキ）</strong>でした。<strong>スターリンはこの新興官僚層の利害とナショナリズムを組織的に結晶化させて権力を握り、トロツキーは失われた「ソヴィエト民主主義と世界革命の理念」を取り戻そうとして官僚機構に粉砕された</strong>――これが両者の対立の社会学的本質です。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive 5-Phase Simulator -->
+    <section>
+      <h2>🎛️ 2. インタラクティブ図解：レーニン死後の権力闘争と「プロレタリア独裁」変質の5段階シミュレーター</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        1922年のスターリン書記長就任とレーニンの発病から、1940年のトロツキー暗殺に至る約18年間、「プロレタリア独裁」がいかにして下からのソヴィエト民主主義を喪失し、スターリン個人の絶対的官僚独裁へと変質していったのか。下の<strong>5つの歴史フェーズ（Phase 1〜5）</strong>をクリックして、権力構造と理論の変遷を確認してください。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">⚡ スターリン vs トロツキー：権力闘争と「プロレタリア独裁」変質シミュレーター</div>
+            <div class="sim-subtitle">各年代タブを選択すると、3大指標・権力構造SVGチャート・歴史解説が動的に切り替わります</div>
+          </div>
+          <div id="sim-badge" style="background: rgba(225, 29, 72, 0.35); border: 1px solid #fda4af; color: #fecdd3; font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 9999px;">
+            Phase 1: 1922–1923 遺書と新路線
+          </div>
+        </div>
+
+        <!-- Phase Buttons -->
+        <div class="phase-tabs">
+          <button type="button" class="phase-btn active" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 (1922–1923)</span>
+            レーニンの遺書と『新路線』
+          </button>
+          <button type="button" class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 (1924–1925)</span>
+            一国社会主義論と三頭政治
+          </button>
+          <button type="button" class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 (1926–1927)</span>
+            合同反対派の敗北と党除名
+          </button>
+          <button type="button" class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 (1929–1936)</span>
+            国外追放と『裏切られた革命』
+          </button>
+          <button type="button" class="phase-btn" onclick="setPhase(4)">
+            <span class="phase-year">Phase 5 (1936–1940)</span>
+            モスクワ裁判とメキシコ暗殺
+          </button>
+        </div>
+
+        <!-- Dynamic Metrics Bars -->
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">① ソヴィエト・党内討論の実質的自由度</div>
+            <div class="metric-value" id="m-val-1">65%（党内論争の最後の火花）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="m-bar-1" style="width: 65%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">② スターリン書記局・官僚機構の権力独占度</div>
+            <div class="metric-value" id="m-val-2">40%（人事権・地方書記の掌握開始）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="m-bar-2" style="width: 40%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">③ 「一国社会主義・国家肥大化」への転換度</div>
+            <div class="metric-value" id="m-val-3">25%（世界革命路線がなお公式教義）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="m-bar-3" style="width: 25%; background-color: #3b82f6;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic SVG Architecture Diagram -->
+        <div class="arch-visual-box">
+          <div class="arch-visual-title">
+            <span>📐 権力構造・イデオロギー対立の動態チャート</span>
+            <span id="svg-phase-caption" style="color: #fde047;">[1922-1923] 書記局の官僚化に対するレーニン・トロツキーの危機感</span>
+          </div>
+          <svg id="arch-svg" viewBox="0 0 760 265" style="width: 100%; height: auto; display: block; background: #090d16; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.1);" role="img" aria-label="スターリンとトロツキーの権力闘争とプロレタリア独裁の変遷図">
+            <!-- Populated dynamically by JavaScript -->
+          </svg>
+        </div>
+
+        <!-- Dynamic Description -->
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- Populated dynamically by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comprehensive Comparison Table -->
+    <section>
+      <h2>📊 3. スターリン vs トロツキー：「プロレタリア独裁」7大論点の徹底比較マトリクス</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        両者が掲げた「プロレタリア独裁」の理論的・実践的差異を、中核となる4大論点（①社会主義建設の範囲、②独裁の主体、③農民層への位置づけ、④国家死滅への道筋）に、⑤党内民主主義、⑥国際戦略、⑦ソ連国家の現状規定を加えた<strong>全7項目</strong>で比較します。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-3" class="cite-tag">[3]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">比較項目</th>
+              <th style="width: 40%; background: #fff1f2; color: #881337;">🔴 スターリンのプロレタリア独裁観<br><span style="font-size: 0.78rem; font-weight: 500;">（一国社会主義・上からの党官僚独裁）</span></th>
+              <th style="width: 40%; background: #fffbeb; color: #92400e;">🔵 トロツキーのプロレタリア独裁観<br><span style="font-size: 0.78rem; font-weight: 500;">（永続革命・下からの労働者民主主義）</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 社会主義建設の範囲</strong></td>
+              <td>
+                <strong>【一国社会主義論】</strong><br>
+                ソ連一国だけでも社会主義社会の完全な建設は可能であると主張。西欧の革命が停滞する中、広大な領土・国内資源・労働力を総動員して、外部に依存せずソ連単独で社会主義を完成させるとしました。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-6" class="cite-tag">[6]</a>
+              </td>
+              <td>
+                <strong>【永続革命論（世界革命）】</strong><br>
+                一国のみでの社会主義完成は不可能と主張。後進国ソ連は資本主義世界市場と帝国主義の包囲下にあり、西欧の先進工業国へ革命を波及させ、国際的な分業と連帯を実現しなければ、ソ連の革命自体が孤立し窒息すると警告しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>② プロレタリア独裁の主体</strong></td>
+              <td>
+                <strong>【共産党・官僚機構による「上からの独裁」】</strong><br>
+                労働者階級の「前衛」である共産党指導部（政治局・書記局）と国家官僚機構が労働者を代弁し、強権的に社会を統制する体制を構築。大衆団体やソヴィエト、労働組合は党の指令を伝達する「伝導ベルト」と位置づけられました。<a href="#ref-2" class="cite-tag">[2]</a>
+              </td>
+              <td>
+                <strong>【ソヴィエト（労働者評議会）による「下からの独裁」】</strong><br>
+                独裁の主体はあくまで労働者自身であり、ソヴィエトにおける民主的な議論・選挙・リコール制（労働者民主主義）を通じて行われるべきだと主張。党書記局と官僚による権力独占を「プロレタリア独裁の退化」として激しく批判しました。<a href="#ref-3" class="cite-tag">[3]</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>③ 農民層への位置づけと工業化</strong></td>
+              <td>
+                <strong>【強権的な動員・収奪と従属の対象】</strong><br>
+                1920年代半ばはブハーリンと組み富農妥協策をとったものの、1929年以降は一転して急激な重工業化のため、農民をコルホーズ（集団農場）へ強制的に組織化。抵抗する農民を「クラーク（富農）」として階級絶滅・収奪し、工業化の原資を暴力的に絞り出しました。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-7" class="cite-tag">[7]</a>
+              </td>
+              <td>
+                <strong>【労働者階級が指導すべき同盟軍】</strong><br>
+                農民は革命の重要な同盟軍であるが、小土地所有者（プチ・ブルジョワ）としての保守的性質を持つため、プロレタリア独裁においては常に都市の労働者階級が主導権（ヘゲモニー）を握り、計画的工業化による工業製品の供給を通じて自発的協同組合化へ導くべきだとしました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>④ 国家の死滅への道筋</strong></td>
+              <td>
+                <strong>【国家権力の絶対的強化（階級闘争激化論）】</strong><br>
+                「社会主義が進展するほど階級敵の抵抗は先鋭化する」と唱え、国家の死滅に到達するためには、まず過渡期において歴史上もっとも強大で無慈悲な国家権力（秘密警察・常備軍・強制収容所）を限界まで強化しなければならないという逆説的論理を展開しました。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-6" class="cite-tag">[6]</a>
+              </td>
+              <td>
+                <strong>【世界革命を通じた国家の段階的解体】</strong><br>
+                マルクスとレーニン（『国家と革命』）の本来の理論通り、階級対立の解消と世界革命の進展に伴って国家の抑圧機能は段階的に縮小・死滅すべきだと主張。ソ連で国家と秘密警察が肥大化したのは、特権官僚層が労働者から自らの支配と利権を守るためだと批判しました。<a href="#ref-3" class="cite-tag">[3]</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>⑤ 党内民主主義と異論・分派</strong></td>
+              <td>
+                <strong>【「一枚岩の団結」と異論の犯罪化】</strong><br>
+                党は鉄の規律で結ばれた「一枚岩」でなければならず、指導部への批判や異論はすべて「反党分派活動」「帝国主義・ファシズムの手先」とみなされ、除名・流刑・銃殺の対象となりました。<a href="#ref-6" class="cite-tag">[6]</a>
+              </td>
+              <td>
+                <strong>【労働者民主主義と批判の自由】</strong><br>
+                前衛党が官僚的硬直に陥らないためには、党内およびソヴィエト内部での自由な路線討論と批判が不可欠であると主張。晩年の『裏切られた革命』では、ソヴィエトに忠実な複数の社会主義政党の合法化すら再提起しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>⑥ 国際共産主義（コミンテルン）戦略</strong></td>
+              <td>
+                <strong>【ソ連一国の国益・外交安全保障への従属】</strong><br>
+                コミンテルン（第三インターナショナル）を「ソ連防衛のための外交的道具」へと変質させ、各国共産党にモスクワへの絶対服従を強制（中国革命での国民党への無原則な追随や、ドイツでの社会民主党＝「社会ファシズム」論による反ナチ統一戦線の破壊を招来）。<a href="#ref-5" class="cite-tag">[5]</a>
+              </td>
+              <td>
+                <strong>【自律的な世界革命の推進と第四インターナショナル】</strong><br>
+                コミンテルンのスターリン化・官僚化が中国革命（1927年）やドイツ労働運動（1933年ヒトラー政権誕生）の歴史的敗北を招いたと痛烈に批判し、1938年に世界革命の旗を継ぐ「第四インターナショナル」を創設しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>⑦ ソ連国家の現状規定</strong></td>
+              <td>
+                <strong>【社会主義の完全な勝利と全人民的調和】</strong><br>
+                1936年「スターリン憲法」において、ソ連では搾取階級が一掃され社会主義が基本的に完成したと宣言（その直後に大粛清の嵐を発動）。<a href="#ref-6" class="cite-tag">[6]</a>
+              </td>
+              <td>
+                <strong>【退化した労働者国家（ソヴィエト・テルミドール）】</strong><br>
+                国有化・計画経済という土台は残るものの、政治権力は特権官僚カーストに奪された「退化した労働者国家（スターリン主義ボナパルティズム）」と規定し、下からの「政治革命」による官僚打倒を呼びかけました。<a href="#ref-3" class="cite-tag">[3]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Deep-Dive Interactive Analyzer Tabs -->
+    <section>
+      <h2>🔍 4. 決定的な対立点と3大深掘りテーマ：権力闘争・『裏切られた革命』・現代政治思想</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        スターリンとトロツキーの激突をより深く理解するため、<strong>①スターリンがトロツキーを追放・抹殺した歴史的経緯と政治背景</strong>、<strong>②トロツキーの主著『裏切られた革命』におけるソ連官僚制批判の核心</strong>、<strong>③農民問題と工業化論争の逆説</strong>、そして<strong>④現代の政治思想における評価</strong>の4つのテーマをタブ切替で詳しく解説します。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-7" class="cite-tag">[7]</a>
+      </p>
+
+      <div class="mech-container">
+        <div class="mech-tabs" role="tablist">
+          <button type="button" class="mech-tab active" onclick="showMech('m1', this)">① トロツキー追放・暗殺の政治背景</button>
+          <button type="button" class="mech-tab" onclick="showMech('m2', this)">② 主著『裏切られた革命』の官僚制解剖</button>
+          <button type="button" class="mech-tab" onclick="showMech('m3', this)">③ 農民問題・工業化論争の逆説</button>
+          <button type="button" class="mech-tab" onclick="showMech('m4', this)">④ 現代政治思想における評価</button>
+        </div>
+
+        <!-- Tab 1: Historical Process & Political Background of Trotsky's Ouster -->
+        <div id="m1" class="mech-content-panel active">
+          <h3 style="margin-top: 0; color: var(--crimson);">① なぜ「十月革命の立役者・赤軍創設者」トロツキーは「灰色の実務家」スターリンに敗れ、抹殺されたのか</h3>
+          <p style="margin-bottom: 1rem;">
+            1917年のペトログラード武装蜂起を直接指揮し、500万の赤軍を創設して内戦を勝利に導いたトロツキーは、レーニンに次ぐ圧倒的な知名度とカリスマを備えた指導者でした。一方、スターリンは革命期には目立たない組織実務家（同志カード索引係＝「同志カルトテコフ」と揶揄された存在）に過ぎませんでした。にもかかわらず、レーニン死後の権力闘争でスターリンが完勝し、トロツキーが追放・暗殺に至った背後には、単なる個人の権謀術数を超えた<strong>4つの構造的・政治的要因</strong>が存在しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+
+          <div class="grid-2" style="margin-bottom: 1.25rem;">
+            <div class="factor-card card-rose">
+              <div class="factor-title">1. 書記局による人事権（ノメンクラトゥーラ）の完全掌握</div>
+              <p class="factor-desc">
+                1922年4月に新設された「党中央委員会書記長」に就任したスターリンは、地方党委員会の書記や国家機関幹部の任免・昇進・配給特権を握る人事制度（ノメンクラトゥーラ）を構築しました。党大会の代議員は地方書記によって選出されるため、スターリンは<strong>「議論が始まる前にすでに党大会の票の過半数を組織的に支配する」</strong>マシーンを完成させていました。さらに1924年の「レーニン徴募」で政治経験の浅い数十万の新規党員を入党させ、書記局への忠誠層を一気に拡大しました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a>
+              </p>
+            </div>
+            <div class="factor-card card-amber">
+              <div class="factor-title">2. 内戦の疲弊と「一国社会主義」の心理的吸引力</div>
+              <p class="factor-desc">
+                第一次世界大戦・二度の革命・3年間の内戦と飢饉を生き延びたソ連の大衆と党幹部は、極度に疲弊していました。トロツキーの「永続革命論」は「西欧で革命が起きない限りソ連の社会主義は完成しない（＝さらなる国際的動乱と犠牲が必要）」と聞こえたのに対し、スターリンの「一国社会主義論」は<strong>「外国の革命を待たずとも、自分たちの手で今ここで安定した社会主義大国を築ける」</strong>という強い心理的安堵感とソ連ナショナリズム（愛国心）に訴えかけました。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-7" class="cite-tag">[7]</a>
+              </p>
+            </div>
+            <div class="factor-card card-purple">
+              <div class="factor-title">3. 「赤いボナパルト」への警戒と1921年分派禁止決議の罠</div>
+              <p class="factor-desc">
+                1903年以来の古参ボリシェヴィキ（ジノヴィエフ、カーメネフ、ブハーリンら）は、1917年夏に合流した元メンシェビキのトロツキーが赤軍を背景に軍事独裁者（ナポレオン＝ボナパルト）になることを極度に恐れました。そのため彼らはスターリンと結んでトロツキーを包囲しました。さらに、1921年第10回党大会でレーニンとトロツキー自身が賛成した<strong>「党内分派の禁止決議」</strong>が、皮肉にもスターリン書記局がトロツキーら反対派を「分派主義者」として処分する最強の法的武器となりました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-5" class="cite-tag">[5]</a>
+              </p>
+            </div>
+            <div class="factor-card card-emerald">
+              <div class="factor-title">4. 段階的排除から「コヨアカンのピッケル暗殺」まで</div>
+              <p class="factor-desc">
+                スターリンは巧妙なサラミ戦術をとりました。①ジノヴィエフ・カーメネフと組みトロツキーを軍事人民委員から解任（1925年）→②ブハーリン（右派）と組み「合同反対派（トロツキー・ジノヴィエフ・カーメネフ）」を党除名（1927年）→③トロツキーをカザフスタンのアルマ・アタへ流刑（1928年）、さらにトルコへ国外追放（1929年）→④モスクワ裁判（1936〜38年）でトロツキーを「ゲシュタポと結탁したテロ首謀者」として欠席裁判で死刑宣告し、ソ連国内の旧反対派とトロツキーの家族・秘書を次々と処刑→⑤1940年8月20日、亡命先メキシコ・コヨアカンの書斎にて、NKVD工作員ラモン・メルカデルに登山用ピッケルで頭部を強打させ暗殺しました。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-6" class="cite-tag">[6]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Analysis of "The Revolution Betrayed" (1936) -->
+        <div id="m2" class="mech-content-panel">
+          <h3 style="margin-top: 0; color: var(--primary-dark);">② 主著『裏切られた革命（1936年）』の解剖――ソ連官僚制批判の最高峰</h3>
+          <p style="margin-bottom: 1rem;">
+            亡命中のトロツキーが1936年（スターリン憲法制定・第1回モスクワ裁判の直前）に脱稿した<strong>『裏切られた革命（ソ連とは何か、どこへ行くのか）』</strong>は、スターリン体制を単なる「個人の狂気」としてではなく、マルクス主義の社会科学的手法を用いて解剖した古典的名著です。その核心は以下の4つの概念に集約されます。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+
+          <div class="grid-2" style="margin-bottom: 1rem;">
+            <div class="factor-card card-amber">
+              <div class="factor-title">1. 「退化した労働者国家」という二重規定</div>
+              <p class="factor-desc">
+                トロツキーは、ソ連が資本主義に戻ったわけでも、すでに社会主義を完成させたわけでもないと断じました。十月革命によって創出された<strong>「生産手段の国有化と計画経済」という社会経済的土台</strong>は維持されているため、ソ連は依然として「労働者国家」の範疇にある。しかし、<strong>政治権力は労働者階級から完全に奪われ、無責任で特権的な官僚層（カースト）に独占</strong>されている。この矛盾した過渡期体制を、トロツキーは<strong>「退化した労働者国家（Degenerated Workers' State）」</strong>と名付けました。<a href="#ref-3" class="cite-tag">[3]</a>
+              </p>
+            </div>
+            <div class="factor-card card-rose">
+              <div class="factor-title">2. 「欠乏の経済」と「行列を整理する巡査」の比喩</div>
+              <p class="factor-desc">
+                なぜ官僚層がこれほど肥大化したのか？トロツキーはそれを<strong>「後進国における物質的欠乏」</strong>から説明しました。生活必需品が豊かにあれば誰も行列を作らないが、パンや靴が決定的に不足している社会では店頭に長い行列ができ、混乱を抑えて分配を取り仕切る<strong>「巡査（官僚）」</strong>が必要になる。そして権力を握った巡査は、誰よりも先に自分自身と仲間に最良の取り分（別荘、特別配給、高給、勲章）を割り当てるようになる――これがスターリン官僚制の物質的起源であると喝破しました。<a href="#ref-3" class="cite-tag">[3]</a>
+              </p>
+            </div>
+            <div class="factor-card card-purple">
+              <div class="factor-title">3. 「ソヴィエト・テルミドール」とボナパルティズム</div>
+              <p class="factor-desc">
+                フランス革命において急進派（ロベスピエール）が倒され、革命の成果（封建制廃止）を享受しつつも大衆の急進化を抑え込む保守的ブルジョワジーが権力を握った「テルミドール反動（1794年）」および「ナポレオンのボナパルティズム独裁」になぞらえ、ソ連でも1924年以降<strong>「ソヴィエト・テルミドール」</strong>が起きたと分析しました。スターリンは、労働者・農民の不満と国際資本主義の圧力の狭間で揺れる特権官僚層の利害を守るため、彼ら自身の頭上にすら君臨する<strong>「絶対的仲裁者（ソヴィエト・ボナパルト）」</strong>として登場したのです。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+              </p>
+            </div>
+            <div class="factor-card card-emerald">
+              <div class="factor-title">4. 「政治革命」の提唱と1991年ソ連崩壊の予言</div>
+              <p class="factor-desc">
+                トロツキーは、ソ連が生き残る道は、労働者階級が国有計画経済の土台を守りつつ、暴力的にスターリン官僚カーストを打倒してソヴィエト民主主義と複数政党の自由を回復する<strong>「政治革命（Political Revolution）」</strong>以外にないと結論づけました。もしこの政治革命が起きなければ、<strong>「特権官僚層はやがて行政的支配だけでは満足しなくなり、子孫に財産を相続させるために国有企業を解体・私有化し、自らが新たな資本家階級へと転化するだろう」</strong>と予言しました。これは55年後の1991年ソ連崩壊とノーメンクラトゥーラによる「オリガルヒ（新興財閥）資本主義化」を驚くべき精度で言い当てていました。<a href="#ref-3" class="cite-tag">[3]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Peasantry & Industrialization Debate -->
+        <div id="m3" class="mech-content-panel">
+          <h3 style="margin-top: 0; color: var(--accent-dark);">③ 農民問題と工業化論争の逆説：「超工業化」批判から強制的コルホーズ化・大飢饉へ</h3>
+          <p style="margin-bottom: 1rem;">
+            原稿の比較項目③にある「農民層への位置づけ」は、1920年代ソ連の経済政策（ネップ＝新経済政策）をめぐる最大の論争点でした。ここでもスターリンは日和見主義的なジグザグの末に、史上空前の国家的暴力へと突き進みました。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-7" class="cite-tag">[7]</a>
+          </p>
+
+          <div class="callout callout-rose">
+            <div class="callout-title">🌾 1924〜27年：ブハーリン「亀の歩み」路線とトロツキー派への「農民収奪」批判</div>
+            <p style="font-size: 0.92rem;">
+              ネップ期、工業製品の不足と高価格から農民が都市への穀物販売を渋る「鋏状価格差（シェーレ）危機」が発生しました。トロツキーと経済学者プレオブラジェンスキー（左翼反対派）は、早急に計画的な国営工業化を進めて安価な工業製品を農村に供給し、富農（クラーク）への累進課税を強化して工業化資金を確保すべきだと主張しました。<br>
+              これに対し、当時右派のニコライ・ブハーリン（「農民よ、豊かになれ！」と唱えた）と同盟していたスターリンは、トロツキーの提案を<strong>「農民との同盟を破壊する『超工業化主義』の冒険である」</strong>と激しく攻撃し、トロツキーを追放しました。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-7" class="cite-tag">[7]</a>
+            </p>
+          </div>
+
+          <div class="callout callout-emerald">
+            <div class="callout-title">🚜 1928〜33年：スターリンの急旋回――「上からの革命」とホロドモール（人工的大飢饉）</div>
+            <p style="font-size: 0.92rem;">
+              ところがトロツキーを追放した直後の1928年、穀物調達が完全に危機に陥ると、スターリンはブハーリンを「右翼偏向」として切り捨て、突如として極端な強権路線へ180度転換しました。<br>
+              トロツキーが構想していた「経済的インセンティブと計画に基づく段階的工業化・自発的協同組合化」を完全に無視し、スターリンはOGPU（秘密警察）と赤軍を農村に投入して<strong>「階級としてのクラーク（富農）の絶滅」</strong>と<strong>「強制的・全面的なコルホーズ化（農業集団化）」</strong>を断行しました。数百万の農民がシベリアへ強制移住させられ、ウクライナやカザフスタン、北カフカスでは国家による強権的な穀物徴発の結果、1932〜33年に<strong>500万〜700万人以上が餓死する大飢饉（ホロドモール）</strong>が発生しました。<br>
+              亡命先のトロツキーは、このスターリンの無謀な強制集団化を「経済法則を無視した官僚的狂気であり、農民を革命の敵に追いやる暴挙である」と厳しく弾劾しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-7" class="cite-tag">[7]</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 4: Evaluation in Modern Political Thought -->
+        <div id="m4" class="mech-content-panel">
+          <h3 style="margin-top: 0; color: var(--purple);">④ 現代の政治思想における評価：「裏切られた革命」か、それとも「レーニン主義の必然的帰結」か</h3>
+          <p style="margin-bottom: 1rem;">
+            スターリンとトロツキーの「プロレタリア独裁」論争は、20世紀後半から現代に至る政治哲学・歴史社会学において、<strong>「なぜ社会主義革命は全体主義へ帰結したのか」「もう一つの民主的な社会主義の可能性はあったのか」</strong>をめぐる最重要の分析対象となっています。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-9" class="cite-tag">[9]</a><a href="#ref-10" class="cite-tag">[10]</a>
+          </p>
+
+          <div class="grid-3">
+            <div class="factor-card card-emerald">
+              <div class="factor-title">A. 『予言者』三部作とマルクス主義刷新派の評価</div>
+              <p class="factor-desc">
+                歴史家<strong>アイザック・ドイッチャー</strong>（『武装せる予言者・武力なき予言者・追放された予言者』）や西欧の反スターリン主義左翼は、トロツキーが生命を賭してスターリンの官僚独裁と対決し、マルクス主義における<strong>「下からの労働者民主主義・国際主義・批判的理性」</strong>の伝統を守り抜いた点を高く評価します。特に『裏切られた革命』における官僚制分析は、ウェーバーの官僚制論と並ぶ20世紀政治社会学の金字塔と位置づけられています。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+              </p>
+            </div>
+            <div class="factor-card card-purple">
+              <div class="factor-title">B. ハンナ・アーレント、カストリアディスらの内在的批判</div>
+              <p class="factor-desc">
+                一方、<strong>ハンナ・アーレント</strong>（『全体主義の起源』）や、元トロツキストから評議会共産主義・自律思想へ転じた<strong>コルネリウス・カストリアディス</strong>、<strong>クロード・ルフォール</strong>らは、より根源的な問いを突きつけました。<br>
+                すなわち、スターリン官僚制は1924年に突然天から降ってきたのではなく、1918〜21年の内戦期に<strong>レーニンとトロツキー自身が、他党（メンシェビキ・左派エスエル）の非合法化、チェーカーの赤色テロ、労働組合の国家化論、そして1921年クロンシュタット水兵反乱の武力鎮圧を通じて「ソヴィエトの形骸化と一党独裁の骨格」を築いた</strong>のではないか、という批判です。<a href="#ref-9" class="cite-tag">[9]</a><a href="#ref-10" class="cite-tag">[10]</a>
+              </p>
+            </div>
+            <div class="factor-card card-rose">
+              <div class="factor-title">C. 代行主義（Substitutionism）という最大の教訓</div>
+              <p class="factor-desc">
+                実は若き日のトロツキー自身、1904年の論文『我々の政治的課題』において、レーニンの集権的前衛党論を批判し、<strong>「党の組織が党全体に取って代わり、中央委員会が党組織に取って代わり、ついには一人の独裁者が中央委員会に取って代わるだろう」</strong>という恐るべき「代行主義の連鎖」を予言していました。<br>
+                1917年にボリシェヴィキへ合流した後、トロツキーは一時この危険を軽視しましたが、スターリンとの闘争を通じて再び「官僚による労働者階級の代行」という怪物と対峙することになったのです。<a href="#ref-5" class="cite-tag">[5]</a><a href="#ref-9" class="cite-tag">[9]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Direct Connection to North Korean Stalinism -->
+    <section>
+      <h2>🇰🇵 5. 本書『北朝鮮におけるスターリン主義の形成』への直結：スターリンモデルの極限化と「首領制」</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        スターリンとトロツキーの闘争において、トロツキーの「下からのソヴィエト民主主義・永続革命論」が完全に抹殺され、スターリンの「上からの党官僚独裁・一国社会主義・国家権力の絶対的強化」がマルクス・レーニン主義の唯一の正統教義（『ソ連共産党歴史小教程』）として結晶化したことは、1945年以降の北朝鮮国家形成に決定的な刻印を残しました。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-8" class="cite-tag">[8]</a>
+      </p>
+
+      <div class="grid-2">
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① 「党官僚による上からの独裁」→「首領の唯一領導体系」</span>
+          </div>
+          <p class="factor-desc">
+            スターリンが定式化した「労働者階級の独裁とは、前衛党と指導部が上から大衆を指導・統制することである」という論理は、北朝鮮において<strong>「首領（脳髄）―党（神経系）―大衆（肉体）」</strong>という有機体論（社会政治的生命体論）へと極限まで純化されました。トロツキーが擁護した「労働者評議会（ソヴィエト）における下からの自由な討論と幹部リコール権」という思想は当初から完全に排除され、人民委員会や最高人民会議は首領の教示を100%拍手で追認する儀礼機関となりました。<a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 「一国社会主義論」→「主体（チュチェ）思想・自力更生・要塞国家」</span>
+          </div>
+          <p class="factor-desc">
+            国際的な革命の連帯や開かれた世界市場との結合よりも、一国内でのアウタルキー（自給自足）的経済建設と国防を最優先するスターリンの「一国社会主義論」は、1950年代後半の中ソ対立とフルシチョフによるスターリン批判への反発の中で、金日成の<strong>「主体思想（政治における自主・経済における自立・国防における自衛）」</strong>へと転生しました。外部世界の自由化や国際連帯の波を「事大主義・修正主義」として遮断し、一国を巨大な軍事要塞として閉鎖する論理は、まさに一国社会主義論の極北です。<a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ 「国家死滅の否定・階級闘争激化論」→「成分制度と国家保衛省」</span>
+          </div>
+          <p class="factor-desc">
+            トロツキーが『裏切られた革命』で批判した「死滅するどころか特権維持のために極限まで肥大化する警察国家」は、北朝鮮において完全な制度的完成を見ました。スターリンの「階級闘争激化論」に基づき、北朝鮮は全国民を「核心階層・動揺階層・敵対階層（3階層51分類）」の<strong>出身成分</strong>によって身分固定し、国家保衛省と管理所（政治犯収容所）によって三代にわたる連座制の監視・弾圧を行う恒久的な抑圧国家を構築しました。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+
+        <div class="factor-card card-emerald">
+          <div class="factor-title">
+            <span>④ 「反トロツキズム・大粛清」→「反党・反革命宗派分子の粛清」</span>
+          </div>
+          <p class="factor-desc">
+            スターリンがトロツキー派やブハーリン派を抹殺する際に用いた「分派（宗派）主義者＝帝国主義のスパイ・害虫」という政治的悪魔化と見せしめ裁判の手法は、北朝鮮における<strong>1953年の南労党派（朴憲永・李承燁ら）の軍事裁判</strong>、<strong>1956年の「8月宗派事件」（延安派・ソ連派の粛清）</strong>、そして<strong>1967年の甲山派粛清</strong>において、一字一句違わぬ論理で反復されました。異論を唱える同志を「政策上の討論相手」ではなく「物理的に絶滅すべき裏切り者」とみなす政治文化は、スターリン対トロツキーの闘争で確立されたスターリン主義の核心的遺伝子なのです。<a href="#ref-6" class="cite-tag">[6]</a><a href="#ref-8" class="cite-tag">[8]</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>📌 まとめ：プロレタリア独裁の分岐点が照らし出す歴史の教訓</span>
+        </div>
+        <p style="font-size: 0.94rem; color: var(--text-main);">
+          スターリンとトロツキーの対立は、単なる革命家同士の主導権争いではなく、<strong>「共産党・国家官僚による上からの一国専制（スターリン）」</strong>と<strong>「労働者評議会（ソヴィエト）の民主主義と国際連帯に基づく下からの変革（トロツキー）」</strong>という、プロレタリア独裁をめぐる根本的な二つの道の激突でした。<br>
+          トロツキーが警告した通り、労働者自身の民主的批判と国際的連帯を圧殺した「一国社会主義の官僚独裁」は、ソ連においては特権官僚制の腐敗と崩壊を招き、北朝鮮においては近代史上類を見ない「白頭血統の世襲絶対君主制（首領制）」へと帰結したのです。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-8" class="cite-tag">[8]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 6: References -->
+    <section>
+      <h2>📚 6. 学術出典・参考文献リスト</h2>
+      <p style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+        本補論の記述およびインタラクティブ図解は、以下の原典史料・学術研究に基づいています。本文中の <code>[1]</code>〜<code>[10]</code> タグと対応しています。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <span class="ref-link">ウラジーミル・レーニン『国家と革命』（1917年）／『大会への手紙（レーニンの遺書）』（1922-1923年）</span>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <span class="ref-link">ヨシフ・スターリン『レーニン主義の基礎について』（1924年4月）／『十月革命とロシア共産主義者の戦術』（1924年12月：一国社会主義論の定式化）</span>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <span class="ref-link">レフ・トロツキー『裏切られた革命――ソ連とは何か、どこへ行くのか』（1936年、岩波文庫／藤井一行訳）</span>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <span class="ref-link">レフ・トロツキー『新路線』（1923年）／『永続革命論』（1929年）</span>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <span class="ref-link">アイザック・ドイッチャー『武装せる予言者・武力なき予言者・追放された予言者 トロツキー伝（全3巻）』（新評論／山西英一訳）</span>
+        </li>
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <span class="ref-link">ソ連共産党中央委員会編『全連邦共産党（ボリシェヴィキ）歴史小教程（簡明教程）』（1938年）</span>
+        </li>
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <span class="ref-link">E.H.カー『ボリシェヴィキ革命』『一国社会主義』『計画経済への道』（みすず書房）</span>
+        </li>
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <span class="ref-link">鐸木昌之『北朝鮮――社会主義と伝統の共鳴』（東京大学出版会）／和田春樹『北朝鮮現代史』（岩波新書）</span>
+        </li>
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <span class="ref-link">ハンナ・アーレント『全体主義の起源 3 全体主義』（みすず書房）／ロバート・コンクエスト『大テロル』</span>
+        </li>
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <span class="ref-link">渓内謙『スターリン政治体制の成立（全4巻）』（岩波書店）／塩川伸明『現存した社会主義』（勁草書房）</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』Web補論・用語解説アーカイブ | 著者: mb_cho</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const phases = [
+      {
+        badge: "Phase 1: 1922–1923 遺書と新路線",
+        caption: "[1922-1923] 書記局の官僚化に対するレーニンの遺書とトロツキー『新路線』",
+        m1: { val: "65%（党内論争の最後の火花）", w: "65%", c: "#10b981" },
+        m2: { val: "40%（人事権・地方書記の掌握開始）", w: "40%", c: "#f59e0b" },
+        m3: { val: "25%（世界革命路線がなお公式教義）", w: "25%", c: "#3b82f6" },
+        svg: `
+          <rect x="20" y="20" width="330" height="225" rx="10" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+          <text x="185" y="48" fill="#a5b4fc" font-size="14" font-weight="bold" text-anchor="middle">🔴 スターリン書記局＋三頭政治（形成期）</text>
+          <rect x="45" y="65" width="280" height="46" rx="6" fill="#312e81" stroke="#818cf8"/>
+          <text x="185" y="85" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">1922年4月：書記長就任と人事権掌握</text>
+          <text x="185" y="102" fill="#cbd5e1" font-size="11" text-anchor="middle">地方党書記の任命制（ノメンクラトゥーラ）構築</text>
+          <rect x="45" y="125" width="280" height="46" rx="6" fill="#312e81" stroke="#818cf8"/>
+          <text x="185" y="145" fill="#fde047" font-size="12" font-weight="bold" text-anchor="middle">ジノヴィエフ・カーメネフとの「トロイカ」</text>
+          <text x="185" y="162" fill="#cbd5e1" font-size="11" text-anchor="middle">トロツキーの台頭を防ぐため古参幹部が結託</text>
+          <text x="185" y="205" fill="#f87171" font-size="11" font-weight="bold" text-anchor="middle">⚠️ レーニン「遺書」：スターリン解任を勧告</text>
+          <text x="185" y="223" fill="#94a3b8" font-size="10" text-anchor="middle">（しかし三頭政治の思惑により党大会での公表を封印）</text>
+
+          <path d="M 358 132 L 402 132" stroke="#fbbf24" stroke-width="3" stroke-dasharray="5,4"/>
+          <text x="380" y="120" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="middle">路線激突</text>
+
+          <rect x="410" y="20" width="330" height="225" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+          <text x="575" y="48" fill="#6ee7b7" font-size="14" font-weight="bold" text-anchor="middle">🔵 トロツキーと「左翼反対派」（1923年）</text>
+          <rect x="435" y="65" width="280" height="46" rx="6" fill="#065f46" stroke="#34d399"/>
+          <text x="575" y="85" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">「46人の声明」と著書『新路線』</text>
+          <text x="575" y="102" fill="#d1fae5" font-size="11" text-anchor="middle">党の官僚化を批判・労働者民主主義の回復を要求</text>
+          <rect x="435" y="125" width="280" height="46" rx="6" fill="#065f46" stroke="#34d399"/>
+          <text x="575" y="145" fill="#fde047" font-size="12" font-weight="bold" text-anchor="middle">赤軍創設者の威信と青年・学生層の支持</text>
+          <text x="575" y="162" fill="#d1fae5" font-size="11" text-anchor="middle">下からのソヴィエト活性化と計画的工業化を提唱</text>
+          <text x="575" y="205" fill="#6ee7b7" font-size="11" font-weight="bold" text-anchor="middle">📌 病床のレーニンと「反官僚制ブロック」を形成</text>
+          <text x="575" y="223" fill="#a7f3d0" font-size="10" text-anchor="middle">（だが1923年3月のレーニン第3回脳卒中で共同戦線頓挫）</text>
+        `,
+        desc: `<strong>【Phase 1 (1922–1923)：レーニンの遺書と『新路線』による最初の激突】</strong><br>
+        1922年4月、スターリンが書記長に就任し地方党組織の人事権を掌握し始めると、病床のレーニンはソ連国家と党が急速に官僚化していることに強い危機感を抱きました。レーニンは『大会への手紙（遺書）』で「スターリンはあまりに粗暴であり、書記長から解任すべきだ」と書き残し、グルジア問題や外国貿易独占問題でトロツキーに共同戦線を要請しました。<br>
+        1923年秋、トロツキーは『新路線』を発表し、<strong>「党の官僚機構が労働者大衆のイニシアチブを窒息させている」</strong>と警告して下からの党内民主主義・ソヴィエト民主主義の回復を訴えました。しかし、ジノヴィエフ・カーメネフ・スターリンの「三頭政治（トロイカ）」は書記局マシーンを動員してトロツキー派を「分派主義」として抑え込みました。`
+      },
+      {
+        badge: "Phase 2: 1924–1925 一国社会主義論の登場",
+        caption: "[1924-1925] レーニン死去・「一国社会主義論」の定式化とトロツキー軍事人民委員解任",
+        m1: { val: "40%（『十月の教訓』論争と統制強化）", w: "40%", c: "#f59e0b" },
+        m2: { val: "68%（「レーニン徴募」で書記局派が急増）", w: "68%", c: "#f97316" },
+        m3: { val: "65%（一国社会主義論が党の公式路線へ）", w: "65%", c: "#e11d48" },
+        svg: `
+          <rect x="20" y="20" width="380" height="225" rx="10" fill="#4c0519" stroke="#e11d48" stroke-width="2"/>
+          <text x="210" y="46" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">🔴 スターリン：「一国社会主義論」の定式化（1924年末）</text>
+          <rect x="40" y="62" width="340" height="48" rx="6" fill="#881337" stroke="#fb7185"/>
+          <text x="210" y="82" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">「ソ連一国のみで社会主義の完全な建設は可能」</text>
+          <text x="210" y="99" fill="#ffe4e6" font-size="11" text-anchor="middle">内戦に疲弊した官僚層と国民に「安定と自負」を提供</text>
+          <rect x="40" y="122" width="340" height="48" rx="6" fill="#881337" stroke="#fb7185"/>
+          <text x="210" y="142" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">「レーニン主義」の宗教的教条化と『レーニン徴募』</text>
+          <text x="210" y="159" fill="#ffe4e6" font-size="11" text-anchor="middle">24万人の新入党員を吸収し、書記局の指示に絶対服従化</text>
+          <text x="210" y="202" fill="#fda4af" font-size="11" font-weight="bold" text-anchor="middle">⚡ 1925年1月：トロツキーを軍事人民委員から解任</text>
+          <text x="210" y="220" fill="#fecdd3" font-size="10" text-anchor="middle">（赤軍への指揮権を剥奪し、「ボナパルティズム」の芽を摘む）</text>
+
+          <path d="M 408 132 L 442 132" stroke="#e11d48" stroke-width="3" marker-end="url(#arrow)"/>
+          <text x="425" y="118" fill="#fda4af" font-size="11" font-weight="bold" text-anchor="middle">包囲圧迫</text>
+
+          <rect x="450" y="35" width="290" height="195" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+          <text x="595" y="62" fill="#93c5fd" font-size="13" font-weight="bold" text-anchor="middle">🔵 トロツキー：『十月の教訓』（1924年）</text>
+          <rect x="470" y="78" width="250" height="54" rx="6" fill="#0f172a" stroke="#475569"/>
+          <text x="595" y="98" fill="#fde047" font-size="11" font-weight="bold" text-anchor="middle">永続革命論による一国社会主義批判</text>
+          <text x="595" y="116" fill="#cbd5e1" font-size="10" text-anchor="middle">「世界市場から孤立した一国建設は</text>
+          <text x="595" y="128" fill="#cbd5e1" font-size="10" text-anchor="middle">ナショナリズムと官僚的退化を招く」</text>
+          <text x="595" y="168" fill="#f87171" font-size="11" font-weight="bold" text-anchor="middle">⚠️「トロツキズム＝反レーニン主義」</text>
+          <text x="595" y="188" fill="#94a3b8" font-size="10" text-anchor="middle">スターリンとジノヴィエフが総出で</text>
+          <text x="595" y="203" fill="#94a3b8" font-size="10" text-anchor="middle">過去の論文を掘り起こし異端審問を展開</text>
+        `,
+        desc: `<strong>【Phase 2 (1924–1925)：「一国社会主義論」の定式化とトロツキーの軍事権剥奪】</strong><br>
+        1924年1月にレーニンが死去すると、スターリンはレーニンの遺体を聖遺物として廟に安置し、自らを「レーニンの最も忠実な弟子」として神格化する演出を行いました。そして1924年12月、従来のマルクス・レーニン主義の常識（ロシア革命は世界革命の導火線であり、先進国の革命なしには完成しない）を覆し、<strong>「一国社会主義論」</strong>を公式に打ち出しました。<br>
+        これは果てしない国際革命の緊張に疲れた党官僚層から熱狂的に歓迎されました。トロツキーは『十月の教訓』で反撃しましたが、「永続革命論はロシアの農民と自力建設の力を軽視する敗北主義（トロツキズム）である」という大キャンペーンを浴び、1925年1月に赤軍トップ（陸海軍人民委員）の座を追われました。`
+      },
+      {
+        badge: "Phase 3: 1926–1927 合同反対派の敗北と除名",
+        caption: "[1926-1927] ジノヴィエフ・カーメネフとの合同反対派結成、10周年記念デモ鎮圧と党除名",
+        m1: { val: "12%（街頭デモをOGPUと行動隊が粉砕）", w: "12%", c: "#e11d48" },
+        m2: { val: "85%（スターリン・ブハーリン連合の制覇）", w: "85%", c: "#e11d48" },
+        m3: { val: "82%（中国革命の敗北とコミンテルンの従属化）", w: "82%", c: "#e11d48" },
+        svg: `
+          <rect x="20" y="18" width="420" height="228" rx="10" fill="#4c0519" stroke="#f43f5e" stroke-width="2.5"/>
+          <text x="230" y="44" fill="#fecdd3" font-size="14" font-weight="bold" text-anchor="middle">🔴 スターリン＋ブハーリン（右派）主流派ブロック</text>
+          <rect x="40" y="58" width="380" height="48" rx="6" fill="#881337" stroke="#fb7185"/>
+          <text x="230" y="78" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">党機関・OGPU（秘密警察）による反対派の弾圧</text>
+          <text x="230" y="95" fill="#ffe4e6" font-size="11" text-anchor="middle">地下印刷所の摘発、集会妨害、第15回党大会での一斉除名</text>
+          <rect x="40" y="116" width="380" height="48" rx="6" fill="#881337" stroke="#fb7185"/>
+          <text x="230" y="136" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">ソヴィエトと労働組合の完全な「伝導ベルト」化</text>
+          <text x="230" y="153" fill="#ffe4e6" font-size="11" text-anchor="middle">下からの討論は消滅し、書記局の指令を下達する行政機関へ</text>
+          <text x="230" y="195" fill="#fda4af" font-size="12" font-weight="bold" text-anchor="middle">🔨 1927年11月：トロツキー・ジノヴィエフを共産党から除名</text>
+          <text x="230" y="216" fill="#fecdd3" font-size="10" text-anchor="middle">（10月革命10周年記念日の反対派街頭デモを暴力的に鎮圧）</text>
+
+          <rect x="465" y="45" width="275" height="175" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <text x="602" y="72" fill="#94a3b8" font-size="13" font-weight="bold" text-anchor="middle">🔵 合同反対派（1926–1927）</text>
+          <text x="602" y="96" fill="#fde047" font-size="11" font-weight="bold" text-anchor="middle">トロツキー＋ジノヴィエフ＋カーメネフ</text>
+          <text x="602" y="118" fill="#cbd5e1" font-size="10" text-anchor="middle">・スターリン書記局の独裁化に遅ればせながら危機感</text>
+          <text x="602" y="136" fill="#cbd5e1" font-size="10" text-anchor="middle">・中国革命（1927年蒋介石クーデター）の</text>
+          <text x="602" y="150" fill="#cbd5e1" font-size="10" text-anchor="middle">　スターリン外交の破綻を痛烈に批判</text>
+          <text x="602" y="182" fill="#f87171" font-size="11" font-weight="bold" text-anchor="middle">❌ 敗北：ジノヴィエフらは自己批判し降伏</text>
+          <text x="602" y="200" fill="#cbd5e1" font-size="10" text-anchor="middle">トロツキーのみ屈服を拒否しアルマ・アタ流刑へ</text>
+        `,
+        desc: `<strong>【Phase 3 (1926–1927)：合同反対派の敗北、党除名とソヴィエト民主主義の死】</strong><br>
+        スターリンの権力集中に恐怖したジノヴィエフとカーメネフは、1926年にかつての宿敵トロツキーと手を結び<strong>「合同反対派」</strong>を結成しました。彼らは党内民主主義の回復、計画的工業化、そしてスターリンが中国共産党に国民党（蒋介石）への服従を強制して壊滅を招いた外交失策を激しく批判しました。<br>
+        しかし、右派のブハーリンと結んだスターリンは党組織とOGPUを総動員して反対派の印刷所を襲撃しました。1927年11月7日（十月革命10周年記念日）、トロツキーらは「本来のボリシェヴィキの理念に帰れ」と訴えてモスクワとレニングラードで最後の街頭デモを敢行しましたが、スターリン派の行動隊と警察に粉砕され、トロツキーは党から除名、翌1928年1月に中央アジアのアルマ・アタへ国内流刑となりました。`
+      },
+      {
+        badge: "Phase 4: 1929–1936 国外追放と『裏切られた革命』",
+        caption: "[1929-1936] トロツキー国外追放、スターリン「上からの革命（強制集団化）」と『裏切られた革命』",
+        m1: { val: "2%（党内・ソヴィエトの異論は完全消滅）", w: "2%", c: "#991b1b" },
+        m2: { val: "95%（ブハーリン右派も追放しスターリン独裁確立）", w: "95%", c: "#dc2626" },
+        m3: { val: "96%（強制的コルホーズ化と階級闘争激化論）", w: "96%", c: "#dc2626" },
+        svg: `
+          <rect x="20" y="18" width="435" height="228" rx="10" fill="#450a0a" stroke="#ef4444" stroke-width="3"/>
+          <text x="237" y="44" fill="#fecaca" font-size="14" font-weight="bold" text-anchor="middle">🔴 スターリン：「上からの革命」と全体主義国家の構築</text>
+          <rect x="38" y="58" width="398" height="50" rx="6" fill="#7f1d1d" stroke="#f87171"/>
+          <text x="237" y="78" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">強制的コルホーズ化（農業集団化）と五カ年計画</text>
+          <text x="237" y="96" fill="#fee2e2" font-size="11" text-anchor="middle">農民を暴力的に動員・収奪（ホロドモール大飢饉の発生）</text>
+          <rect x="38" y="118" width="398" height="50" rx="6" fill="#7f1d1d" stroke="#f87171"/>
+          <text x="237" y="138" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">「階級闘争激化論」による国家権力・秘密警察の極大化</text>
+          <text x="237" y="156" fill="#fee2e2" font-size="11" text-anchor="middle">国家の死滅を先送りし、NKVDとグラーグ（強制収容所）を拡張</text>
+          <text x="237" y="198" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">🏛️ 1936年「スターリン憲法」：社会主義の勝利を宣言</text>
+          <text x="237" y="216" fill="#fecaca" font-size="10" text-anchor="middle">（実質はノメンクラトゥーラ特権官僚層とスターリン個人崇拝の完成）</text>
+
+          <rect x="475" y="25" width="265" height="215" rx="10" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
+          <text x="607" y="50" fill="#fde047" font-size="13" font-weight="bold" text-anchor="middle">🌍 亡命トロツキーの理論闘争</text>
+          <text x="607" y="70" fill="#94a3b8" font-size="10" text-anchor="middle">（1929年トルコ追放→仏→ノルウェー）</text>
+          <rect x="490" y="82" width="235" height="72" rx="6" fill="#1e293b" stroke="#fbbf24"/>
+          <text x="607" y="102" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">主著『裏切られた革命』(1936)</text>
+          <text x="607" y="120" fill="#e2e8f0" font-size="10" text-anchor="middle">・ソ連＝「退化した労働者国家」</text>
+          <text x="607" y="135" fill="#e2e8f0" font-size="10" text-anchor="middle">・ソヴィエト・テルミドール／官僚カースト</text>
+          <text x="607" y="149" fill="#e2e8f0" font-size="10" text-anchor="middle">・下からの「政治革命」の必然性を提唱</text>
+          <text x="607" y="182" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">⚡ 反ファシズム統一戦線を訴え</text>
+          <text x="607" y="200" fill="#cbd5e1" font-size="10" text-anchor="middle">コミンテルンの「社会ファシズム論」が</text>
+          <text x="607" y="215" fill="#cbd5e1" font-size="10" text-anchor="middle">ヒトラー勝利を招いたと痛烈に批判</text>
+        `,
+        desc: `<strong>【Phase 4 (1929–1936)：トロツキーの国外追放、強制的集団化と『裏切られた革命』】</strong><br>
+        1929年2月、スターリンはトロツキーをソ連国外（トルコ・プリンキポ島）へ追放し、続いてかつての同盟者ブハーリン（右派）をも失脚させて完全な個人独裁を確立しました。スターリンは「一国社会主義」を最速で達成するため、農民を暴力的にコルホーズへ押し込む強制集団化と重工業化（「上からの革命」）を強行し、「社会主義が進むほど階級闘争は激化する」として国家と秘密警察を極限まで肥大化させました。<br>
+        亡命先を転々としながら、トロツキーは1936年に不朽の主著<strong>『裏切られた革命』</strong>を執筆。スターリン体制を「計画経済の土台の上に寄生する特権官僚カーストのボナパルティズム独裁（退化した労働者国家）」と解剖し、労働者による第二の政治革命を呼びかけました。`
+      },
+      {
+        badge: "Phase 5: 1936–1940 モスクワ裁判と暗殺",
+        caption: "[1936-1940] 大粛清（モスクワ裁判）、第四インターナショナル創設、コヨアカンでのピッケル暗殺",
+        m1: { val: "0%（オールド・ボリシェヴィキの物理的絶滅）", w: "0%", c: "#7f1d1d" },
+        m2: { val: "100%（無謬の「首領」スターリンによる絶対専制）", w: "100%", c: "#991b1b" },
+        m3: { val: "100%（『簡明教程』の完成→北朝鮮モデルへ直結）", w: "100%", c: "#991b1b" },
+        svg: `
+          <rect x="20" y="18" width="450" height="228" rx="10" fill="#3b0764" stroke="#e11d48" stroke-width="3"/>
+          <text x="245" y="44" fill="#fda4af" font-size="14" font-weight="bold" text-anchor="middle">🔴 スターリン大粛清（エジョフシチナ）と絶対的個人独裁</text>
+          <rect x="38" y="56" width="414" height="52" rx="6" fill="#581c87" stroke="#f43f5e"/>
+          <text x="245" y="76" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">1936–1938年 モスクワ公開裁判（3大見せしめ裁判）</text>
+          <text x="245" y="95" fill="#f3e8ff" font-size="11" text-anchor="middle">ジノヴィエフ、カーメネフ、ブハーリンら旧レーニン指導部を全員銃殺</text>
+          <rect x="38" y="118" width="414" height="52" rx="6" fill="#581c87" stroke="#f43f5e"/>
+          <text x="245" y="138" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">1938年『全連邦共産党（ボ）歴史小教程（簡明教程）』刊行</text>
+          <text x="245" y="157" fill="#f3e8ff" font-size="11" text-anchor="middle">「トロツキスト＝ファシストのスパイ・害虫」という神話を国定教科書化</text>
+          <text x="245" y="198" fill="#fde047" font-size="12" font-weight="bold" text-anchor="middle">🇰🇵 第二次大戦後：この完成されたスターリン体制が北朝鮮へ移植</text>
+          <text x="245" y="218" fill="#e9d5ff" font-size="10" text-anchor="middle">（首領制・社会政治的生命体論・宗派分子粛清・成分制度の直接の原型）</text>
+
+          <path d="M 476 132 L 508 132" stroke="#ef4444" stroke-width="3"/>
+          <text x="492" y="118" fill="#f87171" font-size="10" font-weight="bold" text-anchor="middle">NKVD刺客</text>
+
+          <rect x="515" y="30" width="225" height="205" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+          <text x="627" y="56" fill="#fca5a5" font-size="13" font-weight="bold" text-anchor="middle">🩸 メキシコ亡命と暗殺</text>
+          <text x="627" y="82" fill="#fde047" font-size="11" font-weight="bold" text-anchor="middle">1938年：第四インターナショナル創設</text>
+          <text x="627" y="102" fill="#cbd5e1" font-size="10" text-anchor="middle">世界革命と労働者民主主義の</text>
+          <text x="627" y="116" fill="#cbd5e1" font-size="10" text-anchor="middle">プログラム（『過渡的綱領』）を遺す</text>
+          <rect x="530" y="132" width="195" height="84" rx="6" fill="#450a0a" stroke="#f87171"/>
+          <text x="627" y="152" fill="#fecaca" font-size="11" font-weight="bold" text-anchor="middle">1940年8月20日 コヨアカン</text>
+          <text x="627" y="170" fill="#ffffff" font-size="10" text-anchor="middle">NKVD工作員メルカデルが</text>
+          <text x="627" y="185" fill="#ffffff" font-size="10" text-anchor="middle">ピッケルでトロツキーを暗殺</text>
+          <text x="627" y="203" fill="#fde047" font-size="9" text-anchor="middle">（翌日60歳で死去・『スターリン』執筆中）</text>
+        `,
+        desc: `<strong>【Phase 5 (1936–1940)：モスクワ裁判（大粛清）とメキシコ・コヨアカンでの暗殺】</strong><br>
+        1936年から38年にかけて、スターリンは3度にわたる<strong>モスクワ公開裁判</strong>を開き、ジノヴィエフ、カーメネフ、ブハーリン、ルイコフら十月革命を指導したレーニンの戦友たちを「亡命中のトロツキーおよびナチス・ドイツ、日本帝国主義と結託したテロリスト・スパイ」という荒唐無稽な罪状で全員処刑しました。大粛清（エジョフシチナ）で70万人以上が銃殺され、トロツキーの息子レフ・セドフやセルゲイ、娘たち、秘書らも次々とNKVDの工作や収容所で命を奪われました。<br>
+        メキシコ政府（カルデナス大統領）に庇護されたトロツキーは、1938年に<strong>「第四インターナショナル」</strong>を創設してスターリン主義とファシズムの双方と闘い続けましたが、1940年8月20日、コヨアカンの書斎に潜入したNKVD工作員ラモン・メルカデルにピッケルで頭部を強打され、翌日死去しました。こうして異論を完全に抹殺したスターリンの国家モデルが、戦後そのまま北朝鮮へと輸出されることになります。`
+      }
+    ];
+
+    function setPhase(idx) {
+      const p = phases[idx];
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => {
+        b.classList.toggle('active', i === idx);
+      });
+      document.getElementById('sim-badge').textContent = p.badge;
+      document.getElementById('svg-phase-caption').textContent = p.caption;
+
+      document.getElementById('m-val-1').textContent = p.m1.val;
+      const bar1 = document.getElementById('m-bar-1');
+      bar1.style.width = p.m1.w;
+      bar1.style.backgroundColor = p.m1.c;
+
+      document.getElementById('m-val-2').textContent = p.m2.val;
+      const bar2 = document.getElementById('m-bar-2');
+      bar2.style.width = p.m2.w;
+      bar2.style.backgroundColor = p.m2.c;
+
+      document.getElementById('m-val-3').textContent = p.m3.val;
+      const bar3 = document.getElementById('m-bar-3');
+      bar3.style.width = p.m3.w;
+      bar3.style.backgroundColor = p.m3.c;
+
+      document.getElementById('arch-svg').innerHTML = p.svg;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    function showMech(id, btn) {
+      document.querySelectorAll('.mech-content-panel').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.mech-tab').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // Initialize Phase 0 on load
+    document.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>

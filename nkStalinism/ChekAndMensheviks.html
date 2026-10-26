@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補論：チェーカーとメンシェビキ ― 暴力装置（秘密警察）による「同志・民主的社会主義」の圧殺と一党独裁への道</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #0f172a;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --crimson: #881337;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation Box */
+    .nav-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 45%, #991b1b 100%);
+      color: #ffffff;
+      padding: 2.75rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #f43f5e;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sub {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fecdd3;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 400;
+      max-width: 880px;
+      line-height: 1.75;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 1.35rem 0 0.75rem;
+    }
+
+    .cite-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.25rem;
+      padding: 0.05rem 0.35rem;
+      margin-left: 0.2rem;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .cite-tag:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Factor Cards */
+    .factor-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      padding: 1.35rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .factor-card.card-amber {
+      border-left-color: var(--accent);
+    }
+
+    .factor-card.card-rose {
+      border-left-color: var(--rose);
+    }
+
+    .factor-card.card-emerald {
+      border-left-color: var(--emerald);
+    }
+
+    .factor-card.card-purple {
+      border-left-color: var(--purple);
+    }
+
+    .factor-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .factor-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* Dynamic Visual Simulator Box */
+    .sim-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fef08a;
+    }
+
+    .sim-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .phase-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .phase-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phase-btn.active {
+      background: #e11d48;
+      color: #ffffff;
+      border-color: #fda4af;
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .phase-year {
+      display: block;
+      font-size: 0.72rem;
+      color: #fde047;
+      margin-bottom: 0.15rem;
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .arch-visual-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .arch-visual-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #93c5fd;
+      margin-bottom: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .sim-desc-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0.5rem;
+      padding: 1.15rem;
+      font-size: 0.93rem;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--accent);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .callout-rose {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      border-left-color: var(--rose);
+    }
+
+    .callout-emerald {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      border-left-color: var(--emerald);
+    }
+
+    .callout-purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      border-left-color: var(--purple);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-rose .callout-title {
+      color: var(--crimson);
+    }
+
+    .callout-emerald .callout-title {
+      color: #065f46;
+    }
+
+    .callout-purple .callout-title {
+      color: var(--purple);
+    }
+
+    /* Mechanism Analyzer Tabs */
+    .mech-container {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .mech-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    .mech-tab {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mech-tab:hover {
+      background: #eff6ff;
+      color: var(--primary);
+    }
+
+    .mech-tab.active {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    .mech-content-panel {
+      display: none;
+    }
+
+    .mech-content-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Reference List */
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ref-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ref-num {
+      font-weight: 800;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .ref-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .ref-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.55rem; }
+      section { padding: 1.35rem; }
+      header { padding: 1.75rem 1.35rem; }
+      .sim-box { padding: 1.25rem; }
+      .phase-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Series Navigation -->
+    <nav class="nav-box" aria-label="補論シリーズナビゲーション">
+      <div class="nav-title">📕 『北朝鮮におけるスターリン主義の形成』Web補論・理論解説</div>
+      <!-- <div class="nav-links">
+        <a href="dictatorshipOfTheProletariat.html" class="nav-link">① 前衛党論とプロレタリア独裁</a>
+        <a href="syutai.html" class="nav-link">② 主体思想と首領制</a>
+        <a href="worldRevolutionTheory.html" class="nav-link">③ 世界革命論と永続革命</a>
+        <a href="SocialismInOneCountry.html" class="nav-link">④ 一国社会主義論</a>
+        <a href="Bolsheviks.html" class="nav-link">⑤ ボリシェヴィキの系譜</a>
+        <a href="intensificationOfTheClassStruggle.html" class="nav-link">⑥ 階級闘争激化論</a>
+        <a href="Cheka.html" class="nav-link">⑦ チェーカーと秘密警察</a>
+        <a href="ChekAndMensheviks.html" class="nav-link active">★ チェーカーとメンシェビキ</a>
+        <a href="WitheringAwayOfTheState_Marx.html" class="nav-link">⑧ 国家死滅論の変容</a>
+        <a href="democratiCentralism.html" class="nav-link">⑨ 民主集中制の原型</a>
+        <a href="YanAnWindRectificationMovement.html" class="nav-link">⑩ 延安整風運動と思想改造</a>
+        <a href="conciseCourse.html" class="nav-link">⑪ 『簡明教程』と神話</a>
+        <a href="ContinuousRevolutionTheory.html" class="nav-link">⑫ 継続革命論</a>
+        <a href="culturalRevolution.html" class="nav-link">⑬ 文化大革命の狂気</a>
+        <a href="SecretSpeech.html" class="nav-link">⑭ スターリン批判と宗派事件</a>
+        <a href="hotokukai.html" class="nav-link">⑮ 彭徳懐と廬山会議</a>
+        <a href="HungarianRevolution.html" class="nav-link">⑯ ハンガリー動乱</a>
+        <a href="ChollimaMovement.html" class="nav-link">⑰ 千里馬運動</a>
+        <a href="SpeechByKimIlsung.html" class="nav-link">⑱ 1955年金日成演説</a>
+        <a href="Kapsan.html" class="nav-link">⑲ 甲山派粛清と唯一思想</a>
+        <a href="Soviet.html" class="nav-link">⑳ ソビエト制度の変容</a>
+        <a href="MarxistConceptionOfHumanNature.html" class="nav-link">㉑ 史的唯物論と首領論</a>
+      </div> -->
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="badge-row">
+        <span class="badge">ロシア革命・秘密警察弾圧史補論</span>
+        <span class="badge badge-sub">赤色テロル・二段階革命論・一党専制の起源</span>
+      </div>
+      <h1>チェーカーとメンシェビキ：<br>革命の暴力装置はいかにして「民主的社会主義の同志」を反革命として抹殺したのか</h1>
+      <p class="lead">
+        <strong>チェーカー（VChK / 全ロシア非常委員会）</strong>と<strong>メンシェビキ（Mensheviks / 少数派）</strong>は、いずれも20世紀初頭のロシア革命期に登場した極めて重要な組織・勢力ですが、その本質・目指した社会像は決定的に対立していました。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-2" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[2]</a><br>
+        チェーカーは、十月革命直後にボリシェヴィキ（レーニン政権）が設立した、法の支配や司法手続きを一切超越した「直接の暴力」を行使する秘密警察・治安機関です。これに対しメンシェビキは、同じロシア社会民主労働党から分かれた正統派マルクス主義者であり、客観的な発展段階（二段階革命論）と多元的ソビエト民主主義、議会制、市民的自由を尊重する穏健な社会主義政党でした。<a href="#ref-3" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[3]</a><a href="#ref-4" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[4]</a><br>
+        「プロレタリア独裁」を絶対視するボリシェヴィキにとって、労働者階級の自律やストライキの権利、複数政党による言論の自由を擁護するメンシェビキは、帝国主義者以上の「危険な思想的内敵」とみなされました。チェーカーによる過酷な赤色テロ、裁判なき投獄、処刑、国外追放を経て、1920年代前半までにメンシェビキは完全に非合法化・壊滅させられました。この<strong>「同じ社会主義陣営の異論を秘密警察の暴力で根絶する」</strong>という統治様式こそが、スターリンの大粛清（NKVD）を経て、北朝鮮の「唯一思想体系」と国家保衛省による血の粛清へと受け継がれる全体主義の遺伝子となったのです。<a href="#ref-1" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[1]</a><a href="#ref-5" class="cite-tag" style="background: rgba(255,255,255,0.2); color: #fef08a; border-color: rgba(255,255,255,0.35);">[5]</a>
+      </p>
+    </header>
+
+    <!-- Section 1: Origin & Fundamental Clash -->
+    <section>
+      <h2>⚖️ 1. 組織の出自と根本理念の衝突：対照的な存在の源流</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        チェーカーとメンシェビキの対立は、単なる治安機関と被疑者の関係にとどまりません。それは「暴力と恐怖による前衛党の一党独裁」と「人民大衆の自律と法治に基づく民主的社会主義」という、マルクス主義運動が内包していた二つの相容れない方向性の宿命的激突でした。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a>
+      </p>
+
+      <div class="grid-2">
+        <!-- チェーカーの解説カード -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>🔴 チェーカー（Cheka / VChK）</span>
+            <span style="font-size: 0.75rem; background: #ffe4e6; color: var(--crimson); padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-weight: 700;">ボリシェヴィキの抜剣</span>
+          </div>
+          <p class="factor-desc">
+            <strong>【正式名称】</strong>反革命・サボタージュおよび投機取り締まり全ロシア非常委員会<br>
+            <strong>【創設】</strong>1917年12月20日（レーニンの特命によりフェリックス・ジェルジンスキーが設立）<br>
+            <strong>【本質】</strong>「プロレタリア独裁とは、直接に暴力に立脚し、いかなる法律にも拘束されない権力である」（レーニン）。司法裁判所や弁護権を完全に排し、逮捕・尋問・即決銃殺を一手に握る超法規的武装機関。<br>
+            <strong>【歴史的帰結】</strong>内戦期に「赤色テロル」を指導。GPU、OGPU、NKVD、KGBへと改編され、ソ連および共産圏の巨大秘密警察網、そして北朝鮮「国家保衛省」の直接の母体となりました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+
+        <!-- メンシェビキの解説カード -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>🟡 メンシェビキ（Mensheviks）</span>
+            <span style="font-size: 0.75rem; background: #fef3c7; color: var(--accent-dark); padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-weight: 700;">正統派マルクス主義・穏健派</span>
+          </div>
+          <p class="factor-desc">
+            <strong>【語源と指導者】</strong>ロシア語で「少数派」の意。ユーリー・マルトフ、ゲオルギー・プレハーノフ、パーヴェル・アクセリロードら。<br>
+            <strong>【中核理論：二段階革命論】</strong>ロシアは資本主義と民主主義の発達が遅れた農業国であり、農民や未熟な労働者が多数を占める。したがって、まずはブルジョワ民主主義革命（二月革命）を成熟させ、議会制民主主義と近代産業を発展させた上で、長期的な展望のもとで社会主義へ移行すべきであると主張。<br>
+            <strong>【運動形態】</strong>少数の職業革命家による軍隊的規律（レーニン流前衛党）を拒否し、西欧社会民主党のように労働組合運動や言論・議会活動を重んじる開かれた大衆政党を目指しました。<a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-5" class="cite-tag">[5]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Callout: 1903 split context -->
+      <div class="callout callout-purple" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>📜 歴史の皮肉：同じ「社会民主労働党」の同志が、なぜ処刑者と囚人になったのか</span>
+        </div>
+        <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.7;">
+          1903年の党分裂時、レーニンとマルトフは親友であり、地下新聞『イスクラ（火花）』をともに編集した盟友でした。しかし、レーニンが「鉄の規律に従う職業革命家の精鋭組織」を求めたのに対し、マルトフは「広く労働者を受け入れる民主的な政党」を求めました。この組織論の亀裂はやがて「革命の目的のためなら裁判なしで銃殺してもよいか否か」という人間観・倫理観の絶対的断絶へと拡大し、わずか15年後にはレーニンの放ったチェーカーがマルトフの仲間たちを監獄へ送り込むという悲劇に至ったのです。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Dynamic Chronology (5 Phases) -->
+    <section>
+      <h2>⏱️ 2. 激突の軌跡：チェーカーによるメンシェビキ圧殺の5段階動態シミュレーター</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        ボリシェヴィキ政権は、最初からメンシェビキを一挙に抹殺したわけではありません。内戦の情勢、労働者の動向、そして秘密警察の制度的膨張に伴い、弾圧は段階的にエスカレートしていきました。以下の各フェーズを切り替えて、権力力学の変遷を確認してください。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <div>
+            <div class="sim-title">🔄 弾圧と権力独占の動態フェーズシミュレーター</div>
+            <div class="sim-subtitle">1917年十月革命から1930年代スターリン大粛清に至る弾圧プロセスの推移</div>
+          </div>
+        </div>
+
+        <!-- Phase Tabs -->
+        <div class="phase-tabs">
+          <button class="phase-btn active" onclick="setPhase(0)">
+            <span class="phase-year">Phase 1 (1917末〜1918初)</span>
+            十月革命と議会解散
+          </button>
+          <button class="phase-btn" onclick="setPhase(1)">
+            <span class="phase-year">Phase 2 (1918年中期)</span>
+            ソビエト追放と赤色テロ
+          </button>
+          <button class="phase-btn" onclick="setPhase(2)">
+            <span class="phase-year">Phase 3 (1919〜1920)</span>
+            内戦期の動揺と弾圧激化
+          </button>
+          <button class="phase-btn" onclick="setPhase(3)">
+            <span class="phase-year">Phase 4 (1921〜1922)</span>
+            クロンシュタットと壊滅
+          </button>
+          <button class="phase-btn" onclick="setPhase(4)">
+            <span class="phase-year">Phase 5 (1931〜1938)</span>
+            見せしめ裁判と大粛清
+          </button>
+        </div>
+
+        <!-- Dynamic Metrics -->
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="metric-label">チェーカー（秘密警察）の超法規的権力・暴力行使度</div>
+            <div class="metric-value" id="m-power">中（臨時非常委員会・職能模索期）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-power" style="width: 35%; background-color: #f59e0b;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">メンシェビキの政治的活動空間・合法性</div>
+            <div class="metric-value" id="m-legal">合法（議会選挙・ソビエトで活動継続）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-legal" style="width: 70%; background-color: #10b981;"></div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">ソビエト（評議会）内の多党制・民主的討議度</div>
+            <div class="metric-value" id="m-demo">高（ボリシェヴィキ以外の議席多数存在）</div>
+            <div class="bar-bg">
+              <div class="bar-fill" id="b-demo" style="width: 60%; background-color: #38bdf8;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic SVG Diagram -->
+        <div class="arch-visual-box">
+          <div class="arch-visual-title">
+            <span>📐 【権力相関・弾圧フローダイアグラム】</span>
+            <span id="arch-title" style="color: #fde047; font-weight: 800;">Phase 1：十月革命直後と憲法制定議会の武力解散</span>
+          </div>
+          <div class="svg-wrapper">
+            <svg id="arch-svg" viewBox="0 0 880 230" width="100%" height="230" style="max-width: 880px; display: block; margin: 0 auto;">
+              <!-- JSで動的に差し替え -->
+            </svg>
+          </div>
+        </div>
+
+        <!-- Narrative Description Box -->
+        <div class="sim-desc-box" id="sim-desc">
+          <!-- JSで動的に更新 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Deep Dive Comparison Table -->
+    <section>
+      <h2>🔍 3. 深掘り徹底比較：チェーカー（赤色テロル） vs メンシェビキ（民主的社会主義）</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        国家観、法手続、暴力の正当化、労働者の権利など、革命期のロシアを二分した根本対立軸の構造的比較です。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-3" class="cite-tag">[3]</a><a href="#ref-4" class="cite-tag">[4]</a>
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 17%;">比較項目</th>
+              <th style="width: 41.5%;">🔴 チェーカー（ボリシェヴィキ権力）<br><span style="font-size: 0.78rem; font-weight: 500;">テロルによるプロレタリア独裁の貫徹</span></th>
+              <th style="width: 41.5%;">🟡 メンシェビキ（マルトフ派）<br><span style="font-size: 0.78rem; font-weight: 500;">正統的マルクス主義・ソビエト民主主義</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>組織の目的と法的根拠</strong></td>
+              <td><strong>「反革命とサボタージュの撲滅」</strong>。法治機構ではなく、人民委員会議直属の超法規的武装委員会。法による制約を受けない。<a href="#ref-1" class="cite-tag">[1]</a></td>
+              <td><strong>「労働者階級の自律と民主的発展」</strong>。成文法、立憲制度、普通選挙による憲法制定議会およびソビエトの法治的運用を重視。</td>
+            </tr>
+            <tr>
+              <td><strong>暴力とテロルに対する態度</strong></td>
+              <td><strong>赤色テロルを革命防衛の不可欠の武器として公然と肯定</strong>。人質拘束、裁判なき即決銃殺、連座制を国家政策として執行。<a href="#ref-2" class="cite-tag">[2]</a></td>
+              <td><strong>超法規的テロルと人質処刑を「革命の堕落」として激しく非難</strong>。死刑の即時廃止と公開裁判・弁護権の保障を要求。<a href="#ref-4" class="cite-tag">[4]</a></td>
+            </tr>
+            <tr>
+              <td><strong>ソビエト（評議会）の定義</strong></td>
+              <td>ボリシェヴィキ党の意思を執行する<strong>「一党独裁の統治機構（伝導ベルト）」</strong>。異論を唱える党派はソビエトから武力排除。</td>
+              <td>全勤労大衆の多元的意見を反映する<strong>「多党制の自治議会」</strong>。ボリシェヴィキ以外の社会主義党派との連立政府を要求。</td>
+            </tr>
+            <tr>
+              <td><strong>労働運動・ストライキへの対応</strong></td>
+              <td>労働者国家においてストライキは「サボタージュ（利敵行為）」とみなし、<strong>チェーカー部隊を派遣して指導者を逮捕・射殺</strong>。</td>
+              <td>食糧難や生活苦に抗議する<strong>労働者のストライキ権と独立労働組合の結成を断固支持</strong>し、ボリシェヴィキ官僚制を批判。</td>
+            </tr>
+            <tr>
+              <td><strong>革命の発展段階論</strong></td>
+              <td><strong>一段階（永続）革命論</strong>。後進国ロシアの弱点を突いて一挙に権力を掌握し、西欧革命を誘発して世界革命へ跳躍する。<a href="#ref-3" class="cite-tag">[3]</a></td>
+              <td><strong>二段階革命論</strong>。まずはブルジョワ民主主義と資本主義を発展させ、物質的・文化的土台が成熟してから社会主義へ進む。<a href="#ref-5" class="cite-tag">[5]</a></td>
+            </tr>
+            <tr>
+              <td><strong>司法・捜査手続き</strong></td>
+              <td>チェーカー捜査官とジェルジンスキーの恣意的判断。<strong>「階級的起源（出自）と革命的良心」</strong>のみを根拠に即決死刑を宣告。</td>
+              <td>独立した司法裁判所、証拠主義、適正手続（デュー・プロセス）。秘密警察の即時解体と司法省への権限移譲を要求。<a href="#ref-1" class="cite-tag">[1]</a></td>
+            </tr>
+            <tr>
+              <td><strong>歴史的帰結</strong></td>
+              <td>GPU→NKVD→KGBへと進化し、スターリン大粛清（大テロル）を経て<strong>北朝鮮「国家保衛省・管理所（収容所）」体制へと結実</strong>。</td>
+              <td>内戦終結期に幹部全員が逮捕・亡命。ベルリン等で亡命雑誌『社会主義通報』を発行し、ソ連邦の全体主義的頽廃を告発し続けた。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Callout: Martov vs Trotsky -->
+      <div class="callout callout-rose" style="margin-top: 1.5rem;">
+        <div class="callout-title">
+          <span>⚡ 「歴史のゴミ箱へ行け！」――トロツキーの罵倒と、歴史の残酷なブーメラン</span>
+        </div>
+        <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.7;">
+          1917年10月25日深夜、十月革命の武装蜂起の銃声が響くスモーリヌイ宮殿の第2回全ロシア・ソビエト大会において、メンシェビキ指導者マルトフは「内戦と流血を防ぐため、すべての社会主義政党による連立政府を樹立せよ」と演説しました。しかし、議長席のレフ・トロツキーは立ち上がり、冷酷に嘲笑いながら言い放ちました。<br><br>
+          <strong>「お前たちは哀れな破産者だ。お前たちの役目は終わった。お前たちがこれから行くべき場所へ行くがよい――歴史のゴミ溜め（ゴミ箱）へ！」</strong><br><br>
+          マルトフらメンシェビキは抗議して議場を退場し、ボリシェヴィキの単独権力掌握とチェーカーの創設が決定されました。しかし、この歴史劇には戦慄すべき結末が待っていました。同志メンシェビキをテロルで粉砕することを正当化したトロツキー自身が、わずか10年後にスターリンによって「反革命」の汚名を着せられて党を追放され、最後は1940年、メキシコの亡命先でNKVD（チェーカーの後身）の放った暗殺者によってピッケルで頭蓋を砕かれたのです。同胞に対する暴力の肯定は、最後にはその提唱者自身を呑み込むという絶対の教訓がここにあります。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-4" class="cite-tag">[4]</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Structural Logic of Purges -->
+    <section>
+      <h2>⚙️ 4. なぜ革命は「同胞」を食い殺したのか？――弾圧の論理構造解剖</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        チェーカーがメンシェビキを弾圧したプロセスには、共産主義体制が必然的に全体主義・テロル独裁へと転落していく「3つの論理的罠」が存在していました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a><a href="#ref-5" class="cite-tag">[5]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 罠1: 客観的敵対者論 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① 「客観的敵対者論」の詭弁</span>
+          </div>
+          <p class="factor-desc">
+            レーニンは次のように論理を構築しました。「ソビエト権力を1ミリでも批判することは、客観的に反革命白軍と帝国主義者を助けることである。したがって、メンシェビキがどれほど主観的に社会主義を信じていようとも、<strong>彼らは客観的に反革命の刺客である</strong>」。<br>
+            この主観的意図を無視した論理転換により、政策批判やストライキはすべて「国家反逆」へと昇格され、チェーカーによる容赦ない銃殺が正当化されました。<a href="#ref-1" class="cite-tag">[1]</a>
+          </p>
+        </div>
+
+        <!-- 罠2: ソビエトの去勢と伝導ベルト化 -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 評議会（ソビエト）の去勢</span>
+          </div>
+          <p class="factor-desc">
+            本来、ソビエトは労働者・兵士が自由に代議員を選出・リコールできる直接民主制機関でした。しかし、工場選挙でメンシェビキが勝利するたびに、チェーカーが選挙結果を無効化し、当選者を逮捕しました。<br>
+            これにより、ソビエトは「下からの民意の機関」から「党の命令を一方的に大衆へ伝達する無機質な機関（伝導ベルト）」へと完全に変質したのです。<a href="#ref-3" class="cite-tag">[3]</a>
+          </p>
+        </div>
+
+        <!-- 罠3: 緊急避難の恒久化 -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ 「非常事態」の恒久化</span>
+          </div>
+          <p class="factor-desc">
+            チェーカーの創設名目は「内戦という非常時の一時的機関」でした。しかし、内戦が勝利に終わり外敵がいなくなった後も、ボリシェヴィキ指導部は特権的な暴力装置を手放しませんでした。<br>
+            むしろ、国内の経済崩壊や農民反乱（タンボフ反乱など）を抑え込むため、非常機関は常設化され、GPU、OGPU、NKVDへと国家装置そのものとして肥大化していきました。<a href="#ref-2" class="cite-tag">[2]</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Mechanism Analyzer -->
+      <div class="mech-container">
+        <h3 style="margin-top: 0; color: var(--primary-dark); font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🎯 インタラクティブ分析：チェーカーによるメンシェビキ弾圧手法の変遷</span>
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+          タブを切り替えると、時期ごとの「弾圧の名目」「チェーカーの執行手段」「メンシェビキ側の対応と被害」が比較表示されます。
+        </p>
+
+        <div class="mech-tabs">
+          <button class="mech-tab active" onclick="showMech('m1', this)">1918年：議会解散とソビエト追放</button>
+          <button class="mech-tab" onclick="showMech('m2', this)">1919〜1920年：赤色テロとストライキ弾圧</button>
+          <button class="mech-tab" onclick="showMech('m3', this)">1921〜1922年：分派禁止と幹部一斉逮捕・追放</button>
+          <button class="mech-tab" onclick="showMech('m4', this)">1931年：見せしめ裁判と物理的殲滅</button>
+        </div>
+
+        <!-- Panel 1 -->
+        <div id="m1" class="mech-content-panel active">
+          <div style="background: #ffffff; border: 1px solid var(--border); border-left: 4px solid var(--primary-light); padding: 1.15rem; border-radius: 0.5rem;">
+            <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 0.4rem; font-size: 1rem;">
+              【1918年】「憲法制定議会の解散」から「全ロシア中央執行委員会からの追放」へ
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.68;">
+              <strong>弾圧の名目：</strong>「ブルジョワ議会主義への執着」「ソビエト権力の否認」<br>
+              <strong>チェーカーの手法：</strong>当初は新聞の発行停止、集会の解散、印刷所の接収が主。しかし1918年6月、中央執行委員会が「白軍・チェコ軍団と通謀した」という虚構の理由でメンシェビキを除名すると、地方ソビエトでもチェーカー部隊が代議員を強制連行し始めました。<br>
+              <strong>メンシェビキの状況：</strong>マルトフらは「ソビエト憲法の枠内での合法的反対派」として粘り強く活動し、モスクワやペトログラードの工場労働者の支持を急速に回復しつつありました。この「労働者のボリシェヴィキ離れ」こそが、レーニンとチェーカーを恐怖させ、弾圧を決定づけました。
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="m2" class="mech-content-panel">
+          <div style="background: #ffffff; border: 1px solid var(--border); border-left: 4px solid var(--rose); padding: 1.15rem; border-radius: 0.5rem;">
+            <div style="font-weight: 700; color: var(--crimson); margin-bottom: 0.4rem; font-size: 1rem;">
+              【1919〜1920年】戦時共産主義下の赤色テロルと労働者蜂起の武力鎮圧
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.68;">
+              <strong>弾圧の名目：</strong>「食糧徴発へのサボタージュ」「反革命ストライキの扇動」「白軍への利敵行為」<br>
+              <strong>チェーカーの手法：</strong>工場でストライキが発生すると、チェーカー特別部隊（ChON）が工場を包囲し、配給停止、指導者の夜間逮捕、人質拘束を実行。トゥーラ兵器工場やプチーロフ工場の労働者大会でメンシェビキ幹部が演説すると、集会直後に逮捕されブティルカ刑務所へ投獄されました。<br>
+              <strong>メンシェビキの状況：</strong>白軍打倒のため対外防衛では赤軍を支持しつつも、国内の独裁とテロルを公然と批判。マルトフは1920年の独立労働者大会で演説し熱狂的な支持を集めますが、これがチェーカーによる最後の一掃作戦の合図となりました。
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="m3" class="mech-content-panel">
+          <div style="background: #ffffff; border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.15rem; border-radius: 0.5rem;">
+            <div style="font-weight: 700; color: var(--accent-dark); margin-bottom: 0.4rem; font-size: 1rem;">
+              【1921〜1922年】クロンシュタット水兵蜂起・分派禁止決議・完全不合法化
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.68;">
+              <strong>弾圧の名目：</strong>「クロンシュタット反乱への共謀」「プロレタリア独裁の完全否定」<br>
+              <strong>チェーカーの手法：</strong>第10回党大会（1921年3月）の「分派禁止決議」と同時に、全土でメンシェビキに対する一斉検挙作戦が発動。中央委員会メンバー80名以上を含む数千名の党員が逮捕され、白海ソロヴェツキー修道院などの初期強制収容所（のちのGULAG）へと送還。マルトフら指導層は国外へ強制追放されました。<br>
+              <strong>メンシェビキの状況：</strong>ロシア国内の組織網は壊滅。マルトフはベルリンで『社会主義通報』を創刊し、国外からレーニン・スターリン体制の全体主義化を批判し続けましたが、国内での組織的抵抗はここに終焉を迎えました。
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div id="m4" class="mech-content-panel">
+          <div style="background: #ffffff; border: 1px solid var(--border); border-left: 4px solid var(--purple); padding: 1.15rem; border-radius: 0.5rem;">
+            <div style="font-weight: 700; color: var(--purple); margin-bottom: 0.4rem; font-size: 1rem;">
+              【1931年〜1938年】スターリン見せしめ裁判と旧党員の物理的撲滅（大テロル）
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.68;">
+              <strong>弾圧の名目：</strong>「五カ年計画破壊工作」「外国軍事干渉組織との通謀」<br>
+              <strong>OGPU/NKVDの手法：</strong>1931年3月、ゴスプラン（国家計画委員会）などで経済専門家として働いていた旧メンシェビキ知識人14名を被告とする「連邦事務局メンシェビキ裁判」を捏造。拷問によって虚偽の自白を強要し、公開裁判で見せしめを行いました。1937〜38年の大粛清（エジョフショシナ）期には、過去に一度でもメンシェビキに所属した経歴のある者はNKVD指令第00447号に基づき、裁判なしで即決銃殺またはGULAG刑期延長となりました。<br>
+              <strong>歴史的結末：</strong>メンシェビキという存在は、ロシア国内において生物学的・物理的にも完全に根絶されました。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Connection to North Korea (Stalinism and Bloodline) -->
+    <section>
+      <h2>🇰🇵 5. 本書『北朝鮮におけるスターリン主義の形成』への直結：テロル機関の究極的進化</h2>
+      <p style="margin-bottom: 1.25rem; color: var(--text-muted);">
+        レーニンとチェーカーがメンシェビキを葬り去った論理と手法は、スターリンのソ連を経て、朝鮮民主主義人民共和国（北朝鮮）の政治構造へと忠実に移植され、さらに極限化されました。<a href="#ref-1" class="cite-tag">[1]</a><a href="#ref-2" class="cite-tag">[2]</a>
+      </p>
+
+      <div class="grid-3">
+        <!-- 連結1: 宗派粛清 -->
+        <div class="factor-card card-rose">
+          <div class="factor-title">
+            <span>① 「宗派分子」レッテル貼りの原型</span>
+          </div>
+          <p class="factor-desc">
+            1956年の「8月宗派事件」において、金日成の個人崇拝や重工業優先を批判した延安派・ソ連派の幹部たちは、かつてメンシェビキが「客観的反革命」と断罪されたのと全く同じロジックで「反党宗派分子」「帝国主義の手先」として一網打尽にされました。<br>
+            社会主義政権内部の建設的異論を「利敵行為」として抹殺する政治文化は、チェーカーのメンシェビキ弾圧に直結しています。
+          </p>
+        </div>
+
+        <!-- 連結2: 国家保衛省と管理所 -->
+        <div class="factor-card card-amber">
+          <div class="factor-title">
+            <span>② 国家保衛省と強制収容所（管理所）</span>
+          </div>
+          <p class="factor-desc">
+            チェーカーが裁判手続きなしに「反革命容疑者」を即決銃殺し、ソロヴェツキー修道院などの初期収容所に送り込んだ仕組みは、北朝鮮の<strong>「国家保衛省」</strong>および<strong>「完全統制区域（管理所）」</strong>として現存しています。<br>
+            三代連座制（種絶滅論）による一族隔離は、チェーカーの人質作戦とNKVD大粛清の最悪の要素をさらに過激化させたものです。
+          </p>
+        </div>
+
+        <!-- 連結3: 友党の完全去勢と唯一領導体系 -->
+        <div class="factor-card card-purple">
+          <div class="factor-title">
+            <span>③ 友党の家臣団化と「白頭血統」専制</span>
+          </div>
+          <p class="factor-desc">
+            ボリシェヴィキがメンシェビキや左翼エスエルを根絶して一党独裁を敷いたのと同様、北朝鮮にも形式的には「朝鮮社会民主党」「天道教青友党」が存在しますが、独自の政策を掲げることは絶対に許されず、労働党の追認機関（家臣団）としてのみ存続を許されています。<br>
+            そして異論の可能性を徹底的に排除した果てに、憲法をも超越する「10大原則」と「白頭血統」による血縁王朝専制が定着したのです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section>
+      <h2>📚 出典・参考文献リンク</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        本稿で参照している歴史学術資料・公文書・古典文献の出典一覧です。
+      </p>
+      <ul class="ref-list">
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <a href="https://www.y-history.net/appendix/wh1501-081.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：ボリシェヴィキとメンシェヴィキの対立)</a>
+        </li>
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%BC%E3%82%AB%E3%83%BC" target="_blank" rel="noopener noreferrer" class="ref-link">https://ja.wikipedia.org (Wikipedia：全ロシア非常委員会（チェーカー）)</a>
+        </li>
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <a href="https://kotobank.jp/word/%E3%83%A1%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%93%E3%82%AD-141671" target="_blank" rel="noopener noreferrer" class="ref-link">https://kotobank.jp (コトバンク：メンシェビキ（二段階革命論とロシア革命）)</a>
+        </li>
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <a href="https://www.marxists.org/archive/martov/" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.marxists.org (Marxists Internet Archive: Julius Martov Archive)</a>
+        </li>
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <a href="https://www.y-history.net/appendix/wh1501-082.html" target="_blank" rel="noopener noreferrer" class="ref-link">https://www.y-history.net (世界史の窓：メンシェヴィキの歩みと壊滅)</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>『北朝鮮におけるスターリン主義の形成』公式Web補論 ｜ チェーカーとメンシェビキ（赤色テロルと民主的社会主義の終焉）</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">&copy; 『北朝鮮におけるスターリン主義の形成』Web補論資料集 ｜ 著：mb_cho</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // 5-Phase Simulator Data
+    const phases = [
+      {
+        powerText: "中（臨時非常委員会・職能模索期）",
+        powerWidth: "35%",
+        powerColor: "#f59e0b",
+        legalText: "合法（議会選挙・ソビエトで活動継続）",
+        legalWidth: "75%",
+        legalColor: "#10b981",
+        demoText: "高（ボリシェヴィキ以外の議席多数存在）",
+        demoWidth: "65%",
+        demoColor: "#38bdf8",
+        archTitle: "Phase 1：十月革命直後と憲法制定議会の武力解散（1917末〜1918初）",
+        svgContent: `
+          <!-- Background Box -->
+          <rect x="20" y="15" width="840" height="200" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Box 1: Bolshevik Sovnarkom & Cheka -->
+          <rect x="40" y="45" width="220" height="135" rx="8" fill="#881337" stroke="#e11d48" stroke-width="2"/>
+          <text x="150" y="75" fill="#fecdd3" font-size="14" font-weight="800" text-anchor="middle">ボリシェヴィキ人民委員会議</text>
+          <text x="150" y="98" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">チェーカー（1917.12創設）</text>
+          <rect x="55" y="115" width="190" height="45" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="150" y="133" fill="#fef08a" font-size="11" text-anchor="middle">レーニン直命・ジェルジンスキー</text>
+          <text x="150" y="150" fill="#cbd5e1" font-size="10" text-anchor="middle">「直接の暴力」による権力確立</text>
+
+          <!-- Arrow 1: Military Dissolution -->
+          <line x1="260" y1="90" x2="350" y2="90" stroke="#f43f5e" stroke-width="3" stroke-dasharray="4"/>
+          <polygon points="350,85 365,90 350,95" fill="#f43f5e"/>
+          <text x="310" y="80" fill="#fca5a5" font-size="10" font-weight="700" text-anchor="middle">武力解散指令</text>
+
+          <!-- Box 2: Constituent Assembly -->
+          <rect x="370" y="45" width="220" height="135" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+          <text x="480" y="75" fill="#7dd3fc" font-size="14" font-weight="800" text-anchor="middle">全ロシア憲法制定議会</text>
+          <text x="480" y="98" fill="#f1f5f9" font-size="12" text-anchor="middle">（1918年1月 自由選挙）</text>
+          <rect x="385" y="115" width="190" height="45" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="480" y="133" fill="#f87171" font-size="11" text-anchor="middle">ボリシェヴィキ得票率24%（惨敗）</text>
+          <text x="480" y="150" fill="#4ade80" font-size="10" text-anchor="middle">エスエル・メンシェビキ多数派</text>
+
+          <!-- Arrow 2: Menshevik Defense of Soviets -->
+          <line x1="590" y1="90" x2="650" y2="90" stroke="#38bdf8" stroke-width="2"/>
+          <polygon points="650,85 665,90 650,95" fill="#38bdf8"/>
+          <text x="625" y="80" fill="#93c5fd" font-size="10" text-anchor="middle">主権擁護</text>
+
+          <!-- Box 3: Mensheviks Party -->
+          <rect x="670" y="45" width="180" height="135" rx="8" fill="#172554" stroke="#d97706" stroke-width="2"/>
+          <text x="760" y="75" fill="#fde047" font-size="14" font-weight="800" text-anchor="middle">メンシェビキ党</text>
+          <text x="760" y="98" fill="#f8fafc" font-size="12" text-anchor="middle">指導者：マルトフ</text>
+          <rect x="680" y="115" width="160" height="45" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="760" y="133" fill="#cbd5e1" font-size="10" text-anchor="middle">二段階革命論・ソビエト民主制</text>
+          <text x="760" y="150" fill="#fde047" font-size="10" text-anchor="middle">議会解散を「クーデター」と糾弾</text>
+        `,
+        desc: "<strong>【Phase 1：1917年末〜1918年1月 ― 十月革命と憲法制定議会の武力解散】</strong><br>1917年11月のロシア史上初の普通選挙において、ボリシェヴィキは得票率24%にとどまり惨敗。社会革命党（エスエル）とメンシェビキなどの民主社会主義派が過半数を獲得しました。議会が開会された1918年1月5日、レーニンはチェーカーと水兵部隊を差し向けてわずか1日で議会を武力解散させました。メンシェビキのマルトフはこの暴挙を「プロレタリアの名を騙る少数派の軍事クーデター」と厳しく断罪しました。"
+      },
+      {
+        powerText: "高（赤色テロル宣言・即決銃殺権）",
+        powerWidth: "60%",
+        powerColor: "#e11d48",
+        legalText: "制限（中央執行委から追放・新聞禁止）",
+        legalWidth: "45%",
+        legalColor: "#f59e0b",
+        demoText: "低（中央ソビエトから野党排除）",
+        demoWidth: "35%",
+        demoColor: "#f59e0b",
+        archTitle: "Phase 2：ソビエト追放と「赤色テロル」公式宣言（1918年中期）",
+        svgContent: `
+          <rect x="20" y="15" width="840" height="200" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Box 1: Cheka Red Terror -->
+          <rect x="40" y="45" width="230" height="135" rx="8" fill="#991b1b" stroke="#f43f5e" stroke-width="2"/>
+          <text x="155" y="75" fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle">チェーカー（赤色テロル発動）</text>
+          <text x="155" y="98" fill="#fecdd3" font-size="12" text-anchor="middle">1918年8月 レーニン暗殺未遂口実</text>
+          <rect x="55" y="115" width="200" height="45" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="155" y="133" fill="#fde047" font-size="11" text-anchor="middle">即決銃殺権・人質処刑の公認</text>
+          <text x="155" y="150" fill="#fca5a5" font-size="10" text-anchor="middle">「反革命分子」の階級的抹殺</text>
+
+          <!-- Heavy Attack Arrow -->
+          <line x1="270" y1="112" x2="410" y2="112" stroke="#e11d48" stroke-width="4"/>
+          <polygon points="410,105 428,112 410,119" fill="#e11d48"/>
+          <text x="345" y="100" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">除名＆検挙</text>
+
+          <!-- Box 2: Soviet purged -->
+          <rect x="430" y="45" width="210" height="135" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <text x="535" y="75" fill="#fde047" font-size="14" font-weight="800" text-anchor="middle">全ロシア中央執行委(VTsIK)</text>
+          <text x="535" y="98" fill="#cbd5e1" font-size="12" text-anchor="middle">1918年6月14日 追放決定</text>
+          <rect x="445" y="115" width="180" height="45" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="535" y="133" fill="#f87171" font-size="11" text-anchor="middle">メンシェビキを「反革命」除名</text>
+          <text x="535" y="150" fill="#94a3b8" font-size="10" text-anchor="middle">一党専制ソビエトへの純化</text>
+
+          <!-- Repression Arrow to Mensheviks -->
+          <line x1="640" y1="112" x2="685" y2="112" stroke="#e11d48" stroke-width="3" stroke-dasharray="3"/>
+          <polygon points="685,107 698,112 685,117" fill="#e11d48"/>
+
+          <!-- Box 3: Underground/Arrested Mensheviks -->
+          <rect x="700" y="45" width="160" height="135" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="2"/>
+          <text x="780" y="75" fill="#f87171" font-size="13" font-weight="800" text-anchor="middle">被弾圧メンシェビキ</text>
+          <text x="780" y="98" fill="#cbd5e1" font-size="11" text-anchor="middle">機関紙停刊・幹部拘束</text>
+          <rect x="710" y="115" width="140" height="45" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="780" y="133" fill="#e2e8f0" font-size="10" text-anchor="middle">「客観的利敵」の烙印</text>
+          <text x="780" y="150" fill="#fca5a5" font-size="9" text-anchor="middle">地下活動と刑務所収容</text>
+        `,
+        desc: "<strong>【Phase 2：1918年中期 ― ソビエト追放と「赤色テロル」公式宣言】</strong><br>1918年6月14日、全ロシア中央執行委員会は「白軍や外国軍事干渉と結託した」という口実でメンシェビキと右翼エスエルをソビエトから公式追放しました。さらに8月末のレーニン暗殺未遂事件を機に、ソビエト政府は「赤色テロルに関する決定」を公布。チェーカーは裁判なしで何千人もの「階級敵・人質」を処刑し始め、メンシェビキの新聞は即時発禁、活動家は相次ぎ投獄されました。"
+      },
+      {
+        powerText: "極大（軍事組織化・全土強制捜査）",
+        powerWidth: "80%",
+        powerColor: "#e11d48",
+        legalText: "危険水域（条件付合法的・警察監視）",
+        legalWidth: "25%",
+        legalColor: "#f87171",
+        demoText: "僅少（ストライキ主導者を即刻逮捕）",
+        demoWidth: "20%",
+        demoColor: "#f87171",
+        archTitle: "Phase 3：ロシア内戦のジレンマと工場ストライキ弾圧（1919〜1920年）",
+        svgContent: `
+          <rect x="20" y="15" width="840" height="200" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Box 1: White Army threat -->
+          <rect x="40" y="55" width="180" height="120" rx="8" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+          <text x="130" y="85" fill="#cbd5e1" font-size="13" font-weight="800" text-anchor="middle">反革命白軍の攻勢</text>
+          <text x="130" y="105" fill="#94a3b8" font-size="11" text-anchor="middle">デニーキン／コルチャーク</text>
+          <text x="130" y="130" fill="#f87171" font-size="10" text-anchor="middle">地主・君主制復活の脅威</text>
+          <text x="130" y="148" fill="#fde047" font-size="10" text-anchor="middle">※メンシェビキは白軍を拒否</text>
+
+          <!-- Menshevik Dilemma -->
+          <line x1="220" y1="115" x2="280" y2="115" stroke="#94a3b8" stroke-width="2"/>
+
+          <!-- Box 2: Menshevik Position -->
+          <rect x="280" y="45" width="260" height="140" rx="8" fill="#172554" stroke="#d97706" stroke-width="2"/>
+          <text x="410" y="75" fill="#fde047" font-size="14" font-weight="800" text-anchor="middle">メンシェビキの内戦スタンス</text>
+          <text x="410" y="98" fill="#ffffff" font-size="11" text-anchor="middle">「白軍打倒では赤軍を支持する」</text>
+          <rect x="295" y="110" width="230" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="410" y="128" fill="#fca5a5" font-size="10" text-anchor="middle">しかし「チェーカーの専制・配給独裁」</text>
+          <text x="410" y="143" fill="#fca5a5" font-size="10" text-anchor="middle">「農民からの食糧強制収奪」を激しく批判</text>
+          <text x="410" y="158" fill="#4ade80" font-size="10" text-anchor="middle">→ 工場労働者のストライキを支援</text>
+
+          <!-- Crushing Arrow from Cheka -->
+          <line x1="680" y1="115" x2="550" y2="115" stroke="#e11d48" stroke-width="4"/>
+          <polygon points="550,108 535,115 550,122" fill="#e11d48"/>
+          <text x="615" y="103" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">サボタージュ弾圧</text>
+
+          <!-- Box 3: Cheka Special Troops -->
+          <rect x="680" y="45" width="180" height="140" rx="8" fill="#881337" stroke="#e11d48" stroke-width="2"/>
+          <text x="770" y="75" fill="#fecdd3" font-size="13" font-weight="800" text-anchor="middle">チェーカー特別隊(ChON)</text>
+          <text x="770" y="98" fill="#ffffff" font-size="11" text-anchor="middle">工場包囲・夜間急襲</text>
+          <rect x="690" y="110" width="160" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="770" y="128" fill="#fef08a" font-size="10" text-anchor="middle">スト指導者を即時拘束</text>
+          <text x="770" y="143" fill="#cbd5e1" font-size="10" text-anchor="middle">ブティルカ刑務所投獄</text>
+          <text x="770" y="158" fill="#f87171" font-size="10" text-anchor="middle">「内戦下利敵」の罪状</text>
+        `,
+        desc: "<strong>【Phase 3：1919〜1920年 ― ロシア内戦のジレンマと工場ストライキ弾圧】</strong><br>白軍（デニーキン、コルチャーク）が地主君主制復活を掲げて侵攻すると、メンシェビキは白軍を打倒するため対外防衛でソビエト政権への協力を宣言しました。これを受けボリシェヴィキは一時的に合法活動を認めましたが、戦時共産主義による過酷な食糧強制徴発（割当徴発令）と飢餓によりペトログラードやモスクワの労働者がストライキを起こすと、メンシェビキはその正当な権利を支持しました。チェーカーは即座にストライキを「サボタージュ」と断定し、大会直後にメンシェビキ指導者を一斉拘束しました。"
+      },
+      {
+        powerText: "絶対（常設化・GPUへの改編確立）",
+        powerWidth: "95%",
+        powerColor: "#881337",
+        legalText: "完全非合法（地下組織化・全員逮捕）",
+        legalWidth: "5%",
+        legalColor: "#881337",
+        demoText: "壊滅（一党独裁・分派禁止の確立）",
+        demoWidth: "5%",
+        demoColor: "#881337",
+        archTitle: "Phase 4：クロンシュタット蜂起・分派禁止決議・完全不合法化（1921〜1922年）",
+        svgContent: `
+          <rect x="20" y="15" width="840" height="200" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Box 1: Kronstadt & 10th Congress -->
+          <rect x="40" y="45" width="240" height="140" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+          <text x="160" y="75" fill="#c7d2fe" font-size="13" font-weight="800" text-anchor="middle">1921年3月 クロンシュタット蜂起</text>
+          <text x="160" y="98" fill="#ffffff" font-size="11" text-anchor="middle">水兵「ボリシェヴィキなきソビエト！」</text>
+          <rect x="55" y="110" width="210" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="160" y="128" fill="#fde047" font-size="11" text-anchor="middle">第10回ロシア共産党大会</text>
+          <text x="160" y="145" fill="#f87171" font-size="11" font-weight="800" text-anchor="middle">「分派禁止決議」の採択</text>
+          <text x="160" y="158" fill="#cbd5e1" font-size="9" text-anchor="middle">党内外の異論表明を全面禁止</text>
+
+          <!-- Heavy Attack Arrows -->
+          <line x1="280" y1="115" x2="380" y2="115" stroke="#f43f5e" stroke-width="4"/>
+          <polygon points="380,108 398,115 380,122" fill="#f43f5e"/>
+          <text x="330" y="103" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">一斉検挙</text>
+
+          <!-- Box 2: Total Dissolution -->
+          <rect x="400" y="45" width="230" height="140" rx="8" fill="#881337" stroke="#e11d48" stroke-width="2"/>
+          <text x="515" y="75" fill="#fecdd3" font-size="14" font-weight="800" text-anchor="middle">チェーカー／GPU弾圧作戦</text>
+          <text x="515" y="98" fill="#ffffff" font-size="11" text-anchor="middle">メンシェビキ中央委全員逮捕</text>
+          <rect x="415" y="110" width="200" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="515" y="128" fill="#fef08a" font-size="10" text-anchor="middle">白海ソロヴェツキー修道院へ送致</text>
+          <text x="515" y="143" fill="#cbd5e1" font-size="10" text-anchor="middle">（初期GULAG強制収容所）</text>
+          <text x="515" y="158" fill="#fca5a5" font-size="10" text-anchor="middle">指導層の国外追放処分</text>
+
+          <!-- Arrow to Exile -->
+          <line x1="630" y1="115" x2="680" y2="115" stroke="#38bdf8" stroke-width="3"/>
+          <polygon points="680,110 695,115 680,120" fill="#38bdf8"/>
+
+          <!-- Box 3: Exile Journal -->
+          <rect x="695" y="45" width="165" height="140" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+          <text x="777" y="75" fill="#7dd3fc" font-size="13" font-weight="800" text-anchor="middle">ベルリン国外亡命</text>
+          <text x="777" y="98" fill="#ffffff" font-size="11" text-anchor="middle">マルトフ『社会主義通報』</text>
+          <rect x="705" y="110" width="145" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="777" y="128" fill="#94a3b8" font-size="10" text-anchor="middle">国内組織の完全壊滅</text>
+          <text x="777" y="145" fill="#fde047" font-size="10" text-anchor="middle">ソ連邦の一党独裁固定化</text>
+          <text x="777" y="158" fill="#cbd5e1" font-size="9" text-anchor="middle">1923年 マルトフ客死</text>
+        `,
+        desc: "<strong>【Phase 4：1921〜1922年 ― クロンシュタット蜂起・分派禁止決議と完全不合法化】</strong><br>1921年3月、十月革命の主力だった水兵たちが「ボリシェヴィキなき自由なソビエト」「言論・出版の自由」「全社会主義政党の釈放」を掲げてクロンシュタットで蜂起。レーニン指導部はこれを赤軍とチェーカー部隊で無残に流血鎮圧しました。同月の第10回党大会でレーニンは「分派禁止決議」を採択し、党内での異論を封鎖。直後にチェーカー（1922年にGPUへ改称）はメンシェビキ中央委員全員を含む数千名を逮捕・収容所へ送り、組織を完全に消滅させました。"
+      },
+      {
+        powerText: "究極（NKVDトロイカ・大テロル大虐殺）",
+        powerWidth: "100%",
+        powerColor: "#881337",
+        legalText: "死滅（物理的抹殺・見せしめ裁判）",
+        legalWidth: "0%",
+        legalColor: "#881337",
+        demoText: "皆無（スターリン個人独裁の完成）",
+        demoWidth: "0%",
+        demoColor: "#881337",
+        archTitle: "Phase 5：見せしめ裁判とスターリン大粛清における物理的撲滅（1931〜1938年）",
+        svgContent: `
+          <rect x="20" y="15" width="840" height="200" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+          
+          <!-- Box 1: Stalin's Dictatorship -->
+          <rect x="40" y="45" width="220" height="140" rx="8" fill="#450a0a" stroke="#dc2626" stroke-width="2"/>
+          <text x="150" y="75" fill="#fca5a5" font-size="14" font-weight="800" text-anchor="middle">スターリン独裁・NKVD</text>
+          <text x="150" y="98" fill="#ffffff" font-size="11" text-anchor="middle">「階級闘争激化論」の定着</text>
+          <rect x="55" y="110" width="190" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="150" y="128" fill="#fef08a" font-size="10" text-anchor="middle">指令第00447号（大量処刑ノルマ）</text>
+          <text x="150" y="145" fill="#fecdd3" font-size="10" text-anchor="middle">NKVDトロイカによる即決銃殺</text>
+          <text x="150" y="158" fill="#cbd5e1" font-size="9" text-anchor="middle">拷問による自白強要劇</text>
+
+          <!-- Fatal Arrow -->
+          <line x1="260" y1="115" x2="380" y2="115" stroke="#dc2626" stroke-width="4"/>
+          <polygon points="380,108 398,115 380,122" fill="#dc2626"/>
+          <text x="320" y="103" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">見せしめ裁判</text>
+
+          <!-- Box 2: 1931 Menshevik Trial -->
+          <rect x="400" y="45" width="240" height="140" rx="8" fill="#1e293b" stroke="#e11d48" stroke-width="2"/>
+          <text x="520" y="75" fill="#f87171" font-size="13" font-weight="800" text-anchor="middle">1931年 メンシェビキ裁判</text>
+          <text x="520" y="98" fill="#ffffff" font-size="11" text-anchor="middle">ゴスプラン旧幹部ら14名公開裁判</text>
+          <rect x="415" y="110" width="210" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="520" y="128" fill="#fde047" font-size="10" text-anchor="middle">罪状：「五カ年計画の産業破壊」</text>
+          <text x="520" y="145" fill="#cbd5e1" font-size="10" text-anchor="middle">（モスクワ裁判・見せしめ劇の原型）</text>
+          <text x="520" y="158" fill="#fca5a5" font-size="9" text-anchor="middle">全員有罪判決・収容所送り</text>
+
+          <!-- Death Arrow -->
+          <line x1="640" y1="115" x2="690" y2="115" stroke="#991b1b" stroke-width="4"/>
+          <polygon points="690,108 705,115 690,122" fill="#991b1b"/>
+
+          <!-- Box 3: Total Annihilation in Great Terror -->
+          <rect x="705" y="45" width="155" height="140" rx="8" fill="#0f172a" stroke="#881337" stroke-width="2"/>
+          <text x="782" y="75" fill="#fca5a5" font-size="13" font-weight="800" text-anchor="middle">1937〜38年 大テロル</text>
+          <text x="782" y="98" fill="#ffffff" font-size="11" text-anchor="middle">旧メンシェビキの皆殺し</text>
+          <rect x="715" y="110" width="135" height="55" rx="4" fill="rgba(0,0,0,0.3)"/>
+          <text x="782" y="128" fill="#f87171" font-size="10" text-anchor="middle">旧党員歴だけで即死刑</text>
+          <text x="782" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">GULAG受刑者も銃殺</text>
+          <text x="782" y="158" fill="#fde047" font-size="9" text-anchor="middle">物理的根絶の完了</text>
+        `,
+        desc: "<strong>【Phase 5：1931〜1938年 ― 見せしめ裁判とスターリン大粛清における物理的撲滅】</strong><br>1931年3月、スターリン政権下のOGPUは、国家計画委員会（ゴスプラン）などで経済官僚として働いていた旧メンシェビキ専門家14名を「外国干渉軍と結託して産業破壊（サボタージュ）を企てた」として公開見せしめ裁判にかけました。さらに1937〜38年の大粛清（大テロル）において、NKVDは過去にメンシェビキ党員であった者を一人残らずリストアップし、NKVDトロイカ（三人委員会）によって裁判なしで即決銃殺またはシベリアGULAGでの過酷労働により死に至らしめました。"
+      }
+    ];
+
+    function setPhase(idx) {
+      const btns = document.querySelectorAll('.phase-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const p = phases[idx];
+
+      document.getElementById('m-power').textContent = p.powerText;
+      const bPower = document.getElementById('b-power');
+      bPower.style.width = p.powerWidth;
+      bPower.style.backgroundColor = p.powerColor;
+
+      document.getElementById('m-legal').textContent = p.legalText;
+      const bLegal = document.getElementById('b-legal');
+      bLegal.style.width = p.legalWidth;
+      bLegal.style.backgroundColor = p.legalColor;
+
+      document.getElementById('m-demo').textContent = p.demoText;
+      const bDemo = document.getElementById('b-demo');
+      bDemo.style.width = p.demoWidth;
+      bDemo.style.backgroundColor = p.demoColor;
+
+      document.getElementById('arch-title').textContent = p.archTitle;
+      document.getElementById('arch-svg').innerHTML = p.svgContent;
+      document.getElementById('sim-desc').innerHTML = p.desc;
+    }
+
+    // Mechanism Tab Switcher
+    function showMech(id, btn) {
+      const tabs = document.querySelectorAll('.mech-tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      if (btn) {
+        btn.classList.add('active');
+      } else if (typeof event !== 'undefined' && event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+      }
+
+      const panels = document.querySelectorAll('.mech-content-panel');
+      panels.forEach(p => p.classList.remove('active'));
+      const activePanel = document.getElementById(id);
+      if (activePanel) {
+        activePanel.classList.add('active');
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      setPhase(0);
+    });
+  </script>
+</body>
+</html>
